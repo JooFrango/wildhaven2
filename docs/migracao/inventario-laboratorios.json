@@ -1,0 +1,136 @@
+{
+ "gerado_em": "2026-11-26T08:28:31.274Z",
+ "total": 9,
+ "laboratorios": [
+  {
+   "id": "labs/hunters",
+   "arquivos": 1069,
+   "bytes": 179500925,
+   "glb": 12,
+   "testes": 18,
+   "html": 11,
+   "js": 68,
+   "py": 7,
+   "rust": 0,
+   "config": [
+    "labs/hunters/package.json",
+    "labs/hunters/resultados/jogador/static-package.json"
+   ],
+   "origem_exemplo": null
+  },
+  {
+   "id": "labs/ia-criaturas",
+   "arquivos": 388,
+   "bytes": 65874221,
+   "glb": 20,
+   "testes": 67,
+   "html": 7,
+   "js": 145,
+   "py": 0,
+   "rust": 0,
+   "config": [
+    "labs/ia-criaturas/package.json"
+   ],
+   "origem_exemplo": null
+  },
+  {
+   "id": "game/playable-v01",
+   "arquivos": 32,
+   "bytes": 17052554,
+   "glb": 0,
+   "testes": 1,
+   "html": 1,
+   "js": 8,
+   "py": 0,
+   "rust": 0,
+   "config": [
+    "game/playable-v01/package.json"
+   ],
+   "origem_exemplo": null
+  },
+  {
+   "id": "game/playable-v02",
+   "arquivos": 56,
+   "bytes": 6038702,
+   "glb": 0,
+   "testes": 5,
+   "html": 1,
+   "js": 20,
+   "py": 0,
+   "rust": 0,
+   "config": [
+    "game/playable-v02/package.json"
+   ],
+   "origem_exemplo": null
+  },
+  {
+   "id": "labs/hunters-codex",
+   "arquivos": 45,
+   "bytes": 4469444,
+   "glb": 2,
+   "testes": 1,
+   "html": 1,
+   "js": 17,
+   "py": 0,
+   "rust": 0,
+   "config": [
+    "labs/hunters-codex/package.json"
+   ],
+   "origem_exemplo": null
+  },
+  {
+   "id": "build real/continental",
+   "arquivos": 19,
+   "bytes": 422245,
+   "glb": 0,
+   "testes": 2,
+   "html": 1,
+   "js": 13,
+   "py": 0,
+   "rust": 0,
+   "config": [],
+   "origem_exemplo": null
+  },
+  {
+   "id": "tools/godot-hex-studio",
+   "arquivos": 12,
+   "bytes": 137479,
+   "glb": 0,
+   "testes": 1,
+   "html": 0,
+   "js": 0,
+   "py": 3,
+   "rust": 0,
+   "config": [],
+   "origem_exemplo": null
+  },
+  {
+   "id": "game/alpha01",
+   "arquivos": 27,
+   "bytes": 118137,
+   "glb": 0,
+   "testes": 1,
+   "html": 1,
+   "js": 21,
+   "py": 0,
+   "rust": 0,
+   "config": [
+    "game/alpha01/package.json"
+   ],
+   "origem_exemplo": null
+  },
+  {
+   "id": "tools/asset-bridge",
+   "arquivos": 2,
+   "bytes": 8397,
+   "glb": 0,
+   "testes": 0,
+   "html": 0,
+   "js": 0,
+   "py": 1,
+   "rust": 0,
+   "config": [],
+   "origem_exemplo": null
+  }
+ ]
+}

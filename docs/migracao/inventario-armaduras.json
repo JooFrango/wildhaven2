@@ -1,0 +1,786 @@
+{
+ "gerado_em": "2026-11-26T08:28:31.222Z",
+ "total_conjuntos": 34,
+ "conjuntos_modelados": 0,
+ "conjuntos_com_conceito": 14,
+ "conjuntos_somente_ficha": 20,
+ "conjuntos": [
+  {
+   "id": "arbelio-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/arbelio-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/arbelio-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "arbelio",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-arbelio-v01-concept",
+    "commit": "264551794be1bcfef80490a6004d47cf3a748ff5",
+    "data": "2026-11-16T23:58:34Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/arbelio-v01/manifest.json"
+   }
+  },
+  {
+   "id": "arenoceto-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/arenoceto-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/arenoceto-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "arenoceto",
+   "status_manifesto": {
+    "approval": "awaiting_user_approval",
+    "armorGlb": "not_started",
+    "alpha": "unchanged",
+    "merge": "not_requested"
+   },
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-arenoceto-dunas-v01-concept",
+    "commit": "df803c9b965f302d82d7e81f6e0f205102190ef1",
+    "data": "2026-11-17T10:58:14Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/arenoceto-v01/manifest.json"
+   }
+  },
+  {
+   "id": "arraia-de-areia-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/arraia-de-areia-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/arraia-de-areia-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "arraia-de-areia",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-arraia-de-areia-dunas-v01-concept",
+    "commit": "85bfed8708ed618c992c2e56c8b8605741e32b2f",
+    "data": "2026-11-17T13:05:39Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/arraia-de-areia-v01/manifest.json"
+   }
+  },
+  {
+   "id": "arumbar-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/arumbar-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/arumbar-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "Arumbar",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-arumbar-v01-concept",
+    "commit": "7841f0cafbbd516a04bdeca7939b3e64fb2ff079",
+    "data": "2026-11-16T18:06:51Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/arumbar-v01/manifest.json"
+   }
+  },
+  {
+   "id": "carniroca-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/carniroca-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/carniroca-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": {
+    "id": "carniroca",
+    "name": "Carniroca",
+    "role": "medium_aerial_scavenger",
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_edge",
+     "temperate_grassland",
+     "cliff"
+    ],
+    "sourceStatus": "in_review"
+   },
+   "status_manifesto": "awaiting_user_art_approval",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-carniroca-temperate-v01-concept",
+    "commit": "502f6d0c11a0a37ffcba9a662b7df2ba4908c228",
+    "data": "2026-11-17T01:45:20Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/carniroca-v01/manifest.json"
+   }
+  },
+  {
+   "id": "cascarrumo-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/cascarrumo-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/cascarrumo-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "cascarrumo",
+   "status_manifesto": "AGUARDANDO APROVAÇÃO",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-cascarrumo-v01-concept",
+    "commit": "c57b71300568efc2da59b42be357b986e3e05993",
+    "data": "2026-11-16T20:35:11Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/cascarrumo-v01/manifest.json"
+   }
+  },
+  {
+   "id": "clavascarnio-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/clavascarnio-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/clavascarnio-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "clavascarnio",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-clavascarnio-dunas-v01-concept",
+    "commit": "66f6c07ea15b51d7c0eb0f22beea973f8563db3e",
+    "data": "2026-11-17T14:58:17Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/clavascarnio-v01/manifest.json"
+   }
+  },
+  {
+   "id": "cromatil-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/cromatil-v01/set_bastiao_espinha_ferrugem_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/cromatil-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/cromatil-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "cromatil",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-cromatil-v01-concept",
+    "commit": "e6ef74653e393c29ad38a1cc3e002df342e60314",
+    "data": "2026-11-17T02:02:42Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/cromatil-v01/manifest.json"
+   }
+  },
+  {
+   "id": "dodarro-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/dodarro-v01/vigia_leque_rubro_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/dodarro-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/dodarro-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": {
+    "id": "dodarro",
+    "name": "Dodarro",
+    "biome": [
+     "savanna",
+     "plains"
+    ],
+    "diet": "opportunistic; fruits and carrion",
+    "variantsReferenced": [
+     "selvagem",
+     "montaria"
+    ],
+    "referenceStatus": "Dodarro v02 GLBs are real static blockouts; form remains awaiting artistic approval"
+   },
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-dodarro-v01-concept",
+    "commit": "fdfc2994f743c1188c450b4e8aaa5b27345b73ab",
+    "data": "2026-11-17T06:16:27Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/dodarro-v01/manifest.json"
+   }
+  },
+  {
+   "id": "escarvao-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/escarvao-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/escarvao-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "escarvao",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-escarvao-dunas-v01-concept",
+    "commit": "0450de5d2d1db2d14c722aba9ce2f36fa6872e7b",
+    "data": "2026-11-17T14:04:43Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/escarvao-v01/manifest.json"
+   }
+  },
+  {
+   "id": "ferrunco-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/ferrunco-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/ferrunco-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "ferrunco",
+   "status_manifesto": "AGUARDANDO_APROVACAO",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-ferrunco-temperate-v01-concept",
+    "commit": "d2686b13ab9d7c5ed57fb53e02576e370eb986ec",
+    "data": "2026-11-17T00:37:54Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/ferrunco-v01/manifest.json"
+   }
+  },
+  {
+   "id": "folhisco-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/folhisco-v01/set_folhisco_conceito_v01_preview.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/folhisco-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/folhisco-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "folhisco",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-folhisco-v01-concept",
+    "commit": "d46256e2a49bd8f68cd855e16a94ed776e392bc7",
+    "data": "2026-11-16T14:36:53Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/folhisco-v01/manifest.json"
+   }
+  },
+  {
+   "id": "frutavil-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/frutavil-v01/set_guarda_leque_ferrugem_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/frutavil-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/frutavil-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "frutavil",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-frutavil-v01-concept",
+    "commit": "b80e2064edb8d70f8e2334fcf415ab62075d6145",
+    "data": "2026-11-17T03:09:31Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/frutavil-v01/manifest.json"
+   }
+  },
+  {
+   "id": "garruva-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/garruva-v01/set_garruva_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/garruva-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/garruva-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "garruva",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-garruva-v01-concept",
+    "commit": "bc77b335eef10bf8c98a3022f8641859fdb7f2fc",
+    "data": "2026-11-16T13:26:44Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/garruva-v01/manifest.json"
+   }
+  },
+  {
+   "id": "gravarto-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/gravarto-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/gravarto-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "gravarto",
+   "status_manifesto": "aguardando_aprovacao_artistica",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-gravarto-v01-concept",
+    "commit": "3e4d82ef55bde3682d3856ac5b4294d0e50f7fc0",
+    "data": "2026-11-16T22:05:49Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/gravarto-v01/manifest.json"
+   }
+  },
+  {
+   "id": "mastelio-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/mastelio-v01/set_mastelio_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/mastelio-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/mastelio-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "mastelio",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": [
+    "capacete-mascara-com-abas-em-leque",
+    "peitoral",
+    "ombreiras",
+    "manoplas",
+    "cintura",
+    "protecao-de-coxas",
+    "grevas",
+    "botas"
+   ],
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-mastelio-v01-concept",
+    "commit": "4fa665c6bcebb8b43393c67a87c3d39f539f5159",
+    "data": "2026-11-16T14:02:54Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/mastelio-v01/manifest.json"
+   }
+  },
+  {
+   "id": "nharuk-temperate-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/nharuk-temperate-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/nharuk-temperate-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "nharuk",
+   "status_manifesto": "AGUARDANDO APROVAÇÃO",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-nharuk-temperate-v01-concept",
+    "commit": "157c0bf917c70adeae30ae39c92c7529a10f269e",
+    "data": "2026-11-16T17:34:56Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/nharuk-temperate-v01/manifest.json"
+   }
+  },
+  {
+   "id": "pica-termita-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/pica-termita-v01/set_arauto_crista_rubra_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/pica-termita-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/pica-termita-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": {
+    "id": "pica_termita",
+    "name": "Pica-Termita de Crista",
+    "category": "insectivore_specialist",
+    "habitats": [
+     "grassland",
+     "savanna",
+     "tropical_forest_edge",
+     "temperate_forest_edge"
+    ],
+    "selectedEcotype": "savanna-edge"
+   },
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-pica-termita-v01-concept",
+    "commit": "f8e6f2011eb9653a0143d7639ff63a044d159855",
+    "data": "2026-11-17T01:16:31Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/pica-termita-v01/manifest.json"
+   }
+  },
+  {
+   "id": "raizauro-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/raizauro-v01/set_raizauro_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/raizauro-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/raizauro-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "raizauro",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": [
+    "capacete mascara fechada",
+    "peitoral",
+    "ombreiras",
+    "manoplas",
+    "cintura e bolsas",
+    "protecao de coxas",
+    "grevas",
+    "botas"
+   ],
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-raizauro-v01-concept",
+    "commit": "5be5ac758d28321353c6db58e8c15df8427587a9",
+    "data": "2026-11-16T14:23:21Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/raizauro-v01/manifest.json"
+   }
+  },
+  {
+   "id": "rambrel-chapadas-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/rambrel-chapadas-v01/sentinela_crista_alta_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/rambrel-chapadas-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/rambrel-chapadas-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": {
+    "id": "rambrel_chapadas",
+    "name": "Rambrél-das-Chapadas",
+    "relation": "giant_subspecies_of_rambrel",
+    "parentSpeciesId": "rambrel",
+    "biome": [
+     "savanna",
+     "chapada_plateau"
+    ],
+    "sourceRepository": "carioca1111/wildhaven-new",
+    "sourceModel": "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-savanna-animated-v03-LOD0.glb",
+    "sourceManifest": "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-lowpoly-manifest-v05.json",
+    "sourcePr": "https://github.com/carioca1111/wildhaven/pull/24",
+    "referenceLod0Triangles": 24627,
+    "referenceJointCount": 17,
+    "referenceAnimationClips": 11
+   },
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-rambrel-chapadas-v01-concept",
+    "commit": "4a2a2b61dd78849e0c28915cd966d9cb9d735d93",
+    "data": "2026-11-17T04:11:31Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/rambrel-chapadas-v01/manifest.json"
+   }
+  },
+  {
+   "id": "rambrel-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/rambrel-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/rambrel-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "rambrel",
+   "status_manifesto": "awaiting_art_approval",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-rambrel-v01-concept",
+    "commit": "0c75476d31ba913ea38a3428d3ca5cb4eb40f655",
+    "data": "2026-11-16T15:03:17Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/rambrel-v01/manifest.json"
+   }
+  },
+  {
+   "id": "serpaduna-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/serpaduna-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/serpaduna-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "serpaduna",
+   "status_manifesto": "awaiting_artistic_approval",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-serpaduna-dunas-v01-concept",
+    "commit": "0ab2d14c280c7bdab3e9e91560036f23293ebb5f",
+    "data": "2026-11-17T12:05:08Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/serpaduna-v01/manifest.json"
+   }
+  },
+  {
+   "id": "serracorion-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/serracorion-v01/carrasco_das_areias_profundas_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/serracorion-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/serracorion-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "serracorion",
+   "status_manifesto": {
+    "concept": "awaiting_user_approval",
+    "artisticApproval": false,
+    "armorGlb": "not_started",
+    "rig": "not_started",
+    "animations": "not_started",
+    "qualityFilter": "pending_future_gate",
+    "alpha": "not_modified",
+    "merge": "draft_only"
+   },
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-serracorion-dunas-v01-concept",
+    "commit": "37208409c2fad91c7c54f029b621dcd5b61fefeb",
+    "data": "2026-11-17T10:04:36Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/serracorion-v01/manifest.json"
+   }
+  },
+  {
+   "id": "set-talvero-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/set-talvero-v01/set_talvero_capacete_conceito_v01.webp"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/set-talvero-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/set-talvero-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "set-talvero",
+   "status_manifesto": "aguardando-aprovacao-do-diretor",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-set-talvero-capacete-conceito-v01",
+    "commit": "17b6f39b5c7116b597e42f560d5620b7426f6d82",
+    "data": "2026-11-16T12:34:58Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/set-talvero-v01/manifest.json"
+   }
+  },
+  {
+   "id": "sevilho-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/sevilho-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/sevilho-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "sevilho",
+   "status_manifesto": "awaiting_art_approval",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-sevilho-v01-concept",
+    "commit": "a5ab1a7d2e99d2536cf83140f87e81544c31ecdb",
+    "data": "2026-11-16T23:05:19Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/sevilho-v01/manifest.json"
+   }
+  },
+  {
+   "id": "silvarano-temperate-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/silvarano-temperate-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/silvarano-temperate-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "silvarano-temperate",
+   "status_manifesto": "AGUARDANDO APROVAÇÃO",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-silvarano-temperate-v01-concept",
+    "commit": "07eba6c0a3a5fbfb5c6e71466dc18aa33eb14301",
+    "data": "2026-11-16T22:40:19Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/silvarano-temperate-v01/manifest.json"
+   }
+  },
+  {
+   "id": "tarruco-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/tarruco-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/tarruco-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "Tarruco (redesenhado)",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-tarruco-v01-concept",
+    "commit": "d92f9f02781fe9e93d7a64e8123e84e4c867ef2c",
+    "data": "2026-11-16T19:59:56Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/tarruco-v01/manifest.json"
+   }
+  },
+  {
+   "id": "torvalho-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/torvalho-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/torvalho-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "torvalho",
+   "status_manifesto": "AGUARDANDO APROVAÇÃO",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-torvalho-temperate-v01-concept",
+    "commit": "356c9a906fb5174f972d07fa33bbf3c3272e0fc9",
+    "data": "2026-11-16T23:33:25Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/torvalho-v01/manifest.json"
+   }
+  },
+  {
+   "id": "torvardo-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/torvardo-v01/set_torvardo_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/torvardo-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/torvardo-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": {
+    "id": "torvardo",
+    "version": "v03-pilot",
+    "biome": "savana",
+    "diet": "herbivoro",
+    "anatomy_confirmed": [
+     "tórax robusto e elevado",
+     "escudo frontal córneo",
+     "dois chifres curvos para fora",
+     "juba geométrica em camadas",
+     "cascos bipartidos"
+    ],
+    "creature_model_status": "blockout-3d-em-revisao-artistica",
+    "reference_glb": "assets/models/creatures/torvardo-v03-pilot/torvardo-v03-anatomy-blockout.glb"
+   },
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-torvardo-v01-concept",
+    "commit": "a4c1bbd653f1aa3271d259ed2ff10528a2e4b4f4",
+    "data": "2026-11-16T13:50:10Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/torvardo-v01/manifest.json"
+   }
+  },
+  {
+   "id": "tufrilo-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/tufrilo-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/tufrilo-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "tufrilo",
+   "status_manifesto": "AGUARDANDO APROVAÇÃO",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-tufrilo-v01-concept",
+    "commit": "08f082d06c6d5f391d29d4b7a24b6f50ac05975a",
+    "data": "2026-11-16T21:39:10Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/tufrilo-v01/manifest.json"
+   }
+  },
+  {
+   "id": "turvagal-v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/turvagal-v01/set_turvagal_conceito_v01.png"
+   ],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/turvagal-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/turvagal-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": {
+    "id": "turvagal",
+    "biome": "savana-ribeirinha",
+    "confirmed_features": [
+     "corpo-pesado",
+     "placas-dorsais",
+     "pescoco-baixo",
+     "paleta-oliva-creme"
+    ]
+   },
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-turvagal-concept-v01",
+    "commit": "728bd23191c53e56b2e119c8ee2712dd7861467a",
+    "data": "2026-11-16T13:01:50Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/turvagal-v01/manifest.json"
+   }
+  },
+  {
+   "id": "v01",
+   "conceitos": [
+    "assets/hunters/hunter-workshop/armor/concepts/v01/01_couro_explorador.webp",
+    "assets/hunters/hunter-workshop/armor/concepts/v01/02_ossos_e_peles.webp",
+    "assets/hunters/hunter-workshop/armor/concepts/v01/03_metal_cacador.webp",
+    "assets/hunters/hunter-workshop/armor/concepts/v01/04_sobrevivente_deserto.webp"
+   ],
+   "manifesto": null,
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "v01",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente conceitual",
+   "origem": null
+  },
+  {
+   "id": "varrisco-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/varrisco-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/varrisco-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "varrisco",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-varrisco-v01-concept",
+    "commit": "2bb79352d6600fc578d149032e76f8140cf6ab81",
+    "data": "2026-11-16T16:58:01Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/varrisco-v01/manifest.json"
+   }
+  },
+  {
+   "id": "velsari-v01",
+   "conceitos": [],
+   "manifesto": "assets/hunters/hunter-workshop/armor/concepts/velsari-v01/manifest.json",
+   "readme": "assets/hunters/hunter-workshop/armor/concepts/velsari-v01/README.md",
+   "modelos": [],
+   "texturas": [],
+   "criatura_base": "velsari",
+   "status_manifesto": "nao localizado",
+   "pecas_no_manifesto": null,
+   "estagio": "somente ficha, sem conceito",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-velsari-v01-concept",
+    "commit": "f5ee3b3371c7174556e472a42242464eb477aa2a",
+    "data": "2026-11-16T19:00:08Z",
+    "caminho": "assets/hunters/hunter-workshop/armor/concepts/velsari-v01/manifest.json"
+   }
+  }
+ ]
+}

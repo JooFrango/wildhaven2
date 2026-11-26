@@ -1,0 +1,129 @@
+{
+ "gerado_em": "2026-11-26T08:28:31.132Z",
+ "versao_implementada": "laboratorio de ecossistema v7 (labs/ia-criaturas)",
+ "versao_v08": "nao existe nos repositorios de origem",
+ "documento_de_projeto": "build real/13-clima-dinamico.md",
+ "arquivos_do_laboratorio": 388,
+ "arquivos_relacionados_a_clima": [
+  {
+   "caminho": "labs/ia-criaturas/config/eco/cenarios/v7-d-tempestade-de-areia.json",
+   "bytes": 2296,
+   "sha_git": "3fbc33fb76fdbfacc9337c19a92d3f88ef06d4d9",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/config/eco/cenarios/v7-d-tempestade-de-areia.json"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/config/eco/cenarios/v7-e-chuva-e-caca.json",
+   "bytes": 1912,
+   "sha_git": "22de6a787069cde0e21b0466a296f3c3c5a6592b",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/config/eco/cenarios/v7-e-chuva-e-caca.json"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/config/eco/cenarios/v7-e-controle-sem-chuva.json",
+   "bytes": 1676,
+   "sha_git": "98ef25fe7764cb22be64cf7f06331fa273c0eab9",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/config/eco/cenarios/v7-e-controle-sem-chuva.json"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/resultados/capturas/v7-chuva-caca.png",
+   "bytes": 325330,
+   "sha_git": "503346af3529919d08668d7952e88695d14dea9b",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/resultados/capturas/v7-chuva-caca.png"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/resultados/capturas/v7-tempestade-1-antes.png",
+   "bytes": 572068,
+   "sha_git": "f775e8b4b28fa8fb9499044b4928b8e844411a1f",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/resultados/capturas/v7-tempestade-1-antes.png"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/resultados/capturas/v7-tempestade-2-durante.png",
+   "bytes": 48597,
+   "sha_git": "5530a9c5c06b16ad02f8cf22f558972c6e24dce0",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/resultados/capturas/v7-tempestade-2-durante.png"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/resultados/capturas/v7-tempestade-3-durante-a-6m.png",
+   "bytes": 232678,
+   "sha_git": "9ebca87f97031aa511a09729a207643142e52992",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/resultados/capturas/v7-tempestade-3-durante-a-6m.png"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/resultados/ia-base-v1/evidencias/01-savana-velsari-chuva.jpg",
+   "bytes": 50485,
+   "sha_git": "f28ae75ca42ac1aea7681062cf7f0ca1530257ab",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/resultados/ia-base-v1/evidencias/01-savana-velsari-chuva.jpg"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/resultados/ia-base-v1/evidencias/02-dunas-tempestade-engolida.jpg",
+   "bytes": 48172,
+   "sha_git": "ef125236a3c4ef73e4783509306a72b7aa231185",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/resultados/ia-base-v1/evidencias/02-dunas-tempestade-engolida.jpg"
+   }
+  },
+  {
+   "caminho": "labs/ia-criaturas/src/eco/clima.js",
+   "bytes": 5293,
+   "sha_git": "b6f2fe3888bcfa789ed857dcd504cd145404ccf7",
+   "origem": {
+    "repo": "carioca1111/wildhaven-new",
+    "branch": "feat/varrisco-v07-retrabalho-fauna",
+    "commit": "7b5e37cea1574a84619d30ab2c2110db4feb7f23",
+    "data": "2026-11-26T05:23:27Z",
+    "caminho": "labs/ia-criaturas/src/eco/clima.js"
+   }
+  }
+ ]
+}

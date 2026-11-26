@@ -1,0 +1,12 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Serra Oriental · Wildhaven</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.181.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.181.0/examples/jsm/"}}</script>
+<canvas aria-label="Serra Oriental jogável"></canvas><div id="hud"></div>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {startRange} from './range.mjs';
+try {
+  const region=await (await fetch('./region_standalone.json')).json();
+  await startRange(THREE,GLTFLoader,region,p=>new URL('../../../'+p,location.href).href);
+} catch(e){document.querySelector('#hud').textContent=String(e);}
+</script></html>

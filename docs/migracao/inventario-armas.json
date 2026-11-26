@@ -1,0 +1,2751 @@
+{
+ "gerado_em": "2026-11-26T08:28:31.228Z",
+ "pasta_de_armas": [
+  "assets/hunters/hunter-workshop/weapons/README.md"
+ ],
+ "total_na_pasta_de_armas": 1,
+ "modelos_glb_de_arma": 0,
+ "arquivos_com_nome_de_arma": [
+  {
+   "caminho": "labs/hunters/docs/PVP-APARO-LAMINA.md",
+   "bytes": 4495,
+   "tipo": "md"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/browser-espada.json",
+   "bytes": 6310,
+   "tipo": "json"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/browser-lanca.json",
+   "bytes": 6730,
+   "tipo": "json"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/capture-espada.log",
+   "bytes": 274,
+   "tipo": "log"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/capture-lanca.log",
+   "bytes": 288,
+   "tipo": "log"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-combat_dodge.png",
+   "bytes": 51463,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-events.json",
+   "bytes": 57121,
+   "tipo": "json"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-final.png",
+   "bytes": 66807,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-hunter_run.png",
+   "bytes": 72589,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-real.webm",
+   "bytes": 1101549,
+   "tipo": "webm"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-sword_follow.png",
+   "bytes": 39999,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-sword_follow_low.png",
+   "bytes": 77649,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-sword_heavy.png",
+   "bytes": 51933,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-sword_heavy_high.png",
+   "bytes": 75119,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/espada-sword_light.png",
+   "bytes": 39990,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-combat_dodge.png",
+   "bytes": 43720,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-events.json",
+   "bytes": 128997,
+   "tipo": "json"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-final.png",
+   "bytes": 75164,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-real.webm",
+   "bytes": 566725,
+   "tipo": "webm"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-spear_follow.png",
+   "bytes": 44427,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-spear_heavy.png",
+   "bytes": 42956,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-spear_heavy_high.png",
+   "bytes": 77894,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-spear_heavy_low.png",
+   "bytes": 107272,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/jogador/lanca-spear_light.png",
+   "bytes": 40726,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/browser-espada.json",
+   "bytes": 9494,
+   "tipo": "json"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/espada-final.png",
+   "bytes": 77702,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/espada-pve1_a_sword_run.png",
+   "bytes": 39162,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/espada-pve1_c_sword_light.png",
+   "bytes": 37767,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/espada-real.webm",
+   "bytes": 467981,
+   "tipo": "webm"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_front_apoioD_0_325.png",
+   "bytes": 73761,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_front_apoioE_0.png",
+   "bytes": 76085,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_front_ciclo_0_648.png",
+   "bytes": 76380,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_front_vooA_0_1625.png",
+   "bytes": 77324,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_front_vooB_0_48750000000000004.png",
+   "bytes": 76665,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_profile_apoioD_0_325.png",
+   "bytes": 71197,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_profile_apoioE_0.png",
+   "bytes": 71915,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_profile_ciclo_0_648.png",
+   "bytes": 71978,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_profile_vooA_0_1625.png",
+   "bytes": 70569,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_profile_vooB_0_48750000000000004.png",
+   "bytes": 70058,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_threequarter_apoioD_0_325.png",
+   "bytes": 74930,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_threequarter_apoioE_0.png",
+   "bytes": 74233,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_threequarter_ciclo_0_648.png",
+   "bytes": 74408,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_threequarter_vooA_0_1625.png",
+   "bytes": 73765,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_a_sword_run_threequarter_vooB_0_48750000000000004.png",
+   "bytes": 82918,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_front_absorcao_0_52.png",
+   "bytes": 79259,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_front_guardReturn_0_998.png",
+   "bytes": 81720,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_front_guard_0.png",
+   "bytes": 81752,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_front_impacto_0_38.png",
+   "bytes": 79235,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_front_posto_0_3.png",
+   "bytes": 78718,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_front_recovery_0_72.png",
+   "bytes": 81227,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_front_subida_0_18.png",
+   "bytes": 80342,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_profile_absorcao_0_52.png",
+   "bytes": 74421,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_profile_guardReturn_0_998.png",
+   "bytes": 74351,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_profile_guard_0.png",
+   "bytes": 74544,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_profile_impacto_0_38.png",
+   "bytes": 73914,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_profile_posto_0_3.png",
+   "bytes": 74713,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_profile_recovery_0_72.png",
+   "bytes": 73092,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_profile_subida_0_18.png",
+   "bytes": 74498,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_threequarter_absorcao_0_52.png",
+   "bytes": 82008,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_threequarter_guardReturn_0_998.png",
+   "bytes": 82473,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_threequarter_guard_0.png",
+   "bytes": 82400,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_threequarter_impacto_0_38.png",
+   "bytes": 81338,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_threequarter_posto_0_3.png",
+   "bytes": 83867,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_threequarter_recovery_0_72.png",
+   "bytes": 83304,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_block_threequarter_subida_0_18.png",
+   "bytes": 82949,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_front_absorve_0_48.png",
+   "bytes": 79433,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_front_agacha_0_1.png",
+   "bytes": 81451,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_front_aterrissa_0_38.png",
+   "bytes": 82035,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_front_guardReturn_0_998.png",
+   "bytes": 81860,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_front_guard_0.png",
+   "bytes": 82074,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_front_impulso_0_2.png",
+   "bytes": 80317,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_front_recovery_0_6.png",
+   "bytes": 78374,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_front_voo_0_29.png",
+   "bytes": 85024,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_profile_absorve_0_48.png",
+   "bytes": 69193,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_profile_agacha_0_1.png",
+   "bytes": 70736,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_profile_aterrissa_0_38.png",
+   "bytes": 70950,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_profile_guardReturn_0_998.png",
+   "bytes": 75091,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_profile_guard_0.png",
+   "bytes": 74853,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_profile_impulso_0_2.png",
+   "bytes": 69535,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_profile_recovery_0_6.png",
+   "bytes": 70277,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_profile_voo_0_29.png",
+   "bytes": 71381,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_threequarter_absorve_0_48.png",
+   "bytes": 82408,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_threequarter_agacha_0_1.png",
+   "bytes": 82696,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_threequarter_aterrissa_0_38.png",
+   "bytes": 83551,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_threequarter_guardReturn_0_998.png",
+   "bytes": 82610,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_threequarter_guard_0.png",
+   "bytes": 82471,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_threequarter_impulso_0_2.png",
+   "bytes": 83239,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_threequarter_recovery_0_6.png",
+   "bytes": 85354,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_left_threequarter_voo_0_29.png",
+   "bytes": 86265,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_front_absorve_0_48.png",
+   "bytes": 76723,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_front_agacha_0_1.png",
+   "bytes": 79159,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_front_aterrissa_0_38.png",
+   "bytes": 78514,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_front_guardReturn_0_998.png",
+   "bytes": 82017,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_front_guard_0.png",
+   "bytes": 81895,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_front_impulso_0_2.png",
+   "bytes": 79114,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_front_recovery_0_6.png",
+   "bytes": 79347,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_front_voo_0_29.png",
+   "bytes": 78137,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_profile_absorve_0_48.png",
+   "bytes": 69805,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_profile_agacha_0_1.png",
+   "bytes": 72679,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_profile_aterrissa_0_38.png",
+   "bytes": 72540,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_profile_guardReturn_0_998.png",
+   "bytes": 75062,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_profile_guard_0.png",
+   "bytes": 75110,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_profile_impulso_0_2.png",
+   "bytes": 70275,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_profile_recovery_0_6.png",
+   "bytes": 68381,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_profile_voo_0_29.png",
+   "bytes": 74315,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_threequarter_absorve_0_48.png",
+   "bytes": 80216,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_threequarter_agacha_0_1.png",
+   "bytes": 81352,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_threequarter_aterrissa_0_38.png",
+   "bytes": 81531,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_threequarter_guardReturn_0_998.png",
+   "bytes": 82614,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_threequarter_guard_0.png",
+   "bytes": 82568,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_threequarter_impulso_0_2.png",
+   "bytes": 78915,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_threequarter_recovery_0_6.png",
+   "bytes": 80561,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_dodge_right_threequarter_voo_0_29.png",
+   "bytes": 84588,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_front_ajuste_1_8.png",
+   "bytes": 81884,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_front_expira_1_2.png",
+   "bytes": 81551,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_front_guardReturn_2_398.png",
+   "bytes": 81814,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_front_guard_0.png",
+   "bytes": 81792,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_front_inspira_0_6.png",
+   "bytes": 81378,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_profile_ajuste_1_8.png",
+   "bytes": 74929,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_profile_expira_1_2.png",
+   "bytes": 74919,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_profile_guardReturn_2_398.png",
+   "bytes": 74574,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_profile_guard_0.png",
+   "bytes": 74592,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_profile_inspira_0_6.png",
+   "bytes": 74249,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_threequarter_ajuste_1_8.png",
+   "bytes": 82674,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_threequarter_expira_1_2.png",
+   "bytes": 82182,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_threequarter_guardReturn_2_398.png",
+   "bytes": 82447,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_threequarter_guard_0.png",
+   "bytes": 82443,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_guard_threequarter_inspira_0_6.png",
+   "bytes": 82678,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_front_ciclo_1_998.png",
+   "bytes": 83874,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_front_expira_0.png",
+   "bytes": 83841,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_front_inspira_0_7.png",
+   "bytes": 83546,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_front_solta_1_4.png",
+   "bytes": 83684,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_profile_ciclo_1_998.png",
+   "bytes": 71825,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_profile_expira_0.png",
+   "bytes": 71847,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_profile_inspira_0_7.png",
+   "bytes": 71958,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_profile_solta_1_4.png",
+   "bytes": 71218,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_threequarter_ciclo_1_998.png",
+   "bytes": 81810,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_threequarter_expira_0.png",
+   "bytes": 81748,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_threequarter_inspira_0_7.png",
+   "bytes": 82422,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_recover_threequarter_solta_1_4.png",
+   "bytes": 81722,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_front_apoioA_0_2125.png",
+   "bytes": 81019,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_front_apoioB_0_6375.png",
+   "bytes": 81948,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_front_guardReturn_0_848.png",
+   "bytes": 80503,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_front_guard_0.png",
+   "bytes": 80655,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_front_troca_0_425.png",
+   "bytes": 82707,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_profile_apoioA_0_2125.png",
+   "bytes": 74473,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_profile_apoioB_0_6375.png",
+   "bytes": 72552,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_profile_guardReturn_0_848.png",
+   "bytes": 76205,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_profile_guard_0.png",
+   "bytes": 76259,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_profile_troca_0_425.png",
+   "bytes": 67186,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_threequarter_apoioA_0_2125.png",
+   "bytes": 82714,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_threequarter_apoioB_0_6375.png",
+   "bytes": 81946,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_threequarter_guardReturn_0_848.png",
+   "bytes": 83141,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_threequarter_guard_0.png",
+   "bytes": 83106,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_back_threequarter_troca_0_425.png",
+   "bytes": 83888,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_front_apoioA_0_2125.png",
+   "bytes": 81689,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_front_apoioB_0_6375.png",
+   "bytes": 81588,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_front_guardReturn_0_848.png",
+   "bytes": 81249,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_front_guard_0.png",
+   "bytes": 81334,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_front_troca_0_425.png",
+   "bytes": 82470,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_profile_apoioA_0_2125.png",
+   "bytes": 74309,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_profile_apoioB_0_6375.png",
+   "bytes": 73950,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_profile_guardReturn_0_848.png",
+   "bytes": 75550,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_profile_guard_0.png",
+   "bytes": 75556,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_profile_troca_0_425.png",
+   "bytes": 68639,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_threequarter_apoioA_0_2125.png",
+   "bytes": 82858,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_threequarter_apoioB_0_6375.png",
+   "bytes": 83325,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_threequarter_guardReturn_0_848.png",
+   "bytes": 83205,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_threequarter_guard_0.png",
+   "bytes": 83160,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_forward_threequarter_troca_0_425.png",
+   "bytes": 84271,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_front_apoioA_0_2125.png",
+   "bytes": 81710,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_front_apoioB_0_6375.png",
+   "bytes": 81079,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_front_guardReturn_0_848.png",
+   "bytes": 82809,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_front_guard_0.png",
+   "bytes": 82834,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_front_troca_0_425.png",
+   "bytes": 79125,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_profile_apoioA_0_2125.png",
+   "bytes": 73853,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_profile_apoioB_0_6375.png",
+   "bytes": 74393,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_profile_guardReturn_0_848.png",
+   "bytes": 74293,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_profile_guard_0.png",
+   "bytes": 74263,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_profile_troca_0_425.png",
+   "bytes": 75298,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_threequarter_apoioA_0_2125.png",
+   "bytes": 82888,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_threequarter_apoioB_0_6375.png",
+   "bytes": 82778,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_threequarter_guardReturn_0_848.png",
+   "bytes": 83890,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_threequarter_guard_0.png",
+   "bytes": 83875,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_left_threequarter_troca_0_425.png",
+   "bytes": 82428,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_front_apoioA_0_2125.png",
+   "bytes": 81313,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_front_apoioB_0_6375.png",
+   "bytes": 81329,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_front_guardReturn_0_848.png",
+   "bytes": 82974,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_front_guard_0.png",
+   "bytes": 82975,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_front_troca_0_425.png",
+   "bytes": 79447,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_profile_apoioA_0_2125.png",
+   "bytes": 74418,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_profile_apoioB_0_6375.png",
+   "bytes": 73456,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_profile_guardReturn_0_848.png",
+   "bytes": 74353,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_profile_guard_0.png",
+   "bytes": 74081,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_profile_troca_0_425.png",
+   "bytes": 74806,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_threequarter_apoioA_0_2125.png",
+   "bytes": 83131,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_threequarter_apoioB_0_6375.png",
+   "bytes": 81915,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_threequarter_guardReturn_0_848.png",
+   "bytes": 84132,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_threequarter_guard_0.png",
+   "bytes": 84274,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_b_sword_step_right_threequarter_troca_0_425.png",
+   "bytes": 81320,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_front_activeEnd_1_05.png",
+   "bytes": 78824,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_front_activeStart_0_82.png",
+   "bytes": 79810,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_front_anticipation_0_25.png",
+   "bytes": 83094,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_front_charge_0_5.png",
+   "bytes": 83435,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_front_contact_0_9333.png",
+   "bytes": 76936,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_front_guardReturn_1_998.png",
+   "bytes": 81647,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_front_guard_0.png",
+   "bytes": 81748,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_front_recovery_1_2.png",
+   "bytes": 78315,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_profile_activeEnd_1_05.png",
+   "bytes": 81609,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_profile_activeStart_0_82.png",
+   "bytes": 75253,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_profile_anticipation_0_25.png",
+   "bytes": 75926,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_profile_charge_0_5.png",
+   "bytes": 79439,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_profile_contact_0_9333.png",
+   "bytes": 80893,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_profile_guardReturn_1_998.png",
+   "bytes": 74394,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_profile_guard_0.png",
+   "bytes": 74551,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_profile_recovery_1_2.png",
+   "bytes": 81403,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_threequarter_activeEnd_1_05.png",
+   "bytes": 74500,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_threequarter_activeStart_0_82.png",
+   "bytes": 79697,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_threequarter_anticipation_0_25.png",
+   "bytes": 83263,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_threequarter_charge_0_5.png",
+   "bytes": 89033,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_threequarter_contact_0_9333.png",
+   "bytes": 76586,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_threequarter_guardReturn_1_998.png",
+   "bytes": 82522,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_threequarter_guard_0.png",
+   "bytes": 82398,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_heavy_threequarter_recovery_1_2.png",
+   "bytes": 73066,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_front_activeEnd_0_5.png",
+   "bytes": 77600,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_front_activeStart_0_3.png",
+   "bytes": 83544,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_front_anticipation_0_14.png",
+   "bytes": 83029,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_front_charge_0_24.png",
+   "bytes": 82491,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_front_contact_0_4167.png",
+   "bytes": 77636,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_front_guardReturn_1_148.png",
+   "bytes": 81584,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_front_guard_0.png",
+   "bytes": 81670,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_front_recovery_0_56.png",
+   "bytes": 77449,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_profile_activeEnd_0_5.png",
+   "bytes": 83402,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_profile_activeStart_0_3.png",
+   "bytes": 77932,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_profile_anticipation_0_14.png",
+   "bytes": 76267,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_profile_charge_0_24.png",
+   "bytes": 80391,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_profile_contact_0_4167.png",
+   "bytes": 81660,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_profile_guardReturn_1_148.png",
+   "bytes": 74341,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_profile_guard_0.png",
+   "bytes": 74468,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_profile_recovery_0_56.png",
+   "bytes": 81742,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_threequarter_activeEnd_0_5.png",
+   "bytes": 73836,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_threequarter_activeStart_0_3.png",
+   "bytes": 84751,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_threequarter_anticipation_0_14.png",
+   "bytes": 81535,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_threequarter_charge_0_24.png",
+   "bytes": 85989,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_threequarter_contact_0_4167.png",
+   "bytes": 75099,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_threequarter_guardReturn_1_148.png",
+   "bytes": 82410,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_threequarter_guard_0.png",
+   "bytes": 82318,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pose_pve1_c_sword_light_threequarter_recovery_0_56.png",
+   "bytes": 74553,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_a_sword_run_front.gif",
+   "bytes": 227733,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_a_sword_run_profile.gif",
+   "bytes": 227797,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_a_sword_run_threequarter.gif",
+   "bytes": 243980,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_block_front.gif",
+   "bytes": 364604,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_block_profile.gif",
+   "bytes": 358923,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_block_threequarter.gif",
+   "bytes": 389551,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_dodge_left_front.gif",
+   "bytes": 367206,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_dodge_left_profile.gif",
+   "bytes": 344176,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_dodge_left_threequarter.gif",
+   "bytes": 394051,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_dodge_right_front.gif",
+   "bytes": 356865,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_dodge_right_profile.gif",
+   "bytes": 349975,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_dodge_right_threequarter.gif",
+   "bytes": 390797,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_guard_front.gif",
+   "bytes": 902130,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_guard_profile.gif",
+   "bytes": 875361,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_guard_threequarter.gif",
+   "bytes": 950838,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_recover_front.gif",
+   "bytes": 764728,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_recover_profile.gif",
+   "bytes": 698862,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_recover_threequarter.gif",
+   "bytes": 774994,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_back_front.gif",
+   "bytes": 323257,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_back_profile.gif",
+   "bytes": 305801,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_back_threequarter.gif",
+   "bytes": 342307,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_forward_front.gif",
+   "bytes": 323093,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_forward_profile.gif",
+   "bytes": 307322,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_forward_threequarter.gif",
+   "bytes": 342442,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_left_front.gif",
+   "bytes": 319909,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_left_profile.gif",
+   "bytes": 315923,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_left_threequarter.gif",
+   "bytes": 343001,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_right_front.gif",
+   "bytes": 320173,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_right_profile.gif",
+   "bytes": 315384,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_b_sword_step_right_threequarter.gif",
+   "bytes": 342430,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_c_sword_heavy_front.gif",
+   "bytes": 742514,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_c_sword_heavy_profile.gif",
+   "bytes": 738787,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_c_sword_heavy_threequarter.gif",
+   "bytes": 774195,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_c_sword_light_front.gif",
+   "bytes": 426286,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_c_sword_light_profile.gif",
+   "bytes": 428383,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve-v01/pve1_c_sword_light_threequarter.gif",
+   "bytes": 443608,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_jog_frente.mp4",
+   "bytes": 211980,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_jog_perfil.mp4",
+   "bytes": 129533,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_jog_perfil_a.png",
+   "bytes": 319775,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_jog_perfil_b.png",
+   "bytes": 317393,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_jog_perfil_c.png",
+   "bytes": 319666,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_jog_perfil_d.png",
+   "bytes": 318433,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_jog_tres-quartos.mp4",
+   "bytes": 180511,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_run_frente.mp4",
+   "bytes": 221333,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_run_perfil.mp4",
+   "bytes": 145341,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_run_perfil_a.png",
+   "bytes": 318674,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_run_perfil_b.png",
+   "bytes": 319964,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_run_perfil_c.png",
+   "bytes": 320116,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_run_perfil_d.png",
+   "bytes": 320967,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_run_tres-quartos.mp4",
+   "bytes": 193736,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_walk_frente.mp4",
+   "bytes": 262061,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_walk_perfil.mp4",
+   "bytes": 147715,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_walk_perfil_a.png",
+   "bytes": 317080,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_walk_perfil_b.png",
+   "bytes": 312020,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_walk_perfil_c.png",
+   "bytes": 319733,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_walk_perfil_d.png",
+   "bytes": 312240,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_a_sword_walk_tres-quartos.mp4",
+   "bytes": 217523,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_guard_frente.mp4",
+   "bytes": 104056,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_guard_perfil.mp4",
+   "bytes": 86001,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_guard_perfil_a.png",
+   "bytes": 317544,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_guard_perfil_b.png",
+   "bytes": 317286,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_guard_perfil_c.png",
+   "bytes": 317563,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_guard_perfil_d.png",
+   "bytes": 317406,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_guard_tres-quartos.mp4",
+   "bytes": 140906,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_frente.mp4",
+   "bytes": 79487,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_perfil.mp4",
+   "bytes": 70558,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_perfil_antecipacao.png",
+   "bytes": 342896,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_perfil_contato.png",
+   "bytes": 342896,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_perfil_continuacao.png",
+   "bytes": 342896,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_tres-quartos.mp4",
+   "bytes": 101386,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_tres-quartos_antecipacao.png",
+   "bytes": 481532,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_tres-quartos_contato.png",
+   "bytes": 481532,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_left_tres-quartos_continuacao.png",
+   "bytes": 481532,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_frente.mp4",
+   "bytes": 78398,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_perfil.mp4",
+   "bytes": 72437,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_perfil_antecipacao.png",
+   "bytes": 347611,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_perfil_contato.png",
+   "bytes": 347611,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_perfil_continuacao.png",
+   "bytes": 347611,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_tres-quartos.mp4",
+   "bytes": 109863,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_tres-quartos_antecipacao.png",
+   "bytes": 487647,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_tres-quartos_contato.png",
+   "bytes": 487647,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_b_sword_roll_right_tres-quartos_continuacao.png",
+   "bytes": 487647,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_frente.mp4",
+   "bytes": 28887,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_perfil.mp4",
+   "bytes": 32822,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_perfil_antecipacao.png",
+   "bytes": 353862,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_perfil_contato.png",
+   "bytes": 353862,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_perfil_continuacao.png",
+   "bytes": 353862,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_tres-quartos.mp4",
+   "bytes": 57971,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_tres-quartos_antecipacao.png",
+   "bytes": 484210,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_tres-quartos_contato.png",
+   "bytes": 484210,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_loop_tres-quartos_continuacao.png",
+   "bytes": 484210,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_frente.mp4",
+   "bytes": 70138,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_perfil.mp4",
+   "bytes": 63133,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_perfil_antecipacao.png",
+   "bytes": 354554,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_perfil_contato.png",
+   "bytes": 343856,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_perfil_continuacao.png",
+   "bytes": 341894,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_tres-quartos.mp4",
+   "bytes": 104127,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_tres-quartos_antecipacao.png",
+   "bytes": 485702,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_tres-quartos_contato.png",
+   "bytes": 481974,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_charge_release_tres-quartos_continuacao.png",
+   "bytes": 482431,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_frente.mp4",
+   "bytes": 58248,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_perfil.mp4",
+   "bytes": 51699,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_perfil_antecipacao.png",
+   "bytes": 357413,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_perfil_contato.png",
+   "bytes": 344185,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_perfil_continuacao.png",
+   "bytes": 345336,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_tres-quartos.mp4",
+   "bytes": 77015,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_tres-quartos_antecipacao.png",
+   "bytes": 489308,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_tres-quartos_contato.png",
+   "bytes": 478236,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_1_tres-quartos_continuacao.png",
+   "bytes": 481020,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_frente.mp4",
+   "bytes": 55711,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_perfil.mp4",
+   "bytes": 49744,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_perfil_antecipacao.png",
+   "bytes": 341561,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_perfil_contato.png",
+   "bytes": 349365,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_perfil_continuacao.png",
+   "bytes": 348997,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_tres-quartos.mp4",
+   "bytes": 74221,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_tres-quartos_antecipacao.png",
+   "bytes": 478710,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_tres-quartos_contato.png",
+   "bytes": 483222,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_2_tres-quartos_continuacao.png",
+   "bytes": 483925,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_frente.mp4",
+   "bytes": 73138,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_perfil.mp4",
+   "bytes": 64653,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_perfil_antecipacao.png",
+   "bytes": 352055,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_perfil_contato.png",
+   "bytes": 341910,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_perfil_continuacao.png",
+   "bytes": 345858,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_tres-quartos.mp4",
+   "bytes": 100200,
+   "tipo": "mp4"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_tres-quartos_antecipacao.png",
+   "bytes": 484986,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_tres-quartos_contato.png",
+   "bytes": 480407,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_combo_3_tres-quartos_continuacao.png",
+   "bytes": 484312,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_jump_slash_perfil_antecipacao.png",
+   "bytes": 353182,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_jump_slash_perfil_contato.png",
+   "bytes": 341358,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_jump_slash_perfil_continuacao.png",
+   "bytes": 341949,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_jump_slash_tres-quartos_antecipacao.png",
+   "bytes": 484979,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_jump_slash_tres-quartos_contato.png",
+   "bytes": 480957,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pve2-e4/pve2_c_sword_jump_slash_tres-quartos_continuacao.png",
+   "bytes": 481655,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_01_ready.gif",
+   "bytes": 100326,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_01_ready.png",
+   "bytes": 149987,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_02_slash_right.gif",
+   "bytes": 77824,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_02_slash_right.png",
+   "bytes": 157503,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_03_slash_left.gif",
+   "bytes": 78557,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_03_slash_left.png",
+   "bytes": 155091,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_04_overhead.gif",
+   "bytes": 104497,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_04_overhead.png",
+   "bytes": 153158,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_05_thrust.gif",
+   "bytes": 77396,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_05_thrust.png",
+   "bytes": 153463,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_06_guard_high.gif",
+   "bytes": 86686,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_06_guard_high.png",
+   "bytes": 155762,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_07_parry.gif",
+   "bytes": 64024,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_07_parry.png",
+   "bytes": 156221,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_08_dodge.gif",
+   "bytes": 77151,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_08_dodge.png",
+   "bytes": 154058,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_09_take_hit.gif",
+   "bytes": 67209,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_09_take_hit.png",
+   "bytes": 161532,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_10_kneel_injured.gif",
+   "bytes": 117653,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v06/pvp_sword_10_kneel_injured.png",
+   "bytes": 151565,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v07/pvp07_sword_horizontal_review.gif",
+   "bytes": 329964,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v08/pvp08_sword_horizontal_review_front.gif",
+   "bytes": 318784,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v08/pvp08_sword_horizontal_review_threequarter.gif",
+   "bytes": 329655,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v09/pvp09_sword_horizontal_cut_front.gif",
+   "bytes": 713178,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v09/pvp09_sword_horizontal_cut_profile.gif",
+   "bytes": 709469,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v09/pvp09_sword_horizontal_cut_threequarter.gif",
+   "bytes": 733526,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v10/pvp10_sword_horizontal_cut_front.gif",
+   "bytes": 716923,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v10/pvp10_sword_horizontal_cut_profile.gif",
+   "bytes": 714691,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v10/pvp10_sword_horizontal_cut_threequarter.gif",
+   "bytes": 737712,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v11/pvp11_sword_horizontal_reverse_cut_front.gif",
+   "bytes": 717282,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v11/pvp11_sword_horizontal_reverse_cut_profile.gif",
+   "bytes": 699859,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v11/pvp11_sword_horizontal_reverse_cut_threequarter.gif",
+   "bytes": 737736,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_front_absorcao_0_52.png",
+   "bytes": 80338,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_front_guardReturn_1_098.png",
+   "bytes": 85689,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_front_guard_0.png",
+   "bytes": 85557,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_front_impacto_0_38.png",
+   "bytes": 80806,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_front_posto_0_3.png",
+   "bytes": 78925,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_front_recovery_0_78.png",
+   "bytes": 83173,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_front_subida_0_16.png",
+   "bytes": 81079,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_profile_absorcao_0_52.png",
+   "bytes": 76459,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_profile_guardReturn_1_098.png",
+   "bytes": 73099,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_profile_guard_0.png",
+   "bytes": 73048,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_profile_impacto_0_38.png",
+   "bytes": 75479,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_profile_posto_0_3.png",
+   "bytes": 75023,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_profile_recovery_0_78.png",
+   "bytes": 74517,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_profile_subida_0_16.png",
+   "bytes": 74386,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_threequarter_absorcao_0_52.png",
+   "bytes": 81047,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_threequarter_guardReturn_1_098.png",
+   "bytes": 83185,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_threequarter_guard_0.png",
+   "bytes": 83119,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_threequarter_impacto_0_38.png",
+   "bytes": 80282,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_threequarter_posto_0_3.png",
+   "bytes": 81979,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_threequarter_recovery_0_78.png",
+   "bytes": 82033,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_block_threequarter_subida_0_16.png",
+   "bytes": 81354,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_front_charge_0_55.png",
+   "bytes": 83775,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_front_contact_0_9667.png",
+   "bytes": 78581,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_front_continuation_1_1.png",
+   "bytes": 79220,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_front_execution_0_8.png",
+   "bytes": 80735,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_front_guardReturn_2_0980000000000003.png",
+   "bytes": 86063,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_front_guard_0.png",
+   "bytes": 86040,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_front_preparation_0_3.png",
+   "bytes": 83387,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_front_recovery_1_62.png",
+   "bytes": 80430,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_profile_charge_0_55.png",
+   "bytes": 81431,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_profile_contact_0_9667.png",
+   "bytes": 82060,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_profile_continuation_1_1.png",
+   "bytes": 84859,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_profile_execution_0_8.png",
+   "bytes": 75462,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_profile_guardReturn_2_0980000000000003.png",
+   "bytes": 73577,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_profile_guard_0.png",
+   "bytes": 73431,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_profile_preparation_0_3.png",
+   "bytes": 81128,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_profile_recovery_1_62.png",
+   "bytes": 72826,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_threequarter_charge_0_55.png",
+   "bytes": 85906,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_threequarter_contact_0_9667.png",
+   "bytes": 76550,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_threequarter_continuation_1_1.png",
+   "bytes": 73434,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_threequarter_execution_0_8.png",
+   "bytes": 80177,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_threequarter_guardReturn_2_0980000000000003.png",
+   "bytes": 83628,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_threequarter_guard_0.png",
+   "bytes": 83624,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_threequarter_preparation_0_3.png",
+   "bytes": 82046,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_diagonal_down_threequarter_recovery_1_62.png",
+   "bytes": 79107,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_charge_0_44.png",
+   "bytes": 82322,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_contact_0_84.png",
+   "bytes": 77402,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_contact_0_9167.png",
+   "bytes": 76620,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_continuation_1_02.png",
+   "bytes": 78194,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_execution_0_7.png",
+   "bytes": 81799,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_guardReturn_1_898.png",
+   "bytes": 85751,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_guard_0.png",
+   "bytes": 85865,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_preparation_0_24.png",
+   "bytes": 84273,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_front_recovery_1_52.png",
+   "bytes": 79728,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_charge_0_44.png",
+   "bytes": 80492,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_contact_0_84.png",
+   "bytes": 80131,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_contact_0_9167.png",
+   "bytes": 84464,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_continuation_1_02.png",
+   "bytes": 83374,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_execution_0_7.png",
+   "bytes": 71192,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_guardReturn_1_898.png",
+   "bytes": 73468,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_guard_0.png",
+   "bytes": 73293,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_preparation_0_24.png",
+   "bytes": 77831,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_profile_recovery_1_52.png",
+   "bytes": 72848,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_charge_0_44.png",
+   "bytes": 82575,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_contact_0_84.png",
+   "bytes": 75546,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_contact_0_9167.png",
+   "bytes": 75391,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_continuation_1_02.png",
+   "bytes": 75935,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_execution_0_7.png",
+   "bytes": 81462,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_guardReturn_1_898.png",
+   "bytes": 83439,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_guard_0.png",
+   "bytes": 83370,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_preparation_0_24.png",
+   "bytes": 81646,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_cut_threequarter_recovery_1_52.png",
+   "bytes": 81423,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_front_charge_0_42.png",
+   "bytes": 80396,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_front_contact_0_8833.png",
+   "bytes": 79796,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_front_continuation_1_02.png",
+   "bytes": 83001,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_front_execution_0_7.png",
+   "bytes": 78475,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_front_guardReturn_1_898.png",
+   "bytes": 86150,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_front_guard_0.png",
+   "bytes": 86150,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_front_preparation_0_22.png",
+   "bytes": 81086,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_front_recovery_1_4.png",
+   "bytes": 85169,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_profile_charge_0_42.png",
+   "bytes": 73751,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_profile_contact_0_8833.png",
+   "bytes": 78473,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_profile_continuation_1_02.png",
+   "bytes": 76233,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_profile_execution_0_7.png",
+   "bytes": 72303,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_profile_guardReturn_1_898.png",
+   "bytes": 73564,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_profile_guard_0.png",
+   "bytes": 73559,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_profile_preparation_0_22.png",
+   "bytes": 74682,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_profile_recovery_1_4.png",
+   "bytes": 71122,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_threequarter_charge_0_42.png",
+   "bytes": 80982,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_threequarter_contact_0_8833.png",
+   "bytes": 79510,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_threequarter_continuation_1_02.png",
+   "bytes": 79646,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_threequarter_execution_0_7.png",
+   "bytes": 81034,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_threequarter_guardReturn_1_898.png",
+   "bytes": 83795,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_threequarter_guard_0.png",
+   "bytes": 83658,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_threequarter_preparation_0_22.png",
+   "bytes": 82525,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_horizontal_reverse_cut_threequarter_recovery_1_4.png",
+   "bytes": 82866,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_front_carga_0_32.png",
+   "bytes": 81613,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_front_contact_0_5833.png",
+   "bytes": 75913,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_front_disparo_0_52.png",
+   "bytes": 75027,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_front_guardReturn_1_498.png",
+   "bytes": 85646,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_front_guard_0.png",
+   "bytes": 85581,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_front_recolhe_0_18.png",
+   "bytes": 83590,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_front_recovery_1_1.png",
+   "bytes": 83284,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_front_retorno_0_84.png",
+   "bytes": 78814,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_profile_carga_0_32.png",
+   "bytes": 76694,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_profile_contact_0_5833.png",
+   "bytes": 86205,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_profile_disparo_0_52.png",
+   "bytes": 82619,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_profile_guardReturn_1_498.png",
+   "bytes": 73060,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_profile_guard_0.png",
+   "bytes": 72999,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_profile_recolhe_0_18.png",
+   "bytes": 77821,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_profile_recovery_1_1.png",
+   "bytes": 72485,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_profile_retorno_0_84.png",
+   "bytes": 75038,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_threequarter_carga_0_32.png",
+   "bytes": 81374,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_threequarter_contact_0_5833.png",
+   "bytes": 76511,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_threequarter_disparo_0_52.png",
+   "bytes": 76639,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_threequarter_guardReturn_1_498.png",
+   "bytes": 83043,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_threequarter_guard_0.png",
+   "bytes": 83131,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_threequarter_recolhe_0_18.png",
+   "bytes": 82993,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_threequarter_recovery_1_1.png",
+   "bytes": 82818,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pose_pvp12_sword_thrust_threequarter_retorno_0_84.png",
+   "bytes": 77555,
+   "tipo": "png"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_block_front.gif",
+   "bytes": 424875,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_block_profile.gif",
+   "bytes": 408604,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_block_threequarter.gif",
+   "bytes": 434852,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_diagonal_down_front.gif",
+   "bytes": 791593,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_diagonal_down_profile.gif",
+   "bytes": 793251,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_diagonal_down_threequarter.gif",
+   "bytes": 810621,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_horizontal_cut_front.gif",
+   "bytes": 714763,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_horizontal_cut_profile.gif",
+   "bytes": 710729,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_horizontal_cut_threequarter.gif",
+   "bytes": 736923,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_horizontal_reverse_cut_front.gif",
+   "bytes": 720700,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_horizontal_reverse_cut_profile.gif",
+   "bytes": 686534,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_horizontal_reverse_cut_threequarter.gif",
+   "bytes": 742660,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_thrust_front.gif",
+   "bytes": 567059,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_thrust_profile.gif",
+   "bytes": 560483,
+   "tipo": "gif"
+  },
+  {
+   "caminho": "labs/hunters/resultados/pvp-v12/pvp12_sword_thrust_threequarter.gif",
+   "bytes": 582247,
+   "tipo": "gif"
+  }
+ ],
+ "observacao": "Nenhum modelo de arma existe. Os arquivos listados sao resultados de laboratorio de combate (renders, eventos, videos) e documentos, nao assets de arma."
+}

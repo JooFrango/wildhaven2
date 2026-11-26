@@ -1,0 +1,301 @@
+{
+  "tiles": [
+    {
+      "id": "F_E3",
+      "center_x": 21650.635094610967,
+      "center_z": 0,
+      "model_path": "world/forest-continuity-v02/models/f_e3_floresta_5km_v02.glb"
+    },
+    {
+      "id": "PL_E_N",
+      "center_x": 23815.698604072062,
+      "center_z": 3750,
+      "model_path": "world/plains-east-gap-30/models/34_pradaria_dos_ventos_leste_5km.glb"
+    },
+    {
+      "id": "PL_E_E",
+      "center_x": 25980.762113533157,
+      "center_z": 7500,
+      "model_path": "world/plains-east-gap-30/models/35_planicie_rochas_claras_5km.glb"
+    },
+    {
+      "id": "FX_02",
+      "center_x": 12990.381056766579,
+      "center_z": -22500,
+      "model_path": "world/forest-extension-21-v01/models/fx_02_5km_v01.glb"
+    },
+    {
+      "id": "FX_03",
+      "center_x": 17320.508075688773,
+      "center_z": -22500,
+      "model_path": "world/forest-extension-21-v01/models/fx_03_5km_v01.glb"
+    },
+    {
+      "id": "FX_07",
+      "center_x": 19485.571585149868,
+      "center_z": -18750,
+      "model_path": "world/forest-extension-21-v01/models/fx_07_5km_v01.glb"
+    },
+    {
+      "id": "FX_11",
+      "center_x": 21650.635094610967,
+      "center_z": -15000,
+      "model_path": "world/forest-extension-21-v01/models/fx_11_5km_v01.glb"
+    },
+    {
+      "id": "FX_16",
+      "center_x": 23815.698604072062,
+      "center_z": -11250,
+      "model_path": "world/forest-extension-21-v01/models/fx_16_5km_v01.glb"
+    },
+    {
+      "id": "FX_19",
+      "center_x": 21650.635094610967,
+      "center_z": -7500,
+      "model_path": "world/forest-extension-21-v01/models/fx_19_5km_v01.glb"
+    },
+    {
+      "id": "FX_20",
+      "center_x": 25980.762113533157,
+      "center_z": -7500,
+      "model_path": "world/forest-extension-21-v01/models/fx_20_5km_v01.glb"
+    },
+    {
+      "id": "FX_21",
+      "center_x": 19485.571585149868,
+      "center_z": -3750,
+      "model_path": "world/forest-extension-21-v01/models/fx_21_5km_v01.glb"
+    },
+    {
+      "id": "ER_01",
+      "center_x": 12990.381056766579,
+      "center_z": -30000,
+      "model_path": "world/playable-eastern-range-v04/models/er_01_5km_v04.glb"
+    },
+    {
+      "id": "ER_02",
+      "center_x": 17320.508075688773,
+      "center_z": -30000,
+      "model_path": "world/playable-eastern-range-v04/models/er_02_5km_v04.glb"
+    },
+    {
+      "id": "ER_03",
+      "center_x": 21650.635094610967,
+      "center_z": -30000,
+      "model_path": "world/playable-eastern-range-v04/models/er_03_5km_v04.glb"
+    },
+    {
+      "id": "ER_04",
+      "center_x": 15155.444566227676,
+      "center_z": -26250,
+      "model_path": "world/playable-eastern-range-v04/models/er_04_5km_v04.glb"
+    },
+    {
+      "id": "ER_05",
+      "center_x": 19485.571585149868,
+      "center_z": -26250,
+      "model_path": "world/playable-eastern-range-v04/models/er_05_5km_v04.glb"
+    },
+    {
+      "id": "ER_06",
+      "center_x": 23815.698604072062,
+      "center_z": -26250,
+      "model_path": "world/playable-eastern-range-v04/models/er_06_5km_v04.glb"
+    },
+    {
+      "id": "ER_07",
+      "center_x": 21650.635094610967,
+      "center_z": -22500,
+      "model_path": "world/playable-eastern-range-v04/models/er_07_5km_v04.glb"
+    },
+    {
+      "id": "ER_08",
+      "center_x": 25980.762113533157,
+      "center_z": -22500,
+      "model_path": "world/playable-eastern-range-v04/models/er_08_5km_v04.glb"
+    },
+    {
+      "id": "ER_09",
+      "center_x": 23815.698604072062,
+      "center_z": -18750,
+      "model_path": "world/playable-eastern-range-v04/models/er_09_5km_v04.glb"
+    },
+    {
+      "id": "ER_10",
+      "center_x": 28145.825622994256,
+      "center_z": -18750,
+      "model_path": "world/playable-eastern-range-v04/models/er_10_5km_v04.glb"
+    },
+    {
+      "id": "ER_11",
+      "center_x": 32475.95264191645,
+      "center_z": -18750,
+      "model_path": "world/playable-eastern-range-v04/models/er_11_5km_v04.glb"
+    },
+    {
+      "id": "ER_12",
+      "center_x": 25980.762113533157,
+      "center_z": -15000,
+      "model_path": "world/playable-eastern-range-v04/models/er_12_5km_v04.glb"
+    },
+    {
+      "id": "ER_13",
+      "center_x": 30310.88913245535,
+      "center_z": -15000,
+      "model_path": "world/playable-eastern-range-v04/models/er_13_5km_v04.glb"
+    },
+    {
+      "id": "ER_14",
+      "center_x": 34641.016151377546,
+      "center_z": -15000,
+      "model_path": "world/playable-eastern-range-v04/models/er_14_5km_v04.glb"
+    },
+    {
+      "id": "ER_15",
+      "center_x": 28145.825622994256,
+      "center_z": -11250,
+      "model_path": "world/playable-eastern-range-v04/models/er_15_5km_v04.glb"
+    },
+    {
+      "id": "ER_16",
+      "center_x": 32475.95264191645,
+      "center_z": -11250,
+      "model_path": "world/playable-eastern-range-v04/models/er_16_5km_v04.glb"
+    },
+    {
+      "id": "ER_17",
+      "center_x": 36806.079660838644,
+      "center_z": -11250,
+      "model_path": "world/playable-eastern-range-v04/models/er_17_5km_v04.glb"
+    },
+    {
+      "id": "ER_18",
+      "center_x": 30310.88913245535,
+      "center_z": -7500,
+      "model_path": "world/playable-eastern-range-v04/models/er_18_5km_v04.glb"
+    },
+    {
+      "id": "ER_19",
+      "center_x": 34641.016151377546,
+      "center_z": -7500,
+      "model_path": "world/playable-eastern-range-v04/models/er_19_5km_v04.glb"
+    },
+    {
+      "id": "ER_20",
+      "center_x": 38971.143170299736,
+      "center_z": -7500,
+      "model_path": "world/playable-eastern-range-v04/models/er_20_5km_v04.glb"
+    },
+    {
+      "id": "ER_21",
+      "center_x": 23815.698604072062,
+      "center_z": -3750,
+      "model_path": "world/playable-eastern-range-v04/models/er_21_5km_v04.glb"
+    },
+    {
+      "id": "ER_22",
+      "center_x": 32475.95264191645,
+      "center_z": -3750,
+      "model_path": "world/playable-eastern-range-v04/models/er_22_5km_v04.glb"
+    },
+    {
+      "id": "ER_23",
+      "center_x": 36806.079660838644,
+      "center_z": -3750,
+      "model_path": "world/playable-eastern-range-v04/models/er_23_5km_v04.glb"
+    },
+    {
+      "id": "ER_24",
+      "center_x": 25980.762113533157,
+      "center_z": 0,
+      "model_path": "world/playable-eastern-range-v04/models/er_24_5km_v04.glb"
+    },
+    {
+      "id": "ER_25",
+      "center_x": 30310.88913245535,
+      "center_z": 0,
+      "model_path": "world/playable-eastern-range-v04/models/er_25_5km_v04.glb"
+    },
+    {
+      "id": "ER_26",
+      "center_x": 34641.016151377546,
+      "center_z": 0,
+      "model_path": "world/playable-eastern-range-v04/models/er_26_5km_v04.glb"
+    },
+    {
+      "id": "ER_27",
+      "center_x": 28145.825622994256,
+      "center_z": 3750,
+      "model_path": "world/playable-eastern-range-v04/models/er_27_5km_v04.glb"
+    },
+    {
+      "id": "ER_28",
+      "center_x": 32475.95264191645,
+      "center_z": 3750,
+      "model_path": "world/playable-eastern-range-v04/models/er_28_5km_v04.glb"
+    },
+    {
+      "id": "ER_29",
+      "center_x": 36806.079660838644,
+      "center_z": 3750,
+      "model_path": "world/playable-eastern-range-v04/models/er_29_5km_v04.glb"
+    }
+  ],
+  "spawn": [
+    23807.8112,
+    -15711.80556
+  ],
+  "max_slope_deg": 37,
+  "obstacles": [
+    {
+      "kind": "water",
+      "x": 21029.0,
+      "z": -23500.0,
+      "rx": 155.0,
+      "rz": 128.0
+    },
+    {
+      "kind": "wall",
+      "x": 30794.0,
+      "z": -15700.0,
+      "rx": 2.75,
+      "rz": 2.5
+    },
+    {
+      "kind": "wall",
+      "x": 30828.0,
+      "z": -15700.0,
+      "rx": 2.75,
+      "rz": 2.5
+    },
+    {
+      "kind": "wall",
+      "x": 30794.0,
+      "z": -15685.0,
+      "rx": 2.75,
+      "rz": 2.5
+    },
+    {
+      "kind": "wall",
+      "x": 30828.0,
+      "z": -15685.0,
+      "rx": 2.75,
+      "rz": 2.5
+    },
+    {
+      "kind": "wall",
+      "x": 30811.0,
+      "z": -15677.0,
+      "rx": 2.75,
+      "rz": 2.5
+    },
+    {
+      "kind": "water",
+      "x": 33718.0,
+      "z": -11300.0,
+      "rx": 138.0,
+      "rz": 105.0
+    }
+  ],
+  "routes_file": "routes.json"
+}
