@@ -18,6 +18,12 @@
 - **FPS em GPU real não medido.** O teste de runtime usou Chromium headless com renderização por software (SwiftShader). Os 1–2 FPS observados ali **não** representam desempenho.
 - **Ainda não existe:** occlusion culling, LOD/HLOD visual, múltiplos Hunters em cena, criaturas, combate em gameplay, salvamento de travessias no reload (só o log no PostgreSQL), autenticação e contas.
 
+### Escala da vegetação — NÃO intencional (confirmado pelo diretor em 26/11/2026)
+- Árvores medidas: **103–279 m** de altura, com troncos de 3–10 m de raio (até 87 m em Emergente_1, por causa das raízes). Na mesma vila, as casas têm 5,9–6,6 m e a torre 13,9 m.
+- Origem: as árvores da v12 (FX_20) foram copiadas com a malha preservada para a floresta da vila (`hv_01_forest.glb`, README da vila). Os 77 costeiros copiaram a vila, o sul tropical e os `shrubs` da v12 com escala de instância 0,72–1,18. **O erro vem da base v12.**
+- Efeito na física: os troncos v12 são classificados como `trunk` (bloqueio). As áreas bloqueadas por árvores nos pacotes WHP1 e nos 223 hexes certificados estão **infladas**. A certificação técnica continua coerente com os GLBs atuais, mas a colisão de gameplay perto de árvores não está validada.
+- Pendente: altura-alvo por espécie e escopo da correção (definidos pelo diretor). A correção deve sair em versões novas dos GLBs, sem sobrescrever os atuais.
+
 ## Descartado (e por quê)
 
 | Item | Decisão | Motivo |
