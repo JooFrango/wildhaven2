@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wildhaven · Litoral V01</title><link rel="icon" href="data:,">
+<style>*{box-sizing:border-box}body{margin:0;background:#bbd3de;font:14px system-ui;color:#edf4f0}canvas{display:block;width:100vw;height:100vh}nav{position:fixed;top:16px;left:16px;background:#152923e8;border-radius:5px;padding:10px;display:flex;gap:8px;align-items:center}select{font:inherit;max-width:30vw}output{position:fixed;bottom:15px;left:16px;background:#203732;color:white;padding:6px}output:empty{display:none}</style>
+<canvas></canvas><nav><a href="/viewer/continente.html" style="color:inherit">Continente completo</a><select aria-label="Protótipo" id="tipo"></select><select aria-label="Câmera" id="vista"></select></nav><output>Carregando terreno…</output>
+<script>const alpha=new URLSearchParams(location.search).has('alpha');const map=document.createElement('script');map.type='importmap';map.textContent=JSON.stringify({imports:{three:alpha?'/alpha/build/three.module.js':'/vendor/three.module.min.js','three/addons/':alpha?'/alpha/examples/jsm/':'/vendor/addons/'}});document.head.append(map)</script>
+<script type="module">
+import('/viewer/coast.mjs').catch(error=>{
+    document.querySelector('output').textContent='Falha ao iniciar a visualização 3D. '+error.message;
+});
+</script></html>

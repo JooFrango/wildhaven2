@@ -1,0 +1,75 @@
+{
+  "nx": 614,
+  "ny": 768,
+  "width_m": 6400000,
+  "height_m": 8000000,
+  "sample_note": "Downsampled inspector; authoritative geometry is the full raster and local glTF",
+  "fields": {
+    "elevation_m": {
+      "path": "viewer/elevation_m.bin",
+      "dtype": "float32",
+      "count": 471552,
+      "byte_length": 1886208
+    },
+    "temperature_c": {
+      "path": "viewer/temperature_c.bin",
+      "dtype": "float32",
+      "count": 471552,
+      "byte_length": 1886208
+    },
+    "precipitation_mm": {
+      "path": "viewer/precipitation_mm.bin",
+      "dtype": "float32",
+      "count": 471552,
+      "byte_length": 1886208
+    },
+    "soil_moisture": {
+      "path": "viewer/soil_moisture.bin",
+      "dtype": "float32",
+      "count": 471552,
+      "byte_length": 1886208
+    },
+    "flow_accumulation_km2": {
+      "path": "viewer/flow_accumulation_km2.bin",
+      "dtype": "float32",
+      "count": 471552,
+      "byte_length": 1886208
+    },
+    "land_mask": {
+      "path": "viewer/land_mask.bin",
+      "dtype": "uint8",
+      "count": 471552,
+      "byte_length": 471552
+    },
+    "lake_id": {
+      "path": "viewer/lake_id.bin",
+      "dtype": "int32",
+      "count": 471552,
+      "byte_length": 1886208
+    },
+    "water_surface_m": {
+      "path": "viewer/water_surface_m.bin",
+      "dtype": "float32",
+      "count": 471552,
+      "byte_length": 1886208
+    },
+    "slope": {
+      "path": "viewer/slope.bin",
+      "dtype": "float32",
+      "count": 471552,
+      "byte_length": 1886208
+    },
+    "biomes": {
+      "path": "viewer/biomes.bin",
+      "dtype": "uint8",
+      "count": 471552,
+      "byte_length": 471552
+    },
+    "biome_rgb": {
+      "path": "viewer/biome_rgb.bin",
+      "dtype": "uint8",
+      "count": 1414656,
+      "byte_length": 1414656
+    }
+  }
+}

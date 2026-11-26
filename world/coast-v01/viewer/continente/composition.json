@@ -1,0 +1,1895 @@
+{
+  "original": 195,
+  "total": 272,
+  "sea_m": -270.0,
+  "shelf_cells": [
+    [
+      -5,
+      1
+    ],
+    [
+      -4,
+      -1
+    ],
+    [
+      -1,
+      -6
+    ],
+    [
+      0,
+      -8
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      5
+    ]
+  ],
+  "bath_min_xz": [
+    -20540.0,
+    -44460.0
+  ],
+  "bath_size_xz": [
+    69212.0,
+    103948.0
+  ],
+  "tiles": [
+    {
+      "id": "costa_+03_-11",
+      "q": 3,
+      "r": -11,
+      "center_xz": [
+        -10825.317547305483,
+        -41250.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+03_-11.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_19"
+      ],
+      "sha256": "c36f1faa8d900541f11f9bfeb5fd78630305b257abd0c8e0808c148f75aca2d6",
+      "bytes": 515652,
+      "vertices": 12531,
+      "triangles": 9588,
+      "triangles_with_instances": 9588
+    },
+    {
+      "id": "costa_+04_-11",
+      "q": 4,
+      "r": -11,
+      "center_xz": [
+        -6495.190528383289,
+        -41250.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+04_-11.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_19",
+        "WG_20"
+      ],
+      "sha256": "a9b8a358edf21df991254f0ec8032581e97cb271d7b1d9de0a53ff99e4d1f856",
+      "bytes": 509240,
+      "vertices": 12363,
+      "triangles": 9532,
+      "triangles_with_instances": 9532
+    },
+    {
+      "id": "costa_+05_-11",
+      "q": 5,
+      "r": -11,
+      "center_xz": [
+        -2165.0635094610966,
+        -41250.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+05_-11.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_20"
+      ],
+      "sha256": "03a8d5efcb85611e4e086987d43a53ac36aa1a38b19f60eca73125a3c10118a4",
+      "bytes": 520180,
+      "vertices": 12652,
+      "triangles": 9620,
+      "triangles_with_instances": 9620
+    },
+    {
+      "id": "costa_+02_-10",
+      "q": 2,
+      "r": -10,
+      "center_xz": [
+        -12990.381056766579,
+        -37500.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+02_-10.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_15",
+        "WG_19"
+      ],
+      "sha256": "78ddff0a950149ca45d927b17ae4fb2aca4a39fc3938952b4bf68302473594cb",
+      "bytes": 500740,
+      "vertices": 12143,
+      "triangles": 9442,
+      "triangles_with_instances": 9442
+    },
+    {
+      "id": "costa_+05_-10",
+      "q": 5,
+      "r": -10,
+      "center_xz": [
+        0.0,
+        -37500.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+05_-10.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_17",
+        "WG_18",
+        "WG_20"
+      ],
+      "sha256": "5c5ef8d1040f87fdc4f0a4fbf5cbafafb46858c2cc562a40b512522db07f99b2",
+      "bytes": 525180,
+      "vertices": 12783,
+      "triangles": 9672,
+      "triangles_with_instances": 9672
+    },
+    {
+      "id": "costa_+06_-10",
+      "q": 6,
+      "r": -10,
+      "center_xz": [
+        4330.127018922193,
+        -37500.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+06_-10.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_18"
+      ],
+      "sha256": "35196edad94d4f255e7c845849030a9de6599842fb660f4667851d6fae4d4744",
+      "bytes": 515512,
+      "vertices": 12528,
+      "triangles": 9582,
+      "triangles_with_instances": 9582
+    },
+    {
+      "id": "costa_+01_-09",
+      "q": 1,
+      "r": -9,
+      "center_xz": [
+        -15155.444566227676,
+        -33750.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+01_-09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_15"
+      ],
+      "sha256": "417bc6dd5711a3b627b4be48a24d1a15160a3615599700cb573808dc2323d19a",
+      "bytes": 491408,
+      "vertices": 11896,
+      "triangles": 9368,
+      "triangles_with_instances": 9368
+    },
+    {
+      "id": "costa_+06_-09",
+      "q": 6,
+      "r": -9,
+      "center_xz": [
+        6495.190528383289,
+        -33750.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+06_-09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_13",
+        "WG_14",
+        "WG_18"
+      ],
+      "sha256": "c6278cc0926a57e39e1fd312781964ec321ff451db82f60337809a63dd8cb5b5",
+      "bytes": 416288,
+      "vertices": 9918,
+      "triangles": 8712,
+      "triangles_with_instances": 8712
+    },
+    {
+      "id": "costa_+07_-09",
+      "q": 7,
+      "r": -9,
+      "center_xz": [
+        10825.317547305483,
+        -33750.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+07_-09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain",
+        "glacial"
+      ],
+      "contacts": [
+        "ER_01",
+        "WG_14"
+      ],
+      "sha256": "a008b881bdd110e15c1f3f9ab3211a4b88473b21048a3a5d4989c42630b0c552",
+      "bytes": 525080,
+      "vertices": 12781,
+      "triangles": 9668,
+      "triangles_with_instances": 9668
+    },
+    {
+      "id": "costa_+08_-09",
+      "q": 8,
+      "r": -9,
+      "center_xz": [
+        15155.444566227676,
+        -33750.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+08_-09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_01",
+        "ER_02"
+      ],
+      "sha256": "ba6ae2c57833f86b8f49965d632564803e8ab9c4ec1e868def21c338c33e1c1c",
+      "bytes": 344352,
+      "vertices": 7123,
+      "triangles": 9138,
+      "triangles_with_instances": 162732
+    },
+    {
+      "id": "costa_+09_-09",
+      "q": 9,
+      "r": -9,
+      "center_xz": [
+        19485.571585149868,
+        -33750.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+09_-09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_02",
+        "ER_03"
+      ],
+      "sha256": "e5eea81f5ac03f8e457c8a45d8ec7cb15615c497dbd6391cc5b971888085d7dc",
+      "bytes": 354716,
+      "vertices": 7501,
+      "triangles": 9264,
+      "triangles_with_instances": 128382
+    },
+    {
+      "id": "costa_+10_-09",
+      "q": 10,
+      "r": -9,
+      "center_xz": [
+        23815.698604072062,
+        -33750.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+10_-09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_03"
+      ],
+      "sha256": "acaffffb705558bc3968935e911d7d47dd732c7b02eebc9405828b065a52bc10",
+      "bytes": 353852,
+      "vertices": 7504,
+      "triangles": 9270,
+      "triangles_with_instances": 119904
+    },
+    {
+      "id": "costa_+01_-08",
+      "q": 1,
+      "r": -8,
+      "center_xz": [
+        -12990.381056766579,
+        -30000.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+01_-08.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_05",
+        "WG_10",
+        "WG_15"
+      ],
+      "sha256": "59d7accf2e005b216827211d53ad0bf9e0749068a5afe03f2096e4ebb8409439",
+      "bytes": 447448,
+      "vertices": 10737,
+      "triangles": 8990,
+      "triangles_with_instances": 8990
+    },
+    {
+      "id": "costa_+10_-08",
+      "q": 10,
+      "r": -8,
+      "center_xz": [
+        25980.762113533157,
+        -30000.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+10_-08.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_03",
+        "ER_06"
+      ],
+      "sha256": "ba6ccdc523895693cddb9fcd6c713aa4ea974a7a46aec20a642d75168f510cb0",
+      "bytes": 353040,
+      "vertices": 7337,
+      "triangles": 9216,
+      "triangles_with_instances": 166932
+    },
+    {
+      "id": "glacial",
+      "q": 0,
+      "r": -7,
+      "center_xz": [
+        -15155.444566227676,
+        -26250.0
+      ],
+      "kind": "glacial",
+      "model": "models/glacial-v02.glb",
+      "approved_pilot": true,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_05"
+      ],
+      "sha256": "80c2fc5da01e72b6ca5beca8394f2434e788ec139cf8a01697c6c6f2cf8f59a0",
+      "bytes": 1122752,
+      "vertices": 21584,
+      "triangles": 27924,
+      "triangles_with_instances": 27924
+    },
+    {
+      "id": "costa_+10_-07",
+      "q": 10,
+      "r": -7,
+      "center_xz": [
+        28145.825622994256,
+        -26250.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+10_-07.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_06",
+        "ER_08"
+      ],
+      "sha256": "06426036f0fa36d1cec0bb37857483e2a879233ffd0a3b899b7432b50c408f81",
+      "bytes": 344392,
+      "vertices": 7217,
+      "triangles": 9186,
+      "triangles_with_instances": 131814
+    },
+    {
+      "id": "costa_+00_-06",
+      "q": 0,
+      "r": -6,
+      "center_xz": [
+        -12990.381056766579,
+        -22500.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+00_-06.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_01",
+        "WG_05"
+      ],
+      "sha256": "d782b758f736e56ce7f8081901e372e5262762f98fe95263a3806f9fbad0c944",
+      "bytes": 520484,
+      "vertices": 12658,
+      "triangles": 9632,
+      "triangles_with_instances": 9632
+    },
+    {
+      "id": "costa_+10_-06",
+      "q": 10,
+      "r": -6,
+      "center_xz": [
+        30310.88913245535,
+        -22500.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+10_-06.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_08",
+        "ER_10",
+        "ER_11"
+      ],
+      "sha256": "05ec3e931ccc1ffe678ccddd60bc9ca8a297b963a06c7ccad8438bb6976d3d40",
+      "bytes": 359928,
+      "vertices": 7420,
+      "triangles": 9242,
+      "triangles_with_instances": 198956
+    },
+    {
+      "id": "costa_+11_-06",
+      "q": 11,
+      "r": -6,
+      "center_xz": [
+        34641.016151377546,
+        -22500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+11_-06.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_11"
+      ],
+      "sha256": "ef44813b85862999b59c9acbd516481948af2b5da344a08e8870f61adb74a955",
+      "bytes": 550056,
+      "vertices": 12515,
+      "triangles": 10942,
+      "triangles_with_instances": 175006
+    },
+    {
+      "id": "costa_+00_-05",
+      "q": 0,
+      "r": -5,
+      "center_xz": [
+        -10825.317547305483,
+        -18750.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+00_-05.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_01"
+      ],
+      "sha256": "0b2b1ea06a955a81b37ac68a6c499b6bca06ba8892d0ea2a1c16fa4cdcf22312",
+      "bytes": 527016,
+      "vertices": 12830,
+      "triangles": 9696,
+      "triangles_with_instances": 9696
+    },
+    {
+      "id": "costa_+01_-05",
+      "q": 1,
+      "r": -5,
+      "center_xz": [
+        -6495.190528383289,
+        -18750.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+01_-05.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_01",
+        "WG_02"
+      ],
+      "sha256": "99ebf870d0852cc68f5ef8f3b6c9ff6988abb0c96256d36d76ef56ca3c70eddf",
+      "bytes": 523636,
+      "vertices": 12742,
+      "triangles": 9660,
+      "triangles_with_instances": 9660
+    },
+    {
+      "id": "costa_+02_-05",
+      "q": 2,
+      "r": -5,
+      "center_xz": [
+        -2165.0635094610966,
+        -18750.0
+      ],
+      "kind": "glacial",
+      "model": "models/continente/costa_+02_-05.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial"
+      ],
+      "contacts": [
+        "WG_02",
+        "WG_03"
+      ],
+      "sha256": "d197783d6f928719b947d6dc78b9257a5a7e6cee3badd5754eb2546f6cc1e31c",
+      "bytes": 526960,
+      "vertices": 12829,
+      "triangles": 9694,
+      "triangles_with_instances": 9694
+    },
+    {
+      "id": "costa_+03_-05",
+      "q": 3,
+      "r": -5,
+      "center_xz": [
+        2165.0635094610966,
+        -18750.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+03_-05.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "glacial",
+        "temperate forest"
+      ],
+      "contacts": [
+        "FX_04",
+        "WG_03",
+        "WG_04"
+      ],
+      "sha256": "6283dc0f20d3ee6287a21ce395c0ff8d564e820bf0a4f01bcde5c41ce0291f3d",
+      "bytes": 365676,
+      "vertices": 7465,
+      "triangles": 9262,
+      "triangles_with_instances": 233332
+    },
+    {
+      "id": "costa_+11_-05",
+      "q": 11,
+      "r": -5,
+      "center_xz": [
+        36806.079660838644,
+        -18750.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+11_-05.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_11",
+        "ER_14"
+      ],
+      "sha256": "2baceba7ecd0ea8101382f3c8810b52858f394c9f38a9130c8adf2540288d3d9",
+      "bytes": 559192,
+      "vertices": 12682,
+      "triangles": 10996,
+      "triangles_with_instances": 198640
+    },
+    {
+      "id": "costa_+00_-04",
+      "q": 0,
+      "r": -4,
+      "center_xz": [
+        -8660.254037844386,
+        -15000.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_+00_-04.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_01"
+      ],
+      "sha256": "140da37a3d7d62efe3cfed33181c4b7edaab0c56dcab4f1804b1ac17f3e0385c",
+      "bytes": 292644,
+      "vertices": 6656,
+      "triangles": 7638,
+      "triangles_with_instances": 7638
+    },
+    {
+      "id": "costa_+01_-04",
+      "q": 1,
+      "r": -4,
+      "center_xz": [
+        -4330.127018922193,
+        -15000.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_+01_-04.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_01",
+        "DN_02"
+      ],
+      "sha256": "31fbce617ff43cd13b9758e7c129a20c75153c01a3f4797d4d6e24f381a17387",
+      "bytes": 292108,
+      "vertices": 6645,
+      "triangles": 7616,
+      "triangles_with_instances": 7616
+    },
+    {
+      "id": "costa_+02_-04",
+      "q": 2,
+      "r": -4,
+      "center_xz": [
+        0.0,
+        -15000.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_+02_-04.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_02",
+        "DN_03"
+      ],
+      "sha256": "d6ffd210983a4ceb0a3587ee8a609ff12a440b4aa56476db502f248be004f066",
+      "bytes": 285820,
+      "vertices": 6478,
+      "triangles": 7562,
+      "triangles_with_instances": 7562
+    },
+    {
+      "id": "costa_+03_-04",
+      "q": 3,
+      "r": -4,
+      "center_xz": [
+        4330.127018922193,
+        -15000.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+03_-04.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert",
+        "temperate forest"
+      ],
+      "contacts": [
+        "DN_03",
+        "FX_04",
+        "FX_08",
+        "FX_12"
+      ],
+      "sha256": "2e0f6e1ac7ff599005354d6511206c0a5f086d96077f8892d94381dba12f4bbd",
+      "bytes": 256952,
+      "vertices": 4552,
+      "triangles": 8276,
+      "triangles_with_instances": 258788
+    },
+    {
+      "id": "costa_+11_-04",
+      "q": 11,
+      "r": -4,
+      "center_xz": [
+        38971.143170299736,
+        -15000.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+11_-04.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_14",
+        "ER_17"
+      ],
+      "sha256": "5bc580aaeb388a42c39f40120b2147696bdb3e9ffd709173cf6a55f48f4bda16",
+      "bytes": 544268,
+      "vertices": 12261,
+      "triangles": 10854,
+      "triangles_with_instances": 207774
+    },
+    {
+      "id": "costa_-01_-03",
+      "q": -1,
+      "r": -3,
+      "center_xz": [
+        -10825.317547305483,
+        -11250.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-01_-03.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_01",
+        "DN_04"
+      ],
+      "sha256": "aafdb773cd7855703c487b54c873cf8e03719eb9348d0cfd80e20316d2a90f83",
+      "bytes": 297116,
+      "vertices": 6776,
+      "triangles": 7668,
+      "triangles_with_instances": 7668
+    },
+    {
+      "id": "costa_+11_-03",
+      "q": 11,
+      "r": -3,
+      "center_xz": [
+        41136.206679760835,
+        -11250.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+11_-03.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_17",
+        "ER_20"
+      ],
+      "sha256": "eef72d77b16f45a71be53fd93016392c37d3b4f897cd20d2ab0afc4e9126b104",
+      "bytes": 557528,
+      "vertices": 12597,
+      "triangles": 10966,
+      "triangles_with_instances": 212200
+    },
+    {
+      "id": "costa_-02_-02",
+      "q": -2,
+      "r": -2,
+      "center_xz": [
+        -12990.381056766579,
+        -7500.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-02_-02.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_04",
+        "DN_07"
+      ],
+      "sha256": "339bdaabc7fb263a44a49f8043a01f97b304f7645046aa8232827e4071e3ac51",
+      "bytes": 287260,
+      "vertices": 6518,
+      "triangles": 7572,
+      "triangles_with_instances": 7572
+    },
+    {
+      "id": "costa_+11_-02",
+      "q": 11,
+      "r": -2,
+      "center_xz": [
+        43301.270189221934,
+        -7500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+11_-02.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_20"
+      ],
+      "sha256": "38834f7e48f99790e2ddb10f2e0ba90e5716701d2fe823f2a26cf605283935fc",
+      "bytes": 540180,
+      "vertices": 12305,
+      "triangles": 10872,
+      "triangles_with_instances": 157728
+    },
+    {
+      "id": "costa_-03_-01",
+      "q": -3,
+      "r": -1,
+      "center_xz": [
+        -15155.444566227676,
+        -3750.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-03_-01.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_07",
+        "DN_09"
+      ],
+      "sha256": "77475cf5da09c96e4ec5a5cec7bc003859b0cb40ceb25b20a008dcd07e070e85",
+      "bytes": 301696,
+      "vertices": 6898,
+      "triangles": 7702,
+      "triangles_with_instances": 7702
+    },
+    {
+      "id": "costa_+10_-01",
+      "q": 10,
+      "r": -1,
+      "center_xz": [
+        41136.206679760835,
+        -3750.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+10_-01.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_20",
+        "ER_23"
+      ],
+      "sha256": "534d3a14d901c4b07f6b0cf603a9ac7cf62e242e62035c57a017c4e3933b58d0",
+      "bytes": 569760,
+      "vertices": 12974,
+      "triangles": 11090,
+      "triangles_with_instances": 194486
+    },
+    {
+      "id": "dunas",
+      "q": -4,
+      "r": 0,
+      "center_xz": [
+        -17320.508075688773,
+        0.0
+      ],
+      "kind": "dunas",
+      "model": "models/dunas-v02.glb",
+      "approved_pilot": true,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_09"
+      ],
+      "sha256": "5ac7be885deeb238a32e12e84a1dc329db1a4ba91ec51011e8e97bfd25ac1e35",
+      "bytes": 947448,
+      "vertices": 17572,
+      "triangles": 26580,
+      "triangles_with_instances": 26580
+    },
+    {
+      "id": "costa_+09_+00",
+      "q": 9,
+      "r": 0,
+      "center_xz": [
+        38971.143170299736,
+        0.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+09_+00.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_23",
+        "ER_26",
+        "ER_29"
+      ],
+      "sha256": "f4c80a473641bdc0d88bbbc87bfe9265ef2a2c07dd01789d43a0cdef5f994d96",
+      "bytes": 547720,
+      "vertices": 12306,
+      "triangles": 10874,
+      "triangles_with_instances": 223274
+    },
+    {
+      "id": "costa_-04_+01",
+      "q": -4,
+      "r": 1,
+      "center_xz": [
+        -15155.444566227676,
+        3750.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-04_+01.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_09",
+        "DN_11",
+        "DN_13"
+      ],
+      "sha256": "59d1ef943429a479d4627d6c9799a31f9e0769273ad8b82de38c1d8e15383025",
+      "bytes": 290816,
+      "vertices": 6610,
+      "triangles": 7616,
+      "triangles_with_instances": 7616
+    },
+    {
+      "id": "costa_+09_+01",
+      "q": 9,
+      "r": 1,
+      "center_xz": [
+        41136.206679760835,
+        3750.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+09_+01.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_29"
+      ],
+      "sha256": "195424d20cf164b52296532003ab5263e69c873fb1a7f2d9dbec8503734f67a1",
+      "bytes": 553828,
+      "vertices": 12604,
+      "triangles": 10980,
+      "triangles_with_instances": 177492
+    },
+    {
+      "id": "costa_-05_+02",
+      "q": -5,
+      "r": 2,
+      "center_xz": [
+        -17320.508075688773,
+        7500.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-05_+02.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_13"
+      ],
+      "sha256": "0058baafa7b5092115dba707a289938fd79b55559fe56c4386d9c0d4c1cb92f8",
+      "bytes": 301792,
+      "vertices": 6900,
+      "triangles": 7706,
+      "triangles_with_instances": 7706
+    },
+    {
+      "id": "costa_+06_+02",
+      "q": 6,
+      "r": 2,
+      "center_xz": [
+        30310.88913245535,
+        7500.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+06_+02.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "entirely temperate plains (no transition)",
+        "forested mountain"
+      ],
+      "contacts": [
+        "PL_E_E",
+        "ER_27",
+        "ER_28"
+      ],
+      "sha256": "1b5efd6bb09e5ecab5a179a999851d4a6381431c7e6278294ca73c5f60b01486",
+      "bytes": 305188,
+      "vertices": 6565,
+      "triangles": 7634,
+      "triangles_with_instances": 13194
+    },
+    {
+      "id": "costa_+07_+02",
+      "q": 7,
+      "r": 2,
+      "center_xz": [
+        34641.016151377546,
+        7500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+07_+02.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_28",
+        "ER_29"
+      ],
+      "sha256": "8cf7e5efae2b7e14057baefde83b6bf173942e627643159fd46a812eef535a67",
+      "bytes": 549668,
+      "vertices": 12432,
+      "triangles": 10916,
+      "triangles_with_instances": 198224
+    },
+    {
+      "id": "costa_+08_+02",
+      "q": 8,
+      "r": 2,
+      "center_xz": [
+        38971.143170299736,
+        7500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+08_+02.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "forested mountain"
+      ],
+      "contacts": [
+        "ER_29"
+      ],
+      "sha256": "7afb3bb96ac1d83d55eef93905cd4a0f2435d63692ac25dbbde407aa3b1b9c5f",
+      "bytes": 572340,
+      "vertices": 13101,
+      "triangles": 11134,
+      "triangles_with_instances": 175300
+    },
+    {
+      "id": "costa_-05_+03",
+      "q": -5,
+      "r": 3,
+      "center_xz": [
+        -15155.444566227676,
+        11250.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-05_+03.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_13",
+        "DN_17"
+      ],
+      "sha256": "8c1712f0a61c29ea50a4d04c731ff93c8374924aec95660d7c3eac1a6256e5c2",
+      "bytes": 285780,
+      "vertices": 6479,
+      "triangles": 7564,
+      "triangles_with_instances": 7564
+    },
+    {
+      "id": "praia",
+      "q": 5,
+      "r": 3,
+      "center_xz": [
+        28145.825622994256,
+        11250.0
+      ],
+      "kind": "praia",
+      "model": "models/praia-v01.glb",
+      "approved_pilot": true,
+      "biomes": [
+        "entirely temperate plains (no transition)"
+      ],
+      "contacts": [
+        "PL_E_E",
+        "PL_E_S",
+        "PL_E_SE"
+      ],
+      "sha256": "cc165202af84b804ce5142d1254650353560ac117c4b6ec9861d148763cf392b",
+      "bytes": 1166452,
+      "vertices": 19789,
+      "triangles": 28670,
+      "triangles_with_instances": 104000
+    },
+    {
+      "id": "costa_-05_+04",
+      "q": -5,
+      "r": 4,
+      "center_xz": [
+        -12990.381056766579,
+        15000.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-05_+04.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_17",
+        "DN_21"
+      ],
+      "sha256": "325f00eb5b45496798b455eb063186c5db649c454486f3d682d2380659d3f227",
+      "bytes": 290616,
+      "vertices": 6606,
+      "triangles": 7608,
+      "triangles_with_instances": 7608
+    },
+    {
+      "id": "costa_+05_+04",
+      "q": 5,
+      "r": 4,
+      "center_xz": [
+        30310.88913245535,
+        15000.0
+      ],
+      "kind": "praia",
+      "model": "models/continente/costa_+05_+04.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "entirely temperate plains (no transition)",
+        "temperate prairie north of river + golden fantasy savanna south"
+      ],
+      "contacts": [
+        "PL_E_SE",
+        "SV_E"
+      ],
+      "sha256": "fda3ce541e071ab5490a04510c8830dfba27c44c9037737530ffe9c4dcee1cd0",
+      "bytes": 299188,
+      "vertices": 6317,
+      "triangles": 7558,
+      "triangles_with_instances": 14838
+    },
+    {
+      "id": "costa_-05_+05",
+      "q": -5,
+      "r": 5,
+      "center_xz": [
+        -10825.317547305483,
+        18750.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-05_+05.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_21",
+        "DN_24"
+      ],
+      "sha256": "31e41e89bcca732ec38a95a6083bda03ee3f67c0784f6103378b22b61d19e184",
+      "bytes": 284508,
+      "vertices": 6444,
+      "triangles": 7564,
+      "triangles_with_instances": 7564
+    },
+    {
+      "id": "costa_+05_+05",
+      "q": 5,
+      "r": 5,
+      "center_xz": [
+        32475.95264191645,
+        18750.0
+      ],
+      "kind": "arcos",
+      "model": "models/continente/costa_+05_+05.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "temperate golden fantasy savanna",
+        "temperate prairie north of river + golden fantasy savanna south"
+      ],
+      "contacts": [
+        "SV_E",
+        "SV2_E"
+      ],
+      "sha256": "5b1ed6aef1eeef08456cadc8588630395a21cb41e7dd6ba85ad79e3bb95b4921",
+      "bytes": 589328,
+      "vertices": 13402,
+      "triangles": 12926,
+      "triangles_with_instances": 21466
+    },
+    {
+      "id": "costa_-05_+06",
+      "q": -5,
+      "r": 6,
+      "center_xz": [
+        -8660.254037844386,
+        22500.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-05_+06.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_24"
+      ],
+      "sha256": "d48da293bf2d4ee3056d59f1d3e02daae1a4a59dec6d9a5d4eaef7915538896f",
+      "bytes": 293628,
+      "vertices": 6686,
+      "triangles": 7628,
+      "triangles_with_instances": 7628
+    },
+    {
+      "id": "costa_-04_+06",
+      "q": -4,
+      "r": 6,
+      "center_xz": [
+        -4330.127018922193,
+        22500.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-04_+06.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert"
+      ],
+      "contacts": [
+        "DN_24",
+        "DN_25"
+      ],
+      "sha256": "7d8cbe402a31cef4784269fad4770c30d07f3d2ba8e6ee674e388db5746daffe",
+      "bytes": 297156,
+      "vertices": 6778,
+      "triangles": 7672,
+      "triangles_with_instances": 7672
+    },
+    {
+      "id": "costa_-03_+06",
+      "q": -3,
+      "r": 6,
+      "center_xz": [
+        0.0,
+        22500.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-03_+06.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "erg_dune_desert",
+        "mountain_second_row"
+      ],
+      "contacts": [
+        "MN2_04",
+        "MN2_05",
+        "DN_25"
+      ],
+      "sha256": "73710c8f79c77564ea3213937058db8544bb1f49a1e00bed0277e68ff5fc977a",
+      "bytes": 287220,
+      "vertices": 6518,
+      "triangles": 7572,
+      "triangles_with_instances": 7572
+    },
+    {
+      "id": "arcos",
+      "q": 5,
+      "r": 6,
+      "center_xz": [
+        34641.016151377546,
+        22500.0
+      ],
+      "kind": "arcos",
+      "model": "models/arcos-v02.glb",
+      "approved_pilot": true,
+      "biomes": [
+        "temperate golden fantasy savanna"
+      ],
+      "contacts": [
+        "SV2_E"
+      ],
+      "sha256": "eeb6ff51bdaec566336325add6ff070244eb8c5c15a6257e9e26014d25e205ed",
+      "bytes": 1113492,
+      "vertices": 20708,
+      "triangles": 27680,
+      "triangles_with_instances": 40760
+    },
+    {
+      "id": "costa_-03_+07",
+      "q": -3,
+      "r": 7,
+      "center_xz": [
+        2165.0635094610966,
+        26250.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-03_+07.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "mountain_second_row"
+      ],
+      "contacts": [
+        "MN2_05",
+        "MN2_06",
+        "MN2_07"
+      ],
+      "sha256": "e8e59e29286ad5b2afafa3cf69a9e7db04a6b169f74d9841525af8cee97c8d56",
+      "bytes": 285880,
+      "vertices": 6481,
+      "triangles": 7568,
+      "triangles_with_instances": 7568
+    },
+    {
+      "id": "costa_+04_+07",
+      "q": 4,
+      "r": 7,
+      "center_xz": [
+        32475.95264191645,
+        26250.0
+      ],
+      "kind": "arcos",
+      "model": "models/continente/costa_+04_+07.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "temperate golden fantasy savanna"
+      ],
+      "contacts": [
+        "SV2_E",
+        "SV3_E",
+        "SV4_E"
+      ],
+      "sha256": "53f83180f11ee2ff5dabab2fad0ffc5c159865061a24b36096d4f721a8870ec5",
+      "bytes": 506164,
+      "vertices": 11574,
+      "triangles": 9322,
+      "triangles_with_instances": 20502
+    },
+    {
+      "id": "costa_-04_+08",
+      "q": -4,
+      "r": 8,
+      "center_xz": [
+        0.0,
+        30000.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-04_+08.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "mountain_second_row"
+      ],
+      "contacts": [
+        "MN2_07"
+      ],
+      "sha256": "d043e901af89ed05a6ffaffb959a98c66cffa74ba0c19016fd8619709ad1b21d",
+      "bytes": 295320,
+      "vertices": 6730,
+      "triangles": 7646,
+      "triangles_with_instances": 7646
+    },
+    {
+      "id": "costa_+04_+08",
+      "q": 4,
+      "r": 8,
+      "center_xz": [
+        34641.016151377546,
+        30000.0
+      ],
+      "kind": "arcos",
+      "model": "models/continente/costa_+04_+08.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "temperate golden fantasy savanna"
+      ],
+      "contacts": [
+        "SV4_E"
+      ],
+      "sha256": "797b8fa08d623c1636190d08c47acd65df1c44285342458b0a5c0a2fb8fc35db",
+      "bytes": 502444,
+      "vertices": 11606,
+      "triangles": 9316,
+      "triangles_with_instances": 18056
+    },
+    {
+      "id": "costa_-04_+09",
+      "q": -4,
+      "r": 9,
+      "center_xz": [
+        2165.0635094610966,
+        33750.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-04_+09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "mountain_second_row"
+      ],
+      "contacts": [
+        "MN2_07",
+        "MN2_08"
+      ],
+      "sha256": "52ac7cb4f6b8816ef12d322331a4a84bdcf99fa0c7da1ba16ec42eaee34db185",
+      "bytes": 285576,
+      "vertices": 6474,
+      "triangles": 7554,
+      "triangles_with_instances": 7554
+    },
+    {
+      "id": "costa_+03_+09",
+      "q": 3,
+      "r": 9,
+      "center_xz": [
+        32475.95264191645,
+        33750.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+03_+09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "humid savanna -> elevated jungle rocky ecotone",
+        "temperate golden fantasy savanna",
+        "tropical swamp",
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "SV4_E",
+        "TR_E",
+        "J_E",
+        "PT_+3_10"
+      ],
+      "sha256": "ad6ef3fe9368813a65dc7eb074d943201f189f0607df46b4c9be7ac97dce6528",
+      "bytes": 341952,
+      "vertices": 5520,
+      "triangles": 9670,
+      "triangles_with_instances": 748910
+    },
+    {
+      "id": "costa_+04_+09",
+      "q": 4,
+      "r": 9,
+      "center_xz": [
+        36806.079660838644,
+        33750.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+04_+09.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "tropical swamp"
+      ],
+      "contacts": [
+        "PT_+3_10"
+      ],
+      "sha256": "302a647d6e0ef7a315b63083558d4db1bce45fa38483303353a943e1a4ec4b9a",
+      "bytes": 611592,
+      "vertices": 13440,
+      "triangles": 12320,
+      "triangles_with_instances": 405544
+    },
+    {
+      "id": "costa_-04_+10",
+      "q": -4,
+      "r": 10,
+      "center_xz": [
+        4330.127018922193,
+        37500.0
+      ],
+      "kind": "dunas",
+      "model": "models/continente/costa_-04_+10.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "mountain_second_row",
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "MN2_08",
+        "JS_-3_10"
+      ],
+      "sha256": "8873c345478c2460a5686a7e097d3eafb69dd3fb78a67da8a427f15517858837",
+      "bytes": 292484,
+      "vertices": 6653,
+      "triangles": 7632,
+      "triangles_with_instances": 7632
+    },
+    {
+      "id": "costa_+04_+10",
+      "q": 4,
+      "r": 10,
+      "center_xz": [
+        38971.143170299736,
+        37500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+04_+10.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "tropical swamp"
+      ],
+      "contacts": [
+        "PT_+3_10",
+        "PT_+3_11"
+      ],
+      "sha256": "8584cd9668ac93c22a10abab051e77124062668ac903e8eaf2155cae0d7f14c2",
+      "bytes": 628876,
+      "vertices": 13606,
+      "triangles": 12372,
+      "triangles_with_instances": 519828
+    },
+    {
+      "id": "costa_-04_+11",
+      "q": -4,
+      "r": 11,
+      "center_xz": [
+        6495.190528383289,
+        41250.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_-04_+11.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_-3_10",
+        "JS_-3_11"
+      ],
+      "sha256": "61a2230c78f1974a384834fb605bceda22c80c7280319915ce420cec622cf630",
+      "bytes": 605832,
+      "vertices": 12688,
+      "triangles": 11966,
+      "triangles_with_instances": 500602
+    },
+    {
+      "id": "costa_+04_+11",
+      "q": 4,
+      "r": 11,
+      "center_xz": [
+        41136.206679760835,
+        41250.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+04_+11.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "tropical swamp"
+      ],
+      "contacts": [
+        "PT_+3_11",
+        "PT_+3_12"
+      ],
+      "sha256": "fffba465af7915726dc46a3869f32445bbe6924b9c5199a1b54aa90dcd0f7c0c",
+      "bytes": 628904,
+      "vertices": 13564,
+      "triangles": 12358,
+      "triangles_with_instances": 531142
+    },
+    {
+      "id": "costa_-04_+12",
+      "q": -4,
+      "r": 12,
+      "center_xz": [
+        8660.254037844386,
+        45000.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_-04_+12.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_-3_11",
+        "JS_-3_12"
+      ],
+      "sha256": "511f0dd54f0dcac2a4bfb40a7eb9a8a559244a4839aa7799f4f0bef8028d0a45",
+      "bytes": 613680,
+      "vertices": 12852,
+      "triangles": 12014,
+      "triangles_with_instances": 534838
+    },
+    {
+      "id": "costa_+04_+12",
+      "q": 4,
+      "r": 12,
+      "center_xz": [
+        43301.270189221934,
+        45000.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+04_+12.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "tropical swamp"
+      ],
+      "contacts": [
+        "PT_+3_12",
+        "PT_+3_13"
+      ],
+      "sha256": "36ac20d67ed7bf0e75bc8096e4493a13b19987444e2104a69a443725badbb6bf",
+      "bytes": 611184,
+      "vertices": 13225,
+      "triangles": 12240,
+      "triangles_with_instances": 491104
+    },
+    {
+      "id": "falesia",
+      "q": -4,
+      "r": 13,
+      "center_xz": [
+        10825.317547305483,
+        48750.0
+      ],
+      "kind": "falesia",
+      "model": "models/falesia-v01.glb",
+      "approved_pilot": true,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_-3_12",
+        "JS_-3_13"
+      ],
+      "sha256": "66fbdfbe1fd21f067f1a7bbc18136f861ef7513aaeadf29107f3324bafe6c091",
+      "bytes": 1447040,
+      "vertices": 24112,
+      "triangles": 31084,
+      "triangles_with_instances": 558840
+    },
+    {
+      "id": "costa_+04_+13",
+      "q": 4,
+      "r": 13,
+      "center_xz": [
+        45466.333698683025,
+        48750.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+04_+13.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "tropical swamp"
+      ],
+      "contacts": [
+        "PT_+3_13"
+      ],
+      "sha256": "72321ce4d89aa02c29ae8a6d808a25aa14cb7b794026651afaf3faafca90e794",
+      "bytes": 625172,
+      "vertices": 13774,
+      "triangles": 12428,
+      "triangles_with_instances": 422804
+    },
+    {
+      "id": "costa_-04_+14",
+      "q": -4,
+      "r": 14,
+      "center_xz": [
+        12990.381056766579,
+        52500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_-04_+14.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_-3_13"
+      ],
+      "sha256": "e3d9f61d7bf19bfc687cf0c5f90da0c2e569795effec70269058cb26c35b8140",
+      "bytes": 621160,
+      "vertices": 13530,
+      "triangles": 12250,
+      "triangles_with_instances": 396996
+    },
+    {
+      "id": "costa_-03_+14",
+      "q": -3,
+      "r": 14,
+      "center_xz": [
+        17320.508075688773,
+        52500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_-03_+14.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_-3_13",
+        "JS_-2_13"
+      ],
+      "sha256": "c0236482c16a14980b355a278e60b36a051dfde0a37ba4bd10c442a02299614f",
+      "bytes": 628284,
+      "vertices": 13277,
+      "triangles": 12164,
+      "triangles_with_instances": 526890
+    },
+    {
+      "id": "costa_-02_+14",
+      "q": -2,
+      "r": 14,
+      "center_xz": [
+        21650.635094610967,
+        52500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_-02_+14.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_-2_13",
+        "JS_-1_13",
+        "JS_-1_14"
+      ],
+      "sha256": "7611fc931a22883e5f7c05ec0e6239a7b77d95dcc1aa6155e9887ed58ba4baf2",
+      "bytes": 612140,
+      "vertices": 12451,
+      "triangles": 11892,
+      "triangles_with_instances": 671996
+    },
+    {
+      "id": "costa_+00_+14",
+      "q": 0,
+      "r": 14,
+      "center_xz": [
+        30310.88913245535,
+        52500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+00_+14.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_+0_13",
+        "JS_+1_13",
+        "JS_-1_14"
+      ],
+      "sha256": "b272cf00cd61bd768acc0c201451e525b3435e43154c2cc5779efa9a416fa094",
+      "bytes": 633744,
+      "vertices": 13069,
+      "triangles": 12098,
+      "triangles_with_instances": 628224
+    },
+    {
+      "id": "costa_+01_+14",
+      "q": 1,
+      "r": 14,
+      "center_xz": [
+        34641.016151377546,
+        52500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+01_+14.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "tropical swamp",
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_+1_13",
+        "PT_+2_13"
+      ],
+      "sha256": "647429b2290ae2910d3cf08c6d5760b171a59c621183d60dc815ccf0336e1323",
+      "bytes": 608700,
+      "vertices": 13015,
+      "triangles": 12170,
+      "triangles_with_instances": 541822
+    },
+    {
+      "id": "costa_+02_+14",
+      "q": 2,
+      "r": 14,
+      "center_xz": [
+        38971.143170299736,
+        52500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+02_+14.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "tropical swamp"
+      ],
+      "contacts": [
+        "PT_+2_13",
+        "PT_+3_13"
+      ],
+      "sha256": "e729f7b03acf382dcb5b5912540a25e5ff0373ddb261d49c76a528c8f1037522",
+      "bytes": 623468,
+      "vertices": 13599,
+      "triangles": 12358,
+      "triangles_with_instances": 456674
+    },
+    {
+      "id": "costa_+03_+14",
+      "q": 3,
+      "r": 14,
+      "center_xz": [
+        43301.270189221934,
+        52500.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_+03_+14.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "tropical swamp"
+      ],
+      "contacts": [
+        "PT_+3_13"
+      ],
+      "sha256": "fe81e7ac0e7a540fd5c9054269a2498486553628ae4d593b9bf0cfa63be1f447",
+      "bytes": 627628,
+      "vertices": 13777,
+      "triangles": 12434,
+      "triangles_with_instances": 456526
+    },
+    {
+      "id": "costa_-02_+15",
+      "q": -2,
+      "r": 15,
+      "center_xz": [
+        23815.698604072062,
+        56250.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_-02_+15.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_-1_14"
+      ],
+      "sha256": "a39b76a171389d7fa47a43c798ae3aaa8553d69f1575a45082daddd5caf12a02",
+      "bytes": 616364,
+      "vertices": 13320,
+      "triangles": 12180,
+      "triangles_with_instances": 429708
+    },
+    {
+      "id": "costa_-01_+15",
+      "q": -1,
+      "r": 15,
+      "center_xz": [
+        28145.825622994256,
+        56250.0
+      ],
+      "kind": "falesia",
+      "model": "models/continente/costa_-01_+15.glb",
+      "approved_pilot": false,
+      "biomes": [
+        "true tropical jungle"
+      ],
+      "contacts": [
+        "JS_-1_14"
+      ],
+      "sha256": "ea4c12a3d09635c6ca5f6630b80797290a61bd6afee2725ea3823afadcf430f8",
+      "bytes": 623840,
+      "vertices": 13446,
+      "triangles": 12222,
+      "triangles_with_instances": 455336
+    }
+  ]
+}

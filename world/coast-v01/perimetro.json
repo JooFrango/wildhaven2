@@ -1,0 +1,3450 @@
+{
+  "composition": "composition_195.json",
+  "base_commit": "a09d24d37e07beada8d9ddc680d4af305073be52",
+  "sea_level_m": -270.0,
+  "inland_voids": [
+    [
+      2,
+      -2
+    ],
+    [
+      3,
+      -2
+    ]
+  ],
+  "boundary": [
+    {
+      "id": "PL_E_E",
+      "q": 5,
+      "r": 2,
+      "biome": "entirely temperate plains (no transition)",
+      "model_path": "world/world-visual-coherence-v12/detailed/pl_e_e_v12.glb",
+      "sha256": "49a7ade923468309dbf853f3fb6bc5a87cd722e91d81880ae0b130530d3179cc"
+    },
+    {
+      "id": "PL_E_S",
+      "q": 4,
+      "r": 3,
+      "biome": "entirely temperate plains (no transition)",
+      "model_path": "world/world-visual-coherence-v12/detailed/pl_e_s_v12.glb",
+      "sha256": "354c49b97e4fdb763c9a8deb0889e804211cb42928bd8365de24307c24dd8e43"
+    },
+    {
+      "id": "PL_E_SE",
+      "q": 4,
+      "r": 4,
+      "biome": "entirely temperate plains (no transition)",
+      "model_path": "world/world-visual-coherence-v12/detailed/pl_e_se_v12.glb",
+      "sha256": "a0d5f6a76471ca6d11b2a8b7d69dbdac2dbd3bfecb838930f1ab1299d3c4d7d5"
+    },
+    {
+      "id": "SV_E",
+      "q": 4,
+      "r": 5,
+      "biome": "temperate prairie north of river + golden fantasy savanna south",
+      "model_path": "world/world-visual-coherence-v12/detailed/sv_e_v12.glb",
+      "sha256": "26687ed5f5daa76fe7f9490de19da9361cc6879aa3647dfecfe4f9aceb80ea0a"
+    },
+    {
+      "id": "SV2_E",
+      "q": 4,
+      "r": 6,
+      "biome": "temperate golden fantasy savanna",
+      "model_path": "world/world-visual-coherence-v12/detailed/sv2_e_v12.glb",
+      "sha256": "0fff33171ab3897ac766c19529e2126a497555b0a6c5533d513f4bac1c96932f"
+    },
+    {
+      "id": "SV3_E",
+      "q": 3,
+      "r": 7,
+      "biome": "temperate golden fantasy savanna",
+      "model_path": "world/world-visual-coherence-v12/detailed/sv3_e_v12.glb",
+      "sha256": "3a5cad949ced9c8f956fa5c48125fbe876569e5cca889a94d0473f35b9617a95"
+    },
+    {
+      "id": "SV4_E",
+      "q": 3,
+      "r": 8,
+      "biome": "temperate golden fantasy savanna",
+      "model_path": "world/world-visual-coherence-v12/detailed/sv4_e_v12.glb",
+      "sha256": "9e4c0d63a6c5e6f983030d364b68da8cea709757b02da76c9d9ae69b7dec7b02"
+    },
+    {
+      "id": "TR_E",
+      "q": 2,
+      "r": 9,
+      "biome": "humid savanna -> elevated jungle rocky ecotone",
+      "model_path": "world/world-visual-coherence-v12/detailed/tr_e_v12.glb",
+      "sha256": "f724d071fab5ace2c62a205d01ec8e2993cd35f7adbfdc2334425b031ce688bb"
+    },
+    {
+      "id": "J_E",
+      "q": 2,
+      "r": 10,
+      "biome": "true tropical jungle",
+      "model_path": "world/world-visual-coherence-v12/detailed/j_e_v12.glb",
+      "sha256": "3a515ac4f1b04a8bb48fee080531fe9da7d190963ffb88c8bdb028ee7038f874"
+    },
+    {
+      "id": "MN2_04",
+      "q": -2,
+      "r": 5,
+      "biome": "mountain_second_row",
+      "model_path": "world/world-visual-coherence-v12/detailed/mn2_04_v12.glb",
+      "sha256": "1e79c4367213c47a121517d8c60ca3a2cdd85c37259c437534bc649e379b79a9"
+    },
+    {
+      "id": "MN2_05",
+      "q": -2,
+      "r": 6,
+      "biome": "mountain_second_row",
+      "model_path": "world/world-visual-coherence-v12/detailed/mn2_05_v12.glb",
+      "sha256": "206880044bd6964877d770d1d4b11a9e96532ab7f657ee208b98e91626b9be25"
+    },
+    {
+      "id": "MN2_06",
+      "q": -2,
+      "r": 7,
+      "biome": "mountain_second_row",
+      "model_path": "world/world-visual-coherence-v12/detailed/mn2_06_v12.glb",
+      "sha256": "6569a39cf31c4b7def98022df9ad729d11fd46a6289d6fdbcf40516d585ba597"
+    },
+    {
+      "id": "MN2_07",
+      "q": -3,
+      "r": 8,
+      "biome": "mountain_second_row",
+      "model_path": "world/world-visual-coherence-v12/detailed/mn2_07_v12.glb",
+      "sha256": "e2da37ca3079d43fc19732a2ea6f65fecd59e7ff289840d5ad08a1a6079d43c3"
+    },
+    {
+      "id": "MN2_08",
+      "q": -3,
+      "r": 9,
+      "biome": "mountain_second_row",
+      "model_path": "world/world-visual-coherence-v12/detailed/mn2_08_v12.glb",
+      "sha256": "ec983d7bbca1f984c4ac895c9544667aedd313cbdaf9f5d4f8507bb13cd80b41"
+    },
+    {
+      "id": "DN_01",
+      "q": 0,
+      "r": -3,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_01_v12.glb",
+      "sha256": "1c7b841c335bf9784069cfe89d3040c30d0d490ac16db33a760f2db68e928506"
+    },
+    {
+      "id": "DN_02",
+      "q": 1,
+      "r": -3,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_02_v12.glb",
+      "sha256": "339d3ec6c3abd8d27163bcbe2ebcdff0673c39e9b85543fd0dc3838c3449026f"
+    },
+    {
+      "id": "DN_03",
+      "q": 2,
+      "r": -3,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_03_v12.glb",
+      "sha256": "58841cc1be81830e44930cb749f1ba10ae4dacba361ac030a3f40979a1bdc39e"
+    },
+    {
+      "id": "DN_04",
+      "q": -1,
+      "r": -2,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_04_v12.glb",
+      "sha256": "a5082762e2568bbc0a0a119c07bffb184dd7675aeda76b66330ecccbb68fdb78"
+    },
+    {
+      "id": "DN_07",
+      "q": -2,
+      "r": -1,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_07_v12.glb",
+      "sha256": "b52d215620bccac0eeaa78b8d336e8b2b6718965b9638fe1826410b8ef75cd38"
+    },
+    {
+      "id": "DN_09",
+      "q": -3,
+      "r": 0,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_09_v12.glb",
+      "sha256": "2c1334b0b807177380861ceb3f3c2ee8e3eb29ee07e7fea2a989312c495fc590"
+    },
+    {
+      "id": "DN_11",
+      "q": -3,
+      "r": 1,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_11_v12.glb",
+      "sha256": "36a0fde02657b77041c9d6208b995eed29da5a08393f2a4f8ccb520b24a964b7"
+    },
+    {
+      "id": "DN_13",
+      "q": -4,
+      "r": 2,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_13_v12.glb",
+      "sha256": "9bfc84cbefa26662401ab00350f025a009f24ec54c24f671d2d1e07290c243fb"
+    },
+    {
+      "id": "DN_17",
+      "q": -4,
+      "r": 3,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_17_v12.glb",
+      "sha256": "a5c2e887d954730eb12ce958495f20ed5631ed3293ffcb7f0f0c1b9a57782f04"
+    },
+    {
+      "id": "DN_21",
+      "q": -4,
+      "r": 4,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_21_v12.glb",
+      "sha256": "a50c4c8722a552b3c9fa5a8d80ee9fc251f727efb120cc8cb0f6c492067b3749"
+    },
+    {
+      "id": "DN_24",
+      "q": -4,
+      "r": 5,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_24_v12.glb",
+      "sha256": "bb15596714d9886446ad09523a12f687f5c8b2283b87339ad5c583897b63b99b"
+    },
+    {
+      "id": "DN_25",
+      "q": -3,
+      "r": 5,
+      "biome": "erg_dune_desert",
+      "model_path": "world/world-visual-coherence-v12/detailed/dn_25_v12.glb",
+      "sha256": "fb72f01c94f53e3533677c9cd3c314a4ace643049c7bc000f1dc8b153300905f"
+    },
+    {
+      "id": "FX_04",
+      "q": 4,
+      "r": -5,
+      "biome": "temperate forest",
+      "model_path": "world/world-visual-coherence-v12/detailed/fx_04_v12.glb",
+      "sha256": "472f729a41786ebf139acb8b9e8c503ae04ee5e03b97377fb51d64a4b762756c"
+    },
+    {
+      "id": "FX_08",
+      "q": 4,
+      "r": -4,
+      "biome": "temperate forest",
+      "model_path": "world/world-visual-coherence-v12/detailed/fx_08_v12.glb",
+      "sha256": "6ef12c27677a79b2c18838fdee62dddb22455b6a74fb2081835c2424b3d36464"
+    },
+    {
+      "id": "FX_12",
+      "q": 3,
+      "r": -3,
+      "biome": "temperate forest",
+      "model_path": "world/world-visual-coherence-v12/detailed/fx_12_v12.glb",
+      "sha256": "23bb75619a662983c6d5e7786cb179b85c6f68df9a3726092bbfe29d08381755"
+    },
+    {
+      "id": "ER_01",
+      "q": 7,
+      "r": -8,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_01_v12.glb",
+      "sha256": "ec4b55aa6c83357b7b9b4c5c179ce432687d9cb1df6c91fe819ba339217debcf"
+    },
+    {
+      "id": "ER_02",
+      "q": 8,
+      "r": -8,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_02_v12.glb",
+      "sha256": "8df9b5ec72d339f836108ac1387ab5ff7a1d579d644d65bd3d3c118a8f58fb8a"
+    },
+    {
+      "id": "ER_03",
+      "q": 9,
+      "r": -8,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_03_v12.glb",
+      "sha256": "453c62824cb2ab6fde71cdad6434a795b4f58ce3fc67d33e24cb588ba5d4ea1b"
+    },
+    {
+      "id": "ER_06",
+      "q": 9,
+      "r": -7,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_06_v12.glb",
+      "sha256": "e6dc723f90b3a14137053cb579bc3c2ed08a80e9a22a8d87d52315f00d9d2520"
+    },
+    {
+      "id": "ER_08",
+      "q": 9,
+      "r": -6,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_08_v12.glb",
+      "sha256": "8a8837ed39ce1479a1cecc72f8703186c1db15c67eec87284c848d7ff4c3e753"
+    },
+    {
+      "id": "ER_10",
+      "q": 9,
+      "r": -5,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_10_v12.glb",
+      "sha256": "ce28c31eb8f7de5b0b0d98d9e3c0cd026523bd40696c00dae592b66c25939842"
+    },
+    {
+      "id": "ER_11",
+      "q": 10,
+      "r": -5,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_11_v12.glb",
+      "sha256": "983adfcd85359a1fce90ba666671272004e9ce0909f7b354de1b8a470dd160ee"
+    },
+    {
+      "id": "ER_14",
+      "q": 10,
+      "r": -4,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_14_v12.glb",
+      "sha256": "debf65d34a4fbd464d45d33067937f6b0ae82ab78164aeb2ae731a51e855bae2"
+    },
+    {
+      "id": "ER_17",
+      "q": 10,
+      "r": -3,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_17_v12.glb",
+      "sha256": "e05d41351e62548db79b92ebb0728f9a5e2b2cc30e84c8d28d9d1aa868e1c900"
+    },
+    {
+      "id": "ER_20",
+      "q": 10,
+      "r": -2,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_20_v12.glb",
+      "sha256": "197028b97b7d00fd05b1d1c0ce73efc8e21ab21f96bb1763db8ca3e2ab8c1954"
+    },
+    {
+      "id": "ER_23",
+      "q": 9,
+      "r": -1,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_23_v12.glb",
+      "sha256": "3d6b532ca76a185b7b2647b64a4ee9e0e0d16da8b8a766c6dc52efbff7530c0b"
+    },
+    {
+      "id": "ER_26",
+      "q": 8,
+      "r": 0,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_26_v12.glb",
+      "sha256": "0f91a5b5d31689d6926658c9af4f055f0d5a4d8396b2866873fb4a8ea6cd25de"
+    },
+    {
+      "id": "ER_27",
+      "q": 6,
+      "r": 1,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_27_v12.glb",
+      "sha256": "8456633445c51d5bf39145911f8aff385c542284ec0fdef53bb7ccc6b6fbe3ca"
+    },
+    {
+      "id": "ER_28",
+      "q": 7,
+      "r": 1,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_28_v12.glb",
+      "sha256": "8280073d3dce4492fe571350c0cc215be4e04073049d7fc299aa03e8aa2367c3"
+    },
+    {
+      "id": "ER_29",
+      "q": 8,
+      "r": 1,
+      "biome": "forested mountain",
+      "model_path": "world/world-visual-coherence-v12/detailed/er_29_v12.glb",
+      "sha256": "adabe8aa3002c7d12079b5139530f662b09061bd8e794a3e426afd4a1b2f03c0"
+    },
+    {
+      "id": "WG_01",
+      "q": 1,
+      "r": -6,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_01_v12.glb",
+      "sha256": "fa4661890988cb69262ce21eb143b5a0dabfa1d1c7525dcf3633d0008fd687ba"
+    },
+    {
+      "id": "WG_02",
+      "q": 2,
+      "r": -6,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_02_v12.glb",
+      "sha256": "b410da73827b089ed6fc62edad4b84df6e78df7bbe95a9e74d03ae81ccffbee1"
+    },
+    {
+      "id": "WG_03",
+      "q": 3,
+      "r": -6,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_03_v12.glb",
+      "sha256": "22a45b46f04559eb41d663eb9de88475510c7e8548e4e1d5e6c9584034d7151d"
+    },
+    {
+      "id": "WG_04",
+      "q": 4,
+      "r": -6,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_04_v12.glb",
+      "sha256": "f7b0629f9fca01f4041fa59b947a8eccd9e1a7accc14d820be466b895992751e"
+    },
+    {
+      "id": "WG_05",
+      "q": 1,
+      "r": -7,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_05_v12.glb",
+      "sha256": "a05ab13976f4df9d86bb45be504a96967d2a492866e2163938d67fa11076012b"
+    },
+    {
+      "id": "WG_10",
+      "q": 2,
+      "r": -8,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_10_v12.glb",
+      "sha256": "8ed320705d0600fc91c28c4b43202928ec012336981394c50e5e7e86fb915193"
+    },
+    {
+      "id": "WG_13",
+      "q": 5,
+      "r": -8,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_13_v12.glb",
+      "sha256": "259526ff957d1d54f5e4b70f83c3e296936130c29c5d235900612a2f9ead6d63"
+    },
+    {
+      "id": "WG_14",
+      "q": 6,
+      "r": -8,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_14_v12.glb",
+      "sha256": "ac62c02afc8d220f406c169b5152e4afd484cee3323593637923ad95fae26c2c"
+    },
+    {
+      "id": "WG_15",
+      "q": 2,
+      "r": -9,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_15_v12.glb",
+      "sha256": "8f7b511e5df28562c70856214412cb08117a3e598bef559afa0f295187f138fd"
+    },
+    {
+      "id": "WG_17",
+      "q": 4,
+      "r": -9,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_17_v12.glb",
+      "sha256": "8d835c7147a3eda44f9118762568ef67409b198fa3558b0ed50bbd343877eb1a"
+    },
+    {
+      "id": "WG_18",
+      "q": 5,
+      "r": -9,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_18_v12.glb",
+      "sha256": "dfcfb3d0c4b9e9b1aeaaeae5c413b5f963be953eb7b681103e3247d0d1e68763"
+    },
+    {
+      "id": "WG_19",
+      "q": 3,
+      "r": -10,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_19_v12.glb",
+      "sha256": "15d6c2a00f7e973f7ca6c705baa33c7cacf4583710bfe3b29a319a75d2fb4de6"
+    },
+    {
+      "id": "WG_20",
+      "q": 4,
+      "r": -10,
+      "biome": "glacial",
+      "model_path": "world/world-visual-coherence-v12/detailed/wg_20_v12.glb",
+      "sha256": "18a0be23bea18c9e8d253e51aa6fe870e5bbab25b133f6b81f51fd470e289eae"
+    },
+    {
+      "id": "JS_-3_10",
+      "q": -3,
+      "r": 10,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_-3_10.glb",
+      "sha256": "6b9ccff8b2ab4a038cde86f7b94d5da048c50c5ee527644ca8e8c74eb8d5da72"
+    },
+    {
+      "id": "PT_+3_10",
+      "q": 3,
+      "r": 10,
+      "biome": "tropical swamp",
+      "model_path": "world/tropical-south-v01/models/PT_+3_10.glb",
+      "sha256": "259f8a1ed9e0c7a29c3c83d1270cb357471e6ed598279af075311ef0f858df03"
+    },
+    {
+      "id": "JS_-3_11",
+      "q": -3,
+      "r": 11,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_-3_11.glb",
+      "sha256": "cf565894e7a00e596e66933fe1d8be42c0a0bccd59b93f7ccfd20703643947c6"
+    },
+    {
+      "id": "PT_+3_11",
+      "q": 3,
+      "r": 11,
+      "biome": "tropical swamp",
+      "model_path": "world/tropical-south-v01/models/PT_+3_11.glb",
+      "sha256": "6363ff8e6aaa1480a7f62e08e6e3bafdff988cd58cc6582a031b6fa42867df14"
+    },
+    {
+      "id": "JS_-3_12",
+      "q": -3,
+      "r": 12,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_-3_12.glb",
+      "sha256": "a4173a895613b615ea1c9c791f9ea6f1e55c4a91fc63a1bd1922309082c1555d"
+    },
+    {
+      "id": "PT_+3_12",
+      "q": 3,
+      "r": 12,
+      "biome": "tropical swamp",
+      "model_path": "world/tropical-south-v01/models/PT_+3_12.glb",
+      "sha256": "522d5711252f847cb1b30a21c93255e547b7c15d7f88eaa8ef905b14399c44bc"
+    },
+    {
+      "id": "JS_-3_13",
+      "q": -3,
+      "r": 13,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_-3_13.glb",
+      "sha256": "1837c97628fad336884bdb14906283665a7da553dc7bf8a5b84ae5efe3faa0a0"
+    },
+    {
+      "id": "JS_-2_13",
+      "q": -2,
+      "r": 13,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_-2_13.glb",
+      "sha256": "fb96a33e50d2fe00014718a816b0228e399a39feaabc1f5dba14f11dd6e6d7b6"
+    },
+    {
+      "id": "JS_-1_13",
+      "q": -1,
+      "r": 13,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_-1_13.glb",
+      "sha256": "9fb1d07dd7b0cc31c8da3f5ae4832934600f236b1b60c692293e1cfbd2557e84"
+    },
+    {
+      "id": "JS_+0_13",
+      "q": 0,
+      "r": 13,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_+0_13.glb",
+      "sha256": "8cd09f89bc01b7286003e781b835bd11d7b92074947138c9ce479a2a3c389ecc"
+    },
+    {
+      "id": "JS_+1_13",
+      "q": 1,
+      "r": 13,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_+1_13.glb",
+      "sha256": "ca3c0c45418decf9819987b8d27dc9f1b545005bf0f3f75c0987d12483d0e2c3"
+    },
+    {
+      "id": "PT_+2_13",
+      "q": 2,
+      "r": 13,
+      "biome": "tropical swamp",
+      "model_path": "world/tropical-south-v01/models/PT_+2_13.glb",
+      "sha256": "8383a96d35c2756c1154d141ad6c9777e3aa5e05045f5968804b446c184dd926"
+    },
+    {
+      "id": "PT_+3_13",
+      "q": 3,
+      "r": 13,
+      "biome": "tropical swamp",
+      "model_path": "world/tropical-south-v01/models/PT_+3_13.glb",
+      "sha256": "9b82c65d099854139e14f86d9b4095e1fdba61f08e2afe78bc0129d653958b87"
+    },
+    {
+      "id": "JS_-1_14",
+      "q": -1,
+      "r": 14,
+      "biome": "true tropical jungle",
+      "model_path": "world/tropical-south-v01/models/JS_-1_14.glb",
+      "sha256": "cfa9953c9590e5bc3bcf91cbaea82504353ac685a2610f7827e256bc916b9765"
+    }
+  ],
+  "slots": [
+    {
+      "q": 3,
+      "r": -11,
+      "center_xz": [
+        -10825.317547305483,
+        -41250.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_19",
+          "biome": "glacial",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -251.43161010742188,
+            -229.59176635742188
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 4,
+      "r": -11,
+      "center_xz": [
+        -6495.190528383289,
+        -41250.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_19",
+          "biome": "glacial",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -244.6036834716797,
+            -225.669677734375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_20",
+          "biome": "glacial",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -237.86231994628906,
+            -221.25572204589844
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 5,
+      "r": -11,
+      "center_xz": [
+        -2165.0635094610966,
+        -41250.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_20",
+          "biome": "glacial",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -244.2040252685547,
+            -208.16090393066406
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 2,
+      "r": -10,
+      "center_xz": [
+        -12990.381056766579,
+        -37500.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_15",
+          "biome": "glacial",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -234.2645263671875,
+            -218.65463256835938
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_19",
+          "biome": "glacial",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -253.11048889160156,
+            -226.909423828125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 5,
+      "r": -10,
+      "center_xz": [
+        0.0,
+        -37500.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_17",
+          "biome": "glacial",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -225.1809539794922,
+            -212.55813598632812
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_18",
+          "biome": "glacial",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -245.22743225097656,
+            -219.36355590820312
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_20",
+          "biome": "glacial",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -247.96363830566406,
+            -219.64341735839844
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 6,
+      "r": -10,
+      "center_xz": [
+        4330.127018922193,
+        -37500.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_18",
+          "biome": "glacial",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -257.3345642089844,
+            -228.50465393066406
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 1,
+      "r": -9,
+      "center_xz": [
+        -15155.444566227676,
+        -33750.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_15",
+          "biome": "glacial",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -245.78451538085938,
+            -227.4559326171875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 6,
+      "r": -9,
+      "center_xz": [
+        6495.190528383289,
+        -33750.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_13",
+          "biome": "glacial",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -224.56886291503906,
+            743.8216552734375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_14",
+          "biome": "glacial",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            224.066650390625,
+            1209.065185546875
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_18",
+          "biome": "glacial",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -241.69161987304688,
+            -218.1451873779297
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 7,
+      "r": -9,
+      "center_xz": [
+        10825.317547305483,
+        -33750.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_01",
+          "biome": "forested mountain",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            847.4927978515625,
+            862.9005737304688
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_14",
+          "biome": "glacial",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            215.5044708251953,
+            847.4927978515625
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 8,
+      "r": -9,
+      "center_xz": [
+        15155.444566227676,
+        -33750.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_01",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            858.217041015625,
+            868.9580688476562
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_02",
+          "biome": "forested mountain",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            868.9580688476562,
+            882.3844604492188
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 9,
+      "r": -9,
+      "center_xz": [
+        19485.571585149868,
+        -33750.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_02",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            875.0150756835938,
+            882.868408203125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_03",
+          "biome": "forested mountain",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            881.666748046875,
+            887.7045288085938
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 10,
+      "r": -9,
+      "center_xz": [
+        23815.698604072062,
+        -33750.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_03",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            884.4586181640625,
+            896.3416137695312
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 1,
+      "r": -8,
+      "center_xz": [
+        -12990.381056766579,
+        -30000.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_05",
+          "biome": "glacial",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            209.23606872558594,
+            1272.6038818359375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_10",
+          "biome": "glacial",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -74.40486907958984,
+            1277.8919677734375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_15",
+          "biome": "glacial",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            -232.07809448242188,
+            -74.40486907958984
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 10,
+      "r": -8,
+      "center_xz": [
+        25980.762113533157,
+        -30000.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_03",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            887.291748046875,
+            898.2247314453125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_06",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            893.2025756835938,
+            901.3389282226562
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 0,
+      "r": -7,
+      "center_xz": [
+        -15155.444566227676,
+        -26250.0
+      ],
+      "kind": "glacial",
+      "pilot": "glacial",
+      "contacts": [
+        {
+          "source": "WG_05",
+          "biome": "glacial",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            195.60044860839844,
+            234.97523498535156
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 10,
+      "r": -7,
+      "center_xz": [
+        28145.825622994256,
+        -26250.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_06",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            894.7150268554688,
+            901.2129516601562
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_08",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            885.3070678710938,
+            895.7084350585938
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 0,
+      "r": -6,
+      "center_xz": [
+        -12990.381056766579,
+        -22500.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_01",
+          "biome": "glacial",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            186.510498046875,
+            656.1280517578125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_05",
+          "biome": "glacial",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            203.10108947753906,
+            656.1280517578125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 10,
+      "r": -6,
+      "center_xz": [
+        30310.88913245535,
+        -22500.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_08",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            891.4503173828125,
+            894.1152954101562
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_10",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            892.3388671875,
+            904.4461669921875
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_11",
+          "biome": "forested mountain",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            896.1716918945312,
+            909.7328491210938
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 11,
+      "r": -6,
+      "center_xz": [
+        34641.016151377546,
+        -22500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_11",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            897.9420776367188,
+            909.1664428710938
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 0,
+      "r": -5,
+      "center_xz": [
+        -10825.317547305483,
+        -18750.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_01",
+          "biome": "glacial",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            195.00054931640625,
+            228.8729248046875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 1,
+      "r": -5,
+      "center_xz": [
+        -6495.190528383289,
+        -18750.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_01",
+          "biome": "glacial",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            200.36431884765625,
+            235.59597778320312
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_02",
+          "biome": "glacial",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            207.73916625976562,
+            236.74142456054688
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 2,
+      "r": -5,
+      "center_xz": [
+        -2165.0635094610966,
+        -18750.0
+      ],
+      "kind": "glacial",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "WG_02",
+          "biome": "glacial",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            203.78900146484375,
+            224.11871337890625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_03",
+          "biome": "glacial",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            199.00205993652344,
+            230.20782470703125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 3,
+      "r": -5,
+      "center_xz": [
+        2165.0635094610966,
+        -18750.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "FX_04",
+          "biome": "temperate forest",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            228.83157348632812,
+            470.8636779785156
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_03",
+          "biome": "glacial",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "glacial",
+          "knots": 73,
+          "height_m": [
+            195.39117431640625,
+            234.16586303710938
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "WG_04",
+          "biome": "glacial",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            191.15953063964844,
+            474.2371826171875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 11,
+      "r": -5,
+      "center_xz": [
+        36806.079660838644,
+        -18750.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_11",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            902.666748046875,
+            919.1021118164062
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_14",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            913.258544921875,
+            923.4281005859375
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 0,
+      "r": -4,
+      "center_xz": [
+        -8660.254037844386,
+        -15000.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_01",
+          "biome": "erg_dune_desert",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            45.89677810668945,
+            85.1263198852539
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 1,
+      "r": -4,
+      "center_xz": [
+        -4330.127018922193,
+        -15000.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_01",
+          "biome": "erg_dune_desert",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            55.0457878112793,
+            89.14749145507812
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_02",
+          "biome": "erg_dune_desert",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            66.45122528076172,
+            280.44158935546875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 2,
+      "r": -4,
+      "center_xz": [
+        0.0,
+        -15000.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_02",
+          "biome": "erg_dune_desert",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            76.15293884277344,
+            108.22637939453125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_03",
+          "biome": "erg_dune_desert",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            100.14376831054688,
+            134.20106506347656
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 3,
+      "r": -4,
+      "center_xz": [
+        4330.127018922193,
+        -15000.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_03",
+          "biome": "erg_dune_desert",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            102.33467864990234,
+            130.10035705566406
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "FX_04",
+          "biome": "temperate forest",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            206.69850158691406,
+            255.1663818359375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "FX_08",
+          "biome": "temperate forest",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            133.1820068359375,
+            255.1663818359375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "FX_12",
+          "biome": "temperate forest",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            110.44342803955078,
+            138.94656372070312
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 11,
+      "r": -4,
+      "center_xz": [
+        38971.143170299736,
+        -15000.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_14",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            911.0217895507812,
+            914.3805541992188
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_17",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            909.8909301757812,
+            922.9969482421875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -1,
+      "r": -3,
+      "center_xz": [
+        -10825.317547305483,
+        -11250.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_01",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            43.917877197265625,
+            64.61145782470703
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_04",
+          "biome": "erg_dune_desert",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            52.89866638183594,
+            59.12025451660156
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 11,
+      "r": -3,
+      "center_xz": [
+        41136.206679760835,
+        -11250.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_17",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            919.2380981445312,
+            924.5844116210938
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_20",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            910.799072265625,
+            919.2380981445312
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -2,
+      "r": -2,
+      "center_xz": [
+        -12990.381056766579,
+        -7500.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_04",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            59.12025451660156,
+            234.29449462890625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_07",
+          "biome": "erg_dune_desert",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            69.31369018554688,
+            178.52008056640625
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 11,
+      "r": -2,
+      "center_xz": [
+        43301.270189221934,
+        -7500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_20",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            908.0235595703125,
+            924.0916748046875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -3,
+      "r": -1,
+      "center_xz": [
+        -15155.444566227676,
+        -3750.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_07",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            55.91219711303711,
+            109.160400390625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_09",
+          "biome": "erg_dune_desert",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            59.700870513916016,
+            121.31401824951172
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 10,
+      "r": -1,
+      "center_xz": [
+        41136.206679760835,
+        -3750.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_20",
+          "biome": "forested mountain",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            905.7618408203125,
+            923.7349243164062
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_23",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            904.586181640625,
+            912.53759765625
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 0,
+      "center_xz": [
+        -17320.508075688773,
+        0.0
+      ],
+      "kind": "dunas",
+      "pilot": "dunas",
+      "contacts": [
+        {
+          "source": "DN_09",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            54.71683120727539,
+            126.49549102783203
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 9,
+      "r": 0,
+      "center_xz": [
+        38971.143170299736,
+        0.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_23",
+          "biome": "forested mountain",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            904.7432250976562,
+            915.5296630859375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_26",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            900.6349487304688,
+            913.6146850585938
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_29",
+          "biome": "forested mountain",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            900.6349487304688,
+            909.421875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 1,
+      "center_xz": [
+        -15155.444566227676,
+        3750.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_09",
+          "biome": "erg_dune_desert",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            57.301841735839844,
+            72.09141540527344
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_11",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            71.91548919677734,
+            112.3543472290039
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_13",
+          "biome": "erg_dune_desert",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            79.34556579589844,
+            166.4207763671875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 9,
+      "r": 1,
+      "center_xz": [
+        41136.206679760835,
+        3750.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_29",
+          "biome": "forested mountain",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            900.4177856445312,
+            909.9819946289062
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -5,
+      "r": 2,
+      "center_xz": [
+        -17320.508075688773,
+        7500.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_13",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            87.25370788574219,
+            220.2884979248047
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 6,
+      "r": 2,
+      "center_xz": [
+        30310.88913245535,
+        7500.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PL_E_E",
+          "biome": "entirely temperate plains (no transition)",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            661.2919921875,
+            794.368896484375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_27",
+          "biome": "forested mountain",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            794.368896484375,
+            848.2560424804688
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_28",
+          "biome": "forested mountain",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            848.2560424804688,
+            864.6571655273438
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 7,
+      "r": 2,
+      "center_xz": [
+        34641.016151377546,
+        7500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_28",
+          "biome": "forested mountain",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            864.6571655273438,
+            888.84033203125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "ER_29",
+          "biome": "forested mountain",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            880.2679443359375,
+            898.28662109375
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 8,
+      "r": 2,
+      "center_xz": [
+        38971.143170299736,
+        7500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "ER_29",
+          "biome": "forested mountain",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            896.2040405273438,
+            900.5960693359375
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -5,
+      "r": 3,
+      "center_xz": [
+        -15155.444566227676,
+        11250.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_13",
+          "biome": "erg_dune_desert",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            91.02620697021484,
+            106.00585174560547
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_17",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            105.12625885009766,
+            163.9444580078125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 5,
+      "r": 3,
+      "center_xz": [
+        28145.825622994256,
+        11250.0
+      ],
+      "kind": "praia",
+      "pilot": "praia",
+      "contacts": [
+        {
+          "source": "PL_E_E",
+          "biome": "entirely temperate plains (no transition)",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            613.92041015625,
+            665.42724609375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "PL_E_S",
+          "biome": "entirely temperate plains (no transition)",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            602.5523071289062,
+            683.4844970703125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "PL_E_SE",
+          "biome": "entirely temperate plains (no transition)",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            542.5577392578125,
+            611.5159301757812
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -5,
+      "r": 4,
+      "center_xz": [
+        -12990.381056766579,
+        15000.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_17",
+          "biome": "erg_dune_desert",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            117.31736755371094,
+            184.49172973632812
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_21",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            184.49172973632812,
+            264.7481994628906
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 5,
+      "r": 4,
+      "center_xz": [
+        30310.88913245535,
+        15000.0
+      ],
+      "kind": "praia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PL_E_SE",
+          "biome": "entirely temperate plains (no transition)",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            520.616943359375,
+            611.093994140625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "SV_E",
+          "biome": "temperate prairie north of river + golden fantasy savanna south",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "praia",
+          "knots": 73,
+          "height_m": [
+            391.5509948730469,
+            520.6622314453125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -5,
+      "r": 5,
+      "center_xz": [
+        -10825.317547305483,
+        18750.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_21",
+          "biome": "erg_dune_desert",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            210.38525390625,
+            295.01483154296875
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_24",
+          "biome": "erg_dune_desert",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            295.01483154296875,
+            341.0491943359375
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 5,
+      "r": 5,
+      "center_xz": [
+        32475.95264191645,
+        18750.0
+      ],
+      "kind": "arcos",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "SV_E",
+          "biome": "temperate prairie north of river + golden fantasy savanna south",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "arcos",
+          "knots": 73,
+          "height_m": [
+            437.03076171875,
+            486.6134338378906
+          ],
+          "water_at_edge": [
+            {
+              "mesh": "river_water",
+              "range_y": [
+                446.8428039550781,
+                446.8428039550781,
+                446.8428039550781,
+                446.8428039550781,
+                446.8428039550781,
+                446.8428039550781,
+                446.8428039550781,
+                446.8428039550781,
+                446.8428039550781
+              ]
+            }
+          ]
+        },
+        {
+          "source": "SV2_E",
+          "biome": "temperate golden fantasy savanna",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "arcos",
+          "knots": 73,
+          "height_m": [
+            423.1205139160156,
+            488.8106689453125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -5,
+      "r": 6,
+      "center_xz": [
+        -8660.254037844386,
+        22500.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_24",
+          "biome": "erg_dune_desert",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            341.0491943359375,
+            421.1258850097656
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 6,
+      "center_xz": [
+        -4330.127018922193,
+        22500.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "DN_24",
+          "biome": "erg_dune_desert",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            421.1258850097656,
+            629.6356811523438
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_25",
+          "biome": "erg_dune_desert",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            444.6632080078125,
+            494.93646240234375
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -3,
+      "r": 6,
+      "center_xz": [
+        0.0,
+        22500.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "MN2_04",
+          "biome": "mountain_second_row",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            505.7630920410156,
+            554.2711791992188
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "MN2_05",
+          "biome": "mountain_second_row",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            553.224365234375,
+            557.80859375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "DN_25",
+          "biome": "erg_dune_desert",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            493.7823791503906,
+            505.7630920410156
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 5,
+      "r": 6,
+      "center_xz": [
+        34641.016151377546,
+        22500.0
+      ],
+      "kind": "arcos",
+      "pilot": "arcos",
+      "contacts": [
+        {
+          "source": "SV2_E",
+          "biome": "temperate golden fantasy savanna",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "arcos",
+          "knots": 73,
+          "height_m": [
+            411.5887756347656,
+            437.76153564453125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -3,
+      "r": 7,
+      "center_xz": [
+        2165.0635094610966,
+        26250.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "MN2_05",
+          "biome": "mountain_second_row",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            556.4279174804688,
+            1484.8236083984375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "MN2_06",
+          "biome": "mountain_second_row",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            562.6737060546875,
+            904.5792236328125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "MN2_07",
+          "biome": "mountain_second_row",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            552.5706176757812,
+            562.6737060546875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 4,
+      "r": 7,
+      "center_xz": [
+        32475.95264191645,
+        26250.0
+      ],
+      "kind": "arcos",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "SV2_E",
+          "biome": "temperate golden fantasy savanna",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "arcos",
+          "knots": 73,
+          "height_m": [
+            399.9042663574219,
+            419.0914306640625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "SV3_E",
+          "biome": "temperate golden fantasy savanna",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "arcos",
+          "knots": 73,
+          "height_m": [
+            388.9046630859375,
+            420.598388671875
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "SV4_E",
+          "biome": "temperate golden fantasy savanna",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "arcos",
+          "knots": 73,
+          "height_m": [
+            331.475830078125,
+            389.06317138671875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 8,
+      "center_xz": [
+        0.0,
+        30000.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "MN2_07",
+          "biome": "mountain_second_row",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            543.9197387695312,
+            552.8847045898438
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 4,
+      "r": 8,
+      "center_xz": [
+        34641.016151377546,
+        30000.0
+      ],
+      "kind": "arcos",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "SV4_E",
+          "biome": "temperate golden fantasy savanna",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "arcos",
+          "knots": 73,
+          "height_m": [
+            344.3682861328125,
+            378.46502685546875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 9,
+      "center_xz": [
+        2165.0635094610966,
+        33750.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "MN2_07",
+          "biome": "mountain_second_row",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            542.2070922851562,
+            545.935546875
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "MN2_08",
+          "biome": "mountain_second_row",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            526.5428466796875,
+            543.4736938476562
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 3,
+      "r": 9,
+      "center_xz": [
+        32475.95264191645,
+        33750.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "SV4_E",
+          "biome": "temperate golden fantasy savanna",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "arcos",
+          "knots": 73,
+          "height_m": [
+            250.26547241210938,
+            368.6076965332031
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "TR_E",
+          "biome": "humid savanna -> elevated jungle rocky ecotone",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            249.90977478027344,
+            513.3242797851562
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "J_E",
+          "biome": "true tropical jungle",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            387.7186584472656,
+            539.87890625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "PT_+3_10",
+          "biome": "tropical swamp",
+          "source_side": 3,
+          "coast_side": 0,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            447.2091369628906,
+            539.87890625
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 4,
+      "r": 9,
+      "center_xz": [
+        36806.079660838644,
+        33750.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PT_+3_10",
+          "biome": "tropical swamp",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            446.7696838378906,
+            458.40606689453125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 10,
+      "center_xz": [
+        4330.127018922193,
+        37500.0
+      ],
+      "kind": "dunas",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "MN2_08",
+          "biome": "mountain_second_row",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "dunas",
+          "knots": 73,
+          "height_m": [
+            523.1898193359375,
+            2252.099853515625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_-3_10",
+          "biome": "true tropical jungle",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            522.0859375,
+            2261.770263671875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 4,
+      "r": 10,
+      "center_xz": [
+        38971.143170299736,
+        37500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PT_+3_10",
+          "biome": "tropical swamp",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            449.8838195800781,
+            458.96417236328125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "PT_+3_11",
+          "biome": "tropical swamp",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            445.7281799316406,
+            451.1022644042969
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 11,
+      "center_xz": [
+        6495.190528383289,
+        41250.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_-3_10",
+          "biome": "true tropical jungle",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            510.93389892578125,
+            585.1348266601562
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_-3_11",
+          "biome": "true tropical jungle",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            530.4898681640625,
+            643.95458984375
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 4,
+      "r": 11,
+      "center_xz": [
+        41136.206679760835,
+        41250.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PT_+3_11",
+          "biome": "tropical swamp",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            446.6893615722656,
+            452.97198486328125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "PT_+3_12",
+          "biome": "tropical swamp",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            450.54248046875,
+            455.64678955078125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 12,
+      "center_xz": [
+        8660.254037844386,
+        45000.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_-3_11",
+          "biome": "true tropical jungle",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            525.1409912109375,
+            585.548095703125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_-3_12",
+          "biome": "true tropical jungle",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            522.3311767578125,
+            610.6474609375
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 4,
+      "r": 12,
+      "center_xz": [
+        43301.270189221934,
+        45000.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PT_+3_12",
+          "biome": "tropical swamp",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            446.2536926269531,
+            453.2608337402344
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "PT_+3_13",
+          "biome": "tropical swamp",
+          "source_side": 2,
+          "coast_side": 5,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            447.43310546875,
+            458.518310546875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 13,
+      "center_xz": [
+        10825.317547305483,
+        48750.0
+      ],
+      "kind": "falesia",
+      "pilot": "falesia",
+      "contacts": [
+        {
+          "source": "JS_-3_12",
+          "biome": "true tropical jungle",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            508.5216979980469,
+            546.410400390625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_-3_13",
+          "biome": "true tropical jungle",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            508.8648376464844,
+            601.5686645507812
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 4,
+      "r": 13,
+      "center_xz": [
+        45466.333698683025,
+        48750.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PT_+3_13",
+          "biome": "tropical swamp",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            448.1302795410156,
+            453.8455810546875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -4,
+      "r": 14,
+      "center_xz": [
+        12990.381056766579,
+        52500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_-3_13",
+          "biome": "true tropical jungle",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            512.7011108398438,
+            596.786376953125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -3,
+      "r": 14,
+      "center_xz": [
+        17320.508075688773,
+        52500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_-3_13",
+          "biome": "true tropical jungle",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            497.21148681640625,
+            544.6322021484375
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_-2_13",
+          "biome": "true tropical jungle",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            540.3911743164062,
+            623.48876953125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -2,
+      "r": 14,
+      "center_xz": [
+        21650.635094610967,
+        52500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_-2_13",
+          "biome": "true tropical jungle",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            504.0780334472656,
+            564.430908203125
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_-1_13",
+          "biome": "true tropical jungle",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            523.799072265625,
+            613.5240478515625
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_-1_14",
+          "biome": "true tropical jungle",
+          "source_side": 4,
+          "coast_side": 1,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            549.3428955078125,
+            611.4215087890625
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 0,
+      "r": 14,
+      "center_xz": [
+        30310.88913245535,
+        52500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_+0_13",
+          "biome": "true tropical jungle",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            529.7892456054688,
+            687.2828979492188
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_+1_13",
+          "biome": "true tropical jungle",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            525.4578247070312,
+            595.7069702148438
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "JS_-1_14",
+          "biome": "true tropical jungle",
+          "source_side": 1,
+          "coast_side": 4,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            484.8428955078125,
+            539.75732421875
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 1,
+      "r": 14,
+      "center_xz": [
+        34641.016151377546,
+        52500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_+1_13",
+          "biome": "true tropical jungle",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            500.01666259765625,
+            571.2608032226562
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "PT_+2_13",
+          "biome": "tropical swamp",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            445.53662109375,
+            500.01666259765625
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 2,
+      "r": 14,
+      "center_xz": [
+        38971.143170299736,
+        52500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PT_+2_13",
+          "biome": "tropical swamp",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            445.8311767578125,
+            451.54608154296875
+          ],
+          "water_at_edge": []
+        },
+        {
+          "source": "PT_+3_13",
+          "biome": "tropical swamp",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            445.9737243652344,
+            451.1766662597656
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": 3,
+      "r": 14,
+      "center_xz": [
+        43301.270189221934,
+        52500.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "PT_+3_13",
+          "biome": "tropical swamp",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            449.94866943359375,
+            452.27911376953125
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -2,
+      "r": 15,
+      "center_xz": [
+        23815.698604072062,
+        56250.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_-1_14",
+          "biome": "true tropical jungle",
+          "source_side": 5,
+          "coast_side": 2,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            528.6697998046875,
+            585.3689575195312
+          ],
+          "water_at_edge": []
+        }
+      ]
+    },
+    {
+      "q": -1,
+      "r": 15,
+      "center_xz": [
+        28145.825622994256,
+        56250.0
+      ],
+      "kind": "falesia",
+      "pilot": null,
+      "contacts": [
+        {
+          "source": "JS_-1_14",
+          "biome": "true tropical jungle",
+          "source_side": 0,
+          "coast_side": 3,
+          "kind": "falesia",
+          "knots": 73,
+          "height_m": [
+            489.3589782714844,
+            605.7545776367188
+          ],
+          "water_at_edge": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "version": "v02",
+  "stage": "five approved prototypes",
+  "sea_m": -270.0,
+  "original_boundary_hashes_verified": 71,
+  "composition_sha256": "5175e2effcf818e9af1bdaffe2113734aa0854d82405523c3a28c5cae20e158d",
+  "models": [
+    {
+      "file": "models/glacial-v02.glb",
+      "sha256": "80c2fc5da01e72b6ca5beca8394f2434e788ec139cf8a01697c6c6f2cf8f59a0",
+      "bytes": 1122752,
+      "vertices": 21584,
+      "triangles": 27924,
+      "triangles_with_instances": 27924,
+      "plant_instances": 0,
+      "meshes": 2,
+      "solid_components": 33,
+      "texture_images": 2,
+      "bones": 0,
+      "clips": 0,
+      "range_y_m": [
+        -521.5217895507812,
+        1289.535400390625
+      ],
+      "seams": [
+        {
+          "source": "WG_05",
+          "knots": 73,
+          "max_height_m": 0.0,
+          "max_distance_m": 0.0003099378172919387,
+          "max_slope_angle_delta_deg": 1.1076259550449121,
+          "max_linear_rgb_delta": 0.0019490646567907888,
+          "sha256": "a05ab13976f4df9d86bb45be504a96967d2a492866e2163938d67fa11076012b"
+        }
+      ],
+      "art_status": "approved"
+    },
+    {
+      "file": "models/praia-v01.glb",
+      "sha256": "cc165202af84b804ce5142d1254650353560ac117c4b6ec9861d148763cf392b",
+      "bytes": 1166452,
+      "vertices": 19789,
+      "triangles": 28670,
+      "triangles_with_instances": 104000,
+      "plant_instances": 225,
+      "meshes": 7,
+      "solid_components": 21,
+      "texture_images": 2,
+      "bones": 0,
+      "clips": 0,
+      "range_y_m": [
+        -374.8648986816406,
+        683.4844970703125
+      ],
+      "seams": [
+        {
+          "source": "PL_E_E",
+          "knots": 73,
+          "max_height_m": 0.0,
+          "max_distance_m": 0.00015402828164213364,
+          "max_slope_angle_delta_deg": 1.880542816702355,
+          "max_linear_rgb_delta": 0.0,
+          "sha256": "49a7ade923468309dbf853f3fb6bc5a87cd722e91d81880ae0b130530d3179cc"
+        },
+        {
+          "source": "PL_E_S",
+          "knots": 73,
+          "max_height_m": 0.0,
+          "max_distance_m": 6.579719411092812e-05,
+          "max_slope_angle_delta_deg": 2.0049366698251294,
+          "max_linear_rgb_delta": 0.0,
+          "sha256": "354c49b97e4fdb763c9a8deb0889e804211cb42928bd8365de24307c24dd8e43"
+        },
+        {
+          "source": "PL_E_SE",
+          "knots": 73,
+          "max_height_m": 0.0,
+          "max_distance_m": 0.00015402828164213364,
+          "max_slope_angle_delta_deg": 2.009097508478325,
+          "max_linear_rgb_delta": 0.0,
+          "sha256": "a0d5f6a76471ca6d11b2a8b7d69dbdac2dbd3bfecb838930f1ab1299d3c4d7d5"
+        }
+      ],
+      "art_status": "approved"
+    },
+    {
+      "file": "models/dunas-v02.glb",
+      "sha256": "5ac7be885deeb238a32e12e84a1dc329db1a4ba91ec51011e8e97bfd25ac1e35",
+      "bytes": 947448,
+      "vertices": 17572,
+      "triangles": 26580,
+      "triangles_with_instances": 26580,
+      "plant_instances": 0,
+      "meshes": 2,
+      "solid_components": 17,
+      "texture_images": 2,
+      "bones": 0,
+      "clips": 0,
+      "range_y_m": [
+        -409.184326171875,
+        410.3822021484375
+      ],
+      "seams": [
+        {
+          "source": "DN_09",
+          "knots": 73,
+          "max_height_m": 0.0,
+          "max_distance_m": 6.57971941109281e-05,
+          "max_slope_angle_delta_deg": 1.1232739937545553,
+          "max_linear_rgb_delta": 0.0,
+          "sha256": "2c1334b0b807177380861ceb3f3c2ee8e3eb29ee07e7fea2a989312c495fc590"
+        }
+      ],
+      "art_status": "approved"
+    },
+    {
+      "file": "models/falesia-v01.glb",
+      "sha256": "66fbdfbe1fd21f067f1a7bbc18136f861ef7513aaeadf29107f3324bafe6c091",
+      "bytes": 1447040,
+      "vertices": 24112,
+      "triangles": 31084,
+      "triangles_with_instances": 558840,
+      "plant_instances": 1463,
+      "meshes": 11,
+      "solid_components": 33,
+      "texture_images": 2,
+      "bones": 0,
+      "clips": 0,
+      "range_y_m": [
+        -516.7203369140625,
+        601.5686645507812
+      ],
+      "seams": [
+        {
+          "source": "JS_-3_13",
+          "knots": 73,
+          "max_height_m": 0.0,
+          "max_distance_m": 6.57971922919387e-05,
+          "max_slope_angle_delta_deg": 2.3163981931360844,
+          "max_linear_rgb_delta": 0.001953154802777163,
+          "sha256": "1837c97628fad336884bdb14906283665a7da553dc7bf8a5b84ae5efe3faa0a0"
+        },
+        {
+          "source": "JS_-3_12",
+          "knots": 73,
+          "max_height_m": 0.0,
+          "max_distance_m": 0.00015402827942352155,
+          "max_slope_angle_delta_deg": 1.9069155677346241,
+          "max_linear_rgb_delta": 0.001953154802777149,
+          "sha256": "a4173a895613b615ea1c9c791f9ea6f1e55c4a91fc63a1bd1922309082c1555d"
+        }
+      ],
+      "art_status": "approved"
+    },
+    {
+      "file": "models/arcos-v02.glb",
+      "sha256": "eeb6ff51bdaec566336325add6ff070244eb8c5c15a6257e9e26014d25e205ed",
+      "bytes": 1113492,
+      "vertices": 20708,
+      "triangles": 27680,
+      "triangles_with_instances": 40760,
+      "plant_instances": 657,
+      "meshes": 8,
+      "solid_components": 23,
+      "texture_images": 2,
+      "bones": 0,
+      "clips": 0,
+      "range_y_m": [
+        -458.1482849121094,
+        437.76153564453125
+      ],
+      "seams": [
+        {
+          "source": "SV2_E",
+          "knots": 73,
+          "max_height_m": 0.0,
+          "max_distance_m": 6.579719411092812e-05,
+          "max_slope_angle_delta_deg": 0.06412471435326214,
+          "max_linear_rgb_delta": 0.0,
+          "sha256": "0fff33171ab3897ac766c19529e2126a497555b0a6c5533d513f4bac1c96932f"
+        }
+      ],
+      "art_status": "approved"
+    }
+  ]
+}

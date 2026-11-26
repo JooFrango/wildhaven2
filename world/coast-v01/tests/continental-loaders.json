@@ -1,0 +1,19 @@
+{
+  "estuary": {
+    "count": 272,
+    "overview": 272,
+    "full": [
+      "costa_+05_+04",
+      "costa_+05_+05",
+      "SV_E",
+      "SV2_E",
+      "arcos",
+      "costa_+04_+07"
+    ],
+    "selected": "costa_+05_+05",
+    "loading": 0
+  },
+  "continental": 77,
+  "alpha": 77,
+  "errors": []
+}

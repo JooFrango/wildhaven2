@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wildhaven · Continente</title><link rel="icon" href="data:,">
+<style>*{box-sizing:border-box}html,body{margin:0;height:100%;font:14px system-ui;color:#eff5ee;background:#9bb9c5}canvas{width:100%;height:100%;display:block}nav,output{position:fixed;left:12px;background:#142d29ed;border-radius:5px;padding:9px}nav{top:12px;display:flex;align-items:center;gap:.6em;flex-wrap:wrap;max-width:calc(100% - 24px)}select,button{font:inherit;max-width:48vw}output{bottom:12px}output:empty{display:none}</style>
+<canvas aria-label="Continente de Auralis em 3D"></canvas><nav><strong>Auralis</strong><select id="tile" aria-label="Trecho do litoral"><option value="">Continente completo</option></select><button id="mouth">Foz de SV_E</button></nav><output>Carregando o continente…</output>
+<script type="importmap">{"imports":{"three":"/vendor/three.module.min.js","three/addons/":"/vendor/addons/"}}</script>
+<script type="module">import('/viewer/continente.mjs').catch(e=>document.querySelector('output').textContent='Falha ao abrir o mapa. '+e.message)</script></html>

@@ -1,0 +1,136 @@
+{
+  "water": {
+    "level_m": -270.0,
+    "plane": "viewer only",
+    "depth_encoding": "R8; height above sea = normalized red * 640 - 256 m",
+    "domain_m": [
+      -2500,
+      2500
+    ]
+  },
+  "tiles": [
+    {
+      "id": "glacial",
+      "q": 0,
+      "r": -7,
+      "center_xz": [
+        -15155.444566227676,
+        -26250.0
+      ],
+      "out": [
+        -1.0,
+        -1.5752910326854156e-16
+      ],
+      "along": [
+        -1.5752910326854156e-16,
+        1.0
+      ],
+      "model": "models/glacial-v02.glb",
+      "depth": "viewer/glacial-depth-v02.png",
+      "neighbors": [
+        "WG_05"
+      ],
+      "plants": 0,
+      "landforms": 33
+    },
+    {
+      "id": "praia",
+      "q": 5,
+      "r": 3,
+      "center_xz": [
+        28145.825622994256,
+        11250.0
+      ],
+      "out": [
+        1.0,
+        1.6653345369377353e-16
+      ],
+      "along": [
+        1.6653345369377353e-16,
+        -1.0
+      ],
+      "model": "models/praia-v01.glb",
+      "depth": "viewer/praia-depth.png",
+      "neighbors": [
+        "PL_E_E",
+        "PL_E_S",
+        "PL_E_SE"
+      ],
+      "plants": 225,
+      "landforms": 21
+    },
+    {
+      "id": "dunas",
+      "q": -4,
+      "r": 0,
+      "center_xz": [
+        -17320.508075688773,
+        0.0
+      ],
+      "out": [
+        -1.0,
+        -1.5752910326854156e-16
+      ],
+      "along": [
+        -1.5752910326854156e-16,
+        1.0
+      ],
+      "model": "models/dunas-v02.glb",
+      "depth": "viewer/dunas-depth-v02.png",
+      "neighbors": [
+        "DN_09"
+      ],
+      "plants": 0,
+      "landforms": 17
+    },
+    {
+      "id": "falesia",
+      "q": -4,
+      "r": 13,
+      "center_xz": [
+        10825.317547305483,
+        48750.0
+      ],
+      "out": [
+        -0.8660254037844387,
+        0.49999999999999994
+      ],
+      "along": [
+        0.49999999999999994,
+        0.8660254037844387
+      ],
+      "model": "models/falesia-v01.glb",
+      "depth": "viewer/falesia-depth.png",
+      "neighbors": [
+        "JS_-3_13",
+        "JS_-3_12"
+      ],
+      "plants": 1463,
+      "landforms": 33
+    },
+    {
+      "id": "arcos",
+      "q": 5,
+      "r": 6,
+      "center_xz": [
+        34641.016151377546,
+        22500.0
+      ],
+      "out": [
+        1.0,
+        2.1003880435805547e-16
+      ],
+      "along": [
+        2.1003880435805547e-16,
+        -1.0
+      ],
+      "model": "models/arcos-v02.glb",
+      "depth": "viewer/arcos-depth-v02.png",
+      "neighbors": [
+        "SV2_E"
+      ],
+      "plants": 657,
+      "landforms": 23
+    }
+  ]
+}

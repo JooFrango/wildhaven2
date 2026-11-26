@@ -1,0 +1,149 @@
+{
+  "scale_m": 5000,
+  "tile_count": 13,
+  "tiles": [
+    {
+      "id": "MN2_01",
+      "q": 0,
+      "r": 2,
+      "center_x": 4330.127018922193,
+      "center_z": 7500.0,
+      "model_path": "world/coast-v01/models/cordilheira/MN2_01.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/MN2_01.glb",
+      "sha256": "39d9909044cb1ddf17d62b66f587982895401f2cbea43d493286bfe7e10dc2d5",
+      "replaces": "MN2_01"
+    },
+    {
+      "id": "NE",
+      "q": 1,
+      "r": -1,
+      "center_x": 2165.0635094610966,
+      "center_z": -3750.0,
+      "model_path": "world/coast-v01/models/cordilheira/NE.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/NE.glb",
+      "sha256": "9204ba514a278e2d524aa8cd4367e2aef1dd86d75d267ff5aa5dd92564be033b",
+      "replaces": "NE"
+    },
+    {
+      "id": "E",
+      "q": 1,
+      "r": 0,
+      "center_x": 4330.127018922193,
+      "center_z": 0.0,
+      "model_path": "world/coast-v01/models/cordilheira/E.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/E.glb",
+      "sha256": "f4cfaaa4ad6d5f0e238933c8e23f227f5211663c0803982f66a44f6b33f91c93",
+      "replaces": "E"
+    },
+    {
+      "id": "X7",
+      "q": 1,
+      "r": 1,
+      "center_x": 6495.190528383289,
+      "center_z": 3750.0,
+      "model_path": "world/coast-v01/models/cordilheira/X7.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/X7.glb",
+      "sha256": "5c3738dda03d50fdb95c032d7bdb8a7634c970f9dc84ddb764c9c4ddc3488b8a",
+      "replaces": "X7"
+    },
+    {
+      "id": "MW_01",
+      "q": 1,
+      "r": 2,
+      "center_x": 8660.254037844386,
+      "center_z": 7500.0,
+      "model_path": "world/coast-v01/models/cordilheira/MW_01.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/MW_01.glb",
+      "sha256": "3d72e58a407b6e7d362358dfda20fd9680e243b75be1e28d57215015f577d1e7",
+      "replaces": "MW_01"
+    },
+    {
+      "id": "Serra_2_-2",
+      "q": 2,
+      "r": -2,
+      "center_x": 4330.127018922193,
+      "center_z": -7500.0,
+      "model_path": "world/coast-v01/models/cordilheira/Serra_2_-2.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/Serra_2_-2.glb",
+      "sha256": "6ce12c8c5e18b9a2a895c7a793dccfe082217bd31aaef8e989bf0d896ed713aa",
+      "replaces": null
+    },
+    {
+      "id": "X3",
+      "q": 2,
+      "r": -1,
+      "center_x": 6495.190528383289,
+      "center_z": -3750.0,
+      "model_path": "world/coast-v01/models/cordilheira/X3.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/X3.glb",
+      "sha256": "291ce2f16ec3c43d844f3a553e026a5d7b1834562f6f8a9d9e7e3c9df606fb29",
+      "replaces": "X3"
+    },
+    {
+      "id": "X6",
+      "q": 2,
+      "r": 0,
+      "center_x": 8660.254037844386,
+      "center_z": 0.0,
+      "model_path": "world/coast-v01/models/cordilheira/X6.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/X6.glb",
+      "sha256": "6e268958991ab36dbb1f1aa83368d827ec6bc923a192aa24fda73aa11466dc0a",
+      "replaces": "X6"
+    },
+    {
+      "id": "F_S",
+      "q": 2,
+      "r": 1,
+      "center_x": 10825.317547305483,
+      "center_z": 3750.0,
+      "model_path": "world/coast-v01/models/cordilheira/F_S.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/F_S.glb",
+      "sha256": "5d68647a8d47a1eb423a00f642983b61717ba26349fb4c474a795a71fd4c6aa1",
+      "replaces": "F_S"
+    },
+    {
+      "id": "FX_12",
+      "q": 3,
+      "r": -3,
+      "center_x": 6495.190528383289,
+      "center_z": -11250.0,
+      "model_path": "world/coast-v01/models/cordilheira/FX_12.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/FX_12.glb",
+      "sha256": "068340279c8701fd6eba693055788afc06b3e7781fe56d19f5fe34a6d1460210",
+      "replaces": "FX_12"
+    },
+    {
+      "id": "Serra_3_-2",
+      "q": 3,
+      "r": -2,
+      "center_x": 8660.254037844386,
+      "center_z": -7500.0,
+      "model_path": "world/coast-v01/models/cordilheira/Serra_3_-2.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/Serra_3_-2.glb",
+      "sha256": "d0a4b0047837a9e54a2dc3acb610d9984662425e7b64192a2709ca9dd932e7ad",
+      "replaces": null
+    },
+    {
+      "id": "F_N",
+      "q": 3,
+      "r": -1,
+      "center_x": 10825.317547305483,
+      "center_z": -3750.0,
+      "model_path": "world/coast-v01/models/cordilheira/F_N.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/F_N.glb",
+      "sha256": "93700f469235955889b0803ae0355bc3f46f3de533e9c24023244777948cc908",
+      "replaces": "F_N"
+    },
+    {
+      "id": "F_E",
+      "q": 3,
+      "r": 0,
+      "center_x": 12990.381056766579,
+      "center_z": 0.0,
+      "model_path": "world/coast-v01/models/cordilheira/F_E.glb",
+      "model_url": "/world/coast-v01/models/cordilheira/F_E.glb",
+      "sha256": "41308608f87f86c411c141b04fdf349af4dd0a15da39972ef9abd621108155f8",
+      "replaces": "F_E"
+    }
+  ]
+}

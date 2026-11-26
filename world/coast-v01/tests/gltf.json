@@ -1,0 +1,63 @@
+{
+  "validator": "2.0.0-dev.3.10",
+  "results": [
+    {
+      "file": "models/glacial-v02.glb",
+      "sha256": "80c2fc5da01e72b6ca5beca8394f2434e788ec139cf8a01697c6c6f2cf8f59a0",
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 2,
+      "codes": [
+        "UNUSED_OBJECT",
+        "IMAGE_NPOT_DIMENSIONS"
+      ]
+    },
+    {
+      "file": "models/praia-v01.glb",
+      "sha256": "cc165202af84b804ce5142d1254650353560ac117c4b6ec9861d148763cf392b",
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 22,
+      "codes": [
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT",
+        "IMAGE_NPOT_DIMENSIONS"
+      ]
+    },
+    {
+      "file": "models/dunas-v02.glb",
+      "sha256": "5ac7be885deeb238a32e12e84a1dc329db1a4ba91ec51011e8e97bfd25ac1e35",
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 2,
+      "codes": [
+        "UNUSED_OBJECT",
+        "IMAGE_NPOT_DIMENSIONS"
+      ]
+    },
+    {
+      "file": "models/falesia-v01.glb",
+      "sha256": "66fbdfbe1fd21f067f1a7bbc18136f861ef7513aaeadf29107f3324bafe6c091",
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 34,
+      "codes": [
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT",
+        "IMAGE_NPOT_DIMENSIONS"
+      ]
+    },
+    {
+      "file": "models/arcos-v02.glb",
+      "sha256": "eeb6ff51bdaec566336325add6ff070244eb8c5c15a6257e9e26014d25e205ed",
+      "numErrors": 0,
+      "numWarnings": 0,
+      "numInfos": 14,
+      "codes": [
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT",
+        "IMAGE_NPOT_DIMENSIONS"
+      ]
+    }
+  ]
+}
