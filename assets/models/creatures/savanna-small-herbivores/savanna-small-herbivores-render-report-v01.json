@@ -1,0 +1,78 @@
+{
+  "source": "actual Three.js WebGL geometry; not AI concept images",
+  "status": {
+    "frames": 15,
+    "models": [
+      {
+        "id": "velsari",
+        "meshInstances": 64,
+        "triangles": 25606,
+        "joints": 19
+      },
+      {
+        "id": "tarruco",
+        "meshInstances": 70,
+        "triangles": 29880,
+        "joints": 20
+      }
+    ]
+  },
+  "screenshots": [
+    {
+      "name": "savanna-small-herbivores-real-3d-v01.png",
+      "species": "all",
+      "action": "idle",
+      "view": "threeQuarter",
+      "time": 0.3,
+      "bytes": 245046
+    },
+    {
+      "name": "velsari-real-3d-three-quarter-v01.png",
+      "species": "velsari",
+      "action": "idle",
+      "view": "threeQuarter",
+      "time": 0.2,
+      "bytes": 320603
+    },
+    {
+      "name": "velsari-real-3d-side-v01.png",
+      "species": "velsari",
+      "action": "alert",
+      "view": "side",
+      "time": 0.8,
+      "bytes": 278473
+    },
+    {
+      "name": "velsari-real-3d-running-v01.png",
+      "species": "velsari",
+      "action": "run",
+      "view": "action",
+      "time": 0.17,
+      "bytes": 329464
+    },
+    {
+      "name": "tarruco-real-3d-three-quarter-v01.png",
+      "species": "tarruco",
+      "action": "idle",
+      "view": "threeQuarter",
+      "time": 0.2,
+      "bytes": 260338
+    },
+    {
+      "name": "tarruco-real-3d-side-v01.png",
+      "species": "tarruco",
+      "action": "alert",
+      "view": "side",
+      "time": 0.8,
+      "bytes": 228147
+    },
+    {
+      "name": "tarruco-real-3d-digging-v01.png",
+      "species": "tarruco",
+      "action": "dig",
+      "view": "action",
+      "time": 0.9,
+      "bytes": 262717
+    }
+  ]
+}

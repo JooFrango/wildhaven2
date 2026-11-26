@@ -1,0 +1,201 @@
+{
+  "species": "Serracorion",
+  "version": "v03",
+  "stage": "rig_and_animations",
+  "parent": "v02",
+  "base_glb_sha256": "f1c4fc7828252a11a196963da2c05fa415f2bc976c0674ff729d809e9a7544d5",
+  "glb": "serracorion-v03-rig-animado-LOD0.glb",
+  "sha256": "b12a9c509b9f7c3f3cf9abedecdf5deb116115df2e018dc2cb34ac9f39690cdc",
+  "bytes": 3571696,
+  "triangles": 4815,
+  "vertices": 14445,
+  "meshes": 1,
+  "materials": 1,
+  "texture_resolution": [
+    2048,
+    2048
+  ],
+  "joint_count": 43,
+  "joint_names": [
+    "root",
+    "body_center",
+    "body_front",
+    "body_rear",
+    "head",
+    "jaw",
+    "chelicera_L",
+    "chelicera_R",
+    "chela_L_shoulder",
+    "chela_L_elbow",
+    "chela_L_palm",
+    "chela_L_finger",
+    "leg_L_0_hip",
+    "leg_L_0_knee",
+    "leg_L_0_ankle",
+    "leg_L_1_hip",
+    "leg_L_1_knee",
+    "leg_L_1_ankle",
+    "leg_L_2_hip",
+    "leg_L_2_knee",
+    "leg_L_2_ankle",
+    "chela_R_shoulder",
+    "chela_R_elbow",
+    "chela_R_palm",
+    "chela_R_finger",
+    "leg_R_0_hip",
+    "leg_R_0_knee",
+    "leg_R_0_ankle",
+    "leg_R_1_hip",
+    "leg_R_1_knee",
+    "leg_R_1_ankle",
+    "leg_R_2_hip",
+    "leg_R_2_knee",
+    "leg_R_2_ankle",
+    "tail_0",
+    "tail_1",
+    "tail_2",
+    "tail_3",
+    "tail_4",
+    "tail_5",
+    "tail_6",
+    "tail_7",
+    "tail_8"
+  ],
+  "skins": 1,
+  "animation_count": 20,
+  "clips": [
+    {
+      "name": "idle",
+      "duration_s": 4.0,
+      "keyframes": 33,
+      "loop": true
+    },
+    {
+      "name": "walk",
+      "duration_s": 3.0,
+      "keyframes": 37,
+      "loop": true
+    },
+    {
+      "name": "run",
+      "duration_s": 1.8,
+      "keyframes": 37,
+      "loop": true
+    },
+    {
+      "name": "turn_left",
+      "duration_s": 2.4,
+      "keyframes": 31,
+      "loop": false
+    },
+    {
+      "name": "turn_right",
+      "duration_s": 2.4,
+      "keyframes": 31,
+      "loop": false
+    },
+    {
+      "name": "burrow",
+      "duration_s": 4.2,
+      "keyframes": 41,
+      "loop": false
+    },
+    {
+      "name": "emerge",
+      "duration_s": 3.9,
+      "keyframes": 41,
+      "loop": false
+    },
+    {
+      "name": "alert",
+      "duration_s": 2.6,
+      "keyframes": 29,
+      "loop": false
+    },
+    {
+      "name": "threat_display",
+      "duration_s": 3.8,
+      "keyframes": 37,
+      "loop": true
+    },
+    {
+      "name": "pincer_grab",
+      "duration_s": 2.5,
+      "keyframes": 35,
+      "loop": false
+    },
+    {
+      "name": "pincer_slam",
+      "duration_s": 2.2,
+      "keyframes": 35,
+      "loop": false
+    },
+    {
+      "name": "bite",
+      "duration_s": 1.8,
+      "keyframes": 31,
+      "loop": false
+    },
+    {
+      "name": "tail_sting",
+      "duration_s": 2.3,
+      "keyframes": 37,
+      "loop": false
+    },
+    {
+      "name": "tail_sweep",
+      "duration_s": 2.7,
+      "keyframes": 37,
+      "loop": false
+    },
+    {
+      "name": "charge",
+      "duration_s": 2.1,
+      "keyframes": 37,
+      "loop": true
+    },
+    {
+      "name": "hurt",
+      "duration_s": 1.5,
+      "keyframes": 29,
+      "loop": false
+    },
+    {
+      "name": "death",
+      "duration_s": 4.7,
+      "keyframes": 43,
+      "loop": false
+    },
+    {
+      "name": "rest",
+      "duration_s": 5.0,
+      "keyframes": 33,
+      "loop": true
+    },
+    {
+      "name": "feed",
+      "duration_s": 3.6,
+      "keyframes": 37,
+      "loop": true
+    },
+    {
+      "name": "sand_dig",
+      "duration_s": 3.2,
+      "keyframes": 37,
+      "loop": true
+    }
+  ],
+  "geometry_indices_uv_albedo_identical_to_v02": true,
+  "color_patches_extra_meshes": 0,
+  "dorsal_spines": "8 physically embedded anatomical spine bases from v02 unchanged",
+  "status": {
+    "v02_shape": "approved_to_advance_to_rig_by_user",
+    "v03_animations": "awaiting_review",
+    "merge": "draft_only",
+    "alpha": "not_integrated"
+  },
+  "lods_generated": 0,
+  "independent_glb_playback_verified": true,
+  "real_preview_pngs": 4,
+  "real_preview_gifs": 6
+}

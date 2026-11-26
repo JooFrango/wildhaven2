@@ -1,0 +1,162 @@
+{
+  "assetSource": "genuine Three.js models",
+  "sceneType": "isolated biome validation, not playable Alpha",
+  "baseline": [
+    {
+      "id": "ferrunco",
+      "population": 16000,
+      "integrity": 1,
+      "extinct": false,
+      "animal": [
+        0,
+        0,
+        -3.2
+      ],
+      "mound": [
+        0,
+        0,
+        0.62
+      ],
+      "parent": [
+        -8.2,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "dunlingua",
+      "population": 16000,
+      "integrity": 1,
+      "extinct": false,
+      "animal": [
+        0,
+        0,
+        -3.55
+      ],
+      "mound": [
+        0,
+        0,
+        0.62
+      ],
+      "parent": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pica_termita",
+      "population": 16000,
+      "integrity": 1,
+      "extinct": false,
+      "animal": [
+        0,
+        0,
+        -2.24
+      ],
+      "mound": [
+        0,
+        0,
+        0.62
+      ],
+      "parent": [
+        8.2,
+        0,
+        0
+      ]
+    }
+  ],
+  "feeding": [
+    {
+      "id": "ferrunco",
+      "population": 15660,
+      "integrity": 0.85,
+      "extinct": false,
+      "animal": [
+        0,
+        0,
+        -3.2
+      ],
+      "mound": [
+        0,
+        0,
+        0.62
+      ],
+      "parent": [
+        -8.2,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "dunlingua",
+      "population": 15790,
+      "integrity": 0.92,
+      "extinct": false,
+      "animal": [
+        0,
+        0,
+        -3.55
+      ],
+      "mound": [
+        0,
+        0,
+        0.62
+      ],
+      "parent": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pica_termita",
+      "population": 15940,
+      "integrity": 0.99,
+      "extinct": false,
+      "animal": [
+        0,
+        0,
+        -2.24
+      ],
+      "mound": [
+        0,
+        0,
+        0.62
+      ],
+      "parent": [
+        8.2,
+        0,
+        0
+      ]
+    }
+  ],
+  "extinction": {
+    "id": "dunlingua",
+    "population": 0,
+    "integrity": 0.29454545454545467,
+    "extinct": true,
+    "animal": [
+      0,
+      0,
+      -3.55
+    ],
+    "mound": [
+      0,
+      0,
+      0.62
+    ],
+    "parent": [
+      0,
+      0,
+      0
+    ]
+  },
+  "screenshots": [
+    "feeding-scenes-real-3d-v02.png",
+    "forest-feeding-real-3d-v02.png",
+    "desert-feeding-real-3d-v02.png",
+    "grassland-feeding-real-3d-v02.png",
+    "feeding-scenes-detail-real-3d-v02.png"
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "version": "v01",
+  "species": {
+    "velsari": {
+      "id": "velsari",
+      "glb": "velsari-savanna-animated-v01.glb",
+      "byteSize": 1588844,
+      "sha256": "927e27f476382e74fdb08fe763dc8ca37ad08b9c2316b9146f2ed3433d0ac16d",
+      "meshInstances": 64,
+      "triangles": 25606,
+      "joints": 19,
+      "meshNodesInGLB": 64,
+      "meshDefinitions": 64,
+      "clipNames": [
+        "idle",
+        "walk",
+        "run",
+        "leap",
+        "graze",
+        "alert",
+        "call",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "clips": 10,
+      "jointNames": [
+        "Velsari_Body",
+        "Velsari_Neck",
+        "Velsari_Head",
+        "Velsari_Ear_-1",
+        "Velsari_Ear_1",
+        "Velsari_Jaw",
+        "Velsari_FrontLeft_HipOrShoulder",
+        "Velsari_FrontLeft_Knee",
+        "Velsari_FrontLeft_Ankle",
+        "Velsari_FrontRight_HipOrShoulder",
+        "Velsari_FrontRight_Knee",
+        "Velsari_FrontRight_Ankle",
+        "Velsari_BackLeft_HipOrShoulder",
+        "Velsari_BackLeft_Knee",
+        "Velsari_BackLeft_Ankle",
+        "Velsari_BackRight_HipOrShoulder",
+        "Velsari_BackRight_Knee",
+        "Velsari_BackRight_Ankle",
+        "Velsari_Tail"
+      ],
+      "channelsPerClip": [
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57,
+        57
+      ],
+      "ecology": {
+        "name": "Velsari — Corredor Dourado",
+        "biome": [
+          "savanna"
+        ],
+        "category": "small_herbivore",
+        "weightKg": 22,
+        "shoulderHeightM": 0.65,
+        "bodyLengthM": 1,
+        "social": "small groups 4–10",
+        "abundance": "relatively common",
+        "diet": [
+          "grass",
+          "new shoots"
+        ],
+        "maxSpeedKmhTarget": 50,
+        "clips": [
+          "idle",
+          "walk",
+          "run",
+          "leap",
+          "graze",
+          "alert",
+          "call",
+          "flee",
+          "rest",
+          "death"
+        ]
+      },
+      "rig": "hierarchical keyframed pivot tracks, no skinning"
+    },
+    "tarruco": {
+      "id": "tarruco",
+      "glb": "tarruco-savanna-animated-v01.glb",
+      "byteSize": 1890416,
+      "sha256": "a4ed5cc9f7df038b5774fa2de17312835c4ff7e3f57150d781e9559a5fe2608b",
+      "meshInstances": 70,
+      "triangles": 29880,
+      "joints": 20,
+      "meshNodesInGLB": 70,
+      "meshDefinitions": 70,
+      "clipNames": [
+        "idle",
+        "walk",
+        "trot",
+        "dig",
+        "forage",
+        "alert",
+        "flee",
+        "sniff",
+        "rest",
+        "death"
+      ],
+      "clips": 10,
+      "jointNames": [
+        "Tarruco_Body",
+        "Tarruco_Neck",
+        "Tarruco_Head",
+        "Tarruco_Ear_-1",
+        "Tarruco_Ear_1",
+        "Tarruco_ForeheadCrest",
+        "Tarruco_Jaw",
+        "Tarruco_FrontLeft_ShoulderHip",
+        "Tarruco_FrontLeft_Elbow",
+        "Tarruco_FrontLeft_Paw",
+        "Tarruco_FrontRight_ShoulderHip",
+        "Tarruco_FrontRight_Elbow",
+        "Tarruco_FrontRight_Paw",
+        "Tarruco_BackLeft_ShoulderHip",
+        "Tarruco_BackLeft_Elbow",
+        "Tarruco_BackLeft_Paw",
+        "Tarruco_BackRight_ShoulderHip",
+        "Tarruco_BackRight_Elbow",
+        "Tarruco_BackRight_Paw",
+        "Tarruco_Tail"
+      ],
+      "channelsPerClip": [
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "ecology": {
+        "name": "Tarruco — Raizeiro das Savanas",
+        "biome": [
+          "savanna"
+        ],
+        "category": "small_herbivore",
+        "weightKg": 12,
+        "shoulderHeightM": 0.38,
+        "bodyLengthM": 0.75,
+        "social": "mostly solitary",
+        "abundance": "moderately common",
+        "diet": [
+          "roots",
+          "sprouts",
+          "fallen fruit"
+        ],
+        "maxSpeedKmhTarget": 24,
+        "anatomy": "NEW DESIGN: short muzzle, large ears, bony forehead crest, powerful digging forelegs, furred back. No armadillo carapace or tapir trunk.",
+        "clips": [
+          "idle",
+          "walk",
+          "trot",
+          "dig",
+          "forage",
+          "alert",
+          "flee",
+          "sniff",
+          "rest",
+          "death"
+        ]
+      },
+      "rig": "hierarchical keyframed pivot tracks, no skinning"
+    }
+  },
+  "gameplayIntegrated": false,
+  "note": "Model assets and animations only. No edits to game/alpha01."
+}

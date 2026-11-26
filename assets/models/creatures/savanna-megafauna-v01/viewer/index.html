@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven · Megafauna da savana v01 · GLBs reais</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0f1b20;color:#e9efeb;font:14px system-ui,Arial}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 18px;background:#192a30;box-shadow:0 3px 8px #0b1519}
+header h1{font-size:17px;margin:0 12px 0 0}label{color:#b8ccbe;display:flex;align-items:center;gap:7px}
+select,button{background:#294149;color:#f5f6ee;border:1px solid #416873;border-radius:7px;padding:8px 10px;cursor:pointer}
+button:hover{background:#3a5760}input{accent-color:#b68b60}#view{height:calc(100vh - 105px);min-height:460px;width:100%}
+footer{padding:9px 15px;background:#192a30;color:#a4b8b1;font-size:12px}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.171.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/"}}</script>
+</head><body><header>
+<h1>WILDHAVEN  ·  SAVANA  ·  MODELOS REAIS</h1>
+<label>Criatura <select id="species"><option value="torvardo">Torvardo</option><option value="raizauro">Raizauro</option><option value="mastelio">Mastélio</option><option value="garruva">Garruva terrestre</option></select></label>
+<label>LOD <select id="lod"><option value="0">LOD0 · próximo</option><option value="1">LOD1 · médio</option><option value="2">LOD2 · distante</option></select></label>
+<label>Animação <select id="clip"></select></label><button id="pause">Pausar</button><button id="fit">Centralizar</button>
+<label><input type="checkbox" id="wire"> Wireframe</label>
+</header><div id="view"></div><footer id="status">Carregando geometria glTF real e animações embutidas...</footer>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const host=document.getElementById('view'),status=document.getElementById('status');
+const s=document.getElementById('species'),lod=document.getElementById('lod'),clip=document.getElementById('clip');
+const ren=new THREE.WebGLRenderer({antialias:true});ren.setPixelRatio(Math.min(devicePixelRatio,2));
+ren.setSize(host.clientWidth,host.clientHeight);ren.outputColorSpace=THREE.SRGBColorSpace;ren.toneMapping=THREE.ACESFilmicToneMapping;
+ren.shadowMap.enabled=true;host.appendChild(ren.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#a5b7ae');scene.fog=new THREE.Fog('#a5b7ae',20,60);
+const camera=new THREE.PerspectiveCamera(45,host.clientWidth/host.clientHeight,.01,200);
+const ctrl=new OrbitControls(camera,ren.domElement);ctrl.enableDamping=true;
+scene.add(new THREE.HemisphereLight(0xfff5e7,0x7b6754,2.1));
+const sun=new THREE.DirectionalLight(0xffdfb3,2.8);sun.position.set(-5,12,8);sun.castShadow=true;scene.add(sun);
+const soft=new THREE.DirectionalLight(0xa9d1ed,1.0);soft.position.set(6,5,-8);scene.add(soft);
+const ground=new THREE.Mesh(new THREE.CircleGeometry(27,96),new THREE.MeshStandardMaterial({color:'#8b815f',roughness:1}));ground.rotation.x=-Math.PI/2;ground.position.y=-.08;ground.receiveShadow=true;scene.add(ground);
+let model=null,mixer=null,active=null,animations=[],paused=false,request=0;
+function fit(){if(!model)return;const box=new THREE.Box3().setFromObject(model),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3());
+const d=Math.max(size.x,size.y,size.z);ctrl.target.copy(center);camera.position.copy(center).add(new THREE.Vector3(d*.98,d*.52,d*1.30));camera.near=.01;camera.far=200;camera.updateProjectionMatrix();ctrl.update();}
+function animate(name){if(!mixer)return;const c=animations.find(a=>a.name===name)||animations[0];if(!c)return;
+if(active)active.fadeOut(.16);active=mixer.clipAction(c);active.reset().fadeIn(.16).play();active.paused=paused;}
+async function load(){const my=++request,id=s.value,l=lod.value,ver='v01';
+const paths=['../../'+id+'/'+id+'-savanna-animated-'+ver+'-LOD'+l+'.glb','../models/'+id+'/'+id+'-savanna-animated-'+ver+'-LOD'+l+'.glb'];
+const url=paths[0];
+status.textContent='Carregando '+url+'...';
+try{let g;try{g=await new GLTFLoader().loadAsync(paths[0]);}catch(err){g=await new GLTFLoader().loadAsync(paths[1]);}if(my!==request)return;
+if(model){scene.remove(model);mixer?.stopAllAction();model.traverse(o=>{if(o.isMesh){o.geometry.dispose();for(const material of (Array.isArray(o.material)?o.material:[o.material]))material?.dispose();}});}
+model=g.scene;scene.add(model);animations=g.animations;mixer=new THREE.AnimationMixer(model);
+const options=animations.map(c=>{const opt=document.createElement('option');opt.value=opt.textContent=c.name;return opt});clip.replaceChildren(...options);
+model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;for(const mat of (Array.isArray(o.material)?o.material:[o.material]))mat.wireframe=document.getElementById('wire').checked;}});
+paused=false;document.getElementById('pause').textContent='Pausar';animate('idle');clip.value='idle';fit();
+let polys=0,bones=0,meshes=0;model.traverse(o=>{if(o.isMesh){meshes++;const g=o.geometry;polys+=(g.index?g.index.count:g.attributes.position.count)/3;}if(o.isBone)bones++});
+status.textContent=id+' · LOD'+l+' · '+Math.round(polys).toLocaleString('pt-BR')+' triângulos · '+bones+' ossos · '+animations.length+' animações · modelo não integrado à Alpha';
+}catch(e){status.textContent='Falha no GLB real: '+e.message+' (abra através de um servidor HTTP local)';console.error(e);}}
+[s,lod].forEach(el=>el.addEventListener('change',load));clip.addEventListener('change',()=>animate(clip.value));
+document.getElementById('fit').addEventListener('click',fit);
+document.getElementById('pause').addEventListener('click',()=>{paused=!paused;if(active)active.paused=paused;document.getElementById('pause').textContent=paused?'Reproduzir':'Pausar'});
+document.getElementById('wire').addEventListener('change',e=>model?.traverse(o=>{if(o.isMesh)for(const m of (Array.isArray(o.material)?o.material:[o.material]))m.wireframe=e.target.checked;}));
+new ResizeObserver(()=>{const w=host.clientWidth,h=host.clientHeight;ren.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix()}).observe(host);
+const clock=new THREE.Clock();function frame(){requestAnimationFrame(frame);mixer?.update(clock.getDelta());ctrl.update();ren.render(scene,camera)}frame();load();
+</script></body></html>

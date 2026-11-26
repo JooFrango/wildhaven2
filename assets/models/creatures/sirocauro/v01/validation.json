@@ -1,0 +1,17 @@
+{
+  "readback": true,
+  "triangle_count_ok": true,
+  "uvs_verified": true,
+  "size_bytes": 634496,
+  "sha256": "a81241eb76528afe7d29a2ed4b66634364320cc4d4ea615b16d4418faf68ef01",
+  "animations": 0,
+  "skins": 0,
+  "unapproved_shape": true,
+  "render_reimport_from_glb": true,
+  "views": [
+    "perfil",
+    "frente",
+    "tres-quartos"
+  ],
+  "github_publication_verified": false
+}

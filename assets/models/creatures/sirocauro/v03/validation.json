@@ -1,0 +1,38 @@
+{
+  "creature": "sirocauro",
+  "stage": "v03_correcao_winding_skin",
+  "basedOn": "v02",
+  "realAsset": "sirocauro-v03-rig41-malha-corrigida.glb",
+  "technicalChecks": {
+    "glb2_header": true,
+    "geometry_components": 123,
+    "inverted_faces_before": 12,
+    "components_reoriented": 12,
+    "triangles_after": 6238,
+    "vertices_after": 18714,
+    "skin_joints_after": 27,
+    "animation_clips_after": 41,
+    "normalized_weights": true,
+    "original_position_uv_texture_bytes_unchanged": true,
+    "original_41_animation_curves_unchanged": true
+  },
+  "visualEvidence": {
+    "githubActionsRun": "https://github.com/carioca1111/wildhaven-new/actions/runs/43820849932",
+    "status": "success",
+    "realGLB": true,
+    "frames": 64,
+    "renderErrors": 0,
+    "gitBlobGif": "cd59ebae4a1b9991ede2d67a20c3d7cfd4e861c6",
+    "gifBytes": 1736700,
+    "gif": "previews/sirocauro-v03-4-animacoes-reais.gif",
+    "still": "previews/sirocauro-v03-preview-quadros-reais.png"
+  },
+  "qaStatus": "artistic review required; not accepted/finalized",
+  "knownLimitations": [
+    "123 shells remain separate; not watertight as a single union",
+    "remaining seams may require retopology",
+    "no full animation QA or foot IK yet"
+  ],
+  "alphaChanged": false,
+  "olderVersionsChanged": false
+}

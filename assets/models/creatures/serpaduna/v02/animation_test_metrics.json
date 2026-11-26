@@ -1,0 +1,68 @@
+{
+  "idle": {
+    "body_max_m": 0.06048,
+    "body_mean_m": 0.04025,
+    "jaw_max_m": 0.07428,
+    "max_bolus_weight": 0.0
+  },
+  "slither": {
+    "body_max_m": 0.41176,
+    "body_mean_m": 0.22756,
+    "jaw_max_m": 0.30548,
+    "max_bolus_weight": 0.0
+  },
+  "fast_slither": {
+    "body_max_m": 0.36407,
+    "body_mean_m": 0.17709,
+    "jaw_max_m": 0.13895,
+    "max_bolus_weight": 0.0
+  },
+  "coil_defend": {
+    "body_max_m": 0.44114,
+    "body_mean_m": 0.229,
+    "jaw_max_m": 0.43526,
+    "max_bolus_weight": 0.0
+  },
+  "alert": {
+    "body_max_m": 0.17145,
+    "body_mean_m": 0.01048,
+    "jaw_max_m": 0.23373,
+    "max_bolus_weight": 0.0
+  },
+  "tongue_flick": {
+    "body_max_m": 0.01657,
+    "body_mean_m": 0.00086,
+    "jaw_max_m": 0.04041,
+    "max_bolus_weight": 0.0
+  },
+  "ambush_strike": {
+    "body_max_m": 0.44515,
+    "body_mean_m": 0.14808,
+    "jaw_max_m": 0.75873,
+    "max_bolus_weight": 0.0
+  },
+  "venom_bite": {
+    "body_max_m": 0.24733,
+    "body_mean_m": 0.01334,
+    "jaw_max_m": 0.76955,
+    "max_bolus_weight": 0.0
+  },
+  "swallow_whole": {
+    "body_max_m": 0.42103,
+    "body_mean_m": 0.15452,
+    "jaw_max_m": 0.3163,
+    "max_bolus_weight": 0.5936
+  },
+  "rest": {
+    "body_max_m": 0.02099,
+    "body_mean_m": 0.01267,
+    "jaw_max_m": 0.01907,
+    "max_bolus_weight": 0.0
+  },
+  "death": {
+    "body_max_m": 1.40484,
+    "body_mean_m": 0.38997,
+    "jaw_max_m": 1.50026,
+    "max_bolus_weight": 0.0
+  }
+}

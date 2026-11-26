@@ -1,0 +1,40 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wildhaven — 4 herbívoros pequenos 3D</title><style>
+*{box-sizing:border-box}body{margin:0;background:#101b1b;color:#e7ece8;font:14px system-ui,Segoe UI}
+header{padding:12px 18px;background:#213333;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+header h1{font-size:18px;margin:0 9px 0 0}select,button{background:#334848;color:#eff5ee;border:1px solid #63817b;padding:8px 10px;border-radius:8px}
+label{display:flex;align-items:center;gap:7px}main{width:100%;height:calc(100vh - 105px);min-height:480px}
+footer{padding:8px 15px;background:#213333;color:#b5c9c2;font-size:12px}
+</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.171.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/"}}</script></head>
+<body><header><h1>Wildhaven — Savana · Pequenos</h1>
+<label>Espécie <select id="species"><option value="sevilho">Sevilho</option><option value="arbelio">Arbélio</option><option value="frutavil">Frutavil</option><option value="cromatil">Cromátil</option></select></label>
+<label>LOD <select id="lod"><option value="0">0 — Perto</option><option value="1">1 — Médio</option><option value="2">2 — Longe</option></select></label>
+<label>Animação <select id="animation"></select></label><button id="play">Pausar</button><button id="reset">Centralizar</button>
+<label><input id="wire" type="checkbox"> Ver malha</label></header><main id="stage"></main><footer id="info">GLBs reais, geometria 3D e clipes embutidos. Execute por HTTP local.</footer>
+<script type="module">
+import * as THREE from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const host=document.getElementById('stage'),renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(host.clientWidth,host.clientHeight);renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.shadowMap.enabled=true;host.appendChild(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#aec7c5');
+const cam=new THREE.PerspectiveCamera(45,host.clientWidth/host.clientHeight,.01,150);
+const controls=new OrbitControls(cam,renderer.domElement);controls.enableDamping=true;
+scene.add(new THREE.HemisphereLight(0xffffff,0x776946,2.0));const sun=new THREE.DirectionalLight(0xffe9cb,2.8);sun.position.set(4,7,5);sun.castShadow=true;scene.add(sun);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshStandardMaterial({color:0xa7a083,roughness:1}));ground.rotation.x=-Math.PI/2;ground.position.y=-.07;ground.receiveShadow=true;scene.add(ground);
+const species=document.getElementById('species'),lod=document.getElementById('lod'),clipsel=document.getElementById('animation'),status=document.getElementById('info');
+let model,mixer,clips,action,paused=false,token=0;
+function fit(){if(!model)return;const b=new THREE.Box3().setFromObject(model);const mid=b.getCenter(new THREE.Vector3());const s=b.getSize(new THREE.Vector3());const scale=Math.max(s.x,s.y,s.z);cam.position.copy(mid).add(new THREE.Vector3(scale*1.05,scale*.55,scale*1.18));controls.target.copy(mid);controls.update()}
+function clip(name){if(!mixer)return;const next=mixer.clipAction(clips.find(c=>c.name===name)||clips[0]);if(action)action.fadeOut(.18);action=next;action.reset().fadeIn(.18).play();action.paused=paused}
+async function load(){const t=++token;const id=species.value;const tier=Number(lod.value);const base=location.pathname.includes('/assets/models/creatures/savanna-small-herbivores-v01/')?'../../':'../models/';const url=`${base}${id}/${id}-savanna-animated-v01-LOD${tier}.glb`;
+ status.textContent=`Carregando ${id} — LOD${tier}...`;
+ try{const g=await new GLTFLoader().loadAsync(url);if(t!==token)return;if(model){scene.remove(model);mixer?.stopAllAction();}
+ model=g.scene;clips=g.animations;model.animations=clips;scene.add(model);model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;o.material.side=THREE.DoubleSide;}});
+ mixer=new THREE.AnimationMixer(model);clipsel.replaceChildren(...clips.map(c=>{const opt=document.createElement('option');opt.value=opt.textContent=c.name;return opt}));paused=false;document.getElementById('play').textContent='Pausar';clip(clips.find(c=>c.name==='idle')?'idle':clips[0].name);fit();
+ const count=model.children.length;status.textContent=`${id} · LOD${tier} · ${clips.length} animações reais embutidas · hierarquia articulada sem skinning ponderado · visual em revisão.`;
+ }catch(e){status.textContent='Erro: '+e.message+' — abra via um servidor HTTP, ex.: python -m http.server 8000';console.error(e)}}
+species.addEventListener('change',load);lod.addEventListener('change',load);clipsel.addEventListener('change',()=>clip(clipsel.value));
+document.getElementById('play').addEventListener('click',()=>{paused=!paused;if(action)action.paused=paused;document.getElementById('play').textContent=paused?'Reproduzir':'Pausar'});
+document.getElementById('reset').addEventListener('click',fit);document.getElementById('wire').addEventListener('change',e=>model?.traverse(o=>{if(o.isMesh){for(const m of (Array.isArray(o.material)?o.material:[o.material]))m.wireframe=e.target.checked}}));
+new ResizeObserver(()=>{const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()}).observe(host);
+const clock=new THREE.Clock();function draw(){requestAnimationFrame(draw);mixer?.update(clock.getDelta());controls.update();renderer.render(scene,cam)}draw();load();
+</script></body></html>

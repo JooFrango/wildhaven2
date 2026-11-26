@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "species": {
+    "torvardo": {
+      "lodTriangles": [
+        2013,
+        1389,
+        959
+      ],
+      "skinJoints": 17,
+      "clips": 12,
+      "sourceTriangles": 2013,
+      "previewCount": 3
+    },
+    "raizauro": {
+      "lodTriangles": [
+        2159,
+        1495,
+        891
+      ],
+      "skinJoints": 17,
+      "clips": 12,
+      "sourceTriangles": 2159,
+      "previewCount": 3
+    },
+    "mastelio": {
+      "lodTriangles": [
+        1554,
+        1086,
+        806
+      ],
+      "skinJoints": 19,
+      "clips": 12,
+      "sourceTriangles": 1554,
+      "previewCount": 3
+    },
+    "garruva": {
+      "lodTriangles": [
+        2167,
+        1475,
+        847
+      ],
+      "skinJoints": 17,
+      "clips": 13,
+      "sourceTriangles": 2167,
+      "previewCount": 3
+    }
+  },
+  "trianglesLOD0Total": 7893,
+  "totalGLBs": 12,
+  "totalClipsInLOD0": 49
+}

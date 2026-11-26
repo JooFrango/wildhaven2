@@ -1,0 +1,64 @@
+{
+  "species": "sirocauro",
+  "version": "v01",
+  "stage": "shape_blockout",
+  "concept_approved": true,
+  "shape_approved": false,
+  "repository": "carioca1111/wildhaven-new",
+  "target_path": "assets/models/creatures/sirocauro/v01/sirocauro-v01-anatomia-pesada-blockout.glb",
+  "asset_file": "sirocauro-v01-anatomia-pesada-blockout.glb",
+  "bytes": 634496,
+  "sha256": "a81241eb76528afe7d29a2ed4b66634364320cc4d4ea615b16d4418faf68ef01",
+  "triangles": 6238,
+  "vertices": 18714,
+  "meshes": 1,
+  "components_authored": 123,
+  "skins": 0,
+  "joints": 0,
+  "animations": 0,
+  "uv_atlas_embedded": true,
+  "design_height_m": 6.0,
+  "design_mass_t_proposal": [
+    16,
+    22
+  ],
+  "body_length_m": 14.4,
+  "scene_bounds_m": [
+    [
+      -5.553558826446533,
+      -2.0744588375091553,
+      -0.10945497453212738
+    ],
+    [
+      8.846179008483887,
+      2.0744588375091553,
+      6.079999923706055
+    ]
+  ],
+  "visual_basis": "user-approved biped heavy armored crocodilian concept; Torvardo v03 style",
+  "note": "NO storm or fire VFX are included in the GLB blockout; no rig/animation/LOD at this stage.",
+  "height_m_actual": 6.189,
+  "previews": {
+    "sirocauro-v01-real-glb-3-vistas.png": {
+      "bytes": 414687,
+      "sha256": "a352c459c6f000760a934a54b43ba11bb71a759e569d54cedab48802bc1797e7"
+    },
+    "sirocauro-v01-conceito-vs-glb.png": {
+      "bytes": 1014048,
+      "sha256": "bae910c23395da9df6d2708ccaf6419f478951a894d98ced1cc566d8654ab75d"
+    },
+    "sirocauro-v01-real-glb-tres-quartos.png": {
+      "bytes": 175884,
+      "sha256": "df6fd7e103d250abb31d12e59a7bdfa5d91b116e70f855c5332f5a57d3f4547c"
+    },
+    "sirocauro-v01-real-glb-perfil.png": {
+      "bytes": 168953,
+      "sha256": "8df67a1e6bf1ecefc8d07669d796ddcbc7ae67f12a96c6723d7130ca385dd12f"
+    },
+    "sirocauro-v01-real-glb-frente.png": {
+      "bytes": 122651,
+      "sha256": "2a584e56bce042dd3b9e716d615782e9faf997c6f64115a991086b45844a05c0"
+    }
+  },
+  "texture_sha256": "0d72ee0a6f94770b820d2eaf91c7b2575630c0c6df1a52a92f0fdc873c7f02ba"
+}

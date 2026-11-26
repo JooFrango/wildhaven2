@@ -1,0 +1,62 @@
+{
+  "speciesId": "silvarano",
+  "version": "0.1.0",
+  "status": "prototype_generated_not_committed_as_binary",
+  "format": "glTF 2.0 GLB",
+  "variants": [
+    {
+      "habitat": "temperate_forest",
+      "file": "silvarano_temperate_animated_v01.glb",
+      "bytes": 816616,
+      "sha256": "d539669aecd9d68db228804df1481da945551a52ddb321081f2ca8f7751f1e72"
+    },
+    {
+      "habitat": "tropical_rainforest",
+      "file": "silvarano_tropical_animated_v01.glb",
+      "bytes": 816604,
+      "sha256": "159d21c9720c2ba8cacda8f3e93ad6576fdf65546c2b191eb244ac4daab1562e"
+    }
+  ],
+  "triangles": 17640,
+  "vertices": 10352,
+  "joints": 21,
+  "materials": 25,
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "run",
+    "sprint",
+    "turn_left",
+    "turn_right",
+    "browse",
+    "chew",
+    "drink",
+    "rest",
+    "sleep",
+    "thermoregulate",
+    "scan",
+    "freeze",
+    "alarm_call",
+    "flee_start",
+    "jump",
+    "land",
+    "regroup",
+    "social_display",
+    "head_sweep",
+    "hind_kick",
+    "short_charge",
+    "hurt",
+    "death",
+    "nest_guard",
+    "juvenile_follow"
+  ],
+  "producedOn": "2026-11-06",
+  "limitations": [
+    "rigid per-part skinning",
+    "no foot IK or collisions",
+    "in-place animation",
+    "not approved as final visual"
+  ],
+  "availability": "Modelo, gerador e prévias entregues como arquivos da conversa; os binários ainda não estão neste repositório. Não usar paths desses arquivos como URLs GitHub até upload real."
+}

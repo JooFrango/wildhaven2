@@ -1,0 +1,99 @@
+{
+  "species_id": "serpaduna",
+  "version": "v02",
+  "stage": "rig_skinning_animation_review",
+  "concept_approved": true,
+  "blockout_form_approved_by_user_action": true,
+  "previous_version": "v01 unchanged",
+  "source_model_sha256": "4fb2ea00cb94261a7b1f3f5976b853b14b4ace61127c7a42ddd2ff708a6f39a7",
+  "glb": "serpaduna_v02_rig_animated.glb",
+  "bytes": 1066612,
+  "sha256": "73cf6a3c449d0963e6675d55000584f680a831392bcfe49eb5b5a99605c10b53",
+  "meshes": 51,
+  "triangles": 8198,
+  "skins": 1,
+  "joints": 72,
+  "spine_joints": 70,
+  "morph_targets": 4,
+  "animation_clips": 11,
+  "clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 6.0,
+      "keyframes": 24,
+      "loop": true
+    },
+    {
+      "name": "slither",
+      "duration_seconds": 4.0,
+      "keyframes": 28,
+      "loop": true
+    },
+    {
+      "name": "fast_slither",
+      "duration_seconds": 2.4,
+      "keyframes": 28,
+      "loop": true
+    },
+    {
+      "name": "coil_defend",
+      "duration_seconds": 5.0,
+      "keyframes": 24,
+      "loop": true
+    },
+    {
+      "name": "alert",
+      "duration_seconds": 3.0,
+      "keyframes": 20,
+      "loop": true
+    },
+    {
+      "name": "tongue_flick",
+      "duration_seconds": 1.5,
+      "keyframes": 16,
+      "loop": true
+    },
+    {
+      "name": "ambush_strike",
+      "duration_seconds": 2.2,
+      "keyframes": 28,
+      "loop": false
+    },
+    {
+      "name": "venom_bite",
+      "duration_seconds": 1.8,
+      "keyframes": 26,
+      "loop": false
+    },
+    {
+      "name": "swallow_whole",
+      "duration_seconds": 7.0,
+      "keyframes": 48,
+      "loop": false
+    },
+    {
+      "name": "rest",
+      "duration_seconds": 7.0,
+      "keyframes": 24,
+      "loop": true
+    },
+    {
+      "name": "death",
+      "duration_seconds": 4.0,
+      "keyframes": 30,
+      "loop": false
+    }
+  ],
+  "rig_method": "real parented glTF joints, skin + cubic four-joint weights; no IK runtime",
+  "root_motion": "in-place / sway only; navigation has to move entity itself",
+  "uv_body_texture": "same material and embedded UV of v01",
+  "venom_and_paralysis": "venom_bite is an animation only, no status logic or VFX here",
+  "prey_swallowing": "four morph targets with bolus traveling down upper torso; no prey mesh included",
+  "alpha_modified": false,
+  "publication": "draft PR, remote re-verification required",
+  "repository": "carioca1111/wildhaven-new",
+  "branch": "feat/serpaduna-rig-anim-v02",
+  "remote_path": "assets/models/creatures/serpaduna/v02/",
+  "git_blob_sha": "7ca7888807dff4b491860ceecbf7a0b026f65142",
+  "loop_validation": "all 7 looping clips have max quaternion/translation seam difference <= 1e-6"
+}

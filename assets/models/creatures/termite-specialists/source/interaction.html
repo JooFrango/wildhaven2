@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Wildhaven · Teste 3D de Alimentação nos Cupinzeiros</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}
+html,body{padding:0;margin:0;height:100%;background:#26352e;color:#e6e9dc;font-family:system-ui,sans-serif;overflow:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+#info{position:absolute;left:20px;top:16px;padding:15px 20px;background:#182620e8;border:1px solid #74977755;border-radius:13px;z-index:2;max-width:480px}
+h1{font-size:21px;margin:0 0 8px;color:#eed1a1;font-family:Georgia,serif}
+p{font-size:13px;color:#cad6c8;margin:4px 0}
+#controls{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;width:min(95%,940px);padding:12px;background:#1c3029eb;border-radius:13px;display:flex;gap:9px;flex-wrap:wrap;justify-content:center;align-items:center;z-index:3;border:1px solid #678c73}
+#controls select,#controls button{border:1px solid #8baf8b;background:#365746;border-radius:8px;padding:9px 13px;color:#fff;font:inherit;cursor:pointer}
+#counter{font-variant-numeric:tabular-nums;min-width:200px;color:#ead6b0;font-weight:600}
+#names{position:fixed;bottom:165px;left:6%;right:6%;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;pointer-events:none;color:#fff;text-shadow:0 2px 6px #000}
+#names small{display:block;font-size:12px;color:#ebdebb}
+@media(max-width:710px){#info{top:7px;left:7px;right:7px;padding:10px}h1{font-size:16px}#names{bottom:171px;font-size:11px}#names small{font-size:9px}#controls{bottom:8px;padding:8px}#controls button{padding:7px}}
+</style>
+</head><body>
+<canvas id="render"></canvas>
+<div id="info">
+<h1>Wildhaven · Teste de ecossistema vivo</h1>
+<p>Animais e cupinzeiros são modelos 3D reais com proporções preservadas.</p>
+<p>Três cenas construídas em geometria mid-poly: floresta, deserto e planície.</p>
+<p>Arraste para orbitar; rolagem para aproximar. Cena de validação independente, não o mapa da Alpha.</p>
+</div>
+<div id="names"><div><b>Ferrunco</b><small>Floresta temperada · escavação</small></div>
+<div><b>Dunlíngua</b><small>Deserto · extração com língua</small></div>
+<div><b>Pica-Termita</b><small>Planície · bicadas</small></div></div>
+<div id="controls">
+<label for="stage">Bioma:</label>
+<select id="stage"><option value="all">Visão geral</option><option value="ferrunco">Floresta</option><option value="dunlingua">Deserto</option><option value="pica_termita">Planície</option></select>
+<button type="button" id="feed">Alimentar</button>
+<button type="button" id="grow">Simular 15 dias</button>
+<button type="button" id="deplete">Esgotar colônia</button>
+<button type="button" id="reset">Nova simulação</button>
+<span id="counter" role="status">Cupins: 16.000 por colônia</span>
+</div>
+<script type="module" src="./interaction.mjs"></script>
+</body></html>

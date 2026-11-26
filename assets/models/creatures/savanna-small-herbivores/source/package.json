@@ -1,0 +1,19 @@
+{
+  "name": "wildhaven-savanna-small-herbivores",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "node verify.mjs",
+    "build": "vite build",
+    "export": "node export.mjs",
+    "capture": "node capture.mjs"
+  },
+  "dependencies": {
+    "three": "0.181.0"
+  },
+  "devDependencies": {
+    "vite": "7.2.2",
+    "@playwright/test": "1.56.1"
+  }
+}

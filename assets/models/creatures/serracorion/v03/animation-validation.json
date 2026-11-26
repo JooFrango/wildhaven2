@@ -1,0 +1,132 @@
+{
+  "glb_sha256": "b12a9c509b9f7c3f3cf9abedecdf5deb116115df2e018dc2cb34ac9f39690cdc",
+  "base_glb_sha256": "f1c4fc7828252a11a196963da2c05fa415f2bc976c0674ff729d809e9a7544d5",
+  "original_painted_texture_bytes_identical": true,
+  "original_positions_uv_and_indices_identical": true,
+  "bind_pose_inverse_matrices_valid": true,
+  "weighted_skin_deformation_valid": true,
+  "all_20_clips_passed": true,
+  "loop_seams_valid": true,
+  "clips": {
+    "idle": {
+      "duration_s": 4.0,
+      "channels": 44,
+      "max_deformation_m": 2.2658,
+      "loop": true
+    },
+    "walk": {
+      "duration_s": 3.0,
+      "channels": 44,
+      "max_deformation_m": 5.122,
+      "loop": true
+    },
+    "run": {
+      "duration_s": 1.7999999523162842,
+      "channels": 44,
+      "max_deformation_m": 7.5524,
+      "loop": true
+    },
+    "turn_left": {
+      "duration_s": 2.4000000953674316,
+      "channels": 44,
+      "max_deformation_m": 7.6622,
+      "loop": false
+    },
+    "turn_right": {
+      "duration_s": 2.4000000953674316,
+      "channels": 44,
+      "max_deformation_m": 6.0682,
+      "loop": false
+    },
+    "burrow": {
+      "duration_s": 4.199999809265137,
+      "channels": 44,
+      "max_deformation_m": 10.4725,
+      "loop": false
+    },
+    "emerge": {
+      "duration_s": 3.9000000953674316,
+      "channels": 44,
+      "max_deformation_m": 10.4452,
+      "loop": false
+    },
+    "alert": {
+      "duration_s": 2.5999999046325684,
+      "channels": 44,
+      "max_deformation_m": 3.228,
+      "loop": false
+    },
+    "threat_display": {
+      "duration_s": 3.799999952316284,
+      "channels": 44,
+      "max_deformation_m": 13.038,
+      "loop": true
+    },
+    "pincer_grab": {
+      "duration_s": 2.5,
+      "channels": 44,
+      "max_deformation_m": 4.8136,
+      "loop": false
+    },
+    "pincer_slam": {
+      "duration_s": 2.200000047683716,
+      "channels": 44,
+      "max_deformation_m": 4.8136,
+      "loop": false
+    },
+    "bite": {
+      "duration_s": 1.7999999523162842,
+      "channels": 44,
+      "max_deformation_m": 3.2285,
+      "loop": false
+    },
+    "tail_sting": {
+      "duration_s": 2.299999952316284,
+      "channels": 44,
+      "max_deformation_m": 5.6335,
+      "loop": false
+    },
+    "tail_sweep": {
+      "duration_s": 2.700000047683716,
+      "channels": 44,
+      "max_deformation_m": 15.1779,
+      "loop": false
+    },
+    "charge": {
+      "duration_s": 2.0999999046325684,
+      "channels": 44,
+      "max_deformation_m": 11.4104,
+      "loop": true
+    },
+    "hurt": {
+      "duration_s": 1.5,
+      "channels": 44,
+      "max_deformation_m": 6.332,
+      "loop": false
+    },
+    "death": {
+      "duration_s": 4.699999809265137,
+      "channels": 44,
+      "max_deformation_m": 7.614,
+      "loop": false
+    },
+    "rest": {
+      "duration_s": 5.0,
+      "channels": 44,
+      "max_deformation_m": 0.6489,
+      "loop": true
+    },
+    "feed": {
+      "duration_s": 3.5999999046325684,
+      "channels": 44,
+      "max_deformation_m": 1.297,
+      "loop": true
+    },
+    "sand_dig": {
+      "duration_s": 3.200000047683716,
+      "channels": 44,
+      "max_deformation_m": 3.8645,
+      "loop": true
+    }
+  }
+}

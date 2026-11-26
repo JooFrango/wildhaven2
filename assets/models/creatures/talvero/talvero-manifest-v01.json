@@ -1,0 +1,31 @@
+{
+  "id": "talvero",
+  "name": "Talvero",
+  "variant": "Savanna Runner",
+  "stage": "animated_asset_in_review",
+  "gameplayIntegrated": false,
+  "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py",
+  "model": {
+    "file": "talvero-savanna-animated-v01.glb",
+    "bytes": 238744,
+    "sha256": "1485cf1fc90db81d69ece2503897a357953531192dbc6b8e4910ff54b8501c98",
+    "triangles": 8024,
+    "meshNodes": 18,
+    "animations": [
+      "idle",
+      "walk",
+      "trot",
+      "gallop",
+      "graze",
+      "alert",
+      "flee",
+      "kick",
+      "rest",
+      "death"
+    ],
+    "animationCount": 10,
+    "joints": 18,
+    "rig": "hierarchical-pivot-animations-no-skin-weights"
+  },
+  "note": "Real geometry and exported pivot animation clips; no weighted skinning or AI."
+}

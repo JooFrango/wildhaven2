@@ -1,0 +1,44 @@
+[
+  {
+    "name": "carniroca_LOD1_animated_v01.glb",
+    "bytes": 500800,
+    "b64chars": 667736,
+    "gitBlobSha": "c2abf309c739cfc8f2c8f2990aad14b48d01347c",
+    "sha256": "6c9fcc4df74181a9a27d3584a7a2c94e2185126d27dd3fdc70d9d418cb13ba1e"
+  },
+  {
+    "name": "carniroca_animated_v01.glb",
+    "bytes": 810500,
+    "b64chars": 1080668,
+    "gitBlobSha": "f19f5cb317b4c43005590cf442720b9cd4796902",
+    "sha256": "a65c321d40f2e2668d1b0c12bbc70693de67aeb8ef067defda263df3b5ed7419"
+  },
+  {
+    "name": "tufrilo_LOD1_animated_v01.glb",
+    "bytes": 366768,
+    "b64chars": 489024,
+    "gitBlobSha": "13e4fd193ee8c9849183ba1d13260b7e1b1e60ae",
+    "sha256": "206c98d7e20196ec5f0af796c70bacedc46dda2664a7e55b55cb2388927a284e"
+  },
+  {
+    "name": "tufrilo_animated_v01.glb",
+    "bytes": 514724,
+    "b64chars": 686300,
+    "gitBlobSha": "0ca34a3b9bdc60768dc92a405ae94c46f7781321",
+    "sha256": "84a859bc559c6834848a139012e5b831bb19ea1cdec7eb4d8f64e0aaa2d7a492"
+  },
+  {
+    "name": "carniroca_tufrilo_comparison.png",
+    "bytes": 169064,
+    "b64chars": 225420,
+    "gitBlobSha": "b837f20b94f6fa07e9f0645254a54ae6dd5838e5",
+    "sha256": "021d710c92ef05c2152d4381298b81cf16b2073474502fb672792a45adcec8b1"
+  },
+  {
+    "name": "actions_contact_sheet.png",
+    "bytes": 343066,
+    "b64chars": 457424,
+    "gitBlobSha": "ac01c885d882b421665fc01d41812e90475113e3",
+    "sha256": "0ec1740a30c596a0a994b3fc620db071b3beae19133447860ac20be8624699e1"
+  }
+]

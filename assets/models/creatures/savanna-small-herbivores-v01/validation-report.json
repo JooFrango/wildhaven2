@@ -1,0 +1,248 @@
+{
+  "assets": [
+    {
+      "species": "sevilho",
+      "lod": 0,
+      "triangles": 7158,
+      "bytes": 314260,
+      "clips": [
+        "idle",
+        "walk",
+        "scurry",
+        "hop",
+        "forage",
+        "store_seed",
+        "sniff",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "nodes": 20
+    },
+    {
+      "species": "sevilho",
+      "lod": 1,
+      "triangles": 4462,
+      "bytes": 244704,
+      "clips": [
+        "idle",
+        "walk",
+        "scurry",
+        "hop",
+        "forage",
+        "store_seed",
+        "sniff",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "nodes": 20
+    },
+    {
+      "species": "sevilho",
+      "lod": 2,
+      "triangles": 2902,
+      "bytes": 201380,
+      "clips": [
+        "idle",
+        "walk",
+        "scurry",
+        "hop",
+        "forage",
+        "store_seed",
+        "sniff",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "nodes": 20
+    },
+    {
+      "species": "arbelio",
+      "lod": 0,
+      "triangles": 7076,
+      "bytes": 306536,
+      "clips": [
+        "idle",
+        "walk",
+        "climb",
+        "leap",
+        "grip",
+        "forage",
+        "balance",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "nodes": 18
+    },
+    {
+      "species": "arbelio",
+      "lod": 1,
+      "triangles": 4470,
+      "bytes": 238300,
+      "clips": [
+        "idle",
+        "walk",
+        "climb",
+        "leap",
+        "grip",
+        "forage",
+        "balance",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "nodes": 18
+    },
+    {
+      "species": "arbelio",
+      "lod": 2,
+      "triangles": 3102,
+      "bytes": 199904,
+      "clips": [
+        "idle",
+        "walk",
+        "climb",
+        "leap",
+        "grip",
+        "forage",
+        "balance",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "nodes": 18
+    },
+    {
+      "species": "frutavil",
+      "lod": 0,
+      "triangles": 5724,
+      "bytes": 248540,
+      "clips": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "nodes": 13
+    },
+    {
+      "species": "frutavil",
+      "lod": 1,
+      "triangles": 3514,
+      "bytes": 185412,
+      "clips": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "nodes": 13
+    },
+    {
+      "species": "frutavil",
+      "lod": 2,
+      "triangles": 2118,
+      "bytes": 140816,
+      "clips": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "nodes": 13
+    },
+    {
+      "species": "cromatil",
+      "lod": 0,
+      "triangles": 7283,
+      "bytes": 321120,
+      "clips": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "nodes": 19
+    },
+    {
+      "species": "cromatil",
+      "lod": 1,
+      "triangles": 3780,
+      "bytes": 222676,
+      "clips": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "nodes": 19
+    },
+    {
+      "species": "cromatil",
+      "lod": 2,
+      "triangles": 2632,
+      "bytes": 185492,
+      "clips": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "nodes": 19
+    }
+  ],
+  "totalGLBs": 12,
+  "totalTrianglesLOD0": 27241,
+  "totalUniqueClips": 44,
+  "status": "PASS"
+}

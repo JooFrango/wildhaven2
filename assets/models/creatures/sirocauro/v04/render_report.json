@@ -1,0 +1,32 @@
+{
+  "joints": 27,
+  "clips": 41,
+  "walk": {
+    "frames": 25,
+    "max_sampled_vertex_displacement_m": 1.902714731572939
+  },
+  "run": {
+    "frames": 19,
+    "max_sampled_vertex_displacement_m": 1.8987109379755212
+  },
+  "bite_heavy": {
+    "frames": 21,
+    "max_sampled_vertex_displacement_m": 2.9115736210132077
+  },
+  "tail_sweep_left": {
+    "frames": 23,
+    "max_sampled_vertex_displacement_m": 4.906125559170107
+  },
+  "roar": {
+    "frames": 30,
+    "max_sampled_vertex_displacement_m": 3.2329616193948283
+  },
+  "fire_burst": {
+    "frames": 23,
+    "max_sampled_vertex_displacement_m": 0.7124983556523837
+  },
+  "frames": 141,
+  "errors": [],
+  "sha256": "7ac13a8b71a941c45a296fce7c645e8f3c3c33b7c545a1379681d797db5f693c",
+  "bytes": 1919156
+}

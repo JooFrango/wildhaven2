@@ -1,0 +1,59 @@
+[
+  {
+    "species": "casquim",
+    "glb": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/assets/casquim/casquim_blockout_v02.glb",
+    "actors": 1,
+    "bounds": [
+      -1.0283242464065552,
+      0.8848410248756409,
+      -0.5485000014305115,
+      0.5485000014305115,
+      0.0013405453646555543,
+      0.9079999923706055
+    ],
+    "renders": {
+      "perfil": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/casquim_perfil_real_glb.png",
+      "frente": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/casquim_frente_real_glb.png",
+      "tres_quartos": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/casquim_tres_quartos_real_glb.png"
+    },
+    "contact_sheet": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/casquim_3vistas_real_glb.png"
+  },
+  {
+    "species": "tufrino",
+    "glb": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/assets/tufrino/tufrino_blockout_v02.glb",
+    "actors": 1,
+    "bounds": [
+      -0.771832287311554,
+      0.7599999904632568,
+      -0.47954097390174866,
+      0.47135159373283386,
+      -0.002736159600317478,
+      1.3299096822738647
+    ],
+    "renders": {
+      "perfil": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/tufrino_perfil_real_glb.png",
+      "frente": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/tufrino_frente_real_glb.png",
+      "tres_quartos": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/tufrino_tres_quartos_real_glb.png"
+    },
+    "contact_sheet": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/tufrino_3vistas_real_glb.png"
+  },
+  {
+    "species": "nevisco",
+    "glb": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/assets/nevisco/nevisco_blockout_v02.glb",
+    "actors": 1,
+    "bounds": [
+      -0.902092695236206,
+      0.6437370777130127,
+      -0.4683324694633484,
+      0.4683324694633484,
+      -0.004284115973860025,
+      1.3876937627792358
+    ],
+    "renders": {
+      "perfil": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/nevisco_perfil_real_glb.png",
+      "frente": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/nevisco_frente_real_glb.png",
+      "tres_quartos": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/nevisco_tres_quartos_real_glb.png"
+    },
+    "contact_sheet": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/snow-fauna-v02/previews/nevisco_3vistas_real_glb.png"
+  }
+]

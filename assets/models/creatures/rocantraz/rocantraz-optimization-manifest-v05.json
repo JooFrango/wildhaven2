@@ -1,0 +1,460 @@
+{
+  "species": "rocantraz",
+  "version": "v05-optimization",
+  "variants": {
+    "forest": {
+      "species": "rocantraz",
+      "variant": "forest",
+      "version": "v05",
+      "source": "assets/models/creatures/rocantraz/rocantraz-forest-biped-animated-v04.glb",
+      "sourceStats": {
+        "bytes": 5710964,
+        "sha256": "060d8df90c45464d52694bb16b38de98af8f3b7eed783bbc52360c60295b4963",
+        "trianglesMeshDefinitions": 148598,
+        "trianglesDrawnPerInstance": 148598,
+        "meshDefinitions": 257,
+        "meshNodes": 257,
+        "primitives": 257,
+        "estimatedDrawCalls": 257,
+        "materials": 15,
+        "nodes": 291,
+        "skins": 0,
+        "skinJointCounts": [],
+        "animations": [
+          "idle",
+          "walk",
+          "stalk",
+          "run",
+          "charge",
+          "bite",
+          "swipe",
+          "roar",
+          "feed",
+          "defend",
+          "rest",
+          "die"
+        ]
+      },
+      "animationSignature": "2ff8cce50fc2d3f1d88907e2ddb7adbf69de990e26baa8555bfec2d6c1ff0226",
+      "lods": [
+        {
+          "bytes": 2577200,
+          "sha256": "c744fdd6feed8e2ed1fbaa835b88838fa828a889d529b542bd90a67b4b6056bb",
+          "trianglesMeshDefinitions": 41923,
+          "trianglesDrawnPerInstance": 41923,
+          "meshDefinitions": 113,
+          "meshNodes": 113,
+          "primitives": 113,
+          "estimatedDrawCalls": 113,
+          "materials": 15,
+          "nodes": 404,
+          "skins": 0,
+          "skinJointCounts": [],
+          "animations": [
+            "idle",
+            "walk",
+            "stalk",
+            "run",
+            "charge",
+            "bite",
+            "swipe",
+            "roar",
+            "feed",
+            "defend",
+            "rest",
+            "die"
+          ],
+          "targetTriangles": 42000,
+          "animationSignature": "2ff8cce50fc2d3f1d88907e2ddb7adbf69de990e26baa8555bfec2d6c1ff0226",
+          "batchedGroups": 113,
+          "sourceMeshNodes": 257
+        },
+        {
+          "bytes": 2107016,
+          "sha256": "fa8be954e849f2cc40534c9be53907a95ecb1705066546266125803f313b69a9",
+          "trianglesMeshDefinitions": 17945,
+          "trianglesDrawnPerInstance": 17945,
+          "meshDefinitions": 113,
+          "meshNodes": 113,
+          "primitives": 113,
+          "estimatedDrawCalls": 113,
+          "materials": 15,
+          "nodes": 404,
+          "skins": 0,
+          "skinJointCounts": [],
+          "animations": [
+            "idle",
+            "walk",
+            "stalk",
+            "run",
+            "charge",
+            "bite",
+            "swipe",
+            "roar",
+            "feed",
+            "defend",
+            "rest",
+            "die"
+          ],
+          "targetTriangles": 18000,
+          "animationSignature": "2ff8cce50fc2d3f1d88907e2ddb7adbf69de990e26baa8555bfec2d6c1ff0226",
+          "batchedGroups": 113,
+          "sourceMeshNodes": 257
+        },
+        {
+          "bytes": 1890820,
+          "sha256": "74a7fc5aa25f6709edfe9606f89c34df73a81ebb61d880ebd32fd830a1c053f7",
+          "trianglesMeshDefinitions": 6916,
+          "trianglesDrawnPerInstance": 6916,
+          "meshDefinitions": 113,
+          "meshNodes": 113,
+          "primitives": 113,
+          "estimatedDrawCalls": 113,
+          "materials": 15,
+          "nodes": 404,
+          "skins": 0,
+          "skinJointCounts": [],
+          "animations": [
+            "idle",
+            "walk",
+            "stalk",
+            "run",
+            "charge",
+            "bite",
+            "swipe",
+            "roar",
+            "feed",
+            "defend",
+            "rest",
+            "die"
+          ],
+          "targetTriangles": 7000,
+          "animationSignature": "2ff8cce50fc2d3f1d88907e2ddb7adbf69de990e26baa8555bfec2d6c1ff0226",
+          "batchedGroups": 113,
+          "sourceMeshNodes": 257
+        }
+      ],
+      "previews": {
+        "side": {
+          "bytes": 502735,
+          "boundsMin": [
+            -2.021941661834717,
+            0.10968653112649918,
+            -6.935524940490723
+          ],
+          "boundsMax": [
+            2.0352516174316406,
+            6.179373741149902,
+            2.394301652908325
+          ]
+        },
+        "front": {
+          "bytes": 515380,
+          "boundsMin": [
+            -2.021941661834717,
+            0.10968653112649918,
+            -6.935524940490723
+          ],
+          "boundsMax": [
+            2.0352516174316406,
+            6.179373741149902,
+            2.394301652908325
+          ]
+        },
+        "three-quarter": {
+          "bytes": 302823,
+          "boundsMin": [
+            -2.021941661834717,
+            0.10968653112649918,
+            -6.935524940490723
+          ],
+          "boundsMax": [
+            2.0352516174316406,
+            6.179373741149902,
+            2.394301652908325
+          ]
+        },
+        "wireframe": {
+          "bytes": 368204,
+          "boundsMin": [
+            -2.021941661834717,
+            0.10968653112649918,
+            -6.935524940490723
+          ],
+          "boundsMax": [
+            2.0352516174316406,
+            6.179373741149902,
+            2.394301652908325
+          ]
+        },
+        "roar": {
+          "bytes": 301340,
+          "boundsMin": [
+            -2.383392572402954,
+            0.21661056578159332,
+            -7.144848823547363
+          ],
+          "boundsMax": [
+            2.3838512897491455,
+            5.809270858764648,
+            2.0124459266662598
+          ]
+        },
+        "run": {
+          "bytes": 293245,
+          "boundsMin": [
+            -2.0910158157348633,
+            0.0051565878093242645,
+            -6.5821404457092285
+          ],
+          "boundsMax": [
+            1.9840211868286133,
+            6.162054061889648,
+            2.7816922664642334
+          ]
+        }
+      },
+      "method": [
+        "batch static child meshes by animated parent + material",
+        "bake local transforms before batching",
+        "VTK quadric decimation with volume preservation",
+        "nearest-surface transport of retained vertex attributes",
+        "preserve animation sampler arrays and clip names"
+      ],
+      "integration": {
+        "gameplay": false,
+        "spawn": false,
+        "world": false,
+        "alpha01Touched": false
+      },
+      "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+    },
+    "desert": {
+      "species": "rocantraz",
+      "variant": "desert",
+      "version": "v05",
+      "source": "assets/models/creatures/rocantraz/rocantraz-desert-biped-animated-v04.glb",
+      "sourceStats": {
+        "bytes": 5507484,
+        "sha256": "5bfdc03e6647e16368b09ded483e9bf85bdc04e9d6f4fabd20e9a4341d0b34a2",
+        "trianglesMeshDefinitions": 146678,
+        "trianglesDrawnPerInstance": 146678,
+        "meshDefinitions": 233,
+        "meshNodes": 233,
+        "primitives": 233,
+        "estimatedDrawCalls": 233,
+        "materials": 14,
+        "nodes": 267,
+        "skins": 0,
+        "skinJointCounts": [],
+        "animations": [
+          "idle",
+          "walk",
+          "stalk",
+          "run",
+          "charge",
+          "bite",
+          "swipe",
+          "roar",
+          "feed",
+          "defend",
+          "rest",
+          "die"
+        ]
+      },
+      "animationSignature": "ca9131337025527123ab6189ec3d8b9cb6a19bc5aa04f449e44c13b59113b2fa",
+      "lods": [
+        {
+          "bytes": 2570936,
+          "sha256": "b2455283afe6a7018e7b9bb55ddc06c3a3af67a79a680c379e7d05df50c7de94",
+          "trianglesMeshDefinitions": 41961,
+          "trianglesDrawnPerInstance": 41961,
+          "meshDefinitions": 112,
+          "meshNodes": 112,
+          "primitives": 112,
+          "estimatedDrawCalls": 112,
+          "materials": 14,
+          "nodes": 379,
+          "skins": 0,
+          "skinJointCounts": [],
+          "animations": [
+            "idle",
+            "walk",
+            "stalk",
+            "run",
+            "charge",
+            "bite",
+            "swipe",
+            "roar",
+            "feed",
+            "defend",
+            "rest",
+            "die"
+          ],
+          "targetTriangles": 42000,
+          "animationSignature": "ca9131337025527123ab6189ec3d8b9cb6a19bc5aa04f449e44c13b59113b2fa",
+          "batchedGroups": 112,
+          "sourceMeshNodes": 233
+        },
+        {
+          "bytes": 2100476,
+          "sha256": "f34a6b8004ff0f66acc9691c6a31aeb149298ae42576e00c5e6ff9bc43812c43",
+          "trianglesMeshDefinitions": 17927,
+          "trianglesDrawnPerInstance": 17927,
+          "meshDefinitions": 112,
+          "meshNodes": 112,
+          "primitives": 112,
+          "estimatedDrawCalls": 112,
+          "materials": 14,
+          "nodes": 379,
+          "skins": 0,
+          "skinJointCounts": [],
+          "animations": [
+            "idle",
+            "walk",
+            "stalk",
+            "run",
+            "charge",
+            "bite",
+            "swipe",
+            "roar",
+            "feed",
+            "defend",
+            "rest",
+            "die"
+          ],
+          "targetTriangles": 18000,
+          "animationSignature": "ca9131337025527123ab6189ec3d8b9cb6a19bc5aa04f449e44c13b59113b2fa",
+          "batchedGroups": 112,
+          "sourceMeshNodes": 233
+        },
+        {
+          "bytes": 1884812,
+          "sha256": "ffc8ffd1b214d0b26475f4603f89bb046b40473cf9b0bdadb32084d3b8e64fb6",
+          "trianglesMeshDefinitions": 6914,
+          "trianglesDrawnPerInstance": 6914,
+          "meshDefinitions": 112,
+          "meshNodes": 112,
+          "primitives": 112,
+          "estimatedDrawCalls": 112,
+          "materials": 14,
+          "nodes": 379,
+          "skins": 0,
+          "skinJointCounts": [],
+          "animations": [
+            "idle",
+            "walk",
+            "stalk",
+            "run",
+            "charge",
+            "bite",
+            "swipe",
+            "roar",
+            "feed",
+            "defend",
+            "rest",
+            "die"
+          ],
+          "targetTriangles": 7000,
+          "animationSignature": "ca9131337025527123ab6189ec3d8b9cb6a19bc5aa04f449e44c13b59113b2fa",
+          "batchedGroups": 112,
+          "sourceMeshNodes": 233
+        }
+      ],
+      "previews": {
+        "side": {
+          "bytes": 511949,
+          "boundsMin": [
+            -2.021941661834717,
+            0.10968653112649918,
+            -6.935524940490723
+          ],
+          "boundsMax": [
+            2.0352516174316406,
+            6.178941249847412,
+            2.394301652908325
+          ]
+        },
+        "front": {
+          "bytes": 522719,
+          "boundsMin": [
+            -2.021941661834717,
+            0.10968653112649918,
+            -6.935524940490723
+          ],
+          "boundsMax": [
+            2.0352516174316406,
+            6.178941249847412,
+            2.394301652908325
+          ]
+        },
+        "three-quarter": {
+          "bytes": 312961,
+          "boundsMin": [
+            -2.021941661834717,
+            0.10968653112649918,
+            -6.935524940490723
+          ],
+          "boundsMax": [
+            2.0352516174316406,
+            6.178941249847412,
+            2.394301652908325
+          ]
+        },
+        "wireframe": {
+          "bytes": 367200,
+          "boundsMin": [
+            -2.021941661834717,
+            0.10968653112649918,
+            -6.935524940490723
+          ],
+          "boundsMax": [
+            2.0352516174316406,
+            6.178941249847412,
+            2.394301652908325
+          ]
+        },
+        "roar": {
+          "bytes": 311666,
+          "boundsMin": [
+            -2.383392572402954,
+            0.21661056578159332,
+            -7.144848823547363
+          ],
+          "boundsMax": [
+            2.3838512897491455,
+            5.813076972961426,
+            2.0124459266662598
+          ]
+        },
+        "run": {
+          "bytes": 302792,
+          "boundsMin": [
+            -2.0910158157348633,
+            0.0051565878093242645,
+            -6.5821404457092285
+          ],
+          "boundsMax": [
+            1.9840211868286133,
+            6.165649890899658,
+            2.7815685272216797
+          ]
+        }
+      },
+      "method": [
+        "batch static child meshes by animated parent + material",
+        "bake local transforms before batching",
+        "VTK quadric decimation with volume preservation",
+        "nearest-surface transport of retained vertex attributes",
+        "preserve animation sampler arrays and clip names"
+      ],
+      "integration": {
+        "gameplay": false,
+        "spawn": false,
+        "world": false,
+        "alpha01Touched": false
+      },
+      "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+    }
+  }
+}

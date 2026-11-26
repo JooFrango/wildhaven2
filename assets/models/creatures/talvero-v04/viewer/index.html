@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wildhaven · Talvero v04 · Modelo real 3D</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#151f23;color:#e9eeeb;font:14px system-ui}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:13px 18px;background:#202d31}
+strong{font-size:17px;margin-right:8px}
+button,select,input{accent-color:#ba8956}
+button,select{background:#314548;color:#f5f4ee;border:1px solid #5b7979;border-radius:7px;padding:7px 10px}
+label{display:flex;align-items:center;gap:7px}
+canvas{display:block}
+#view{width:100%;height:calc(100vh - 103px);min-height:480px}
+footer{padding:8px 18px;background:#202d31;color:#abbcb7;font-size:12px}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.171.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.171.0/examples/jsm/"}}</script>
+</head><body>
+<header><strong>Wildhaven · Talvero v04</strong>
+<label>Movimento <select id="clip"></select></label>
+<label>Velocidade <input id="speed" type="range" min=".25" max="2" step=".05" value="1"><output id="speedval">1.00×</output></label>
+<button id="play">Pausar</button><button id="reset">Centralizar</button>
+<label><input id="wire" type="checkbox"> Malha</label></header>
+<div id="view"></div>
+<footer id="status">Carregando o GLB real do repositório…</footer>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const host=document.getElementById('view');
+const r=new THREE.WebGLRenderer({antialias:true});
+r.setPixelRatio(Math.min(devicePixelRatio,2));r.setSize(host.clientWidth,host.clientHeight);
+r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;
+r.shadowMap.enabled=true;host.appendChild(r.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#879a9b');
+const camera=new THREE.PerspectiveCamera(42,host.clientWidth/host.clientHeight,.01,100);
+const controls=new OrbitControls(camera,r.domElement);controls.enableDamping=true;
+scene.add(new THREE.HemisphereLight(0xebf1ff,0x82633f,2.1));
+let key=new THREE.DirectionalLight(0xffe7c7,2.8);key.position.set(3,9,5);key.castShadow=true;scene.add(key);
+let fill=new THREE.DirectionalLight(0xb6d1ec,1.1);fill.position.set(-3,6,-6);scene.add(fill);
+const floor=new THREE.Mesh(new THREE.CircleGeometry(15,96),new THREE.MeshStandardMaterial({color:0x857e67,roughness:1}));
+floor.rotation.x=-Math.PI/2;floor.position.y=-.12;floor.receiveShadow=true;scene.add(floor);
+let model=null,mixer=null,action=null,paused=false;
+const clips=document.getElementById('clip'),status=document.getElementById('status');
+const src='../../talvero/talvero-savanna-anatomy-skinned-v04.glb';
+function fit(){
+ if(!model)return;
+ const b=new THREE.Box3().setFromObject(model),c=b.getCenter(new THREE.Vector3()),s=b.getSize(new THREE.Vector3());
+ let extent=Math.max(s.x,s.y,s.z);camera.position.copy(c).add(new THREE.Vector3(extent*.76,extent*.41,extent*1.18));
+ controls.target.copy(c);controls.update();
+}
+function activate(name){
+ if(!mixer)return;const next=mixer.clipAction(animations.find(c=>c.name===name)||animations[0]);
+ if(action)action.fadeOut(.22);
+ action=next;action.reset().fadeIn(.22).play();action.paused=paused;
+}
+let animations=[];
+new GLTFLoader().load(src,(g)=>{
+ model=g.scene;animations=g.animations;model.animations=animations;scene.add(model);
+ model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
+ mixer=new THREE.AnimationMixer(model);
+ for(const a of animations){const opt=document.createElement('option');opt.value=opt.textContent=a.name;clips.add(opt)}
+ clips.value='idle';activate('idle');fit();
+ const skins=[];model.traverse(o=>{if(o.isSkinnedMesh)skins.push(o)});
+ status.textContent='GLB real · '+animations.length+' clipes exportados · '+skins.length+' skinned mesh · v04 ainda em revisão artística';
+},undefined,e=>{status.textContent='Falha: '+e.message+' — abra usando um servidor HTTP local.';console.error(e)});
+clips.addEventListener('change',()=>activate(clips.value));
+document.getElementById('reset').addEventListener('click',fit);
+document.getElementById('play').addEventListener('click',()=>{paused=!paused;if(action)action.paused=paused;document.getElementById('play').textContent=paused?'Reproduzir':'Pausar'});
+document.getElementById('speed').addEventListener('input',e=>{if(mixer)mixer.timeScale=+e.target.value;document.getElementById('speedval').textContent=(+e.target.value).toFixed(2)+'×'});
+document.getElementById('wire').addEventListener('change',e=>{model?.traverse(o=>{if(o.isMesh){for(const mat of (Array.isArray(o.material)?o.material:[o.material]))mat.wireframe=e.target.checked}})});
+new ResizeObserver(()=>{const w=host.clientWidth,h=host.clientHeight;r.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix()}).observe(host);
+const clock=new THREE.Clock();function loop(){requestAnimationFrame(loop);mixer?.update(clock.getDelta());controls.update();r.render(scene,camera)}loop();
+</script></body></html>

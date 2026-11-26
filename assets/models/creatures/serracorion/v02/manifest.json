@@ -1,0 +1,128 @@
+{
+  "species": "Serracorion (nome provisório)",
+  "biome": "Mar de Dunas",
+  "version": "v02",
+  "parent_version": "v01",
+  "fix": "dorsal spines permanently attached by geometry overlap in armored back",
+  "status": {
+    "concept": "approved_by_user",
+    "blockout_shape": "awaiting_artistic_review",
+    "rig": "not_started",
+    "integration": "not_in_game"
+  },
+  "source": "source/build.py",
+  "asset": "serracorion-v02-espinhos-integrados.glb",
+  "texture": "textures/serracorion-v02-painted-uv.png",
+  "sha256": "f1c4fc7828252a11a196963da2c05fa415f2bc976c0674ff729d809e9a7544d5",
+  "texture_sha256": "92e7f3539bf4cd5d27439b0acee759398d0d4a96ce0090020c6ab7b58a522f46",
+  "size_bytes": 2517460,
+  "triangles": 4815,
+  "mesh_count": 1,
+  "materials": 1,
+  "texture_resolution_px": [
+    2048,
+    2048
+  ],
+  "bones": 0,
+  "skins": 0,
+  "animation_clips": 0,
+  "bounds_m": [
+    [
+      -7.31,
+      0.048,
+      -5.114
+    ],
+    [
+      7.517,
+      9.906,
+      5.106
+    ]
+  ],
+  "units": "metres; Y up; head at negative X",
+  "texture_rule": "pigment stripes, spots, surface scratches entirely hand-painted UV raster; armor geometry only for physical silhouette",
+  "dorsal_spine_base_evidence": [
+    {
+      "x": -2.7,
+      "buried_base_min_m": 0.2,
+      "buried_base_max_m": 0.2,
+      "spine_height_m": 0.97
+    },
+    {
+      "x": -1.757,
+      "buried_base_min_m": 0.2,
+      "buried_base_max_m": 0.2,
+      "spine_height_m": 0.95
+    },
+    {
+      "x": -0.814,
+      "buried_base_min_m": 0.2,
+      "buried_base_max_m": 0.2,
+      "spine_height_m": 0.88
+    },
+    {
+      "x": 0.129,
+      "buried_base_min_m": 0.2,
+      "buried_base_max_m": 0.2,
+      "spine_height_m": 0.82
+    },
+    {
+      "x": 1.071,
+      "buried_base_min_m": 0.2,
+      "buried_base_max_m": 0.2,
+      "spine_height_m": 0.74
+    },
+    {
+      "x": 2.014,
+      "buried_base_min_m": 0.2,
+      "buried_base_max_m": 0.2,
+      "spine_height_m": 0.67
+    },
+    {
+      "x": 2.957,
+      "buried_base_min_m": 0.2,
+      "buried_base_max_m": 0.2,
+      "spine_height_m": 0.59
+    },
+    {
+      "x": 3.9,
+      "buried_base_min_m": 0.2,
+      "buried_base_max_m": 0.2,
+      "spine_height_m": 0.48
+    }
+  ],
+  "parts_triangles": {
+    "segmented_trunk": 288,
+    "ventral_scutum": 32,
+    "cephalic_shield": 120,
+    "lower_jaw": 120,
+    "oral_cavity": 5,
+    "chelicerae": 128,
+    "teeth": 480,
+    "lower_teeth": 360,
+    "orbital_rim": 84,
+    "eyeball": 144,
+    "nasal_crest": 48,
+    "dorsal_integrated_plate": 128,
+    "dorsal_integrated_spine": 192,
+    "horn_brow": 12,
+    "horn_temporal": 12,
+    "ambulatory_coxa_femur": 360,
+    "ambulatory_tibia": 288,
+    "tarsal_claw": 252,
+    "knee_knuckle_armor": 168,
+    "tibial_spur": 36,
+    "chela_coxa": 144,
+    "chela_forearm": 144,
+    "chela_palm": 144,
+    "massive_chela_fixed_finger": 144,
+    "massive_chela_movable_finger": 144,
+    "chela_palm_scute": 12,
+    "forearm_protective_plate": 12,
+    "segmented_tail": 288,
+    "tail_segment_seam": 360,
+    "tail_lateral_scutal_spine": 60,
+    "caudal_scythe": 100,
+    "caudal_blade_keel": 6
+  },
+  "reference": "predador_escorpião_de_espinhos_integrados.png approved correction reference"
+}

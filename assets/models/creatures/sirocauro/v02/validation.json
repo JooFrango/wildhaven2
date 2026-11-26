@@ -1,0 +1,38 @@
+{
+  "version": "v02",
+  "asset": "sirocauro-v02-rig41-LOD0.glb",
+  "sha256": "92c3f99c30712913b3963c85e6a9f110153fedf973db64f0953f30bdf221a237",
+  "bytes": 946484,
+  "source_sha256": "a81241eb76528afe7d29a2ed4b66634364320cc4d4ea615b16d4418faf68ef01",
+  "validation": "Read-back from GitHub after publish",
+  "triangles": 6238,
+  "vertices": 18714,
+  "skins": 1,
+  "joints": 27,
+  "clips": 41,
+  "animation_channels": 314,
+  "tests": {
+    "glb2_header": true,
+    "glb_total_length": true,
+    "buffer_alignment": true,
+    "buffers_bounds": true,
+    "original_geometry_uv_atlas_binary_byte_equal": true,
+    "skin_weight_sum_255_all_vertices": true,
+    "joint_indices_valid": true,
+    "all_animation_clips_nonempty": true,
+    "animation_sampler_counts_match": true,
+    "animation_times_monotonic_and_bounds_match": true,
+    "rotation_quaternions_unit_norm": true,
+    "finite_values": true
+  },
+  "fail_count": 0,
+  "not_tested": [
+    "gltf-validator external",
+    "rendering and animation playback in Three.js",
+    "deformation aesthetics",
+    "foot IK on terrain",
+    "physical contact, collision and gameplay",
+    "artistic approval and QA"
+  ],
+  "result": "TECHNICAL_STRUCTURE_PASS__ARTISTIC_REVIEW_PENDING"
+}

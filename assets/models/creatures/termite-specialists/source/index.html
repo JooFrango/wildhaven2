@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wildhaven — Especialistas em Cupins · Estúdio 3D</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#1a2422;color:#eef2e7;font:14px system-ui}
+#view{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+header{position:absolute;top:18px;left:20px;padding:14px 20px;background:#17231fdd;border:1px solid #60775b99;border-radius:12px;max-width:460px;z-index:5}
+h1{font-size:23px;line-height:1.1;margin:0 0 7px;font-family:Georgia,serif;color:#eac58d}
+p{margin:4px 0;color:#e0e9d5;font-size:13px}
+#labels{position:absolute;left:1%;right:1%;bottom:160px;display:grid;grid-template-columns:repeat(4,1fr);pointer-events:none;text-align:center;text-shadow:0 2px 8px #071b13;gap:4px}
+#labels strong{display:block;font-size:17px}#labels span{color:#dbe7d3;font-size:12px}
+#actions{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);z-index:5;background:#15231fe8;border:1px solid #577c67;border-radius:12px;padding:10px;max-width:95%;width:890px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center}
+label{color:#cfddca}select,button{background:#2b4339;border:1px solid #779d86;color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
+#hud{min-width:200px;color:#d4ebd8}button{background:#43604d}
+@media(max-width:700px){header{top:6px;left:6px;padding:9px}h1{font-size:16px}#labels{bottom:175px}#labels strong{font-size:11px}#labels span{font-size:9px}}
+</style>
+</head>
+<body>
+<canvas id="view"></canvas>
+<header>
+<h1>Wildhaven · Especialistas em cupins</h1>
+<p>Modelos poligonais e articulações 3D reais · quatro assets separados da Alpha jogável.</p>
+<p>Arraste para girar · roda do mouse ou pinça para zoom</p>
+</header>
+<div id="labels">
+<div><strong>Ferrunco</strong><span>Florestas · escavador</span></div>
+<div><strong>Dunlíngua</strong><span>Deserto · língua longa</span></div>
+<div><strong>Pica-Termita</strong><span>Planícies · extrator aéreo</span></div>
+<div><strong>Cupinzeiro</strong><span>População finita · colônia viva</span></div>
+</div>
+<div id="actions">
+<label for="asset">Criatura:</label>
+<select id="asset">
+<option value="ferrunco">Ferrunco</option>
+<option value="dunlingua">Dunlíngua</option>
+<option value="pica_termita">Pica-Termita de Crista</option>
+<option value="cupinzeiro">Cupinzeiro</option>
+</select>
+<label for="animation">Animação:</label><select id="animation"></select>
+<button type="button" id="isolate">Mostrar selecionado</button>
+<span id="hud" role="status">Criando os quatro modelos 3D...</span>
+</div>
+<script type="module" src="./viewer.mjs"></script>
+</body></html>

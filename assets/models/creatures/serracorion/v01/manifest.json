@@ -1,0 +1,76 @@
+{
+  "species": "Serracorion (nome provisório)",
+  "biome": "Mar de Dunas",
+  "version": "v01",
+  "status": {
+    "concept": "approved_by_user",
+    "blockout_shape": "awaiting_artistic_review",
+    "rig": "not_started",
+    "integration": "not_in_game"
+  },
+  "source": "source/build.py",
+  "asset": "serracorion-v01-anatomical-blockout.glb",
+  "texture": "textures/serracorion-v01-painted-uv.png",
+  "sha256": "d11a309ad92cb4a85781857a05a773b8a240ac3c8d89a4ce6343288162323b74",
+  "texture_sha256": "92e7f3539bf4cd5d27439b0acee759398d0d4a96ce0090020c6ab7b58a522f46",
+  "size_bytes": 2500164,
+  "triangles": 4575,
+  "mesh_count": 1,
+  "materials": 1,
+  "texture_resolution_px": [
+    2048,
+    2048
+  ],
+  "bones": 0,
+  "skins": 0,
+  "animation_clips": 0,
+  "bounds_m": [
+    [
+      -7.31,
+      0.048,
+      -5.114
+    ],
+    [
+      7.517,
+      9.906,
+      5.106
+    ]
+  ],
+  "units": "metres; Y up; head at negative X",
+  "texture_rule": "pigment stripes, spots, surface scratches entirely hand-painted UV raster; armor geometry only for physical silhouette",
+  "parts_triangles": {
+    "segmented_trunk": 288,
+    "ventral_scutum": 32,
+    "cephalic_shield": 120,
+    "lower_jaw": 120,
+    "oral_cavity": 5,
+    "chelicerae": 128,
+    "teeth": 480,
+    "lower_teeth": 360,
+    "orbital_rim": 84,
+    "eyeball": 144,
+    "nasal_crest": 48,
+    "dorsal_armor": 32,
+    "dorsal_scutal_fin": 48,
+    "horn_brow": 12,
+    "horn_temporal": 12,
+    "ambulatory_coxa_femur": 360,
+    "ambulatory_tibia": 288,
+    "tarsal_claw": 252,
+    "knee_knuckle_armor": 168,
+    "tibial_spur": 36,
+    "chela_coxa": 144,
+    "chela_forearm": 144,
+    "chela_palm": 144,
+    "massive_chela_fixed_finger": 144,
+    "massive_chela_movable_finger": 144,
+    "chela_palm_scute": 12,
+    "forearm_protective_plate": 12,
+    "segmented_tail": 288,
+    "tail_segment_seam": 360,
+    "tail_lateral_scutal_spine": 60,
+    "caudal_scythe": 100,
+    "caudal_blade_keel": 6
+  },
+  "reference": "predador_das_dunas_em_armadura.png approved conceptual artwork"
+}

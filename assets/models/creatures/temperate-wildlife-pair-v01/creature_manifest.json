@@ -1,0 +1,216 @@
+{
+  "models": [
+    {
+      "file": "carniroca_animated_v01.glb",
+      "sha256": "a65c321d40f2e2668d1b0c12bbc70693de67aeb8ef067defda263df3b5ed7419",
+      "bytes": 810500,
+      "triangles": 16704,
+      "vertices": 9588,
+      "joints": 18,
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "takeoff",
+        "fly",
+        "glide",
+        "flap_hard",
+        "bank_left",
+        "bank_right",
+        "land",
+        "wing_fold",
+        "perch",
+        "scan",
+        "approach_carcass",
+        "peck_carrion",
+        "tear_meat",
+        "swallow",
+        "threaten",
+        "call",
+        "preen",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "bbox_m": [
+        [
+          -1.0172909498214722,
+          0.09200000017881393,
+          -0.4500632584095001
+        ],
+        [
+          1.0172909498214722,
+          1.164145827293396,
+          0.6161180138587952
+        ]
+      ],
+      "skinned": true,
+      "limitations": [
+        "Rigid per-part skin weights: no soft tissue bending",
+        "Animations mostly in-place; no foot IK or physical wing aerodynamics",
+        "No gameplay AI integration yet"
+      ]
+    },
+    {
+      "file": "carniroca_LOD1_animated_v01.glb",
+      "sha256": "6c9fcc4df74181a9a27d3584a7a2c94e2185126d27dd3fdc70d9d418cb13ba1e",
+      "bytes": 500800,
+      "triangles": 8698,
+      "vertices": 5138,
+      "joints": 18,
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "takeoff",
+        "fly",
+        "glide",
+        "flap_hard",
+        "bank_left",
+        "bank_right",
+        "land",
+        "wing_fold",
+        "perch",
+        "scan",
+        "approach_carcass",
+        "peck_carrion",
+        "tear_meat",
+        "swallow",
+        "threaten",
+        "call",
+        "preen",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "bbox_m": [
+        [
+          -1.0172909498214722,
+          0.09200000017881393,
+          -0.4500632584095001
+        ],
+        [
+          1.0172909498214722,
+          1.164145827293396,
+          0.6161180138587952
+        ]
+      ],
+      "skinned": true,
+      "limitations": [
+        "Rigid per-part skin weights: no soft tissue bending",
+        "Animations mostly in-place; no foot IK or physical wing aerodynamics",
+        "No gameplay AI integration yet"
+      ]
+    },
+    {
+      "file": "tufrilo_animated_v01.glb",
+      "sha256": "84a859bc559c6834848a139012e5b831bb19ea1cdec7eb4d8f64e0aaa2d7a492",
+      "bytes": 514724,
+      "triangles": 10596,
+      "vertices": 5964,
+      "joints": 20,
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "bound",
+        "sprint",
+        "turn_left",
+        "turn_right",
+        "sniff",
+        "forage",
+        "nibble",
+        "collect_seed",
+        "stash_seed",
+        "dig",
+        "look_around",
+        "alert_call",
+        "freeze",
+        "flee",
+        "hide",
+        "groom",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "bbox_m": [
+        [
+          -0.22622482478618622,
+          0.00800000037997961,
+          -0.5111802816390991
+        ],
+        [
+          0.22934404015541077,
+          0.6662360429763794,
+          0.37628525495529175
+        ]
+      ],
+      "skinned": true,
+      "limitations": [
+        "Rigid per-part skin weights: no soft tissue bending",
+        "Animations mostly in-place; no foot IK or physical wing aerodynamics",
+        "No gameplay AI integration yet"
+      ]
+    },
+    {
+      "file": "tufrilo_LOD1_animated_v01.glb",
+      "sha256": "206c98d7e20196ec5f0af796c70bacedc46dda2664a7e55b55cb2388927a284e",
+      "bytes": 366768,
+      "triangles": 6714,
+      "vertices": 3853,
+      "joints": 20,
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "bound",
+        "sprint",
+        "turn_left",
+        "turn_right",
+        "sniff",
+        "forage",
+        "nibble",
+        "collect_seed",
+        "stash_seed",
+        "dig",
+        "look_around",
+        "alert_call",
+        "freeze",
+        "flee",
+        "hide",
+        "groom",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "bbox_m": [
+        [
+          -0.22622482478618622,
+          0.00800000037997961,
+          -0.5111802816390991
+        ],
+        [
+          0.22934404015541077,
+          0.6662360429763794,
+          0.37628525495529175
+        ]
+      ],
+      "skinned": true,
+      "limitations": [
+        "Rigid per-part skin weights: no soft tissue bending",
+        "Animations mostly in-place; no foot IK or physical wing aerodynamics",
+        "No gameplay AI integration yet"
+      ]
+    }
+  ]
+}

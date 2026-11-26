@@ -1,0 +1,172 @@
+{
+  "version": "0.1.0",
+  "gameIntegrated": false,
+  "productionQuality": "mid-poly prototype",
+  "geometry": "actual 3D polygonal meshes",
+  "animation": "hierarchical transform tracks, not weighted skin",
+  "assets": [
+    {
+      "speciesId": "ferrunco",
+      "file": "ferrunco-animated-v01.glb",
+      "bytes": 961404,
+      "sha256": "e7067018f7822844131efa4c89784b4ab19b3a3b082930db174572e88e0e9062",
+      "meshes": 41,
+      "meshInstances": 135,
+      "primitives": 41,
+      "animationClips": [
+        "idle",
+        "walk",
+        "trot",
+        "sniff",
+        "inspect",
+        "dig",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "alert",
+        "defend",
+        "flee",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "channelsMin": 54,
+      "nodes": 154,
+      "dossier": {
+        "name": "Ferrunco",
+        "biome": [
+          "floresta tropical",
+          "floresta temperada"
+        ],
+        "lengthM": 2.15,
+        "heightM": 1.15,
+        "role": "especialista escavador de cupins",
+        "intakePerVisit": 340,
+        "structureDamage": 0.15,
+        "climate": "úmido"
+      }
+    },
+    {
+      "speciesId": "dunlingua",
+      "file": "dunlingua-animated-v01.glb",
+      "bytes": 963920,
+      "sha256": "bfe5c456783b362eb70a6d7199a6624492d0d4266e701252290f3fd6da8d4545",
+      "meshes": 42,
+      "meshInstances": 156,
+      "primitives": 42,
+      "animationClips": [
+        "idle",
+        "walk",
+        "run",
+        "scent",
+        "inspect",
+        "dig",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "sun_bask",
+        "alert",
+        "defend",
+        "flee",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "channelsMin": 54,
+      "nodes": 175,
+      "dossier": {
+        "name": "Dunlíngua",
+        "biome": [
+          "deserto",
+          "cânions"
+        ],
+        "lengthM": 2.9,
+        "heightM": 1.2,
+        "role": "caçador crepuscular de cupins",
+        "intakePerVisit": 210,
+        "structureDamage": 0.08,
+        "climate": "árido"
+      }
+    },
+    {
+      "speciesId": "pica_termita",
+      "file": "pica_termita-animated-v01.glb",
+      "bytes": 943184,
+      "sha256": "5487981660f21be10b95ad05b5d33b4153e3dc73308e1f57a5c70f587437dd28",
+      "meshes": 70,
+      "meshInstances": 110,
+      "primitives": 70,
+      "animationClips": [
+        "idle",
+        "walk",
+        "hop",
+        "fly",
+        "land",
+        "lookout",
+        "inspect",
+        "peck",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "crest_display",
+        "wing_spread",
+        "alert",
+        "flee",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "channelsMin": 45,
+      "nodes": 126,
+      "dossier": {
+        "name": "Pica-Termita de Crista",
+        "biome": [
+          "planícies",
+          "savanas",
+          "bordas de floresta"
+        ],
+        "lengthM": 0.85,
+        "heightM": 0.9,
+        "role": "extrator aéreo de cupins",
+        "intakePerVisit": 60,
+        "structureDamage": 0.01,
+        "climate": "quente e ameno"
+      }
+    },
+    {
+      "speciesId": "cupinzeiro",
+      "file": "cupinzeiro-animated-v01.glb",
+      "bytes": 730268,
+      "sha256": "c7faf7d006fc1eba396b1c990f3164b9f5b54419fc74d1b2ac0c769a81aba140",
+      "meshes": 26,
+      "meshInstances": 118,
+      "primitives": 26,
+      "animationClips": [
+        "active",
+        "feeding",
+        "damaged",
+        "abandoned",
+        "crumbling",
+        "disappearing"
+      ],
+      "channelsMin": 108,
+      "nodes": 155,
+      "dossier": {
+        "name": "Cupinzeiro de Auralis",
+        "biome": [
+          "planícies",
+          "savanas",
+          "bordas de floresta"
+        ],
+        "heightM": 3.2,
+        "capacity": 20000,
+        "initialPopulation": [
+          12000,
+          20000
+        ],
+        "role": "recurso alimentar de colônia"
+      }
+    }
+  ]
+}

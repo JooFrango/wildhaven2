@@ -1,0 +1,52 @@
+{
+  "species": "talvero",
+  "version": "v04",
+  "artisticStatus": "in_review",
+  "previousModelsPreserved": true,
+  "gameplayIntegrated": false,
+  "source": "assets/models/creatures/talvero-v04/source/generate.py",
+  "notes": [
+    "Revised skull, narrow muzzle, nostrils, eyes, ears",
+    "Layered 3D mane and dorsal hair",
+    "Refined 3D shoulders/haunches/tendons and coat"
+  ],
+  "model": {
+    "file": "talvero-savanna-anatomy-skinned-v04.glb",
+    "bytes": 3760384,
+    "sha256": "d99c42b512889ef70843ae6eea73e2d3fd112c08b872a3b915401e3c594961dc",
+    "triangles": 113234,
+    "bodyVertices": 38198,
+    "bodyTriangles": 76392,
+    "bodyConnectedMesh": true,
+    "skinJoints": 17,
+    "skinnedBody": true,
+    "accessors": 349,
+    "animations": [
+      "idle",
+      "walk",
+      "trot",
+      "gallop",
+      "graze",
+      "alert",
+      "flee",
+      "kick",
+      "rest",
+      "death"
+    ],
+    "animationCount": 10,
+    "clipChannels": {
+      "idle": 18,
+      "walk": 18,
+      "trot": 18,
+      "gallop": 18,
+      "graze": 18,
+      "alert": 18,
+      "flee": 18,
+      "kick": 18,
+      "rest": 18,
+      "death": 18
+    },
+    "physicalIntegration": false,
+    "note": "Skinned mesh with weighted joints; 3D anatomically sculpted body. v02 concept review."
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "sevilho",
+  "version": "v01",
+  "status": "asset_for_art_review",
+  "gameplayIntegrated": false,
+  "LODs": [
+    {
+      "path": "sevilho-savanna-animated-v01-LOD0.glb",
+      "bytes": 314260,
+      "sha256": "bf0ae39bab6caf6991d0a1b2035a325c5552ec524b15b5b6efa21b74d74ddd8e",
+      "triangleCount": 7158,
+      "nodes": 20,
+      "meshNodes": 19,
+      "animationNames": [
+        "idle",
+        "walk",
+        "scurry",
+        "hop",
+        "forage",
+        "store_seed",
+        "sniff",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 0
+    },
+    {
+      "path": "sevilho-savanna-animated-v01-LOD1.glb",
+      "bytes": 244704,
+      "sha256": "65a25805f37ca7a6730a61b8a87a203c992d891624c29972736b6c2641496af2",
+      "triangleCount": 4462,
+      "nodes": 20,
+      "meshNodes": 19,
+      "animationNames": [
+        "idle",
+        "walk",
+        "scurry",
+        "hop",
+        "forage",
+        "store_seed",
+        "sniff",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 1
+    },
+    {
+      "path": "sevilho-savanna-animated-v01-LOD2.glb",
+      "bytes": 201380,
+      "sha256": "aa6ca8e0acf4f324af8b477f37a385cba6aa41e28add26ed6cbc0ac65a76068d",
+      "triangleCount": 2902,
+      "nodes": 20,
+      "meshNodes": 19,
+      "animationNames": [
+        "idle",
+        "walk",
+        "scurry",
+        "hop",
+        "forage",
+        "store_seed",
+        "sniff",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 2
+    }
+  ]
+}
