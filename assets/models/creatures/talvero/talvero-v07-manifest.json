@@ -1,0 +1,226 @@
+{
+  "id": "talvero",
+  "species": "Talvero",
+  "biomes": [
+    "savanna_grassland"
+  ],
+  "sizeClass": "medium",
+  "version": "v07",
+  "previousVersion": "v06",
+  "lod": 0,
+  "triangleLimit": 2000,
+  "previousAsset": {
+    "path": "assets/models/creatures/talvero/talvero-savanna-animated-v06-LOD0.glb",
+    "commit": "346f7cb532e4ea3bbec3683332cb46c3a8ca28fe",
+    "triangles": 25247,
+    "sha256": "e86564190e730ba614710033a196fdfabbf729a98f788b0c2cea49c91b897d1a"
+  },
+  "model": {
+    "path": "assets/models/creatures/talvero/talvero-v07-LOD0.glb",
+    "bytes": 697136,
+    "sha256": "851a2bf2cd50d02ca0204da8cb8eac00d62dd297b0440b188cc1bb87271e1f30",
+    "triangles": 1650,
+    "uniqueTriangles": 1650,
+    "triangleReductionPct": 93.46,
+    "vertices": 1793,
+    "meshes": 1,
+    "materials": 1,
+    "primitives": 1,
+    "joints": 21,
+    "skins": 1,
+    "textures": [
+      {
+        "name": "talvero | pigment atlas",
+        "width": 512,
+        "height": 512,
+        "mimeType": "image/jpeg",
+        "embedded": true
+      }
+    ]
+  },
+  "animation": [
+    {
+      "name": "idle",
+      "startS": 0,
+      "durationS": 3.4,
+      "channels": 63,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "walk",
+      "startS": 0,
+      "durationS": 1.333333,
+      "channels": 63,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "trot",
+      "startS": 0,
+      "durationS": 0.866667,
+      "channels": 63,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "gallop",
+      "startS": 0,
+      "durationS": 0.733333,
+      "channels": 63,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "graze",
+      "startS": 0,
+      "durationS": 4,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "alert",
+      "startS": 0,
+      "durationS": 2.266667,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "flee",
+      "startS": 0,
+      "durationS": 1.633333,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "kick",
+      "startS": 0,
+      "durationS": 1.433333,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "rest",
+      "startS": 0,
+      "durationS": 3.4,
+      "channels": 63,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "death",
+      "startS": 0,
+      "durationS": 2.3,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "drink",
+      "startS": 0,
+      "durationS": 4.2,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "start",
+      "startS": 0,
+      "durationS": 1.266667,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "brake",
+      "startS": 0,
+      "durationS": 1.4,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "turn",
+      "startS": 0,
+      "durationS": 1.533333,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "hit_react",
+      "startS": 0,
+      "durationS": 0.866667,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "lie_down",
+      "startS": 0,
+      "durationS": 2.6,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "get_up",
+      "startS": 0,
+      "durationS": 2.533333,
+      "channels": 63,
+      "loop": false,
+      "rootMotion": "in-place"
+    }
+  ],
+  "art": {
+    "concept": {
+      "path": "assets/models/creatures/talvero/talvero-v07-conceito-proposto.jpg",
+      "status": "proposta em revisão",
+      "generation": "OpenAI ImageGen",
+      "prompt": "Concept art profissional para Wildhaven com uma criatura original de corpo inteiro em três-quartos, quatro cascos visíveis, ambiente neutro e planos anatômicos facetados. Usar os renders lateral e três-quartos do GLB anterior como referência de identidade, postura e marcas. Corrigir proporções e juntas com anatomia naturalista, materiais foscos e olhos encaixados no crânio. Equino robusto das campinas, posteriores potentes, pescoço arqueado, focinho equino curto, orelhas alertas, crina escura em camadas, cauda com tufo, três marcas oblíquas claras e cascos fendidos."
+    },
+    "comparison": "assets/models/creatures/talvero/talvero-v07-comparison.jpg"
+  },
+  "source": {
+    "generator": "assets/models/creatures/talvero/build-fauna-v07-v05.py",
+    "motion": "assets/models/creatures/talvero/fauna_motion_v07_v05.py",
+    "renders": "assets/models/creatures/talvero/render-fauna-v07-v05.py",
+    "runtime": "Blender 5.3",
+    "axes": "glTF Y-up, animal voltado para +X, unidades em metros"
+  },
+  "renders": {
+    "front": "assets/models/creatures/talvero/talvero-v07-front.png",
+    "side": "assets/models/creatures/talvero/talvero-v07-side.png",
+    "back": "assets/models/creatures/talvero/talvero-v07-back.png",
+    "three-quarter": "assets/models/creatures/talvero/talvero-v07-three-quarter.png"
+  },
+  "previews": [
+    "assets/models/creatures/talvero/talvero-v07-walk.gif",
+    "assets/models/creatures/talvero/talvero-v07-trot.gif",
+    "assets/models/creatures/talvero/talvero-v07-gallop.gif",
+    "assets/models/creatures/talvero/talvero-v07-flee.gif",
+    "assets/models/creatures/talvero/talvero-v07-kick.gif"
+  ],
+  "technicalValidation": {
+    "status": "validado",
+    "report": "assets/models/creatures/talvero/talvero-v07-validation.json"
+  },
+  "artisticApproval": {
+    "status": "em revisão artística",
+    "comparisonNotes": "O corpo equino, a crina escura e três faixas diagonais de marfim seguem a ficha e a proposta de conceito. O modelo interpreta a crina com mechas mais curtas e as pernas com planos mais marcados que os da pintura."
+  },
+  "publication": {
+    "status": "em revisão na branch de trabalho",
+    "branch": "feat/fauna-talvero-v07-rambrel-v05",
+    "repository": "JooFrango/wildhaven2"
+  },
+  "knownLimitations": [
+    "Locomoção in-place com apoio calculado em piso plano. Terreno irregular, transições no jogo e custo com 200 criaturas simultâneas ainda carecem de teste no jogo.",
+    "As artes originais não apareceram no repositório. A comparação usa a proposta de conceito e o GLB anterior.",
+    "O Lagarto-Papagaio V03 foi reproduzido como referência. O GLB do Rubrágoro ainda precisa ser localizado."
+  ]
+}

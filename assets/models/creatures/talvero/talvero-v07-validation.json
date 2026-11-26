@@ -1,0 +1,267 @@
+{
+  "asset": "assets/models/creatures/talvero/talvero-v07-LOD0.glb",
+  "sha256": "851a2bf2cd50d02ca0204da8cb8eac00d62dd297b0440b188cc1bb87271e1f30",
+  "bytes": 697136,
+  "previousSHA256": "e86564190e730ba614710033a196fdfabbf729a98f788b0c2cea49c91b897d1a",
+  "triangles": {
+    "limit": 2000,
+    "rendered": 1650,
+    "unique": 1650,
+    "previousRendered": 25247,
+    "method": "Conta índices (ou vértices não indexados) por modo de primitiva na cena padrão e soma cada nó de malha renderizado, com multiplicador de EXT_mesh_gpu_instancing."
+  },
+  "structure": {
+    "validator": "2.0.0-dev.3.10",
+    "result": {
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "vertices": 1793,
+    "meshCount": 1,
+    "primitiveCount": 1,
+    "materials": 1,
+    "skins": 1,
+    "joints": 21,
+    "textures": [
+      {
+        "name": "talvero | pigment atlas",
+        "width": 512,
+        "height": 512,
+        "mimeType": "image/jpeg",
+        "embedded": true
+      }
+    ]
+  },
+  "importInBlender": {
+    "version": "5.3.0",
+    "renders": {
+      "front": "assets/models/creatures/talvero/talvero-v07-front.png",
+      "side": "assets/models/creatures/talvero/talvero-v07-side.png",
+      "back": "assets/models/creatures/talvero/talvero-v07-back.png",
+      "three-quarter": "assets/models/creatures/talvero/talvero-v07-three-quarter.png"
+    },
+    "method": "Importação do GLB exportado em cena vazia. Renders de estúdio com Cycles."
+  },
+  "threeJS": {
+    "threeRevision": "187",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "skinnedMeshes": 1,
+    "hasTexture": true,
+    "clips": [
+      {
+        "name": "idle",
+        "durationS": 3.4,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.11,
+        "minHeightM": 0.009,
+        "minGroundHeightRangeM": [
+          0.009,
+          0.009
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "walk",
+        "durationS": 1.33333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.31002,
+        "minHeightM": -0.00493,
+        "minGroundHeightRangeM": [
+          -0.00493,
+          0.0116
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "trot",
+        "durationS": 0.86667,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.34775,
+        "minHeightM": 0.0082,
+        "minGroundHeightRangeM": [
+          0.0082,
+          0.03916
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "gallop",
+        "durationS": 0.73333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.45579,
+        "minHeightM": 0.00511,
+        "minGroundHeightRangeM": [
+          0.00511,
+          0.04651
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "graze",
+        "durationS": 4,
+        "trackCount": 63,
+        "maxVertexMotionM": 1.16996,
+        "minHeightM": 0.009,
+        "minGroundHeightRangeM": [
+          0.009,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "alert",
+        "durationS": 2.26667,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.41854,
+        "minHeightM": 0.00899,
+        "minGroundHeightRangeM": [
+          0.00899,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "flee",
+        "durationS": 1.63333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.43137,
+        "minHeightM": 0.0045,
+        "minGroundHeightRangeM": [
+          0.0045,
+          0.05512
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "kick",
+        "durationS": 1.43333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.86667,
+        "minHeightM": 0.00769,
+        "minGroundHeightRangeM": [
+          0.00769,
+          0.00907
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "rest",
+        "durationS": 3.4,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.10638,
+        "minHeightM": 0.00898,
+        "minGroundHeightRangeM": [
+          0.00898,
+          0.009
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "death",
+        "durationS": 2.3,
+        "trackCount": 63,
+        "maxVertexMotionM": 1.63469,
+        "minHeightM": 0.0077,
+        "minGroundHeightRangeM": [
+          0.0077,
+          0.01174
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "drink",
+        "durationS": 4.2,
+        "trackCount": 63,
+        "maxVertexMotionM": 1.28899,
+        "minHeightM": 0.00871,
+        "minGroundHeightRangeM": [
+          0.00871,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "start",
+        "durationS": 1.26667,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.2887,
+        "minHeightM": 0.00697,
+        "minGroundHeightRangeM": [
+          0.00697,
+          0.04985
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "brake",
+        "durationS": 1.4,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.3969,
+        "minHeightM": 0.00755,
+        "minGroundHeightRangeM": [
+          0.00755,
+          0.04389
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "turn",
+        "durationS": 1.53333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.59606,
+        "minHeightM": -0.00075,
+        "minGroundHeightRangeM": [
+          -0.00075,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "hit_react",
+        "durationS": 0.86667,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.41757,
+        "minHeightM": 0.00294,
+        "minGroundHeightRangeM": [
+          0.00294,
+          0.00901
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "lie_down",
+        "durationS": 2.6,
+        "trackCount": 63,
+        "maxVertexMotionM": 1.03157,
+        "minHeightM": 0.00867,
+        "minGroundHeightRangeM": [
+          0.00867,
+          0.01607
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "get_up",
+        "durationS": 2.53333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.95426,
+        "minHeightM": 0.00864,
+        "minGroundHeightRangeM": [
+          0.00864,
+          0.01604
+        ],
+        "loopErrorM": null
+      }
+    ],
+    "method": "WebGL em Chrome headless. 21 poses por clipe, com vértices avaliados após skinning. Os GIFs foram renderizados com o GLB importado pelo GLTFLoader.",
+    "playbackPreviews": [
+      "assets/models/creatures/talvero/talvero-v07-walk.gif",
+      "assets/models/creatures/talvero/talvero-v07-trot.gif",
+      "assets/models/creatures/talvero/talvero-v07-gallop.gif",
+      "assets/models/creatures/talvero/talvero-v07-flee.gif",
+      "assets/models/creatures/talvero/talvero-v07-kick.gif"
+    ],
+    "limitations": "Os testes amostram poses e comparam as pontas dos loops. Colisões, deslizamento em terreno do jogo, transições e desempenho do jogo não foram medidos."
+  }
+}

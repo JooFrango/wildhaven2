@@ -1,0 +1,3089 @@
+{
+  "titulo": "Registro de produção da fauna do Wildhaven",
+  "escopo": "Revisões de LOD0, em lotes de duas espécies quando houver duas elegíveis. A versão mais recente localizada não é uma decisão de aprovação.",
+  "referencias": [
+    "lagarto-papagaio",
+    "rubragoro"
+  ],
+  "fonteInventario": "docs/migracao/inventario-criaturas.json",
+  "estadoLoteInicial": "GLBs validados tecnicamente e encaminhados para revisão artística",
+  "proximoLote": [
+    "frutavil",
+    "cromatil"
+  ],
+  "filaDeLotes": [
+    [
+      "talvero",
+      "rambrel"
+    ],
+    [
+      "frutavil",
+      "cromatil"
+    ],
+    [
+      "arbelio",
+      "sevilho"
+    ],
+    [
+      "brejaveo",
+      "arenoceto"
+    ],
+    [
+      "arraia-de-areia",
+      "arumbar"
+    ],
+    [
+      "boscaranha",
+      "branquelope"
+    ],
+    [
+      "brotarro",
+      "carniroca"
+    ],
+    [
+      "casquim",
+      "caudraco"
+    ],
+    [
+      "cavoru",
+      "cervalume"
+    ],
+    [
+      "cipria",
+      "clavascarnio"
+    ],
+    [
+      "cornevio",
+      "detritivoros"
+    ],
+    [
+      "dodarro",
+      "dunlingua"
+    ],
+    [
+      "escarvao",
+      "ferrunco"
+    ],
+    [
+      "folhisco",
+      "fossario"
+    ],
+    [
+      "fulgaronte",
+      "garruva"
+    ],
+    [
+      "garruva-v03-pilot",
+      "gelfaro"
+    ],
+    [
+      "gravarto",
+      "lajurim"
+    ],
+    [
+      "lobrapedra",
+      "mastelio"
+    ],
+    [
+      "mastelio-v03-pilot",
+      "nevisco"
+    ],
+    [
+      "nharuk",
+      "pica-termita"
+    ],
+    [
+      "quedravo",
+      "raizauro"
+    ],
+    [
+      "raizauro-v03-pilot",
+      "rambrel-chapadas"
+    ],
+    [
+      "rocantraz",
+      "serpaduna"
+    ],
+    [
+      "serracorion",
+      "silvarano"
+    ],
+    [
+      "sirocauro",
+      "tarruco"
+    ],
+    [
+      "temperate-wildlife-pair-v01",
+      "torvalho"
+    ],
+    [
+      "torvardo",
+      "torvardo-v03-pilot"
+    ],
+    [
+      "tufrilo",
+      "tufrino"
+    ],
+    [
+      "tumbira",
+      "turvagal"
+    ],
+    [
+      "varrisco",
+      "velsari"
+    ],
+    [
+      "velufim",
+      "wyvern-montanha"
+    ],
+    [
+      "desert-reptiles-animation-v02",
+      "desert-reptiles-v01"
+    ],
+    [
+      "especialistas-em-cupins",
+      "fauna-optimization-v01"
+    ],
+    [
+      "fauna-optimization-v02",
+      "fauna-optimization-v03"
+    ],
+    [
+      "fauna-optimization-v04",
+      "fauna-optimization-v05"
+    ],
+    [
+      "fauna-optimization-v06",
+      "fauna-optimization-v07"
+    ],
+    [
+      "fauna-optimization-v08",
+      "fauna-optimization-v09"
+    ],
+    [
+      "fauna-optimization-v10",
+      "fauna-optimization-v11"
+    ],
+    [
+      "fauna-optimization-v12",
+      "rocantraz-v03"
+    ],
+    [
+      "rocantraz-v04",
+      "savanna-herbivores-lowpoly-v05"
+    ],
+    [
+      "savanna-medium-herbivores-v01",
+      "savanna-megafauna-v01"
+    ],
+    [
+      "savanna-megafauna-v02",
+      "savanna-small-herbivores"
+    ],
+    [
+      "savanna-small-herbivores-v01",
+      "savanna-small-herbivores-v02"
+    ],
+    [
+      "schema",
+      "snow-fauna-v01"
+    ],
+    [
+      "snow-fauna-v02",
+      "talvero-v03"
+    ],
+    [
+      "talvero-v04",
+      "termite-specialists"
+    ],
+    [
+      "wildhaven-threejs-source"
+    ]
+  ],
+  "criaturas": {
+    "arbelio": {
+      "nome": "Arbélio",
+      "estado": "Pendente",
+      "porte": "small",
+      "limiteTriangulos": 1500,
+      "bioma": [
+        "wooded_savanna",
+        "acacia_canopy"
+      ],
+      "revisaoMaisRecenteLocalizada": "v04",
+      "triangulosMaiorVarianteMedida": 1420,
+      "publicacao": [
+        "feat/fauna-arbelio-sevilho-v03"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/arbelio/arbelio-savanna-skinned-v04-LOD0.glb",
+          "branch": "feat/fauna-arbelio-sevilho-v03",
+          "triangulos": 1420,
+          "texturas": 1,
+          "clipes": 24
+        }
+      ],
+      "pendencias": [
+        "Espécie aprovada no briefing. V03 com 4998 triângulos. V04 experimental já está dentro do teto de 1.500 e exige revisão artística.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "arenoceto": {
+      "nome": "arenoceto",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 2052,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/arenoceto/v02/arenoceto-v02-skinned-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 2052,
+          "texturas": 1,
+          "clipes": 20
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "arraia-de-areia": {
+      "nome": "arraia-de-areia",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 6576,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/arraia-de-areia/v03/arraia-de-areia-v03-rig-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 6576,
+          "texturas": 1,
+          "clipes": 22
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "arumbar": {
+      "nome": "Arumbar",
+      "estado": "Pendente",
+      "porte": "large",
+      "limiteTriangulos": 3000,
+      "bioma": [
+        "savanna"
+      ],
+      "revisaoMaisRecenteLocalizada": "v04",
+      "triangulosMaiorVarianteMedida": 37935,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/arumbar/arumbar-savanna-optimized-v04-LOD0.glb",
+          "branch": "main",
+          "triangulos": 37935,
+          "texturas": 0,
+          "clipes": 8
+        }
+      ],
+      "pendencias": [
+        "Localizar arte conceitual original."
+      ]
+    },
+    "boscaranha": {
+      "nome": "Boscaranha",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "temperate_forest_understory",
+        "fallen_trunk",
+        "mossy_root_system"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 13482,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 13482,
+          "texturas": 0,
+          "clipes": 22
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "branquelope": {
+      "nome": "branquelope",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v01",
+      "triangulosMaiorVarianteMedida": 1332,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/branquelope/v01/branquelope_blockout_v01.glb",
+          "branch": "main",
+          "triangulos": 1332,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "brejaveo": {
+      "nome": "brejaveo",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v04",
+      "triangulosMaiorVarianteMedida": 5188,
+      "publicacao": [
+        "feat/brejaveo-v04-retrabalho"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [
+        "assets/models/creatures/brejaveo/v01/conceito-aprovado.png",
+        "assets/models/creatures/brejaveo/v03/previews/brejaveo-v03-comparativo-conceito-glb.png"
+      ],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/brejaveo/brejaveo-v04-skinned-animated-LOD0.glb",
+          "branch": "feat/brejaveo-v04-retrabalho",
+          "triangulos": 5188,
+          "texturas": 1,
+          "clipes": 24
+        }
+      ],
+      "pendencias": [
+        "Espécie aprovada no briefing. Registro do repositório marca V01/V02 reprovados e V04 experimental. A versão aprovada não está identificada. V03 e V04 excedem até o teto de grande porte.",
+        "Confirmar porte na ficha oficial."
+      ]
+    },
+    "brotarro": {
+      "nome": "brotarro",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1444,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/brotarro/v02/brotarro-v02-skinned-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1444,
+          "texturas": 1,
+          "clipes": 18
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "carniroca": {
+      "nome": "Carniroca",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "temperate_forest_edge",
+        "temperate_grassland",
+        "cliff"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 12984,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 12984,
+          "texturas": 0,
+          "clipes": 25
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "casquim": {
+      "nome": "casquim",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 2966,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/casquim/v02/casquim_blockout_v02.glb",
+          "branch": "main",
+          "triangulos": 2966,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "caudraco": {
+      "nome": "caudraco",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1888,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/caudraco/v02/caudraco-v02-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1888,
+          "texturas": 1,
+          "clipes": 16
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "cavoru": {
+      "nome": "Cavoru",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "temperate_forest_edge",
+        "temperate_grassland",
+        "grassland_shrubland",
+        "riparian_meadow"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 18472,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 18472,
+          "texturas": 0,
+          "clipes": 27
+        },
+        {
+          "arquivo": "assets/models/creatures/cavoru/cavoru-plains-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 16473,
+          "texturas": 0,
+          "clipes": 27
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "cervalume": {
+      "nome": "Cervalume",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "grassland_transition"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1626,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/cervalume/v02/cervalume-animated-v02.glb",
+          "branch": "main",
+          "triangulos": 1626,
+          "texturas": 0,
+          "clipes": 14
+        },
+        {
+          "arquivo": "assets/models/creatures/cervalume/v02/cervalume-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1492,
+          "texturas": 0,
+          "clipes": 14
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "cipria": {
+      "nome": "cipria",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1546,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/cipria/v02/cipria-v02-skinned-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1546,
+          "texturas": 1,
+          "clipes": 18
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "clavascarnio": {
+      "nome": "clavascarnio",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v01",
+      "triangulosMaiorVarianteMedida": 6152,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/clavascarnio/v01/clavascarnio-v01-blockout.glb",
+          "branch": "main",
+          "triangulos": 6152,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "cornevio": {
+      "nome": "cornevio",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1536,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/cornevio/v02/cornevio-v02-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1536,
+          "texturas": 1,
+          "clipes": 16
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "cromatil": {
+      "nome": "Cromátil",
+      "estado": "Em revisão artística",
+      "porte": "small",
+      "limiteTriangulos": 1500,
+      "bioma": [
+        "dry_savanna",
+        "rocky_savanna"
+      ],
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 1467,
+      "publicacao": [
+        "feat/frutavil-cromatil-v02-review"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": {
+        "branch": "feat/frutavil-cromatil-v02-review",
+        "clipesReproduzidos": 11,
+        "menorAlturaIdleM": -0.00597,
+        "menorAlturaWalkM": -0.06081,
+        "interpretacao": "Mínimo geométrico nas poses amostradas. Comparar com o plano real dos pés antes de ajustar o offset e a animação."
+      },
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/cromatil/cromatil-savanna-animated-v03-LOD0.glb",
+          "branch": "feat/frutavil-cromatil-v02-review",
+          "triangulos": 1467,
+          "texturas": 1,
+          "clipes": 11
+        }
+      ],
+      "pendencias": [
+        "V03 atende a 1.500 triângulos no GLB do PR #4. Os 11 clipes foram reproduzidos em Three.js. Conferir assentamento das patas e origem vertical antes da aprovação.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "desert-reptiles-animation-v02": {
+      "nome": "desert-reptiles-animation-v02",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "desert-reptiles-v01": {
+      "nome": "desert-reptiles-v01",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "detritivoros": {
+      "nome": "detritivoros",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 6476,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/detritivoros/cascarrumo-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 6476,
+          "texturas": 0,
+          "clipes": 7
+        },
+        {
+          "arquivo": "assets/models/creatures/detritivoros/dunebrio-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 2988,
+          "texturas": 0,
+          "clipes": 7
+        },
+        {
+          "arquivo": "assets/models/creatures/detritivoros/nivelio-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 2394,
+          "texturas": 0,
+          "clipes": 7
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "dodarro": {
+      "nome": "dodarro",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 4315,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/dodarro/dodarro_montaria_v02_blockout.glb",
+          "branch": "main",
+          "triangulos": 4315,
+          "texturas": 1,
+          "clipes": 0
+        },
+        {
+          "arquivo": "assets/models/creatures/dodarro/dodarro_selvagem_v02_blockout.glb",
+          "branch": "main",
+          "triangulos": 3955,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "dunlingua": {
+      "nome": "Dunlíngua",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "desert",
+        "rocky_desert",
+        "canyons"
+      ],
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 11957,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/dunlingua/dunlingua-optimized-v03-LOD0.glb",
+          "branch": "main",
+          "triangulos": 11957,
+          "texturas": 0,
+          "clipes": 16
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "escarvao": {
+      "nome": "escarvao",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 3487,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/escarvao/v02/escarvao_cobre_rig_anim_v02.glb",
+          "branch": "main",
+          "triangulos": 3487,
+          "texturas": 1,
+          "clipes": 18
+        },
+        {
+          "arquivo": "assets/models/creatures/escarvao/v02/escarvao_oliva_rig_anim_v02.glb",
+          "branch": "main",
+          "triangulos": 3487,
+          "texturas": 1,
+          "clipes": 18
+        },
+        {
+          "arquivo": "assets/models/creatures/escarvao/v02/escarvao_rubro_rig_anim_v02.glb",
+          "branch": "main",
+          "triangulos": 3487,
+          "texturas": 1,
+          "clipes": 18
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "especialistas-em-cupins": {
+      "nome": "especialistas-em-cupins",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v01": {
+      "nome": "fauna-optimization-v01",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v02": {
+      "nome": "fauna-optimization-v02",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v03": {
+      "nome": "fauna-optimization-v03",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v04": {
+      "nome": "fauna-optimization-v04",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v05": {
+      "nome": "fauna-optimization-v05",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v06": {
+      "nome": "fauna-optimization-v06",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v07": {
+      "nome": "fauna-optimization-v07",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v08": {
+      "nome": "fauna-optimization-v08",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v09": {
+      "nome": "fauna-optimization-v09",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v10": {
+      "nome": "fauna-optimization-v10",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v11": {
+      "nome": "fauna-optimization-v11",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fauna-optimization-v12": {
+      "nome": "fauna-optimization-v12",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "ferrunco": {
+      "nome": "Ferrunco",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "tropical_forest",
+        "temperate_forest",
+        "forest_edge"
+      ],
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 8952,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD0.glb",
+          "branch": "main",
+          "triangulos": 8952,
+          "texturas": 0,
+          "clipes": 16
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "folhisco": {
+      "nome": "Folhisco",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "temperate_forest_edge",
+        "low_shrubland"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 12486,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 12486,
+          "texturas": 0,
+          "clipes": 15
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fossario": {
+      "nome": "fossario",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1602,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/fossario/v02/fossario-v02-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1602,
+          "texturas": 1,
+          "clipes": 16
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "frutavil": {
+      "nome": "Frutavil",
+      "estado": "Em revisão artística",
+      "porte": "small",
+      "limiteTriangulos": 1500,
+      "bioma": [
+        "wooded_savanna",
+        "seasonal_forest_edge"
+      ],
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 1443,
+      "publicacao": [
+        "feat/frutavil-cromatil-v02-review"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": {
+        "branch": "feat/frutavil-cromatil-v02-review",
+        "clipesReproduzidos": 11,
+        "menorAlturaIdleM": -0.09197,
+        "menorAlturaWalkM": -0.13267,
+        "interpretacao": "Mínimo geométrico nas poses amostradas. Comparar com o plano real dos pés antes de ajustar o offset e a animação."
+      },
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/frutavil/frutavil-savanna-animated-v03-LOD0.glb",
+          "branch": "feat/frutavil-cromatil-v02-review",
+          "triangulos": 1443,
+          "texturas": 1,
+          "clipes": 11
+        }
+      ],
+      "pendencias": [
+        "V03 atende a 1.500 triângulos no GLB do PR #4. Os 11 clipes foram reproduzidos em Three.js. Conferir assentamento das patas e origem vertical antes da aprovação.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "fulgaronte": {
+      "nome": "fulgaronte",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v07",
+      "triangulosMaiorVarianteMedida": 2688,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [
+        "assets/models/creatures/fulgaronte/v04/previews/comparacao/comparativo_conceito_v03_v04.png",
+        "assets/models/creatures/fulgaronte/v04/previews/comparacao/conceito_predador_anfibio_couraca_serpentina.webp"
+      ],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/fulgaronte/v07/fulgaronte_v07_cinematic_claude36.glb",
+          "branch": "main",
+          "triangulos": 2688,
+          "texturas": 1,
+          "clipes": 24
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial."
+      ]
+    },
+    "garruva": {
+      "nome": "Garruva",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "open_savanna",
+        "rocky_savanna"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 2167,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/garruva/garruva-savanna-animated-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 2167,
+          "texturas": 0,
+          "clipes": 13
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "garruva-v03-pilot": {
+      "nome": "garruva-v03-pilot",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 4252,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/garruva-v03-pilot/garruva-v03-anatomy-blockout.glb",
+          "branch": "main",
+          "triangulos": 4252,
+          "texturas": 0,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "gelfaro": {
+      "nome": "gelfaro",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v01",
+      "triangulosMaiorVarianteMedida": 1376,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/gelfaro/v01/gelfaro_blockout_v01.glb",
+          "branch": "main",
+          "triangulos": 1376,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "gravarto": {
+      "nome": "gravarto",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 4888,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/gravarto/v02/gravarto-v02-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 4888,
+          "texturas": 1,
+          "clipes": 17
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "lagarto-papagaio": {
+      "nome": "lagarto-papagaio",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 4946,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/lagarto-papagaio/v03/lagarto-papagaio-v03-animado.glb",
+          "branch": "main",
+          "triangulos": 4946,
+          "texturas": 1,
+          "clipes": 24
+        }
+      ],
+      "pendencias": [
+        "Referência visual preservada. V03 tem 4.946 triângulos e precisa de revisão técnica posterior.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "lajurim": {
+      "nome": "lajurim",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1588,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/lajurim/v02/lajurim-v02-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1588,
+          "texturas": 1,
+          "clipes": 16
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "lobrapedra": {
+      "nome": "Lobrapedra",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "rocky_forest_edge"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1372,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/lobrapedra/v02/lobrapedra-animated-v02.glb",
+          "branch": "main",
+          "triangulos": 1372,
+          "texturas": 0,
+          "clipes": 16
+        },
+        {
+          "arquivo": "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1246,
+          "texturas": 0,
+          "clipes": 16
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "mastelio": {
+      "nome": "Mastélio",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "wooded_savanna",
+        "acacia_woodlands"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1554,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/mastelio/mastelio-savanna-animated-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1554,
+          "texturas": 0,
+          "clipes": 12
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "mastelio-v03-pilot": {
+      "nome": "mastelio-v03-pilot",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 3570,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/mastelio-v03-pilot/mastelio-v03-anatomy-blockout.glb",
+          "branch": "main",
+          "triangulos": 3570,
+          "texturas": 0,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "nevisco": {
+      "nome": "nevisco",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 2164,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/nevisco/v02/nevisco_blockout_v02.glb",
+          "branch": "main",
+          "triangulos": 2164,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "nharuk": {
+      "nome": "Nharuk",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "tropical_rainforest",
+        "tropical_rainforest_understory",
+        "temperate_forest",
+        "temperate_forest_edge",
+        "temperate_grassland",
+        "riparian_meadow"
+      ],
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 15966,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD0.glb",
+          "branch": "main",
+          "triangulos": 15966,
+          "texturas": 0,
+          "clipes": 27
+        },
+        {
+          "arquivo": "assets/models/creatures/nharuk/v02/nharuk-tropical-optimized-v03-LOD0.glb",
+          "branch": "main",
+          "triangulos": 15966,
+          "texturas": 0,
+          "clipes": 27
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "pica-termita": {
+      "nome": "Pica-Termita de Crista",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "grassland, savanna, tropical_forest_edge, temperate_forest_edge",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 7953,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD0.glb",
+          "branch": "main",
+          "triangulos": 7953,
+          "texturas": 0,
+          "clipes": 18
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "quedravo": {
+      "nome": "quedravo",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 2000,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/quedravo/v02/quedravo_v02_blockout_2000.glb",
+          "branch": "main",
+          "triangulos": 2000,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "raizauro": {
+      "nome": "Raizauro",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "dry_savanna",
+        "rocky_savanna"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 2159,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/raizauro/raizauro-savanna-animated-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 2159,
+          "texturas": 0,
+          "clipes": 12
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "raizauro-v03-pilot": {
+      "nome": "raizauro-v03-pilot",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 4822,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/raizauro-v03-pilot/raizauro-v03-anatomy-blockout.glb",
+          "branch": "main",
+          "triangulos": 4822,
+          "texturas": 0,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "rambrel": {
+      "nome": "Rambrél",
+      "estado": "Em revisão artística",
+      "porte": "medium",
+      "limiteTriangulos": 2000,
+      "bioma": [
+        "wooded_savanna"
+      ],
+      "revisaoMaisRecenteLocalizada": "v05",
+      "triangulosMaiorVarianteMedida": 1822,
+      "publicacao": [
+        "feat/fauna-talvero-v07-rambrel-v05"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [
+        "assets/models/creatures/rambrel/rambrel-v05-conceito-proposto.jpg"
+      ],
+      "propostaDeConceito": true,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/rambrel/rambrel-v05-LOD0.glb",
+          "branch": "feat/fauna-talvero-v07-rambrel-v05",
+          "triangulos": 1822,
+          "texturas": 1,
+          "clipes": 19
+        }
+      ],
+      "pendencias": [
+        "Proposta de conceito gerada com OpenAI a partir dos GLBs anteriores e das fichas. Revisão artística pendente."
+      ]
+    },
+    "rambrel-chapadas": {
+      "nome": "Rambrél-das-Chapadas",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "savanna_plateau, wooded_savanna",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 24627,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-savanna-animated-v03-LOD0.glb",
+          "branch": "main",
+          "triangulos": 24627,
+          "texturas": 0,
+          "clipes": 11
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "rocantraz": {
+      "nome": "rocantraz",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v05",
+      "triangulosMaiorVarianteMedida": 41961,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD0.glb",
+          "branch": "main",
+          "triangulos": 41961,
+          "texturas": 0,
+          "clipes": 12
+        },
+        {
+          "arquivo": "assets/models/creatures/rocantraz/rocantraz-forest-biped-optimized-v05-LOD0.glb",
+          "branch": "main",
+          "triangulos": 41923,
+          "texturas": 0,
+          "clipes": 12
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "rocantraz-v03": {
+      "nome": "Rocantraz",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "rocantraz-v04": {
+      "nome": "Rocantraz",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "tropical_forest",
+        "mountains",
+        "desert",
+        "rocky_desert"
+      ],
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "savanna-herbivores-lowpoly-v05": {
+      "nome": "savanna-herbivores-lowpoly-v05",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "savanna-medium-herbivores-v01": {
+      "nome": "savanna-medium-herbivores-v01",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "savanna-megafauna-v01": {
+      "nome": "savanna-megafauna-v01",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "savanna-megafauna-v02": {
+      "nome": "savanna-megafauna-v02",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "savanna-small-herbivores": {
+      "nome": "savanna-small-herbivores",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "savanna-small-herbivores-v01": {
+      "nome": "savanna-small-herbivores-v01",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "savanna-small-herbivores-v02": {
+      "nome": "savanna-small-herbivores-v02",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "schema": {
+      "nome": "schema",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "serpaduna": {
+      "nome": "serpaduna",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 8198,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/serpaduna/v03/serpaduna_v03_uncoiled_rigged.glb",
+          "branch": "main",
+          "triangulos": 8198,
+          "texturas": 1,
+          "clipes": 13
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "serracorion": {
+      "nome": "serracorion",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 4815,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/serracorion/v03/serracorion-v03-rig-animado-LOD0.glb",
+          "branch": "main",
+          "triangulos": 4815,
+          "texturas": 1,
+          "clipes": 20
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "sevilho": {
+      "nome": "Sevilho",
+      "estado": "Pendente",
+      "porte": "small",
+      "limiteTriangulos": 1500,
+      "bioma": [
+        "open_savanna",
+        "grass_tufts"
+      ],
+      "revisaoMaisRecenteLocalizada": "v04",
+      "triangulosMaiorVarianteMedida": 1464,
+      "publicacao": [
+        "feat/fauna-arbelio-sevilho-v03"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/sevilho/sevilho-savanna-skinned-v04-LOD0.glb",
+          "branch": "feat/fauna-arbelio-sevilho-v03",
+          "triangulos": 1464,
+          "texturas": 1,
+          "clipes": 24
+        }
+      ],
+      "pendencias": [
+        "Espécie aprovada no briefing. V03 com 4970 triângulos. V04 experimental já está dentro do teto de 1.500 e exige revisão artística.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "silvarano": {
+      "nome": "Silvarano",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "tropical_rainforest",
+        "temperate_forest_edge",
+        "tropical_forest_clearing",
+        "riparian_forest"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 13983,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 13983,
+          "texturas": 0,
+          "clipes": 28
+        },
+        {
+          "arquivo": "assets/models/creatures/silvarano/silvarano-tropical-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 13983,
+          "texturas": 0,
+          "clipes": 28
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "sirocauro": {
+      "nome": "sirocauro",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v05",
+      "triangulosMaiorVarianteMedida": 3510,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [
+        "assets/models/creatures/sirocauro/v01/conceito-aprovado.jpg",
+        "assets/models/creatures/sirocauro/v01/previews/sirocauro-v01-conceito-vs-glb.png"
+      ],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/sirocauro/v05/sirocauro-v05-blockout.glb",
+          "branch": "main",
+          "triangulos": 3510,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial."
+      ]
+    },
+    "snow-fauna-v01": {
+      "nome": "snow-fauna-v01",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "snow-fauna-v02": {
+      "nome": "snow-fauna-v02",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "talvero": {
+      "nome": "Talvero",
+      "estado": "Em revisão artística",
+      "porte": "medium",
+      "limiteTriangulos": 2000,
+      "bioma": [
+        "savanna_grassland"
+      ],
+      "revisaoMaisRecenteLocalizada": "v07",
+      "triangulosMaiorVarianteMedida": 1650,
+      "publicacao": [
+        "feat/fauna-talvero-v07-rambrel-v05"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [
+        "assets/models/creatures/talvero/talvero-v07-conceito-proposto.jpg"
+      ],
+      "propostaDeConceito": true,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/talvero/talvero-v07-LOD0.glb",
+          "branch": "feat/fauna-talvero-v07-rambrel-v05",
+          "triangulos": 1650,
+          "texturas": 1,
+          "clipes": 17
+        }
+      ],
+      "pendencias": [
+        "Proposta de conceito gerada com OpenAI a partir dos GLBs anteriores e das fichas. Revisão artística pendente."
+      ]
+    },
+    "talvero-v03": {
+      "nome": "talvero-v03",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "talvero-v04": {
+      "nome": "talvero-v04",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "tarruco": {
+      "nome": "Tarruco",
+      "estado": "Pendente",
+      "porte": "small",
+      "limiteTriangulos": 1500,
+      "bioma": [
+        "savanna"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 21982,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 21982,
+          "texturas": 0,
+          "clipes": 10
+        }
+      ],
+      "pendencias": [
+        "Localizar arte conceitual original."
+      ]
+    },
+    "temperate-wildlife-pair-v01": {
+      "nome": "temperate-wildlife-pair-v01",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v01",
+      "triangulosMaiorVarianteMedida": 16704,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/temperate-wildlife-pair-v01/carniroca_animated_v01.glb",
+          "branch": "main",
+          "triangulos": 16704,
+          "texturas": 0,
+          "clipes": 25
+        },
+        {
+          "arquivo": "assets/models/creatures/temperate-wildlife-pair-v01/tufrilo_animated_v01.glb",
+          "branch": "main",
+          "triangulos": 10596,
+          "texturas": 0,
+          "clipes": 25
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "termite-specialists": {
+      "nome": "termite-specialists",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "torvalho": {
+      "nome": "Torvalho",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_grassland",
+        "temperate_forest_edge",
+        "woodland_clearing",
+        "temperate_riparian_meadow"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 24968,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 24968,
+          "texturas": 0,
+          "clipes": 27
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "torvardo": {
+      "nome": "Torvardo",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "open_savanna",
+        "savanna_grassland"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 2013,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/torvardo/torvardo-savanna-animated-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 2013,
+          "texturas": 0,
+          "clipes": 12
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "torvardo-v03-pilot": {
+      "nome": "torvardo-v03-pilot",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 3910,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/torvardo-v03-pilot/torvardo-v03-anatomy-blockout.glb",
+          "branch": "main",
+          "triangulos": 3910,
+          "texturas": 0,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "tufrilo": {
+      "nome": "Tufrilo",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": [
+        "temperate_forest",
+        "temperate_forest_edge",
+        "shrubland",
+        "grassland_transition"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 8286,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 8286,
+          "texturas": 0,
+          "clipes": 25
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "tufrino": {
+      "nome": "tufrino",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 2014,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/tufrino/v02/tufrino_blockout_v02.glb",
+          "branch": "main",
+          "triangulos": 2014,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "tumbira": {
+      "nome": "tumbira",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1308,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/tumbira/v02/tumbira-v02-skinned-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1308,
+          "texturas": 1,
+          "clipes": 19
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "turvagal": {
+      "nome": "Turvagal",
+      "estado": "Pendente",
+      "porte": "medium",
+      "limiteTriangulos": 2000,
+      "bioma": [
+        "savanna_riverbank",
+        "seasonal_wetland"
+      ],
+      "revisaoMaisRecenteLocalizada": "v03",
+      "triangulosMaiorVarianteMedida": 21909,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD0.glb",
+          "branch": "main",
+          "triangulos": 21909,
+          "texturas": 0,
+          "clipes": 11
+        }
+      ],
+      "pendencias": [
+        "Localizar arte conceitual original."
+      ]
+    },
+    "varrisco": {
+      "nome": "Varrisco",
+      "estado": "Pendente",
+      "porte": "medium",
+      "limiteTriangulos": 2000,
+      "bioma": [
+        "savanna",
+        "desert",
+        "rocky_desert"
+      ],
+      "revisaoMaisRecenteLocalizada": "v11",
+      "triangulosMaiorVarianteMedida": 3044,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [
+        "assets/models/creatures/varrisco/referencias/bug-v09-frente.png",
+        "assets/models/creatures/varrisco/referencias/bug-v09-perfil.png",
+        "assets/models/creatures/varrisco/referencias/varrisco-arte-conceitual.webp",
+        "assets/models/creatures/varrisco/v09/previews/repouso-vs-conceito.png",
+        "assets/models/creatures/varrisco/v10/previews/repouso-vs-conceito.png"
+      ],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/varrisco/v11/varrisco-animated-v11-LOD0.glb",
+          "branch": "main",
+          "triangulos": 3044,
+          "texturas": 0,
+          "clipes": 55
+        }
+      ],
+      "pendencias": []
+    },
+    "velsari": {
+      "nome": "Velsari",
+      "estado": "Pendente",
+      "porte": "small",
+      "limiteTriangulos": 1500,
+      "bioma": [
+        "savanna"
+      ],
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 17972,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Nenhuma textura embutida",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD0.glb",
+          "branch": "main",
+          "triangulos": 17972,
+          "texturas": 0,
+          "clipes": 10
+        }
+      ],
+      "pendencias": [
+        "Localizar arte conceitual original."
+      ]
+    },
+    "velufim": {
+      "nome": "velufim",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v02",
+      "triangulosMaiorVarianteMedida": 1356,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Clipes localizados",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/velufim/v02/velufim-v02-skinned-animated-LOD0.glb",
+          "branch": "main",
+          "triangulos": 1356,
+          "texturas": 1,
+          "clipes": 20
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "wildhaven-threejs-source": {
+      "nome": "wildhaven-threejs-source",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [],
+      "pendencias": [
+        "Localizar o GLB existente e identificar a revisão recuperável.",
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "wyvern-montanha": {
+      "nome": "wyvern-montanha",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": "nao localizado",
+      "revisaoMaisRecenteLocalizada": "v01",
+      "triangulosMaiorVarianteMedida": 3956,
+      "publicacao": [
+        "main"
+      ],
+      "modelagem": "GLB localizado",
+      "texturas": "Textura localizada",
+      "animacoes": "Nenhum clipe nesta revisão",
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "verificacaoTecnica": null,
+      "variantes": [
+        {
+          "arquivo": "assets/models/creatures/wyvern-montanha/wyvern_femea_montaria_v01_blockout.glb",
+          "branch": "main",
+          "triangulos": 3956,
+          "texturas": 1,
+          "clipes": 0
+        },
+        {
+          "arquivo": "assets/models/creatures/wyvern-montanha/wyvern_femea_selvagem_v01_blockout.glb",
+          "branch": "main",
+          "triangulos": 3690,
+          "texturas": 1,
+          "clipes": 0
+        },
+        {
+          "arquivo": "assets/models/creatures/wyvern-montanha/wyvern_macho_montaria_v01_blockout.glb",
+          "branch": "main",
+          "triangulos": 3956,
+          "texturas": 1,
+          "clipes": 0
+        },
+        {
+          "arquivo": "assets/models/creatures/wyvern-montanha/wyvern_macho_selvagem_v01_blockout.glb",
+          "branch": "main",
+          "triangulos": 3690,
+          "texturas": 1,
+          "clipes": 0
+        }
+      ],
+      "pendencias": [
+        "Confirmar porte na ficha oficial.",
+        "Localizar arte conceitual original."
+      ]
+    },
+    "rubragoro": {
+      "nome": "Rubrágoro",
+      "estado": "Pendente",
+      "porte": null,
+      "limiteTriangulos": null,
+      "bioma": null,
+      "revisaoMaisRecenteLocalizada": null,
+      "triangulosMaiorVarianteMedida": null,
+      "publicacao": [],
+      "modelagem": "GLB pendente",
+      "texturas": null,
+      "animacoes": null,
+      "conceitos": [],
+      "propostaDeConceito": false,
+      "variantes": [],
+      "pendencias": [
+        "Localizar GLB e ficha. Referência visual do briefing."
+      ]
+    }
+  }
+}
