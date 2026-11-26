@@ -4,19 +4,16 @@
 
 use std::path::Path;
 use tokio_postgres::{Client, NoTls};
+use wh_core::game::GameState;
 use wh_core::hunter::Hunter;
+
+pub const STATE_SCHEMA: &str = "wildhaven.world-state.v1";
 
 pub struct Db {
     client: Client,
 }
 
-pub struct StoredHunter {
-    pub id: String,
-    pub tile_id: String,
-    pub x: f64,
-    pub z: f64,
-    pub distance_walked_m: f64,
-}
+
 
 impl Db {
     pub async fn connect(url: &str, migrations: &Path) -> Result<Self, Box<dyn std::error::Error>> {
@@ -54,7 +51,7 @@ impl Db {
         Ok(())
     }
 
-    pub async fn load_or_create_world(&self, id: &str, epoch_ms: u64, seed: u32) -> Result<(u64, Vec<StoredHunter>), Box<dyn std::error::Error>> {
+    pub async fn load_or_create_world(&self, id: &str, epoch_ms: u64, seed: u32) -> Result<(u64, ()), Box<dyn std::error::Error>> {
         self.client
             .execute(
                 "INSERT INTO worlds(id, clock_epoch_ms, seed) VALUES ($1, $2, $3) ON CONFLICT (id) DO NOTHING",
@@ -63,30 +60,45 @@ impl Db {
             .await?;
         let row = self.client.query_one("SELECT clock_epoch_ms FROM worlds WHERE id=$1", &[&id]).await?;
         let epoch: i64 = row.get(0);
-        let rows = self
-            .client
-            .query("SELECT id, tile_id, x, z, distance_walked_m FROM hunters WHERE world_id=$1", &[&id])
+Ok((epoch as u64, ()))
+    }
+
+    pub async fn load_state(&self, world: &str) -> Result<Option<GameState>, Box<dyn std::error::Error>> {
+        let row = self.client.query_opt("SELECT schema, state::text FROM world_state WHERE world_id=$1", &[&world]).await?;
+        let Some(row) = row else { return Ok(None) };
+        let schema: String = row.get(0);
+        if schema != STATE_SCHEMA {
+            return Err(format!("estado salvo com schema {schema}; esperado {STATE_SCHEMA}").into());
+        }
+        let text: String = row.get(1);
+        Ok(Some(serde_json::from_str(&text)?))
+    }
+
+    pub async fn save_state(&self, world: &str, state_json: &str) -> Result<(), Box<dyn std::error::Error>> {
+        self.client
+            .execute(
+                "INSERT INTO world_state(world_id, schema, state, saved_at) VALUES ($1, $2, $3::text::jsonb, now())
+                 ON CONFLICT (world_id) DO UPDATE SET schema=EXCLUDED.schema, state=EXCLUDED.state, saved_at=now()",
+                &[&world, &STATE_SCHEMA, &state_json],
+            )
             .await?;
-        let hunters = rows
-            .iter()
-            .map(|r| StoredHunter { id: r.get(0), tile_id: r.get(1), x: r.get(2), z: r.get(3), distance_walked_m: r.get(4) })
-            .collect();
-        Ok((epoch as u64, hunters))
+        Ok(())
     }
 
     pub async fn save_hunters(&self, world: &str, hunters: &[Hunter]) -> Result<(), Box<dyn std::error::Error>> {
         for h in hunters {
             self.client
                 .execute(
-                    "INSERT INTO hunters(id, world_id, name, tile_id, x, y, z, heading, state, distance_walked_m, updated_at)
-                     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10, now())
+                    "INSERT INTO hunters(id, world_id, name, tile_id, x, y, z, heading, state, distance_walked_m, alive, role, updated_at)
+                     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12, now())
                      ON CONFLICT (id) DO UPDATE SET tile_id=EXCLUDED.tile_id, x=EXCLUDED.x, y=EXCLUDED.y, z=EXCLUDED.z,
-                       heading=EXCLUDED.heading, state=EXCLUDED.state, distance_walked_m=EXCLUDED.distance_walked_m, updated_at=now()",
-                    &[&h.id, &world, &h.name, &h.tile_id, &h.x, &h.y, &h.z, &h.heading,
-                      &serde_json::to_value(h.state)?.as_str().unwrap_or("").to_string(), &h.distance_walked_m],
+                       heading=EXCLUDED.heading, state=EXCLUDED.state, distance_walked_m=EXCLUDED.distance_walked_m,
+                       alive=EXCLUDED.alive, role=EXCLUDED.role, updated_at=now()",
+                    &[&h.id, &world, &h.name, &h.mv.tile_id, &h.mv.x, &h.mv.y, &h.mv.z, &h.mv.heading,
+                      &serde_json::to_value(&h.activity)?.as_str().unwrap_or("").to_string(), &h.mv.distance_walked_m, &h.alive, &h.role],
                 )
                 .await?;
-            for c in &h.crossings {
+            for c in &h.mv.crossings {
                 self.client
                     .execute(
                         "INSERT INTO hunter_crossings(hunter_id, tick, sim_time_s, from_tile, to_tile, x, z, step_m)

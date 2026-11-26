@@ -12,7 +12,8 @@ use axum::extract::ws::{Message, WebSocket, WebSocketUpgrade};
 use axum::extract::{Path, State};
 use axum::http::{header, StatusCode};
 use axum::response::{IntoResponse, Response};
-use axum::routing::get;
+use axum::routing::{get, post};
+use axum::Json;
 use axum::Router;
 use std::collections::HashSet;
 use std::sync::{Arc, Mutex, RwLock};
@@ -20,7 +21,8 @@ use std::time::{Duration, SystemTime, UNIX_EPOCH};
 use tower_http::services::{ServeDir, ServeFile};
 use wh_core::clock::WorldClock;
 use wh_core::hex::{Continent, Manifest};
-use wh_core::hunter::Hunter;
+use wh_core::data::GameData;
+use wh_core::game::{GameState, Order};
 use wh_core::portals::{PortalIndex, PortalReport};
 use wh_core::sim::World;
 use wh_core::terrain::TerrainStore;
@@ -31,6 +33,7 @@ pub fn now_ms() -> u64 {
 
 #[derive(Clone)]
 struct AppState {
+    world: Arc<Mutex<World>>,
     latest: Arc<RwLock<String>>,
     continent_json: Arc<String>,
     cfg: Arc<config::Config>,
@@ -74,38 +77,28 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(&cfg.spawn)?)?;
     let seed = spawn["seed"].as_u64().unwrap_or(1) as u32;
-    let mut hunters: Vec<Hunter> = vec![];
-    for (i, h) in spawn["hunters"].as_array().ok_or("spawn sem hunters")?.iter().enumerate() {
-        let tile = h["tile"].as_str().ok_or("spawn sem tile")?;
-        if !allowed.contains(tile) {
-            return Err(format!("spawn em tile não liberado: {tile}").into());
-        }
-        hunters.push(Hunter::new(
-            h["id"].as_str().unwrap_or("hunter"),
-            h["name"].as_str().unwrap_or("Hunter"),
-            h["x"].as_f64().ok_or("x")?,
-            h["z"].as_f64().ok_or("z")?,
-            tile,
-            walk,
-            seed.wrapping_add(i as u32 * 7919),
-        ));
+    let s0 = &spawn["hunters"][0];
+    let village_tile = s0["tile"].as_str().ok_or("spawn sem tile")?.to_string();
+    if !allowed.contains(&village_tile) {
+        return Err(format!("vila em tile não liberado: {village_tile}").into());
     }
+    let village = (s0["x"].as_f64().ok_or("x")?, s0["z"].as_f64().ok_or("z")?);
+    let data = GameData::from_slice(&std::fs::read(&cfg.gameplay)?)?;
+    eprintln!("[wh-server] gameplay: {} (PROVISÓRIO)", cfg.gameplay.display());
+
+    let mut terrain = TerrainStore::new(continent.clone(), cfg.physics_dir.clone(), allowed, cfg.cache_bytes);
+    let mut game = GameState::new(&data, village, &village_tile, walk, seed, &mut terrain);
 
     let mut epoch = cfg.clock_epoch_ms.unwrap_or_else(now_ms);
     let db = match &cfg.database_url {
         Some(url) => {
             let db = persist::Db::connect(url, &cfg.migrations_dir).await?;
-            let (stored_epoch, stored) = db.load_or_create_world(&cfg.world_id, epoch, seed).await?;
+            let (stored_epoch, _) = db.load_or_create_world(&cfg.world_id, epoch, seed).await?;
             epoch = stored_epoch;
-            for h in hunters.iter_mut() {
-                if let Some(s) = stored.iter().find(|s| s.id == h.id) {
-                    if allowed.contains(&s.tile_id) && continent.tile_at(s.x, s.z).map(|t| t.id == s.tile_id).unwrap_or(false) {
-                        h.x = s.x;
-                        h.z = s.z;
-                        h.tile_id = s.tile_id.clone();
-                        h.distance_walked_m = s.distance_walked_m;
-                    }
-                }
+            if let Some(saved) = db.load_state(&cfg.world_id).await? {
+                let dead = saved.hunters.iter().filter(|h| !h.alive).count();
+                game = saved;
+                eprintln!("[wh-server] estado restaurado: {} Hunters ({dead} mortos permanentemente), {} páginas no Bestiário", game.hunters.len(), game.bestiary.pages.len());
             }
             eprintln!("[wh-server] PostgreSQL conectado; época do mundo {epoch}");
             Some(Arc::new(db))
@@ -116,12 +109,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     };
 
-    let terrain = TerrainStore::new(continent.clone(), cfg.physics_dir.clone(), allowed, cfg.cache_bytes);
-    let world = World::new(WorldClock::new(epoch), terrain, portals, hunters);
+    let world = World::new(WorldClock::new(epoch), terrain, portals, data, game);
     let continent_json = Arc::new(continent_summary(&continent, &report_value));
     let world = Arc::new(Mutex::new(world));
     let latest = Arc::new(RwLock::new(String::from("{}")));
-    let state = AppState { latest: latest.clone(), continent_json, cfg: cfg.clone() };
+    let state = AppState { latest: latest.clone(), continent_json, cfg: cfg.clone(), world: world.clone() };
 
     // laço de simulação (passo fixo; time_scale passos por intervalo)
     {
@@ -145,12 +137,25 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         let world = world.clone();
         let world_id = cfg.world_id.clone();
         tokio::spawn(async move {
-            let mut iv = tokio::time::interval(Duration::from_secs(10));
+            let mut iv = tokio::time::interval(Duration::from_secs(1));
+            let mut last = std::time::Instant::now();
             loop {
                 iv.tick().await;
-                let hunters = world.lock().unwrap().hunters.clone();
+                // salva a cada 10 s, ou já no próximo segundo após morte/ordem/página nova
+                let (json, hunters) = {
+                    let mut w = world.lock().unwrap();
+                    if !w.game.pending_save && last.elapsed() < Duration::from_secs(10) {
+                        continue;
+                    }
+                    w.game.pending_save = false;
+                    (serde_json::to_string(&w.game).unwrap_or_default(), w.game.hunters.clone())
+                };
+                last = std::time::Instant::now();
+                if let Err(e) = db.save_state(&world_id, &json).await {
+                    eprintln!("[wh-server] falha ao salvar estado: {e}");
+                }
                 if let Err(e) = db.save_hunters(&world_id, &hunters).await {
-                    eprintln!("[wh-server] falha ao salvar: {e}");
+                    eprintln!("[wh-server] falha ao salvar Hunters: {e}");
                 }
             }
         });
@@ -162,6 +167,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/api/v1/snapshot", get(snapshot))
         .route("/api/v1/continent", get(continent_handler))
         .route("/api/v1/stream", get(stream))
+        .route("/api/v1/orders", post(order_handler))
+        .route_service("/api/v1/gameplay", ServeFile::new(&cfg.gameplay))
+        .nest_service("/assets", ServeDir::new(cfg.repo_root.join("assets")))
+        .nest_service("/fichas", ServeDir::new(cfg.repo_root.join("creatures/species")))
         .route("/glb/terrain/{tile}", get(terrain_glb))
         .route_service("/glb/hunter.glb", ServeFile::new(&cfg.hunter_glb))
         .nest_service("/physics", ServeDir::new(&cfg.physics_dir))
@@ -185,6 +194,15 @@ fn continent_summary(c: &Continent, report: &serde_json::Value) -> String {
     serde_json::json!({"schema": "wildhaven.continent.summary.v1", "hexRadius": wh_core::hex::HEX_RADIUS,
         "tiles": tiles, "summary": report["summary"]})
     .to_string()
+}
+
+/// Ordens do jogador (explorar, caçar, recolher). Não existe ordem de mover o Hunter.
+async fn order_handler(State(s): State<AppState>, Json(o): Json<Order>) -> Response {
+    let r = s.world.lock().unwrap().order(o);
+    match r {
+        Ok(msg) => (StatusCode::OK, Json(serde_json::json!({"ok": true, "message": msg}))).into_response(),
+        Err(msg) => (StatusCode::UNPROCESSABLE_ENTITY, Json(serde_json::json!({"ok": false, "message": msg}))).into_response(),
+    }
 }
 
 async fn snapshot(State(s): State<AppState>) -> Response {
