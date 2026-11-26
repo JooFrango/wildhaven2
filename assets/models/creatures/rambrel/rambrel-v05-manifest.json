@@ -199,14 +199,46 @@
       "generation": "OpenAI ImageGen",
       "prompt": "Concept art profissional para Wildhaven com uma criatura original de corpo inteiro em três-quartos, quatro cascos visíveis, ambiente neutro e planos anatômicos facetados. Usar os renders lateral e três-quartos do GLB anterior como referência de identidade, postura e marcas. Corrigir proporções e juntas com anatomia naturalista, materiais foscos e olhos encaixados no crânio. Herbívoro de savana arborizada, anteriores altos, pescoço longo e erguido com curva discreta, chifres escuros curtos para trás, crista curta e irregular, manchas ocre, lábios móveis e cascos fendidos."
     },
-    "comparison": "assets/models/creatures/rambrel/rambrel-v05-comparison.jpg"
+    "comparison": "assets/models/creatures/rambrel/rambrel-v05-comparison.jpg",
+    "references": [
+      {
+        "nome": "Rubrágoro",
+        "versao": "v07",
+        "arquivo": "rubragoro_rig_animated_v07.glb",
+        "origem": "GLB local fornecido pelo responsável do Wildhaven",
+        "sha256": "609bae9067c1610a6bda931e117a86b627518f3669966bbf62b8bfde04afba67",
+        "triangulos": 3760,
+        "clipesReproduzidos": 24,
+        "atlas": {
+          "largura": 1536,
+          "altura": 1536
+        },
+        "observacao": "Áreas de pelagem com contraste amplo e face facetada. A preparação e a recuperação ficam legíveis no deslocamento do tronco e na progressão do gesto."
+      },
+      {
+        "nome": "Lagarto-Papagaio",
+        "versao": "v03",
+        "arquivo": "assets/models/creatures/lagarto-papagaio/v03/lagarto-papagaio-v03-animado.glb",
+        "origem": "JooFrango/wildhaven2",
+        "sha256": "7d531cc4add70fe5b147b2caf4755df4a3aea2f29ab8a313eb2178adca2300ed",
+        "triangulos": 4946,
+        "clipesReproduzidos": 24,
+        "atlas": {
+          "largura": 1536,
+          "altura": 1536
+        },
+        "observacao": "Faixas com bordas contrastadas e detalhes do atlas que reforçam o volume. A cauda e a cabeça acompanham a passada com fases próprias."
+      }
+    ]
   },
   "source": {
     "generator": "assets/models/creatures/talvero/build-fauna-v07-v05.py",
     "motion": "assets/models/creatures/talvero/fauna_motion_v07_v05.py",
     "renders": "assets/models/creatures/talvero/render-fauna-v07-v05.py",
     "runtime": "Blender 5.3",
-    "axes": "glTF Y-up, animal voltado para +X, unidades em metros"
+    "axes": "glTF Y-up, animal voltado para +X, unidades em metros",
+    "buildCommand": "blender -b --python-exit-code 3 --python assets/models/creatures/talvero/build-fauna-v07-v05.py -- assets/models/creatures/rambrel",
+    "renderCommand": "blender -b --python-exit-code 3 --python assets/models/creatures/talvero/render-fauna-v07-v05.py -- assets/models/creatures/rambrel/rambrel-v05-LOD0.glb"
   },
   "renders": {
     "front": "assets/models/creatures/rambrel/rambrel-v05-front.png",
@@ -226,16 +258,17 @@
   },
   "artisticApproval": {
     "status": "em revisão artística",
-    "comparisonNotes": "O pescoço elevado, chifres voltados para trás, crista escura e manchas ocre seguem a proposta de conceito. O GLB usa crista mais curta e perfil das patas mais facetado que a pintura."
+    "comparisonNotes": "O pescoço elevado, chifres voltados para trás, crista escura e manchas ocre seguem a proposta de conceito. O GLB usa crista mais curta e perfil das patas mais facetado que a pintura. A cabeçada usa preparação, impacto e recuperação como no Rubrágoro. A crista e a cauda acompanham o movimento do pescoço e do tronco. A marcação de pelagem preserva a paleta ocre da espécie."
   },
   "publication": {
     "status": "em revisão na branch de trabalho",
     "branch": "feat/fauna-talvero-v07-rambrel-v05",
-    "repository": "JooFrango/wildhaven2"
+    "repository": "JooFrango/wildhaven2",
+    "verifiedAssetCommit": "639b7c538f9bfee8f9505b628cf3126b97469543"
   },
   "knownLimitations": [
     "Locomoção in-place com apoio calculado em piso plano. Terreno irregular, transições no jogo e custo com 200 criaturas simultâneas ainda carecem de teste no jogo.",
     "As artes originais não apareceram no repositório. A comparação usa a proposta de conceito e o GLB anterior.",
-    "O Lagarto-Papagaio V03 foi reproduzido como referência. O GLB do Rubrágoro ainda precisa ser localizado."
+    "Rubrágoro V07 e Lagarto-Papagaio V03 excedem 3.000 triângulos e ficam na fila de revisão técnica posterior."
   ]
 }
