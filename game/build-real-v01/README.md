@@ -24,6 +24,40 @@ Node.js ≥ 22 (o teste de paridade usa `--experimental-strip-types`), Rust ≥ 
 npm, ~6 GB livres em disco para `.generated/` (1,3 GB de GLBs via hardlink + ~3,3 GB de pacotes WHP1).
 PostgreSQL 16 é opcional.
 
+## Modo leve — Vila (HV_01) + 6 vizinhos (pouco disco)
+
+Medido num clone limpo nesta sessão: `.git` 57 MB, GLBs 104 MB, pacotes WHP1 88 MB,
+`node_modules` 95 MB, `target/` do Rust 247 MB (≈ 0,6 GB no total, **sem contar** a instalação
+do Node e do Rust). Mesmo resultado do modo completo: 2 travessias HV_01 ↔ ER_18, 0 ticks sem chão.
+
+```bash
+git clone --filter=blob:none --sparse --branch feat/build-real-jogavel-v01 https://github.com/JooFrango/wildhaven2.git
+```
+
+```bash
+cd wildhaven2 && git sparse-checkout set "build real/continental" "build real/integracao" game/build-real-v01 assets/hunters/hunter-workshop/base
+```
+
+```bash
+node "build real/continental/tools/fetch-sources.mjs" --out .generated/sources --around HV_01
+```
+
+```bash
+node "build real/continental/compiler/cli.mjs" --all --around HV_01 --old-root .generated/sources/old-root --new-root .generated/sources/new-root --out .generated/physics-272 --res 2 --chunk 256 --node-classes "build real/continental/compiler/node-classes-v01.json" --snap-centers lattice
+```
+
+```bash
+cd game/build-real-v01/client && npm ci && npm run build
+```
+
+```bash
+cd ../server && WH_TIME_SCALE=5 cargo run --release -p wh-server
+```
+
+Abrir `http://127.0.0.1:8787`. O servidor libera só hexes certificados **com pacote presente**
+(no log: `7 tiles liberados ao runtime`). Em Windows/PowerShell, troque a última linha por
+`$env:WH_TIME_SCALE=5; cargo run --release -p wh-server`.
+
 ## Execução local — passo a passo (na raiz do repositório)
 
 ```bash
