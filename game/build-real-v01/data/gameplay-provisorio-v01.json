@@ -358,5 +358,10 @@
     "avistamentosParaEstudado": 3,
     "abatesParaDominado": 1,
     "efeitoProvisorio": "estudado: Hunter usa o alcance de visão da espécie para se manter fora dela ao se aproximar; dominado: escolhe armadilha contra predador quando tem armadilhas ≥ 3"
+  },
+  "expedicao": {
+    "provisorio": true,
+    "maxHorasSemAbate": 4,
+    "nota": "Expedição sem abate volta após 4 h de jogo, ou quando todos se recuperam de um resgate (provisório)."
   }
 }

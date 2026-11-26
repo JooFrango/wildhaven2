@@ -191,6 +191,12 @@ pub struct Conhecimento {
 }
 
 #[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ExpedicaoCfg {
+    pub max_horas_sem_abate: f64,
+}
+
+#[derive(Debug, Clone, Deserialize)]
 pub struct GameData {
     pub schema: String,
     pub economia: Economia,
@@ -205,6 +211,7 @@ pub struct GameData {
     pub especies: BTreeMap<String, Species>,
     pub spawn: Spawn,
     pub conhecimento: Conhecimento,
+    pub expedicao: ExpedicaoCfg,
 }
 
 impl GameData {

@@ -72,6 +72,10 @@ pub struct Expedition {
     pub cost: f64,
     pub threat: Option<u64>,
     pub started_tick: u64,
+    #[serde(default)]
+    pub rescued: bool,
+    #[serde(default)]
+    pub hunt_started_s: f64,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -300,7 +304,7 @@ impl GameState {
             w.route_idx = 0;
         }
         let nome = page.nome.clone();
-        self.expeditions.push(Expedition { id: eid, species: species.clone(), members: ids.clone(), transporte: transporte.clone(), wagon: wagon.clone(), dest_tile: tile.clone(), dest: (x, z), camp: None, state: "viajando".into(), kills: 0, rescuer: None, cost, threat: None, started_tick: ctx.tick });
+        self.expeditions.push(Expedition { id: eid, species: species.clone(), members: ids.clone(), transporte: transporte.clone(), wagon: wagon.clone(), dest_tile: tile.clone(), dest: (x, z), camp: None, state: "viajando".into(), kills: 0, rescuer: None, cost, threat: None, started_tick: ctx.tick, rescued: false, hunt_started_s: 0.0 });
         let txt = format!("Expedição {eid}: caçar {nome} em {tile} com {} Hunters, {} (custo {cost})", ids.len(), if wagon.is_some() { "de carroça" } else { "a pé" });
         self.event(ctx.tick, ctx.now, "ordem", txt.clone());
         self.pending_save = true;
@@ -1056,6 +1060,7 @@ impl GameState {
                     if let Some(e) = self.expeditions.iter_mut().find(|e| e.id == eid) {
                         e.rescuer = None;
                         e.threat = None;
+                        e.rescued = true;
                     }
                     self.event(ctx.tick, ctx.now, "resgate", format!("{name} levou {n} ferido(s) ao acampamento: recuperação acelerada"));
                     self.pending_save = true;
@@ -1100,6 +1105,7 @@ impl GameState {
                 if let Some(e) = eid.and_then(|e| self.expeditions.iter_mut().find(|x| x.id == e)) {
                     e.camp = Some(cid);
                     e.state = "cacando".into();
+                    e.hunt_started_s = ctx.now;
                 }
                 for (k, p) in passengers.iter().enumerate() {
                     if let Some(h) = self.hunters.iter_mut().find(|h| &h.id == p) {
@@ -1183,6 +1189,7 @@ impl GameState {
                     self.camps.push(Camp { id: cid, expedition: e.id, x: spot.0, z: spot.1, tile: tile.clone(), storage: vec![] });
                     self.expeditions[k].camp = Some(cid);
                     self.expeditions[k].state = "cacando".into();
+                    self.expeditions[k].hunt_started_s = ctx.now;
                     self.event(ctx.tick, ctx.now, "acampamento", format!("Expedição {} (a pé) montou acampamento numa clareira em {tile}", e.id));
                     continue;
                 }
@@ -1203,7 +1210,23 @@ impl GameState {
                 continue;
             }
             let rested = alive.iter().all(|m| m.2 == Activity::Descansando && m.3 >= m.4 * 0.8);
-            if e.state == "cacando" && e.kills > 0 && rested && e.rescuer.is_none() {
+            let timed_out = e.state == "cacando" && ctx.now - e.hunt_started_s > ctx.data.expedicao.max_horas_sem_abate * 3600.0;
+            let any_down = alive.iter().any(|m| matches!(m.2, Activity::Caido | Activity::Carregado));
+            if timed_out && e.kills == 0 && !any_down && e.rescuer.is_none() {
+                // desiste: todos os de pé voltam ao acampamento para retornar
+                let ids: Vec<String> = alive.iter().map(|m| m.0.clone()).collect();
+                for h in self.hunters.iter_mut().filter(|h| ids.contains(&h.id) && h.standing() && h.activity != Activity::Descansando) {
+                    h.activity = Activity::RetornandoAoAcampamento;
+                    h.target_creature = None;
+                    h.track = None;
+                    h.crouched = false;
+                    h.mv.stop();
+                }
+                self.expeditions[k].rescued = true; // reutiliza a condição de retorno sem abate
+                self.event(ctx.tick, ctx.now, "expedicao", format!("Expedição {}: sem sucesso após {} h, voltando ao acampamento", e.id, ctx.data.expedicao.max_horas_sem_abate));
+                continue;
+            }
+            if e.state == "cacando" && (e.kills > 0 || e.rescued) && rested && e.rescuer.is_none() {
                 self.expeditions[k].state = "retornando".into();
                 let ids: Vec<String> = alive.iter().map(|m| m.0.clone()).collect();
                 let camp_storage: Vec<String> = e.camp.and_then(|c| self.camps.iter_mut().find(|x| x.id == c)).map(|c| c.storage.drain(..).collect()).unwrap_or_default();
@@ -1258,7 +1281,7 @@ impl GameState {
             let (hid, x, z, tile) = { let h = &self.hunters[i]; (h.id.clone(), h.mv.x, h.mv.z, h.mv.tile_id.clone()) };
             self.hunters[i].expedition = Some(eid);
             let threat = self.creatures.iter().filter(|c| c.alive && c.target_hunter.as_deref() == Some(hid.as_str())).map(|c| c.id).next();
-            self.expeditions.push(Expedition { id: eid, species: String::new(), members: vec![hid], transporte: "resgate".into(), wagon: None, dest_tile: tile, dest: (x, z), camp: None, state: "resgate".into(), kills: 0, rescuer: None, cost: 0.0, threat, started_tick: ctx.tick });
+            self.expeditions.push(Expedition { id: eid, species: String::new(), members: vec![hid], transporte: "resgate".into(), wagon: None, dest_tile: tile, dest: (x, z), camp: None, state: "resgate".into(), kills: 0, rescuer: None, cost: 0.0, threat, started_tick: ctx.tick, rescued: false, hunt_started_s: ctx.now });
         }
         for k in 0..self.expeditions.len() {
             let e = self.expeditions[k].clone();
