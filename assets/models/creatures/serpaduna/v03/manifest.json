@@ -1,0 +1,113 @@
+{
+  "id": "serpaduna",
+  "version": "v03",
+  "bug": "v02 was permanently coiled by rest mesh and inverse bind pose",
+  "fix": "uncoiled neutral mesh + corrected joint hierarchy bind positions, inverseBindMatrices, reauthored 13 clips, coil_enter/exit",
+  "source_sha256": "73cf6a3c449d0963e6675d55000584f680a831392bcfe49eb5b5a99605c10b53",
+  "output": "serpaduna_v03_uncoiled_rigged.glb",
+  "sha256": "4591ad59b0ec8a7539733044a250af9d284b53a0eeb26f971a8bc67694397424",
+  "bytes": 1649172,
+  "skins": 1,
+  "joints": 72,
+  "body_joints": 70,
+  "triangles": 8198,
+  "morph_targets": 4,
+  "animations": [
+    {
+      "name": "idle",
+      "seconds": 6,
+      "loop": true
+    },
+    {
+      "name": "slither",
+      "seconds": 4,
+      "loop": true
+    },
+    {
+      "name": "fast_slither",
+      "seconds": 2.4,
+      "loop": true
+    },
+    {
+      "name": "coil_enter",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "name": "coil_defend",
+      "seconds": 5,
+      "loop": true
+    },
+    {
+      "name": "coil_exit",
+      "seconds": 6,
+      "loop": false
+    },
+    {
+      "name": "alert",
+      "seconds": 3,
+      "loop": true
+    },
+    {
+      "name": "tongue_flick",
+      "seconds": 1.5,
+      "loop": true
+    },
+    {
+      "name": "ambush_strike",
+      "seconds": 2.2,
+      "loop": false
+    },
+    {
+      "name": "venom_bite",
+      "seconds": 1.8,
+      "loop": false
+    },
+    {
+      "name": "swallow_whole",
+      "seconds": 7,
+      "loop": false
+    },
+    {
+      "name": "rest",
+      "seconds": 7,
+      "loop": true
+    },
+    {
+      "name": "death",
+      "seconds": 4,
+      "loop": false
+    }
+  ],
+  "alpha_modified": false,
+  "published": true,
+  "approval": "pending director + quality review",
+  "publication_status": "GLB and four previews verified in repository listing: Git blob SHA1 and exact byte sizes match local artifacts",
+  "repo": "carioca1111/wildhaven-new",
+  "branch": "feat/serpaduna-uncoiled-v03",
+  "remote_glb_blob_sha": "9bc7729f752c9e2323dafbb04b2c1ac7fa5c891b",
+  "github_branch": "feat/serpaduna-uncoiled-v03",
+  "github_path": "assets/models/creatures/serpaduna/v03/",
+  "previews": [
+    {
+      "name": "serpaduna_v03_coil_enter_real.gif",
+      "bytes": 1255932,
+      "git_blob_sha": "5612e54c9b56d7ac867f4c4243f6b9ace605e302"
+    },
+    {
+      "name": "serpaduna_v03_coil_exit_real.gif",
+      "bytes": 1252616,
+      "git_blob_sha": "ac1edf110df348c4445514852f1f8ea7eb3a0787"
+    },
+    {
+      "name": "serpaduna_v03_slither_real.gif",
+      "bytes": 1103162,
+      "git_blob_sha": "24cd44ea40db95fd3dbf8b094af46a65eccafe21"
+    },
+    {
+      "name": "serpaduna_v03_3_vistas_reais.png",
+      "bytes": 223224,
+      "git_blob_sha": "36debc64d5575d81ee959f08718c49c90a126d5d"
+    }
+  ]
+}

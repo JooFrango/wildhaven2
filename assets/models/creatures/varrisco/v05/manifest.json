@@ -1,0 +1,498 @@
+{
+  "species": "varrisco",
+  "version": "v05-mh-44",
+  "stage": "rig_and_animation_exported_review_pending",
+  "previous_version": "v04",
+  "source_v04_sha256": "ba9c771fa99362d2b37b8f4a5cbca4070526c6cc8d88a5836a5a79f56ac96ed2",
+  "glb": {
+    "path": "varrisco-animated-v05-LOD0.glb",
+    "bytes": 994196,
+    "sha256": "e04805b7499747ae3bd7921239a457aa8337db76b8d7c1565527405a8f6af342",
+    "triangles": 2754,
+    "triangles_method": "indices/3 da única primitiva (inalterada desde a v02)",
+    "skin_count": 1,
+    "joints": 22,
+    "animations": 44,
+    "interpolation": "LINEAR",
+    "fps_new_clips": 30
+  },
+  "reauthored": [
+    "bite",
+    "bite_heavy",
+    "claw_slash",
+    "claw_right",
+    "double_claw",
+    "pounce",
+    "jump_land",
+    "body_slam"
+  ],
+  "added": [
+    "roar",
+    "tail_sweep",
+    "limp"
+  ],
+  "kept_from_v04": [
+    "idle",
+    "walk",
+    "run",
+    "stalk",
+    "turn_left",
+    "turn_right",
+    "alert",
+    "sniff",
+    "feed",
+    "drink",
+    "threat_display",
+    "rest",
+    "hurt",
+    "death",
+    "sprint",
+    "backstep",
+    "strafe_left",
+    "strafe_right",
+    "dodge_left",
+    "dodge_right",
+    "jump_takeoff",
+    "feint",
+    "grab_start",
+    "grab_hold",
+    "grab_release",
+    "hurt_head",
+    "hurt_leg",
+    "stagger",
+    "fall",
+    "get_up",
+    "exhausted",
+    "guard_carcass",
+    "search_lost_prey"
+  ],
+  "clips": [
+    {
+      "name": "idle",
+      "durationSeconds": 3.6,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "walk",
+      "durationSeconds": 1.13,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "run",
+      "durationSeconds": 0.6,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "stalk",
+      "durationSeconds": 2.35,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "turn_left",
+      "durationSeconds": 1.15,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "turn_right",
+      "durationSeconds": 1.15,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "alert",
+      "durationSeconds": 1.55,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "sniff",
+      "durationSeconds": 1.9,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "bite",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v05_reauthored",
+      "contactFraction": 0.4,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.28
+        ],
+        "ativo": [
+          0.36,
+          0.44
+        ],
+        "punicao": [
+          0.52,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "claw_slash",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v05_reauthored",
+      "contactFraction": 0.42,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.3
+        ],
+        "ativo": [
+          0.36,
+          0.48
+        ],
+        "punicao": [
+          0.55,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "pounce",
+      "durationSeconds": 1.3,
+      "loop": false,
+      "origin": "v05_reauthored",
+      "contactFraction": 0.5538,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.4
+        ],
+        "ativo": [
+          0.62,
+          0.78
+        ],
+        "punicao": [
+          0.8,
+          1.3
+        ]
+      }
+    },
+    {
+      "name": "feed",
+      "durationSeconds": 2.3,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "drink",
+      "durationSeconds": 2.2,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "threat_display",
+      "durationSeconds": 2.1,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "rest",
+      "durationSeconds": 3.25,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "hurt",
+      "durationSeconds": 1.05,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "death",
+      "durationSeconds": 2.6,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "sprint",
+      "durationSeconds": 0.54,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "backstep",
+      "durationSeconds": 1.1,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "strafe_left",
+      "durationSeconds": 1.05,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "strafe_right",
+      "durationSeconds": 1.05,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "dodge_left",
+      "durationSeconds": 0.72,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "dodge_right",
+      "durationSeconds": 0.72,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "jump_takeoff",
+      "durationSeconds": 0.56,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "jump_land",
+      "durationSeconds": 0.7,
+      "loop": false,
+      "origin": "v05_reauthored",
+      "contactFraction": null,
+      "janelasSeg": {
+        "punicao": [
+          0.12,
+          0.7
+        ]
+      }
+    },
+    {
+      "name": "bite_heavy",
+      "durationSeconds": 1.6,
+      "loop": false,
+      "origin": "v05_reauthored",
+      "contactFraction": 0.5625,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.72
+        ],
+        "ativo": [
+          0.84,
+          0.96
+        ],
+        "punicao": [
+          1.0,
+          1.6
+        ]
+      }
+    },
+    {
+      "name": "claw_right",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v05_reauthored",
+      "contactFraction": 0.42,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.3
+        ],
+        "ativo": [
+          0.36,
+          0.48
+        ],
+        "punicao": [
+          0.55,
+          1.0
+        ]
+      }
+    },
+    {
+      "name": "double_claw",
+      "durationSeconds": 1.2,
+      "loop": false,
+      "origin": "v05_reauthored",
+      "contactFraction": 0.4167,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.38
+        ],
+        "ativo": [
+          0.44,
+          0.56
+        ],
+        "punicao": [
+          0.62,
+          1.2
+        ]
+      }
+    },
+    {
+      "name": "feint",
+      "durationSeconds": 0.95,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "body_slam",
+      "durationSeconds": 1.46,
+      "loop": false,
+      "origin": "v05_reauthored",
+      "contactFraction": 0.5479,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.45
+        ],
+        "ativo": [
+          0.7,
+          0.86
+        ],
+        "punicao": [
+          0.9,
+          1.46
+        ]
+      }
+    },
+    {
+      "name": "grab_start",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "grab_hold",
+      "durationSeconds": 1.6,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "grab_release",
+      "durationSeconds": 1.05,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "hurt_head",
+      "durationSeconds": 0.86,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "hurt_leg",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "stagger",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "fall",
+      "durationSeconds": 1.32,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "get_up",
+      "durationSeconds": 1.8,
+      "loop": false,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "exhausted",
+      "durationSeconds": 2.6,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "guard_carcass",
+      "durationSeconds": 2.2,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "search_lost_prey",
+      "durationSeconds": 3.0,
+      "loop": true,
+      "origin": "v04_unchanged"
+    },
+    {
+      "name": "roar",
+      "durationSeconds": 2.0,
+      "loop": false,
+      "origin": "v05_new",
+      "contactFraction": 0.3,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.5
+        ],
+        "ativo": [
+          0.6,
+          1.6
+        ],
+        "punicao": [
+          1.6,
+          2.0
+        ]
+      }
+    },
+    {
+      "name": "tail_sweep",
+      "durationSeconds": 1.4,
+      "loop": false,
+      "origin": "v05_new",
+      "contactFraction": 0.4286,
+      "janelasSeg": {
+        "aviso": [
+          0,
+          0.35
+        ],
+        "ativo": [
+          0.5,
+          0.82
+        ],
+        "punicao": [
+          0.92,
+          1.4
+        ]
+      }
+    },
+    {
+      "name": "limp",
+      "durationSeconds": 1.1,
+      "loop": true,
+      "origin": "v05_new",
+      "contactFraction": null,
+      "janelasSeg": {}
+    }
+  ],
+  "method": "Poses-chave com easing por trecho (antecipação, golpe, overshoot, recuperação), cauda com atraso, tremor aditivo e IK analítico de 2 ossos nas pernas no plano sagital do quadril; amostrado a 30 fps. Autoria por tabela de poses em source/build_v05.py; validação e renders no Blender 5.3 (source/render_v05_blender.py).",
+  "fixes": [
+    "min/max escalares de 17 accessors de tempo herdados da v02 viraram arrays (spec glTF; o importador do Blender recusava a v04)",
+    "accessors dos 8 clipes substituídos removidos do BIN",
+    "pesos: placas da cauda copiam os pesos da cauda; crista dorsal sobre a pelve mistura pelvis->thorax (antes 100% thorax)"
+  ],
+  "limitations": [
+    "Keyframes autorados por agente, não por animador (aprovados pelo diretor no lab em 2026-11-20)",
+    "IK de perna só no plano sagital: guinada/rolagem fortes da pelve deixam o pé fora do alvo por alguns cm",
+    "tail_sweep gira o osso root 360° no lugar; o jogo mantém a direção do corpo",
+    "limp supõe 1,0 m/s; o lab deve escalar a velocidade do clipe pela velocidade real",
+    "Clipes não aplicam dano nem movem o corpo no jogo (autoridade física: núcleo ecológico)"
+  ],
+  "qa": {
+    "khronos_independent_validation": "pending",
+    "blender_import": "see README",
+    "browser_visual_review": "Hunter Lab ?mh=1, 2026-11-20",
+    "artistic_approval": "aprovado pelo diretor em 2026-11-20 (PR #98, caçada ?pve1=1&pve2=1&mh=1)"
+  }
+}
