@@ -1,0 +1,152 @@
+{
+  "base_commit": "5865b5d0e92ec3eef541bfb51f3c1d9d7cbeb258",
+  "base_tiles": 170,
+  "id": "HV_01",
+  "q": 7,
+  "r": -1,
+  "worldCoord": [
+    28145.825622994256,
+    0,
+    -3750.0
+  ],
+  "village_datum_m": 921.5,
+  "edges": [
+    {
+      "id": "ER_25",
+      "sha256": "181c82616bb8c26a99a73dd6145a7e0fb5601465306c227cea7cf0f0925ce9d0",
+      "samples": 73,
+      "height_m": [
+        913.7442016601562,
+        929.3607177734375
+      ]
+    },
+    {
+      "id": "ER_22",
+      "sha256": "15a6900519099cbb57d4b24e1a348ed46d5823c168374cec90b6476a279ee14e",
+      "samples": 73,
+      "height_m": [
+        923.9995727539062,
+        935.713623046875
+      ]
+    },
+    {
+      "id": "ER_18",
+      "sha256": "989511b41f6dab76fce70458392647872eb81a1237ce6b1e1f29d229ee130494",
+      "samples": 73,
+      "height_m": [
+        886.2818603515625,
+        931.7071533203125
+      ]
+    },
+    {
+      "id": "FX_20",
+      "sha256": "bb17bb9a52018aee8d4626c2fd312747a89545b0347c77bbf88baaaff3de7172",
+      "samples": 73,
+      "height_m": [
+        884.5789794921875,
+        906.3285522460938
+      ]
+    },
+    {
+      "id": "ER_21",
+      "sha256": "56f05012f0d732451be9c11694a68971002c975ca6654cb7498eda52111b70fc",
+      "samples": 73,
+      "height_m": [
+        906.3285522460938,
+        953.1632690429688
+      ]
+    },
+    {
+      "id": "ER_24",
+      "sha256": "eb0bb90901025712bc69f4df1cc054b28a85e10a1d0ebb9976aa34fa9f207a92",
+      "samples": 73,
+      "height_m": [
+        919.4503173828125,
+        951.8287963867188
+      ]
+    }
+  ],
+  "trees": [
+    {
+      "name": "Folhosa_01",
+      "trunk_component": 57,
+      "source_root": [
+        -561.07384,
+        898.4364,
+        2090.8266
+      ],
+      "triangles": 336
+    },
+    {
+      "name": "Folhosa_02",
+      "trunk_component": 686,
+      "source_root": [
+        844.158,
+        890.79504,
+        -1800.05589
+      ],
+      "triangles": 336
+    },
+    {
+      "name": "Folhosa_03",
+      "trunk_component": 187,
+      "source_root": [
+        -184.77757,
+        880.74756,
+        -1271.83672
+      ],
+      "triangles": 336
+    },
+    {
+      "name": "Folhosa_04",
+      "trunk_component": 183,
+      "source_root": [
+        438.82964,
+        896.24957,
+        -2152.18958
+      ],
+      "triangles": 366
+    },
+    {
+      "name": "Folhosa_05",
+      "trunk_component": 129,
+      "source_root": [
+        -607.25275,
+        873.1832,
+        716.50264
+      ],
+      "triangles": 336
+    },
+    {
+      "name": "Conifera_01",
+      "trunk_component": 58,
+      "source_root": [
+        2097.66807,
+        924.25881,
+        -583.88456
+      ],
+      "triangles": 64
+    },
+    {
+      "name": "Conifera_02",
+      "trunk_component": 239,
+      "source_root": [
+        449.05553,
+        871.69456,
+        -707.61188
+      ],
+      "triangles": 64
+    },
+    {
+      "name": "Conifera_03",
+      "trunk_component": 606,
+      "source_root": [
+        -461.93981,
+        872.60615,
+        604.26918
+      ],
+      "triangles": 54
+    }
+  ],
+  "source_water_meshes_at_border": []
+}

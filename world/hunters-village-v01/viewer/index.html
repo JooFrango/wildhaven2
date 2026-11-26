@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,"><title>Vila dos Hunters · Wildhaven</title>
+<script type="importmap">{"imports":{"three":"../../world-visual-coherence-v12/viewer/vendor/three.module.min.js","three/addons/":"../../world-visual-coherence-v12/viewer/vendor/addons/"}}</script>
+<style>
+*{box-sizing:border-box}body{margin:0;color:#faf4df;background:#27342c;font:14px system-ui,sans-serif}canvas{width:100vw;height:100dvh;display:block;touch-action:none;outline:none}.controls{position:fixed;top:18px;left:18px;background:#17271ff2;border:1px solid #a7a48566;border-radius:5px;box-shadow:0 6px 24px #14211945;padding:16px 18px;width:239px}h1{font:500 25px/1.1 Georgia,serif;letter-spacing:-.04em;margin:0 0 16px}label,legend{font-size:12px;color:#c9c9b2}select,button{font:inherit;border:1px solid #828b70;color:#f9f4e3;background:#26382d;border-radius:3px}select{padding:7px 8px;width:100%;margin:5px 0 12px}fieldset{padding:0;border:0;margin:0}.phases{display:flex;gap:5px;margin:6px 0}.phases button{flex:1;padding:5px;cursor:pointer}.phases button[aria-pressed=true]{background:#eed394;color:#20251e;border-color:#eed394;font-weight:700}output{display:block;min-height:18px;color:#f4dda7;font-size:13px}.walk{width:100%;margin-top:12px;padding:7px;cursor:pointer}button:focus-visible,select:focus-visible{outline:2px solid #f9dfac;outline-offset:2px}#status{position:fixed;left:18px;bottom:15px;max-width:min(640px,90vw);margin:0;padding:6px 11px;color:#eef0df;background:#1b2a22e8;border-radius:3px;font-size:12px}#status[aria-busy=true]{color:#f8d788}.controls small{display:block;margin-top:12px;color:#c8cbbb;line-height:1.4}
+@media(max-width:650px){.controls{top:8px;left:8px;width:180px;padding:10px 12px}h1{font-size:20px;margin-bottom:9px}.controls small{display:none}#status{left:8px;bottom:8px}.walk{margin-top:6px}}
+</style></head>
+<body>
+<canvas id="scene" tabindex="0" aria-label="Vila dos Hunters em três dimensões"></canvas>
+<section class="controls" aria-label="Controles do cenário">
+<h1>Vila dos Hunters</h1>
+<label for="view">Enquadramento</label>
+<select id="view"><option value="village">Núcleo da vila</option><option value="top">Planta da vila</option><option value="hex">Hexágono de 5 km</option><option value="seam">Passagem para FX_20</option><option value="world">Mapa completo · 171 peças</option></select>
+<fieldset><legend>Fase da vila</legend><div class="phases" id="phases"></div><output id="stage"></output></fieldset>
+<button id="walk" class="walk">Caminhar pela vila</button>
+<small id="help">Arraste para girar. Use a roda para aproximar.</small>
+</section>
+<p id="status" role="status" aria-live="polite">Carregando terreno…</p>
+<script type="module" src="./start.mjs"></script>
+</body></html>
+

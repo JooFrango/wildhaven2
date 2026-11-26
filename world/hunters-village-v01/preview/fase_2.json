@@ -1,0 +1,20 @@
+{
+  "source": "models/phase_2.glb",
+  "camera_m": [
+    24.420000076293945,
+    -62.980003356933594,
+    960.8200073242188
+  ],
+  "target_m": [
+    0.0,
+    5.0,
+    926.5
+  ],
+  "orthographic_span_m": 116,
+  "resolution": [
+    1280,
+    819
+  ],
+  "engine": "Blender Cycles",
+  "samples": 12
+}

@@ -1,0 +1,237 @@
+{
+  "repository": "carioca1111/wildhaven-new",
+  "commit": "d8a3bff600d7402dd02cda905262111b16543227",
+  "method": "fresh sparse GitHub checkout",
+  "downloaded": [
+    {
+      "file": "world/hunters-village-v01/models/buildings/forge.glb",
+      "sha256": "eeac0a40e8989c46c1760f44d5e8c461e9933943cd5109088fbe88a2937b584b",
+      "bytes": 1265364
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/hall.glb",
+      "sha256": "7e5da28ed430cfe334ef7947ef13e4cec3dab9d2b69f52409ecff58bba583f4b",
+      "bytes": 1760328
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/herbs.glb",
+      "sha256": "33beb1c8db5a1983d5ad42de06eb5f6578f9e3fb056ebb42ee92a419499afbde",
+      "bytes": 1290652
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/house_a.glb",
+      "sha256": "420b8f5338b1d96f1b785d43d59d4067570768faa743c277f3ff5d183ed36c30",
+      "bytes": 1288092
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/house_b.glb",
+      "sha256": "b05f19aa66d6579fc88b713b3d88ad7f0d131d044986bd3bda0bd28cbf42cb52",
+      "bytes": 1289376
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/house_c.glb",
+      "sha256": "85db1cfcf8b28b8d61d0bb2b52c702f7d8eb35c05f7687013ca985498dbd1b3f",
+      "bytes": 1288596
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/house_d.glb",
+      "sha256": "a4b1f09f377c53cada72cb6787272a368415331127984a9256dbb127bb6ca0ba",
+      "bytes": 1288596
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/market.glb",
+      "sha256": "ebfcbf36e572f7ffe18870c55368425404355e9bfc3821c0aa2416cc6a048651",
+      "bytes": 1235592
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/stable.glb",
+      "sha256": "ddcf4fcb4a95017bcaa9861c7c3fdad0ecd94a18f9ac0c70cc586ea7a4d99f87",
+      "bytes": 1266816
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/store.glb",
+      "sha256": "811fcea734277f3d04911c9f69553ce7ea00a5b4c8c97ffcab1f919e54f45a01",
+      "bytes": 1331040
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/tavern.glb",
+      "sha256": "461e3a568981a1ac7840c0423f9bc12f2eade20ee5f9aff060abbf776bcf7125",
+      "bytes": 1417732
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/tower.glb",
+      "sha256": "5116a1d941cf63e687f9a3c95baef135588537f90515ee05aafecb53b7041bb1",
+      "bytes": 1192924
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/tower_e.glb",
+      "sha256": "9a8d770233b77a47b1db3df7c10a454f39d7fd9e58c2ae1737a25d94fd2e9a45",
+      "bytes": 1192928
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/training.glb",
+      "sha256": "73b33c6ddbb265912b2131e2506c0cef96a0d61f39ecb4d4c13241c90ed9034e",
+      "bytes": 1324616
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/transport.glb",
+      "sha256": "3b44624017370d3020b65e43ea775efbaf624d22e78144a46945259ffb0d3f00",
+      "bytes": 1201776
+    },
+    {
+      "file": "world/hunters-village-v01/models/buildings/workshop.glb",
+      "sha256": "86e864d117e760351985d17df32d9e9f01bf0dc435b1daa87ed5d87b600863aa",
+      "bytes": 1302704
+    },
+    {
+      "file": "world/hunters-village-v01/models/hv_01_forest.glb",
+      "sha256": "487ebff7dd240937093cce67e86026d921a35963600558d79f5017a2d8de83f0",
+      "bytes": 109616
+    },
+    {
+      "file": "world/hunters-village-v01/models/hv_01_forest_lod1.glb",
+      "sha256": "fc6292d519f0ec0af717337ee396954627bd7ae67d45059fe2bc823657bb6c4a",
+      "bytes": 71476
+    },
+    {
+      "file": "world/hunters-village-v01/models/hv_01_terrain.glb",
+      "sha256": "291ab85c67fc2209f0e65fb6596c8eb5f2f0dd4e7899dfd2f670fd4ef3f39b4a",
+      "bytes": 972840
+    },
+    {
+      "file": "world/hunters-village-v01/models/hv_01_terrain_lod1.glb",
+      "sha256": "8cea6b3500d4439ce60ff21ecd84dd04739bf765343a6c5be0ffee4efdad7c8c",
+      "bytes": 54472
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_1.glb",
+      "sha256": "5d6bd5ad8d034388c5689370915a8d4014284ba99192035f55c3ee830660bc5e",
+      "bytes": 4773528
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_1_inside.glb",
+      "sha256": "a6f1303e8e59e9ad667587c982c3b57c65ee06775367f95e45744becd7ba7f19",
+      "bytes": 1393100
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_1_lod1.glb",
+      "sha256": "5ee410d055527abc36a4dd83d96e170bd224d2c7254ed675ebe455e04c8a225f",
+      "bytes": 2765696
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_2.glb",
+      "sha256": "6ceeb67210d91c6fbe162d550de258de4fdfce1c4cf35bb58ef91d38564bdc15",
+      "bytes": 6253608
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_2_inside.glb",
+      "sha256": "ca8379a417c2e380d29077099c6c27d6d9c4e8023d36b0f92fb52f349a8fcead",
+      "bytes": 1499124
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_2_lod1.glb",
+      "sha256": "4e12edf44ec1a7ad6419f73a46ee38ba498c8c098c92599dc792622634b3214f",
+      "bytes": 3419828
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_3.glb",
+      "sha256": "42f9f7000f4ab39e98160dce703ba5afb4c995888cbec9608032cf4d1d4433eb",
+      "bytes": 8441052
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_3_inside.glb",
+      "sha256": "ee4df41209edb7a3c78cd3e3e88068749fa1b83f42506a37453069b071a4519e",
+      "bytes": 1613944
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_3_lod1.glb",
+      "sha256": "09811a7e371143dfae14a1923e0b07a281ba3246ce54f4897e1f464e893959c9",
+      "bytes": 4667412
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_4.glb",
+      "sha256": "98eb26f4fbbfb36e5f0b955d53677e7db8227311f02601698535a5946adf4a98",
+      "bytes": 9149060
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_4_inside.glb",
+      "sha256": "2d3840171a9e48587fbe30a40363db3ad0315bfdf955cab72e9d7fc5b8f8dcd0",
+      "bytes": 1613944
+    },
+    {
+      "file": "world/hunters-village-v01/models/phase_4_lod1.glb",
+      "sha256": "92699921bf7a331adb5f94ad83d302e58d6be59d39530276177cec9546928ad0",
+      "bytes": 5054868
+    },
+    {
+      "file": "world/hunters-village-v01/Wildhaven_Vila_Hunters.blend",
+      "sha256": "3e926eb202b847f80b5fd61cfe04d047ab8d17a063fb6e8c3d9b2613d810781f",
+      "bytes": 5562194
+    },
+    {
+      "file": "world/hunters-village-v01/preview/fase_1.png",
+      "sha256": "03ccae100db9e9a9d13c149181a58f3ee989610502578cf3ccc95aec1a0059cb",
+      "bytes": 1234494
+    },
+    {
+      "file": "world/hunters-village-v01/preview/fase_2.png",
+      "sha256": "fed0db00460cf2f59f471644a7e3de1018075c78bbdfa135ce0267297ec403e4",
+      "bytes": 1267944
+    },
+    {
+      "file": "world/hunters-village-v01/preview/fase_3.png",
+      "sha256": "af61f33c3ca9ba239d2909c841d74b140e46a60a95df5d03ae666df56d3c821c",
+      "bytes": 1332553
+    },
+    {
+      "file": "world/hunters-village-v01/preview/fase_4.png",
+      "sha256": "2d94aa442f49d465c82eea34ab107a1d62831690324217d333a1b071580a15b2",
+      "bytes": 1346542
+    },
+    {
+      "file": "world/hunters-village-v01/preview/mapa_171.png",
+      "sha256": "bbcc7c44f9a14d958f2112876cb650516813d5d4bb8fbc51cea207dbc6f09f48",
+      "bytes": 251763
+    },
+    {
+      "file": "world/hunters-village-v01/preview/top.png",
+      "sha256": "66d2b59021dafa1143b79921bd4279a8689c4653893ade35154b759220586ffe",
+      "bytes": 1764631
+    },
+    {
+      "file": "world/world-visual-coherence-v12/models/world_170_v12.glb",
+      "sha256": "8edb892e975ae777737bd3a6d16046d2e87924816ae361e79d8f75d715857ffe",
+      "bytes": 91989336
+    },
+    {
+      "file": "world/world-visual-coherence-v12/detailed/er_25_v12.glb",
+      "sha256": "181c82616bb8c26a99a73dd6145a7e0fb5601465306c227cea7cf0f0925ce9d0",
+      "bytes": 19812536
+    },
+    {
+      "file": "world/world-visual-coherence-v12/detailed/er_22_v12.glb",
+      "sha256": "15a6900519099cbb57d4b24e1a348ed46d5823c168374cec90b6476a279ee14e",
+      "bytes": 17788256
+    },
+    {
+      "file": "world/world-visual-coherence-v12/detailed/er_18_v12.glb",
+      "sha256": "989511b41f6dab76fce70458392647872eb81a1237ce6b1e1f29d229ee130494",
+      "bytes": 19850680
+    },
+    {
+      "file": "world/world-visual-coherence-v12/detailed/fx_20_v12.glb",
+      "sha256": "bb17bb9a52018aee8d4626c2fd312747a89545b0347c77bbf88baaaff3de7172",
+      "bytes": 7081316
+    },
+    {
+      "file": "world/world-visual-coherence-v12/detailed/er_21_v12.glb",
+      "sha256": "56f05012f0d732451be9c11694a68971002c975ca6654cb7498eda52111b70fc",
+      "bytes": 21228640
+    },
+    {
+      "file": "world/world-visual-coherence-v12/detailed/er_24_v12.glb",
+      "sha256": "eb0bb90901025712bc69f4df1cc054b28a85e10a1d0ebb9976aa34fa9f207a92",
+      "bytes": 21484696
+    }
+  ]
+}

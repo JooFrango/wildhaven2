@@ -1,0 +1,226 @@
+[
+  {
+    "file": "models/buildings/forge.glb",
+    "sha256": "eeac0a40e8989c46c1760f44d5e8c461e9933943cd5109088fbe88a2937b584b",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/hall.glb",
+    "sha256": "7e5da28ed430cfe334ef7947ef13e4cec3dab9d2b69f52409ecff58bba583f4b",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/herbs.glb",
+    "sha256": "33beb1c8db5a1983d5ad42de06eb5f6578f9e3fb056ebb42ee92a419499afbde",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/house_a.glb",
+    "sha256": "420b8f5338b1d96f1b785d43d59d4067570768faa743c277f3ff5d183ed36c30",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/house_b.glb",
+    "sha256": "b05f19aa66d6579fc88b713b3d88ad7f0d131d044986bd3bda0bd28cbf42cb52",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/house_c.glb",
+    "sha256": "85db1cfcf8b28b8d61d0bb2b52c702f7d8eb35c05f7687013ca985498dbd1b3f",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/house_d.glb",
+    "sha256": "a4b1f09f377c53cada72cb6787272a368415331127984a9256dbb127bb6ca0ba",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/market.glb",
+    "sha256": "ebfcbf36e572f7ffe18870c55368425404355e9bfc3821c0aa2416cc6a048651",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/stable.glb",
+    "sha256": "ddcf4fcb4a95017bcaa9861c7c3fdad0ecd94a18f9ac0c70cc586ea7a4d99f87",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/store.glb",
+    "sha256": "811fcea734277f3d04911c9f69553ce7ea00a5b4c8c97ffcab1f919e54f45a01",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/tavern.glb",
+    "sha256": "461e3a568981a1ac7840c0423f9bc12f2eade20ee5f9aff060abbf776bcf7125",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/tower.glb",
+    "sha256": "5116a1d941cf63e687f9a3c95baef135588537f90515ee05aafecb53b7041bb1",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/tower_e.glb",
+    "sha256": "9a8d770233b77a47b1db3df7c10a454f39d7fd9e58c2ae1737a25d94fd2e9a45",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/training.glb",
+    "sha256": "73b33c6ddbb265912b2131e2506c0cef96a0d61f39ecb4d4c13241c90ed9034e",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/transport.glb",
+    "sha256": "3b44624017370d3020b65e43ea775efbaf624d22e78144a46945259ffb0d3f00",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/buildings/workshop.glb",
+    "sha256": "86e864d117e760351985d17df32d9e9f01bf0dc435b1daa87ed5d87b600863aa",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/hv_01_forest.glb",
+    "sha256": "487ebff7dd240937093cce67e86026d921a35963600558d79f5017a2d8de83f0",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/hv_01_forest_lod1.glb",
+    "sha256": "fc6292d519f0ec0af717337ee396954627bd7ae67d45059fe2bc823657bb6c4a",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/hv_01_terrain.glb",
+    "sha256": "291ab85c67fc2209f0e65fb6596c8eb5f2f0dd4e7899dfd2f670fd4ef3f39b4a",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/hv_01_terrain_lod1.glb",
+    "sha256": "8cea6b3500d4439ce60ff21ecd84dd04739bf765343a6c5be0ffee4efdad7c8c",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_1.glb",
+    "sha256": "5d6bd5ad8d034388c5689370915a8d4014284ba99192035f55c3ee830660bc5e",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_1_inside.glb",
+    "sha256": "a6f1303e8e59e9ad667587c982c3b57c65ee06775367f95e45744becd7ba7f19",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_1_lod1.glb",
+    "sha256": "5ee410d055527abc36a4dd83d96e170bd224d2c7254ed675ebe455e04c8a225f",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_2.glb",
+    "sha256": "6ceeb67210d91c6fbe162d550de258de4fdfce1c4cf35bb58ef91d38564bdc15",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_2_inside.glb",
+    "sha256": "ca8379a417c2e380d29077099c6c27d6d9c4e8023d36b0f92fb52f349a8fcead",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_2_lod1.glb",
+    "sha256": "4e12edf44ec1a7ad6419f73a46ee38ba498c8c098c92599dc792622634b3214f",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_3.glb",
+    "sha256": "42f9f7000f4ab39e98160dce703ba5afb4c995888cbec9608032cf4d1d4433eb",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_3_inside.glb",
+    "sha256": "ee4df41209edb7a3c78cd3e3e88068749fa1b83f42506a37453069b071a4519e",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_3_lod1.glb",
+    "sha256": "09811a7e371143dfae14a1923e0b07a281ba3246ce54f4897e1f464e893959c9",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_4.glb",
+    "sha256": "98eb26f4fbbfb36e5f0b955d53677e7db8227311f02601698535a5946adf4a98",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_4_inside.glb",
+    "sha256": "2d3840171a9e48587fbe30a40363db3ad0315bfdf955cab72e9d7fc5b8f8dcd0",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  },
+  {
+    "file": "models/phase_4_lod1.glb",
+    "sha256": "92699921bf7a331adb5f94ad83d302e58d6be59d39530276177cec9546928ad0",
+    "errors": 0,
+    "warnings": 0,
+    "messages": []
+  }
+]

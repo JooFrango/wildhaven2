@@ -1,0 +1,263 @@
+{
+  "base_commit": "5865b5d0e92ec3eef541bfb51f3c1d9d7cbeb258",
+  "base_tiles": 170,
+  "total_tiles": 171,
+  "base_connections": 437,
+  "total_connections": 443,
+  "edge_tolerance_m": 0.03,
+  "seams": [
+    {
+      "neighbor": "ER_25",
+      "neighbor_sha256": "181c82616bb8c26a99a73dd6145a7e0fb5601465306c227cea7cf0f0925ce9d0",
+      "knots": 73,
+      "probes": 1147,
+      "max_height_error_m": 1.0840560889846529e-05,
+      "max_plan_error_m": 0.0006354424335768272,
+      "max_linear_rgb_delta": 0.0011908045326213812,
+      "max_across_edge_slope_delta_deg": 0.05302158791044665,
+      "p95_slope_delta_deg": 0.0468244495421986
+    },
+    {
+      "neighbor": "ER_22",
+      "neighbor_sha256": "15a6900519099cbb57d4b24e1a348ed46d5823c168374cec90b6476a279ee14e",
+      "knots": 73,
+      "probes": 1138,
+      "max_height_error_m": 1.2010011460006353e-05,
+      "max_plan_error_m": 0.00048828125,
+      "max_linear_rgb_delta": 0.0007790932671074835,
+      "max_across_edge_slope_delta_deg": 0.02524267191161279,
+      "p95_slope_delta_deg": 0.024481498743133937
+    },
+    {
+      "neighbor": "ER_18",
+      "neighbor_sha256": "989511b41f6dab76fce70458392647872eb81a1237ce6b1e1f29d229ee130494",
+      "knots": 73,
+      "probes": 1147,
+      "max_height_error_m": 5.100386272260948e-05,
+      "max_plan_error_m": 0.0006354424335768272,
+      "max_linear_rgb_delta": 0.0007466062609367136,
+      "max_across_edge_slope_delta_deg": 1.0578961735696195,
+      "p95_slope_delta_deg": 0.158430599160087
+    },
+    {
+      "neighbor": "FX_20",
+      "neighbor_sha256": "bb17bb9a52018aee8d4626c2fd312747a89545b0347c77bbf88baaaff3de7172",
+      "knots": 73,
+      "probes": 1147,
+      "max_height_error_m": 1.1067215382354334e-05,
+      "max_plan_error_m": 0.0006354424326673325,
+      "max_linear_rgb_delta": 0.0,
+      "max_across_edge_slope_delta_deg": 1.0978247844892655,
+      "p95_slope_delta_deg": 0.023984476843726447
+    },
+    {
+      "neighbor": "ER_21",
+      "neighbor_sha256": "56f05012f0d732451be9c11694a68971002c975ca6654cb7498eda52111b70fc",
+      "knots": 73,
+      "probes": 1138,
+      "max_height_error_m": 3.786762704294233e-05,
+      "max_plan_error_m": 0.00048828125,
+      "max_linear_rgb_delta": 7.615750313508252e-06,
+      "max_across_edge_slope_delta_deg": 1.0096396687820106,
+      "p95_slope_delta_deg": 0.11157556797733602
+    },
+    {
+      "neighbor": "ER_24",
+      "neighbor_sha256": "eb0bb90901025712bc69f4df1cc054b28a85e10a1d0ebb9976aa34fa9f207a92",
+      "knots": 73,
+      "probes": 1147,
+      "max_height_error_m": 1.6894971622605226e-05,
+      "max_plan_error_m": 0.0006354424326673325,
+      "max_linear_rgb_delta": 0.0012009704680159827,
+      "max_across_edge_slope_delta_deg": 0.040882683258989534,
+      "p95_slope_delta_deg": 0.0380656265056794
+    }
+  ],
+  "trees": {
+    "batches": [
+      {
+        "specimen": "Conifera_01",
+        "count": 156,
+        "triangles_per_tree": 64
+      },
+      {
+        "specimen": "Conifera_02",
+        "count": 154,
+        "triangles_per_tree": 64
+      },
+      {
+        "specimen": "Conifera_03",
+        "count": 177,
+        "triangles_per_tree": 54
+      },
+      {
+        "specimen": "Folhosa_01",
+        "count": 160,
+        "triangles_per_tree": 336
+      },
+      {
+        "specimen": "Folhosa_02",
+        "count": 162,
+        "triangles_per_tree": 336
+      },
+      {
+        "specimen": "Folhosa_03",
+        "count": 160,
+        "triangles_per_tree": 336
+      },
+      {
+        "specimen": "Folhosa_04",
+        "count": 153,
+        "triangles_per_tree": 366
+      },
+      {
+        "specimen": "Folhosa_05",
+        "count": 173,
+        "triangles_per_tree": 336
+      }
+    ],
+    "count": 1295,
+    "max_root_error_m": 0.0004882812501136868,
+    "minimum_foliage_clearance_to_hex_m": 12.37136751483149,
+    "extension": "EXT_mesh_gpu_instancing"
+  },
+  "accessible_lots_by_phase": {
+    "1": [
+      "hall",
+      "forge",
+      "store",
+      "house_a",
+      "house_b",
+      "training"
+    ],
+    "2": [
+      "hall",
+      "forge",
+      "workshop",
+      "store",
+      "market",
+      "house_a",
+      "house_b",
+      "house_c",
+      "training",
+      "tower"
+    ],
+    "3": [
+      "hall",
+      "forge",
+      "workshop",
+      "store",
+      "market",
+      "tavern",
+      "house_a",
+      "house_b",
+      "house_c",
+      "house_d",
+      "training",
+      "stable",
+      "transport",
+      "herbs",
+      "tower"
+    ],
+    "4": [
+      "hall",
+      "forge",
+      "workshop",
+      "store",
+      "market",
+      "tavern",
+      "house_a",
+      "house_b",
+      "house_c",
+      "house_d",
+      "training",
+      "stable",
+      "transport",
+      "herbs",
+      "tower",
+      "tower_e"
+    ]
+  },
+  "stable_anchors": {
+    "hall": [
+      -4,
+      931.7,
+      -31
+    ],
+    "forge": [
+      -31,
+      923.9,
+      -4
+    ],
+    "store": [
+      -23,
+      929.99140625,
+      -18
+    ],
+    "house_a": [
+      -24,
+      931.7,
+      -36
+    ],
+    "house_b": [
+      -37,
+      931.7,
+      -27
+    ],
+    "training": [
+      33,
+      924.5222222222222,
+      -7
+    ],
+    "workshop": [
+      -32,
+      923.9,
+      12
+    ],
+    "market": [
+      12,
+      923.9,
+      -3
+    ],
+    "house_c": [
+      13,
+      931.7,
+      -38
+    ],
+    "tower": [
+      -39,
+      931.7,
+      -41
+    ],
+    "tavern": [
+      18,
+      931.7,
+      -24
+    ],
+    "house_d": [
+      30,
+      931.7,
+      -35
+    ],
+    "stable": [
+      32,
+      923.9,
+      13
+    ],
+    "transport": [
+      23,
+      921.5,
+      29
+    ],
+    "herbs": [
+      -24,
+      921.5,
+      30
+    ],
+    "tower_e": [
+      38,
+      931.7,
+      -28
+    ]
+  }
+}
