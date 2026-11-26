@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "region_id": "H_5_7",
+  "name": "Bosque das Cascatas",
+  "art_direction": "Mid-poly naturalista estilizado; reproduz composição e paleta da referência visual aprovada, não reconstrução fotogramétrica.",
+  "reference": "a_highly_detailed_isometric_3d_stylized_diorama_o.png",
+  "region_geography": {
+    "temperate_forest_fraction": 0.9081939799331104,
+    "mean_elevation_m": 175.93,
+    "mean_temperature_c": 24.6,
+    "precipitation_mm_year": 1137.16,
+    "rivers": 27,
+    "lakes": 6
+  },
+  "coordinates": {
+    "global_region_center_m": [
+      3533383.6474405094,
+      2520000.0
+    ],
+    "local_geometry": "X leste, Y vertical, Z sul; unidade cênica procedural",
+    "local_hex_radius": 101.0,
+    "observable_region_diameter_m": 2000,
+    "scenic_unit_to_observable_meter": 9.90099,
+    "world_hex_radius_m": 240000,
+    "note": "Representação CONDENSADA: o footprint cênico não é um terreno 1:1 de 2km. Mantém o continente original, e ainda requer adequação de escala de fauna e navegação."
+  },
+  "assets": {
+    "glb": "forest-temperate.glb",
+    "progress": "../../hex-workshop/public/progress.json"
+  },
+  "elements": [
+    "terrain hexagonal 3D",
+    "margens rochosas",
+    "rio sinuoso",
+    "3 cachoeiras",
+    "ponte de madeira",
+    "bandeiras vermelhas",
+    "acampamento com barraca e fogueira",
+    "ruínas de pedra",
+    "caverna",
+    "lago pequeno",
+    "pinheiros",
+    "árvores folhosas verdes e outonais",
+    "rochas",
+    "flores",
+    "arbustos",
+    "cervos"
+  ],
+  "geometry": {
+    "terrain": {
+      "triangles": 18252,
+      "vertices": 9205
+    },
+    "rocky-hex-walls": {
+      "triangles": 312,
+      "vertices": 312
+    },
+    "underside": {
+      "triangles": 4,
+      "vertices": 6
+    },
+    "river": {
+      "triangles": 572,
+      "vertices": 574
+    },
+    "river-foam": {
+      "triangles": 99,
+      "vertices": 297
+    },
+    "waterfalls": {
+      "triangles": 84,
+      "vertices": 90
+    },
+    "spray": {
+      "triangles": 960,
+      "vertices": 576
+    },
+    "pond": {
+      "triangles": 25,
+      "vertices": 26
+    },
+    "reeds": {
+      "triangles": 210,
+      "vertices": 175
+    },
+    "rocks": {
+      "triangles": 3885,
+      "vertices": 2775
+    },
+    "footpaths": {
+      "triangles": 558,
+      "vertices": 564
+    },
+    "trees-trunks": {
+      "triangles": 6200,
+      "vertices": 3680
+    },
+    "pine-needles": {
+      "triangles": 6840,
+      "vertices": 4560
+    },
+    "broadleaf-canopies": {
+      "triangles": 16000,
+      "vertices": 9000
+    },
+    "shrubs": {
+      "triangles": 5160,
+      "vertices": 3096
+    },
+    "wildflowers": {
+      "triangles": 34432,
+      "vertices": 21520
+    },
+    "bridge-planks": {
+      "triangles": 288,
+      "vertices": 192
+    },
+    "bridge-rails": {
+      "triangles": 416,
+      "vertices": 260
+    },
+    "banners": {
+      "triangles": 62,
+      "vertices": 46
+    },
+    "banner-emblems": {
+      "triangles": 72,
+      "vertices": 48
+    },
+    "canvas-tent": {
+      "triangles": 6,
+      "vertices": 6
+    },
+    "tent-opening": {
+      "triangles": 1,
+      "vertices": 3
+    },
+    "camp-props": {
+      "triangles": 24,
+      "vertices": 16
+    },
+    "camp-crates": {
+      "triangles": 84,
+      "vertices": 56
+    },
+    "fire": {
+      "triangles": 48,
+      "vertices": 36
+    },
+    "ruins": {
+      "triangles": 276,
+      "vertices": 184
+    },
+    "cave-interior": {
+      "triangles": 80,
+      "vertices": 42
+    },
+    "wildlife": {
+      "triangles": 1112,
+      "vertices": 650
+    },
+    "geology-riverbank-left": {
+      "triangles": 352,
+      "vertices": 354
+    },
+    "geology-riverbank-right": {
+      "triangles": 380,
+      "vertices": 382
+    },
+    "geology-fall-buttresses": {
+      "triangles": 950,
+      "vertices": 594
+    },
+    "geology-fall-strata": {
+      "triangles": 396,
+      "vertices": 276
+    },
+    "geology-fall-cliff": {
+      "triangles": 90,
+      "vertices": 96
+    },
+    "geology-wet-boulders": {
+      "triangles": 1905,
+      "vertices": 1191
+    },
+    "geology-exposed-bedrock": {
+      "triangles": 1650,
+      "vertices": 1150
+    },
+    "geology-talus": {
+      "triangles": 525,
+      "vertices": 327
+    },
+    "geology-river-boulders": {
+      "triangles": 14360,
+      "vertices": 8978
+    },
+    "geology-sediment-shelves": {
+      "triangles": 957,
+      "vertices": 667
+    },
+    "geology-riparian-terrace-west": {
+      "triangles": 2090,
+      "vertices": 1260
+    },
+    "geology-riparian-terrace-east": {
+      "triangles": 2240,
+      "vertices": 1350
+    },
+    "geology-stratal-escarpments": {
+      "triangles": 392,
+      "vertices": 336
+    },
+    "geology-cliff-fractures": {
+      "triangles": 28,
+      "vertices": 84
+    },
+    "geology-escarpment-talus": {
+      "triangles": 1730,
+      "vertices": 1082
+    },
+    "geology-clustered-bankstones": {
+      "triangles": 10965,
+      "vertices": 6848
+    }
+  },
+  "geology_metrics": {
+    "shore_segments": 366,
+    "waterfalls_with_bedrock": [
+      {
+        "z": -59.0,
+        "vertical_drop": 4.0
+      },
+      {
+        "z": -16.0,
+        "vertical_drop": 2.56
+      },
+      {
+        "z": 38.0,
+        "vertical_drop": 1.89
+      }
+    ],
+    "slope_class_samples": {
+      "suave": 1078,
+      "moderado": 168,
+      "acentuado": 59,
+      "escarpa": 11
+    },
+    "slope_exposures": 50,
+    "riverbank_boulders": 362,
+    "sediment_shelves": 29,
+    "water_surface_animation": "shader-only; fixed water geometry",
+    "vegetation_rule": "slope+river+points-of-interest; deterministic seed",
+    "riparian_terrace_segments": 433,
+    "stratified_escarpments": 14,
+    "cliff_fissures": 28,
+    "escarpment_talus": 44,
+    "asymmetric_bank_clusters": 80,
+    "embedded_bank_stones": 269,
+    "detail_rule": "terrain_gradient+river_distance+erosion_proxy",
+    "model_type": "real_triangle_meshes_no_texture_decals"
+  },
+  "ecology": {
+    "macro_biome": "temperate_forest",
+    "baseline_temperature_c": 24.6,
+    "annual_precipitation_mm": 1137.16,
+    "placement": "altitude+slope+river_distance+soil_moisture+fertility+microtemperature",
+    "sample_proxies_are_not_authoritative_continental_fields": true
+  },
+  "boundary_metadata": {
+    "shape": "hexagonal",
+    "water_portals": "derived from procedural river centerline; pending cross-hex neighbor validation",
+    "geometry_clipped": true
+  },
+  "total_triangles": 135072,
+  "glb_bytes": 2984004,
+  "integration_status": "in_development_unapproved",
+  "generated_with": "Python trimesh; water shading via independent Three.js viewer."
+}

@@ -1,0 +1,62 @@
+{
+  "kind": "REAL_WEBGL_CAPTURE",
+  "headless_software_renderer": true,
+  "views": [
+    {
+      "view": "overview",
+      "image": "overview.png",
+      "regions": 368,
+      "selected": "H_5_7",
+      "modelLoaded": true,
+      "modelKind": "generated",
+      "renderCalls": 127,
+      "renderTriangles": 1718036,
+      "approved": 0,
+      "generatedSeed": 1197669716,
+      "dirty": false,
+      "browserErrors": []
+    },
+    {
+      "view": "river",
+      "image": "river.png",
+      "regions": 368,
+      "selected": "H_5_7",
+      "modelLoaded": true,
+      "modelKind": "generated",
+      "renderCalls": 127,
+      "renderTriangles": 1718036,
+      "approved": 0,
+      "generatedSeed": 1197669716,
+      "dirty": false,
+      "browserErrors": []
+    },
+    {
+      "view": "cliffs",
+      "image": "cliffs.png",
+      "regions": 368,
+      "selected": "H_5_7",
+      "modelLoaded": true,
+      "modelKind": "generated",
+      "renderCalls": 127,
+      "renderTriangles": 1718036,
+      "approved": 0,
+      "generatedSeed": 1197669716,
+      "dirty": false,
+      "browserErrors": []
+    },
+    {
+      "view": "camp",
+      "image": "camp.png",
+      "regions": 368,
+      "selected": "H_5_7",
+      "modelLoaded": true,
+      "modelKind": "generated",
+      "renderCalls": 127,
+      "renderTriangles": 1718036,
+      "approved": 0,
+      "generatedSeed": 1197669716,
+      "dirty": false,
+      "browserErrors": []
+    }
+  ]
+}
