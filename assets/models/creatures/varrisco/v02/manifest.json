@@ -1,0 +1,210 @@
+{
+  "id": "varrisco",
+  "name": "Varrisco",
+  "version": "v02",
+  "stage": "final_rig_animations",
+  "style": "Torvardo v03 faceted anatomical planes",
+  "concept": "approved 2026-11-09",
+  "form": "user requested continuation to animations 2026-11-09",
+  "habitats": [
+    "savanna",
+    "desert"
+  ],
+  "variants": 1,
+  "integrated_in_game": false,
+  "source_geometry": "v01 original authoring PARTS reused unchanged, X scaled .79",
+  "glb": {
+    "path": "varrisco-animated-v02-LOD0.glb",
+    "bytes": 667968,
+    "sha256": "774f80944633a65bce0663a0ee8e65a3d8f868270303ccb431fbb63e15b4c678",
+    "mesh_primitives": 1,
+    "triangles": 2754,
+    "skin_count": 1,
+    "joint_count": 22,
+    "weighted_vertices": 8262,
+    "materials": 1,
+    "animation_count": 17
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 3.6,
+      "fps": 24,
+      "loop": true
+    },
+    {
+      "name": "walk",
+      "duration_seconds": 1.35,
+      "fps": 30,
+      "loop": true
+    },
+    {
+      "name": "run",
+      "duration_seconds": 0.73,
+      "fps": 30,
+      "loop": true
+    },
+    {
+      "name": "stalk",
+      "duration_seconds": 2.35,
+      "fps": 24,
+      "loop": true
+    },
+    {
+      "name": "turn_left",
+      "duration_seconds": 1.15,
+      "fps": 24,
+      "loop": false
+    },
+    {
+      "name": "turn_right",
+      "duration_seconds": 1.15,
+      "fps": 24,
+      "loop": false
+    },
+    {
+      "name": "alert",
+      "duration_seconds": 1.55,
+      "fps": 24,
+      "loop": false
+    },
+    {
+      "name": "sniff",
+      "duration_seconds": 1.9,
+      "fps": 24,
+      "loop": true
+    },
+    {
+      "name": "bite",
+      "duration_seconds": 0.92,
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "name": "claw_slash",
+      "duration_seconds": 1.0,
+      "fps": 30,
+      "loop": false
+    },
+    {
+      "name": "pounce",
+      "duration_seconds": 1.24,
+      "fps": 32,
+      "loop": false
+    },
+    {
+      "name": "feed",
+      "duration_seconds": 2.3,
+      "fps": 24,
+      "loop": true
+    },
+    {
+      "name": "drink",
+      "duration_seconds": 2.2,
+      "fps": 24,
+      "loop": true
+    },
+    {
+      "name": "threat_display",
+      "duration_seconds": 2.1,
+      "fps": 24,
+      "loop": true
+    },
+    {
+      "name": "rest",
+      "duration_seconds": 3.25,
+      "fps": 24,
+      "loop": true
+    },
+    {
+      "name": "hurt",
+      "duration_seconds": 1.05,
+      "fps": 24,
+      "loop": false
+    },
+    {
+      "name": "death",
+      "duration_seconds": 2.6,
+      "fps": 30,
+      "loop": false
+    }
+  ],
+  "geometry_stats": {
+    "vertices": 8262,
+    "triangles": 2754,
+    "original_faceted_parts": 100
+  },
+  "limitations": [
+    "keyframed weighted skin, no runtime IK",
+    "in-place cycles may have foot sliding",
+    "physics and ecology integration not part of this asset"
+  ],
+  "authored_axes": "X-forward Y-up Z-lateral",
+  "preview_method": "VTK GLTF importer from exported GLB and animation time updates",
+  "previous_version_preserved": "v01 static GLB available separately",
+  "technical_validation": {
+    "gltf_glb_header": true,
+    "gltf_skin_and_clip_structure": true,
+    "imported_pose_deformation": true,
+    "rest_pose_max_skin_error_m": 1.3187323927552767e-07,
+    "preview_from": "exported GLB evaluated with independent glTF accessor + skin matrices reader",
+    "glb_reimport_trimesh": true
+  },
+  "previews": [
+    {
+      "path": "previews/varrisco-v02-bite-real-glb-pose.png",
+      "bytes": 289985,
+      "sha256": "f0b8b8a2f878a04c68163643f8dbf24a3d003b2af17c86283216a3f45fc06471"
+    },
+    {
+      "path": "previews/varrisco-v02-death-real-glb-pose.png",
+      "bytes": 287534,
+      "sha256": "366c75777a0ded236e4f7039ce7f472e14bd86763a346dad3eecc4d3a6efb2e4"
+    },
+    {
+      "path": "previews/varrisco-v02-pounce-real-glb-pose.png",
+      "bytes": 293134,
+      "sha256": "b80884e7c360a9597f6abad125dc148bd643fc174c1de50db992d035e3a695fd"
+    },
+    {
+      "path": "previews/varrisco-v02-real-glb-front.png",
+      "bytes": 300525,
+      "sha256": "4c97766541d5cc0cce6897490a05a272f52d3308defc69fa5851e295ca3a5773"
+    },
+    {
+      "path": "previews/varrisco-v02-real-glb-profile.png",
+      "bytes": 290142,
+      "sha256": "947b096c05278dff86f8e29448116249e23a2f77b3281557dd5685e92a141c0b"
+    },
+    {
+      "path": "previews/varrisco-v02-real-glb-three_quarter.png",
+      "bytes": 289350,
+      "sha256": "0bf86df081f4afe8ebc965f98845ee89f43313107f28b2e05c6c730c1359d22f"
+    },
+    {
+      "path": "previews/varrisco-v02-run-real-glb-pose.png",
+      "bytes": 284775,
+      "sha256": "27ad6ef38a9db1b6e38eb83c69a477306c7d58f8311db0cadc315ad44dcd5c04"
+    },
+    {
+      "path": "previews/varrisco-v02-threat_display-real-glb-pose.png",
+      "bytes": 291327,
+      "sha256": "e56187b1f6190d7e21fa6614fa3553e1d319cc2d85bb9a96b4ef253e19d52dae"
+    },
+    {
+      "path": "previews/varrisco-v02-three-real-glb-views.png",
+      "bytes": 340781,
+      "sha256": "2bbc33832eaadfad037accbdfed06b21f37bb7d1c6f24945a5fdce527c18533f"
+    },
+    {
+      "path": "previews/varrisco-v02-walk-real-glb-pose.png",
+      "bytes": 284262,
+      "sha256": "5d80bbdd85aa2dc6e1b27571e8af85721eeeaa9bba97e84496a6be447ed56aff"
+    },
+    {
+      "path": "previews/varrisco-v02-walk-run-animated-real-glb.gif",
+      "bytes": 2203280,
+      "sha256": "6748cd748864082b8a93e4d8022cec2c304cb0957470f6bf423695bdd47497ad"
+    }
+  ]
+}

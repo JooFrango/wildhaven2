@@ -1,0 +1,123 @@
+{
+ "bite": {
+  "frames": 31,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ },
+ "bite_heavy": {
+  "frames": 49,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ },
+ "claw_right": {
+  "frames": 31,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0045,
+   "R": 0.0019
+  }
+ },
+ "claw_slash": {
+  "frames": 31,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0019,
+   "R": 0.0045
+  }
+ },
+ "double_claw": {
+  "frames": 37,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ },
+ "pounce": {
+  "frames": 40,
+  "mesh_min_z_m": [
+   0.003,
+   0.152
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0256,
+   "R": 0.0388
+  }
+ },
+ "jump_land": {
+  "frames": 22,
+  "mesh_min_z_m": [
+   0.015,
+   0.125
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0169,
+   "R": 0.0084
+  }
+ },
+ "body_slam": {
+  "frames": 45,
+  "mesh_min_z_m": [
+   0.012,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0153,
+   "R": 0.0343
+  }
+ },
+ "roar": {
+  "frames": 61,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ },
+ "tail_sweep": {
+  "frames": 43,
+  "mesh_min_z_m": [
+   0.014,
+   0.157
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0571,
+   "R": 0.0571
+  }
+ },
+ "limp": {
+  "frames": 34,
+  "mesh_min_z_m": [
+   0.014,
+   0.018
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0385,
+   "R": 0.0343
+  }
+ }
+}

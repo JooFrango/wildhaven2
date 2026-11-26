@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "turvagal",
+  "name": "Turvagal",
+  "title": "Pastador das Margens",
+  "category": "herbivore",
+  "sizeClass": "medium",
+  "status": "animated_3d_asset_in_review",
+  "habitats": [
+    "savanna_riverbank",
+    "seasonal_wetland"
+  ],
+  "diet": [
+    "wet_grasses",
+    "aquatic_vegetation",
+    "riverbank_herbs"
+  ],
+  "rarity": "localized",
+  "social": {
+    "type": "riverbank_family_group",
+    "typicalGroupSize": [
+      3,
+      8
+    ]
+  },
+  "body": {
+    "shoulderHeightTargetM": 1.15,
+    "adultMassTargetKg": [
+      260,
+      380
+    ]
+  },
+  "ecologicalNiche": "heavy riverine grazer and shallow-water vegetation controller",
+  "artDirection": "Barrel-like green-brown quadruped, short strong limbs, broad dark snout, low overlapping dorsal scales, split hooves and heavy tufted tail.",
+  "behavior": "Wades, feeds around reedbeds, enters shallow water to avoid threats.",
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "graze",
+    "drink",
+    "wade",
+    "swim",
+    "emerge",
+    "threat",
+    "rest",
+    "death"
+  ],
+  "assets": {
+    "model": "assets/models/creatures/turvagal/turvagal-savanna-animated-v01.glb",
+    "preview": "assets/models/creatures/turvagal/turvagal-real-3d-three_quarter-v01.png",
+    "manifest": "assets/models/creatures/turvagal/turvagal-manifest-v01.json",
+    "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false,
+    "navigation": false
+  },
+  "notes": "Original Wildhaven creature designed from approved concept direction. GLB animated by hierarchical rigid pivots; visual review pending, not integrated in game."
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "0.1",
+  "id": "cervalume",
+  "name": "Cervalume",
+  "category": "herbivore",
+  "habitats": [
+    "temperate_forest",
+    "grassland_transition"
+  ],
+  "diet": [
+    "grasses",
+    "leaves",
+    "young_shoots"
+  ],
+  "social": {
+    "type": "herd",
+    "notes": "Manadas com adultos e filhotes, reação coletiva a ameaças."
+  },
+  "behaviors": [
+    "graze",
+    "drink",
+    "rest",
+    "flee",
+    "follow_herd",
+    "protect_young"
+  ],
+  "ecologicalRelationships": {
+    "predators": [
+      "lobrapedra"
+    ],
+    "scavengersAfterDeath": [
+      "carniroca"
+    ]
+  },
+  "artDirection": "Cervídeo fantástico original; porte e chifres diferenciados, sem reproduzir criaturas conhecidas.",
+  "status": "proposal",
+  "assets": {
+    "concept": null,
+    "model": null,
+    "riggedModel": null,
+    "animations": []
+  },
+  "notes": "Rascunho de design. Comportamentos, nomes e artes aguardam aprovação antes da integração."
+}

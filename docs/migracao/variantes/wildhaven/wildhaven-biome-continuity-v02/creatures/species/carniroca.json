@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "0.1",
+  "id": "carniroca",
+  "name": "Carniroca",
+  "category": "scavenger",
+  "habitats": [
+    "temperate_forest",
+    "grassland",
+    "cliff"
+  ],
+  "diet": [
+    "carrion",
+    "small_opportunistic_prey"
+  ],
+  "social": {
+    "type": "opportunistic_group",
+    "notes": "Indivíduos podem se reunir ao encontrar carcaças."
+  },
+  "behaviors": [
+    "search_carrion",
+    "approach_carcass",
+    "feed",
+    "avoid_predator",
+    "rest"
+  ],
+  "ecologicalRelationships": {
+    "carrionSources": [
+      "cervalume",
+      "lobrapedra"
+    ]
+  },
+  "artDirection": "Necrófago original com leitura visual distinta, sem copiar espécies protegidas de outros jogos.",
+  "status": "proposal",
+  "assets": {
+    "concept": null,
+    "model": null,
+    "riggedModel": null,
+    "animations": []
+  },
+  "notes": "Rascunho de design. Comportamentos, nomes e artes aguardam aprovação antes da integração."
+}

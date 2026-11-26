@@ -1,0 +1,13 @@
+{
+  "species": "varrisco",
+  "version": "v01",
+  "stage": "static_anatomy",
+  "glb": "varrisco-v01-anatomy-blockout.glb",
+  "bytes": 166244,
+  "sha256": "176f1695aaaf2260674c6c08166198b3e4e097b3b51b37a65732f011aba3e86c",
+  "source": "source/build.py",
+  "animations": [],
+  "rig": null,
+  "integration": false,
+  "previous_version_preserved": true
+}

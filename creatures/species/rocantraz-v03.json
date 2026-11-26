@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "0.3.0",
+  "id": "rocantraz",
+  "name": "Rocantraz",
+  "category": "apex_carnivore",
+  "status": "biped_animated_asset_v03_in_review",
+  "locomotion": "bipedal",
+  "rarity": "very_rare",
+  "social": "solitary",
+  "body": {
+    "lengthTargetM": [
+      8,
+      12
+    ],
+    "heightTargetM": [
+      4,
+      6
+    ],
+    "massTargetKg": [
+      6000,
+      12000
+    ],
+    "supports": [
+      "left_leg",
+      "right_leg"
+    ],
+    "appendages": [
+      "left_attack_arm",
+      "right_attack_arm",
+      "counterbalance_tail"
+    ],
+    "anatomy": "upright armored biped with huge legs, broad chest, forelimbs for attack, articulated jaw, head horns and 8-segment tail"
+  },
+  "variants": {
+    "forest": {
+      "habitats": [
+        "tropical_forest",
+        "temperate_forest",
+        "mountains"
+      ],
+      "palette": "moss green, limestone gray, charcoal",
+      "strategy": "ambush"
+    },
+    "desert": {
+      "habitats": [
+        "desert",
+        "rocky_desert",
+        "dry_canyon"
+      ],
+      "palette": "ochre, sand and rust",
+      "strategy": "short explosive pursuit"
+    }
+  },
+  "animations": [
+    "idle",
+    "walk",
+    "stalk",
+    "run",
+    "charge",
+    "bite",
+    "swipe",
+    "roar",
+    "feed",
+    "defend",
+    "rest",
+    "die"
+  ],
+  "assets": {
+    "forest": "assets/models/creatures/rocantraz/rocantraz-forest-biped-animated-v03.glb",
+    "desert": "assets/models/creatures/rocantraz/rocantraz-desert-biped-animated-v03.glb",
+    "preview": "assets/models/creatures/rocantraz/rocantraz-biped-forest-desert-real-3d-v03.png",
+    "source": "assets/models/creatures/rocantraz-v03/source/rocantraz.mjs",
+    "dossier": "assets/models/creatures/rocantraz/README-V03.md",
+    "manifest": "assets/models/creatures/rocantraz/rocantraz-biped-manifest-v03.json"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawns": false,
+    "ai": false,
+    "navigation": false,
+    "worldGeometry": false
+  },
+  "notes": "Rocantraz bípede original e raro. GLB com 12 clipes em cada variante; somente asset, sem tocar na versão jogável."
+}

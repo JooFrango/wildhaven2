@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wildhaven Species Proposal v0.1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "status",
+    "category",
+    "habitats",
+    "diet",
+    "social",
+    "behaviors",
+    "artDirection",
+    "assets"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "proposal",
+        "in_review",
+        "approved",
+        "deprecated"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "habitats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "diet": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "social": {
+      "type": "object",
+      "required": [
+        "type",
+        "notes"
+      ],
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "behaviors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ecologicalRelationships": {
+      "type": "object"
+    },
+    "artDirection": {
+      "type": "string"
+    },
+    "assets": {
+      "type": "object",
+      "required": [
+        "concept",
+        "model",
+        "riggedModel",
+        "animations"
+      ],
+      "properties": {
+        "concept": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "riggedModel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "animations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    },
+    "body": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heightMinM": {
+          "type": "number",
+          "minimum": 0
+        },
+        "heightMaxM": {
+          "type": "number",
+          "minimum": 0
+        },
+        "massMinKg": {
+          "type": "number",
+          "minimum": 0
+        },
+        "massMaxKg": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "perception": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "vision": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "horizontalFovDeg": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360
+            },
+            "rearBlindSpotDeg": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 360
+            },
+            "detectMovingTargetM": {
+              "type": "number",
+              "minimum": 0
+            },
+            "detectStillTargetM": {
+              "type": "number",
+              "minimum": 0
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "hearing": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relativeAcuity": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "exceptional"
+              ]
+            },
+            "detectionRangeM": {
+              "type": "number",
+              "minimum": 0
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "smell": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "relativeAcuity": {
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "exceptional"
+              ]
+            },
+            "detectionRangeM": {
+              "type": "number",
+              "minimum": 0
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "locomotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "walkMps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sprintMps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "maxSprintSeconds": {
+          "type": "number",
+          "minimum": 0
+        },
+        "flight": {
+          "type": "boolean"
+        },
+        "jumpHeightM": {
+          "type": "number",
+          "minimum": 0
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "threatResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "strategy": {
+          "type": "string"
+        },
+        "states": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alarmCall": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

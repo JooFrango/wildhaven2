@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "talvero",
+  "name": "Talvero",
+  "title": "Corredor das Campinas",
+  "category": "herbivore",
+  "sizeClass": "medium",
+  "status": "animated_3d_asset_in_review",
+  "habitats": [
+    "savanna_grassland"
+  ],
+  "diet": [
+    "savanna_grasses",
+    "ground_vegetation"
+  ],
+  "rarity": "common",
+  "social": {
+    "type": "herd",
+    "typicalGroupSize": [
+      6,
+      15
+    ]
+  },
+  "body": {
+    "shoulderHeightTargetM": 1.3,
+    "adultMassTargetKg": [
+      180,
+      240
+    ]
+  },
+  "ecologicalNiche": "mid-sized open-savanna grazer and herd prey",
+  "artDirection": "Stocky equine-inspired quadruped, strong hind legs, layered dark mane, pale diagonal flank marks, short horse-like muzzle and dark split hooves.",
+  "behavior": "Group escape, abrupt directional changes, strong rear-leg kick.",
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "gallop",
+    "graze",
+    "alert",
+    "flee",
+    "kick",
+    "rest",
+    "death"
+  ],
+  "assets": {
+    "model": "assets/models/creatures/talvero/talvero-savanna-animated-v01.glb",
+    "preview": "assets/models/creatures/talvero/talvero-real-3d-three_quarter-v01.png",
+    "manifest": "assets/models/creatures/talvero/talvero-manifest-v01.json",
+    "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false,
+    "navigation": false
+  },
+  "notes": "Original Wildhaven creature designed from approved concept direction. GLB animated by hierarchical rigid pivots; visual review pending, not integrated in game."
+}

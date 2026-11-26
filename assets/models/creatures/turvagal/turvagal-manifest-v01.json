@@ -1,0 +1,32 @@
+{
+  "id": "turvagal",
+  "name": "Turvagal",
+  "variant": "Wetland Grazer",
+  "stage": "animated_asset_in_review",
+  "gameplayIntegrated": false,
+  "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py",
+  "model": {
+    "file": "turvagal-savanna-animated-v01.glb",
+    "bytes": 305452,
+    "sha256": "4ed4dae1568245864e7bb12b29ded1aa453126070f457c2fef68d9bf71286258",
+    "triangles": 11200,
+    "meshNodes": 18,
+    "animations": [
+      "idle",
+      "walk",
+      "trot",
+      "graze",
+      "drink",
+      "wade",
+      "swim",
+      "emerge",
+      "threat",
+      "rest",
+      "death"
+    ],
+    "animationCount": 11,
+    "joints": 18,
+    "rig": "hierarchical-pivot-animations-no-skin-weights"
+  },
+  "note": "Real geometry and exported pivot animation clips; no weighted skinning or AI."
+}

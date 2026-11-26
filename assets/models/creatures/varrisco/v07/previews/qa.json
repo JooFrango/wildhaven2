@@ -1,0 +1,57 @@
+{
+ "hit_side_l": {
+  "frames": 17,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0005,
+   "R": 0.0021
+  }
+ },
+ "hit_side_r": {
+  "frames": 17,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0021,
+   "R": 0.0005
+  }
+ },
+ "hit_heavy_l": {
+  "frames": 34,
+  "mesh_min_z_m": [
+   0.014,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.003,
+   "R": 0.0209
+  }
+ },
+ "hit_heavy_r": {
+  "frames": 34,
+  "mesh_min_z_m": [
+   0.014,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0209,
+   "R": 0.003
+  }
+ },
+ "hit_head": {
+  "frames": 19,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ }
+}

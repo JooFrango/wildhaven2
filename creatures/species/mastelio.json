@@ -1,0 +1,55 @@
+{
+  "id": "mastelio",
+  "schemaVersion": "0.1.0",
+  "name": "Mastélio",
+  "type": "herbivore",
+  "size": "large",
+  "habitats": [
+    "wooded_savanna",
+    "acacia_woodlands"
+  ],
+  "diet": [
+    "fallen_fruits",
+    "large_seed_pods",
+    "soft_leaves"
+  ],
+  "mass": [
+    750,
+    1200
+  ],
+  "heightM": [
+    1.7,
+    2
+  ],
+  "social": "small_group_2_to_6",
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "forage",
+    "pluck_fruit",
+    "curl_trunk",
+    "chew",
+    "drink",
+    "alert",
+    "defend",
+    "rest",
+    "death"
+  ],
+  "approvedConcept": true,
+  "modelStatus": "artistic_review_pending",
+  "assets": {
+    "model": "assets/models/creatures/mastelio/mastelio-savanna-animated-v01-LOD0.glb",
+    "lod1": "assets/models/creatures/mastelio/mastelio-savanna-animated-v01-LOD1.glb",
+    "lod2": "assets/models/creatures/mastelio/mastelio-savanna-animated-v01-LOD2.glb",
+    "preview": "assets/models/creatures/mastelio/mastelio-real-3d-three_quarter-v01.png",
+    "manifest": "assets/models/creatures/mastelio/mastelio-manifest-v01.json",
+    "source": "assets/models/creatures/savanna-megafauna-v01/source/generate_species.py"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false
+  },
+  "artDirectionNote": "Approved naturalistic fantasy savanna concept; procedural mid-poly sculpt v01 pending inspection."
+}

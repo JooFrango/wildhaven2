@@ -1,0 +1,55 @@
+{
+  "id": "garruva",
+  "schemaVersion": "0.1.0",
+  "name": "Garruva",
+  "type": "terrestrial_reptile_scavenger",
+  "size": "large",
+  "habitats": [
+    "open_savanna",
+    "rocky_savanna"
+  ],
+  "diet": [
+    "carrion",
+    "carcass_remains"
+  ],
+  "mass": [
+    280,
+    420
+  ],
+  "lengthM": [
+    3.2,
+    4
+  ],
+  "social": "mostly_solitary_carcass_aggregations",
+  "animations": [
+    "idle",
+    "walk",
+    "prowl",
+    "run",
+    "sniff",
+    "carcass_feed",
+    "tear_flesh",
+    "jaw_snap",
+    "threat",
+    "tail_sweep",
+    "rest",
+    "death",
+    "alert"
+  ],
+  "approvedConcept": true,
+  "modelStatus": "artistic_review_pending",
+  "assets": {
+    "model": "assets/models/creatures/garruva/garruva-savanna-animated-v01-LOD0.glb",
+    "lod1": "assets/models/creatures/garruva/garruva-savanna-animated-v01-LOD1.glb",
+    "lod2": "assets/models/creatures/garruva/garruva-savanna-animated-v01-LOD2.glb",
+    "preview": "assets/models/creatures/garruva/garruva-real-3d-three_quarter-v01.png",
+    "manifest": "assets/models/creatures/garruva/garruva-manifest-v01.json",
+    "source": "assets/models/creatures/savanna-megafauna-v01/source/generate_species.py"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false
+  },
+  "artDirectionNote": "Garruva approved form is exclusively a terrestrial reptile with heavy jaws and scavenging adaptations, NEVER a bird."
+}

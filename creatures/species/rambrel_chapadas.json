@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "rambrel_chapadas",
+  "name": "Rambrél-das-Chapadas",
+  "title": "Subespécie Gigante do Rambrél",
+  "category": "herbivore",
+  "sizeClass": "large",
+  "status": "animated_3d_asset_in_review",
+  "subspeciesOf": "rambrel",
+  "habitats": [
+    "savanna_plateau",
+    "wooded_savanna"
+  ],
+  "diet": [
+    "high_acacia_canopy",
+    "tree_leaves",
+    "flowers"
+  ],
+  "rarity": "rare",
+  "social": {
+    "type": "rare_pair_or_small_group",
+    "typicalGroupSize": [
+      2,
+      4
+    ]
+  },
+  "body": {
+    "adultHeightTargetM": [
+      3.6,
+      4.2
+    ],
+    "adultMassTargetKg": [
+      650,
+      950
+    ]
+  },
+  "ecologicalNiche": "large high-canopy browser; consumes foliage above the reach of common Rambrél",
+  "artDirection": "A recognizable Rambrél subspecies, but longer and thicker neck, stronger shoulders, enlarged hooked horns, massive feet and dark neck crest.",
+  "behavior": "Slow heavy gait, rare short charge, selective high-leaf browsing.",
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "charge",
+    "browse",
+    "chew",
+    "alert",
+    "headbutt",
+    "defend",
+    "rest",
+    "death"
+  ],
+  "assets": {
+    "model": "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-savanna-animated-v01.glb",
+    "preview": "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-real-3d-three_quarter-v01.png",
+    "manifest": "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-manifest-v01.json",
+    "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false,
+    "navigation": false
+  },
+  "notes": "Original Wildhaven creature designed from approved concept direction. GLB animated by hierarchical rigid pivots; visual review pending, not integrated in game."
+}

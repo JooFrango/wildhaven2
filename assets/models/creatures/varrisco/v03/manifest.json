@@ -1,0 +1,167 @@
+{
+  "species": "varrisco",
+  "version": "v03-experimental",
+  "stage": "glb_generated_artist_review_pending",
+  "base_sha256": "774f80944633a65bce0663a0ee8e65a3d8f868270303ccb431fbb63e15b4c678",
+  "glb": {
+    "path": "varrisco-animated-v03-LOD0.glb",
+    "bytes": 804728,
+    "sha256": "838ad49124da11deea249f36b49f331176c094e2b0c653fceb67ea4b9ef7488c",
+    "triangles": 2754,
+    "skin_count": 1,
+    "joints": 22,
+    "animations": 29
+  },
+  "added": [
+    "sprint",
+    "backstep",
+    "strafe_left",
+    "strafe_right",
+    "dodge_left",
+    "dodge_right",
+    "jump_takeoff",
+    "jump_land",
+    "bite_heavy",
+    "claw_right",
+    "double_claw",
+    "feint"
+  ],
+  "refined": [
+    "walk",
+    "run",
+    "bite",
+    "claw_slash",
+    "pounce"
+  ],
+  "specs": [
+    {
+      "name": "walk",
+      "durationSeconds": 1.13,
+      "fps": 30,
+      "loop": true,
+      "refined": true
+    },
+    {
+      "name": "run",
+      "durationSeconds": 0.6,
+      "fps": 36,
+      "loop": true,
+      "refined": true
+    },
+    {
+      "name": "bite",
+      "durationSeconds": 0.92,
+      "fps": 36,
+      "loop": false,
+      "refined": true
+    },
+    {
+      "name": "claw_slash",
+      "durationSeconds": 1.0,
+      "fps": 36,
+      "loop": false,
+      "refined": true
+    },
+    {
+      "name": "pounce",
+      "durationSeconds": 1.24,
+      "fps": 36,
+      "loop": false,
+      "refined": true
+    },
+    {
+      "name": "sprint",
+      "durationSeconds": 0.54,
+      "fps": 36,
+      "loop": true,
+      "refined": false
+    },
+    {
+      "name": "backstep",
+      "durationSeconds": 1.1,
+      "fps": 30,
+      "loop": true,
+      "refined": false
+    },
+    {
+      "name": "strafe_left",
+      "durationSeconds": 1.05,
+      "fps": 30,
+      "loop": true,
+      "refined": false
+    },
+    {
+      "name": "strafe_right",
+      "durationSeconds": 1.05,
+      "fps": 30,
+      "loop": true,
+      "refined": false
+    },
+    {
+      "name": "dodge_left",
+      "durationSeconds": 0.72,
+      "fps": 36,
+      "loop": false,
+      "refined": false
+    },
+    {
+      "name": "dodge_right",
+      "durationSeconds": 0.72,
+      "fps": 36,
+      "loop": false,
+      "refined": false
+    },
+    {
+      "name": "jump_takeoff",
+      "durationSeconds": 0.56,
+      "fps": 36,
+      "loop": false,
+      "refined": false
+    },
+    {
+      "name": "jump_land",
+      "durationSeconds": 0.7,
+      "fps": 36,
+      "loop": false,
+      "refined": false
+    },
+    {
+      "name": "bite_heavy",
+      "durationSeconds": 1.12,
+      "fps": 36,
+      "loop": false,
+      "refined": false
+    },
+    {
+      "name": "claw_right",
+      "durationSeconds": 1.0,
+      "fps": 36,
+      "loop": false,
+      "refined": false
+    },
+    {
+      "name": "double_claw",
+      "durationSeconds": 1.18,
+      "fps": 36,
+      "loop": false,
+      "refined": false
+    },
+    {
+      "name": "feint",
+      "durationSeconds": 0.95,
+      "fps": 36,
+      "loop": false,
+      "refined": false
+    }
+  ],
+  "checks": {
+    "original_bin_preserved": true,
+    "unique_animation_names": true
+  },
+  "limitations": [
+    "Keyframes experimentais",
+    "Sem aprovacao artistica",
+    "Nao integrado na Alpha",
+    "IK e IA continuam no laboratorio"
+  ]
+}

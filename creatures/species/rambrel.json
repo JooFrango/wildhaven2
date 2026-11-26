@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "0.1.0",
+  "id": "rambrel",
+  "name": "Rambrél",
+  "title": "Colhedor de Acácias",
+  "category": "herbivore",
+  "sizeClass": "medium",
+  "status": "animated_3d_asset_in_review",
+  "habitats": [
+    "wooded_savanna"
+  ],
+  "diet": [
+    "acacia_leaves",
+    "buds",
+    "flowers",
+    "fruit"
+  ],
+  "rarity": "moderately_common",
+  "social": {
+    "type": "small_group",
+    "typicalGroupSize": [
+      2,
+      5
+    ]
+  },
+  "body": {
+    "adultHeightTargetM": 2.3,
+    "adultMassTargetKg": [
+      200,
+      300
+    ]
+  },
+  "ecologicalNiche": "mid-canopy foliage browser",
+  "artDirection": "Tall front limbs and slender ascending neck, dark ragged neck crest, ochre flank patches, short swept-back paired horns, mobile lips.",
+  "behavior": "Selects acacia leaves and twigs; evasive and defensive headbutts.",
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "run",
+    "browse",
+    "chew",
+    "alert",
+    "headbutt",
+    "defend",
+    "rest",
+    "death"
+  ],
+  "assets": {
+    "model": "assets/models/creatures/rambrel/rambrel-savanna-animated-v01.glb",
+    "preview": "assets/models/creatures/rambrel/rambrel-real-3d-three_quarter-v01.png",
+    "manifest": "assets/models/creatures/rambrel/rambrel-manifest-v01.json",
+    "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false,
+    "navigation": false
+  },
+  "notes": "Original Wildhaven creature designed from approved concept direction. GLB animated by hierarchical rigid pivots; visual review pending, not integrated in game."
+}

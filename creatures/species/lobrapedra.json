@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "0.1",
+  "id": "lobrapedra",
+  "name": "Lobrapedra",
+  "category": "predator",
+  "habitats": [
+    "temperate_forest",
+    "rocky_forest_edge"
+  ],
+  "diet": [
+    "small_mammals",
+    "cervalume"
+  ],
+  "social": {
+    "type": "pack",
+    "notes": "Grupos pequenos; cooperação condicionada por fome, risco e proximidade."
+  },
+  "behaviors": [
+    "patrol",
+    "track",
+    "stalk",
+    "chase",
+    "attack",
+    "retreat",
+    "rest",
+    "drink"
+  ],
+  "ecologicalRelationships": {
+    "prey": [
+      "cervalume"
+    ],
+    "scavengersAfterKill": [
+      "carniroca"
+    ]
+  },
+  "artDirection": "Predador quadrúpede original de anatomia canídea naturalista, robusto e adaptado a terreno rochoso; apenas pequenas placas córneas/calosidades dorsais, sem armadura de pedra ou espinhos fantásticos.",
+  "status": "modeled_candidate",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/lobrapedra/lobrapedra-animated-v01.glb",
+    "riggedModel": "assets/models/creatures/lobrapedra/lobrapedra-optimized-v01-LOD0.glb",
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "idle",
+      "breathing",
+      "drink",
+      "rest",
+      "sleep",
+      "hurt",
+      "death",
+      "turn_left",
+      "turn_right",
+      "stalk",
+      "chase",
+      "pounce",
+      "bite",
+      "growl",
+      "feed",
+      "alert",
+      "retreat"
+    ]
+  },
+  "notes": "Modelo 3D real v01, rig, animações e LOD0/1/2 publicados em branch de revisão. Aguardando aprovação visual antes de integração ao jogo."
+}

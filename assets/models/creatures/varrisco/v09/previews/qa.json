@@ -1,0 +1,101 @@
+{
+ "roar": {
+  "frames": 61,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ },
+ "bite_heavy": {
+  "frames": 49,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ },
+ "pounce_chain": {
+  "frames": 79,
+  "mesh_min_z_m": [
+   -0.006,
+   0.173
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0149,
+   "R": 0.0366
+  }
+ },
+ "backstep_tail": {
+  "frames": 34,
+  "mesh_min_z_m": [
+   0.014,
+   0.118
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.011,
+   "R": 0.0122
+  }
+ },
+ "sickle_kick": {
+  "frames": 37,
+  "mesh_min_z_m": [
+   0.014,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0095,
+   "R": 0.0035
+  }
+ },
+ "hit_heavy_l": {
+  "frames": 34,
+  "mesh_min_z_m": [
+   0.014,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.003,
+   "R": 0.0209
+  }
+ },
+ "walk": {
+  "frames": 35,
+  "mesh_min_z_m": [
+   -0.107,
+   -0.035
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0807,
+   "R": 0.0808
+  }
+ },
+ "run": {
+  "frames": 19,
+  "mesh_min_z_m": [
+   -0.114,
+   -0.001
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.2561,
+   "R": 0.2561
+  }
+ },
+ "fall": {
+  "frames": 41,
+  "mesh_min_z_m": [
+   -0.767,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0113,
+   "R": 0.0086
+  }
+ }
+}

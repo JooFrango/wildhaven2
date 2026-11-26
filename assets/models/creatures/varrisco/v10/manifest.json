@@ -1,0 +1,389 @@
+{
+  "species": "varrisco",
+  "version": "v10-mh-55",
+  "stage": "refinement_exported_review_pending",
+  "previous_version": "v09",
+  "generated_from": "v08 (malha e clipes) com as regras da v09",
+  "source_v08_sha256": "e494aebb6ec3d0bbd12d61c3ad774901c4b086a02ff40236556fd70bed2508f0",
+  "reference": "../referencias/varrisco-arte-conceitual.webp",
+  "glb": {
+    "path": "varrisco-animated-v10-LOD0.glb",
+    "bytes": 1197680,
+    "sha256": "0ccf775e1bf39cf8c25b2464f8a6d88c97647aa45eed2879456863a5426fe989",
+    "triangles": 3044,
+    "triangles_v08": 2754,
+    "triangles_method": "indices/3 da única primitiva",
+    "skin_count": 1,
+    "joints": 22,
+    "animations": 55,
+    "signed_volume_m3_model_units": 0.3821,
+    "vertex_colors": "COLOR_0 linear, uma cor por face"
+  },
+  "changes_vs_v09": [
+    "joelhos fechados (esfera facetada meio a meio coxa/canela)",
+    "garra em foice no topo do dedo interno, com os pesos do pé",
+    "faixas escuras só fora das 10% maiores faces; faixas da cauda só onde ela afina",
+    "canelas ~15% mais grossas",
+    "walk e run refeitos e trot novo, na velocidade do jogo"
+  ],
+  "locomotion": {
+    "walk": {
+      "v": 1.5,
+      "T": 1.0,
+      "apoio": 0.55
+    },
+    "trot": {
+      "v": 4.2,
+      "T": 0.62,
+      "apoio": 0.38
+    },
+    "run": {
+      "v": 9.0,
+      "T": 0.46,
+      "apoio": 0.26
+    }
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "durationSeconds": 3.6,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "walk",
+      "durationSeconds": 1.0,
+      "loop": true,
+      "origin": "v10_new"
+    },
+    {
+      "name": "run",
+      "durationSeconds": 0.46,
+      "loop": true,
+      "origin": "v10_new"
+    },
+    {
+      "name": "stalk",
+      "durationSeconds": 2.35,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "turn_left",
+      "durationSeconds": 1.15,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "turn_right",
+      "durationSeconds": 1.15,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "alert",
+      "durationSeconds": 1.55,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "sniff",
+      "durationSeconds": 1.9,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "bite",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "claw_slash",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "pounce",
+      "durationSeconds": 1.3,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "feed",
+      "durationSeconds": 2.3,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "drink",
+      "durationSeconds": 2.2,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "threat_display",
+      "durationSeconds": 2.1,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "rest",
+      "durationSeconds": 3.25,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "hurt",
+      "durationSeconds": 1.05,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "death",
+      "durationSeconds": 2.6,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "sprint",
+      "durationSeconds": 0.54,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "backstep",
+      "durationSeconds": 1.1,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "strafe_left",
+      "durationSeconds": 1.05,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "strafe_right",
+      "durationSeconds": 1.05,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "dodge_left",
+      "durationSeconds": 0.72,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "dodge_right",
+      "durationSeconds": 0.72,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "jump_takeoff",
+      "durationSeconds": 0.56,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "jump_land",
+      "durationSeconds": 0.7,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "bite_heavy",
+      "durationSeconds": 1.6,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "claw_right",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "double_claw",
+      "durationSeconds": 1.2,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "feint",
+      "durationSeconds": 0.95,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "body_slam",
+      "durationSeconds": 1.46,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "grab_start",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "grab_hold",
+      "durationSeconds": 1.6,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "grab_release",
+      "durationSeconds": 1.05,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "hurt_head",
+      "durationSeconds": 0.86,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "hurt_leg",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "stagger",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "fall",
+      "durationSeconds": 1.32,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "get_up",
+      "durationSeconds": 1.8,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "exhausted",
+      "durationSeconds": 2.6,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "guard_carcass",
+      "durationSeconds": 2.2,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "search_lost_prey",
+      "durationSeconds": 3.0,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "roar",
+      "durationSeconds": 2.0,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "tail_sweep",
+      "durationSeconds": 1.4,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "limp",
+      "durationSeconds": 1.1,
+      "loop": true,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "sickle_kick",
+      "durationSeconds": 1.2,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "bite_turn_l",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "bite_turn_r",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "pounce_chain",
+      "durationSeconds": 2.6,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "backstep_tail",
+      "durationSeconds": 1.1,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "hit_side_l",
+      "durationSeconds": 0.55,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "hit_side_r",
+      "durationSeconds": 0.55,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "hit_heavy_l",
+      "durationSeconds": 1.1,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "hit_heavy_r",
+      "durationSeconds": 1.1,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "hit_head",
+      "durationSeconds": 0.6,
+      "loop": false,
+      "origin": "v08_unchanged"
+    },
+    {
+      "name": "trot",
+      "durationSeconds": 0.62,
+      "loop": true,
+      "origin": "v10_new"
+    }
+  ],
+  "kept_identical": [
+    "nós e nomes dos ossos",
+    "skin e matrizes de bind",
+    "52 clipes (todos menos walk e run) e extras"
+  ],
+  "qa": {
+    "khronos_independent_validation": "pending",
+    "blender_import": "see README",
+    "browser_visual_review": "Hunter Lab ?mh=1, 2026-11-20",
+    "artistic_approval": "aprovado pelo diretor em 2026-11-20 (PR #98, caçada ?pve1=1&pve2=1&mh=1)"
+  }
+}

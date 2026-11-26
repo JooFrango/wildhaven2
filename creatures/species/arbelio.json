@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "0.1",
+  "id": "arbelio",
+  "name": "Arbélio",
+  "status": "in_review",
+  "category": "small_herbivore",
+  "habitats": [
+    "wooded_savanna",
+    "acacia_canopy"
+  ],
+  "diet": [
+    "young_leaves",
+    "buds",
+    "flowers",
+    "acacia_pods"
+  ],
+  "social": {
+    "type": "small_group",
+    "notes": "Grupos de 2–5; desloca-se pelos ramos das acácias"
+  },
+  "behaviors": [
+    "climb",
+    "leap",
+    "grip",
+    "forage",
+    "balance",
+    "alert",
+    "flee"
+  ],
+  "artDirection": "Mamífero arborícola de corpo alongado, pelo dourado manchado, crina curta no pescoço, dedos agarradores e cauda espessa arqueada.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/arbelio/arbelio-savanna-animated-v01-LOD0.glb",
+    "riggedModel": "assets/models/creatures/arbelio/arbelio-savanna-animated-v01-LOD0.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "climb",
+      "leap",
+      "grip",
+      "forage",
+      "balance",
+      "alert",
+      "flee",
+      "rest",
+      "death"
+    ]
+  },
+  "body": {
+    "massMinKg": 3,
+    "massMaxKg": 6
+  },
+  "notes": "A arte conceitual desta espécie foi aprovada pelo usuário. Asset low-poly 3D v01 em revisão visual; 3 LODs, 11 clipes GLB, rig por pivôs hierárquicos sem pesos de skinning. Sem gameplay/spawn/IA; não confundir aprovação conceitual com aprovação do modelo."
+}

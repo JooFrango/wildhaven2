@@ -1,0 +1,27 @@
+{
+  "species": "varrisco",
+  "version": "v08-mh-54",
+  "stage": "rig_and_animation_exported_review_pending",
+  "previous_version": "v07",
+  "source_v07_sha256": "4c2c810bea9bdd82d66b1271efcef6a7f84205d1f02bcfeabdbedeb57e214358",
+  "glb": {
+    "path": "varrisco-animated-v08-LOD0.glb",
+    "bytes": 1133020,
+    "sha256": "e494aebb6ec3d0bbd12d61c3ad774901c4b086a02ff40236556fd70bed2508f0",
+    "triangles": 2754,
+    "triangles_method": "indices/3 da única primitiva",
+    "skin_count": 1,
+    "joints": 22,
+    "animations": 54,
+    "signed_volume_m3": 0.3786,
+    "normals_agree_with_winding": "2754/2754"
+  },
+  "fix": "Malha do avesso desde a v02 (volume -0,3786 m³, ordem e normais para dentro): 2º e 3º índice trocados e normais negadas. Posições, cores, juntas, pesos, nós, skin, 54 clipes e extras idênticos aos da v07.",
+  "clips": "iguais aos da v07 (ver v07/manifest.json)",
+  "qa": {
+    "khronos_independent_validation": "pending",
+    "blender_import": "see README",
+    "browser_visual_review": "Hunter Lab ?mh=1 e viewer Three.js, 2026-11-20",
+    "artistic_approval": "aprovado pelo diretor em 2026-11-20 (PR #98, caçada ?pve1=1&pve2=1&mh=1)"
+  }
+}

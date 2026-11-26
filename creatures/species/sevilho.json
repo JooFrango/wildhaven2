@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "0.1",
+  "id": "sevilho",
+  "name": "Sevilho",
+  "status": "in_review",
+  "category": "small_herbivore",
+  "habitats": [
+    "open_savanna",
+    "grass_tufts"
+  ],
+  "diet": [
+    "grass_seeds",
+    "grains",
+    "dry_fruit"
+  ],
+  "social": {
+    "type": "small_family_group",
+    "notes": "Grupos de 4–9; coleta e armazena sementes"
+  },
+  "behaviors": [
+    "scurry",
+    "hop",
+    "forage",
+    "store_seed",
+    "sniff",
+    "alert",
+    "flee"
+  ],
+  "artDirection": "Mamífero terrestre de pelo castanho-dourado, grandes orelhas, bolsas nas bochechas, patas traseiras fortes e cauda longa com ponta escura.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/sevilho/sevilho-savanna-animated-v01-LOD0.glb",
+    "riggedModel": "assets/models/creatures/sevilho/sevilho-savanna-animated-v01-LOD0.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "scurry",
+      "hop",
+      "forage",
+      "store_seed",
+      "sniff",
+      "alert",
+      "flee",
+      "rest",
+      "death"
+    ]
+  },
+  "body": {
+    "massMinKg": 2,
+    "massMaxKg": 4
+  },
+  "notes": "A arte conceitual desta espécie foi aprovada pelo usuário. Asset low-poly 3D v01 em revisão visual; 3 LODs, 11 clipes GLB, rig por pivôs hierárquicos sem pesos de skinning. Sem gameplay/spawn/IA; não confundir aprovação conceitual com aprovação do modelo."
+}

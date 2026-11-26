@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wildhaven — Varrisco v10 • 55 animações (moveset MH)</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#17201f;color:#f1e8d7;font-family:system-ui,sans-serif}
+header{display:flex;gap:16px;align-items:center;padding:14px 22px;flex-wrap:wrap;border-bottom:1px solid #41514e}
+h1{font-size:21px;margin:0}small{color:#acb9b0}select,button{font:inherit;background:#273734;color:#f1e8d7;padding:8px 12px;border:1px solid #748279;border-radius:6px;cursor:pointer}
+#screen{height:calc(100vh - 87px);min-height:350px}#status{font-size:12px;color:#aebfba}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"}}</script>
+</head><body>
+<header><div><h1>Varrisco v10</h1><small>22 juntas • 54 clipes • GLB real • savana e deserto</small></div>
+<label>Movimento: <select id="clips"></select></label><button id="pause">Pausar</button><label>Velocidade: <input id="speed" type="range" min="0.25" max="1.5" step="0.25" value="1"><span id="speed-label">1×</span></label><button id="bones">Mostrar esqueleto</button><span id="status">Carregando GLB...</span></header>
+<div id="screen"></div>
+<script type="module">
+import * as THREE from "three";
+import {GLTFLoader} from "three/addons/loaders/GLTFLoader.js";
+import {OrbitControls} from "three/addons/controls/OrbitControls.js";
+const host=document.querySelector("#screen"),status=document.querySelector("#status");
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.setSize(host.clientWidth,host.clientHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+host.appendChild(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color(0xd2d4cf);
+const camera=new THREE.PerspectiveCamera(35,host.clientWidth/host.clientHeight,0.01,100);camera.position.set(3.6,2.2,4.7);
+const orbit=new OrbitControls(camera,renderer.domElement);orbit.target.set(-.35,.72,0);orbit.enableDamping=true;orbit.update();
+scene.add(new THREE.HemisphereLight(0xffe7cf,0x5d6268,3.0));
+const light=new THREE.DirectionalLight(0xffffff,2.4);light.position.set(2,6,4);scene.add(light);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(200,200),new THREE.MeshStandardMaterial({color:0x958f82,roughness:1}));
+ground.rotation.x=-Math.PI/2;ground.position.y=-.02;scene.add(ground);
+let mixer=null,active=null,skeleton=null,root=null,clips=[];
+const oneshot=new Set(["turn_left","turn_right","alert","bite","claw_slash","pounce","hurt","death","dodge_left","dodge_right","jump_takeoff","jump_land","bite_heavy","claw_right","double_claw","feint","body_slam","grab_start","grab_release","hurt_head","hurt_leg","stagger","fall","get_up"]);
+function play(name){
+ if(!mixer)return;
+ if(active)active.stop();
+ const clip=clips.find(c=>c.name===name);
+ if(!clip)return;
+ active=mixer.clipAction(clip);
+ active.reset();
+ active.setLoop(oneshot.has(name)?THREE.LoopOnce:THREE.LoopRepeat,Infinity);
+ active.clampWhenFinished=oneshot.has(name);
+ active.play();status.textContent="Reproduzindo: "+name+" ("+clip.duration.toFixed(2)+" s)";
+}
+const select=document.querySelector("#clips");
+new GLTFLoader().load("../varrisco-animated-v10-LOD0.glb",(gltf)=>{
+ root=gltf.scene;scene.add(root);
+ clips=gltf.animations;
+ mixer=new THREE.AnimationMixer(root);
+ for(const c of clips){const option=document.createElement("option");option.value=c.name;option.textContent=c.name+" • "+c.duration.toFixed(2)+" s";select.append(option)}
+ select.value="idle";select.onchange=()=>play(select.value);play("idle");
+ skeleton=new THREE.SkeletonHelper(root);skeleton.visible=false;scene.add(skeleton);
+},undefined,e=>{status.textContent="Falha ao carregar GLB: "+e.message;console.error(e)});
+document.querySelector("#pause").onclick=()=>{
+ if(!mixer)return;
+ mixer.timeScale=mixer.timeScale===0?Number(document.querySelector("#speed").value):0;
+ document.querySelector("#pause").textContent=mixer.timeScale?"Pausar":"Reproduzir";
+};
+document.querySelector("#speed").oninput=(event)=>{
+  const v=Number(event.target.value);
+  document.querySelector("#speed-label").textContent=v+"×";
+  if(mixer)mixer.timeScale=v;
+};
+document.querySelector("#bones").onclick=()=>{
+ if(!skeleton)return;
+ skeleton.visible=!skeleton.visible;
+ document.querySelector("#bones").textContent=skeleton.visible?"Ocultar esqueleto":"Mostrar esqueleto";
+};
+addEventListener("resize",()=>{camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight)});
+const clock=new THREE.Clock();
+function animate(){requestAnimationFrame(animate);const dt=Math.min(.05,clock.getDelta());if(mixer)mixer.update(dt);orbit.update();renderer.render(scene,camera)}
+animate();
+</script></body></html>

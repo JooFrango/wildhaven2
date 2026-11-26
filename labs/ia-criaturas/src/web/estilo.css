@@ -1,0 +1,85 @@
+:root {
+  --fundo: #f4f2ec;
+  --painel: #ffffff;
+  --borda: #d9d4c7;
+  --texto: #23251f;
+  --suave: #6b6e64;
+  --destaque: #3f7d4e;
+  --destaque-texto: #ffffff;
+  --alerta: #b5532a;
+  --barra-energia: #e2b53b;
+  --barra-fome: #c46a4a;
+  --trilho: #ece8dd;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --fundo: #171915;
+    --painel: #20231e;
+    --borda: #363a31;
+    --texto: #e6e7df;
+    --suave: #9da196;
+    --destaque: #5fae74;
+    --destaque-texto: #0f140f;
+    --alerta: #e28a5c;
+    --trilho: #2c3028;
+  }
+}
+:root[data-theme="dark"] {
+  --fundo: #171915; --painel: #20231e; --borda: #363a31; --texto: #e6e7df;
+  --suave: #9da196; --destaque: #5fae74; --destaque-texto: #0f140f; --alerta: #e28a5c; --trilho: #2c3028;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--fundo); color: var(--texto);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.topo { padding: 14px 16px 6px; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; }
+.topo h1 { font-size: 18px; margin: 0; }
+.sub { color: var(--suave); font-size: 12px; }
+.layout {
+  display: grid; gap: 12px; padding: 8px 16px 16px;
+  grid-template-columns: 240px minmax(0, 1fr) 300px;
+  align-items: start;
+}
+@media (max-width: 1100px) { .layout { grid-template-columns: 220px minmax(0, 1fr); } .inspetor { grid-column: 1 / -1; } }
+@media (max-width: 720px) { .layout { grid-template-columns: 1fr; } }
+.painel { background: var(--painel); border: 1px solid var(--borda); border-radius: 10px; padding: 12px; }
+.controles label { display: block; margin-bottom: 10px; font-weight: 600; font-size: 12px; color: var(--suave); }
+.controles select, .controles input[type="number"] {
+  display: block; width: 100%; margin-top: 4px; padding: 6px 8px; font: inherit; color: var(--texto);
+  background: var(--fundo); border: 1px solid var(--borda); border-radius: 6px;
+}
+.linha { display: flex; gap: 6px; align-items: center; }
+.linha input { flex: 1; min-width: 0; }
+.botoes { flex-wrap: wrap; margin: 6px 0 10px; }
+button {
+  font: inherit; padding: 6px 10px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--borda); background: var(--fundo); color: var(--texto);
+}
+button:hover { border-color: var(--destaque); }
+button.primario { background: var(--destaque); color: var(--destaque-texto); border-color: var(--destaque); font-weight: 600; }
+fieldset { border: 1px solid var(--borda); border-radius: 8px; padding: 6px 10px 2px; margin: 0 0 10px; }
+legend { font-size: 12px; color: var(--suave); font-weight: 600; }
+label.check { display: flex; gap: 6px; align-items: center; font-weight: 400; color: var(--texto); font-size: 13px; margin-bottom: 6px; }
+.descricao { font-size: 12px; color: var(--suave); margin: -4px 0 10px; }
+.status { font: 12px/1.5 ui-monospace, Consolas, monospace; background: var(--fundo); border-radius: 6px; padding: 8px; white-space: pre-wrap; }
+.palco { min-width: 0; }
+canvas { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--borda); cursor: crosshair; touch-action: manipulation; }
+.dica { color: var(--suave); font-size: 12px; margin: 6px 2px; }
+.inspetor h2 { font-size: 13px; margin: 0 0 8px; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); }
+.inspetor h2:not(:first-child) { margin-top: 14px; }
+.vazio { color: var(--suave); }
+.ficha-nome { font-weight: 700; font-size: 15px; display: flex; gap: 8px; align-items: center; }
+.ponto { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.estado { display: inline-block; margin: 6px 0; padding: 2px 8px; border-radius: 999px; background: var(--trilho); font-weight: 600; }
+dl.campos { display: grid; grid-template-columns: 82px 1fr; gap: 3px 8px; margin: 6px 0; font-size: 13px; }
+dl.campos dt { color: var(--suave); }
+dl.campos dd { margin: 0; overflow-wrap: anywhere; }
+.motivo { background: var(--fundo); border-left: 3px solid var(--destaque); padding: 6px 8px; border-radius: 4px; font-size: 13px; }
+.barra { height: 8px; background: var(--trilho); border-radius: 4px; overflow: hidden; margin-top: 3px; }
+.barra > span { display: block; height: 100%; }
+.mini { font-size: 12px; color: var(--suave); margin: 4px 0; padding-left: 16px; }
+.eventos { font: 12px/1.45 ui-monospace, Consolas, monospace; max-height: 260px; overflow: auto; margin: 0; padding-left: 0; list-style: none; }
+.eventos li { padding: 2px 0; border-bottom: 1px dashed var(--borda); }
+.eventos .tipo { font-weight: 700; }
+.eventos .captura, .eventos .desistencia { color: var(--alerta); }

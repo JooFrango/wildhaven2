@@ -1,0 +1,130 @@
+{
+  "id": "torvardo",
+  "category": "large-herbivore-grazer",
+  "status": "model_in_artistic_review",
+  "approvedConcept": true,
+  "approvedModel": false,
+  "version": "v01",
+  "sourceGeometryTriangles": 112264,
+  "sourceGeometrySha256": "5c5b16d42fc8d1e254308a33e40909203c01b7984fdaccf736cf51daf3b77cca",
+  "clipCount": 12,
+  "clipNames": [
+    "idle",
+    "walk",
+    "trot",
+    "charge",
+    "graze",
+    "stomp",
+    "headbutt",
+    "alert",
+    "threat",
+    "rest",
+    "death",
+    "drink"
+  ],
+  "skinJoints": 17,
+  "lods": [
+    {
+      "path": "assets/models/creatures/torvardo/torvardo-savanna-animated-v01-LOD0.glb",
+      "bytes": 792732,
+      "sha256": "7c35a2c7df8c82bdbb1e4227194fe67d9b2235e91634b1c4522df3fefc22f8bb",
+      "triangles": 22279,
+      "originalTriangles": 112264,
+      "reductionPercent": 80.2,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/torvardo/torvardo-sculpted-source-v01.glb",
+      "lod": "LOD0",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "charge",
+        "graze",
+        "stomp",
+        "headbutt",
+        "alert",
+        "threat",
+        "rest",
+        "death",
+        "drink"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 20,
+      "remeshedPrimitives": 18,
+      "sourcePath": "sources/torvardo/torvardo-sculpted-source-v01.glb"
+    },
+    {
+      "path": "assets/models/creatures/torvardo/torvardo-savanna-animated-v01-LOD1.glb",
+      "bytes": 437256,
+      "sha256": "760e83b4ad002e275aa6749687a6fcea5b8138b26f9c7c82e2f10ead5a9ba771",
+      "triangles": 9891,
+      "originalTriangles": 112264,
+      "reductionPercent": 91.2,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/torvardo/torvardo-sculpted-source-v01.glb",
+      "lod": "LOD1",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "charge",
+        "graze",
+        "stomp",
+        "headbutt",
+        "alert",
+        "threat",
+        "rest",
+        "death",
+        "drink"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 20,
+      "remeshedPrimitives": 18,
+      "sourcePath": "sources/torvardo/torvardo-sculpted-source-v01.glb"
+    },
+    {
+      "path": "assets/models/creatures/torvardo/torvardo-savanna-animated-v01-LOD2.glb",
+      "bytes": 280124,
+      "sha256": "ab8461f6cff24ed56a7775e19bcd4c452e5dc47fac4eea3e15a9feddeebac7fc",
+      "triangles": 4433,
+      "originalTriangles": 112264,
+      "reductionPercent": 96.1,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/torvardo/torvardo-sculpted-source-v01.glb",
+      "lod": "LOD2",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "charge",
+        "graze",
+        "stomp",
+        "headbutt",
+        "alert",
+        "threat",
+        "rest",
+        "death",
+        "drink"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 20,
+      "remeshedPrimitives": 18,
+      "sourcePath": "sources/torvardo/torvardo-sculpted-source-v01.glb"
+    }
+  ],
+  "realScreenshots": [
+    "torvardo-real-3d-side-v01.png",
+    "torvardo-real-3d-front-v01.png",
+    "torvardo-real-3d-three_quarter-v01.png"
+  ],
+  "gameplayIntegrated": false,
+  "renderSource": "Final exported LOD0 GLB, via VTK offscreen rasterizer",
+  "limits": [
+    "LOD tests only validate structure; visual review required",
+    "clipped in-place root; no terrain IK",
+    "no gameplay/spawn AI"
+  ]
+}

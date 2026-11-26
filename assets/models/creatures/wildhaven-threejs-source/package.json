@@ -1,0 +1,21 @@
+{
+  "name": "wildhaven-legacy-fauna-export",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "vite build",
+    "export:rocantraz": "node --import tsx tools/export-rocantraz.ts",
+    "export:detritivores": "node --import tsx tools/export-detritivores.ts"
+  },
+  "dependencies": {
+    "three": "0.181.0"
+  },
+  "devDependencies": {
+    "@types/three": "0.181.0",
+    "@playwright/test": "1.56.1",
+    "tsx": "4.20.6",
+    "vite": "7.2.2",
+    "typescript": "5.9.3"
+  }
+}

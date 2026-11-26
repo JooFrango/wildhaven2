@@ -1,0 +1,366 @@
+{
+  "species": "varrisco",
+  "version": "v07-mh-54",
+  "stage": "rig_and_animation_exported_review_pending",
+  "previous_version": "v06",
+  "source_v06_sha256": "7ecfc5f3c71ce9617c561de65151da771b1c0a945170291d8080266ba2b45d57",
+  "glb": {
+    "path": "varrisco-animated-v07-LOD0.glb",
+    "bytes": 1132992,
+    "sha256": "4c2c810bea9bdd82d66b1271efcef6a7f84205d1f02bcfeabdbedeb57e214358",
+    "triangles": 2754,
+    "triangles_method": "indices/3 da única primitiva (inalterada desde a v02)",
+    "skin_count": 1,
+    "joints": 22,
+    "animations": 54,
+    "interpolation": "LINEAR",
+    "fps_new_clips": 30
+  },
+  "added": [
+    "hit_side_l",
+    "hit_side_r",
+    "hit_heavy_l",
+    "hit_heavy_r",
+    "hit_head"
+  ],
+  "kept_from_v06": 49,
+  "clips": [
+    {
+      "name": "idle",
+      "durationSeconds": 3.6,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "walk",
+      "durationSeconds": 1.13,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "run",
+      "durationSeconds": 0.6,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "stalk",
+      "durationSeconds": 2.35,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "turn_left",
+      "durationSeconds": 1.15,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "turn_right",
+      "durationSeconds": 1.15,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "alert",
+      "durationSeconds": 1.55,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "sniff",
+      "durationSeconds": 1.9,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "bite",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "claw_slash",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "pounce",
+      "durationSeconds": 1.3,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "feed",
+      "durationSeconds": 2.3,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "drink",
+      "durationSeconds": 2.2,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "threat_display",
+      "durationSeconds": 2.1,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "rest",
+      "durationSeconds": 3.25,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "hurt",
+      "durationSeconds": 1.05,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "death",
+      "durationSeconds": 2.6,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "sprint",
+      "durationSeconds": 0.54,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "backstep",
+      "durationSeconds": 1.1,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "strafe_left",
+      "durationSeconds": 1.05,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "strafe_right",
+      "durationSeconds": 1.05,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "dodge_left",
+      "durationSeconds": 0.72,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "dodge_right",
+      "durationSeconds": 0.72,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "jump_takeoff",
+      "durationSeconds": 0.56,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "jump_land",
+      "durationSeconds": 0.7,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "bite_heavy",
+      "durationSeconds": 1.6,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "claw_right",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "double_claw",
+      "durationSeconds": 1.2,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "feint",
+      "durationSeconds": 0.95,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "body_slam",
+      "durationSeconds": 1.46,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "grab_start",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "grab_hold",
+      "durationSeconds": 1.6,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "grab_release",
+      "durationSeconds": 1.05,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "hurt_head",
+      "durationSeconds": 0.86,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "hurt_leg",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "stagger",
+      "durationSeconds": 1.12,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "fall",
+      "durationSeconds": 1.32,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "get_up",
+      "durationSeconds": 1.8,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "exhausted",
+      "durationSeconds": 2.6,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "guard_carcass",
+      "durationSeconds": 2.2,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "search_lost_prey",
+      "durationSeconds": 3.0,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "roar",
+      "durationSeconds": 2.0,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "tail_sweep",
+      "durationSeconds": 1.4,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "limp",
+      "durationSeconds": 1.1,
+      "loop": true,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "sickle_kick",
+      "durationSeconds": 1.2,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "bite_turn_l",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "bite_turn_r",
+      "durationSeconds": 1.0,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "pounce_chain",
+      "durationSeconds": 2.6,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "backstep_tail",
+      "durationSeconds": 1.1,
+      "loop": false,
+      "origin": "v06_unchanged"
+    },
+    {
+      "name": "hit_side_l",
+      "durationSeconds": 0.55,
+      "loop": false,
+      "origin": "v07_new"
+    },
+    {
+      "name": "hit_side_r",
+      "durationSeconds": 0.55,
+      "loop": false,
+      "origin": "v07_new"
+    },
+    {
+      "name": "hit_heavy_l",
+      "durationSeconds": 1.1,
+      "loop": false,
+      "origin": "v07_new"
+    },
+    {
+      "name": "hit_heavy_r",
+      "durationSeconds": 1.1,
+      "loop": false,
+      "origin": "v07_new"
+    },
+    {
+      "name": "hit_head",
+      "durationSeconds": 0.6,
+      "loop": false,
+      "origin": "v07_new"
+    }
+  ],
+  "method": "Motor da v05 (build_v05.py importado): poses-chave com easing, cauda com atraso, tremor aditivo, IK analítico de 2 ossos nas pernas; 30 fps.",
+  "approval": "Escopo de reação de dano aprovado pelo diretor em 2026-11-20 antes da autoria; clipes aprovados pelo diretor no lab em 2026-11-20.",
+  "limitations": [
+    "Keyframes autorados por agente, não por animador",
+    "O passo de equilíbrio do hit_heavy é para trás: o IK das pernas resolve só no plano sagital, sem passo lateral",
+    "Recuo e interrupção do golpe vêm da IA (monstro-varrisco.js), não do clipe"
+  ],
+  "qa": {
+    "khronos_independent_validation": "pending",
+    "blender_import": "see README",
+    "browser_visual_review": "Hunter Lab ?mh=1, 2026-11-20",
+    "artistic_approval": "aprovado pelo diretor em 2026-11-20 (PR #98, caçada ?pve1=1&pve2=1&mh=1)"
+  }
+}

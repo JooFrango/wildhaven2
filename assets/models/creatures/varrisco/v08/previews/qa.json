@@ -1,0 +1,35 @@
+{
+ "roar": {
+  "frames": 61,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ },
+ "bite_heavy": {
+  "frames": 49,
+  "mesh_min_z_m": [
+   0.015,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.0,
+   "R": 0.0
+  }
+ },
+ "hit_heavy_l": {
+  "frames": 34,
+  "mesh_min_z_m": [
+   0.014,
+   0.015
+  ],
+  "ankle_max_slide_per_frame_m": {
+   "L": 0.003,
+   "R": 0.0209
+  }
+ }
+}

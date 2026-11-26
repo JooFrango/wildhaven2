@@ -1,0 +1,129 @@
+{
+  "species": "varrisco",
+  "version": "v04-experimental-41",
+  "stage": "rig_and_animation_exported_review_pending",
+  "previous_version": "v03",
+  "source_v03_sha256": "838ad49124da11deea249f36b49f331176c094e2b0c653fceb67ea4b9ef7488c",
+  "glb": {
+    "path": "varrisco-animated-v04-LOD0.glb",
+    "bytes": 931276,
+    "sha256": "ba9c771fa99362d2b37b8f4a5cbca4070526c6cc8d88a5836a5a79f56ac96ed2",
+    "triangles": 2754,
+    "skin_count": 1,
+    "joints": 22,
+    "animations": 41,
+    "previous_animations_preserved": 29
+  },
+  "added": [
+    {
+      "name": "body_slam",
+      "durationSeconds": 1.46,
+      "fps": 36,
+      "loop": false,
+      "category": "combat",
+      "contactFraction": 0.67
+    },
+    {
+      "name": "grab_start",
+      "durationSeconds": 1.12,
+      "fps": 36,
+      "loop": false,
+      "category": "combat",
+      "contactFraction": 0.66
+    },
+    {
+      "name": "grab_hold",
+      "durationSeconds": 1.6,
+      "fps": 30,
+      "loop": true,
+      "category": "combat",
+      "contactFraction": null
+    },
+    {
+      "name": "grab_release",
+      "durationSeconds": 1.05,
+      "fps": 30,
+      "loop": false,
+      "category": "combat",
+      "contactFraction": 0.35
+    },
+    {
+      "name": "hurt_head",
+      "durationSeconds": 0.86,
+      "fps": 30,
+      "loop": false,
+      "category": "injury",
+      "contactFraction": null
+    },
+    {
+      "name": "hurt_leg",
+      "durationSeconds": 1.12,
+      "fps": 30,
+      "loop": false,
+      "category": "injury",
+      "contactFraction": null
+    },
+    {
+      "name": "stagger",
+      "durationSeconds": 1.12,
+      "fps": 30,
+      "loop": false,
+      "category": "injury",
+      "contactFraction": null
+    },
+    {
+      "name": "fall",
+      "durationSeconds": 1.32,
+      "fps": 36,
+      "loop": false,
+      "category": "injury",
+      "contactFraction": null
+    },
+    {
+      "name": "get_up",
+      "durationSeconds": 1.8,
+      "fps": 36,
+      "loop": false,
+      "category": "injury",
+      "contactFraction": null
+    },
+    {
+      "name": "exhausted",
+      "durationSeconds": 2.6,
+      "fps": 24,
+      "loop": true,
+      "category": "behaviour",
+      "contactFraction": null
+    },
+    {
+      "name": "guard_carcass",
+      "durationSeconds": 2.2,
+      "fps": 24,
+      "loop": true,
+      "category": "behaviour",
+      "contactFraction": null
+    },
+    {
+      "name": "search_lost_prey",
+      "durationSeconds": 3.0,
+      "fps": 24,
+      "loop": true,
+      "category": "behaviour",
+      "contactFraction": null
+    }
+  ],
+  "qa": {
+    "29_original_clips_unchanged": true,
+    "v03_bin_prefix_unchanged": true,
+    "no_new_geometry": true,
+    "khronos_independent_validation": "pending",
+    "browser_visual_review": "pending",
+    "artistic_approval": "pending"
+  },
+  "limitations": [
+    "Procedural experimental keyframes: animation aesthetics not yet reviewed",
+    "Animated clips do not independently perform grabs, injuries or damage",
+    "IK and combat AI continue to be driven by the shared simulation kernel",
+    "Alpha and original assets unchanged"
+  ]
+}
