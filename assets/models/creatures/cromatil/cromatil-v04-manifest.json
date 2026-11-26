@@ -1,0 +1,235 @@
+{
+  "id": "cromatil",
+  "species": "Cromátil",
+  "biomes": [
+    "dry_savanna",
+    "rocky_savanna"
+  ],
+  "sizeClass": "small",
+  "sizeClassSource": "creatures/species/cromatil.json",
+  "version": "v04",
+  "previousVersion": "v03",
+  "lod": 0,
+  "triangleLimit": 1500,
+  "previousAsset": {
+    "path": "assets/models/creatures/cromatil/cromatil-savanna-animated-v03-LOD0.glb",
+    "commit": "44f3f1bd06c2118d0d3053ad1a79d1986ba70d17",
+    "pr": "https://github.com/JooFrango/wildhaven2/pull/4",
+    "sha256": "069341465436f6bb9a894713082d6843f1b4460e10ddce2db4a5e38b5bfc8611",
+    "triangles": 1467,
+    "primitiveCount": 34,
+    "materials": 11
+  },
+  "model": {
+    "path": "assets/models/creatures/cromatil/cromatil-v04-LOD0.glb",
+    "bytes": 514188,
+    "sha256": "dc9f46439b68ade65b439952cbdc23a18b8e03b62a4c3fc95e6dbc37ac874691",
+    "triangles": 1492,
+    "uniqueTriangles": 1492,
+    "triangleReductionPct": -1.7,
+    "vertices": 2168,
+    "meshes": 1,
+    "materials": 1,
+    "primitives": 1,
+    "joints": 22,
+    "skins": 1,
+    "textures": [
+      {
+        "name": "Cromátil | atlas pintado",
+        "width": 512,
+        "height": 512,
+        "mimeType": "image/jpeg",
+        "embedded": true
+      }
+    ]
+  },
+  "animation": [
+    {
+      "name": "idle",
+      "startS": 0,
+      "durationS": 3.2,
+      "channels": 66,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "walk",
+      "startS": 0,
+      "durationS": 1.333333,
+      "channels": 66,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "scurry",
+      "startS": 0,
+      "durationS": 0.733333,
+      "channels": 66,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "bask",
+      "startS": 0,
+      "durationS": 3.666667,
+      "channels": 66,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "forage",
+      "startS": 0,
+      "durationS": 2.866667,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "head_tilt",
+      "startS": 0,
+      "durationS": 1.4,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "tail_whip",
+      "startS": 0,
+      "durationS": 1.466667,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "threat",
+      "startS": 0,
+      "durationS": 1.8,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "retreat",
+      "startS": 0,
+      "durationS": 1.2,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "rest",
+      "startS": 0,
+      "durationS": 3.4,
+      "channels": 66,
+      "loop": true,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "death",
+      "startS": 0,
+      "durationS": 2.066667,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "drink",
+      "startS": 0,
+      "durationS": 2.466667,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "hide",
+      "startS": 0,
+      "durationS": 1.6,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "hit_react",
+      "startS": 0,
+      "durationS": 0.866667,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "turn",
+      "startS": 0,
+      "durationS": 1.466667,
+      "channels": 66,
+      "loop": false,
+      "rootMotion": "in-place"
+    }
+  ],
+  "art": {
+    "concept": {
+      "path": "assets/models/creatures/cromatil/cromatil-v04-conceito-proposto.jpg",
+      "status": "proposta em revisão",
+      "generation": "OpenAI ImageGen",
+      "original": "Aprovação registrada na ficha. Arquivo original indisponível.",
+      "prompt": "Pintura conceitual de produção para a fauna original de Wildhaven. Usar as vistas lateral e três-quartos do GLB V03 e a ficha como referências de identidade. Mostrar um animal de corpo inteiro em três-quartos, anatomia naturalista e facetada, superfícies foscas e fundo neutro. Réptil herbívoro de savana rochosa, corpo baixo e robusto, cabeça triangular, pele verde-oliva, garganta ferrugem, placas dorsais achatadas sobrepostas, garras curtas e cauda defensiva afilada com serrilhas baixas."
+    },
+    "comparison": "assets/models/creatures/cromatil/cromatil-v04-comparison.jpg",
+    "references": [
+      {
+        "name": "Rubrágoro V07",
+        "source": "GLB fornecido pelo responsável",
+        "sha256": "609bae9067c1610a6bda931e117a86b627518f3669966bbf62b8bfde04afba67",
+        "triangles": 3760,
+        "clips": 24
+      },
+      {
+        "name": "Lagarto-Papagaio V03",
+        "source": "assets/models/creatures/lagarto-papagaio/v03/lagarto-papagaio-v03-animado.glb",
+        "sha256": "7d531cc4add70fe5b147b2caf4755df4a3aea2f29ab8a313eb2178adca2300ed",
+        "triangles": 4946,
+        "clips": 24
+      }
+    ],
+    "referenceEvidence": "https://github.com/JooFrango/wildhaven2/pull/6"
+  },
+  "source": {
+    "generator": "assets/models/creatures/frutavil/build-fauna-v04.py",
+    "motions": "assets/models/creatures/frutavil/fauna_motion_v04.py",
+    "renders": "assets/models/creatures/frutavil/render-fauna-v04.py",
+    "buildCommand": "blender -b --python-exit-code 3 --python assets/models/creatures/frutavil/build-fauna-v04.py -- assets/models/creatures/cromatil",
+    "renderCommand": "blender -b --python-exit-code 3 --python assets/models/creatures/frutavil/render-fauna-v04.py -- assets/models/creatures/cromatil/cromatil-v04-LOD0.glb",
+    "runtime": "Blender 5.3",
+    "axes": "glTF Y-up, frente +X, unidades em metros"
+  },
+  "renders": {
+    "front": "assets/models/creatures/cromatil/cromatil-v04-front.png",
+    "side": "assets/models/creatures/cromatil/cromatil-v04-side.png",
+    "back": "assets/models/creatures/cromatil/cromatil-v04-back.png",
+    "three-quarter": "assets/models/creatures/cromatil/cromatil-v04-three-quarter.png"
+  },
+  "previews": [
+    "assets/models/creatures/cromatil/cromatil-v04-walk.gif",
+    "assets/models/creatures/cromatil/cromatil-v04-scurry.gif",
+    "assets/models/creatures/cromatil/cromatil-v04-forage.gif",
+    "assets/models/creatures/cromatil/cromatil-v04-tail_whip.gif",
+    "assets/models/creatures/cromatil/cromatil-v04-threat.gif"
+  ],
+  "technicalValidation": {
+    "status": "validado",
+    "report": "assets/models/creatures/cromatil/cromatil-v04-validation.json"
+  },
+  "artisticApproval": {
+    "status": "em revisão artística",
+    "comparisonNotes": "As placas achatadas acompanham o contorno do dorso e a garganta ferrugem fica integrada ao atlas de escamas. As patas nascem da mesma topologia do tronco. A chicotada começa no quadril e passa pelas cinco juntas da cauda.",
+    "remainingDifferences": "A proposta tem placas que cobrem uma faixa maior do dorso e escamas mais marcadas. A revisão usa verde mais saturado."
+  },
+  "publication": {
+    "status": "em revisão na branch de trabalho",
+    "branch": "feat/fauna-frutavil-v04-cromatil-v04",
+    "repository": "JooFrango/wildhaven2"
+  },
+  "limits": [
+    "O movimento foi assado no plano. Contato com terreno irregular, transições e desempenho com 200 criaturas no jogo aguardam medição.",
+    "O comparativo visual usa uma proposta e o GLB V03. A arte original aprovada continua indisponível."
+  ]
+}

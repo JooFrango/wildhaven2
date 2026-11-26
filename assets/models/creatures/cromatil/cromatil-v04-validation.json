@@ -1,0 +1,265 @@
+{
+  "asset": "assets/models/creatures/cromatil/cromatil-v04-LOD0.glb",
+  "sha256": "dc9f46439b68ade65b439952cbdc23a18b8e03b62a4c3fc95e6dbc37ac874691",
+  "bytes": 514188,
+  "geometry": {
+    "limit": 1500,
+    "triangles": 1492,
+    "uniqueTriangles": 1492,
+    "previousTriangles": 1467,
+    "vertices": 2168,
+    "materials": 1,
+    "primitives": 1,
+    "previousPrimitives": 34,
+    "meshes": 1,
+    "skins": 1,
+    "joints": 22,
+    "textures": [
+      {
+        "name": "Cromátil | atlas pintado",
+        "width": 512,
+        "height": 512,
+        "mimeType": "image/jpeg",
+        "embedded": true
+      }
+    ],
+    "method": "Conta os índices das primitivas triangulares na cena padrão. Multiplica por nó renderizado e por instância de EXT_mesh_gpu_instancing."
+  },
+  "validator": {
+    "version": "2.0.0-dev.3.10",
+    "errors": 0,
+    "warnings": 0
+  },
+  "blender": {
+    "version": "5.3.0",
+    "reimported": true,
+    "renders": {
+      "front": "assets/models/creatures/cromatil/cromatil-v04-front.png",
+      "side": "assets/models/creatures/cromatil/cromatil-v04-side.png",
+      "back": "assets/models/creatures/cromatil/cromatil-v04-back.png",
+      "three-quarter": "assets/models/creatures/cromatil/cromatil-v04-three-quarter.png"
+    },
+    "method": "Importação do GLB em cena vazia e renderização em Cycles."
+  },
+  "browser": {
+    "threeRevision": "187",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "skinnedMeshes": 1,
+    "hasTexture": true,
+    "clips": [
+      {
+        "name": "idle",
+        "durationS": 3.2,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.14181,
+        "minHeightM": 0.0015,
+        "minGroundHeightRangeM": [
+          0.0015,
+          0.0015
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "walk",
+        "durationS": 1.33333,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.38335,
+        "minHeightM": 0.0015,
+        "minGroundHeightRangeM": [
+          0.0015,
+          0.0015
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "scurry",
+        "durationS": 0.73333,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.48452,
+        "minHeightM": -0.00132,
+        "minGroundHeightRangeM": [
+          -0.00132,
+          0.00221
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "bask",
+        "durationS": 3.66667,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.07294,
+        "minHeightM": 0.0015,
+        "minGroundHeightRangeM": [
+          0.0015,
+          0.0015
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "forage",
+        "durationS": 2.86667,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.2718,
+        "minHeightM": 0.00117,
+        "minGroundHeightRangeM": [
+          0.00117,
+          0.00316
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "head_tilt",
+        "durationS": 1.4,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.14144,
+        "minHeightM": 0.0015,
+        "minGroundHeightRangeM": [
+          0.0015,
+          0.0015
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "tail_whip",
+        "durationS": 1.46667,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.90132,
+        "minHeightM": -0.00033,
+        "minGroundHeightRangeM": [
+          -0.00033,
+          0.0015
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "threat",
+        "durationS": 1.8,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.48666,
+        "minHeightM": 0.00051,
+        "minGroundHeightRangeM": [
+          0.00051,
+          0.0015
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "retreat",
+        "durationS": 1.2,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.28757,
+        "minHeightM": -0.00436,
+        "minGroundHeightRangeM": [
+          -0.00436,
+          0.00778
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "rest",
+        "durationS": 3.4,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.07109,
+        "minHeightM": 0.0015,
+        "minGroundHeightRangeM": [
+          0.0015,
+          0.00151
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "death",
+        "durationS": 2.06667,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.64318,
+        "minHeightM": 0.00095,
+        "minGroundHeightRangeM": [
+          0.00095,
+          0.0015
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "drink",
+        "durationS": 2.46667,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.26592,
+        "minHeightM": 0.00084,
+        "minGroundHeightRangeM": [
+          0.00084,
+          0.00429
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "hide",
+        "durationS": 1.6,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.23112,
+        "minHeightM": 0.00052,
+        "minGroundHeightRangeM": [
+          0.00052,
+          0.00508
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "hit_react",
+        "durationS": 0.86667,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.38738,
+        "minHeightM": 0.00057,
+        "minGroundHeightRangeM": [
+          0.00057,
+          0.00567
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "turn",
+        "durationS": 1.46667,
+        "trackCount": 66,
+        "maxVertexMotionM": 0.69136,
+        "minHeightM": -0.00084,
+        "minGroundHeightRangeM": [
+          -0.00084,
+          0.00312
+        ],
+        "loopErrorM": null
+      }
+    ],
+    "method": "GLTFLoader em Chrome/WebGL. 21 poses por clipe. Avalia vértices após o skinning e diferença entre os extremos dos loops.",
+    "mainControls": [
+      "assets/models/creatures/cromatil/cromatil-v04-walk.gif",
+      "assets/models/creatures/cromatil/cromatil-v04-scurry.gif",
+      "assets/models/creatures/cromatil/cromatil-v04-forage.gif",
+      "assets/models/creatures/cromatil/cromatil-v04-tail_whip.gif",
+      "assets/models/creatures/cromatil/cromatil-v04-threat.gif"
+    ],
+    "walkGround": {
+      "previousMinYM": -0.06081,
+      "currentMinYM": 0.0015,
+      "currentMinimumRangeM": [
+        0.0015,
+        0.0015
+      ],
+      "scope": "Mínimo geométrico em coordenadas do GLB. A diferença descreve o apoio no plano Y=0. Não mede o deslizamento no motor do jogo."
+    }
+  },
+  "references": [
+    {
+      "name": "Rubrágoro V07",
+      "source": "GLB fornecido pelo responsável",
+      "sha256": "609bae9067c1610a6bda931e117a86b627518f3669966bbf62b8bfde04afba67",
+      "triangles": 3760,
+      "clips": 24
+    },
+    {
+      "name": "Lagarto-Papagaio V03",
+      "source": "assets/models/creatures/lagarto-papagaio/v03/lagarto-papagaio-v03-animado.glb",
+      "sha256": "7d531cc4add70fe5b147b2caf4755df4a3aea2f29ab8a313eb2178adca2300ed",
+      "triangles": 4946,
+      "clips": 24
+    }
+  ]
+}

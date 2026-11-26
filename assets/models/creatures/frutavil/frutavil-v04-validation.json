@@ -1,0 +1,277 @@
+{
+  "asset": "assets/models/creatures/frutavil/frutavil-v04-LOD0.glb",
+  "sha256": "0764de9e58cd9286cd49f8aa29ce181d2dcceb3a339eac30c241ebf214fadd2e",
+  "bytes": 568276,
+  "geometry": {
+    "limit": 1500,
+    "triangles": 1394,
+    "uniqueTriangles": 1394,
+    "previousTriangles": 1443,
+    "vertices": 2479,
+    "materials": 1,
+    "primitives": 1,
+    "previousPrimitives": 26,
+    "meshes": 1,
+    "skins": 1,
+    "joints": 27,
+    "textures": [
+      {
+        "name": "Frutavil | atlas pintado",
+        "width": 512,
+        "height": 512,
+        "mimeType": "image/jpeg",
+        "embedded": true
+      }
+    ],
+    "method": "Conta os índices das primitivas triangulares na cena padrão. Multiplica por nó renderizado e por instância de EXT_mesh_gpu_instancing."
+  },
+  "validator": {
+    "version": "2.0.0-dev.3.10",
+    "errors": 0,
+    "warnings": 0
+  },
+  "blender": {
+    "version": "5.3.0",
+    "reimported": true,
+    "renders": {
+      "front": "assets/models/creatures/frutavil/frutavil-v04-front.png",
+      "side": "assets/models/creatures/frutavil/frutavil-v04-side.png",
+      "back": "assets/models/creatures/frutavil/frutavil-v04-back.png",
+      "three-quarter": "assets/models/creatures/frutavil/frutavil-v04-three-quarter.png"
+    },
+    "method": "Importação do GLB em cena vazia e renderização em Cycles."
+  },
+  "browser": {
+    "threeRevision": "187",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "skinnedMeshes": 1,
+    "hasTexture": true,
+    "clips": [
+      {
+        "name": "idle",
+        "durationS": 2.53333,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.06289,
+        "minHeightM": 0.00277,
+        "minGroundHeightRangeM": [
+          0.00277,
+          0.00277
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "walk",
+        "durationS": 0.93333,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.08908,
+        "minHeightM": 0.00186,
+        "minGroundHeightRangeM": [
+          0.00186,
+          0.00277
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "hop",
+        "durationS": 0.86667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.31818,
+        "minHeightM": 0.00238,
+        "minGroundHeightRangeM": [
+          0.00238,
+          0.22169
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "perch",
+        "durationS": 2.4,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.13314,
+        "minHeightM": 0.0015,
+        "minGroundHeightRangeM": [
+          0.0015,
+          0.0015
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "peck",
+        "durationS": 1.13333,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.50301,
+        "minHeightM": 0.00146,
+        "minGroundHeightRangeM": [
+          0.00146,
+          0.00277
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "eat_fruit",
+        "durationS": 2.13333,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.31445,
+        "minHeightM": 0.00277,
+        "minGroundHeightRangeM": [
+          0.00277,
+          0.00277
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "wing_flap",
+        "durationS": 1.46667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.60956,
+        "minHeightM": 0.00238,
+        "minGroundHeightRangeM": [
+          0.00238,
+          0.00417
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "short_flight",
+        "durationS": 2.26667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.77334,
+        "minHeightM": 0.00262,
+        "minGroundHeightRangeM": [
+          0.00262,
+          0.3504
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "alert",
+        "durationS": 1.66667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.19582,
+        "minHeightM": 0.00277,
+        "minGroundHeightRangeM": [
+          0.00277,
+          0.00277
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "rest",
+        "durationS": 3.06667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.07067,
+        "minHeightM": 0.0015,
+        "minGroundHeightRangeM": [
+          0.0015,
+          0.0015
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "death",
+        "durationS": 1.86667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.58187,
+        "minHeightM": 0.00128,
+        "minGroundHeightRangeM": [
+          0.00128,
+          0.0015
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "takeoff",
+        "durationS": 1.06667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.82726,
+        "minHeightM": 0.0024,
+        "minGroundHeightRangeM": [
+          0.0024,
+          0.35028
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "glide",
+        "durationS": 1.86667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.12404,
+        "minHeightM": 0.3081,
+        "minGroundHeightRangeM": [
+          0.3081,
+          0.35346
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "land",
+        "durationS": 1.06667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.68468,
+        "minHeightM": 0.00203,
+        "minGroundHeightRangeM": [
+          0.00203,
+          0.34609
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "drink",
+        "durationS": 2.26667,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.49631,
+        "minHeightM": 0.00271,
+        "minGroundHeightRangeM": [
+          0.00271,
+          0.00277
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "hit_react",
+        "durationS": 0.73333,
+        "trackCount": 81,
+        "maxVertexMotionM": 0.20191,
+        "minHeightM": 0.00242,
+        "minGroundHeightRangeM": [
+          0.00242,
+          0.00277
+        ],
+        "loopErrorM": null
+      }
+    ],
+    "method": "GLTFLoader em Chrome/WebGL. 21 poses por clipe. Avalia vértices após o skinning e diferença entre os extremos dos loops.",
+    "mainControls": [
+      "assets/models/creatures/frutavil/frutavil-v04-walk.gif",
+      "assets/models/creatures/frutavil/frutavil-v04-peck.gif",
+      "assets/models/creatures/frutavil/frutavil-v04-wing_flap.gif",
+      "assets/models/creatures/frutavil/frutavil-v04-short_flight.gif",
+      "assets/models/creatures/frutavil/frutavil-v04-land.gif"
+    ],
+    "walkGround": {
+      "previousMinYM": -0.13267,
+      "currentMinYM": 0.00186,
+      "currentMinimumRangeM": [
+        0.00186,
+        0.00277
+      ],
+      "scope": "Mínimo geométrico em coordenadas do GLB. A diferença descreve o apoio no plano Y=0. Não mede o deslizamento no motor do jogo."
+    }
+  },
+  "references": [
+    {
+      "name": "Rubrágoro V07",
+      "source": "GLB fornecido pelo responsável",
+      "sha256": "609bae9067c1610a6bda931e117a86b627518f3669966bbf62b8bfde04afba67",
+      "triangles": 3760,
+      "clips": 24
+    },
+    {
+      "name": "Lagarto-Papagaio V03",
+      "source": "assets/models/creatures/lagarto-papagaio/v03/lagarto-papagaio-v03-animado.glb",
+      "sha256": "7d531cc4add70fe5b147b2caf4755df4a3aea2f29ab8a313eb2178adca2300ed",
+      "triangles": 4946,
+      "clips": 24
+    }
+  ]
+}

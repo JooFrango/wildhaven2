@@ -43,7 +43,15 @@
       "retreat",
       "rest",
       "death"
-    ]
+    ],
+    "reviewCandidate": {
+      "version": "v04",
+      "model": "assets/models/creatures/cromatil/cromatil-v04-LOD0.glb",
+      "manifest": "assets/models/creatures/cromatil/cromatil-v04-manifest.json",
+      "conceptProposal": "assets/models/creatures/cromatil/cromatil-v04-conceito-proposto.jpg",
+      "preview": "assets/models/creatures/cromatil/cromatil-v04-three-quarter.png",
+      "status": "art_review"
+    }
   },
   "body": {
     "massMinKg": 2.5,
