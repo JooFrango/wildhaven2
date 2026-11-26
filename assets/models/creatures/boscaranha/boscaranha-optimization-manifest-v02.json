@@ -1,0 +1,283 @@
+{
+  "species": "boscaranha",
+  "variant": "temperate-forest",
+  "version": "v02",
+  "source": "assets/models/creatures/boscaranha/boscaranha_animated_v01.glb",
+  "sourceStats": {
+    "bytes": 843480,
+    "sha256": "c5a1399ddbc4b7b48d7e391a7efc5fbfde27229d325e898cab8ac9a0f7f084ec",
+    "trianglesMeshDefinitions": 17344,
+    "trianglesDrawnPerInstance": 17344,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 23,
+    "estimatedDrawCalls": 23,
+    "materials": 25,
+    "nodes": 35,
+    "skins": 1,
+    "skinJointCounts": [
+      33
+    ],
+    "animations": [
+      "idle",
+      "walk",
+      "scuttle",
+      "sprint",
+      "stalk",
+      "ambush",
+      "sense_vibrations",
+      "vigilance",
+      "pounce",
+      "bite",
+      "silk_wrap",
+      "feed",
+      "climb",
+      "threat_display",
+      "retreat",
+      "turn_left",
+      "turn_right",
+      "groom",
+      "nest",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "existingPublishedLod1": {
+    "bytes": 462068,
+    "sha256": "b3cd59ada4ae06f72be4e35f95d93517310088c925505c84d9e57d44a398500a",
+    "trianglesMeshDefinitions": 7629,
+    "trianglesDrawnPerInstance": 7629,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 23,
+    "estimatedDrawCalls": 23,
+    "materials": 25,
+    "nodes": 35,
+    "skins": 1,
+    "skinJointCounts": [
+      33
+    ],
+    "animations": [
+      "idle",
+      "walk",
+      "scuttle",
+      "sprint",
+      "stalk",
+      "ambush",
+      "sense_vibrations",
+      "vigilance",
+      "pounce",
+      "bite",
+      "silk_wrap",
+      "feed",
+      "climb",
+      "threat_display",
+      "retreat",
+      "turn_left",
+      "turn_right",
+      "groom",
+      "nest",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "animationSignature": "ba4b94d8d86d1343f0d8554609c25b1b70e6024cf2790f45828c4d5e9f2f247e",
+  "lods": [
+    {
+      "bytes": 588336,
+      "sha256": "208218ea188c1bdaa41a460ab91ca9c303c8094be319b0d690c5e8d2e69937a5",
+      "trianglesMeshDefinitions": 13482,
+      "trianglesDrawnPerInstance": 13482,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 23,
+      "estimatedDrawCalls": 23,
+      "materials": 25,
+      "nodes": 35,
+      "skins": 1,
+      "skinJointCounts": [
+        33
+      ],
+      "animations": [
+        "idle",
+        "walk",
+        "scuttle",
+        "sprint",
+        "stalk",
+        "ambush",
+        "sense_vibrations",
+        "vigilance",
+        "pounce",
+        "bite",
+        "silk_wrap",
+        "feed",
+        "climb",
+        "threat_display",
+        "retreat",
+        "turn_left",
+        "turn_right",
+        "groom",
+        "nest",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 13500,
+      "animationSignature": "ba4b94d8d86d1343f0d8554609c25b1b70e6024cf2790f45828c4d5e9f2f247e",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 386648,
+      "sha256": "30359b05687d0d9bff3b6b1002e26629110d332d239f5df23fc933017333b5c8",
+      "trianglesMeshDefinitions": 6778,
+      "trianglesDrawnPerInstance": 6778,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 23,
+      "estimatedDrawCalls": 23,
+      "materials": 25,
+      "nodes": 35,
+      "skins": 1,
+      "skinJointCounts": [
+        33
+      ],
+      "animations": [
+        "idle",
+        "walk",
+        "scuttle",
+        "sprint",
+        "stalk",
+        "ambush",
+        "sense_vibrations",
+        "vigilance",
+        "pounce",
+        "bite",
+        "silk_wrap",
+        "feed",
+        "climb",
+        "threat_display",
+        "retreat",
+        "turn_left",
+        "turn_right",
+        "groom",
+        "nest",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 6800,
+      "animationSignature": "ba4b94d8d86d1343f0d8554609c25b1b70e6024cf2790f45828c4d5e9f2f247e",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 258904,
+      "sha256": "687e8c12fecee1f22091fa75465bfa456b4497b4d308fee3597d69ff1de11d37",
+      "trianglesMeshDefinitions": 2685,
+      "trianglesDrawnPerInstance": 2685,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 23,
+      "estimatedDrawCalls": 23,
+      "materials": 25,
+      "nodes": 35,
+      "skins": 1,
+      "skinJointCounts": [
+        33
+      ],
+      "animations": [
+        "idle",
+        "walk",
+        "scuttle",
+        "sprint",
+        "stalk",
+        "ambush",
+        "sense_vibrations",
+        "vigilance",
+        "pounce",
+        "bite",
+        "silk_wrap",
+        "feed",
+        "climb",
+        "threat_display",
+        "retreat",
+        "turn_left",
+        "turn_right",
+        "groom",
+        "nest",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 2700,
+      "animationSignature": "ba4b94d8d86d1343f0d8554609c25b1b70e6024cf2790f45828c4d5e9f2f247e",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 160005,
+      "boundsMin": [
+        -0.6794915199279785,
+        0.0392460860311985,
+        -0.6202934980392456
+      ],
+      "boundsMax": [
+        0.6794915199279785,
+        0.6759554743766785,
+        0.7379703521728516
+      ]
+    },
+    "front": {
+      "bytes": 146631,
+      "boundsMin": [
+        -0.6794915199279785,
+        0.0392460860311985,
+        -0.6202934980392456
+      ],
+      "boundsMax": [
+        0.6794915199279785,
+        0.6759554743766785,
+        0.7379703521728516
+      ]
+    },
+    "three-quarter": {
+      "bytes": 109814,
+      "boundsMin": [
+        -0.6794915199279785,
+        0.0392460860311985,
+        -0.6202934980392456
+      ],
+      "boundsMax": [
+        0.6794915199279785,
+        0.6759554743766785,
+        0.7379703521728516
+      ]
+    },
+    "wireframe": {
+      "bytes": 244464,
+      "boundsMin": [
+        -0.6794915199279785,
+        0.0392460860311985,
+        -0.6202934980392456
+      ],
+      "boundsMax": [
+        0.6794915199279785,
+        0.6759554743766785,
+        0.7379703521728516
+      ]
+    }
+  },
+  "method": "preserve-layout",
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+}

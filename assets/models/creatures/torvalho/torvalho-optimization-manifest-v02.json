@@ -1,0 +1,309 @@
+{
+  "species": "torvalho",
+  "variant": "temperate-plains",
+  "version": "v02",
+  "source": "assets/models/creatures/torvalho/torvalho_animated_v01.glb",
+  "sourceStats": {
+    "bytes": 1413784,
+    "sha256": "2fb8e8363d3f9cf2ae419668ebc2c11288165cff71a45b367a08c79aea09021e",
+    "trianglesMeshDefinitions": 33186,
+    "trianglesDrawnPerInstance": 33186,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 31,
+    "estimatedDrawCalls": 31,
+    "materials": 33,
+    "nodes": 25,
+    "skins": 1,
+    "skinJointCounts": [
+      23
+    ],
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "calf_follow",
+      "idle",
+      "graze",
+      "chew",
+      "ruminate",
+      "sniff_air",
+      "watch",
+      "alert",
+      "alarm_bellow",
+      "herd_guard",
+      "stomp",
+      "charge_windup",
+      "charge",
+      "horn_sweep",
+      "head_toss",
+      "drink",
+      "rest",
+      "sleep",
+      "dust_bath",
+      "tail_swish",
+      "turn_left",
+      "turn_right",
+      "hurt",
+      "death"
+    ]
+  },
+  "existingPublishedLod1": {
+    "bytes": 607004,
+    "sha256": "980a1138b9de1fda13c3af6c5298a6e719c02a658e291813b9f84186fa869786",
+    "trianglesMeshDefinitions": 12438,
+    "trianglesDrawnPerInstance": 12438,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 31,
+    "estimatedDrawCalls": 31,
+    "materials": 33,
+    "nodes": 25,
+    "skins": 1,
+    "skinJointCounts": [
+      23
+    ],
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "calf_follow",
+      "idle",
+      "graze",
+      "chew",
+      "ruminate",
+      "sniff_air",
+      "watch",
+      "alert",
+      "alarm_bellow",
+      "herd_guard",
+      "stomp",
+      "charge_windup",
+      "charge",
+      "horn_sweep",
+      "head_toss",
+      "drink",
+      "rest",
+      "sleep",
+      "dust_bath",
+      "tail_swish",
+      "turn_left",
+      "turn_right",
+      "hurt",
+      "death"
+    ]
+  },
+  "animationSignature": "3dbcc39a7ed1569caeac4cc41d9127527ce71d9001b05c27ae12f878e0c3f39c",
+  "lods": [
+    {
+      "bytes": 929440,
+      "sha256": "ec3661ea6877fc477e04cebc66841ed7ce7ed14876016c8fffff3e7a8ae565e5",
+      "trianglesMeshDefinitions": 24968,
+      "trianglesDrawnPerInstance": 24968,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 31,
+      "estimatedDrawCalls": 31,
+      "materials": 33,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "calf_follow",
+        "idle",
+        "graze",
+        "chew",
+        "ruminate",
+        "sniff_air",
+        "watch",
+        "alert",
+        "alarm_bellow",
+        "herd_guard",
+        "stomp",
+        "charge_windup",
+        "charge",
+        "horn_sweep",
+        "head_toss",
+        "drink",
+        "rest",
+        "sleep",
+        "dust_bath",
+        "tail_swish",
+        "turn_left",
+        "turn_right",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 25000,
+      "animationSignature": "3dbcc39a7ed1569caeac4cc41d9127527ce71d9001b05c27ae12f878e0c3f39c",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 531688,
+      "sha256": "7e9c37f3fa88b2524c3013e94f0d2651642cd85883acdae66f706ac7389184d4",
+      "trianglesMeshDefinitions": 11977,
+      "trianglesDrawnPerInstance": 11977,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 31,
+      "estimatedDrawCalls": 31,
+      "materials": 33,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "calf_follow",
+        "idle",
+        "graze",
+        "chew",
+        "ruminate",
+        "sniff_air",
+        "watch",
+        "alert",
+        "alarm_bellow",
+        "herd_guard",
+        "stomp",
+        "charge_windup",
+        "charge",
+        "horn_sweep",
+        "head_toss",
+        "drink",
+        "rest",
+        "sleep",
+        "dust_bath",
+        "tail_swish",
+        "turn_left",
+        "turn_right",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 12000,
+      "animationSignature": "3dbcc39a7ed1569caeac4cc41d9127527ce71d9001b05c27ae12f878e0c3f39c",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 313484,
+      "sha256": "60132c6309d493bb92f5c2729b9ab3c4f99346a99abf0df4a5496078ec3ae4a3",
+      "trianglesMeshDefinitions": 4977,
+      "trianglesDrawnPerInstance": 4977,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 31,
+      "estimatedDrawCalls": 31,
+      "materials": 33,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "calf_follow",
+        "idle",
+        "graze",
+        "chew",
+        "ruminate",
+        "sniff_air",
+        "watch",
+        "alert",
+        "alarm_bellow",
+        "herd_guard",
+        "stomp",
+        "charge_windup",
+        "charge",
+        "horn_sweep",
+        "head_toss",
+        "drink",
+        "rest",
+        "sleep",
+        "dust_bath",
+        "tail_swish",
+        "turn_left",
+        "turn_right",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 5000,
+      "animationSignature": "3dbcc39a7ed1569caeac4cc41d9127527ce71d9001b05c27ae12f878e0c3f39c",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 392583,
+      "boundsMin": [
+        -0.8469192981719971,
+        -0.040733180940151215,
+        -1.5213589668273926
+      ],
+      "boundsMax": [
+        0.8463698625564575,
+        2.23767352104187,
+        1.8369133472442627
+      ]
+    },
+    "front": {
+      "bytes": 371818,
+      "boundsMin": [
+        -0.8469192981719971,
+        -0.040733180940151215,
+        -1.5213589668273926
+      ],
+      "boundsMax": [
+        0.8463698625564575,
+        2.23767352104187,
+        1.8369133472442627
+      ]
+    },
+    "three-quarter": {
+      "bytes": 114848,
+      "boundsMin": [
+        -0.8469192981719971,
+        -0.040733180940151215,
+        -1.5213589668273926
+      ],
+      "boundsMax": [
+        0.8463698625564575,
+        2.23767352104187,
+        1.8369133472442627
+      ]
+    },
+    "wireframe": {
+      "bytes": 245014,
+      "boundsMin": [
+        -0.8469192981719971,
+        -0.040733180940151215,
+        -1.5213589668273926
+      ],
+      "boundsMax": [
+        0.8463698625564575,
+        2.23767352104187,
+        1.8369133472442627
+      ]
+    }
+  },
+  "method": "preserve-layout",
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval",
+  "previewNotes": "Static GLB previews are real renders. Skinned action stills are intentionally omitted because the VTK preview renderer does not evaluate skin deformation; all 27 animation sampler arrays and the skin/joint structure were validated unchanged."
+}

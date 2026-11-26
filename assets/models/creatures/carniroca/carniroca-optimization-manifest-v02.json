@@ -1,0 +1,298 @@
+{
+  "species": "carniroca",
+  "variant": "temperate-plains",
+  "version": "v02",
+  "source": "assets/models/creatures/carniroca/carniroca_animated_v01.glb",
+  "sourceStats": {
+    "bytes": 810500,
+    "sha256": "a65c321d40f2e2668d1b0c12bbc70693de67aeb8ef067defda263df3b5ed7419",
+    "trianglesMeshDefinitions": 16704,
+    "trianglesDrawnPerInstance": 16704,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 18,
+    "estimatedDrawCalls": 18,
+    "materials": 20,
+    "nodes": 20,
+    "skins": 1,
+    "skinJointCounts": [
+      18
+    ],
+    "animations": [
+      "idle",
+      "breathing",
+      "walk",
+      "hop",
+      "takeoff",
+      "fly",
+      "glide",
+      "flap_hard",
+      "bank_left",
+      "bank_right",
+      "land",
+      "wing_fold",
+      "perch",
+      "scan",
+      "approach_carcass",
+      "peck_carrion",
+      "tear_meat",
+      "swallow",
+      "threaten",
+      "call",
+      "preen",
+      "rest",
+      "sleep",
+      "hurt",
+      "death"
+    ]
+  },
+  "existingPublishedLod1": {
+    "bytes": 500800,
+    "sha256": "6c9fcc4df74181a9a27d3584a7a2c94e2185126d27dd3fdc70d9d418cb13ba1e",
+    "trianglesMeshDefinitions": 8698,
+    "trianglesDrawnPerInstance": 8698,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 18,
+    "estimatedDrawCalls": 18,
+    "materials": 20,
+    "nodes": 20,
+    "skins": 1,
+    "skinJointCounts": [
+      18
+    ],
+    "animations": [
+      "idle",
+      "breathing",
+      "walk",
+      "hop",
+      "takeoff",
+      "fly",
+      "glide",
+      "flap_hard",
+      "bank_left",
+      "bank_right",
+      "land",
+      "wing_fold",
+      "perch",
+      "scan",
+      "approach_carcass",
+      "peck_carrion",
+      "tear_meat",
+      "swallow",
+      "threaten",
+      "call",
+      "preen",
+      "rest",
+      "sleep",
+      "hurt",
+      "death"
+    ]
+  },
+  "animationSignature": "2e842bebd379d8c5b4a8149da176b9d2ba66df0602259e1720890cd2003d2560",
+  "lods": [
+    {
+      "bytes": 568820,
+      "sha256": "bb074a3822150a9a8e817aa46b0deb40fa9c3f9f407049eb36175f907a45a278",
+      "trianglesMeshDefinitions": 12984,
+      "trianglesDrawnPerInstance": 12984,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 18,
+      "estimatedDrawCalls": 18,
+      "materials": 20,
+      "nodes": 20,
+      "skins": 1,
+      "skinJointCounts": [
+        18
+      ],
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "takeoff",
+        "fly",
+        "glide",
+        "flap_hard",
+        "bank_left",
+        "bank_right",
+        "land",
+        "wing_fold",
+        "perch",
+        "scan",
+        "approach_carcass",
+        "peck_carrion",
+        "tear_meat",
+        "swallow",
+        "threaten",
+        "call",
+        "preen",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 13000,
+      "animationSignature": "2e842bebd379d8c5b4a8149da176b9d2ba66df0602259e1720890cd2003d2560",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 368084,
+      "sha256": "e2f7e928702859440bdd480177c2c54dd8daa262631a86419ad9813ce957e3ef",
+      "trianglesMeshDefinitions": 6488,
+      "trianglesDrawnPerInstance": 6488,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 18,
+      "estimatedDrawCalls": 18,
+      "materials": 20,
+      "nodes": 20,
+      "skins": 1,
+      "skinJointCounts": [
+        18
+      ],
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "takeoff",
+        "fly",
+        "glide",
+        "flap_hard",
+        "bank_left",
+        "bank_right",
+        "land",
+        "wing_fold",
+        "perch",
+        "scan",
+        "approach_carcass",
+        "peck_carrion",
+        "tear_meat",
+        "swallow",
+        "threaten",
+        "call",
+        "preen",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 6500,
+      "animationSignature": "2e842bebd379d8c5b4a8149da176b9d2ba66df0602259e1720890cd2003d2560",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 245976,
+      "sha256": "a1a021d6bf775ca7b8672c6a320a83c8768af6cca0390b35aee2cce1ece3c785",
+      "trianglesMeshDefinitions": 2593,
+      "trianglesDrawnPerInstance": 2593,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 18,
+      "estimatedDrawCalls": 18,
+      "materials": 20,
+      "nodes": 20,
+      "skins": 1,
+      "skinJointCounts": [
+        18
+      ],
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "takeoff",
+        "fly",
+        "glide",
+        "flap_hard",
+        "bank_left",
+        "bank_right",
+        "land",
+        "wing_fold",
+        "perch",
+        "scan",
+        "approach_carcass",
+        "peck_carrion",
+        "tear_meat",
+        "swallow",
+        "threaten",
+        "call",
+        "preen",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 2600,
+      "animationSignature": "2e842bebd379d8c5b4a8149da176b9d2ba66df0602259e1720890cd2003d2560",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 235791,
+      "boundsMin": [
+        -1.0172909498214722,
+        0.09190679341554642,
+        -0.4500632584095001
+      ],
+      "boundsMax": [
+        1.0172909498214722,
+        1.1648354530334473,
+        0.6161180138587952
+      ]
+    },
+    "front": {
+      "bytes": 251354,
+      "boundsMin": [
+        -1.0172909498214722,
+        0.09190679341554642,
+        -0.4500632584095001
+      ],
+      "boundsMax": [
+        1.0172909498214722,
+        1.1648354530334473,
+        0.6161180138587952
+      ]
+    },
+    "three-quarter": {
+      "bytes": 75244,
+      "boundsMin": [
+        -1.0172909498214722,
+        0.09190679341554642,
+        -0.4500632584095001
+      ],
+      "boundsMax": [
+        1.0172909498214722,
+        1.1648354530334473,
+        0.6161180138587952
+      ]
+    },
+    "wireframe": {
+      "bytes": 133142,
+      "boundsMin": [
+        -1.0172909498214722,
+        0.09190679341554642,
+        -0.4500632584095001
+      ],
+      "boundsMax": [
+        1.0172909498214722,
+        1.1648354530334473,
+        0.6161180138587952
+      ]
+    }
+  },
+  "method": "preserve-layout",
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+}

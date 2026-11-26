@@ -1,0 +1,298 @@
+{
+  "species": "tufrilo",
+  "variant": "temperate-forest",
+  "version": "v02",
+  "source": "assets/models/creatures/tufrilo/tufrilo_animated_v01.glb",
+  "sourceStats": {
+    "bytes": 514724,
+    "sha256": "84a859bc559c6834848a139012e5b831bb19ea1cdec7eb4d8f64e0aaa2d7a492",
+    "trianglesMeshDefinitions": 10596,
+    "trianglesDrawnPerInstance": 10596,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 18,
+    "estimatedDrawCalls": 18,
+    "materials": 18,
+    "nodes": 22,
+    "skins": 1,
+    "skinJointCounts": [
+      20
+    ],
+    "animations": [
+      "idle",
+      "breathing",
+      "walk",
+      "hop",
+      "bound",
+      "sprint",
+      "turn_left",
+      "turn_right",
+      "sniff",
+      "forage",
+      "nibble",
+      "collect_seed",
+      "stash_seed",
+      "dig",
+      "look_around",
+      "alert_call",
+      "freeze",
+      "flee",
+      "hide",
+      "groom",
+      "drink",
+      "rest",
+      "sleep",
+      "hurt",
+      "death"
+    ]
+  },
+  "existingPublishedLod1": {
+    "bytes": 366768,
+    "sha256": "206c98d7e20196ec5f0af796c70bacedc46dda2664a7e55b55cb2388927a284e",
+    "trianglesMeshDefinitions": 6714,
+    "trianglesDrawnPerInstance": 6714,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 18,
+    "estimatedDrawCalls": 18,
+    "materials": 18,
+    "nodes": 22,
+    "skins": 1,
+    "skinJointCounts": [
+      20
+    ],
+    "animations": [
+      "idle",
+      "breathing",
+      "walk",
+      "hop",
+      "bound",
+      "sprint",
+      "turn_left",
+      "turn_right",
+      "sniff",
+      "forage",
+      "nibble",
+      "collect_seed",
+      "stash_seed",
+      "dig",
+      "look_around",
+      "alert_call",
+      "freeze",
+      "flee",
+      "hide",
+      "groom",
+      "drink",
+      "rest",
+      "sleep",
+      "hurt",
+      "death"
+    ]
+  },
+  "animationSignature": "85910d51d57dc56d03ab1779a9a4023170de20bdcab0af07d4ae120a9d8c3c73",
+  "lods": [
+    {
+      "bytes": 361848,
+      "sha256": "b3311ba229c17da622356550d9a148e8194a9f526464004753d1deeeb773225e",
+      "trianglesMeshDefinitions": 8286,
+      "trianglesDrawnPerInstance": 8286,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 18,
+      "estimatedDrawCalls": 18,
+      "materials": 18,
+      "nodes": 22,
+      "skins": 1,
+      "skinJointCounts": [
+        20
+      ],
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "bound",
+        "sprint",
+        "turn_left",
+        "turn_right",
+        "sniff",
+        "forage",
+        "nibble",
+        "collect_seed",
+        "stash_seed",
+        "dig",
+        "look_around",
+        "alert_call",
+        "freeze",
+        "flee",
+        "hide",
+        "groom",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 8300,
+      "animationSignature": "85910d51d57dc56d03ab1779a9a4023170de20bdcab0af07d4ae120a9d8c3c73",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 267420,
+      "sha256": "e21c5fdc6029b49487f5d3831f3cd3a62f940519c072e37abb9164f34754567a",
+      "trianglesMeshDefinitions": 5191,
+      "trianglesDrawnPerInstance": 5191,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 18,
+      "estimatedDrawCalls": 18,
+      "materials": 18,
+      "nodes": 22,
+      "skins": 1,
+      "skinJointCounts": [
+        20
+      ],
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "bound",
+        "sprint",
+        "turn_left",
+        "turn_right",
+        "sniff",
+        "forage",
+        "nibble",
+        "collect_seed",
+        "stash_seed",
+        "dig",
+        "look_around",
+        "alert_call",
+        "freeze",
+        "flee",
+        "hide",
+        "groom",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 5200,
+      "animationSignature": "85910d51d57dc56d03ab1779a9a4023170de20bdcab0af07d4ae120a9d8c3c73",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 170692,
+      "sha256": "1c9fb17d63270aab2a3e73a01360f802eaa9cba7ea4088a4456e34766f0555fa",
+      "trianglesMeshDefinitions": 1988,
+      "trianglesDrawnPerInstance": 1988,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 18,
+      "estimatedDrawCalls": 18,
+      "materials": 18,
+      "nodes": 22,
+      "skins": 1,
+      "skinJointCounts": [
+        20
+      ],
+      "animations": [
+        "idle",
+        "breathing",
+        "walk",
+        "hop",
+        "bound",
+        "sprint",
+        "turn_left",
+        "turn_right",
+        "sniff",
+        "forage",
+        "nibble",
+        "collect_seed",
+        "stash_seed",
+        "dig",
+        "look_around",
+        "alert_call",
+        "freeze",
+        "flee",
+        "hide",
+        "groom",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 2000,
+      "animationSignature": "85910d51d57dc56d03ab1779a9a4023170de20bdcab0af07d4ae120a9d8c3c73",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 125448,
+      "boundsMin": [
+        -0.22622482478618622,
+        0.00800000037997961,
+        -0.5111802816390991
+      ],
+      "boundsMax": [
+        0.22934404015541077,
+        0.6662360429763794,
+        0.37628525495529175
+      ]
+    },
+    "front": {
+      "bytes": 96594,
+      "boundsMin": [
+        -0.22622482478618622,
+        0.00800000037997961,
+        -0.5111802816390991
+      ],
+      "boundsMax": [
+        0.22934404015541077,
+        0.6662360429763794,
+        0.37628525495529175
+      ]
+    },
+    "three-quarter": {
+      "bytes": 139293,
+      "boundsMin": [
+        -0.22622482478618622,
+        0.00800000037997961,
+        -0.5111802816390991
+      ],
+      "boundsMax": [
+        0.22934404015541077,
+        0.6662360429763794,
+        0.37628525495529175
+      ]
+    },
+    "wireframe": {
+      "bytes": 352984,
+      "boundsMin": [
+        -0.22622482478618622,
+        0.00800000037997961,
+        -0.5111802816390991
+      ],
+      "boundsMax": [
+        0.22934404015541077,
+        0.6662360429763794,
+        0.37628525495529175
+      ]
+    }
+  },
+  "method": "preserve-layout",
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+}
