@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wildhaven Ecossistema Vivo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: palco 3D em tela cheia; painéis de guia de campo flutuando à esquerda (controles) e à direita (inspetor); faixa de eventos embaixo. No celular os painéis empilham abaixo do palco. */
+:root {
+  --chao: #e9e4d6;      /* fundo da página (terra clara) */
+  --painel: #fbf9f3ee;  /* painéis sobre o palco */
+  --tinta: #26281f;     /* texto principal */
+  --suave: #666a57;     /* texto secundário */
+  --linha: #d3ccb8;     /* bordas */
+  --acento: #b5651d;    /* ocre de savana: ações e destaques */
+  --acento-tinta: #fffaf2;
+  --ok: #4f7a3a; --alerta: #b8860b; --perigo: #a33a2a;
+  --barra: #e3dcc8;
+  --f-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-texto: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-dado: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --chao: #15170f; --painel: #1f2219ee; --tinta: #ebe8dc; --suave: #a8a991; --linha: #383b2c;
+    --acento: #e0913f; --acento-tinta: #1a1408; --ok: #8cc46b; --alerta: #e2b43f; --perigo: #e0715c; --barra: #34372a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --chao: #15170f; --painel: #1f2219ee; --tinta: #ebe8dc; --suave: #a8a991; --linha: #383b2c;
+  --acento: #e0913f; --acento-tinta: #1a1408; --ok: #8cc46b; --alerta: #e2b43f; --perigo: #e0715c; --barra: #34372a;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { margin: 0; background: var(--chao); color: var(--tinta); font: 14px/1.45 var(--f-texto); overflow: hidden; }
+#palco { position: fixed; inset: 0; }
+#palco canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.painel { position: absolute; background: var(--painel); border: 1px solid var(--linha); border-radius: 10px; backdrop-filter: blur(6px); padding: 12px 14px; box-sizing: border-box; }
+#controles { top: calc(12px + env(safe-area-inset-top, 0px)); left: max(16px, env(safe-area-inset-left, 0px)); width: 268px; display: grid; gap: 10px; max-height: calc(100% - 140px); overflow: auto; }
+#inspetor { top: calc(12px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); width: 300px; max-height: calc(100% - 140px); overflow: auto; }
+#faixa { left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 14px; padding-block: 10px; }
+h1 { font: 700 26px/1 var(--f-display); letter-spacing: .01em; margin: 0; text-wrap: balance; }
+h2 { font: 600 13px/1.2 var(--f-display); text-transform: uppercase; letter-spacing: .08em; color: var(--suave); margin: 0 0 6px; }
+.sub { color: var(--suave); font-size: 12px; margin: 2px 0 0; }
+label.campo { display: grid; gap: 3px; font-size: 12px; color: var(--suave); }
+select, input[type=number], input[type=search], input[type=text] { font: 13px var(--f-texto); color: var(--tinta); background: var(--chao); border: 1px solid var(--linha); border-radius: 6px; padding: 5px 7px; width: 100%; box-sizing: border-box; }
+.linha { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+button { font: 600 13px var(--f-texto); color: var(--tinta); background: var(--chao); border: 1px solid var(--linha); border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+button:hover { border-color: var(--acento); }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--acento); outline-offset: 1px; }
+button.primario { background: var(--acento); color: var(--acento-tinta); border-color: var(--acento); }
+.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 8px; font-size: 12.5px; }
+.checks label { display: flex; gap: 5px; align-items: center; }
+#relogio { font: 500 12px/1.4 var(--f-dado); font-variant-numeric: tabular-nums; color: var(--suave); }
+#aviso { font-size: 12px; color: var(--suave); }
+#aviso.erro { color: var(--perigo); }
+.ficha-nome { font: 700 22px/1 var(--f-display); }
+.chip { display: inline-block; font: 500 11px var(--f-dado); padding: 2px 7px; border-radius: 999px; background: var(--barra); color: var(--tinta); margin: 4px 4px 0 0; }
+.chip.perigo { background: var(--perigo); color: var(--acento-tinta); }
+.chip.ok { background: var(--ok); color: var(--acento-tinta); }
+.motivo { margin: 8px 0; padding: 7px 9px; border-left: 3px solid var(--acento); background: var(--chao); border-radius: 4px; font-size: 13px; }
+dl.vals { display: grid; grid-template-columns: 74px 1fr; gap: 3px 8px; margin: 6px 0; font-size: 12.5px; }
+dl.vals dt { color: var(--suave); }
+dl.vals dd { margin: 0; font-family: var(--f-dado); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.barra { height: 6px; border-radius: 3px; background: var(--barra); overflow: hidden; margin-top: 2px; }
+.barra > i { display: block; height: 100%; background: var(--acento); }
+.barra.vida > i { background: var(--ok); }
+.barra.fome > i { background: var(--alerta); }
+.barra.sede > i { background: #4f8fb0; }
+ul.mini { margin: 4px 0; padding-left: 16px; font-size: 12px; color: var(--suave); }
+#pop { font: 12px/1.5 var(--f-dado); font-variant-numeric: tabular-nums; }
+#eventos { list-style: none; margin: 0; padding: 0; font: 12px/1.45 var(--f-dado); max-height: 92px; overflow: auto; min-width: 0; }
+#eventos li { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#eventos .t { color: var(--suave); }
+#eventos .forte { color: var(--perigo); font-weight: 500; }
+.vazio { color: var(--suave); font-size: 13px; }
+#oficina { border-top: 1px solid var(--linha); padding-top: 8px; }
+#oficina summary { cursor: pointer; font: 600 15px var(--f-display); }
+#oficina .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+#oficina .grade .campo { min-width: 0; }
+#oficina select[size] { min-height: 65px; }
+#oficina .of-aviso { font-size: 11px; color: var(--suave); margin: 5px 0; }
+#oficina .of-aviso.erro { color: var(--perigo); }
+@media (max-width: 760px) {
+  body { overflow: auto; }
+  #palco { position: relative; height: 62vh; }
+  .painel { position: static; width: auto !important; max-height: none !important; margin: 10px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
+  #faixa { grid-template-columns: 1fr; margin-bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div id="palco"></div>
+<section id="controles" class="painel" aria-label="Controles da simulação">
+  <div>
+    <h1>Ecossistema vivo</h1>
+    <p class="sub">GLBs reais do Wildhaven · IA em <code>src/eco</code> · sem roteiro · <a href="laboratorio-varrisco.html" style="color:var(--acento)">bancada do Varrisco</a></p>
+  </div>
+  <label class="campo">Cenário <select id="cenario"></select></label>
+  <label class="campo">Semente
+    <span class="linha"><input id="semente" type="number" min="0" step="1" value="3"><button id="sortear" type="button" title="Sortear semente">Sortear</button></span>
+  </label>
+  <div class="linha">
+    <button id="tocar" class="primario" type="button">Iniciar</button>
+    <button id="reiniciar" type="button">Reiniciar</button>
+    <select id="velocidade" aria-label="Velocidade" style="width:auto">
+      <option value="0.5">0,5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option><option value="8">8×</option><option value="16">16×</option>
+    </select>
+  </div>
+  <div class="checks" role="group" aria-label="Camadas">
+    <label><input id="ver-percepcao" type="checkbox" checked> Percepção</label>
+    <label><input id="ver-memoria" type="checkbox" checked> Memória</label>
+    <label><input id="ver-territorios" type="checkbox" checked> Territórios</label>
+    <label><input id="ver-grupos" type="checkbox" checked> Grupos</label>
+    <label><input id="ver-subsolo" type="checkbox"> Inspeção subterrânea</label>
+    <label><input id="seguir" type="checkbox"> Seguir animal</label>
+  </div>
+  <div id="relogio">—</div>
+  <details id="oficina">
+    <summary>Oficina · catálogo de criaturas</summary>
+    <p class="of-aviso">Experimentos isolados, sem modificar fichas oficiais. A IA terrestre funciona; voo, cupins e natação na areia ainda exigem mecânicas próprias.</p>
+    <div id="of-status" class="of-aviso" role="status">Procurando GLBs do repositório…</div>
+    <label class="campo">Buscar no catálogo <input id="of-busca" type="search" placeholder="nome, espécie ou arquivo"></label>
+    <label class="campo">Modelo GLB <select id="of-catalogo" size="5" aria-label="GLBs do repositório"></select></label>
+    <label class="campo">Animais no experimento <select id="of-selecionada" size="3" aria-label="Animais adicionados ao experimento"></select></label>
+    <div class="grade">
+      <label class="campo">Nome experimental <input id="of-nome" type="text" maxlength="80"></label>
+      <label class="campo">Comportamento básico <select id="of-papel"><option value="herbivoro">Herbívoro</option><option value="carnivoro">Carnívoro</option></select></label>
+      <label class="campo">Perfil de locomoção
+        <select id="of-modo">
+          <option value="terrestre">Terrestre · operacional</option>
+          <option value="subterraneo_areia">Subterrâneo na areia · pendente</option>
+          <option value="voador">Voador · pendente</option>
+          <option value="aquatico">Aquático na água · pendente</option>
+        </select>
+      </label>
+      <label class="campo">Indivíduos <input id="of-quantidade" type="number" min="1" max="30" value="2"></label>
+      <label class="campo">Frente do GLB <select id="of-frente"><option>+X</option><option>-X</option><option>+Z</option><option>-Z</option></select></label>
+      <label class="campo">Massa (kg) <input id="of-massa" type="number" min="0.1" step="0.1" value="25"></label>
+      <label class="campo">Comprimento (m) <input id="of-comprimento" type="number" min="0.15" step="0.1" value="2"></label>
+      <label class="campo">Altura (m) <input id="of-altura" type="number" min="0.1" step="0.1" value="1"></label>
+      <label class="campo">Corrida (m/s) <input id="of-velocidade" type="number" min="0.2" step="0.1" value="6"></label>
+      <label class="campo">Fome/dia <input id="of-fome" type="number" min="0" step="1" value="55"></label>
+      <label class="campo">Sede/dia <input id="of-sede" type="number" min="0" step="1" value="70"></label>
+      <label class="campo">Vida máxima <input id="of-vida" type="number" min="1" step="1" value="100"></label>
+      <label class="campo">Visão (m) <input id="of-alcance" type="number" min="2" step="1" value="40"></label>
+    </div>
+    <div role="group" aria-label="Habilidades declaradas da criatura" class="of-habilidades">
+      <strong style="font-size:12px">Habilidades (contratos, não física pronta)</strong>
+      <div class="checks">
+        <label><input id="of-h-escavar" type="checkbox"> Escavar</label>
+        <label><input id="of-h-nadar_areia" type="checkbox"> Nadar na areia</label>
+        <label><input id="of-h-voar" type="checkbox"> Voar</label>
+        <label><input id="of-h-detectar_vibracoes" type="checkbox"> Sentir vibrações</label>
+        <label><input id="of-h-nadar_agua" type="checkbox"> Nadar na água</label>
+      </div>
+      <label class="linha" style="font-size:12px"><input id="of-proxy" type="checkbox"> Permitir proxy de superfície apenas para testes de necessidades (não simula habilidade especial)</label>
+    </div>
+    <label class="campo">Presa para testar perseguição (se carnívoro)<select id="of-presa"><option value="">Sem alvo definido</option></select></label>
+    <label class="linha" style="font-size:12px"><input id="of-ser-presa" type="checkbox"> Permitir que predadores existentes cacem este herbívoro</label>
+    <div class="linha">
+      <button id="of-salvar" type="button">Adicionar / salvar</button>
+      <button id="of-remover" type="button">Remover</button>
+      <button id="of-aplicar" class="primario" type="button">Aplicar e reiniciar</button>
+    </div>
+    <div class="linha">
+      <button id="of-auditar" type="button">Diagnosticar GLB real</button>
+    </div>
+    <pre id="of-relatorio" aria-live="polite" style="white-space:pre-wrap;overflow-wrap:anywhere;max-height:180px;overflow:auto;font:11px/1.5 var(--f-dado);background:var(--chao);padding:7px;border-radius:6px">Selecione um GLB e clique em Diagnosticar.</pre>
+    <section id="of-presets" aria-label="Presets experimentais" style="border-top:1px solid var(--linha);padding-top:8px;display:grid;gap:6px">
+      <h2>Presets de experimentos</h2>
+      <label class="campo">Nome do preset<input id="of-pre-nome" type="text" maxlength="80" placeholder="Ex.: Dunas · teste de perseguição"></label>
+      <label class="campo">Presets salvos<select id="of-pre-lista"><option value="">Selecione um preset</option></select></label>
+      <div class="linha">
+        <button id="of-pre-salvar" type="button">Salvar</button>
+        <button id="of-pre-carregar" type="button">Carregar</button>
+        <button id="of-pre-excluir" type="button">Excluir</button>
+        <button id="of-pre-exportar" type="button">Exportar JSON</button>
+        <button id="of-pre-importar" type="button">Importar JSON</button>
+        <input id="of-pre-arquivo" type="file" accept=".json,application/json" hidden>
+      </div>
+    </section>
+    <p class="of-aviso">As escolhas ficam salvas neste navegador. Só entram na simulação quando você clica em Aplicar e reiniciar. Na demo hospedada, novos GLBs dependem de exportação própria.</p>
+  </details>
+  <div id="aviso">Carregando modelos…</div>
+</section>
+<aside id="inspetor" class="painel" aria-label="Inspetor do animal">
+  <h2>Inspetor</h2>
+  <div id="ficha"><p class="vazio">Clique num animal para ver atividade, necessidades, ferimentos, alvo e o motivo da última decisão.</p></div>
+</aside>
+<footer id="faixa" class="painel">
+  <div style="min-width:0"><h2>População</h2><div id="pop">—</div></div>
+  <div style="min-width:0"><h2>Eventos recentes</h2><ul id="eventos"></ul></div>
+</footer>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/" } }</script>
+<script type="module" src="src/web3d/app-eco.js"></script>
+</body>
+</html>

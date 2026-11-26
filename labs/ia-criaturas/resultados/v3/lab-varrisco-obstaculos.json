@@ -1,0 +1,49 @@
+{
+ "teste": "obstaculos",
+ "nome": "Navegar entre rochas",
+ "semente": 7,
+ "tSim": 33.2,
+ "hash": "51cda177",
+ "passos": [
+  {
+   "rotulo": "atravessar o campo de rochas",
+   "t0": 0,
+   "t1": 10.1,
+   "ok": true
+  },
+  {
+   "rotulo": "voltar pelo meio",
+   "t0": 10.1,
+   "t1": 33.1,
+   "ok": true
+  }
+ ],
+ "passosOk": 2,
+ "passosTotal": 2,
+ "desvioFrenteMaxGraus": 1.48,
+ "desvioFrenteMedioGraus": 0.05,
+ "velocidadeMax": 4.22,
+ "quadrosGiroNoLugar": 12,
+ "clipes": [
+  "idle",
+  "walk",
+  "run",
+  "turn_left"
+ ],
+ "colisoes": 0,
+ "contatosObstaculo": 0,
+ "pernas": {
+  "quadros": 1998,
+  "amostrasApoio": 1520,
+  "deslizeApoioFK_ms": 0.801,
+  "deslizeApoioIK_ms": 0.082,
+  "erroAlturaFK_m": 0.074,
+  "erroAlturaIK_m": 0.003,
+  "liberacoes": 2
+ },
+ "eventos": {
+  "marca_territorio": 1
+ },
+ "registro": [],
+ "golpes": []
+}

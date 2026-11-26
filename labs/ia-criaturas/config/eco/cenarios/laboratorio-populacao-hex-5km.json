@@ -1,0 +1,35 @@
+{
+ "id": "laboratorio-populacao-hex-5km",
+ "nome": "População — hexágono de 5 km (savana, bosques de acácia)",
+ "descricao": "Hexágono oficial 52 inteiro, derivado do GLB real: 4320 x 4960 m em células de 8 m, 15,36 km² navegáveis, 0,56 km² de água, polígono do hexágono respeitado (fora dele é bloqueio, não chão plano). A população deste arquivo é só a amostra que abre no navegador; os níveis de teste são gerados por scripts/bench-populacao.mjs.",
+ "dt": 0.1,
+ "duracaoSeg": 1800,
+ "relogio": { "segundosPorDia": 900, "diaInicial": 30, "horaInicial": 8, "diasPorAno": 365 },
+ "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0.02, "chanceChuvaSeca": 0, "chanceIncendio": 0, "temperaturaC": 27 },
+ "decomposicao": {
+  "diasAteOssos": 1.5,
+  "ossosDias": 1,
+  "maxCarcacas": 40,
+  "necrofagos": {
+   "especie": "dunebrio",
+   "glb": "assets/models/creatures/detritivoros/dunebrio-optimized-v02-LOD0.glb",
+   "maxPorCarcaca": 24,
+   "comePorSegKg": 0.0012,
+   "chegadaPorSeg": 0.2
+  }
+ },
+ "cupinzeiros": [
+  { "id": "cupinzeiro-norte", "x": 1980, "y": 1520, "populacaoMax": 3200, "alturaM": 1.8 },
+  { "id": "cupinzeiro-centro", "x": 2240, "y": 2480, "populacao": 1200, "populacaoMax": 2600, "alturaM": 1.5 },
+  { "id": "cupinzeiro-sul", "x": 1860, "y": 3240, "populacaoMax": 2000, "alturaM": 1.3 }
+ ],
+ "terreno": { "tipo": "derivado", "arquivo": "config/eco/terrenos/hex52-savana-acacia-5km.json" },
+ "populacoes": [
+  { "especie": "velsari", "grupos": [{ "x": 2100, "y": 2400, "raio": 14, "adultos": 6, "filhotes": 2, "raioCasa": 400, "fome": [25, 70], "sede": [20, 70] }] },
+  { "especie": "tarruco", "individuos": [{ "id": "tarruco-1", "x": 2000, "y": 2300, "raioCasa": 350, "fome": [40, 70] }] },
+  { "especie": "cromatil", "individuos": [{ "id": "cromatil-1", "x": 2180, "y": 2520, "raioCasa": 300, "fome": [40, 70] }] },
+  { "especie": "varrisco", "individuos": [{ "id": "varrisco-1", "x": 2320, "y": 2260, "direcaoGraus": 200, "fome": [60, 90], "territorio": { "x": 2300, "y": 2300, "raio": 220 } }] },
+  { "especie": "carniroca", "individuos": [{ "id": "carniroca-1", "x": 2150, "y": 2150, "altitudeInicialM": 26, "fome": [65, 85] }] },
+  { "especie": "ferrunco", "individuos": [{ "id": "ferrunco-1", "x": 2220, "y": 2460, "fome": [55, 80] }] }
+ ]
+}

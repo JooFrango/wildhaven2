@@ -1,0 +1,17 @@
+{
+ "id": "serpaduna-a-locomocao",
+ "nome": "Serpáduna A — locomoção nas dunas",
+ "descricao": "EXPERIMENTAL. A Serpáduna de 14,13 m atravessa dunas abertas. O corpo não é um objeto rígido: a cabeça avança e os 70 segmentos seguem o rastro dela, com a onda lateral subindo da cabeça à cauda. Mostra corpo estendido, serpentear, curvas e subida/descida de duna.",
+ "dt": 0.1,
+ "duracaoSeg": 600,
+ "relogio": { "segundosPorDia": 900, "diaInicial": 30, "horaInicial": 18.5, "diasPorAno": 365 },
+ "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0, "chanceChuvaSeca": 0, "chanceIncendio": 0, "temperaturaC": 24 },
+ "terreno": {
+  "tipo": "procedural", "largura": 320, "profundidade": 260, "res": 1, "amplitude": 7, "capim": 8, "areia": true,
+  "rochas": [{ "x": 210, "y": 120, "raio": 4, "altura": 3.2 }, { "x": 120, "y": 190, "raio": 3, "altura": 2.4 }],
+  "arbustos": [{ "x": 160, "y": 150, "raio": 7, "ocultacao": 70, "alimento": 15 }]
+ },
+ "populacoes": [
+  { "especie": "serpaduna", "individuos": [{ "id": "serpaduna", "x": 50, "y": 130, "direcaoGraus": 0, "casa": { "x": 170, "y": 130, "raio": 130 }, "fome": [20, 30], "sede": [10, 20], "energia": [90, 98] }] }
+ ]
+}

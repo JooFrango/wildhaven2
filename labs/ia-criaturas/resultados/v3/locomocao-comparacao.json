@@ -1,0 +1,105 @@
+{
+ "antes": {
+  "rotulo": "antes",
+  "sementes": "1-20",
+  "segundos": 300,
+  "cenarios": {
+   "bebedouro": {
+    "colisoes": 8754,
+    "contatosObstaculo": 17622,
+    "sobreposicaoParesSeg": 2601,
+    "presos": 576,
+    "presosPorEstado": {
+     "indo_beber|caminho": 204,
+     "seguindo_mae|caminho": 168,
+     "procurando_mae|caminho": 9,
+     "vagando|caminho": 31,
+     "reagrupando|caminho": 7,
+     "seguindo_grupo|caminho": 8,
+     "patrulhando|caminho": 3,
+     "indo_beber|parcial": 107,
+     "reagrupando|parcial": 1,
+     "fugindo|caminho": 4,
+     "indo_pastar|caminho": 6,
+     "descansando|caminho": 5,
+     "fugindo|sem_caminho": 1,
+     "indo_carcaca|caminho": 22
+    },
+    "buscasCaminho": 11555,
+    "predacoes": 14,
+    "oportunidadesFuga": 0,
+    "escapesDuranteDisputa": 3,
+    "ms": 26701
+   },
+   "bebedouro-real": {
+    "colisoes": 0,
+    "contatosObstaculo": 3,
+    "sobreposicaoParesSeg": 1329.5,
+    "presos": 706,
+    "presosPorEstado": {
+     "vagando|caminho": 18,
+     "seguindo_mae|caminho": 338,
+     "indo_beber|caminho": 347,
+     "fugindo|sem_caminho": 1,
+     "procurando_mae|caminho": 1,
+     "seguindo_grupo|caminho": 1
+    },
+    "buscasCaminho": 317,
+    "predacoes": 5,
+    "oportunidadesFuga": 0,
+    "escapesDuranteDisputa": 0,
+    "ms": 14192
+   }
+  }
+ },
+ "depois": {
+  "rotulo": "depois",
+  "sementes": "1-20",
+  "segundos": 300,
+  "cenarios": {
+   "bebedouro": {
+    "colisoes": 50,
+    "contatosObstaculo": 2539,
+    "sobreposicaoParesSeg": 1.3,
+    "presos": 108,
+    "presosPorEstado": {
+     "indo_beber|caminho": 15,
+     "reagrupando|caminho": 3,
+     "fugindo|caminho": 6,
+     "seguindo_mae|caminho": 10,
+     "vagando|caminho": 17,
+     "indo_beber|parcial": 31,
+     "fugindo|parcial": 7,
+     "perseguindo|parcial": 14,
+     "patrulhando|caminho": 1,
+     "fugindo|sem_caminho": 2,
+     "seguindo_grupo|caminho": 1,
+     "descansando|caminho": 1
+    },
+    "buscasCaminho": 10781,
+    "predacoes": 4,
+    "oportunidadesFuga": 4,
+    "escapesDuranteDisputa": 10,
+    "ms": 45088
+   },
+   "bebedouro-real": {
+    "colisoes": 0,
+    "contatosObstaculo": 2,
+    "sobreposicaoParesSeg": 0,
+    "presos": 18,
+    "presosPorEstado": {
+     "vagando|caminho": 8,
+     "seguindo_mae|caminho": 6,
+     "seguindo_grupo|caminho": 2,
+     "patrulhando|caminho": 1,
+     "cumprimentando|caminho": 1
+    },
+    "buscasCaminho": 259,
+    "predacoes": 2,
+    "oportunidadesFuga": 0,
+    "escapesDuranteDisputa": 0,
+    "ms": 13295
+   }
+  }
+ }
+}

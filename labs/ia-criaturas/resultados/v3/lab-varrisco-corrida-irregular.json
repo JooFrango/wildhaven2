@@ -1,0 +1,49 @@
+{
+ "teste": "corrida-irregular",
+ "nome": "Correr em terreno irregular",
+ "semente": 7,
+ "tSim": 10.2,
+ "hash": "c9dbfe89",
+ "passos": [
+  {
+   "rotulo": "acelerar e correr",
+   "t0": 0,
+   "t1": 9.2,
+   "ok": true
+  },
+  {
+   "rotulo": "desacelerar",
+   "t0": 9.2,
+   "t1": 10.1,
+   "ok": true
+  }
+ ],
+ "passosOk": 2,
+ "passosTotal": 2,
+ "desvioFrenteMaxGraus": 1.65,
+ "desvioFrenteMedioGraus": 0.07,
+ "velocidadeMax": 13.07,
+ "quadrosGiroNoLugar": 6,
+ "clipes": [
+  "idle",
+  "walk",
+  "run",
+  "turn_left"
+ ],
+ "colisoes": 0,
+ "contatosObstaculo": 0,
+ "pernas": {
+  "quadros": 618,
+  "amostrasApoio": 411,
+  "deslizeApoioFK_ms": 2.816,
+  "deslizeApoioIK_ms": 1.454,
+  "erroAlturaFK_m": 0.117,
+  "erroAlturaIK_m": 0.021,
+  "liberacoes": 15
+ },
+ "eventos": {
+  "marca_territorio": 1
+ },
+ "registro": [],
+ "golpes": []
+}

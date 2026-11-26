@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laboratório IA Criaturas</title>
+  <link rel="stylesheet" href="src/web/estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Laboratório de IA das criaturas</h1>
+    <span class="sub">Wildhaven · independente da Alpha · mesma lógica do simulador sem interface</span>
+  </header>
+
+  <main class="layout">
+    <section class="painel controles" aria-label="Controles">
+      <label>Cenário
+        <select id="cenario"></select>
+      </label>
+      <p id="descricao-cenario" class="descricao"></p>
+      <label>Semente
+        <span class="linha">
+          <input id="semente" type="number" min="0" step="1" value="1">
+          <button id="aleatoria" type="button" title="Sortear semente">🎲</button>
+        </span>
+      </label>
+      <div class="linha botoes">
+        <button id="tocar" type="button" class="primario">▶ Iniciar</button>
+        <button id="passo" type="button" title="Avançar um passo (0,1 s)">+1 passo</button>
+        <button id="reiniciar" type="button">↺ Reiniciar</button>
+      </div>
+      <label>Velocidade
+        <select id="velocidade">
+          <option value="0.25">0,25×</option>
+          <option value="0.5">0,5×</option>
+          <option value="1" selected>1×</option>
+          <option value="2">2×</option>
+          <option value="4">4×</option>
+          <option value="8">8×</option>
+          <option value="16">16×</option>
+        </select>
+      </label>
+      <fieldset>
+        <legend>Visualizar</legend>
+        <label class="check"><input id="ver-percepcao" type="checkbox" checked> Alcance de percepção</label>
+        <label class="check"><input id="ver-memoria" type="checkbox" checked> Última posição vista (memória)</label>
+        <label class="check"><input id="ver-contatos" type="checkbox" checked> Linhas de contato</label>
+        <label class="check"><input id="ver-rastro" type="checkbox"> Rastro</label>
+        <label class="check"><input id="ver-destino" type="checkbox" checked> Destino / waypoint</label>
+      </fieldset>
+      <div class="status" id="status"></div>
+      <div class="linha botoes">
+        <button id="captura" type="button">📷 Salvar PNG</button>
+        <button id="copiar-link" type="button">🔗 Copiar link</button>
+      </div>
+    </section>
+
+    <section class="palco" aria-label="Terreno de teste">
+      <canvas id="tela" width="900" height="600"></canvas>
+      <p class="dica">Clique num animal para inspecionar. Atalhos: espaço = iniciar/pausar, → = passo, R = reiniciar.</p>
+    </section>
+
+    <section class="painel inspetor" aria-label="Inspetor">
+      <h2>Inspetor</h2>
+      <div id="inspetor"><p class="vazio">Nenhum animal selecionado.</p></div>
+      <h2>Eventos</h2>
+      <ol id="eventos" class="eventos" reversed></ol>
+    </section>
+  </main>
+
+  <script type="module" src="src/web/app.js"></script>
+</body>
+</html>

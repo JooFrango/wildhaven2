@@ -113,7 +113,8 @@
       "esconder",
       "congelar",
       "fugir"
-    ]
+    ],
+    "raioTerritorioM": 180
   },
   "combate": {
     "protecao": {

@@ -1,0 +1,146 @@
+{
+ "cenario": "travessia-divisa",
+ "semente": 5,
+ "tSimulado": 307,
+ "hash": "2e9b4745",
+ "pecas": [
+  "SE",
+  "X7"
+ ],
+ "auditoriaDivisa": {
+  "pontos": 779,
+  "semChao": 0,
+  "resgatados": 19,
+  "distanciasSemChao": [],
+  "maxDifGradeM": 0.0085,
+  "maxDegrauM": 0.15,
+  "ondeDegrau": {
+   "x": 362,
+   "y": 380
+  },
+  "divisaLocal": 400.027,
+  "pecas": [
+   "SE",
+   "X7"
+  ],
+  "medDifGradeM": 0.0005
+ },
+ "notaAuditoria": "Raios verticais sobre a malha real das peças, 40 m de cada lado da divisa. `resgatados` = raios que caíram exatamente na linha de encontro das duas malhas e precisaram de 1 mm de desvio; `semChao` = buraco de verdade.",
+ "pernas": [
+  {
+   "id": "velsari-7",
+   "especie": "velsari",
+   "amostrasApoio": 1162,
+   "deslizeApoioFK_ms": 0,
+   "deslizeApoioIK_ms": 0,
+   "erroAlturaIK_m": 0.003,
+   "liberacoes": 0
+  },
+  {
+   "id": "varrisco-divisa",
+   "especie": "varrisco",
+   "amostrasApoio": 581,
+   "deslizeApoioFK_ms": 0,
+   "deslizeApoioIK_ms": 0,
+   "erroAlturaIK_m": 0.05,
+   "liberacoes": 0
+  }
+ ],
+ "clipes": [
+  {
+   "id": "velsari-1",
+   "especie": "velsari",
+   "desvioGraus": 0,
+   "clipe": "run",
+   "timeScale": 0.72,
+   "deslize": 0
+  },
+  {
+   "id": "velsari-2",
+   "especie": "velsari",
+   "desvioGraus": 0,
+   "clipe": "run",
+   "timeScale": 0.71,
+   "deslize": 0
+  },
+  {
+   "id": "velsari-3",
+   "especie": "velsari",
+   "desvioGraus": 0,
+   "clipe": "run",
+   "timeScale": 0.71,
+   "deslize": 0
+  },
+  {
+   "id": "velsari-4",
+   "especie": "velsari",
+   "desvioGraus": 0,
+   "clipe": "run",
+   "timeScale": 0.64,
+   "deslize": 0
+  },
+  {
+   "id": "velsari-5",
+   "especie": "velsari",
+   "desvioGraus": 0.03,
+   "clipe": "run",
+   "timeScale": 0.73,
+   "deslize": 0
+  },
+  {
+   "id": "velsari-6",
+   "especie": "velsari",
+   "desvioGraus": 0,
+   "clipe": "idle",
+   "timeScale": 1,
+   "deslize": 0
+  },
+  {
+   "id": "velsari-7",
+   "especie": "velsari",
+   "desvioGraus": 0.28,
+   "clipe": "flee",
+   "timeScale": 6,
+   "deslize": 2.98
+  },
+  {
+   "id": "varrisco-divisa",
+   "especie": "varrisco",
+   "desvioGraus": 0.25,
+   "clipe": "run",
+   "timeScale": 2.06,
+   "deslize": 0
+  },
+  {
+   "id": "tarruco-contrafortes",
+   "especie": "tarruco",
+   "desvioGraus": 0,
+   "clipe": "trot",
+   "timeScale": 1.25,
+   "deslize": 0
+  }
+ ],
+ "tetoTimeScale": {
+  "antes": 2.5,
+  "depois": 6,
+  "medidoVelsari1_210s": {
+   "antes": {
+    "deslizeApoioIK_ms": 0.229,
+    "liberacoes": 181,
+    "deslizeCorpoClipe_ms": 8.09,
+    "timeScale": 2.5
+   },
+   "depois": {
+    "deslizeApoioIK_ms": 0.191,
+    "liberacoes": 131,
+    "deslizeCorpoClipe_ms": 0,
+    "timeScale": 5.34
+   }
+  },
+  "nota": "Mesma semente, mesmos 210 s, câmera seguindo velsari-1 (IK ligado). `deslizeCorpoClipe` é |velocidade − velocidade natural do clipe × timeScale| no instante de fuga a 9,0 m/s."
+ },
+ "sombras": {
+  "antes": "nenhuma sombra projetada sobre a malha das peças",
+  "depois": "tapete de sombra (src/web3d/cena.js) recebe a sombra; medido com planos de teste: receptor de 14 m recebe, de 5000 m não"
+ }
+}

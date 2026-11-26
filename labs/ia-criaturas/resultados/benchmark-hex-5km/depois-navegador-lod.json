@@ -1,0 +1,125 @@
+{
+ "cenario": "laboratorio-populacao-hex-5km",
+ "semente": "1",
+ "quadros": 60,
+ "linhas": [
+  {
+   "populacao": 100,
+   "msCarga": 25175,
+   "enquadrado": {
+    "cx": 1992,
+    "cy": 2888,
+    "raio": 2045
+   },
+   "semLod": {
+    "animais": 99,
+    "visiveis": 99,
+    "animadosNoQuadro": 99,
+    "quadros": 60,
+    "msSim": 6.2,
+    "msAnimacaoIK": 57.36,
+    "msRender": 68.02,
+    "msTotal": 131.58,
+    "fpsEstimado": 7.6,
+    "msQuadro": {
+     "p50": 122.2,
+     "p95": 230.6,
+     "p99": 318.3,
+     "pior": 318.3
+    },
+    "fps1pctLow": 3.1,
+    "drawCalls": 9,
+    "triangulos": 2122092,
+    "geometrias": 44,
+    "texturas": 1,
+    "malhas": 3073,
+    "malhasComSkin": 430,
+    "memoriaMB": 189.8
+   },
+   "animais": 99,
+   "visiveis": 99,
+   "animadosNoQuadro": 0,
+   "quadros": 60,
+   "msSim": 4.58,
+   "msAnimacaoIK": 1.4,
+   "msRender": 62.06,
+   "msTotal": 68.04,
+   "fpsEstimado": 14.7,
+   "msQuadro": {
+    "p50": 61.5,
+    "p95": 130.5,
+    "p99": 144.5,
+    "pior": 144.5
+   },
+   "fps1pctLow": 6.9,
+   "drawCalls": 9,
+   "triangulos": 2122092,
+   "geometrias": 44,
+   "texturas": 1,
+   "malhas": 3073,
+   "malhasComSkin": 430,
+   "memoriaMB": 189.8,
+   "erros": [],
+   "nErros": 0
+  },
+  {
+   "populacao": 400,
+   "msCarga": 9342,
+   "enquadrado": {
+    "cx": 2091,
+    "cy": 2469,
+    "raio": 2054
+   },
+   "semLod": {
+    "animais": 400,
+    "visiveis": 400,
+    "animadosNoQuadro": 400,
+    "quadros": 60,
+    "msSim": 4.8,
+    "msAnimacaoIK": 63.66,
+    "msRender": 2215.02,
+    "msTotal": 2283.49,
+    "fpsEstimado": 0.4,
+    "msQuadro": {
+     "p50": 139,
+     "p95": 2020.8,
+     "p99": 112391.3,
+     "pior": 112391.3
+    },
+    "fps1pctLow": 0,
+    "drawCalls": 266,
+    "triangulos": 2178213,
+    "geometrias": 327,
+    "texturas": 84,
+    "malhas": 12403,
+    "malhasComSkin": 1720,
+    "memoriaMB": 256.5
+   },
+   "animais": 400,
+   "visiveis": 400,
+   "animadosNoQuadro": 5,
+   "quadros": 60,
+   "msSim": 4.82,
+   "msAnimacaoIK": 2.69,
+   "msRender": 2124.04,
+   "msTotal": 2131.55,
+   "fpsEstimado": 0.5,
+   "msQuadro": {
+    "p50": 80.5,
+    "p95": 2129.4,
+    "p99": 109407.6,
+    "pior": 109407.6
+   },
+   "fps1pctLow": 0,
+   "drawCalls": 266,
+   "triangulos": 2178213,
+   "geometrias": 327,
+   "texturas": 84,
+   "malhas": 12403,
+   "malhasComSkin": 1720,
+   "memoriaMB": 256.5,
+   "erros": [],
+   "nErros": 0
+  }
+ ]
+}

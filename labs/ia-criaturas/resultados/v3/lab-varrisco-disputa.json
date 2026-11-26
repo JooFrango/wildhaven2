@@ -1,0 +1,50 @@
+{
+ "teste": "disputa",
+ "nome": "Dois Varriscos e uma carcaça (IA livre)",
+ "semente": 7,
+ "tSim": 70,
+ "hash": "c20eb404",
+ "passos": [],
+ "passosOk": 0,
+ "passosTotal": 0,
+ "desvioFrenteMaxGraus": 3.73,
+ "desvioFrenteMedioGraus": 0.1,
+ "velocidadeMax": 4.22,
+ "quadrosGiroNoLugar": 42,
+ "clipes": [
+  "idle",
+  "walk",
+  "feed",
+  "turn_left",
+  "turn_right",
+  "alert",
+  "run"
+ ],
+ "colisoes": 0,
+ "contatosObstaculo": 0,
+ "pernas": {
+  "quadros": 4206,
+  "amostrasApoio": 3387,
+  "deslizeApoioFK_ms": 0.622,
+  "deslizeApoioIK_ms": 0.073,
+  "erroAlturaFK_m": 0.095,
+  "erroAlturaIK_m": 0.006,
+  "liberacoes": 5
+ },
+ "eventos": {
+  "marca_territorio": 4,
+  "abandona_carcaca": 1,
+  "conflito_inicio": 1,
+  "conflito_fim": 1,
+  "territorio_perdido": 1
+ },
+ "registro": [],
+ "golpes": [
+  {
+   "t": 56.2,
+   "tipo": "conflito_fim",
+   "id": "v",
+   "motivo": "perdeu_contato"
+  }
+ ]
+}

@@ -1,0 +1,71 @@
+{
+ "id": "ia-base-v1-integracao",
+ "nome": "IA Base V1 — integração (savana)",
+ "descricao": "Teste integrado do núcleo. Reúne herbívoros, carnívoros, presas pequenas, um grupo social, voadores, veneno, camuflagem óptica, cupinzeiros, clima adverso e o ciclo da carcaça no mesmo mundo. Nenhuma capacidade nova: só as que as fichas já declaram. O subsolo e a serpente são testados no cenário de dunas, que tem volume de areia; forçá-los aqui seria bioma incompatível.",
+ "dt": 0.1,
+ "duracaoSeg": 1200,
+ "relogio": { "segundosPorDia": 600, "diaInicial": 30, "horaInicial": 7.5, "diasPorAno": 365 },
+ "clima": {
+  "fracaoChuvosa": 0.4,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 28,
+  "eventos": [{ "tipo": "chuva_intensa", "inicioSeg": 120, "duracaoSeg": 180, "intensidade": 0.9 }]
+ },
+ "decomposicao": {
+  "diasAteOssos": 0.8,
+  "ossosDias": 0.6,
+  "maxCarcacas": 8,
+  "necrofagos": {
+   "especie": "dunebrio",
+   "glb": "assets/models/creatures/detritivoros/dunebrio-optimized-v02-LOD0.glb",
+   "maxPorCarcaca": 24,
+   "comePorSegKg": 0.0012,
+   "chegadaPorSeg": 0.2
+  }
+ },
+ "cupinzeiros": [
+  { "id": "cupinzeiro-oeste", "x": 60, "y": 150, "populacaoMax": 3000, "alturaM": 1.7 },
+  { "id": "cupinzeiro-leste", "x": 190, "y": 70, "populacao": 900, "populacaoMax": 1800, "alturaM": 1.2 }
+ ],
+ "terreno": { "tipo": "derivado", "arquivo": "config/eco/terrenos/savana-bosques-acacia-rio.json" },
+ "populacoes": [
+  { "especie": "velsari", "grupos": [{ "x": 130, "y": 128, "raio": 5, "adultos": 6, "filhotes": 2, "raioCasa": 60, "fome": [25, 70], "sede": [35, 80] }] },
+  { "especie": "tarruco", "individuos": [
+   { "id": "tarruco-arbusto", "x": 76, "y": 116, "raioCasa": 30, "fome": 55, "sede": [20, 50] },
+   { "id": "tarruco-capim", "x": 200, "y": 170, "raioCasa": 30, "fome": 45, "sede": [30, 60] }
+  ] },
+  { "especie": "cromatil", "individuos": [
+   { "id": "cromatil-arbusto", "x": 34, "y": 104, "raioCasa": 20, "fome": 40 },
+   { "id": "cromatil-margem", "x": 150, "y": 110, "raioCasa": 20, "fome": 55 }
+  ] },
+  { "especie": "folhisco", "individuos": [
+   { "id": "folhisco-norte", "x": 92, "y": 62, "raioCasa": 18, "fome": [35, 60] },
+   { "id": "folhisco-sul", "x": 118, "y": 152, "raioCasa": 18, "fome": [30, 55] }
+  ] },
+  { "especie": "varrisco", "individuos": [
+   { "id": "varrisco-territorio", "x": 25, "y": 40, "direcaoGraus": 30, "fome": [60, 90], "energia": [70, 100], "sexo": "M", "territorio": { "x": 70, "y": 90, "raio": 120 } }
+  ] },
+  { "especie": "boscaranha", "individuos": [
+   { "id": "boscaranha-emboscada", "x": 112, "y": 146, "direcaoGraus": 200, "fome": [70, 88], "sede": [10, 25], "energia": [85, 98] }
+  ] },
+  { "especie": "proto-cacador-camuflado", "individuos": [
+   { "id": "camuflado", "x": 206, "y": 60, "direcaoGraus": 190, "fome": [68, 86], "sede": [10, 25], "energia": [88, 98] }
+  ] },
+  { "especie": "carniroca", "individuos": [
+   { "id": "carniroca-1", "x": 150, "y": 36, "direcaoGraus": 180, "altitudeInicialM": 24, "fome": [70, 85], "sede": [5, 15], "energia": [90, 98] },
+   { "id": "carniroca-2", "x": 166, "y": 44, "direcaoGraus": 180, "altitudeInicialM": 28, "fome": [70, 85], "sede": [5, 15], "energia": [90, 98] }
+  ] },
+  { "especie": "pica-termita", "individuos": [
+   { "id": "pica-termita-1", "x": 62, "y": 142, "direcaoGraus": 90, "altitudeInicialM": 12, "fome": [60, 80], "sede": [10, 25], "energia": [88, 98] }
+  ] },
+  { "especie": "ferrunco", "individuos": [
+   { "id": "ferrunco-1", "x": 186, "y": 78, "direcaoGraus": 250, "fome": [60, 82], "sede": [20, 45], "energia": [85, 98] }
+  ] },
+  { "especie": "frutavil", "individuos": [
+   { "id": "frutavil-1", "x": 142, "y": 118, "direcaoGraus": 70, "raioCasa": 25, "fome": [40, 65], "sede": [25, 55] },
+   { "id": "frutavil-2", "x": 148, "y": 124, "direcaoGraus": 110, "raioCasa": 25, "fome": [35, 60], "sede": [20, 50] }
+  ] }
+ ]
+}

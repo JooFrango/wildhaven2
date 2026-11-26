@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wildhaven — Oficina de Animações V4</title>
+<style>
+:root{font-family:system-ui,sans-serif;color-scheme:dark;background:#131710;color:#e9ede0}
+*{box-sizing:border-box}body{margin:0}#scene{position:fixed;inset:0}#scene canvas{display:block}
+.panel{position:fixed;z-index:2;top:18px;left:18px;width:min(350px,calc(100vw - 36px));padding:18px;border:1px solid #586145;background:#202820ef;border-radius:14px;box-shadow:0 10px 35px #0005}
+h1{font-size:21px;margin:0 0 7px}p{font-size:12px;line-height:1.5;color:#afbcaa}label{display:block;font-size:12px;margin:12px 0 5px}select,button,input{background:#334033;color:white;border:1px solid #70806a;border-radius:7px;padding:9px;font:inherit;width:100%}button{cursor:pointer}.btns{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}.btns button{font-size:13px}input{padding:0}.status{font-size:12px;margin-top:10px;min-height:30px;color:#d2e5ae}#stats{white-space:pre-wrap;font:11px/1.5 ui-monospace,monospace;color:#b6bfa8}@media(max-width:720px){.panel{width:min(310px,calc(100vw - 20px));padding:12px;top:10px;left:10px;max-height:66vh;overflow:auto}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head><body><div id="scene"></div><section class="panel">
+<h1>Oficina de Animações V4</h1>
+<p>Inspeção visual dos GLBs reais derivados. Os modelos originais foram preservados. Os novos clipes são protótipos e ainda precisam de aprovação artística.</p>
+<label for="creature">Criatura</label><select id="creature"></select>
+<label for="clip">Animação</label><select id="clip"></select>
+<div class="btns"><button id="toggle">Pausar</button><button id="shot">Salvar captura</button></div>
+<label for="speed">Velocidade: <span id="speedText">1,0×</span></label><input id="speed" type="range" min="0.1" max="2" step="0.1" value="1">
+<div id="status" class="status">Carregando biblioteca…</div><div id="stats"></div>
+</section>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const catalog = await (await fetch('./animacoes/v4/MANIFEST.json')).json();
+const models = catalog.models;
+const sel=document.querySelector('#creature'),clipSel=document.querySelector('#clip');
+const status=document.querySelector('#status'),stats=document.querySelector('#stats');
+for(const m of models){const o=document.createElement('option');o.value=m.id;o.textContent=m.title;sel.append(o)}
+const scene=new THREE.Scene();scene.background=new THREE.Color('#222d25');scene.fog=new THREE.Fog('#222d25',30,70);
+const camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,.02,800);
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.outputColorSpace=THREE.SRGBColorSpace;document.querySelector('#scene').append(renderer.domElement);
+const orbit=new OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;
+scene.add(new THREE.HemisphereLight('#f3f5e8','#708167',2.4));
+const sun=new THREE.DirectionalLight('#fff4d0',3.1);sun.position.set(4,10,5);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-15;sun.shadow.camera.right=15;sun.shadow.camera.top=15;sun.shadow.camera.bottom=-15;scene.add(sun);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(300,300),new THREE.MeshStandardMaterial({color:'#52644c',roughness:.94}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+const grid=new THREE.GridHelper(30,30,0x657663,0x354939);grid.position.y=.002;scene.add(grid);
+const loader=new GLTFLoader(),clock=new THREE.Clock();
+let current=null,mixer=null,active=null,playing=true,clips=[],currentName='';
+function playClip(name){
+ if(!mixer)return;
+ const target=clips.find(x=>x.name===name);
+ if(!target)return;
+ if(active)active.stop();
+ active=mixer.clipAction(target);active.reset().setLoop(THREE.LoopRepeat).play();currentName=name;
+ stats.textContent='Clipes: '+clips.length+' · Duração: '+target.duration.toFixed(2)+'s\nNovo clipe V4: '+String(name.endsWith('_v4'))+'\nA cena mostra animação isolada; IA/combate não são simulados aqui.';
+}
+async function load(id){
+ const item=models.find(m=>m.id===id);if(!item)return;
+ status.textContent='Carregando '+item.title+'…';playing=true;document.querySelector('#toggle').textContent='Pausar';
+ if(current){scene.remove(current);current.traverse(o=>{if(o.isSkinnedMesh)o.skeleton?.dispose?.()});current=null}
+ mixer?.stopAllAction();mixer=null;clips=[];
+ try{
+ const gltf=await loader.loadAsync(item.file);
+ current=gltf.scene;scene.add(current);current.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true}});
+ const box=new THREE.Box3().setFromObject(current),size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());
+ current.position.sub(new THREE.Vector3(center.x,box.min.y,center.z));
+ const scale=Math.max(size.x,size.y,size.z,1),dist=scale*2.4+1;
+ camera.position.set(dist*.75,scale*.8+dist*.2,dist*.75);orbit.target.set(0,size.y*.45,0);orbit.update();sun.position.set(dist*.4,scale*1.4+3,dist*.5);
+ mixer=new THREE.AnimationMixer(current);clips=gltf.animations;clipSel.innerHTML='';
+ for(const clip of clips){const o=document.createElement('option');o.value=clip.name;o.textContent=(clip.name.endsWith('_v4')?'★ ':'')+clip.name;clipSel.append(o)}
+ const first=clips.find(x=>x.name==='combat_idle_v4'||x.name==='defensive_idle_v4')??clips[0];clipSel.value=first.name;playClip(first.name);
+ status.textContent='Modelo carregado: '+item.title+' · '+clips.filter(x=>x.name.endsWith('_v4')).length+' clipes V4 novos.';
+ }catch(e){console.error(e);status.textContent='Falha ao carregar: '+(e.message||e);}
+}
+sel.addEventListener('change',()=>load(sel.value));clipSel.addEventListener('change',()=>playClip(clipSel.value));
+document.querySelector('#toggle').addEventListener('click',()=>{playing=!playing;document.querySelector('#toggle').textContent=playing?'Pausar':'Reproduzir';});
+document.querySelector('#shot').addEventListener('click',()=>{const a=document.createElement('a');a.download='wildhaven-'+sel.value+'-'+currentName+'.png';a.href=renderer.domElement.toDataURL('image/png');a.click()});
+document.querySelector('#speed').addEventListener('input',e=>document.querySelector('#speedText').textContent=Number(e.target.value).toFixed(1).replace('.',',')+'×');
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+function frame(){requestAnimationFrame(frame);let dt=Math.min(.05,clock.getDelta());if(playing&&mixer)mixer.update(dt*Number(document.querySelector('#speed').value));orbit.update();renderer.render(scene,camera);}
+load(models[0].id);frame();
+</script></body></html>

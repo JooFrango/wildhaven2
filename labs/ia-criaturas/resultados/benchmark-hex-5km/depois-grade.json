@@ -1,0 +1,301 @@
+{
+ "cenario": "laboratorio-populacao-hex-5km",
+ "modo": "ecologico",
+ "segundos": 120,
+ "linhas": [
+  {
+   "pedido": 25,
+   "criados": 27,
+   "vivos": 27,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 1043.7,
+   "passo": {
+    "p50": 1.16,
+    "p95": 2.366,
+    "p99": 10.678,
+    "pior": 12.228,
+    "piorAbsoluto": 306.793,
+    "media": 1.763
+   },
+   "fatorTempoReal": 56.71,
+   "msPorAnimalSeg": 0.6531,
+   "buscasCaminho": 0,
+   "custo": {
+    "n1": 1495,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 32400,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {},
+   "nascimentos": 0,
+   "eventos": 7,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 142.8,
+   "rssMB": 359.3,
+   "heapCresceuMB": 61.4,
+   "hash": "419d358e"
+  },
+  {
+   "pedido": 50,
+   "criados": 50,
+   "vivos": 50,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 498.5,
+   "passo": {
+    "p50": 1.47,
+    "p95": 2.887,
+    "p99": 9.432,
+    "pior": 12.171,
+    "piorAbsoluto": 170.922,
+    "media": 1.979
+   },
+   "fatorTempoReal": 50.53,
+   "msPorAnimalSeg": 0.3958,
+   "buscasCaminho": 7,
+   "custo": {
+    "n1": 1772,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 60000,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {},
+   "nascimentos": 0,
+   "eventos": 8,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 105.9,
+   "rssMB": 312,
+   "heapCresceuMB": 18.3,
+   "hash": "910753da"
+  },
+  {
+   "pedido": 100,
+   "criados": 99,
+   "vivos": 99,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 479.7,
+   "passo": {
+    "p50": 2.121,
+    "p95": 4.051,
+    "p99": 9.183,
+    "pior": 11.968,
+    "piorAbsoluto": 116.843,
+    "media": 2.597
+   },
+   "fatorTempoReal": 38.5,
+   "msPorAnimalSeg": 0.2623,
+   "buscasCaminho": 0,
+   "custo": {
+    "n1": 2478,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 118800,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {},
+   "nascimentos": 0,
+   "eventos": 10,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 175.6,
+   "rssMB": 363.1,
+   "heapCresceuMB": 74.1,
+   "hash": "50c27580"
+  },
+  {
+   "pedido": 200,
+   "criados": 200,
+   "vivos": 200,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 1185.3,
+   "passo": {
+    "p50": 5.62,
+    "p95": 10.852,
+    "p99": 15.232,
+    "pior": 26.153,
+    "piorAbsoluto": 153.602,
+    "media": 6.431
+   },
+   "fatorTempoReal": 15.55,
+   "msPorAnimalSeg": 0.3216,
+   "buscasCaminho": 117,
+   "custo": {
+    "n1": 6938,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 240000,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {},
+   "nascimentos": 0,
+   "eventos": 18,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 110.8,
+   "rssMB": 309.9,
+   "heapCresceuMB": 15.1,
+   "hash": "a8ffb49f"
+  },
+  {
+   "pedido": 400,
+   "criados": 400,
+   "vivos": 400,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 461,
+   "passo": {
+    "p50": 12.08,
+    "p95": 21.101,
+    "p99": 29.676,
+    "pior": 40.209,
+    "piorAbsoluto": 149.792,
+    "media": 13.453
+   },
+   "fatorTempoReal": 7.43,
+   "msPorAnimalSeg": 0.3363,
+   "buscasCaminho": 251,
+   "custo": {
+    "n1": 15134,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 480000,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {},
+   "nascimentos": 0,
+   "eventos": 23,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 139,
+   "rssMB": 362.9,
+   "heapCresceuMB": 54.9,
+   "hash": "8a1564fa"
+  },
+  {
+   "pedido": 800,
+   "criados": 800,
+   "vivos": 797,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 542.2,
+   "passo": {
+    "p50": 20.537,
+    "p95": 31.486,
+    "p99": 39.501,
+    "pior": 57.777,
+    "piorAbsoluto": 187.808,
+    "media": 21.926
+   },
+   "fatorTempoReal": 4.56,
+   "msPorAnimalSeg": 0.2741,
+   "buscasCaminho": 262,
+   "custo": {
+    "n1": 25213,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 959611,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {
+    "predacao": 3
+   },
+   "nascimentos": 0,
+   "eventos": 35,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 111.2,
+   "rssMB": 361.2,
+   "heapCresceuMB": -85.1,
+   "hash": "ee5e6dd6"
+  },
+  {
+   "pedido": 1600,
+   "criados": 1600,
+   "vivos": 1595,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 599.6,
+   "passo": {
+    "p50": 46.384,
+    "p95": 71.879,
+    "p99": 89.236,
+    "pior": 118.623,
+    "piorAbsoluto": 229.736,
+    "media": 49.394
+   },
+   "fatorTempoReal": 2.02,
+   "msPorAnimalSeg": 0.3087,
+   "buscasCaminho": 534,
+   "custo": {
+    "n1": 57503,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 1918758,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {
+    "predacao": 5
+   },
+   "nascimentos": 0,
+   "eventos": 43,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 162,
+   "rssMB": 384.3,
+   "heapCresceuMB": 47,
+   "hash": "eee1ff7b"
+  },
+  {
+   "pedido": 3200,
+   "criados": 3200,
+   "vivos": 3191,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 824.3,
+   "passo": {
+    "p50": 120.968,
+    "p95": 181.427,
+    "p99": 209.506,
+    "pior": 290.442,
+    "piorAbsoluto": 580.007,
+    "media": 127.599
+   },
+   "fatorTempoReal": 0.78,
+   "msPorAnimalSeg": 0.3987,
+   "buscasCaminho": 1515,
+   "custo": {
+    "n1": 149819,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 3835703,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {
+    "predacao": 9
+   },
+   "nascimentos": 0,
+   "eventos": 46,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 127.6,
+   "rssMB": 436.4,
+   "heapCresceuMB": -13.4,
+   "hash": "ebb948d2"
+  }
+ ]
+}

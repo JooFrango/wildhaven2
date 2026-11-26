@@ -1,0 +1,220 @@
+{
+ "sementes": "1-10",
+ "segundos": 300,
+ "cenarios": {
+  "bebedouro": {
+   "eventos": {
+    "cumprimento": 74,
+    "limpeza_mutua": 278,
+    "brincadeira": 43,
+    "curiosidade": 0,
+    "disputa_social": 0,
+    "disputa_social_fim": 0,
+    "submissao": 4,
+    "alarme": 68,
+    "alarme_ouvido": 127,
+    "alarme_outra_especie": 74,
+    "tolera_predador": 0,
+    "protege_filhote": 2,
+    "sentinela": 70,
+    "novo_lider": 1
+   },
+   "olhadasVigilancia": 257,
+   "relacoesMemorizadas": 576,
+   "relacoesPorTipo": {
+    "companheiro": 520,
+    "filhote": 20,
+    "mae": 20,
+    "conhecido": 2,
+    "rival": 14
+   },
+   "exemplos": [
+    {
+     "semente": 1,
+     "t": 30.7,
+     "tipo": "alarme_outra_especie",
+     "id": "cromatil-rochas",
+     "com": "velsari-5"
+    },
+    {
+     "semente": 1,
+     "t": 30.7,
+     "tipo": "alarme_outra_especie",
+     "id": "cromatil-norte",
+     "com": "velsari-5"
+    },
+    {
+     "semente": 2,
+     "t": 0.8,
+     "tipo": "submissao",
+     "id": "velsari-4",
+     "com": "velsari-5"
+    },
+    {
+     "semente": 2,
+     "t": 1,
+     "tipo": "brincadeira",
+     "id": "velsari-8",
+     "com": "velsari-7"
+    },
+    {
+     "semente": 3,
+     "t": 1.8,
+     "tipo": "brincadeira",
+     "id": "velsari-8",
+     "com": "velsari-7"
+    },
+    {
+     "semente": 3,
+     "t": 6.9,
+     "tipo": "brincadeira",
+     "id": "velsari-8",
+     "com": "velsari-7"
+    }
+   ]
+  },
+  "bebedouro-real": {
+   "eventos": {
+    "cumprimento": 244,
+    "limpeza_mutua": 221,
+    "brincadeira": 53,
+    "curiosidade": 0,
+    "disputa_social": 0,
+    "disputa_social_fim": 0,
+    "submissao": 5,
+    "alarme": 8,
+    "alarme_ouvido": 0,
+    "alarme_outra_especie": 3,
+    "tolera_predador": 0,
+    "protege_filhote": 0,
+    "sentinela": 70,
+    "novo_lider": 0
+   },
+   "olhadasVigilancia": 161,
+   "relacoesMemorizadas": 564,
+   "relacoesPorTipo": {
+    "companheiro": 512,
+    "filhote": 20,
+    "mae": 20,
+    "parceiro": 8,
+    "rival": 4
+   },
+   "exemplos": [
+    {
+     "semente": 1,
+     "t": 30.2,
+     "tipo": "submissao",
+     "id": "velsari-1",
+     "com": "velsari-3"
+    },
+    {
+     "semente": 1,
+     "t": 32.3,
+     "tipo": "cumprimento",
+     "id": "velsari-4",
+     "com": "velsari-7"
+    },
+    {
+     "semente": 2,
+     "t": 1.1,
+     "tipo": "brincadeira",
+     "id": "velsari-8",
+     "com": "velsari-7"
+    },
+    {
+     "semente": 2,
+     "t": 1.2,
+     "tipo": "brincadeira",
+     "id": "velsari-7",
+     "com": "velsari-8"
+    },
+    {
+     "semente": 3,
+     "t": 1.9,
+     "tipo": "brincadeira",
+     "id": "velsari-8",
+     "com": "velsari-7"
+    },
+    {
+     "semente": 3,
+     "t": 2,
+     "tipo": "brincadeira",
+     "id": "velsari-7",
+     "com": "velsari-8"
+    }
+   ]
+  },
+  "savana-viva": {
+   "eventos": {
+    "cumprimento": 487,
+    "limpeza_mutua": 1186,
+    "brincadeira": 159,
+    "curiosidade": 3,
+    "disputa_social": 0,
+    "disputa_social_fim": 0,
+    "submissao": 10,
+    "alarme": 38,
+    "alarme_ouvido": 152,
+    "alarme_outra_especie": 35,
+    "tolera_predador": 0,
+    "protege_filhote": 11,
+    "sentinela": 140,
+    "novo_lider": 0
+   },
+   "olhadasVigilancia": 512,
+   "relacoesMemorizadas": 1750,
+   "relacoesPorTipo": {
+    "companheiro": 1376,
+    "conhecido": 288,
+    "filhote": 40,
+    "mae": 40,
+    "parceiro": 4,
+    "rival": 2
+   },
+   "exemplos": [
+    {
+     "semente": 1,
+     "t": 2.3,
+     "tipo": "brincadeira",
+     "id": "velsari-9",
+     "com": "velsari-10"
+    },
+    {
+     "semente": 1,
+     "t": 8.5,
+     "tipo": "brincadeira",
+     "id": "velsari-17",
+     "com": "velsari-18"
+    },
+    {
+     "semente": 2,
+     "t": 10.4,
+     "tipo": "brincadeira",
+     "id": "velsari-17",
+     "com": "velsari-18"
+    },
+    {
+     "semente": 2,
+     "t": 21,
+     "tipo": "limpeza_mutua",
+     "id": "velsari-15",
+     "com": "velsari-12"
+    },
+    {
+     "semente": 3,
+     "t": 0.4,
+     "tipo": "brincadeira",
+     "id": "velsari-18",
+     "com": "velsari-17"
+    },
+    {
+     "semente": 3,
+     "t": 0.5,
+     "tipo": "brincadeira",
+     "id": "velsari-17",
+     "com": "velsari-18"
+    }
+   ]
+  }
+ }
+}

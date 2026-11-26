@@ -1,0 +1,909 @@
+{
+ "geradoEm": "2026-11-12T04:01:19.349Z",
+ "sementes": "1",
+ "segundos": 300,
+ "encontros": {
+  "bebedouro-real": {
+   "nome": "Bebedouro no rio (recorte do hexágono real)",
+   "n": 1,
+   "rotulos": {
+    "predacao": 1,
+    "carcaca_disputada_ou_reciclada": 1
+   },
+   "exemplos": {
+    "predacao": 1,
+    "carcaca_disputada_ou_reciclada": 1
+   },
+   "predacoes": 1,
+   "presasFeridasVivas": 0,
+   "perseguicoes": 1,
+   "perseguicoesPorDesfecho": {
+    "abate": 1
+   },
+   "ataques": 1,
+   "golpesQueFeriram": 1,
+   "esquivas": 0,
+   "golpesErrados": 0,
+   "alarmes": 0,
+   "alarmesOuvidos": 0,
+   "protecaoFilhote": 0,
+   "conflitos": 0,
+   "conflitosPorFaseFinal": {},
+   "conflitosPorMotivo": {},
+   "oportunidadesFuga": 0,
+   "escapesDuranteDisputa": 0,
+   "mortesCombate": 0,
+   "colisoes": 0,
+   "falhas": [],
+   "msPorAnimalSegundo": 0.2011,
+   "hashes": [
+    "1:d1044fe0"
+   ]
+  },
+  "bebedouro": {
+   "nome": "Bebedouro na savana",
+   "n": 1,
+   "rotulos": {
+    "presa_ferida_sobreviveu": 1,
+    "desistencia_cansaco": 1
+   },
+   "exemplos": {
+    "presa_ferida_sobreviveu": 1,
+    "desistencia_cansaco": 1
+   },
+   "predacoes": 0,
+   "presasFeridasVivas": 1,
+   "perseguicoes": 9,
+   "perseguicoesPorDesfecho": {
+    "desistiu_cansaco": 9
+   },
+   "ataques": 5,
+   "golpesQueFeriram": 1,
+   "esquivas": 0,
+   "golpesErrados": 4,
+   "alarmes": 12,
+   "alarmesOuvidos": 21,
+   "protecaoFilhote": 0,
+   "conflitos": 0,
+   "conflitosPorFaseFinal": {},
+   "conflitosPorMotivo": {},
+   "oportunidadesFuga": 0,
+   "escapesDuranteDisputa": 0,
+   "mortesCombate": 0,
+   "colisoes": 5,
+   "falhas": [],
+   "msPorAnimalSegundo": 0.4341,
+   "hashes": [
+    "1:3b16116b"
+   ]
+  }
+ },
+ "populacao": {
+  "anos": 2,
+  "inicial": {
+   "velsari": 40,
+   "tarruco": 4,
+   "cromatil": 3,
+   "varrisco": 1
+  },
+  "final": {
+   "velsari": 52,
+   "tarruco": 4,
+   "cromatil": 2,
+   "varrisco": 1
+  },
+  "mortes": {
+   "sede": 1,
+   "predacao": 75,
+   "mortalidade_juvenil": 18
+  },
+  "nascimentos": 105,
+  "migracoes": 0,
+  "incendios": 2,
+  "refeicoesMicrofauna": 1620,
+  "microfaunaConsumidaKg": 1386.1,
+  "microfaunaKg": 150.4,
+  "microfaunaMax": 199.7,
+  "contagios": 0,
+  "predacoes": 75,
+  "ms": 9406,
+  "custo": {
+   "n1": 435.2602000000411,
+   "n2": 0,
+   "n3": 7843.516899999852,
+   "passosN1": 576,
+   "passosN2": 0,
+   "passosN3": 1123072
+  },
+  "hash": "699475a6",
+  "serie": [
+   {
+    "dia": 2,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 4,
+     "cromatil": 3,
+     "varrisco": 1
+    },
+    "vegetacao": 0.999,
+    "fomeMedia": 12,
+    "sedeMedia": 32.4,
+    "celulasAgua": 113,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 17,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.986,
+    "fomeMedia": 13.4,
+    "sedeMedia": 16.1,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 32,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.984,
+    "fomeMedia": 13.3,
+    "sedeMedia": 18.8,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 47,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.983,
+    "fomeMedia": 13.1,
+    "sedeMedia": 18.8,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 62,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 5,
+     "cromatil": 3,
+     "varrisco": 1
+    },
+    "vegetacao": 0.982,
+    "fomeMedia": 14.1,
+    "sedeMedia": 26.5,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 77,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 7,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.981,
+    "fomeMedia": 12.7,
+    "sedeMedia": 23.4,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 92,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 7,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.981,
+    "fomeMedia": 13.3,
+    "sedeMedia": 21.8,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 107,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 7,
+     "cromatil": 4,
+     "varrisco": 1
+    },
+    "vegetacao": 0.98,
+    "fomeMedia": 13.1,
+    "sedeMedia": 21.4,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 122,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 5,
+     "cromatil": 4,
+     "varrisco": 1
+    },
+    "vegetacao": 0.98,
+    "fomeMedia": 13.3,
+    "sedeMedia": 20.9,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 137,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 40,
+     "tarruco": 5,
+     "cromatil": 4,
+     "varrisco": 1
+    },
+    "vegetacao": 0.98,
+    "fomeMedia": 13.5,
+    "sedeMedia": 21.2,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 152,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 51,
+     "tarruco": 4,
+     "cromatil": 7,
+     "varrisco": 1
+    },
+    "vegetacao": 0.969,
+    "fomeMedia": 14.6,
+    "sedeMedia": 23.5,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 167,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 73,
+     "tarruco": 4,
+     "cromatil": 4,
+     "varrisco": 1
+    },
+    "vegetacao": 0.943,
+    "fomeMedia": 13.6,
+    "sedeMedia": 21.7,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 182,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 76,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.92,
+    "fomeMedia": 13.6,
+    "sedeMedia": 23,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 197,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 75,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.903,
+    "fomeMedia": 13.5,
+    "sedeMedia": 20.7,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 212,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 73,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.893,
+    "fomeMedia": 13.6,
+    "sedeMedia": 22.5,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 227,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 68,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.887,
+    "fomeMedia": 13.7,
+    "sedeMedia": 21.2,
+    "celulasAgua": 118,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 242,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 66,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.886,
+    "fomeMedia": 13.7,
+    "sedeMedia": 22.1,
+    "celulasAgua": 113,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 257,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 63,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.886,
+    "fomeMedia": 14.1,
+    "sedeMedia": 20.9,
+    "celulasAgua": 105,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 272,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 62,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.888,
+    "fomeMedia": 13.6,
+    "sedeMedia": 25,
+    "celulasAgua": 94,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 287,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 60,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.89,
+    "fomeMedia": 13.9,
+    "sedeMedia": 17.9,
+    "celulasAgua": 93,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 302,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 58,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.892,
+    "fomeMedia": 13.3,
+    "sedeMedia": 17.7,
+    "celulasAgua": 86,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 317,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 55,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.895,
+    "fomeMedia": 13.9,
+    "sedeMedia": 21.3,
+    "celulasAgua": 81,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 332,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 54,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.898,
+    "fomeMedia": 14.1,
+    "sedeMedia": 21.6,
+    "celulasAgua": 78,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 347,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 51,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.901,
+    "fomeMedia": 12.4,
+    "sedeMedia": 19.8,
+    "celulasAgua": 74,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 362,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 49,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.904,
+    "fomeMedia": 13.3,
+    "sedeMedia": 20.2,
+    "celulasAgua": 69,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 377,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 48,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.975,
+    "fomeMedia": 13.6,
+    "sedeMedia": 22,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 392,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 48,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.977,
+    "fomeMedia": 13.5,
+    "sedeMedia": 22.4,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 407,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 46,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.977,
+    "fomeMedia": 13.7,
+    "sedeMedia": 22.7,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 422,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 45,
+     "tarruco": 5,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.977,
+    "fomeMedia": 12,
+    "sedeMedia": 20.9,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 437,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 44,
+     "tarruco": 6,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.977,
+    "fomeMedia": 13.5,
+    "sedeMedia": 19.7,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 452,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 43,
+     "tarruco": 5,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.977,
+    "fomeMedia": 13.3,
+    "sedeMedia": 23.3,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 467,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 43,
+     "tarruco": 4,
+     "cromatil": 5,
+     "varrisco": 1
+    },
+    "vegetacao": 0.977,
+    "fomeMedia": 13.5,
+    "sedeMedia": 20.1,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 482,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 43,
+     "tarruco": 4,
+     "cromatil": 4,
+     "varrisco": 1
+    },
+    "vegetacao": 0.977,
+    "fomeMedia": 13.3,
+    "sedeMedia": 24.8,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 497,
+    "estacao": "chuvosa",
+    "populacao": {
+     "velsari": 43,
+     "tarruco": 7,
+     "cromatil": 3,
+     "varrisco": 1
+    },
+    "vegetacao": 0.976,
+    "fomeMedia": 13.2,
+    "sedeMedia": 20.6,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 512,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 48,
+     "tarruco": 4,
+     "cromatil": 6,
+     "varrisco": 1
+    },
+    "vegetacao": 0.974,
+    "fomeMedia": 13.2,
+    "sedeMedia": 21,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 527,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 80,
+     "tarruco": 7,
+     "cromatil": 3,
+     "varrisco": 1
+    },
+    "vegetacao": 0.945,
+    "fomeMedia": 13.4,
+    "sedeMedia": 18.8,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 542,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 80,
+     "tarruco": 7,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.918,
+    "fomeMedia": 13.8,
+    "sedeMedia": 19.6,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 557,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 79,
+     "tarruco": 6,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.897,
+    "fomeMedia": 13.7,
+    "sedeMedia": 21.6,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 572,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 77,
+     "tarruco": 6,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.884,
+    "fomeMedia": 13.6,
+    "sedeMedia": 21.5,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 587,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 74,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.878,
+    "fomeMedia": 11.9,
+    "sedeMedia": 22,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 602,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 71,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.876,
+    "fomeMedia": 13.4,
+    "sedeMedia": 18.9,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 617,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 68,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.875,
+    "fomeMedia": 13.5,
+    "sedeMedia": 20,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 632,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 67,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.877,
+    "fomeMedia": 13.7,
+    "sedeMedia": 17.8,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 647,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 64,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.882,
+    "fomeMedia": 13.7,
+    "sedeMedia": 19.1,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 662,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 61,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.888,
+    "fomeMedia": 13.5,
+    "sedeMedia": 23.4,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 677,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 60,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.891,
+    "fomeMedia": 13.5,
+    "sedeMedia": 22,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 692,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 59,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.894,
+    "fomeMedia": 13.9,
+    "sedeMedia": 18.5,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 707,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 56,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.896,
+    "fomeMedia": 13.2,
+    "sedeMedia": 20.4,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   },
+   {
+    "dia": 722,
+    "estacao": "seca",
+    "populacao": {
+     "velsari": 53,
+     "tarruco": 4,
+     "cromatil": 2,
+     "varrisco": 1
+    },
+    "vegetacao": 0.902,
+    "fomeMedia": 13.2,
+    "sedeMedia": 21.2,
+    "celulasAgua": 72,
+    "feridos": {},
+    "doentes": {}
+   }
+  ],
+  "desequilibrios": [
+   "Mortes por sede (1): verificar seca prolongada e conhecimento de pontos de água."
+  ]
+ }
+}

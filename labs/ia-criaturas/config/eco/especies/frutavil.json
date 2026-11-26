@@ -1,0 +1,114 @@
+{
+  "id": "frutavil",
+  "nome": "Frutavil",
+  "ficha": "creatures/species/frutavil.json",
+  "papel": "herbivoro",
+  "atividade": "diurno",
+  "_fonteFicha": "savana arborizada e borda de floresta sazonal; 2–3,5 kg; ave frugívora; bando pequeno (3–7); pousa em galhos e faz voos curtos; 11 clipes GLB, rig por pivôs hierárquicos sem pesos de skinning (modelo v01 em revisão visual)",
+  "_contrato": "Espécie de PROVA do contrato da IA Base V1: entrou só com esta ficha e uma linha no índice, sem tocar em nenhum módulo do núcleo. Não declara capacidade opcional nenhuma — nem voo, apesar de ser uma ave — para provar que nada opcional é anexado automaticamente.",
+  "corpo": {
+    "massaKg": [2, 3.5],
+    "comprimentoM": 0.34,
+    "alturaM": 0.28,
+    "raio": 0.16
+  },
+  "movimento": {
+    "andar": 0.9,
+    "trote": 2,
+    "corrida": 3.4,
+    "aceleracao": 12,
+    "giroGrausSeg": 480,
+    "fatorCurvaFechada": 0.85,
+    "resistenciaSeg": 5,
+    "inclinacaoMaxGraus": 38,
+    "nadar": false,
+    "profundidadeMaxM": 0.08,
+    "escalarRochas": false
+  },
+  "percepcao": {
+    "visao": { "alcance": 34, "anguloGraus": 310, "alcanceProximo": 1.5, "tempoReconhecimentoSeg": 0.4 },
+    "audicao": { "alcance": 22, "erroRelativo": 0.25 },
+    "olfato": { "alcance": 2 },
+    "memoriaSeg": 25,
+    "modificadoresPorEstado": { "comendo": { "visao": 0.75 }, "descansando": { "visao": 0.6 } }
+  },
+  "furtividade": { "camuflagem": 0.4, "fatorParado": 0.55, "ruidoPassos": 0.25 },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.02,
+    "custoCorridaPorSeg": 4,
+    "recuperacaoPorSeg": 3.2,
+    "fatorRecuperacaoParado": 0.6,
+    "fomePorDia": 38,
+    "sedePorDia": 28,
+    "comerPorSeg": 1.2,
+    "beberPorSeg": 5,
+    "limiteExaustao": 6,
+    "fomeProcurar": 45,
+    "sedeProcurar": 50
+  },
+  "dieta": { "vegetacao": ["arbusto", "capim"], "presas": [], "carnica": false },
+  "teme": ["varrisco", "rocantraz", "boscaranha", "proto-cacador-camuflado"],
+  "temperamento": {
+    "agressividade": [0.08, 0.04],
+    "coragem": [0.2, 0.08],
+    "medo": [0.8, 0.1],
+    "vigilancia": [0.6, 0.1]
+  },
+  "social": { "tipo": "bando", "tamanho": [3, 7], "territorial": false, "refugio": "cobertura", "coesaoM": 7 },
+  "combate": {
+    "protecao": { "cabeca": 0.1, "pescoco": 0.1, "tronco": 0.15, "flanco": 0.12, "pernas": 0.05, "cauda": 0.1 },
+    "resistenciaDor": 0.4,
+    "equilibrio": 0.7,
+    "forcaMordida": 0.1,
+    "agarrar": false,
+    "forca": 0.04,
+    "defesa": 0.2,
+    "esquiva": 0.65,
+    "ataques": [
+      { "nome": "bicada", "alcance": 0.25, "dano": 1, "preparoSeg": 0.2, "recargaSeg": 1, "regioes": ["cabeca", "pernas"], "clipe": "peck" }
+    ]
+  },
+  "saude": { "max": 14, "resistencia": 0.6, "sangramentoBase": 0.5, "regenPorDia": 9, "suscetibilidadeDoenca": 0.3 },
+  "vida": {
+    "expectativaAnos": 8,
+    "maturidadeAnos": 1,
+    "gestacaoDias": 20,
+    "ovos": true,
+    "ninhada": [2, 4],
+    "estacaoReprodutiva": "chuvosa",
+    "desmameDias": 0,
+    "crescimentoAnos": 0.8,
+    "cuidadoParental": true
+  },
+  "modelo": {
+    "glb": "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD0.glb",
+    "frente": "+X",
+    "medidaReferencia": "comprimento",
+    "clipes": {
+      "parado": "idle",
+      "andar": "walk",
+      "trote": "hop",
+      "corrida": "hop",
+      "comer": "eat_fruit",
+      "alerta": "alert",
+      "descansar": "rest",
+      "ferido": "alert",
+      "morte": "death"
+    },
+    "limitacoes": [
+      "frente +X medida no GLB real (cabeça→cauda, auditar-glb)",
+      "sem clipe de corrida: `corrida` reusa `hop`",
+      "sem clipe de beber nem de ferido: `ferido` reusa `alert`",
+      "clipes `perch`, `wing_flap` e `short_flight` existem no GLB e NÃO são usados: o laboratório não declara voo para esta espécie",
+      "rig por pivôs hierárquicos, sem pesos de skinning (manifesto oficial)"
+    ]
+  },
+  "balanceamento": {
+    "status": "experimental_v1_base",
+    "provisorios": ["tudo exceto corpo, dieta e hábitos citados em _fonteFicha"],
+    "base": "folhisco.json"
+  },
+  "experimental": { "v1Base": true, "capacidades": [], "nota": "Prova do contrato de integração; nenhuma capacidade especial." },
+  "memoriaDePerigo": { "raioM": 18, "seg": 600 }
+}

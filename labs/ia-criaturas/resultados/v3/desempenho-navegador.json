@@ -1,0 +1,51 @@
+{
+ "cenario": "savana-viva",
+ "semente": 3,
+ "resolucao": "1280x720",
+ "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Claude/5.1231.2 Chrome/156.0.8078.75 Safari/537.36 MSIX",
+ "nota": "Quadros a passo fixo (60 Hz) com simulação 10 Hz, animação/IK por quadro e renderização com sombras; IK com nível de detalhe (≤ 45 m da câmera).",
+ "comIK": {
+  "animais": 24,
+  "quadros": 300,
+  "msSim": 1.02,
+  "msAnimacaoIK": 13.91,
+  "msRender": 17.76,
+  "msTotal": 32.69,
+  "fpsEstimado": 30.6
+ },
+ "semIK": {
+  "animais": 24,
+  "quadros": 300,
+  "msSim": 0.89,
+  "msAnimacaoIK": 5.5,
+  "msRender": 14.84,
+  "msTotal": 21.22,
+  "fpsEstimado": 47.1
+ },
+ "orientacao": [
+  0.01,
+  0,
+  0,
+  0,
+  0.02,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0.46,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0.58,
+  0.04,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0
+ ]
+}

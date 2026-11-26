@@ -1,0 +1,57 @@
+{
+ "teste": "caca-real",
+ "nome": "Caça real: Varrisco × Velsaris (IA livre)",
+ "semente": 7,
+ "tSim": 70,
+ "hash": "81714eef",
+ "passos": [],
+ "passosOk": 0,
+ "passosTotal": 0,
+ "desvioFrenteMaxGraus": 4.19,
+ "desvioFrenteMedioGraus": 0.23,
+ "velocidadeMax": 13.07,
+ "quadrosGiroNoLugar": 30,
+ "clipes": [
+  "idle",
+  "walk",
+  "turn_right",
+  "stalk",
+  "run"
+ ],
+ "colisoes": 0,
+ "contatosObstaculo": 5,
+ "pernas": {
+  "quadros": 4206,
+  "amostrasApoio": 3178,
+  "deslizeApoioFK_ms": 1.033,
+  "deslizeApoioIK_ms": 0.32,
+  "erroAlturaFK_m": 0.098,
+  "erroAlturaIK_m": 0.008,
+  "liberacoes": 27
+ },
+ "eventos": {
+  "marca_territorio": 2,
+  "alarme": 6,
+  "alarme_ouvido": 12,
+  "limpeza_mutua": 12,
+  "seguro": 3,
+  "preso": 2,
+  "caca_inicio": 2,
+  "perseguicao_inicio": 1,
+  "perseguicao_fim": 1
+ },
+ "registro": [],
+ "golpes": [
+  {
+   "t": 56.3,
+   "tipo": "perseguicao_inicio",
+   "id": "v"
+  },
+  {
+   "t": 69.7,
+   "tipo": "perseguicao_fim",
+   "id": "v",
+   "motivo": "desistiu_cansaco"
+  }
+ ]
+}

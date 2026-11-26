@@ -1,0 +1,106 @@
+{
+ "cenario": "laboratorio-populacao-hex-5km",
+ "semente": "1",
+ "quadros": 60,
+ "linhas": [
+  {
+   "populacao": 25,
+   "msCarga": 7118,
+   "enquadrado": {
+    "cx": 2313,
+    "cy": 2425,
+    "raio": 1750
+   },
+   "animais": 27,
+   "visiveis": 27,
+   "quadros": 60,
+   "msSim": 0.96,
+   "msAnimacaoIK": 4.19,
+   "msRender": 7.07,
+   "msTotal": 12.22,
+   "fpsEstimado": 81.8,
+   "msQuadro": {
+    "p50": 11.3,
+    "p95": 18.9,
+    "p99": 31.1,
+    "pior": 31.1
+   },
+   "fps1pctLow": 32.2,
+   "drawCalls": 30,
+   "triangulos": 2137346,
+   "geometrias": 89,
+   "texturas": 22,
+   "malhas": 820,
+   "malhasComSkin": 104,
+   "memoriaMB": 168.8,
+   "erros": [],
+   "nErros": 0
+  },
+  {
+   "populacao": 100,
+   "msCarga": 9110,
+   "enquadrado": {
+    "cx": 1992,
+    "cy": 2888,
+    "raio": 2045
+   },
+   "animais": 99,
+   "visiveis": 99,
+   "quadros": 60,
+   "msSim": 1.67,
+   "msAnimacaoIK": 14.25,
+   "msRender": 17.57,
+   "msTotal": 33.5,
+   "fpsEstimado": 29.9,
+   "msQuadro": {
+    "p50": 32.3,
+    "p95": 45,
+    "p99": 54.8,
+    "pior": 54.8
+   },
+   "fps1pctLow": 18.2,
+   "drawCalls": 9,
+   "triangulos": 2122092,
+   "geometrias": 44,
+   "texturas": 1,
+   "malhas": 3073,
+   "malhasComSkin": 430,
+   "memoriaMB": 179.3,
+   "erros": [],
+   "nErros": 0
+  },
+  {
+   "populacao": 400,
+   "msCarga": 9393,
+   "enquadrado": {
+    "cx": 2091,
+    "cy": 2469,
+    "raio": 2054
+   },
+   "animais": 400,
+   "visiveis": 400,
+   "quadros": 60,
+   "msSim": 5.73,
+   "msAnimacaoIK": 74.63,
+   "msRender": 2080.33,
+   "msTotal": 2160.68,
+   "fpsEstimado": 0.5,
+   "msQuadro": {
+    "p50": 172.5,
+    "p95": 1985.7,
+    "p99": 112899,
+    "pior": 112899
+   },
+   "fps1pctLow": 0,
+   "drawCalls": 266,
+   "triangulos": 2178213,
+   "geometrias": 327,
+   "texturas": 84,
+   "malhas": 12403,
+   "malhasComSkin": 1720,
+   "memoriaMB": 202.2,
+   "erros": [],
+   "nErros": 0
+  }
+ ]
+}

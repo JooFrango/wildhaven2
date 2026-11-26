@@ -1,0 +1,75 @@
+{
+ "teste": "dano-descanso",
+ "nome": "Ferimento na perna, recuo e descanso",
+ "semente": 7,
+ "tSim": 15.4,
+ "hash": "b5f1ad49",
+ "passos": [
+  {
+   "rotulo": "trote saudável",
+   "t0": 0,
+   "t1": 4.7,
+   "ok": true
+  },
+  {
+   "rotulo": "golpe na perna (ferimento real do núcleo)",
+   "t0": 4.7,
+   "t1": 4.8,
+   "ok": true
+  },
+  {
+   "rotulo": "recuar mancando",
+   "t0": 4.8,
+   "t1": 10.1,
+   "ok": true
+  },
+  {
+   "rotulo": "exausto → descansa (IA)",
+   "t0": 10.1,
+   "t1": 10.2,
+   "ok": true
+  },
+  {
+   "rotulo": "descanso",
+   "t0": 10.2,
+   "t1": 15.3,
+   "ok": true
+  }
+ ],
+ "passosOk": 5,
+ "passosTotal": 5,
+ "desvioFrenteMaxGraus": 0.49,
+ "desvioFrenteMedioGraus": 0.02,
+ "velocidadeMax": 4.22,
+ "quadrosGiroNoLugar": 0,
+ "clipes": [
+  "idle",
+  "walk",
+  "run",
+  "rest"
+ ],
+ "colisoes": 0,
+ "contatosObstaculo": 0,
+ "pernas": {
+  "quadros": 624,
+  "amostrasApoio": 457,
+  "deslizeApoioFK_ms": 1.411,
+  "deslizeApoioIK_ms": 0.635,
+  "erroAlturaFK_m": 0.119,
+  "erroAlturaIK_m": 0.012,
+  "liberacoes": 7
+ },
+ "eventos": {
+  "ferimento": 1
+ },
+ "registro": [],
+ "golpes": [
+  {
+   "t": 4.7,
+   "tipo": "ferimento",
+   "id": "v",
+   "ataque": "garra_foice",
+   "regiao": "pernas"
+  }
+ ]
+}

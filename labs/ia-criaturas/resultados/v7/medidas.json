@@ -1,0 +1,5587 @@
+{
+ "v7-a-cacador-camuflado": [
+  {
+   "semente": 1,
+   "hash": "9d50f1e6",
+   "mortes": {},
+   "eventos": {
+    "camuflagem_ligou": 2,
+    "camuflagem_quebrou": 1,
+    "calor_detectado": 3,
+    "caca_inicio": 2,
+    "golpe_errou": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.096,
+    "p95": 0.416,
+    "p99": 1.215,
+    "pior": 57.18
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando",
+     "espreitando",
+     "investigando",
+     "perseguindo",
+     "descansando",
+     "atacando"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "alerta",
+     "imovel",
+     "fugindo"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "fugindo",
+     "descansando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "f997d7ca",
+   "mortes": {},
+   "eventos": {
+    "camuflagem_ligou": 2,
+    "camuflagem_quebrou": 1,
+    "calor_detectado": 4,
+    "caca_inicio": 2,
+    "golpe_errou": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.094,
+    "p95": 0.382,
+    "p99": 1.412,
+    "pior": 13.867
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "descansando",
+     "investigando",
+     "atacando"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "imovel",
+     "fugindo",
+     "alerta"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "fugindo",
+     "descansando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "c550b118",
+   "mortes": {},
+   "eventos": {},
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.047,
+    "p95": 0.11,
+    "p99": 0.325,
+    "pior": 8.27
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando"
+    ],
+    "serpentino": [
+     "patrulhando"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "fugindo",
+     "descansando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "2be68de3",
+   "mortes": {},
+   "eventos": {
+    "calor_detectado": 4
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.045,
+    "p95": 0.099,
+    "p99": 0.293,
+    "pior": 24.596
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "imovel",
+     "alerta"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "descansando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "fa9234b3",
+   "mortes": {},
+   "eventos": {
+    "camuflagem_ligou": 1,
+    "calor_detectado": 2,
+    "caca_inicio": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.056,
+    "p95": 0.15,
+    "p99": 0.368,
+    "pior": 10.722
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "descansando"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "fugindo",
+     "imovel"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "fugindo",
+     "descansando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "10c34d3e",
+   "mortes": {},
+   "eventos": {
+    "camuflagem_ligou": 1,
+    "calor_detectado": 3,
+    "caca_inicio": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.065,
+    "p95": 0.177,
+    "p99": 0.609,
+    "pior": 13.286
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "descansando"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "imovel",
+     "alerta"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "fugindo",
+     "descansando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "715768fe",
+   "mortes": {},
+   "eventos": {
+    "camuflagem_ligou": 1,
+    "calor_detectado": 2,
+    "caca_inicio": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.06,
+    "p95": 0.141,
+    "p99": 0.314,
+    "pior": 14.555
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "descansando"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "imovel",
+     "fugindo",
+     "alerta"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "fugindo",
+     "descansando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "be9d6fb5",
+   "mortes": {},
+   "eventos": {
+    "calor_detectado": 2
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.035,
+    "p95": 0.091,
+    "p99": 0.254,
+    "pior": 12.478
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "alerta"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "descansando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "760b9471",
+   "mortes": {},
+   "eventos": {
+    "camuflagem_ligou": 1,
+    "calor_detectado": 6,
+    "caca_inicio": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.064,
+    "p95": 0.194,
+    "p99": 0.444,
+    "pior": 13.804
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "descansando"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "imovel",
+     "alerta",
+     "fugindo"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "descansando",
+     "fugindo",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "85ade7a3",
+   "mortes": {},
+   "eventos": {
+    "camuflagem_ligou": 2,
+    "camuflagem_quebrou": 1,
+    "calor_detectado": 1,
+    "caca_inicio": 2,
+    "ferimento": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.069,
+    "p95": 0.198,
+    "p99": 0.599,
+    "pior": 22.377
+   },
+   "estados": {
+    "cacador": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "segurando_presa"
+    ],
+    "serpentino": [
+     "patrulhando",
+     "alerta"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "descansando",
+     "fugindo",
+     "procurando_agua",
+     "agarrado"
+    ]
+   }
+  }
+ ],
+ "v7-b-mordedura-venenosa": [
+  {
+   "semente": 1,
+   "hash": "edd2acbd",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "golpe_errou": 2,
+    "emboscada_armada": 1,
+    "emboscada_disparou": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.096,
+    "p95": 0.288,
+    "p99": 0.655,
+    "pior": 16.386
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "perseguindo",
+     "atacando"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "fugindo"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "ef706c1c",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "emboscada_armada": 5,
+    "emboscada_disparou": 1,
+    "emboscada_desistiu": 3
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.052,
+    "p95": 0.139,
+    "p99": 0.459,
+    "pior": 7.318
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada",
+     "atacando",
+     "perseguindo",
+     "descansando"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando",
+     "fugindo"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "58de3e45",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.057,
+    "p95": 0.118,
+    "p99": 0.302,
+    "pior": 6.919
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando",
+     "fugindo",
+     "procurando_pasto"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "a43bde7b",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "golpe_errou": 1,
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.055,
+    "p95": 0.112,
+    "p99": 0.285,
+    "pior": 9.358
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "indo_emboscada"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando",
+     "procurando_pasto"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando",
+     "fugindo"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "567a50f2",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.048,
+    "p95": 0.098,
+    "p99": 0.291,
+    "pior": 21.673
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "58d809cf",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.046,
+    "p95": 0.095,
+    "p99": 0.163,
+    "pior": 14.938
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "f319a685",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.035,
+    "p95": 0.081,
+    "p99": 0.15,
+    "pior": 7.711
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando",
+     "procurando_pasto"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "9a51711c",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "emboscada_armada": 5,
+    "emboscada_disparou": 1,
+    "emboscada_desistiu": 3
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.047,
+    "p95": 0.105,
+    "p99": 0.233,
+    "pior": 7.092
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada",
+     "perseguindo",
+     "investigando",
+     "atacando",
+     "descansando"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando",
+     "procurando_pasto"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando",
+     "fugindo"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "432f81b9",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.035,
+    "p95": 0.075,
+    "p99": 0.15,
+    "pior": 8.676
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando",
+     "fugindo",
+     "procurando_pasto"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "ea3e4164",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.03,
+    "p95": 0.064,
+    "p99": 0.126,
+    "pior": 5.622
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "vulneravel": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "resistente": [
+     "indo_pastar",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ]
+   }
+  }
+ ],
+ "v7-c-bandos-no-ceu": [
+  {
+   "semente": 1,
+   "hash": "5765823d",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 18,
+    "pouso": 19
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.744,
+    "p95": 1.775,
+    "p99": 2.925,
+    "pior": 9.785
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando",
+     "fugindo"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "descansando"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "voando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "voando",
+     "pousando",
+     "descansando"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "d32f6229",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 20,
+    "pouso": 19,
+    "queda": 3
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.688,
+    "p95": 1.546,
+    "p99": 2.703,
+    "pior": 13.864
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando",
+     "caido"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "descansando",
+     "patrulhando",
+     "voando",
+     "caido"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "fugindo",
+     "patrulhando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "voando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "voando_em_bando",
+     "voando",
+     "pousando",
+     "fugindo_voo",
+     "descansando",
+     "caido"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "voando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "1f2fcbe0",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 19,
+    "pouso": 19
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.868,
+    "p95": 1.843,
+    "p99": 3.184,
+    "pior": 26.53
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "pousando",
+     "descansando"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "voando",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "descansando",
+     "voando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "descansando",
+     "voando"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "9c4fe391",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 20,
+    "pouso": 20,
+    "queda": 1
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 1.331,
+    "p95": 2.25,
+    "p99": 3.759,
+    "pior": 11.759
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "voando",
+     "pousando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "descansando"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "voando",
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "voando",
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "caido"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "822c7a22",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 22,
+    "pouso": 20,
+    "queda": 5
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.734,
+    "p95": 1.894,
+    "p99": 3.026,
+    "pior": 6.446
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "caido",
+     "descansando",
+     "patrulhando",
+     "fugindo_voo"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "fugindo_voo"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "caido",
+     "descansando"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "descansando",
+     "caido"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "voando",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando",
+     "caido"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "f066d620",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 21,
+    "pouso": 20
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.639,
+    "p95": 1.29,
+    "p99": 2.231,
+    "pior": 4.119
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "fugindo",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "fugindo",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "descansando"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando",
+     "voando"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "cb5ba3c3",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 19,
+    "pouso": 24
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.603,
+    "p95": 1.382,
+    "p99": 2.402,
+    "pior": 5.875
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "fugindo_voo"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando",
+     "fugindo"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "voando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "58a764cf",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 22,
+    "pouso": 23,
+    "queda": 1
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.608,
+    "p95": 1.309,
+    "p99": 2.34,
+    "pior": 5.306
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "fugindo_voo"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "caido"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "voando",
+     "descansando"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "descansando",
+     "fugindo_voo",
+     "fugindo"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "d2a45202",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 22,
+    "pouso": 20,
+    "queda": 2
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.624,
+    "p95": 1.361,
+    "p99": 2.454,
+    "pior": 7.496
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "voando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "caido",
+     "patrulhando",
+     "descansando"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "fugindo"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "fugindo",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "voando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "caido",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "descansando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "fugindo_voo",
+     "descansando"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "89cccb29",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 19,
+    "pouso": 20,
+    "queda": 2
+   },
+   "vivos": 13,
+   "cpuMs": {
+    "p50": 0.635,
+    "p95": 1.518,
+    "p99": 2.482,
+    "pior": 7.937
+   },
+   "estados": {
+    "ar-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-4": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "ar-5": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "caido",
+     "patrulhando",
+     "descansando",
+     "fugindo_voo"
+    ],
+    "ar-6": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando"
+    ],
+    "chao-1": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "descansando"
+    ],
+    "chao-2": [
+     "patrulhando",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "caido",
+     "descansando",
+     "fugindo_voo"
+    ],
+    "chao-3": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "pousando",
+     "descansando"
+    ],
+    "chao-4": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "pousando",
+     "voando",
+     "descansando"
+    ],
+    "chao-5": [
+     "patrulhando",
+     "fugindo_voo",
+     "voando_em_bando",
+     "voando",
+     "pousando",
+     "descansando"
+    ],
+    "chao-6": [
+     "patrulhando",
+     "voando",
+     "voando_em_bando",
+     "pousando",
+     "descansando"
+    ],
+    "ameaca": [
+     "patrulhando",
+     "descansando"
+    ]
+   }
+  }
+ ],
+ "v7-d-tempestade-de-areia": [
+  {
+   "semente": 1,
+   "hash": "4bd6bf35",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.115,
+    "p95": 7.383,
+    "p99": 15.338,
+    "pior": 85.214
+   },
+   "estados": {
+    "predador": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "descansando"
+    ],
+    "presa": [
+     "pastando",
+     "procurando_pasto",
+     "vigiando",
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "descansando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando",
+     "mergulhando",
+     "emergindo",
+     "emboscando"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "0bb9afa7",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.058,
+    "p95": 3.339,
+    "p99": 7.003,
+    "pior": 23.978
+   },
+   "estados": {
+    "predador": [
+     "patrulhando"
+    ],
+    "presa": [
+     "pastando",
+     "vigiando",
+     "procurando_pasto",
+     "indo_pastar",
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "descansando",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando",
+     "mergulhando",
+     "emergindo"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "d18236ac",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 7.547,
+    "p95": 41.185,
+    "p99": 50.937,
+    "pior": 82.93
+   },
+   "estados": {
+    "predador": [
+     "patrulhando"
+    ],
+    "presa": [
+     "pastando",
+     "procurando_pasto",
+     "indo_pastar",
+     "vigiando",
+     "fugindo",
+     "vagando",
+     "buscando_abrigo",
+     "descansando",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando",
+     "mergulhando",
+     "emergindo"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "53e1f330",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.077,
+    "p95": 11.214,
+    "p99": 20.795,
+    "pior": 47.639
+   },
+   "estados": {
+    "predador": [
+     "patrulhando"
+    ],
+    "presa": [
+     "pastando",
+     "procurando_pasto",
+     "vigiando",
+     "indo_pastar",
+     "fugindo",
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "descansando",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "af9e85ef",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.057,
+    "p95": 4.809,
+    "p99": 23.634,
+    "pior": 35.103
+   },
+   "estados": {
+    "predador": [
+     "patrulhando"
+    ],
+    "presa": [
+     "pastando",
+     "indo_pastar",
+     "vigiando",
+     "fugindo",
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "descansando",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "217d9ea4",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.06,
+    "p95": 7.021,
+    "p99": 24.772,
+    "pior": 48.735
+   },
+   "estados": {
+    "predador": [
+     "patrulhando"
+    ],
+    "presa": [
+     "pastando",
+     "procurando_pasto",
+     "vigiando",
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "descansando",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "0442e7c9",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.172,
+    "p95": 1.635,
+    "p99": 25.541,
+    "pior": 47.311
+   },
+   "estados": {
+    "predador": [
+     "patrulhando"
+    ],
+    "presa": [
+     "pastando",
+     "indo_pastar",
+     "vigiando",
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "descansando",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando",
+     "mergulhando",
+     "emboscando",
+     "emergindo"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "f9de521a",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 2,
+    "golpe_errou": 1,
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 2
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.092,
+    "p95": 15.244,
+    "p99": 22.08,
+    "pior": 33.51
+   },
+   "estados": {
+    "predador": [
+     "patrulhando",
+     "buscando_abrigo",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "espreitando"
+    ],
+    "presa": [
+     "pastando",
+     "procurando_pasto",
+     "vigiando",
+     "indo_pastar",
+     "vagando",
+     "buscando_abrigo",
+     "fugindo",
+     "descansando",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "2327a6ff",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "golpe_errou": 1,
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 2
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.057,
+    "p95": 4.268,
+    "p99": 18.877,
+    "pior": 49.436
+   },
+   "estados": {
+    "predador": [
+     "patrulhando",
+     "buscando_abrigo",
+     "abrigado",
+     "perseguindo",
+     "atacando",
+     "descansando"
+    ],
+    "presa": [
+     "pastando",
+     "procurando_pasto",
+     "indo_pastar",
+     "vigiando",
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "fugindo",
+     "descansando"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando",
+     "mergulhando",
+     "emergindo",
+     "emboscando"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "2cb8e38b",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 1
+   },
+   "vivos": 3,
+   "cpuMs": {
+    "p50": 0.064,
+    "p95": 2.564,
+    "p99": 12.038,
+    "pior": 17.889
+   },
+   "estados": {
+    "predador": [
+     "patrulhando"
+    ],
+    "presa": [
+     "pastando",
+     "procurando_pasto",
+     "vigiando",
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "descansando",
+     "procurando_agua"
+    ],
+    "serracorion": [
+     "explorando",
+     "investigando"
+    ]
+   }
+  }
+ ],
+ "v7-e-chuva-e-caca": [
+  {
+   "semente": 1,
+   "hash": "91743827",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 2,
+    "golpe_errou": 1,
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 6
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.16,
+    "p95": 0.398,
+    "p99": 0.755,
+    "pior": 21.92
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "limpando",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-2": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "fugindo",
+     "reagrupando",
+     "alerta",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "buscando_abrigo",
+     "abrigado",
+     "perseguindo",
+     "atacando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "430af464",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 6
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.181,
+    "p95": 0.406,
+    "p99": 1.117,
+    "pior": 21.094
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "vigiando"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "buscando_abrigo",
+     "abrigado"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "cc8ea191",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 6
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.134,
+    "p95": 0.494,
+    "p99": 1.333,
+    "pior": 13.488
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "limpando",
+     "buscando_abrigo",
+     "abrigado",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vagando",
+     "limpando",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "vigiando"
+    ],
+    "velsari-3": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "abrigado",
+     "perseguindo",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "9a08ae8a",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 5
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.108,
+    "p95": 0.298,
+    "p99": 0.59,
+    "pior": 14.25
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "vigiando"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "42dded8f",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 6
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.094,
+    "p95": 0.249,
+    "p99": 0.549,
+    "pior": 14.446
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "limpando",
+     "buscando_abrigo",
+     "abrigado",
+     "vigiando"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "limpando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "limpando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "buscando_abrigo",
+     "abrigado"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "f74603b2",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 6
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.076,
+    "p95": 0.208,
+    "p99": 0.422,
+    "pior": 10.857
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "vigiando"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "buscando_abrigo",
+     "abrigado"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "cc880a59",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 3,
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 6
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.117,
+    "p95": 0.311,
+    "p99": 0.668,
+    "pior": 9.926
+   },
+   "estados": {
+    "velsari-1": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-2": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "fugindo",
+     "reagrupando",
+     "alerta",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "reagrupando",
+     "fugindo"
+    ],
+    "velsari-5": [
+     "vagando",
+     "limpando",
+     "buscando_abrigo",
+     "abrigado",
+     "fugindo",
+     "reagrupando",
+     "alerta",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "buscando_abrigo",
+     "abrigado",
+     "perseguindo",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "2ae23ea7",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 6
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.108,
+    "p95": 0.3,
+    "p99": 0.916,
+    "pior": 18.931
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua",
+     "alerta"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua",
+     "fugindo"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua",
+     "fugindo"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua",
+     "fugindo"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "vigiando",
+     "alerta",
+     "fugindo"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "buscando_abrigo",
+     "abrigado",
+     "perseguindo"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "ca75bda7",
+   "mortes": {},
+   "eventos": {
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 6
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.078,
+    "p95": 0.199,
+    "p99": 0.774,
+    "pior": 8.949
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "vigiando"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "buscando_abrigo",
+     "abrigado"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "f344b56b",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "golpe_errou": 2,
+    "clima_inicio": 1,
+    "clima_fim": 1,
+    "busca_abrigo": 5
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.075,
+    "p95": 0.193,
+    "p99": 0.345,
+    "pior": 7.559
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "buscando_abrigo",
+     "abrigado",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "buscando_abrigo",
+     "abrigado",
+     "alerta",
+     "reagrupando",
+     "vigiando"
+    ],
+    "velsari-5": [
+     "vagando",
+     "buscando_abrigo",
+     "abrigado",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "perseguindo",
+     "atacando",
+     "descansando"
+    ]
+   }
+  }
+ ],
+ "v7-e-controle-sem-chuva": [
+  {
+   "semente": 1,
+   "hash": "cb42b18b",
+   "mortes": {
+    "predacao": 1
+   },
+   "eventos": {
+    "caca_inicio": 4,
+    "ferimento": 3,
+    "golpe_errou": 9
+   },
+   "vivos": 5,
+   "cpuMs": {
+    "p50": 0.118,
+    "p95": 0.423,
+    "p99": 6.683,
+    "pior": 85.372
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "limpando",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua",
+     "vigiando"
+    ],
+    "velsari-2": [
+     "vagando",
+     "seguindo_grupo",
+     "alerta",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-3": [
+     "vigiando",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "procurando_agua",
+     "alerta"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "comendo_carcaca"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "c9989bfa",
+   "mortes": {},
+   "eventos": {},
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.117,
+    "p95": 0.306,
+    "p99": 0.748,
+    "pior": 18.498
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "pastando",
+     "seguindo_grupo",
+     "vagando",
+     "descansando",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "vigiando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "3b748d0b",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 4,
+    "golpe_errou": 3
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.11,
+    "p95": 0.393,
+    "p99": 5.244,
+    "pior": 16.371
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "limpando",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vagando",
+     "limpando",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua",
+     "vigiando"
+    ],
+    "velsari-3": [
+     "vigiando",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "procurando_agua",
+     "alerta"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "cb68580c",
+   "mortes": {},
+   "eventos": {},
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.099,
+    "p95": 0.265,
+    "p99": 0.785,
+    "pior": 20.378
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "vigiando",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vigiando",
+     "pastando",
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "2fe14348",
+   "mortes": {},
+   "eventos": {},
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.085,
+    "p95": 0.185,
+    "p99": 0.403,
+    "pior": 19.565
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "limpando",
+     "vigiando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "pastando",
+     "cumprimentando",
+     "limpando",
+     "vagando",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "limpando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "limpando",
+     "cumprimentando",
+     "seguindo_grupo",
+     "descansando",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "e77c9449",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 3,
+    "golpe_errou": 2
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.112,
+    "p95": 0.409,
+    "p99": 1.204,
+    "pior": 11.388
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "limpando",
+     "procurando_agua",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "pastando",
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "limpando",
+     "procurando_agua",
+     "alerta",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "procurando_agua",
+     "fugindo",
+     "alerta",
+     "reagrupando"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "vigiando",
+     "procurando_agua",
+     "fugindo",
+     "alerta",
+     "reagrupando"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "procurando_agua",
+     "fugindo",
+     "reagrupando",
+     "alerta"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "160f8498",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 2
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.095,
+    "p95": 0.227,
+    "p99": 1.093,
+    "pior": 17.752
+   },
+   "estados": {
+    "velsari-1": [
+     "vigiando",
+     "pastando",
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "procurando_agua",
+     "alerta",
+     "reagrupando"
+    ],
+    "velsari-2": [
+     "vagando",
+     "seguindo_grupo",
+     "vigiando",
+     "procurando_agua",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "limpando",
+     "procurando_agua",
+     "alerta",
+     "reagrupando",
+     "fugindo"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "procurando_agua",
+     "alerta",
+     "fugindo",
+     "reagrupando"
+    ],
+    "velsari-5": [
+     "vagando",
+     "limpando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "procurando_agua",
+     "alerta",
+     "fugindo",
+     "reagrupando"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "7514f362",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 8,
+    "ferimento": 2,
+    "golpe_errou": 4
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.093,
+    "p95": 0.299,
+    "p99": 1.633,
+    "pior": 16.753
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "fugindo",
+     "reagrupando",
+     "alerta",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "escondido",
+     "incapacitado"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "alerta",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua",
+     "vigiando"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "espreitando"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "bdac5092",
+   "mortes": {},
+   "eventos": {},
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.085,
+    "p95": 0.276,
+    "p99": 1.955,
+    "pior": 14.899
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vigiando",
+     "pastando",
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "vigiando",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "f542bd45",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 2,
+    "golpe_errou": 3
+   },
+   "vivos": 6,
+   "cpuMs": {
+    "p50": 0.101,
+    "p95": 0.262,
+    "p99": 5.157,
+    "pior": 20.846
+   },
+   "estados": {
+    "velsari-1": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-2": [
+     "vigiando",
+     "pastando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-3": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-4": [
+     "vagando",
+     "seguindo_grupo",
+     "vigiando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "velsari-5": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "fugindo",
+     "reagrupando",
+     "alerta",
+     "procurando_agua"
+    ],
+    "varrisco-1": [
+     "patrulhando",
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando"
+    ]
+   }
+  }
+ ],
+ "v7-f-cupinzeiro": [
+  {
+   "semente": 1,
+   "hash": "6d9c145e",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 2,
+    "pouso": 2,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.046,
+    "p95": 0.132,
+    "p99": 0.336,
+    "pior": 3.319
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "procurando_cupins",
+     "pousando",
+     "indo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "vagando",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "453d3f23",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.04,
+    "p95": 0.111,
+    "p99": 0.306,
+    "pior": 2.135
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "indo_cupinzeiro",
+     "pousando",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "212368e2",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.036,
+    "p95": 0.066,
+    "p99": 0.155,
+    "pior": 2.955
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "indo_cupinzeiro",
+     "pousando",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "004168f1",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.041,
+    "p95": 0.072,
+    "p99": 0.128,
+    "pior": 2.088
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "indo_cupinzeiro",
+     "pousando",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "2a5d2b2f",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.033,
+    "p95": 0.082,
+    "p99": 0.209,
+    "pior": 1.419
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "indo_cupinzeiro",
+     "pousando",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "84134e0a",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.027,
+    "p95": 0.066,
+    "p99": 0.142,
+    "pior": 2.237
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "procurando_cupins",
+     "indo_cupinzeiro",
+     "pousando",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "a7fd12f3",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.027,
+    "p95": 0.061,
+    "p99": 0.141,
+    "pior": 1.448
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "indo_cupinzeiro",
+     "pousando",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "af81081a",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.049,
+    "p95": 0.099,
+    "p99": 0.27,
+    "pior": 1.927
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "procurando_cupins",
+     "pousando",
+     "indo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "83e37c61",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 4
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.031,
+    "p95": 0.074,
+    "p99": 0.137,
+    "pior": 2.105
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "procurando_cupins",
+     "indo_cupinzeiro",
+     "pousando",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "8382bc8e",
+   "mortes": {},
+   "eventos": {
+    "decolagem": 1,
+    "pouso": 1,
+    "cupinzeiro_achado": 3
+   },
+   "vivos": 2,
+   "cpuMs": {
+    "p50": 0.027,
+    "p95": 0.064,
+    "p99": 0.118,
+    "pior": 1.636
+   },
+   "estados": {
+    "ferrunco": [
+     "indo_cupinzeiro",
+     "abrindo_cupinzeiro",
+     "pastando",
+     "vigiando",
+     "vagando",
+     "descansando"
+    ],
+    "pica-termita": [
+     "indo_cupinzeiro",
+     "pousando",
+     "pastando",
+     "vigiando",
+     "aguardando_cupinzeiro",
+     "descansando"
+    ]
+   }
+  }
+ ],
+ "v7-g-ciclo-da-carcaca": [
+  {
+   "semente": 1,
+   "hash": "dce555e9",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 33,
+    "ferimento": 2,
+    "golpe_errou": 4,
+    "decolagem": 18,
+    "pouso": 21
+   },
+   "vivos": 5,
+   "cpuMs": {
+    "p50": 0.16,
+    "p95": 0.423,
+    "p99": 0.9,
+    "pior": 16.751
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "escondido",
+     "incapacitado"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "fugindo",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "c2613104",
+   "mortes": {
+    "predacao": 1
+   },
+   "eventos": {
+    "caca_inicio": 3,
+    "ferimento": 4,
+    "golpe_errou": 6,
+    "decolagem": 16,
+    "pouso": 19,
+    "queda": 1,
+    "carcaca_estagio": 4,
+    "ossos_reciclados": 1
+   },
+   "vivos": 4,
+   "cpuMs": {
+    "p50": 0.091,
+    "p95": 0.27,
+    "p99": 0.509,
+    "pior": 9.579
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "caido",
+     "escondido"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "comendo_carcaca",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "procurando_agua",
+     "fugindo"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "0f3ea0d2",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 2,
+    "ferimento": 1,
+    "golpe_errou": 2,
+    "decolagem": 15,
+    "pouso": 18
+   },
+   "vivos": 5,
+   "cpuMs": {
+    "p50": 0.097,
+    "p95": 0.231,
+    "p99": 0.478,
+    "pior": 9.038
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "vagando",
+     "procurando_agua"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "d1c679cd",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 6,
+    "golpe_errou": 3,
+    "decolagem": 17,
+    "pouso": 20
+   },
+   "vivos": 5,
+   "cpuMs": {
+    "p50": 0.105,
+    "p95": 0.253,
+    "p99": 0.49,
+    "pior": 12.539
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "vagando",
+     "procurando_agua"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "procurando_agua",
+     "fugindo"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "0eefb3d9",
+   "mortes": {
+    "predacao": 1
+   },
+   "eventos": {
+    "caca_inicio": 1,
+    "ferimento": 3,
+    "golpe_errou": 2,
+    "decolagem": 14,
+    "pouso": 17,
+    "carcaca_estagio": 4,
+    "ossos_reciclados": 1
+   },
+   "vivos": 4,
+   "cpuMs": {
+    "p50": 0.084,
+    "p95": 0.207,
+    "p99": 0.407,
+    "pior": 18.483
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "fugindo"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "indo_carcaca",
+     "comendo_carcaca",
+     "patrulhando",
+     "descansando",
+     "procurando_agua"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "036f28a9",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 5,
+    "ferimento": 1,
+    "golpe_errou": 5,
+    "decolagem": 19,
+    "pouso": 22
+   },
+   "vivos": 5,
+   "cpuMs": {
+    "p50": 0.119,
+    "p95": 0.275,
+    "p99": 0.508,
+    "pior": 9.588
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "fugindo",
+     "vigiando",
+     "vagando",
+     "procurando_agua",
+     "alerta"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "fugindo",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "procurando_agua",
+     "fugindo"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "a193762e",
+   "mortes": {
+    "predacao": 1
+   },
+   "eventos": {
+    "caca_inicio": 13,
+    "ferimento": 3,
+    "golpe_errou": 3,
+    "decolagem": 15,
+    "pouso": 18,
+    "queda": 2,
+    "carcaca_estagio": 4,
+    "ossos_reciclados": 1
+   },
+   "vivos": 4,
+   "cpuMs": {
+    "p50": 0.128,
+    "p95": 0.326,
+    "p99": 0.635,
+    "pior": 15.034
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "vagando",
+     "procurando_agua",
+     "caido",
+     "agarrado"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "patrulhando",
+     "segurando_presa",
+     "comendo_carcaca",
+     "procurando_agua"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "indo_carcaca",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "indo_carcaca",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "indo_carcaca",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "bdf40a41",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 4,
+    "golpe_errou": 2,
+    "decolagem": 14,
+    "pouso": 17
+   },
+   "vivos": 5,
+   "cpuMs": {
+    "p50": 0.113,
+    "p95": 0.317,
+    "p99": 0.609,
+    "pior": 11.574
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "vagando",
+     "procurando_agua"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "368e925f",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "ferimento": 1,
+    "golpe_errou": 2,
+    "decolagem": 18,
+    "pouso": 21
+   },
+   "vivos": 5,
+   "cpuMs": {
+    "p50": 0.112,
+    "p95": 0.297,
+    "p99": 0.587,
+    "pior": 13.888
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "vagando",
+     "procurando_agua"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "fugindo",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "ce4087b0",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 29,
+    "ferimento": 1,
+    "golpe_errou": 4,
+    "decolagem": 17,
+    "pouso": 20
+   },
+   "vivos": 5,
+   "cpuMs": {
+    "p50": 0.15,
+    "p95": 0.401,
+    "p99": 0.788,
+    "pior": 11.461
+   },
+   "estados": {
+    "presa": [
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "escondido",
+     "incapacitado"
+    ],
+    "predador": [
+     "espreitando",
+     "perseguindo",
+     "atacando",
+     "descansando"
+    ],
+    "carniroca-1": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua"
+    ],
+    "carniroca-2": [
+     "pousando",
+     "voando_em_bando",
+     "voando",
+     "fugindo_voo",
+     "descansando",
+     "patrulhando",
+     "procurando_agua",
+     "fugindo"
+    ],
+    "carniroca-3": [
+     "pousando",
+     "voando_em_bando",
+     "fugindo_voo",
+     "voando",
+     "descansando",
+     "patrulhando",
+     "procurando_agua",
+     "fugindo"
+    ]
+   }
+  }
+ ],
+ "v7-h-emboscada-e-ferimentos": [
+  {
+   "semente": 1,
+   "hash": "5147e031",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.166,
+    "p95": 0.38,
+    "p99": 0.903,
+    "pior": 10.017
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "reagrupando",
+     "fugindo",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 2,
+   "hash": "b25a3409",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.15,
+    "p95": 0.327,
+    "p99": 0.693,
+    "pior": 5.555
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "reagrupando",
+     "fugindo",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "reagrupando",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 3,
+   "hash": "96ee5c82",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 2,
+    "golpe_errou": 1,
+    "emboscada_armada": 5,
+    "emboscada_disparou": 1,
+    "emboscada_desistiu": 3
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.147,
+    "p95": 0.381,
+    "p99": 1.002,
+    "pior": 10.087
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada",
+     "perseguindo",
+     "investigando",
+     "farejando",
+     "atacando",
+     "descansando"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "seguindo_grupo",
+     "reagrupando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "cumprimentando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "seguindo_grupo",
+     "reagrupando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "limpando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 4,
+   "hash": "6dbf702f",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.144,
+    "p95": 0.288,
+    "p99": 0.525,
+    "pior": 5.583
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "reagrupando",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "seguindo_grupo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "limpando",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "reagrupando",
+     "limpando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "limpando",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "seguindo_grupo",
+     "reagrupando",
+     "cumprimentando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 5,
+   "hash": "f2225c2f",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "emboscada_armada": 5,
+    "emboscada_disparou": 1,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.134,
+    "p95": 0.3,
+    "p99": 0.589,
+    "pior": 6.713
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "perseguindo",
+     "investigando",
+     "farejando",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "seguindo_grupo",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "limpando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "seguindo_grupo",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "limpando",
+     "cortejando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "reagrupando",
+     "fugindo",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "seguindo_grupo",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "indo_pastar",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 6,
+   "hash": "d7f48b20",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.135,
+    "p95": 0.308,
+    "p99": 0.811,
+    "pior": 9.707
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "reagrupando",
+     "cumprimentando",
+     "limpando",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "reagrupando",
+     "cumprimentando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 7,
+   "hash": "bc3438b7",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "golpe_errou": 1,
+    "emboscada_armada": 5,
+    "emboscada_disparou": 1,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.156,
+    "p95": 0.414,
+    "p99": 0.821,
+    "pior": 36.887
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "perseguindo",
+     "atacando",
+     "investigando",
+     "farejando",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "seguindo_grupo",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "reagrupando",
+     "descansando",
+     "cumprimentando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "seguindo_grupo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "seguindo_grupo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "fugindo",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "seguindo_grupo",
+     "fugindo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 8,
+   "hash": "44a6b5f4",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.125,
+    "p95": 0.321,
+    "p99": 0.635,
+    "pior": 4.761
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "reagrupando",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "fugindo",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "seguindo_grupo",
+     "cumprimentando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "reagrupando",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 9,
+   "hash": "576390a8",
+   "mortes": {},
+   "eventos": {
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.142,
+    "p95": 0.355,
+    "p99": 0.932,
+    "pior": 5.968
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "limpando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "seguindo_grupo",
+     "reagrupando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "limpando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "reagrupando",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "limpando",
+     "descansando",
+     "pastando",
+     "vigiando",
+     "procurando_agua"
+    ]
+   }
+  },
+  {
+   "semente": 10,
+   "hash": "25dd8fe6",
+   "mortes": {},
+   "eventos": {
+    "caca_inicio": 1,
+    "emboscada_armada": 5,
+    "emboscada_desistiu": 4
+   },
+   "vivos": 7,
+   "cpuMs": {
+    "p50": 0.156,
+    "p95": 0.348,
+    "p99": 0.842,
+    "pior": 6.018
+   },
+   "estados": {
+    "boscaranha": [
+     "emboscado",
+     "patrulhando",
+     "indo_emboscada",
+     "perseguindo",
+     "investigando",
+     "farejando"
+    ],
+    "folhisco-2": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "fugindo",
+     "reagrupando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "procurando_agua"
+    ],
+    "folhisco-3": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "reagrupando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "limpando",
+     "procurando_agua"
+    ],
+    "folhisco-4": [
+     "vagando",
+     "seguindo_grupo",
+     "limpando",
+     "descansando",
+     "fugindo",
+     "reagrupando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "procurando_agua"
+    ],
+    "folhisco-5": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "reagrupando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "limpando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "folhisco-6": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "reagrupando",
+     "pastando",
+     "vigiando",
+     "cumprimentando",
+     "limpando",
+     "fugindo",
+     "procurando_agua"
+    ],
+    "folhisco-7": [
+     "vagando",
+     "seguindo_grupo",
+     "descansando",
+     "reagrupando",
+     "pastando",
+     "vigiando",
+     "indo_pastar",
+     "cumprimentando",
+     "limpando",
+     "procurando_agua"
+    ]
+   }
+  }
+ ]
+}

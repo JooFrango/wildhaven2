@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Laboratório do Varrisco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Bancada de testes do GLB real: palco 3D em tela cheia, bateria de testes à esquerda, medições à direita. */
+:root {
+  --chao: #e9e4d6; --painel: #fbf9f3ee; --tinta: #26281f; --suave: #666a57; --linha: #d3ccb8;
+  --acento: #b5651d; --acento-tinta: #fffaf2; --ok: #4f7a3a; --alerta: #b8860b; --perigo: #a33a2a; --barra: #e3dcc8;
+  --f-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-texto: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-dado: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --chao: #15170f; --painel: #1f2219ee; --tinta: #ebe8dc; --suave: #a8a991; --linha: #383b2c; --acento: #e0913f; --acento-tinta: #1a1408; --ok: #8cc46b; --alerta: #e2b43f; --perigo: #e0715c; --barra: #34372a; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --chao: #15170f; --painel: #1f2219ee; --tinta: #ebe8dc; --suave: #a8a991; --linha: #383b2c; --acento: #e0913f; --acento-tinta: #1a1408; --ok: #8cc46b; --alerta: #e2b43f; --perigo: #e0715c; --barra: #34372a; color-scheme: dark; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--chao); color: var(--tinta); font: 14px/1.45 var(--f-texto); overflow: hidden; }
+#palco { position: fixed; inset: 0; }
+#palco canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.painel { position: absolute; background: var(--painel); border: 1px solid var(--linha); border-radius: 10px; backdrop-filter: blur(6px); padding: 12px 14px; box-sizing: border-box; }
+#testes { top: calc(12px + env(safe-area-inset-top, 0px)); left: max(16px, env(safe-area-inset-left, 0px)); width: 286px; max-height: calc(100% - 24px); overflow: auto; display: grid; gap: 10px; }
+#medidas { top: calc(12px + env(safe-area-inset-top, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); width: 330px; max-height: calc(100% - 24px); overflow: auto; }
+h1 { font: 700 26px/1 var(--f-display); margin: 0; text-wrap: balance; }
+h2 { font: 600 13px/1.2 var(--f-display); text-transform: uppercase; letter-spacing: .08em; color: var(--suave); margin: 0 0 6px; }
+.sub { color: var(--suave); font-size: 12px; margin: 2px 0 0; }
+button { font: 600 13px var(--f-texto); color: var(--tinta); background: var(--chao); border: 1px solid var(--linha); border-radius: 6px; padding: 6px 10px; cursor: pointer; text-align: left; }
+button:hover { border-color: var(--acento); }
+button:focus-visible { outline: 2px solid var(--acento); outline-offset: 1px; }
+button.ativo { background: var(--acento); color: var(--acento-tinta); border-color: var(--acento); }
+#lista { display: grid; gap: 5px; }
+.linha { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+#estado { font: 500 12px/1.4 var(--f-dado); color: var(--suave); font-variant-numeric: tabular-nums; }
+dl.vals { display: grid; grid-template-columns: 118px 1fr; gap: 3px 8px; margin: 6px 0; font-size: 12.5px; }
+dl.vals dt { color: var(--suave); }
+dl.vals dd { margin: 0; font-family: var(--f-dado); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+table { width: 100%; border-collapse: collapse; font: 12px var(--f-dado); }
+td, th { padding: 3px 4px; border-bottom: 1px solid var(--linha); text-align: left; vertical-align: top; }
+.ok { color: var(--ok); } .falha { color: var(--perigo); }
+.nota { font-size: 12px; color: var(--suave); }
+@media (max-width: 760px) {
+  body { overflow: auto; }
+  #palco { position: relative; height: 60vh; }
+  .painel { position: static; width: auto !important; max-height: none !important; margin: 10px max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
+}
+</style>
+</head>
+<body>
+<script>window.WILDHAVEN_MODELOS = window.WILDHAVEN_MODELOS ?? '/repo/';</script>
+<div id="palco"></div>
+<section id="testes" class="painel" aria-label="Bateria de testes">
+  <div>
+    <h1>Laboratório do Varrisco</h1>
+    <p class="sub">GLB original <code>varrisco-animated-v02-LOD0.glb</code> · locomoção, IK e combate do núcleo <code>src/eco</code></p>
+  </div>
+  <div id="lista"></div>
+  <div class="linha">
+    <button id="cam-lateral" type="button">Câmera lateral (patas)</button>
+    <button id="cam-seguir" type="button">Seguir</button>
+    <button id="cam-cima" type="button">De cima</button>
+  </div>
+  <div class="linha">
+    <label class="nota"><input id="ik" type="checkbox" checked> IK das patas</label>
+    <label class="nota"><input id="rodar" type="checkbox" checked> Animar</label>
+  </div>
+  <div id="estado">Carregando GLBs…</div>
+</section>
+<aside id="medidas" class="painel" aria-label="Medições">
+  <h2>Ao vivo</h2>
+  <dl class="vals" id="vivo"></dl>
+  <h2 style="margin-top:10px">Resultados</h2>
+  <table><thead><tr><th>Teste</th><th>Resultado</th></tr></thead><tbody id="resultados"></tbody></table>
+  <p class="nota">Cada teste usa a mesma IA de locomoção e combate da simulação. Os comandos só escolhem o destino (bancada de testes); acertos, erros, esquivas, quedas e animações saem do núcleo e dos clipes do GLB.</p>
+</aside>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/" } }</script>
+<script type="module" src="src/web3d/app-lab.js"></script>
+</body>
+</html>

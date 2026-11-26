@@ -1,0 +1,51 @@
+{
+ "id": "ia-base-v1-integracao-dunas",
+ "nome": "IA Base V1 — integração (dunas)",
+ "descricao": "A metade do teste integrado que exige volume de areia: locomoção subterrânea real (Arenoceto, Arraia-de-areia, Escarvão, Serracórion), a serpente de 14 m com veneno e termorrecepção, presas de superfície e tempestade de areia. Mesmo núcleo do cenário de savana; só o bioma e as capacidades mudam.",
+ "dt": 0.1,
+ "duracaoSeg": 1200,
+ "relogio": { "segundosPorDia": 600, "diaInicial": 12, "horaInicial": 8, "diasPorAno": 365 },
+ "clima": {
+  "fracaoChuvosa": 0.2,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 33,
+  "eventos": [{ "tipo": "tempestade_areia", "inicioSeg": 150, "duracaoSeg": 150, "intensidade": 0.9 }]
+ },
+ "decomposicao": {
+  "diasAteOssos": 0.8,
+  "ossosDias": 0.6,
+  "maxCarcacas": 8,
+  "necrofagos": {
+   "especie": "dunebrio",
+   "glb": "assets/models/creatures/detritivoros/dunebrio-optimized-v02-LOD0.glb",
+   "maxPorCarcaca": 20,
+   "comePorSegKg": 0.0012,
+   "chegadaPorSeg": 0.15
+  }
+ },
+ "terreno": { "tipo": "derivado", "arquivo": "config/eco/terrenos/dunas-dn19-interior.json" },
+ "populacoes": [
+  { "especie": "arenoceto", "individuos": [
+   { "id": "arenoceto-int", "x": 110, "y": 400, "profundidadeInicialM": 8, "direcaoGraus": 40, "raioCasa": 180, "fome": [45, 70] }
+  ] },
+  { "especie": "arraia-de-areia", "individuos": [
+   { "id": "arraia-int-1", "x": 200, "y": 330, "profundidadeInicialM": 1.5, "direcaoGraus": 120, "raioCasa": 170, "fome": [40, 70] },
+   { "id": "arraia-int-2", "x": 160, "y": 450, "direcaoGraus": -60, "raioCasa": 170, "fome": [45, 75] }
+  ] },
+  { "especie": "escarvao", "individuos": [
+   { "id": "escarvao-int", "x": 330, "y": 470, "profundidadeInicialM": 0.9, "direcaoGraus": 150, "raioCasa": 80, "fome": [50, 80], "territorio": { "x": 330, "y": 470, "raio": 60 } }
+  ] },
+  { "especie": "serracorion", "individuos": [
+   { "id": "serracorion-int", "x": 260, "y": 300, "direcaoGraus": 230, "raioCasa": 190, "fome": [55, 85], "territorio": { "x": 260, "y": 330, "raio": 170 } }
+  ] },
+  { "especie": "serpaduna", "individuos": [
+   { "id": "serpaduna-int", "x": 300, "y": 390, "direcaoGraus": 180, "casa": { "x": 300, "y": 390, "raio": 120 }, "fome": [75, 90], "sede": [10, 25], "energia": [90, 98] }
+  ] },
+  { "especie": "cromatil", "individuos": [
+   { "id": "cromatil-duna-1", "x": 268, "y": 420, "direcaoGraus": 0, "raioCasa": 60, "fome": [60, 80] },
+   { "id": "cromatil-duna-2", "x": 240, "y": 440, "direcaoGraus": 20, "raioCasa": 60, "fome": [55, 78] }
+  ] }
+ ]
+}

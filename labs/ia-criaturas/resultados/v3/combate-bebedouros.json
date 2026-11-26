@@ -1,0 +1,90 @@
+{
+ "sementes": "1-30",
+ "segundos": 300,
+ "cenarios": {
+  "bebedouro": {
+   "golpesIniciados": 102,
+   "porAtaque": {
+    "garra_foice": 99,
+    "chicotada_cauda": 1,
+    "mordida_defensiva": 2
+   },
+   "acertos": 12,
+   "acertosPorAtaque": {
+    "garra_foice": 11,
+    "mordida_defensiva": 1
+   },
+   "erros": 83,
+   "errosPorMotivo": {
+    "membro_nao_alcanca": 83
+   },
+   "esquivas": 7,
+   "contraAtaques": 2,
+   "empurroes": 3,
+   "desequilibrios": 3,
+   "quedas": 4,
+   "agarroes": 0,
+   "escapesDeAgarrao": 0,
+   "soltou": {},
+   "regioes": {
+    "pernas": 7,
+    "tronco": 4,
+    "cabeca": 1
+   },
+   "atordoamentos": 0,
+   "fraturas": 3,
+   "conflitosPorFaseFinal": {
+    "intimidacao": 19,
+    "observacao": 7,
+    "confronto": 4
+   },
+   "conflitosPorDesfecho": {
+    "intimidado": 23,
+    "cedeu": 6,
+    "perdeu_contato": 1
+   },
+   "predacoes": 6,
+   "mortesCombate": 0
+  },
+  "bebedouro-real": {
+   "golpesIniciados": 35,
+   "porAtaque": {
+    "garra_foice": 35
+   },
+   "acertos": 3,
+   "acertosPorAtaque": {
+    "garra_foice": 3
+   },
+   "erros": 30,
+   "errosPorMotivo": {
+    "membro_nao_alcanca": 30
+   },
+   "esquivas": 2,
+   "contraAtaques": 0,
+   "empurroes": 1,
+   "desequilibrios": 0,
+   "quedas": 2,
+   "agarroes": 0,
+   "escapesDeAgarrao": 0,
+   "soltou": {},
+   "regioes": {
+    "flanco": 1,
+    "tronco": 1,
+    "pernas": 1
+   },
+   "atordoamentos": 0,
+   "fraturas": 1,
+   "conflitosPorFaseFinal": {
+    "observacao": 3,
+    "confronto": 1,
+    "intimidacao": 1
+   },
+   "conflitosPorDesfecho": {
+    "cedeu": 3,
+    "intimidado": 2
+   },
+   "predacoes": 2,
+   "mortesCombate": 0
+  }
+ }
+}

@@ -99,9 +99,9 @@ test('src/eco usa só matemática determinística (sem Math.sin/cos/pow/log/exp/
 // Paridade com o navegador: configurações V2 servidas por HTTP == lidas do disco, e o mesmo hash.
 let srv, porta;
 before(async () => {
-  porta = 5600 + Math.floor(Math.random() * 300);
+  porta = 0; // SO escolhe uma porta livre; evita faixas reservadas no Windows.
   srv = spawn(process.execPath, [join(RAIZ_LAB, 'scripts', 'servidor.mjs'), '--porta', String(porta)], { stdio: ['ignore', 'pipe', 'inherit'] });
-  await new Promise((ok, erro) => { srv.stdout.on('data', (d) => String(d).includes('http://') && ok()); srv.on('exit', (c) => erro(new Error(`servidor saiu (${c})`))); });
+  await new Promise((ok, erro) => { srv.stdout.on('data', (d) => (()=>{const m=String(d).match(/http:\/\/localhost:(\d+)/);if(m){porta=Number(m[1]);ok();}})()); srv.on('exit', (c) => erro(new Error(`servidor saiu (${c})`))); });
 });
 after(() => srv?.kill());
 test('paridade página × CLI (configurações V2 por HTTP)', async () => {

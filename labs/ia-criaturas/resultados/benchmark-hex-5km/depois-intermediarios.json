@@ -1,0 +1,121 @@
+{
+ "cenario": "laboratorio-populacao-hex-5km",
+ "modo": "ecologico",
+ "segundos": 120,
+ "linhas": [
+  {
+   "pedido": 2000,
+   "criados": 2000,
+   "vivos": 1996,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 883.4,
+   "passo": {
+    "p50": 65.109,
+    "p95": 98.108,
+    "p99": 118.887,
+    "pior": 172.862,
+    "piorAbsoluto": 393.763,
+    "media": 68.822
+   },
+   "fatorTempoReal": 1.45,
+   "msPorAnimalSeg": 0.3441,
+   "buscasCaminho": 632,
+   "custo": {
+    "n1": 80347,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 2398254,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {
+    "predacao": 4
+   },
+   "nascimentos": 0,
+   "eventos": 44,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 89,
+   "rssMB": 478,
+   "heapCresceuMB": -36.5,
+   "hash": "dfcba00e"
+  },
+  {
+   "pedido": 2400,
+   "criados": 2400,
+   "vivos": 2397,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 688.3,
+   "passo": {
+    "p50": 85.625,
+    "p95": 125.512,
+    "p99": 149.242,
+    "pior": 188.566,
+    "piorAbsoluto": 284.124,
+    "media": 89.512
+   },
+   "fatorTempoReal": 1.12,
+   "msPorAnimalSeg": 0.373,
+   "buscasCaminho": 970,
+   "custo": {
+    "n1": 104659,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 2877529,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {
+    "predacao": 3
+   },
+   "nascimentos": 0,
+   "eventos": 43,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 194.3,
+   "rssMB": 518.3,
+   "heapCresceuMB": 106.1,
+   "hash": "bf603a00"
+  },
+  {
+   "pedido": 2800,
+   "criados": 2800,
+   "vivos": 2796,
+   "semente": 1,
+   "modo": "ecologico",
+   "msCriar": 513.9,
+   "passo": {
+    "p50": 98.265,
+    "p95": 159.256,
+    "p99": 206.066,
+    "pior": 244.126,
+    "piorAbsoluto": 268.727,
+    "media": 106.071
+   },
+   "fatorTempoReal": 0.94,
+   "msPorAnimalSeg": 0.3788,
+   "buscasCaminho": 721,
+   "custo": {
+    "n1": 124135,
+    "n2": 0,
+    "n3": 0,
+    "passosN1": 3358139,
+    "passosN2": 0,
+    "passosN3": 0
+   },
+   "mortes": {
+    "predacao": 4
+   },
+   "nascimentos": 0,
+   "eventos": 45,
+   "falhas": 0,
+   "violacoes": [],
+   "heapMB": 246,
+   "rssMB": 531,
+   "heapCresceuMB": 62.7,
+   "hash": "2246f072"
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "id": "serpaduna-b-caca",
+ "nome": "Serpáduna B — emboscada, veneno e alimentação",
+ "descricao": "EXPERIMENTAL. A Serpáduna embosca na cobertura por onde os Cromáteis passam para comer. Mostra a espera enrolada, o bote, a mordida com veneno paralisante, a espera pelos sintomas e a alimentação — engolir inteira só quando a presa cabe na mandíbula.",
+ "dt": 0.1,
+ "duracaoSeg": 900,
+ "relogio": { "segundosPorDia": 900, "diaInicial": 30, "horaInicial": 19.2, "diasPorAno": 365 },
+ "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0, "chanceChuvaSeca": 0, "chanceIncendio": 0, "temperaturaC": 19 },
+ "terreno": {
+  "tipo": "procedural", "largura": 200, "profundidade": 160, "res": 1, "amplitude": 2, "capim": 6,
+  "rochas": [{ "x": 70, "y": 60, "raio": 2.5, "altura": 2 }],
+  "arbustos": [
+   { "x": 100, "y": 80, "raio": 7, "ocultacao": 85, "alimento": 40 },
+   { "x": 118, "y": 86, "raio": 6, "ocultacao": 80, "alimento": 40 },
+   { "x": 86, "y": 92, "raio": 6, "ocultacao": 80, "alimento": 40 }
+  ]
+ },
+ "populacoes": [
+  { "especie": "serpaduna", "individuos": [{ "id": "serpaduna", "x": 100, "y": 80, "direcaoGraus": 30, "casa": { "x": 100, "y": 80, "raio": 60 }, "fome": [80, 90], "sede": [10, 20], "energia": [90, 98] }] },
+  { "especie": "cromatil", "individuos": [
+   { "id": "cromatil-1", "x": 140, "y": 84, "direcaoGraus": 180, "raioCasa": 40, "fome": [70, 85], "sede": [10, 20], "energia": [80, 95] },
+   { "id": "cromatil-2", "x": 146, "y": 92, "direcaoGraus": 180, "raioCasa": 40, "fome": [70, 85], "sede": [10, 20], "energia": [80, 95] }
+  ] },
+  { "especie": "velsari", "individuos": [{ "id": "velsari-grande", "x": 60, "y": 120, "direcaoGraus": 0, "raioCasa": 40, "fome": [50, 70], "sede": [10, 20], "energia": [80, 95] }] }
+ ]
+}

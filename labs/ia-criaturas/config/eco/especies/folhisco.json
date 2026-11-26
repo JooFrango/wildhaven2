@@ -78,13 +78,7 @@
     "presas": [],
     "carnica": false
   },
-  "teme": [
-    "boscaranha",
-    "varrisco",
-    "rocantraz",
-    "proto-cacador-camuflado",
-    "proto-serpente-termica"
-  ],
+  "teme": ["boscaranha", "varrisco", "rocantraz", "proto-cacador-camuflado", "proto-serpente-termica", "serpaduna"],
   "temperamento": {
     "agressividade": [
       0.1,

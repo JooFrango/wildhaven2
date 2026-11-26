@@ -1,0 +1,162 @@
+{
+ "teste": "ataques",
+ "nome": "Bote, mordida e garra (Velsari manequim)",
+ "semente": 7,
+ "tSim": 9.1,
+ "hash": "ddc5c7cf",
+ "passos": [
+  {
+   "rotulo": "aproximar por trás",
+   "t0": 0,
+   "t1": 1.9,
+   "ok": true
+  },
+  {
+   "rotulo": "bote",
+   "t0": 1.9,
+   "t1": 2.9,
+   "ok": true
+  },
+  {
+   "rotulo": "mordida",
+   "t0": 2.9,
+   "t1": 3.8,
+   "ok": true
+  },
+  {
+   "rotulo": "garra (alvo caído ou preso)",
+   "t0": 3.8,
+   "t1": 8.1,
+   "ok": true
+  },
+  {
+   "rotulo": "mordida 2",
+   "t0": 8.1,
+   "t1": 9,
+   "ok": true
+  }
+ ],
+ "passosOk": 5,
+ "passosTotal": 5,
+ "desvioFrenteMaxGraus": 1.1,
+ "desvioFrenteMedioGraus": 0.09,
+ "velocidadeMax": 4.29,
+ "quadrosGiroNoLugar": 18,
+ "clipes": [
+  "idle",
+  "walk",
+  "pounce",
+  "bite",
+  "turn_left",
+  "turn_right",
+  "claw_slash"
+ ],
+ "colisoes": 0,
+ "contatosObstaculo": 0,
+ "pernas": {
+  "quadros": 552,
+  "amostrasApoio": 684,
+  "deslizeApoioFK_ms": 0.964,
+  "deslizeApoioIK_ms": 0.597,
+  "erroAlturaFK_m": 0.067,
+  "erroAlturaIK_m": 0.001,
+  "liberacoes": 16
+ },
+ "eventos": {
+  "ataque_inicio": 4,
+  "ferimento": 2,
+  "empurrao": 1,
+  "agarrao": 1,
+  "soltou": 1,
+  "escapou_agarrao": 1,
+  "esquiva": 2,
+  "caca_inicio": 1,
+  "perseguicao_inicio": 1
+ },
+ "registro": [
+  "2.4s v inicia bote (alcance medido 1.39 m)",
+  "3.0s v inicia mordida (alcance medido 1.17 m)",
+  "7.8s v inicia garra_foice (alcance medido 0.52 m)",
+  "8.2s v inicia mordida (alcance medido 1.17 m)"
+ ],
+ "golpes": [
+  {
+   "t": 2.4,
+   "tipo": "ataque_inicio",
+   "id": "v",
+   "ataque": "bote"
+  },
+  {
+   "t": 2.9,
+   "tipo": "ferimento",
+   "id": "alvo",
+   "ataque": "bote",
+   "regiao": "pescoco"
+  },
+  {
+   "t": 2.9,
+   "tipo": "empurrao",
+   "id": "alvo",
+   "ataque": "bote"
+  },
+  {
+   "t": 2.9,
+   "tipo": "agarrao",
+   "id": "v",
+   "regiao": "pescoco"
+  },
+  {
+   "t": 3,
+   "tipo": "ataque_inicio",
+   "id": "v",
+   "ataque": "mordida"
+  },
+  {
+   "t": 3.7,
+   "tipo": "ferimento",
+   "id": "alvo",
+   "ataque": "mordida",
+   "regiao": "tronco"
+  },
+  {
+   "t": 6.1,
+   "tipo": "soltou",
+   "id": "v",
+   "motivo": "vitima_escapou"
+  },
+  {
+   "t": 6.1,
+   "tipo": "escapou_agarrao",
+   "id": "alvo"
+  },
+  {
+   "t": 7.8,
+   "tipo": "ataque_inicio",
+   "id": "v",
+   "ataque": "garra_foice"
+  },
+  {
+   "t": 8.1,
+   "tipo": "esquiva",
+   "id": "alvo",
+   "ataque": "garra_foice"
+  },
+  {
+   "t": 8.2,
+   "tipo": "ataque_inicio",
+   "id": "v",
+   "ataque": "mordida"
+  },
+  {
+   "t": 8.9,
+   "tipo": "esquiva",
+   "id": "alvo",
+   "ataque": "mordida"
+  },
+  {
+   "t": 9.1,
+   "tipo": "perseguicao_inicio",
+   "id": "v"
+  }
+ ]
+}

@@ -1362,6 +1362,174 @@
     }
    },
    "anatomia": null
+  },
+  "serpaduna": {
+   "glb": "assets/models/creatures/serpaduna/v03/serpaduna_v03_uncoiled_rigged.glb",
+   "sha256": "4591ad59b0ec8a7539733044a250af9d284b53a0eeb26f971a8bc67694397424",
+   "bytes": 1649172,
+   "frente": "-X",
+   "evidenciaFrente": "skull→axis_00_tail_tip Δ=(-6.95,-0.47)",
+   "ossos": 72,
+   "extensao": [
+    15.5603,
+    1.0759,
+    1.3902
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "slither": {
+     "duracao": 4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "fast_slither": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "coil_enter": {
+     "duracao": 6,
+     "velNatural": null,
+     "rootMotion": 6.15
+    },
+    "coil_defend": {
+     "duracao": 5,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "coil_exit": {
+     "duracao": 6,
+     "velNatural": null,
+     "rootMotion": 6.15
+    },
+    "alert": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "tongue_flick": {
+     "duracao": 1.5,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "ambush_strike": {
+     "duracao": 2.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "venom_bite": {
+     "duracao": 1.8,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "swallow_whole": {
+     "duracao": 7,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 7,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 4,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": null
+  },
+  "frutavil": {
+   "glb": "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD0.glb",
+   "sha256": "91f8c8d150ea70db4d3428052b0ef0b5237494c589d86054384d268ab75f432e",
+   "bytes": 248540,
+   "frente": "+X",
+   "evidenciaFrente": "head→tail0 Δ=(0.56,0.00)",
+   "ossos": 0,
+   "extensao": [
+    1.9695,
+    1.555,
+    0.6853
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.2,
+     "velNatural": 0.143,
+     "rootMotion": 0
+    },
+    "hop": {
+     "duracao": 1,
+     "velNatural": 0.258,
+     "rootMotion": 0
+    },
+    "perch": {
+     "duracao": 2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "peck": {
+     "duracao": 1.15,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "eat_fruit": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "wing_flap": {
+     "duracao": 0.78,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "short_flight": {
+     "duracao": 1.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 1.8,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 3.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 2,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 0.559,
+    "trasMin": -1.41,
+    "centro": -0.426,
+    "ataques": {
+     "bicada": {
+      "clipe": "peck",
+      "osso": "leg0_foot",
+      "duracao": 1.15,
+      "tImpacto": 1.073,
+      "alcance": 0.034,
+      "sentido": "frente",
+      "alturaImpacto": -0.06,
+      "avancoNoClipe": 0.029
+     }
+    }
+   }
   }
  }
 }

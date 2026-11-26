@@ -16,9 +16,16 @@
     "proto-serpente-termica.json",
     "carniroca.json",
     "pica-termita.json",
-    "ferrunco.json"
+    "ferrunco.json",
+    "serpaduna.json",
+    "frutavil.json"
   ],
   "cenarios": [
+    "laboratorio-populacao-hex-5km.json",
+    "ia-base-v1-integracao-dunas.json",
+    "ia-base-v1-integracao.json",
+    "serpaduna-a-locomocao.json",
+    "serpaduna-b-caca.json",
     "v7-a-cacador-camuflado.json",
     "v7-b-mordedura-venenosa.json",
     "v7-c-bandos-no-ceu.json",

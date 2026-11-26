@@ -17,7 +17,7 @@
   "furtividade": { "camuflagem": 0.55, "fatorParado": 0.5, "ruidoPassos": 0.4 },
   "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.02, "custoCorridaPorSeg": 4.5, "recuperacaoPorSeg": 3, "fatorRecuperacaoParado": 0.6, "fomePorDia": 35, "sedePorDia": 25, "comerPorSeg": 1.5, "beberPorSeg": 6, "limiteExaustao": 6, "fomeProcurar": 45, "sedeProcurar": 50 },
   "dieta": { "vegetacao": ["capim", "arbusto"], "presas": [], "carnica": false },
-  "teme": ["varrisco", "rocantraz", "boscaranha", "proto-serpente-termica", "proto-cacador-camuflado"],
+  "teme": ["varrisco", "rocantraz", "boscaranha", "proto-serpente-termica", "proto-cacador-camuflado", "serpaduna"],
   "temperamento": { "agressividade": [0.1, 0.05], "coragem": [0.25, 0.1], "medo": [0.75, 0.1], "vigilancia": [0.55, 0.1] },
   "social": { "tipo": "solitario", "tamanho": [1, 1], "territorial": false, "refugio": "rochas" },
   "combate": {

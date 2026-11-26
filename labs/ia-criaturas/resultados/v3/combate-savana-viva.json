@@ -1,0 +1,45 @@
+{
+ "sementes": "1-10",
+ "segundos": 600,
+ "cenarios": {
+  "savana-viva": {
+   "golpesIniciados": 67,
+   "porAtaque": {
+    "garra_foice": 67
+   },
+   "acertos": 10,
+   "acertosPorAtaque": {
+    "garra_foice": 10
+   },
+   "erros": 54,
+   "errosPorMotivo": {
+    "membro_nao_alcanca": 54
+   },
+   "esquivas": 3,
+   "contraAtaques": 0,
+   "empurroes": 8,
+   "desequilibrios": 1,
+   "quedas": 0,
+   "agarroes": 0,
+   "escapesDeAgarrao": 0,
+   "soltou": {},
+   "regioes": {
+    "pernas": 4,
+    "tronco": 5,
+    "flanco": 1
+   },
+   "atordoamentos": 0,
+   "fraturas": 1,
+   "conflitosPorFaseFinal": {
+    "intimidacao": 5,
+    "observacao": 1
+   },
+   "conflitosPorDesfecho": {
+    "intimidado": 5,
+    "perdeu_contato": 1
+   },
+   "predacoes": 2,
+   "mortesCombate": 0
+  }
+ }
+}

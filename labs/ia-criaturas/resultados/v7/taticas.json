@@ -1,0 +1,125 @@
+{
+ "sementes": "1-30",
+ "casos": [
+  {
+   "caso": "comum (Varrisco) × Velsari isolado",
+   "sementes": 30,
+   "cacou": 17,
+   "emboscadasDisparadas": 0,
+   "golpes": 2,
+   "acertos": 1,
+   "inoculacoes": 0,
+   "presasMortas": 0,
+   "taxaAbate": 0,
+   "energiaCamuflagemMedia": 0
+  },
+  {
+   "caso": "camuflado × Velsari isolado",
+   "sementes": 30,
+   "cacou": 17,
+   "emboscadasDisparadas": 0,
+   "golpes": 16,
+   "acertos": 4,
+   "inoculacoes": 0,
+   "presasMortas": 3,
+   "taxaAbate": 0.1,
+   "energiaCamuflagemMedia": 7.4
+  },
+  {
+   "caso": "camuflado SEM camuflagem × Velsari isolado",
+   "sementes": 30,
+   "cacou": 17,
+   "emboscadasDisparadas": 0,
+   "golpes": 2,
+   "acertos": 1,
+   "inoculacoes": 0,
+   "presasMortas": 0,
+   "taxaAbate": 0,
+   "energiaCamuflagemMedia": 0
+  },
+  {
+   "caso": "dois Varriscos (par) × Velsari isolado",
+   "sementes": 30,
+   "cacou": 24,
+   "emboscadasDisparadas": 0,
+   "golpes": 11,
+   "acertos": 0,
+   "inoculacoes": 0,
+   "presasMortas": 0,
+   "taxaAbate": 0,
+   "energiaCamuflagemMedia": 0
+  },
+  {
+   "caso": "comum (Varrisco) × 5 Velsaris",
+   "sementes": 30,
+   "cacou": 24,
+   "emboscadasDisparadas": 0,
+   "golpes": 132,
+   "acertos": 46,
+   "inoculacoes": 0,
+   "presasMortas": 12,
+   "taxaAbate": 0.4,
+   "energiaCamuflagemMedia": 0
+  },
+  {
+   "caso": "camuflado × 5 Velsaris",
+   "sementes": 30,
+   "cacou": 24,
+   "emboscadasDisparadas": 0,
+   "golpes": 83,
+   "acertos": 23,
+   "inoculacoes": 0,
+   "presasMortas": 6,
+   "taxaAbate": 0.2,
+   "energiaCamuflagemMedia": 18.1
+  },
+  {
+   "caso": "venenoso com emboscada (Boscaranha) × Folhisco isolado",
+   "sementes": 30,
+   "cacou": 8,
+   "emboscadasDisparadas": 7,
+   "golpes": 4,
+   "acertos": 0,
+   "inoculacoes": 0,
+   "presasMortas": 0,
+   "taxaAbate": 0,
+   "energiaCamuflagemMedia": 0
+  },
+  {
+   "caso": "venenoso SEM emboscada × Folhisco isolado",
+   "sementes": 30,
+   "cacou": 5,
+   "emboscadasDisparadas": 0,
+   "golpes": 3,
+   "acertos": 0,
+   "inoculacoes": 0,
+   "presasMortas": 0,
+   "taxaAbate": 0,
+   "energiaCamuflagemMedia": 0
+  },
+  {
+   "caso": "SEM veneno com emboscada × Folhisco isolado",
+   "sementes": 30,
+   "cacou": 8,
+   "emboscadasDisparadas": 7,
+   "golpes": 4,
+   "acertos": 0,
+   "inoculacoes": 0,
+   "presasMortas": 0,
+   "taxaAbate": 0,
+   "energiaCamuflagemMedia": 0
+  },
+  {
+   "caso": "venenoso com emboscada × 5 Folhiscos",
+   "sementes": 30,
+   "cacou": 11,
+   "emboscadasDisparadas": 10,
+   "golpes": 20,
+   "acertos": 15,
+   "inoculacoes": 15,
+   "presasMortas": 3,
+   "taxaAbate": 0.1,
+   "energiaCamuflagemMedia": 0
+  }
+ ]
+}

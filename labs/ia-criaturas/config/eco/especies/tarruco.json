@@ -17,7 +17,7 @@
   "furtividade": { "camuflagem": 0.35, "fatorParado": 0.45, "ruidoPassos": 0.6 },
   "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.03, "custoCorridaPorSeg": 3.5, "recuperacaoPorSeg": 2.5, "fatorRecuperacaoParado": 0.5, "fomePorDia": 50, "sedePorDia": 45, "comerPorSeg": 2, "beberPorSeg": 8, "limiteExaustao": 6, "fomeProcurar": 45, "sedeProcurar": 45 },
   "dieta": { "vegetacao": ["capim", "arbusto"], "presas": [], "carnica": false },
-  "teme": ["varrisco", "rocantraz", "proto-cacador-camuflado"],
+  "teme": ["varrisco", "rocantraz", "proto-cacador-camuflado", "serpaduna"],
   "temperamento": { "agressividade": [0.1, 0.05], "coragem": [0.25, 0.1], "medo": [0.65, 0.1], "vigilancia": [0.55, 0.1] },
   "social": { "tipo": "solitario", "tamanho": [1, 1], "maeEFilhote": true, "territorial": false, "respostaAmeaca": ["esconder", "congelar", "fugir"] },
   "combate": {

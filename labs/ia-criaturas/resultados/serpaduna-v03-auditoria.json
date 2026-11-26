@@ -1,0 +1,667 @@
+{
+ "arquivo": "../../assets/models/creatures/serpaduna/v03/serpaduna_v03_uncoiled_rigged.glb",
+ "ossos": 72,
+ "colunaJuntas": 70,
+ "raioCorpoM": 0.53,
+ "limiteCurvaturaGraus": 35,
+ "repouso": {
+  "caminho": 14.129,
+  "pontaAPonta": 14.036,
+  "retidao": 0.993,
+  "curvMaxGraus": 6,
+  "curvMediaGraus": 0.8,
+  "cruzamentos": 0,
+  "folgaMinima": 0.158,
+  "cabeca": [
+   6.95,
+   0,
+   0.47
+  ],
+  "cauda": [
+   -7.07,
+   0,
+   1.14
+  ],
+  "alturaMin": -0.092,
+  "pontos": [
+   [
+    6.95,
+    0,
+    0.47
+   ],
+   [
+    6.7468115942028986,
+    0.0005093306507626259,
+    0.47
+   ],
+   [
+    6.543623188405798,
+    0.001992265876544138,
+    0.47
+   ],
+   [
+    6.340434782608696,
+    0.0044185984220632335,
+    0.47
+   ],
+   [
+    6.137246376811595,
+    0.007744904894427982,
+    0.47
+   ],
+   [
+    5.934057971014493,
+    0.011919924744333473,
+    0.47
+   ],
+   [
+    5.730869565217391,
+    0.01683236820257191,
+    0.47
+   ],
+   [
+    5.52768115942029,
+    0.02238243971150181,
+    0.47
+   ],
+   [
+    5.324492753623189,
+    0.028461949660750628,
+    0.47
+   ],
+   [
+    5.121304347826087,
+    0.03494394892201569,
+    0.47
+   ],
+   [
+    4.918115942028986,
+    0.04168207243048175,
+    0.47
+   ],
+   [
+    4.714927536231884,
+    0.04853606984445553,
+    0.47
+   ],
+   [
+    4.511739130434783,
+    0.05535839714915738,
+    0.47
+   ],
+   [
+    4.308550724637682,
+    0.06199525226169947,
+    0.47
+   ],
+   [
+    4.10536231884058,
+    0.06830344914510766,
+    0.47
+   ],
+   [
+    3.9021739130434785,
+    0.07414342296352933,
+    0.47
+   ],
+   [
+    3.698985507246377,
+    0.07936466855173598,
+    0.47
+   ],
+   [
+    3.4957971014492757,
+    0.08384576854395813,
+    0.47
+   ],
+   [
+    3.2926086956521745,
+    0.08748253700396313,
+    0.47
+   ],
+   [
+    3.089420289855073,
+    0.09017753682694807,
+    0.47
+   ],
+   [
+    2.8862318840579713,
+    0.09181589167608013,
+    0.47
+   ],
+   [
+    2.68304347826087,
+    0.09235674531923802,
+    0.47
+   ],
+   [
+    2.479855072463768,
+    0.09176022977749117,
+    0.47
+   ],
+   [
+    2.2766666666666673,
+    0.08999943750838413,
+    0.47
+   ],
+   [
+    2.0734782608695657,
+    0.08702972785231458,
+    0.47
+   ],
+   [
+    1.870289855072464,
+    0.08290691061393006,
+    0.47
+   ],
+   [
+    1.6671014492753629,
+    0.07766601375144523,
+    0.47
+   ],
+   [
+    1.4639130434782612,
+    0.07135458897631376,
+    0.47
+   ],
+   [
+    1.2607246376811596,
+    0.0640283985280555,
+    0.47
+   ],
+   [
+    1.0575362318840584,
+    0.05580875871684488,
+    0.47
+   ],
+   [
+    0.8543478260869571,
+    0.04680210001166762,
+    0.47
+   ],
+   [
+    0.6511594202898553,
+    0.037121630688102945,
+    0.47
+   ],
+   [
+    0.4479710144927536,
+    0.02690156334208963,
+    0.47
+   ],
+   [
+    0.2447826086956524,
+    0.016298262137176046,
+    0.47
+   ],
+   [
+    0.04159420289855095,
+    0.005459880054259762,
+    0.47
+   ],
+   [
+    -0.16159420289855062,
+    -0.005459806236883601,
+    0.47
+   ],
+   [
+    -0.3647826086956516,
+    -0.016298187947987722,
+    0.47
+   ],
+   [
+    -0.5679710144927538,
+    -0.026901695443934972,
+    0.47
+   ],
+   [
+    -0.7711594202898545,
+    -0.037122304955889564,
+    0.47
+   ],
+   [
+    -0.9743478260869552,
+    -0.04680153896174356,
+    0.47
+   ],
+   [
+    -1.177536231884058,
+    -0.05580860360875199,
+    0.47
+   ],
+   [
+    -1.3807246376811586,
+    -0.06402884336528789,
+    0.47
+   ],
+   [
+    -1.5839130434782602,
+    -0.07135594063172594,
+    0.47
+   ],
+   [
+    -1.7871014492753619,
+    -0.07766528365804817,
+    0.47
+   ],
+   [
+    -1.9902898550724641,
+    -0.08290679817572605,
+    0.47
+   ],
+   [
+    -2.1934782608695653,
+    -0.08703048808351718,
+    0.47
+   ],
+   [
+    -2.396666666666666,
+    -0.0899990069642017,
+    0.47
+   ],
+   [
+    -2.599855072463768,
+    -0.09175956021950997,
+    0.47
+   ],
+   [
+    -2.803043478260868,
+    -0.09235676049156617,
+    0.47
+   ],
+   [
+    -3.006231884057971,
+    -0.09181675650753271,
+    0.47
+   ],
+   [
+    -3.209420289855071,
+    -0.09017644989451629,
+    0.47
+   ],
+   [
+    -3.412608695652175,
+    -0.08748208507746244,
+    0.47
+   ],
+   [
+    -3.6157971014492754,
+    -0.08384589094918486,
+    0.47
+   ],
+   [
+    -3.818985507246376,
+    -0.07936527856200884,
+    0.47
+   ],
+   [
+    -4.022173913043478,
+    -0.07414292480360567,
+    0.47
+   ],
+   [
+    -4.225362318840579,
+    -0.06830328223576676,
+    0.47
+   ],
+   [
+    -4.428550724637682,
+    -0.061995342714904166,
+    0.47
+   ],
+   [
+    -4.631739130434782,
+    -0.05535852705270728,
+    0.4724141459917528
+   ],
+   [
+    -4.834927536231883,
+    -0.04853604773633019,
+    0.4944338148993254
+   ],
+   [
+    -5.038115942028985,
+    -0.04168208814619479,
+    0.5366527365127667
+   ],
+   [
+    -5.241304347826087,
+    -0.034943903799256125,
+    0.5946027293686874
+   ],
+   [
+    -5.444492753623188,
+    -0.0284619046524076,
+    0.6642058716915978
+   ],
+   [
+    -5.647681159420289,
+    -0.02238253172848919,
+    0.7414547372414586
+   ],
+   [
+    -5.8508695652173905,
+    -0.016832383430083288,
+    0.821972922554815
+   ],
+   [
+    -6.054057971014492,
+    -0.011919827567721204,
+    0.9015974068861898
+   ],
+   [
+    -6.257246376811593,
+    -0.007744941371214396,
+    0.9762512451290045
+   ],
+   [
+    -6.460434782608696,
+    -0.00441867174109596,
+    1.0414627242205559
+   ],
+   [
+    -6.663623188405796,
+    -0.0019922427226576164,
+    1.0931807947573375
+   ],
+   [
+    -6.8668115942028995,
+    -0.0005092937654748921,
+    1.1273859160209252
+   ],
+   [
+    -7.069999999999999,
+    0,
+    1.1400000000000001
+   ]
+  ]
+ },
+ "clipes": [
+  {
+   "nome": "idle",
+   "duracao": 6,
+   "quadros": 16,
+   "retidaoMin": 0.993,
+   "retidaoMax": 0.993,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.158,
+   "amplitudeForma": 0,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.115,
+   "amplitudeMediaM": 0.028,
+   "amplitudeMaxM": 0.047,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.017,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "slither",
+   "duracao": 4,
+   "quadros": 16,
+   "retidaoMin": 0.983,
+   "retidaoMax": 0.984,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6.3,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.154,
+   "amplitudeForma": 0.001,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.423,
+   "amplitudeMediaM": 0.333,
+   "amplitudeMaxM": 0.655,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.346,
+   "atrasoQuadros": -5
+  },
+  {
+   "nome": "fast_slither",
+   "duracao": 2.4,
+   "quadros": 16,
+   "retidaoMin": 0.972,
+   "retidaoMax": 0.973,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 8.3,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.144,
+   "amplitudeForma": 0.001,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.395,
+   "amplitudeMediaM": 0.383,
+   "amplitudeMaxM": 0.733,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.065,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "coil_enter",
+   "duracao": 6,
+   "quadros": 16,
+   "retidaoMin": 0.095,
+   "retidaoMax": 0.993,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 10.5,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 127,
+   "folgaMinima": -0.503,
+   "amplitudeForma": 0.898,
+   "deslocamentoCabeca": 6.15,
+   "abaixoDoSolo": -9.295,
+   "amplitudeMediaM": 7.095,
+   "amplitudeMaxM": 13.565,
+   "amplitudeCaudaM": 6.152,
+   "amplitudeCabecaM": 13.565,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "coil_defend",
+   "duracao": 5,
+   "quadros": 16,
+   "retidaoMin": 0.202,
+   "retidaoMax": 0.204,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 10.5,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 131,
+   "folgaMinima": -0.529,
+   "amplitudeForma": 0.002,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -3.863,
+   "amplitudeMediaM": 0.031,
+   "amplitudeMaxM": 0.055,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.023,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "coil_exit",
+   "duracao": 6,
+   "quadros": 16,
+   "retidaoMin": 0.095,
+   "retidaoMax": 0.993,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 10.5,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 127,
+   "folgaMinima": -0.503,
+   "amplitudeForma": 0.898,
+   "deslocamentoCabeca": 6.15,
+   "abaixoDoSolo": -9.295,
+   "amplitudeMediaM": 5.67,
+   "amplitudeMaxM": 7.966,
+   "amplitudeCaudaM": 6.152,
+   "amplitudeCabecaM": 7.83,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "alert",
+   "duracao": 3,
+   "quadros": 16,
+   "retidaoMin": 0.992,
+   "retidaoMax": 0.994,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6.4,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.158,
+   "amplitudeForma": 0.002,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.092,
+   "amplitudeMediaM": 0.006,
+   "amplitudeMaxM": 0.102,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.102,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "tongue_flick",
+   "duracao": 1.5,
+   "quadros": 16,
+   "retidaoMin": 0.993,
+   "retidaoMax": 0.993,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.158,
+   "amplitudeForma": 0,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.092,
+   "amplitudeMediaM": 0,
+   "amplitudeMaxM": 0,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "ambush_strike",
+   "duracao": 2.2,
+   "quadros": 16,
+   "retidaoMin": 0.985,
+   "retidaoMax": 0.996,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6.6,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.158,
+   "amplitudeForma": 0.011,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.192,
+   "amplitudeMediaM": 0.026,
+   "amplitudeMaxM": 0.429,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.429,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "venom_bite",
+   "duracao": 1.8,
+   "quadros": 16,
+   "retidaoMin": 0.991,
+   "retidaoMax": 0.993,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.158,
+   "amplitudeForma": 0.002,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.11,
+   "amplitudeMediaM": 0.011,
+   "amplitudeMaxM": 0.183,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.183,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "swallow_whole",
+   "duracao": 7,
+   "quadros": 16,
+   "retidaoMin": 0.992,
+   "retidaoMax": 0.994,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6.3,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.158,
+   "amplitudeForma": 0.002,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.184,
+   "amplitudeMediaM": 0.088,
+   "amplitudeMaxM": 0.155,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.099,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "rest",
+   "duracao": 7,
+   "quadros": 16,
+   "retidaoMin": 0.993,
+   "retidaoMax": 0.993,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.158,
+   "amplitudeForma": 0,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.119,
+   "amplitudeMediaM": 0.025,
+   "amplitudeMaxM": 0.045,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.021,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "death",
+   "duracao": 4,
+   "quadros": 16,
+   "retidaoMin": 0.994,
+   "retidaoMax": 0.997,
+   "comprimentoMin": 14.13,
+   "comprimentoMax": 14.13,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 6.9,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 0,
+   "folgaMinima": 0.158,
+   "amplitudeForma": 0.003,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -0.189,
+   "amplitudeMediaM": 0.179,
+   "amplitudeMaxM": 0.666,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.666,
+   "atrasoQuadros": 0
+  }
+ ]
+}

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven — uma simulação com GLBs reais</title>
+<style>
+  :root { color-scheme:dark; font-family:Inter,system-ui,-apple-system,sans-serif; }
+  * { box-sizing:border-box; }
+  html,body {margin:0; width:100%; height:100%; overflow:hidden; background:#0c1412; color:#eaf0e3;}
+  #viewport { position:fixed;inset:0;width:100%;height:100%;display:block; }
+  #header {position:fixed;left:26px;top:24px;pointer-events:none;text-shadow:0 2px 12px #0009;}
+  #header small {display:block;font-size:10px;letter-spacing:.26em;color:#b4d0a0;font-weight:800;}
+  h1 {font-size:clamp(18px,2.5vw,29px);margin:6px 0 5px;letter-spacing:-.02em}
+  #header p {margin:0;color:#d1e0d4;font-size:13px}
+  #card {position:fixed;left:24px;bottom:20px;right:24px;max-width:830px;background:#12201fd8;backdrop-filter:blur(18px);border:1px solid #d8f1cb27;border-radius:18px;padding:17px 20px;box-shadow:0 9px 40px #0005;}
+  #info {display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+  .who {display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px}
+  .dot {width:8px;height:8px;border-radius:50%;display:inline-block;background:#dd8848}
+  .prey .dot{background:#a3d773}
+  .who b {font-size:14px}
+  .state {color:#b8c9bd;font-size:12px}
+  #controls {display:flex;gap:8px;align-items:center;margin-top:14px;flex-wrap:wrap}
+  button {background:#243931;color:#e8f8e4;border:1px solid #6d9b7447;border-radius:9px;padding:9px 16px;cursor:pointer;font-weight:700;font-size:12px}
+  button:hover{background:#365345}
+  #event {flex:1;min-width:200px;font-size:12px;color:#b8d0c3;text-align:right}
+  #time {font-variant-numeric:tabular-nums;color:#f4e9be}
+  #notice {position:fixed;right:23px;top:23px;max-width:340px;background:#10221ee8;border:1px solid #6f9a7155;border-radius:12px;padding:12px 15px;font-size:12px;line-height:1.5;color:#c8decd}
+  #error{color:#ffb0a0}
+  #footnote {position:fixed;right:25px;bottom:20px;font-size:11px;color:#e1e9d7a3;text-align:right;max-width:330px}
+  @media(max-width:740px){#header{top:12px;left:14px}#card{left:10px;right:10px;bottom:10px;padding:12px}#notice{right:10px;top:90px;font-size:10px;max-width:220px}#footnote{display:none}#event{text-align:left}}
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/" } }
+</script>
+</head>
+<body>
+<canvas id="viewport"></canvas>
+<header id="header"><small>WILDHAVEN / LABORATÓRIO DE ECOLOGIA</small>
+<h1>Caçada na savana</h1><p>Varrisco × Cromátil — GLBs originais do GitHub</p></header>
+<div id="notice">Carregando a IA e os dois modelos GLB reais…</div>
+<section id="card">
+ <div id="info">
+  <div class="who"><span class="dot"></span><b>Varrisco</b><span class="state" id="pstate">preparando</span></div>
+  <div class="who prey"><span class="dot"></span><b>Cromátil</b><span class="state" id="hstate">preparando</span></div>
+  <strong id="time">0,0 s</strong>
+ </div>
+ <div id="controls">
+  <button id="play">▶ Iniciar</button><button id="restart">↻ Reiniciar</button>
+  <button id="speed">1× velocidade</button>
+  <span id="event">Encontro de teste — semente 15</span>
+ </div>
+</section>
+<div id="footnote">Cena de laboratório, não integrada à Alpha. Arraste para girar a câmera.</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { carregarConfig } from './src/core/carregar.js';
+import { criarMundo, passo, hashTrilha } from './src/core/mundo.js';
+
+const $ = (id)=>document.getElementById(id);
+const notice = $('notice');
+const canvas = $('viewport');
+let mundo, rodando = false, velocidade = 1, ultimo = performance.now(), acumulado=0;
+const modelos = new Map(), rastros = new Map();
+const velocidades=[1,2,4];
+const loader=new GLTFLoader();
+const scene=new THREE.Scene();
+scene.background=new THREE.Color(0xabc3a1);
+scene.fog=new THREE.FogExp2(0xabc3a1,0.013);
+const camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,.1,200);
+camera.position.set(28,36,43);
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+renderer.setSize(innerWidth,innerHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.35;
+const orbit=new OrbitControls(camera,canvas);
+orbit.target.set(0,0,0);
+orbit.enableDamping=true;
+orbit.minDistance=12; orbit.maxDistance=115; orbit.maxPolarAngle=Math.PI/2.08;
+orbit.update();
+scene.add(new THREE.HemisphereLight(0xd8f1db,0x725039,2.2));
+const sol=new THREE.DirectionalLight(0xffe5b6,2.6);
+sol.position.set(-19,40,13);sol.castShadow=true;
+sol.shadow.mapSize.set(2048,2048);
+sol.shadow.camera.left=-45;sol.shadow.camera.right=45;
+sol.shadow.camera.top=45;sol.shadow.camera.bottom=-45;
+scene.add(sol);
+const terreno=new THREE.Mesh(new THREE.PlaneGeometry(60,40),new THREE.MeshStandardMaterial({color:0x758752,roughness:1}));
+terreno.rotation.x=-Math.PI/2;terreno.receiveShadow=true;scene.add(terreno);
+const base=new THREE.Mesh(new THREE.BoxGeometry(61,1.3,41),new THREE.MeshStandardMaterial({color:0x51432c,roughness:1}));
+base.position.y=-.7; base.receiveShadow=true; scene.add(base);
+function mat(c){return new THREE.MeshStandardMaterial({color:c,roughness:1});}
+const pedra=mat(0x8e8469), capim=mat(0x9cae62), escuro=mat(0x586b43), galho=mat(0x6b5134);
+const adicionar=(obj,x,z,y=0)=>{obj.position.set(x-30,y,z-20);scene.add(obj);return obj;};
+let seed=157;
+function rand(){seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296;}
+for(let i=0;i<360;i++){
+ const x=1+rand()*58,z=1+rand()*38,scale=.35+rand()*.9;
+ const grupo=new THREE.Group();
+ for(let k=0;k<3;k++){const folha=new THREE.Mesh(new THREE.ConeGeometry(.08*scale,.35*scale,3),i%3===0?capim:escuro);folha.position.x=(k-1)*.09;folha.position.y=.16*scale;folha.rotation.z=(k-1)*.32;grupo.add(folha);}
+ adicionar(grupo,x,z);
+}
+for(let i=0;i<33;i++){
+ const x=1+rand()*58,z=1+rand()*38,h=.5+rand()*.8;
+ const t=new THREE.Mesh(new THREE.CylinderGeometry(.07,.12,h,5),galho);t.position.y=h/2;
+ const topo=new THREE.Mesh(new THREE.DodecahedronGeometry(.4+rand()*.4,0),mat(i%2?0x61784b:0x839052));
+ topo.position.y=h+0.3;topo.scale.set(1.3,.45,1); const arb=new THREE.Group();arb.add(t,topo);adicionar(arb,x,z);
+}
+function rocha(x,z,w,d){
+ const m=new THREE.Mesh(new THREE.DodecahedronGeometry(1.0,0),pedra);
+ m.scale.set(w/2,1.0,d/2);m.position.set(x-30,0.55,z-20);m.castShadow=true;m.receiveShadow=true;scene.add(m);
+}
+rocha(24,25,3,4);rocha(39,9,5,2.5);rocha(45,33,4,3);
+
+function definirModelo(gltf,id,altura){
+ const grupo=new THREE.Group(); const model=gltf.scene;
+ const caixa=new THREE.Box3().setFromObject(model);
+ const tamanho=caixa.getSize(new THREE.Vector3());
+ if(tamanho.y<0.01 || !Number.isFinite(tamanho.y))throw Error('GLB sem dimensão vertical válida: '+id);
+ model.scale.multiplyScalar(altura/tamanho.y);
+ const bb=new THREE.Box3().setFromObject(model);
+ const meio=bb.getCenter(new THREE.Vector3());
+ model.position.set(-meio.x,-bb.min.y,-meio.z);
+ grupo.add(model);scene.add(grupo);
+ model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;}});
+ const mixer=new THREE.AnimationMixer(model);
+ const clipes=gltf.animations||[];
+ modelos.set(id,{grupo,mixer,clipes,atual:null,acao:null});
+ rastros.set(id,[]);
+ return clipes.map(a=>a.name);
+}
+async function importarModelo(id,url,altura){
+ return new Promise((ok,erro)=>loader.load(url,gltf=>{try{ok(definirModelo(gltf,id,altura));}catch(e){erro(e);}},undefined,erro));
+}
+const config=structuredClone(await carregarConfig(async caminho=>{
+ const r=await fetch(caminho,{cache:'no-store'});if(!r.ok)throw Error('Configuração indisponível: '+caminho);return r.json();
+}));
+const herb=structuredClone(config.especies['herbivoro-exemplo']);
+const pred=structuredClone(config.especies['predador-exemplo']);
+herb.id='cromatil-real';herb.nome='Cromátil';herb.bioma='savana';herb.relacoes.teme=[pred.id='varrisco-real'];
+herb.corpo.raio=.42;herb.movimento.andar=1.0;herb.movimento.trote=2.4;herb.movimento.corrida=5.5;
+herb.percepcao.visao.alcance=21;herb.percepcao.visao.tempoReconhecimentoSeg=.5;
+herb.furtividade.camuflagem=.3;
+herb.modelo.glb='assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb';
+herb.modelo.clipes={parado:'idle',andar:'walk',trote:'scurry',corrida:'scurry',comer:'forage',alerta:'threat',descansar:'bask',morte:'death'};
+pred.nome='Varrisco';pred.bioma='savana';pred.relacoes.presas=[herb.id];
+pred.corpo.raio=.65;pred.movimento.andar=1.5;pred.movimento.trote=3.8;pred.movimento.corrida=9.0;
+pred.percepcao.visao.alcance=28;pred.percepcao.visao.anguloGraus=175;
+pred.ataque.alcance=1.3;pred.ataque.chanceAcerto=.42;pred.necessidades.custoCorridaPorSeg=7.8;
+pred.modelo.glb='assets/models/creatures/varrisco/v02/varrisco-animated-v02-LOD0.glb';
+pred.modelo.clipes={parado:'idle',andar:'walk',trote:'walk',corrida:'run',ataque:'bite',farejar:'sniff',descansar:'rest'};
+const cen={id:'savana-real',nome:'Savana: Varrisco × Cromátil',descricao:'Caça experimental, modelos originais.',
+ duracaoSeg:80,dt:.1,terreno:{largura:60,altura:40,cor:'#758752'},
+ obstaculos:[{id:'rocha-centro',tipo:'rocha',x:22,y:23,w:4,h:4,bloqueiaVisao:true,bloqueiaMovimento:true,atenuacaoSom:.4}],
+ alimentos:[{id:'arbustos',x:34,y:19,raio:3,quantidade:90,regeneracaoPorSeg:.2}],
+ criaturas:[
+ {id:'cromatil',especie:herb.id,x:36,y:19,variacaoPos:1,energia:100,fome:61},
+ {id:'varrisco',especie:pred.id,x:11,y:19,variacaoPos:1,direcaoGraus:0,variacaoDirecaoGraus:12,energia:100,fome:72,
+ patrulha:[[12,20],[25,17],[43,23],[48,10],[14,10]]}]
+};
+config.especies[herb.id]=herb;config.especies[pred.id]=pred;config.cenarios[cen.id]=cen;
+function reiniciar(){
+ mundo=criarMundo(config,cen.id,15);rodando=false;acumulado=0;ultimo=performance.now();
+ for(const a of rastros.values())a.length=0;
+ $('play').textContent='▶ Iniciar';atualizar();
+}
+// Velocidades naturais (modelo × escala aplicada) — ver CHECKPOINT-V2.md.
+const VNAT={varrisco:{walk:.95*1.38/1.49,run:4.02*1.38/1.49,stalk:.33*1.38/1.49},cromatil:{walk:.084*.5/.67,scurry:.467*.5/.67}};
+function clipe(c){
+ if(!c.vivo)return 'death';
+ if(c.estado==='atacando')return 'bite';
+ if(c.estado==='comendo')return 'forage';
+ if(c.estado==='alerta')return 'threat';
+ if(c.estado==='farejando'||c.estado==='investigando')return 'sniff';
+ if(c.estado==='aproximando')return 'stalk';
+ if(c.estado==='descansando')return c.id==='cromatil'?'bask':'rest';
+ if(c.velocidade<.18)return 'idle';
+ if(c.velocidade>c.especie.movimento.trote+.1)return c.id==='cromatil'?'scurry':'run';
+ return 'walk';
+}
+function atualizar(){
+ if(!mundo)return;
+ for(const c of mundo.criaturas){
+  const objeto=modelos.get(c.id);if(!objeto)continue;
+  const g=objeto.grupo;
+  g.position.set(c.x-30,0,c.y-20);
+  g.rotation.y=-c.direcao; // Varrisco e Cromátil têm frente +X (scripts/auditar-glb.mjs); o +π/2 antigo causava caminhada lateral
+
+  const proximo=clipe(c);
+  if(proximo!==objeto.atual){
+   const clip=objeto.clipes.find(a=>a.name.toLowerCase()===proximo.toLowerCase())||objeto.clipes.find(a=>a.name.toLowerCase()==='idle');
+   if(clip){
+    const acao=objeto.mixer.clipAction(clip);
+    if(objeto.acao&&objeto.acao!==acao)objeto.acao.fadeOut(.18);
+    acao.reset().fadeIn(.18).play();objeto.acao=acao;
+   }
+   objeto.atual=proximo;
+  }
+  // Sincronia passo × velocidade: velocidade natural do ciclo medida pela varredura dos pés (m/s na escala aplicada).
+  const vn=(VNAT[c.id]||{})[objeto.atual];
+  if(objeto.acao)objeto.acao.timeScale=vn?Math.min(2.5,Math.max(.5,c.velocidade/vn)):1;
+ }
+ $('pstate').textContent=mundo.criaturas.find(a=>a.id==='varrisco')?.estado||'—';
+ $('hstate').textContent=mundo.criaturas.find(a=>a.id==='cromatil')?.estado||'—';
+ $('time').textContent=mundo.t.toFixed(1).replace('.',',')+' s';
+ const recente=mundo.eventos.filter(e=>['captura','perseguicao_inicio','fuga_inicio','desistencia','fim'].includes(e.tipo)).at(-1);
+ $('event').textContent=recente?recente.tipo.replaceAll('_',' ')+' · '+recente.t.toFixed(1)+' s':'Semente 15 · aguardando encontro';
+ if(mundo.fim){rodando=false;$('play').textContent='▶ Reproduzir novamente';}
+}
+let pronto=false;
+try{
+ const modelosGlb=await Promise.all([
+   importarModelo('varrisco','/repo/'+pred.modelo.glb,1.38),
+   importarModelo('cromatil','/repo/'+herb.modelo.glb,.50)
+ ]);
+ notice.innerHTML='GLBs reais carregados: <b>Varrisco</b> ('+modelosGlb[0].length+' clipes) e <b>Cromátil</b> ('+modelosGlb[1].length+' clipes).<br>IA: <b>src/core</b> do laboratório, passo fixo de 0,1 s.';
+ pronto=true;reiniciar();
+}catch(e){
+ console.error(e);
+ notice.innerHTML='<span id="error"><b>Não foi possível abrir os GLBs.</b><br>'+String(e.message||e).replaceAll('<','&lt;')+'</span><br>Execute o servidor do laboratório dentro da cópia completa do wildhaven-new; os modelos não são copiados.';
+}
+$('play').addEventListener('click',()=>{
+ if(!pronto)return;
+ if(mundo.fim)reiniciar();
+ rodando=!rodando;$('play').textContent=rodando?'⏸ Pausar':'▶ Continuar';
+ ultimo=performance.now();
+});
+$('restart').addEventListener('click',()=>{if(pronto)reiniciar();});
+$('speed').addEventListener('click',()=>{
+ velocidade=velocidades[(velocidades.indexOf(velocidade)+1)%velocidades.length];
+ $('speed').textContent=velocidade+'× velocidade';
+});
+function animar(now){
+ requestAnimationFrame(animar);
+ const delta=Math.min(.15,Math.max(0,(now-ultimo)/1000));ultimo=now;
+ if(rodando&&pronto){
+  acumulado+=delta*velocidade;
+  let passos=0;
+  while(acumulado>=mundo.dt&&passos++<20&&!mundo.fim){passo(mundo);acumulado-=mundo.dt;}
+  atualizar();
+ }
+ for(const o of modelos.values())o.mixer.update(rodando?delta*velocidade:0);
+ orbit.update();renderer.render(scene,camera);
+}
+requestAnimationFrame(animar);
+addEventListener('resize',()=>{
+ camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();
+ renderer.setSize(innerWidth,innerHeight);
+});
+window.wildhavenDemo={obterMundo:()=>mundo,reiniciar,hash:()=>mundo&&hashTrilha(mundo)};
+</script>
+</body>
+</html>

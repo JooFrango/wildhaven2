@@ -1,0 +1,749 @@
+{
+ "sementes": "1-20",
+ "cenarios": {
+  "bebedouro-real": {
+   "resumo": {
+    "sementes": 20,
+    "comDisputa": 2,
+    "comDisputaPelaPresa": 0,
+    "disputas": 3,
+    "fasesFinais": {
+     "observacao": 1,
+     "confronto": 1,
+     "intimidacao": 1
+    },
+    "oportunidades": 0,
+    "tentativas": 0,
+    "tentativasPorTipo": {},
+    "fugasEfetivas": 0,
+    "recapturas": 0,
+    "sementesComFugaEfetiva": 0,
+    "predacoes": 2,
+    "exemplos": []
+   },
+   "porSemente": [
+    {
+     "semente": 1,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 1,
+     "perseguicoes": 1,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 2,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 0,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 3,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 0,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 4,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 2,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 5,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 1,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 6,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 1,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 7,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 0,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 8,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 3,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 9,
+     "disputas": 1,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "observacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 3,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 10,
+     "disputas": 2,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "confronto",
+      "intimidacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 0,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 11,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 2,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 12,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 0,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 13,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 3,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 14,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 0,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 15,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 3,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 16,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 0,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 17,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 0,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 18,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 1,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 19,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 1,
+     "perseguicoes": 3,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 20,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 1,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    }
+   ]
+  },
+  "savana-viva": {
+   "resumo": {
+    "sementes": 20,
+    "comDisputa": 15,
+    "comDisputaPelaPresa": 4,
+    "disputas": 25,
+    "fasesFinais": {
+     "intimidacao": 17,
+     "observacao": 6,
+     "confronto": 2
+    },
+    "oportunidades": 24,
+    "tentativas": 24,
+    "tentativasPorTipo": {
+     "abrigo": 17,
+     "corrida": 7
+    },
+    "fugasEfetivas": 12,
+    "recapturas": 2,
+    "sementesComFugaEfetiva": 7,
+    "predacoes": 8,
+    "exemplos": [
+     {
+      "semente": 2,
+      "t": 767.6,
+      "presa": "velsari-15",
+      "modo": "abrigo"
+     },
+     {
+      "semente": 3,
+      "t": 387.9,
+      "presa": "tarruco-capim",
+      "modo": "corrida"
+     },
+     {
+      "semente": 7,
+      "t": 617.9,
+      "presa": "velsari-10",
+      "modo": "corrida"
+     },
+     {
+      "semente": 8,
+      "t": 641.1,
+      "presa": "cromatil-arbusto",
+      "modo": "abrigo"
+     },
+     {
+      "semente": 13,
+      "t": 304.7,
+      "presa": "velsari-17",
+      "modo": "corrida"
+     }
+    ]
+   },
+   "porSemente": [
+    {
+     "semente": 1,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 24,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 2,
+     "disputas": 2,
+     "disputasPelaPresa": 1,
+     "fasesFinais": [
+      "intimidacao",
+      "intimidacao"
+     ],
+     "oportunidades": 6,
+     "tentativas": [
+      "abrigo",
+      "abrigo",
+      "abrigo",
+      "abrigo",
+      "abrigo",
+      "abrigo"
+     ],
+     "efetivas": 2,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 27,
+     "escapesDuranteDisputaV2": 2,
+     "primeiraFuga": {
+      "t": 767.6,
+      "presa": "velsari-15",
+      "modo": "abrigo"
+     }
+    },
+    {
+     "semente": 3,
+     "disputas": 1,
+     "disputasPelaPresa": 1,
+     "fasesFinais": [
+      "intimidacao"
+     ],
+     "oportunidades": 1,
+     "tentativas": [
+      "corrida"
+     ],
+     "efetivas": 1,
+     "recapturas": 0,
+     "predacoes": 1,
+     "perseguicoes": 36,
+     "escapesDuranteDisputaV2": 1,
+     "primeiraFuga": {
+      "t": 387.9,
+      "presa": "tarruco-capim",
+      "modo": "corrida"
+     }
+    },
+    {
+     "semente": 4,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 1,
+     "perseguicoes": 6,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 5,
+     "disputas": 1,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "observacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 1,
+     "perseguicoes": 21,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 6,
+     "disputas": 1,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "intimidacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 15,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 7,
+     "disputas": 2,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "observacao",
+      "confronto"
+     ],
+     "oportunidades": 4,
+     "tentativas": [
+      "corrida",
+      "corrida",
+      "corrida",
+      "corrida"
+     ],
+     "efetivas": 3,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 23,
+     "escapesDuranteDisputaV2": 1,
+     "primeiraFuga": {
+      "t": 617.9,
+      "presa": "velsari-10",
+      "modo": "corrida"
+     }
+    },
+    {
+     "semente": 8,
+     "disputas": 3,
+     "disputasPelaPresa": 2,
+     "fasesFinais": [
+      "intimidacao",
+      "intimidacao",
+      "intimidacao"
+     ],
+     "oportunidades": 6,
+     "tentativas": [
+      "abrigo",
+      "abrigo",
+      "abrigo",
+      "abrigo",
+      "abrigo",
+      "abrigo"
+     ],
+     "efetivas": 2,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 19,
+     "escapesDuranteDisputaV2": 4,
+     "primeiraFuga": {
+      "t": 641.1,
+      "presa": "cromatil-arbusto",
+      "modo": "abrigo"
+     }
+    },
+    {
+     "semente": 9,
+     "disputas": 2,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "intimidacao",
+      "intimidacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 1,
+     "perseguicoes": 9,
+     "escapesDuranteDisputaV2": 1,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 10,
+     "disputas": 1,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "intimidacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 19,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 11,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 18,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 12,
+     "disputas": 1,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "observacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 25,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 13,
+     "disputas": 1,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "intimidacao"
+     ],
+     "oportunidades": 3,
+     "tentativas": [
+      "corrida",
+      "abrigo",
+      "corrida"
+     ],
+     "efetivas": 2,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 24,
+     "escapesDuranteDisputaV2": 1,
+     "primeiraFuga": {
+      "t": 304.7,
+      "presa": "velsari-17",
+      "modo": "corrida"
+     }
+    },
+    {
+     "semente": 14,
+     "disputas": 1,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "intimidacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 10,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 15,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 23,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 16,
+     "disputas": 0,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 1,
+     "perseguicoes": 1,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 17,
+     "disputas": 2,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "intimidacao",
+      "intimidacao"
+     ],
+     "oportunidades": 2,
+     "tentativas": [
+      "abrigo",
+      "abrigo"
+     ],
+     "efetivas": 1,
+     "recapturas": 1,
+     "predacoes": 1,
+     "perseguicoes": 12,
+     "escapesDuranteDisputaV2": 2,
+     "primeiraFuga": {
+      "t": 603.1,
+      "presa": "cromatil-arbusto",
+      "modo": "abrigo"
+     }
+    },
+    {
+     "semente": 18,
+     "disputas": 3,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "observacao",
+      "observacao",
+      "observacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 0,
+     "perseguicoes": 16,
+     "escapesDuranteDisputaV2": 1,
+     "primeiraFuga": null
+    },
+    {
+     "semente": 19,
+     "disputas": 3,
+     "disputasPelaPresa": 1,
+     "fasesFinais": [
+      "confronto",
+      "intimidacao",
+      "intimidacao"
+     ],
+     "oportunidades": 2,
+     "tentativas": [
+      "abrigo",
+      "abrigo"
+     ],
+     "efetivas": 1,
+     "recapturas": 1,
+     "predacoes": 1,
+     "perseguicoes": 19,
+     "escapesDuranteDisputaV2": 1,
+     "primeiraFuga": {
+      "t": 571.9,
+      "presa": "velsari-11",
+      "modo": "abrigo"
+     }
+    },
+    {
+     "semente": 20,
+     "disputas": 1,
+     "disputasPelaPresa": 0,
+     "fasesFinais": [
+      "intimidacao"
+     ],
+     "oportunidades": 0,
+     "tentativas": [],
+     "efetivas": 0,
+     "recapturas": 0,
+     "predacoes": 1,
+     "perseguicoes": 17,
+     "escapesDuranteDisputaV2": 0,
+     "primeiraFuga": null
+    }
+   ]
+  }
+ }
+}

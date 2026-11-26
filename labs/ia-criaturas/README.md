@@ -1,5 +1,34 @@
 # Laboratório de IA das criaturas
 
+## IA Base V1.0 — leia isto primeiro
+
+O núcleo está consolidado e congelado para aprovação. Três documentos:
+
+- [`IA-BASE-V1-CHECKPOINT.md`](IA-BASE-V1-CHECKPOINT.md) — estado, arquitetura, inventário dos módulos,
+  testes, métricas, hashes dos GLBs e critérios de aceitação.
+- [`docs/COMO-ADICIONAR-CRIATURA.md`](docs/COMO-ADICIONAR-CRIATURA.md) — o contrato: uma criatura nova é um
+  JSON e uma linha no índice, sem tocar em `src/`.
+- [`docs/PENDENCIAS-IA-FUTURAS.md`](docs/PENDENCIAS-IA-FUTURAS.md) — o que ficou para depois.
+
+Cenários integrados: `ia-base-v1-integracao` (savana) e `ia-base-v1-integracao-dunas`. Os invariantes do
+núcleo estão em `src/eco/invariantes.js` e são verificados durante a simulação, não só no fim.
+
+## V1.1 — densidade máxima num hexágono de 5 km
+
+Relatório com todas as medidas: [`resultados/benchmark-hex-5km/RELATORIO-HEX-5KM.md`](resultados/benchmark-hex-5km/RELATORIO-HEX-5KM.md).
+
+O hexágono oficial 52 (savana, bosques de acácia) inteiro, derivado do GLB real em células de 8 m:
+15,36 km² navegáveis, contorno do polígono respeitado. Cenário `laboratorio-populacao-hex-5km`.
+
+```bash
+node scripts/bench-populacao.mjs --populacoes 25,100,400,1600,3200 --segundos 120 --sementes 1-5
+```
+
+`src/eco/grade.js` é uma grade espacial que substitui quatro varreduras todos-contra-todos (percepção,
+separação, sobreposição e a métrica de sobreposição). Ela devolve os vizinhos em ordem crescente de índice,
+então o resultado é **idêntico** ao da varredura: a impressão digital continua `94df59e1`. O custo por
+animal deixou de crescer com a população e o limite de tempo real foi de ~400 para **~2400 animais**.
+
 ## Oficina de criaturas — catálogo dinâmico (experimental)
 
 A página `ecossistema.html` agora contém o painel recolhível **Oficina · catálogo de criaturas**. 
@@ -99,6 +128,31 @@ Decisões, inspeção do rig e pendências: [CHECKPOINT-V3.md](CHECKPOINT-V3.md)
 ![Patas com IK](resultados/capturas/v3-varrisco-patas-lateral-com-ik.png)
 
 *Vista lateral: o pé de apoio fica plantado no declive (IK nos ossos `thigh → shin → foot`).*
+
+## Serpáduna — corpo de 14 m que serpenteia (experimental)
+
+Relatório com o diagnóstico e todas as medidas: [`resultados/serpaduna/RELATORIO-SERPADUNA.md`](resultados/serpaduna/RELATORIO-SERPADUNA.md).
+
+**A causa do corpo permanentemente enrolado era a pose de repouso do rig da v02** — retidão 0,282 e 749
+auto-cruzamentos já no repouso, herdados por todos os 11 clipes. A v03 (PR #16) corrigiu: retidão 0,993 e
+zero cruzamentos. Nenhum GLB foi alterado aqui.
+
+`src/eco/serpente.js` dá o movimento: a cabeça avança pelo controlador terrestre e os 70 segmentos seguem o
+rastro dela, com a onda lateral aplicada em função do comprimento de arco — a propagação cabeça→cauda sai da
+geometria, sem código que a imponha. Enrolar é percorrer uma espiral, então o comprimento se conserva.
+`src/web3d/serpente3d.js` dobra os 70 ossos reais do GLB ao longo desse corpo, por quadro.
+
+Medido (`test/serpaduna.test.mjs`, 11 testes): 110 m em linha reta com **0,00%** de variação de comprimento
+e curvatura máxima de **17,2°** por junta; curva de 180° com retidão caindo a **0,546** e folga mínima de
+**0,86 m** (nada se atravessa); corpo entre **0,00 m** e **0,00 m** do terreno numa duna de 6 m; enrolar e
+desenrolar sem mudar de comprimento. A caça reusa o veneno da V7: morde, solta, espera a paralisia e engole
+inteira só quando a presa cabe (limite por massa e altura), com digestão depois.
+
+Cenários `serpaduna-a-locomocao` e `serpaduna-b-caca`. Auditoria de qualquer GLB de serpente:
+
+```bash
+node scripts/serpente-auditar.mjs assets/models/creatures/serpaduna/v03/serpaduna_v03_uncoiled_rigged.glb
+```
 
 ## V7 — veneno, camuflagem, termorrecepção, voo, clima, cupins e decomposição
 

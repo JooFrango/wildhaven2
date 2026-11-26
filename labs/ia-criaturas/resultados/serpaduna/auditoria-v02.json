@@ -1,0 +1,623 @@
+{
+ "arquivo": "../../assets/models/creatures/serpaduna/v02/serpaduna_v02_rig_animated.glb",
+ "ossos": 72,
+ "colunaJuntas": 70,
+ "raioCorpoM": 0.953,
+ "limiteCurvaturaGraus": 35,
+ "repouso": {
+  "caminho": 14.096,
+  "pontaAPonta": 3.968,
+  "retidao": 0.282,
+  "curvMaxGraus": 22.7,
+  "curvMediaGraus": 8.8,
+  "cruzamentos": 749,
+  "folgaMinima": -1.358,
+  "cabeca": [
+   1.83,
+   1.1,
+   0.39
+  ],
+  "cauda": [
+   -1.64,
+   -0.09,
+   1.91
+  ],
+  "alturaMin": -1.442,
+  "pontos": [
+   [
+    1.8312289714813232,
+    1.0976927280426025,
+    0.3931330442428589
+   ],
+   [
+    1.7045528888702393,
+    1.258241891860962,
+    0.3909693658351898
+   ],
+   [
+    1.5630357265472412,
+    1.4059356451034546,
+    0.3905646800994873
+   ],
+   [
+    1.4080195426940918,
+    1.539190411567688,
+    0.3896598517894745
+   ],
+   [
+    1.240526795387268,
+    1.6567463874816895,
+    0.388555109500885
+   ],
+   [
+    1.0622358322143555,
+    1.7566680908203125,
+    0.390739768743515
+   ],
+   [
+    0.8747142553329468,
+    1.838560700416565,
+    0.3907777667045593
+   ],
+   [
+    0.6802109479904175,
+    1.9012655019760132,
+    0.3921082019805908
+   ],
+   [
+    0.4800572097301483,
+    1.943901777267456,
+    0.39182567596435547
+   ],
+   [
+    0.2768198251724243,
+    1.9655132293701172,
+    0.3901154100894928
+   ],
+   [
+    0.07225039601325989,
+    1.9662173986434937,
+    0.3901465833187103
+   ],
+   [
+    -0.1311635971069336,
+    1.9458168745040894,
+    0.3886619508266449
+   ],
+   [
+    -0.3313632756471634,
+    1.9039461612701416,
+    0.3902093470096588
+   ],
+   [
+    -0.5259040147066116,
+    1.8409273624420166,
+    0.391164630651474
+   ],
+   [
+    -0.7126069813966751,
+    1.757650375366211,
+    0.39131948351860046
+   ],
+   [
+    -0.8894307166337967,
+    1.654787302017212,
+    0.39247921109199524
+   ],
+   [
+    -1.0536403805017471,
+    1.5330886840820312,
+    0.3901623785495758
+   ],
+   [
+    -1.203556552529335,
+    1.3938628435134888,
+    0.3899535834789276
+   ],
+   [
+    -1.3370320945978165,
+    1.2391456365585327,
+    0.38947510719299316
+   ],
+   [
+    -1.4525987058877945,
+    1.0702770948410034,
+    0.389138400554657
+   ],
+   [
+    -1.5476747900247574,
+    0.8893929123878479,
+    0.39149799942970276
+   ],
+   [
+    -1.6215132623910904,
+    0.6986058354377747,
+    0.3911888897418976
+   ],
+   [
+    -1.6728512197732925,
+    0.5007955431938171,
+    0.39192286133766174
+   ],
+   [
+    -1.7008334547281265,
+    0.29816851019859314,
+    0.39106860756874084
+   ],
+   [
+    -1.703942909836769,
+    0.0937553346157074,
+    0.38942617177963257
+   ],
+   [
+    -1.6826875358819962,
+    -0.10958325862884521,
+    0.38991621136665344
+   ],
+   [
+    -1.6370740085840225,
+    -0.3089102506637573,
+    0.38919535279273987
+   ],
+   [
+    -1.5673577934503555,
+    -0.5010495781898499,
+    0.3911442458629608
+   ],
+   [
+    -1.4737304598093033,
+    -0.682915210723877,
+    0.39167487621307373
+   ],
+   [
+    -1.3582140356302261,
+    -0.8514376282691956,
+    0.391309916973114
+   ],
+   [
+    -1.2220962196588516,
+    -1.0041401386260986,
+    0.3916367292404175
+   ],
+   [
+    -1.0674528032541275,
+    -1.1376584768295288,
+    0.3892253041267395
+   ],
+   [
+    -0.8961860686540604,
+    -1.2495325803756714,
+    0.38965561985969543
+   ],
+   [
+    -0.7118823081254959,
+    -1.337653398513794,
+    0.3897359371185303
+   ],
+   [
+    -0.5172023326158524,
+    -1.4003244638442993,
+    0.3901463449001312
+   ],
+   [
+    -0.31587110459804535,
+    -1.435337781906128,
+    0.39225873351097107
+   ],
+   [
+    -0.11152100563049316,
+    -1.4417015314102173,
+    0.3912341594696045
+   ],
+   [
+    0.09161189198493958,
+    -1.4192615747451782,
+    0.39138373732566833
+   ],
+   [
+    0.2894538640975952,
+    -1.3680095672607422,
+    0.39005810022354126
+   ],
+   [
+    0.47753146290779114,
+    -1.287795901298523,
+    0.3889133036136627
+   ],
+   [
+    0.6513273119926453,
+    -1.1804358959197998,
+    0.39008116722106934
+   ],
+   [
+    0.8070593476295471,
+    -1.047964334487915,
+    0.3899258077144623
+   ],
+   [
+    0.9404299259185791,
+    -0.8932752013206482,
+    0.3920682668685913
+   ],
+   [
+    1.047170639038086,
+    -0.7188192009925842,
+    0.39185675978660583
+   ],
+   [
+    1.1242979764938354,
+    -0.5297605395317078,
+    0.3909147381782532
+   ],
+   [
+    1.1694718599319458,
+    -0.33038854598999023,
+    0.39077797532081604
+   ],
+   [
+    1.180548071861267,
+    -0.12645450234413147,
+    0.38832783699035645
+   ],
+   [
+    1.1552798748016357,
+    0.07639756798744202,
+    0.38975924253463745
+   ],
+   [
+    1.0947564840316772,
+    0.27142173051834106,
+    0.39029866456985474
+   ],
+   [
+    0.9999770522117615,
+    0.4523632526397705,
+    0.39096739888191223
+   ],
+   [
+    0.8730123043060303,
+    0.6124219298362732,
+    0.3927936851978302
+   ],
+   [
+    0.7171499729156494,
+    0.7443440556526184,
+    0.3908785581588745
+   ],
+   [
+    0.5382868647575378,
+    0.8429251313209534,
+    0.3906998932361603
+   ],
+   [
+    0.34325751662254333,
+    0.9029157757759094,
+    0.38943448662757874
+   ],
+   [
+    0.13964277505874634,
+    0.9198086261749268,
+    0.3887917995452881
+   ],
+   [
+    -0.06222885847091675,
+    0.8906413316726685,
+    0.390628457069397
+   ],
+   [
+    -0.25221186876296997,
+    0.8159940838813782,
+    0.3906552195549011
+   ],
+   [
+    -0.41862180829048157,
+    0.6982284188270569,
+    0.39234426617622375
+   ],
+   [
+    -0.5504207611083984,
+    0.5422469973564148,
+    0.3918963074684143
+   ],
+   [
+    -0.7231584787368774,
+    0.44670575857162476,
+    0.423352986574173
+   ],
+   [
+    -0.9117246270179749,
+    0.3996618986129761,
+    0.4864066243171692
+   ],
+   [
+    -1.0717207193374634,
+    0.3019103705883026,
+    0.5649678111076355
+   ],
+   [
+    -1.1975160837173462,
+    0.1733381748199463,
+    0.6623989343643188
+   ],
+   [
+    -1.3229795694351196,
+    0.06688058376312256,
+    0.782791018486023
+   ],
+   [
+    -1.4500923156738281,
+    0.0033271461725234985,
+    0.9290804266929626
+   ],
+   [
+    -1.550889015197754,
+    -0.03385751694440842,
+    1.1022241115570068
+   ],
+   [
+    -1.6078568696975708,
+    -0.0598590187728405,
+    1.2962405681610107
+   ],
+   [
+    -1.630639910697937,
+    -0.07522577419877052,
+    1.4989991188049316
+   ],
+   [
+    -1.6391057968139648,
+    -0.08266181871294975,
+    1.7031354904174805
+   ],
+   [
+    -1.6406112909317017,
+    -0.08505088463425636,
+    1.9078845977783203
+   ]
+  ]
+ },
+ "clipes": [
+  {
+   "nome": "idle",
+   "duracao": 6,
+   "quadros": 16,
+   "retidaoMin": 0.28,
+   "retidaoMax": 0.283,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 22.9,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 763,
+   "folgaMinima": -1.399,
+   "amplitudeForma": 0.003,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -1.474,
+   "amplitudeMediaM": 0.047,
+   "amplitudeMaxM": 0.069,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.056,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "slither",
+   "duracao": 4,
+   "quadros": 16,
+   "retidaoMin": 0.273,
+   "retidaoMax": 0.289,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 24.3,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 790,
+   "folgaMinima": -1.411,
+   "amplitudeForma": 0.016,
+   "deslocamentoCabeca": 0.16,
+   "abaixoDoSolo": -1.663,
+   "amplitudeMediaM": 0.258,
+   "amplitudeMaxM": 0.397,
+   "amplitudeCaudaM": 0.159,
+   "amplitudeCabecaM": 0.316,
+   "atrasoQuadros": 1
+  },
+  {
+   "nome": "fast_slither",
+   "duracao": 2.4,
+   "quadros": 16,
+   "retidaoMin": 0.277,
+   "retidaoMax": 0.285,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 25.7,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 782,
+   "folgaMinima": -1.479,
+   "amplitudeForma": 0.008,
+   "deslocamentoCabeca": 0.22,
+   "abaixoDoSolo": -1.75,
+   "amplitudeMediaM": 0.287,
+   "amplitudeMaxM": 0.468,
+   "amplitudeCaudaM": 0.218,
+   "amplitudeCabecaM": 0.231,
+   "atrasoQuadros": -2
+  },
+  {
+   "nome": "coil_defend",
+   "duracao": 5,
+   "quadros": 16,
+   "retidaoMin": 0.235,
+   "retidaoMax": 0.287,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 22.7,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 750,
+   "folgaMinima": -1.382,
+   "amplitudeForma": 0.052,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -1.571,
+   "amplitudeMediaM": 0.229,
+   "amplitudeMaxM": 0.438,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.438,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "alert",
+   "duracao": 3,
+   "quadros": 16,
+   "retidaoMin": 0.274,
+   "retidaoMax": 0.288,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 22.9,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 752,
+   "folgaMinima": -1.391,
+   "amplitudeForma": 0.014,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -1.442,
+   "amplitudeMediaM": 0.011,
+   "amplitudeMaxM": 0.154,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.154,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "tongue_flick",
+   "duracao": 1.5,
+   "quadros": 16,
+   "retidaoMin": 0.281,
+   "retidaoMax": 0.282,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 22.7,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 751,
+   "folgaMinima": -1.359,
+   "amplitudeForma": 0.001,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -1.442,
+   "amplitudeMediaM": 0.001,
+   "amplitudeMaxM": 0.009,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.009,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "ambush_strike",
+   "duracao": 2.2,
+   "quadros": 16,
+   "retidaoMin": 0.264,
+   "retidaoMax": 0.292,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 23.2,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 776,
+   "folgaMinima": -1.425,
+   "amplitudeForma": 0.028,
+   "deslocamentoCabeca": 0.06,
+   "abaixoDoSolo": -1.538,
+   "amplitudeMediaM": 0.158,
+   "amplitudeMaxM": 0.396,
+   "amplitudeCaudaM": 0.06,
+   "amplitudeCabecaM": 0.396,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "venom_bite",
+   "duracao": 1.8,
+   "quadros": 16,
+   "retidaoMin": 0.271,
+   "retidaoMax": 0.282,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 22.7,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 753,
+   "folgaMinima": -1.358,
+   "amplitudeForma": 0.011,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -1.442,
+   "amplitudeMediaM": 0.013,
+   "amplitudeMaxM": 0.213,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.213,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "swallow_whole",
+   "duracao": 7,
+   "quadros": 16,
+   "retidaoMin": 0.269,
+   "retidaoMax": 0.294,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 22.9,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 759,
+   "folgaMinima": -1.433,
+   "amplitudeForma": 0.025,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -1.528,
+   "amplitudeMediaM": 0.159,
+   "amplitudeMaxM": 0.312,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.312,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "rest",
+   "duracao": 7,
+   "quadros": 16,
+   "retidaoMin": 0.281,
+   "retidaoMax": 0.282,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 22.8,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 755,
+   "folgaMinima": -1.372,
+   "amplitudeForma": 0.001,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -1.454,
+   "amplitudeMediaM": 0.017,
+   "amplitudeMaxM": 0.026,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 0.022,
+   "atrasoQuadros": 0
+  },
+  {
+   "nome": "death",
+   "duracao": 4,
+   "quadros": 16,
+   "retidaoMin": 0.294,
+   "retidaoMax": 0.333,
+   "comprimentoMin": 14.1,
+   "comprimentoMax": 14.1,
+   "variacaoComprimento": 0,
+   "curvMaxGraus": 23.2,
+   "excedeCurvatura": false,
+   "cruzamentosMax": 769,
+   "folgaMinima": -1.871,
+   "amplitudeForma": 0.039,
+   "deslocamentoCabeca": 0,
+   "abaixoDoSolo": -1.927,
+   "amplitudeMediaM": 0.737,
+   "amplitudeMaxM": 1.75,
+   "amplitudeCaudaM": 0,
+   "amplitudeCabecaM": 1.75,
+   "atrasoQuadros": 0
+  }
+ ]
+}

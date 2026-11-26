@@ -121,7 +121,7 @@ test('combate: ferimentos e morte seguem as regras existentes', async () => {
     assert.ok(a.causaMorte, `${a.id} morreu sem causa registrada`);
     assert.ok(['predacao', 'ferimentos', 'sangramento', 'fome', 'sede', 'doenca', 'idade'].includes(a.causaMorte), `causa inesperada: ${a.causaMorte}`);
   }
-  for (const e of ev(m, 'ferimento')) assert.ok(e.dados.regiao, 'o ferimento registra a região atingida');
+  for (const e of ev(m, 'ferimento')) assert.ok(e.regiao, 'o evento público de ferimento registra a região atingida');
 });
 
 test('regressão: os cenários antigos continuam funcionando', async () => {

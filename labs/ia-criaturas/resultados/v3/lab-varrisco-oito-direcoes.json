@@ -1,0 +1,133 @@
+{
+ "teste": "oito-direcoes",
+ "nome": "Caminhar nas 8 direções",
+ "semente": 7,
+ "tSim": 98.3,
+ "hash": "358ee50d",
+ "passos": [
+  {
+   "rotulo": "direção 0°",
+   "t0": 0,
+   "t1": 6.3,
+   "ok": true
+  },
+  {
+   "rotulo": "volta ao centro",
+   "t0": 6.3,
+   "t1": 12.9,
+   "ok": true
+  },
+  {
+   "rotulo": "direção 45°",
+   "t0": 12.9,
+   "t1": 18.8,
+   "ok": true
+  },
+  {
+   "rotulo": "volta ao centro",
+   "t0": 18.8,
+   "t1": 24.9,
+   "ok": true
+  },
+  {
+   "rotulo": "direção 90°",
+   "t0": 24.9,
+   "t1": 30.9,
+   "ok": true
+  },
+  {
+   "rotulo": "volta ao centro",
+   "t0": 30.9,
+   "t1": 37,
+   "ok": true
+  },
+  {
+   "rotulo": "direção 135°",
+   "t0": 37,
+   "t1": 43,
+   "ok": true
+  },
+  {
+   "rotulo": "volta ao centro",
+   "t0": 43,
+   "t1": 49.3,
+   "ok": true
+  },
+  {
+   "rotulo": "direção 180°",
+   "t0": 49.3,
+   "t1": 56.1,
+   "ok": true
+  },
+  {
+   "rotulo": "volta ao centro",
+   "t0": 56.1,
+   "t1": 61.9,
+   "ok": true
+  },
+  {
+   "rotulo": "direção 225°",
+   "t0": 61.9,
+   "t1": 68.3,
+   "ok": true
+  },
+  {
+   "rotulo": "volta ao centro",
+   "t0": 68.3,
+   "t1": 74.6,
+   "ok": true
+  },
+  {
+   "rotulo": "direção 270°",
+   "t0": 74.6,
+   "t1": 80.5,
+   "ok": true
+  },
+  {
+   "rotulo": "volta ao centro",
+   "t0": 80.5,
+   "t1": 86.3,
+   "ok": true
+  },
+  {
+   "rotulo": "direção 315°",
+   "t0": 86.3,
+   "t1": 92.3,
+   "ok": true
+  },
+  {
+   "rotulo": "volta ao centro",
+   "t0": 92.3,
+   "t1": 98.2,
+   "ok": true
+  }
+ ],
+ "passosOk": 16,
+ "passosTotal": 16,
+ "desvioFrenteMaxGraus": 3.76,
+ "desvioFrenteMedioGraus": 0.11,
+ "velocidadeMax": 1.51,
+ "quadrosGiroNoLugar": 366,
+ "clipes": [
+  "idle",
+  "walk",
+  "turn_right",
+  "turn_left"
+ ],
+ "colisoes": 0,
+ "contatosObstaculo": 0,
+ "pernas": {
+  "quadros": 5904,
+  "amostrasApoio": 4588,
+  "deslizeApoioFK_ms": 0.657,
+  "deslizeApoioIK_ms": 0.051,
+  "erroAlturaFK_m": 0.094,
+  "erroAlturaIK_m": 0.005,
+  "liberacoes": 5
+ },
+ "eventos": {
+  "marca_territorio": 1
+ },
+ "registro": [],
+ "golpes": []
+}

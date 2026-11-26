@@ -1,0 +1,79 @@
+{
+ "teste": "curvas-giros",
+ "nome": "Curvas, giro de 90° e 180°",
+ "semente": 7,
+ "tSim": 19,
+ "hash": "db292699",
+ "passos": [
+  {
+   "rotulo": "zigue-zague 1",
+   "t0": 0,
+   "t1": 3.5,
+   "ok": true
+  },
+  {
+   "rotulo": "zigue-zague 2",
+   "t0": 3.5,
+   "t1": 7.5,
+   "ok": true
+  },
+  {
+   "rotulo": "zigue-zague 3",
+   "t0": 7.5,
+   "t1": 11.3,
+   "ok": true
+  },
+  {
+   "rotulo": "frear",
+   "t0": 11.3,
+   "t1": 11.6,
+   "ok": true
+  },
+  {
+   "rotulo": "giro de 90° no lugar",
+   "t0": 11.6,
+   "t1": 12.1,
+   "ok": true
+  },
+  {
+   "rotulo": "giro de 180° no lugar",
+   "t0": 12.1,
+   "t1": 13,
+   "ok": true
+  },
+  {
+   "rotulo": "arrancar após o giro",
+   "t0": 13,
+   "t1": 18.9,
+   "ok": true
+  }
+ ],
+ "passosOk": 7,
+ "passosTotal": 7,
+ "desvioFrenteMaxGraus": 3.31,
+ "desvioFrenteMedioGraus": 0.17,
+ "velocidadeMax": 4.22,
+ "quadrosGiroNoLugar": 48,
+ "clipes": [
+  "idle",
+  "walk",
+  "run",
+  "turn_right"
+ ],
+ "colisoes": 0,
+ "contatosObstaculo": 0,
+ "pernas": {
+  "quadros": 1146,
+  "amostrasApoio": 878,
+  "deslizeApoioFK_ms": 1.132,
+  "deslizeApoioIK_ms": 0.244,
+  "erroAlturaFK_m": 0.116,
+  "erroAlturaIK_m": 0.011,
+  "liberacoes": 4
+ },
+ "eventos": {
+  "marca_territorio": 1
+ },
+ "registro": [],
+ "golpes": []
+}

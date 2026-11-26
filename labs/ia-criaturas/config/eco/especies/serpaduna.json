@@ -1,0 +1,295 @@
+{
+  "id": "serpaduna",
+  "nome": "Serpáduna",
+  "ficha": "assets/models/creatures/serpaduna/v03/manifest.json",
+  "papel": "carnivoro",
+  "atividade": "noturno",
+  "_fonteFicha": "GLB real v03 (PR #16): 15,56 m de extensão, 14,13 m de coluna, 70 juntas de corpo + 2 faciais, 8.198 triângulos, 13 clipes. Não existe ficha de espécie em creatures/species: massa, sentidos, dieta e combate são experimentais do laboratório.",
+  "corpo": {
+    "massaKg": [
+      700,
+      1100
+    ],
+    "comprimentoM": 14.13,
+    "alturaM": 0.9,
+    "raio": 0.45,
+    "ectotermico": true
+  },
+  "movimento": {
+    "andar": 0.8,
+    "trote": 1.8,
+    "corrida": 4.5,
+    "aceleracao": 3.5,
+    "giroGrausSeg": 120,
+    "fatorCurvaFechada": 0.5,
+    "resistenciaSeg": 6,
+    "inclinacaoMaxGraus": 30,
+    "nadar": false,
+    "profundidadeMaxM": 0.6
+  },
+  "percepcao": {
+    "visao": {
+      "alcance": 18,
+      "anguloGraus": 160,
+      "alcanceProximo": 3,
+      "tempoReconhecimentoSeg": 1.2
+    },
+    "audicao": {
+      "alcance": 8,
+      "erroRelativo": 0.4
+    },
+    "olfato": {
+      "alcance": 45
+    },
+    "memoriaSeg": 90,
+    "modificadoresPorEstado": {
+      "descansando": {
+        "visao": 0.7
+      },
+      "comendo_carcaca": {
+        "visao": 0.7,
+        "audicao": 0.9
+      }
+    },
+    "termorrecepcao": {
+      "alcance": 22,
+      "anguloGraus": 150,
+      "sensibilidadeC": 2,
+      "contrasteRefC": 12,
+      "erroRelativo": 0.15,
+      "tempoReconhecimentoSeg": 0.8
+    },
+    "vibracao": {
+      "alcance": 30,
+      "limiar": 0.02,
+      "erroRelativo": 0.25
+    }
+  },
+  "furtividade": {
+    "camuflagem": 0.45,
+    "fatorParado": 0.3,
+    "ruidoPassos": 0.4
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.02,
+    "custoCorridaPorSeg": 5,
+    "recuperacaoPorSeg": 1.2,
+    "fatorRecuperacaoParado": 0.5,
+    "fomePorDia": 8,
+    "sedePorDia": 10,
+    "comerPorSeg": 0.6,
+    "beberPorSeg": 12,
+    "limiteExaustao": 5,
+    "fomeCacar": 35,
+    "fomeDesesperada": 75,
+    "sedeProcurar": 50
+  },
+  "dieta": {
+    "vegetacao": [],
+    "presas": [
+      "velsari",
+      "cromatil",
+      "tarruco",
+      "folhisco"
+    ],
+    "carnica": true,
+    "microfauna": false,
+    "_microfauna": "ficha: ground_vertebrates — recurso agregado nos níveis 2/3 (não individualizado)"
+  },
+  "teme": [
+    "rocantraz"
+  ],
+  "competidores": [],
+  "temperamento": {
+    "agressividade": [
+      0.55,
+      0.15
+    ],
+    "coragem": [
+      0.55,
+      0.15
+    ],
+    "medo": [
+      0.35,
+      0.1
+    ],
+    "vigilancia": [
+      0.4,
+      0.1
+    ]
+  },
+  "social": {
+    "tipo": "solitario",
+    "tamanho": [
+      1,
+      1
+    ],
+    "probabilidadePar": 0,
+    "cacaCooperativa": false,
+    "territorial": true,
+    "raioTerritorioM": 300,
+    "marcacao": false
+  },
+  "combate": {
+    "protecao": {
+      "cabeca": 0.2,
+      "pescoco": 0.15,
+      "tronco": 0.25,
+      "flanco": 0.25,
+      "pernas": 0,
+      "cauda": 0.2
+    },
+    "resistenciaDor": 0.7,
+    "equilibrio": 0.9,
+    "forcaMordida": 1.1,
+    "agarrar": false,
+    "_v3": "provisório — ficha: sem couraça; bípede com cauda de equilíbrio; mordida e garra em foice",
+    "forca": 0.8,
+    "defesa": 0.5,
+    "esquiva": 0.2,
+    "ataques": [
+      {
+        "nome": "bote",
+        "alcance": 4.5,
+        "dano": 4,
+        "preparoSeg": 0.5,
+        "recargaSeg": 4,
+        "regioes": [
+          "pescoco",
+          "tronco",
+          "pernas",
+          "flanco"
+        ],
+        "clipe": "ambush_strike",
+        "exigeSurpresa": true
+      },
+      {
+        "nome": "mordida",
+        "alcance": 2.6,
+        "dano": 3,
+        "preparoSeg": 0.35,
+        "recargaSeg": 2.5,
+        "regioes": [
+          "pescoco",
+          "tronco",
+          "pernas",
+          "flanco"
+        ],
+        "clipe": "venom_bite"
+      }
+    ],
+    "exibicao": "coil_defend"
+  },
+  "saude": {
+    "max": 420,
+    "resistencia": 1.2,
+    "sangramentoBase": 0.5,
+    "regenPorDia": 6,
+    "suscetibilidadeDoenca": 0.2
+  },
+  "vida": {
+    "expectativaAnos": 40,
+    "maturidadeAnos": 6,
+    "gestacaoDias": 120,
+    "ovos": true,
+    "ninhada": [
+      4,
+      12
+    ],
+    "estacaoReprodutiva": "chuvosa",
+    "desmameDias": 1,
+    "crescimentoAnos": 8
+  },
+  "modelo": {
+    "glb": "assets/models/creatures/serpaduna/v03/serpaduna_v03_uncoiled_rigged.glb",
+    "frente": "-X",
+    "medidaReferencia": "comprimento",
+    "clipes": {
+      "parado": "idle",
+      "andar": "slither",
+      "trote": "slither",
+      "corrida": "fast_slither",
+      "espreita": "slither",
+      "girarEsq": "turn_left",
+      "girarDir": "turn_right",
+      "alerta": "alert",
+      "farejar": "tongue_flick",
+      "mordida": "venom_bite",
+      "garra_foice": "claw_slash",
+      "bote": "ambush_strike",
+      "comer": "swallow_whole",
+      "beber": "tongue_flick",
+      "exibicao": "coil_defend",
+      "descansar": "rest",
+      "ferido": "alert",
+      "morte": "death",
+      "engolir": "swallow_whole",
+      "enrolar": "coil_enter",
+      "enrolada": "coil_defend",
+      "desenrolar": "coil_exit"
+    },
+    "limitacoes": [
+      "clipes no lugar: o avanço vem do controlador de serpente, não do root motion",
+      "coil_enter/coil_exit descem a −9,3 m no clipe; o laboratório usa a espiral do controlador e ignora essa translação",
+      "sem IK de solo por junta"
+    ]
+  },
+  "balanceamento": {
+    "status": "experimental_v7",
+    "provisorios": [
+      "tudo exceto corpo, dieta e hábitos citados em _fonteFicha"
+    ],
+    "base": "varrisco.json"
+  },
+  "experimental": {
+    "v7": true,
+    "capacidades": [
+      "serpente",
+      "veneno",
+      "termorrecepcao",
+      "taticasDeEmboscada",
+      "engolirInteira"
+    ],
+    "nota": "Criatura real do catálogo (GLB v03). Todos os números de simulação são experimentais; nenhum GLB foi alterado."
+  },
+  "serpente": {
+    "comprimentoM": 14.13,
+    "segmentos": 70,
+    "ondaM": 0.75,
+    "comprimentoOndaM": 7,
+    "tracaoAreia": 0.8,
+    "raioCurvaturaMinM": 4.5,
+    "enrolarRaioM": 1.4,
+    "segundosEnrolar": 4,
+    "capsulaM": 2.6
+  },
+  "veneno": {
+    "tipo": "neurotoxico",
+    "potencia": 1,
+    "doseMg": 90,
+    "reservaMg": 260,
+    "recargaMgPorSeg": 0.03,
+    "ataques": [
+      "bote",
+      "mordida"
+    ],
+    "meiaVidaSeg": 220,
+    "latenciaSeg": 12,
+    "esperaSeg": 150,
+    "custoEnergiaPorMg": 0.03
+  },
+  "resistenciaVeneno": 0.9,
+  "taticasDeEmboscada": {
+    "raioBuscaM": 40,
+    "esperaMaxSeg": 240,
+    "distanciaDisparoM": 4.5
+  },
+  "engolirInteira": {
+    "massaMaxFracao": 0.08,
+    "alturaMaxM": 0.7,
+    "segundos": 7,
+    "saciaPorKg": 2.2,
+    "digestaoSeg": 600
+  }
+}

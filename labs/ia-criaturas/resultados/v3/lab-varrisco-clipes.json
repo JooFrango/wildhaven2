@@ -1,0 +1,268 @@
+{
+ "teste": "clipes",
+ "nome": "Todos os clipes do GLB",
+ "glb": "assets/models/creatures/varrisco/v02/varrisco-animated-v02-LOD0.glb",
+ "sha256": "774f80944633a65bce0663a0ee8e65a3d8f868270303ccb431fbb63e15b4c678",
+ "clipes": [
+  {
+   "clipe": "idle",
+   "duracao": 3.6,
+   "ossosMovidos": 4,
+   "ossos": [
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "walk",
+   "duracao": 1.35,
+   "ossosMovidos": 15,
+   "ossos": [
+    "head",
+    "shoulderL",
+    "forearmL",
+    "shoulderR",
+    "forearmR",
+    "tailA",
+    "tailB",
+    "tailC"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "run",
+   "duracao": 0.73,
+   "ossosMovidos": 15,
+   "ossos": [
+    "head",
+    "shoulderL",
+    "forearmL",
+    "shoulderR",
+    "forearmR",
+    "tailA",
+    "tailB",
+    "tailC"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "stalk",
+   "duracao": 2.35,
+   "ossosMovidos": 15,
+   "ossos": [
+    "head",
+    "shoulderL",
+    "forearmL",
+    "shoulderR",
+    "forearmR",
+    "tailA",
+    "tailB",
+    "tailC"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "turn_left",
+   "duracao": 1.15,
+   "ossosMovidos": 8,
+   "ossos": [
+    "root",
+    "head",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD",
+    "thighL",
+    "thighR"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "turn_right",
+   "duracao": 1.15,
+   "ossosMovidos": 8,
+   "ossos": [
+    "root",
+    "head",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD",
+    "thighL",
+    "thighR"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "alert",
+   "duracao": 1.55,
+   "ossosMovidos": 6,
+   "ossos": [
+    "neck",
+    "head",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "sniff",
+   "duracao": 1.9,
+   "ossosMovidos": 6,
+   "ossos": [
+    "neck",
+    "head",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "bite",
+   "duracao": 0.92,
+   "ossosMovidos": 8,
+   "ossos": [
+    "thorax",
+    "neck",
+    "head",
+    "jaw",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "claw_slash",
+   "duracao": 1,
+   "ossosMovidos": 9,
+   "ossos": [
+    "thorax",
+    "neck",
+    "shoulderL",
+    "forearmL",
+    "shoulderR",
+    "tailA",
+    "tailB",
+    "tailC"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "pounce",
+   "duracao": 1.24,
+   "ossosMovidos": 11,
+   "ossos": [
+    "thorax",
+    "shoulderL",
+    "shoulderR",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD",
+    "thighL"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "feed",
+   "duracao": 2.3,
+   "ossosMovidos": 7,
+   "ossos": [
+    "neck",
+    "head",
+    "jaw",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "drink",
+   "duracao": 2.2,
+   "ossosMovidos": 7,
+   "ossos": [
+    "neck",
+    "head",
+    "jaw",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "threat_display",
+   "duracao": 2.1,
+   "ossosMovidos": 9,
+   "ossos": [
+    "neck",
+    "head",
+    "jaw",
+    "shoulderL",
+    "shoulderR",
+    "tailA",
+    "tailB",
+    "tailC"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "rest",
+   "duracao": 3.25,
+   "ossosMovidos": 4,
+   "ossos": [
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "hurt",
+   "duracao": 1.05,
+   "ossosMovidos": 8,
+   "ossos": [
+    "thorax",
+    "neck",
+    "head",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD",
+    "thighR"
+   ],
+   "ok": true
+  },
+  {
+   "clipe": "death",
+   "duracao": 2.6,
+   "ossosMovidos": 12,
+   "ossos": [
+    "root",
+    "neck",
+    "head",
+    "jaw",
+    "tailA",
+    "tailB",
+    "tailC",
+    "tailD"
+   ],
+   "ok": true
+  }
+ ],
+ "todosAnimam": true,
+ "total": 17
+}

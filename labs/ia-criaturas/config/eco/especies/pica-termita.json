@@ -111,7 +111,8 @@
       1
     ],
     "territorial": true,
-    "refugio": "rochas"
+    "refugio": "rochas",
+    "raioTerritorioM": 80
   },
   "combate": {
     "protecao": {
