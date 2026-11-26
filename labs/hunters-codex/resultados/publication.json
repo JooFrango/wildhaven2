@@ -1,0 +1,29 @@
+{
+  "repository": "carioca1111/wildhaven-new",
+  "branch": "feat/hunter-lab-codex-v1",
+  "implemented_commit": "c2359d5dfb14e12c4922029c0afe183faa00613f",
+  "draft_pr": "https://github.com/carioca1111/wildhaven-new/pull/22",
+  "base_verified": "233975e112efe12e406115f4319c819a99078386",
+  "remote_assets_recovered_and_hash_matched": [
+    "hunter_masculino_1000tri_v02.glb",
+    "hunter_basecolor_v02.png",
+    "hex52-crop.glb"
+  ],
+  "hosted_url": "https://wildhaven-hunter-lab-codex.jvbrmandarino11.chatgpt.site",
+  "hosting_access": "owner-private",
+  "hosting_source_commit": "3bebad5c53fed077db4de1976e47fa65bb9f2a13",
+  "deployment_status": "succeeded",
+  "deployment_id": "appgdep_6af6ce15f9148191a54a0ce2ef1283ac",
+  "unauthenticated_http_status": 401,
+  "note": "401 is the expected owner authentication gate; no public access was enabled. Authenticated hosted-browser interaction was not tested.",
+  "same_packaged_static_files_browser_test": {
+    "page_errors": [],
+    "missing_resources": [],
+    "pvp_hits": 3,
+    "hunter_hits_on_creature": 2,
+    "creature_hits_on_hunter": 2
+  },
+  "local_lab_http_status": 200,
+  "alpha_files_changed": 0,
+  "automatic_merge": false
+}

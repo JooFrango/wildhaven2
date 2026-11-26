@@ -1,0 +1,6377 @@
+{
+  "row": {
+    "enabled": true,
+    "weapon": "lanca",
+    "seed": 17,
+    "seconds": 64.5,
+    "outcome": {
+      "vencedor": "azul",
+      "t": 64.5,
+      "motivo": "criatura derrotada",
+      "situacoes": {
+        "hunter-A": "lutando"
+      }
+    },
+    "attacks": 16,
+    "hits": 11,
+    "misses": 1,
+    "sequences": 15,
+    "maxChain": 2,
+    "heavy": 7,
+    "defenses": 0,
+    "evades": 2,
+    "cancels": 2,
+    "parts": [
+      "flanco",
+      "pernas",
+      "cabeca"
+    ],
+    "states": [
+      "vigiando",
+      "aproximando",
+      "avaliando",
+      "preparando_ataque",
+      "recuperando",
+      "esquivando",
+      "circulando",
+      "recuando"
+    ],
+    "cpuMs": {
+      "p50": 0.05029999999987922,
+      "p95": 0.16720000000032087
+    },
+    "hp": 97.06738856113273,
+    "energy": 37.53025074912636,
+    "hash": "bb9f8898a653355a083f150f0243bc85d3552d02cb0e31b4fb050ec577128b23"
+  },
+  "events": [
+    {
+      "n": 1,
+      "t": 0.05,
+      "dia": 20,
+      "tipo": "caca_inicio",
+      "id": "varrisco-real",
+      "presa": "hunter-A",
+      "distancia": 8,
+      "ferida": false,
+      "juvenil": false
+    },
+    {
+      "n": 2,
+      "t": 0.05,
+      "dia": 20,
+      "tipo": "perseguicao_inicio",
+      "id": "varrisco-real",
+      "presa": "hunter-A"
+    },
+    {
+      "n": 3,
+      "t": 0.1,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 4,
+      "t": 0.35,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "pressionando",
+      "reason": "presa em deslocamento; perseguição com frenagem na faixa de golpe"
+    },
+    {
+      "n": 5,
+      "t": 0.75,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 6,
+      "t": 1,
+      "dia": 20,
+      "tipo": "conflito_inicio",
+      "id": "hunter-A",
+      "rival": "varrisco-real",
+      "motivo": "ataque_hunter",
+      "conflito": "cf1",
+      "recurso": null
+    },
+    {
+      "n": 7,
+      "t": 1,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.4,
+      "contra": false
+    },
+    {
+      "n": 8,
+      "t": 1,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco",
+      "indice": 0,
+      "clip": "spear_light",
+      "janela": 0.828,
+      "preparo": 0.4,
+      "recuperacao": 0.58,
+      "habilidade": 0.85
+    },
+    {
+      "n": 9,
+      "t": 1.05,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "ameacando",
+      "reason": "exibição territorial; não implica luta até a morte"
+    },
+    {
+      "n": 10,
+      "t": 1.35,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 11,
+      "t": 1.4,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_leve",
+      "regiao": "flanco",
+      "dano": 8.7,
+      "gravidade": 0.0493,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 167.6,
+      "contato": 0.52
+    },
+    {
+      "n": 12,
+      "t": 1.4,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 47.40096782587056,
+      "y": 45.43530485893254,
+      "z": 7.869626424839897,
+      "intensidade": 0.26803352536622554,
+      "tipoDano": "perfurante",
+      "pesado": false,
+      "bloqueado": false,
+      "regiao": "flanco",
+      "dano": 8.7
+    },
+    {
+      "n": 13,
+      "t": 1.65,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 14,
+      "t": 2,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.35,
+      "contra": false
+    },
+    {
+      "n": 15,
+      "t": 2,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco",
+      "indice": 1,
+      "clip": "spear_follow",
+      "janela": 0.828,
+      "preparo": 0.35200000000000004,
+      "recuperacao": 0.58,
+      "habilidade": 0.85
+    },
+    {
+      "n": 16,
+      "t": 2.05,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "circulando",
+      "reason": "mudar ângulo dentro do alcance útil"
+    },
+    {
+      "n": 17,
+      "t": 2.4,
+      "dia": 20,
+      "tipo": "esquiva",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_leve"
+    },
+    {
+      "n": 18,
+      "t": 2.4,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "varrisco-real",
+      "alvo": "hunter-A",
+      "ataque": "mordida",
+      "preparo": 0.52,
+      "contra": true
+    },
+    {
+      "n": 19,
+      "t": 2.4,
+      "dia": 20,
+      "tipo": "contra_ataque",
+      "id": "varrisco-real",
+      "alvo": "hunter-A",
+      "ataque": "mordida"
+    },
+    {
+      "n": 20,
+      "t": 2.45,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "preparando_ataque",
+      "reason": "golpe comprometido; ajuste angular limitado"
+    },
+    {
+      "n": 21,
+      "t": 2.75,
+      "dia": 20,
+      "tipo": "hunter_esquiva_tatica",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "lado": -1,
+      "motivo": "sair_da_trajetoria_e_alcancar_flanco"
+    },
+    {
+      "n": 22,
+      "t": 2.75,
+      "dia": 20,
+      "tipo": "hunter_cancelamento",
+      "id": "hunter-A",
+      "motivo": "janela_de_saida_pos_impacto"
+    },
+    {
+      "n": 23,
+      "t": 2.95,
+      "dia": 20,
+      "tipo": "esquiva",
+      "id": "hunter-A",
+      "atacante": "varrisco-real",
+      "ataque": "mordida"
+    },
+    {
+      "n": 24,
+      "t": 2.95,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.26,
+      "contra": true
+    },
+    {
+      "n": 25,
+      "t": 2.95,
+      "dia": 20,
+      "tipo": "contra_ataque",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve"
+    },
+    {
+      "n": 26,
+      "t": 3,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "recuando",
+      "reason": "recuperação sob risco; abrindo distância"
+    },
+    {
+      "n": 27,
+      "t": 3.05,
+      "dia": 20,
+      "tipo": "conflito_fase",
+      "id": "varrisco-real",
+      "conflito": "cf1",
+      "fase": "intimidacao"
+    },
+    {
+      "n": 28,
+      "t": 3.2,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 29,
+      "t": 3.25,
+      "dia": 20,
+      "tipo": "esquiva",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_leve"
+    },
+    {
+      "n": 30,
+      "t": 3.45,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 31,
+      "t": 3.95,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_pesado",
+      "preparo": 0.78,
+      "contra": false
+    },
+    {
+      "n": 32,
+      "t": 3.95,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco",
+      "indice": 0,
+      "clip": "spear_heavy",
+      "janela": 1.53625,
+      "preparo": 0.78,
+      "recuperacao": 1.05,
+      "habilidade": 0.85
+    },
+    {
+      "n": 33,
+      "t": 4.75,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "circulando",
+      "reason": "mudar ângulo dentro do alcance útil"
+    },
+    {
+      "n": 34,
+      "t": 4.75,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 35,
+      "t": 4.75,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_pesado",
+      "regiao": "flanco",
+      "dano": 20.8,
+      "gravidade": 0.1181,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 146.2,
+      "contato": 0.16
+    },
+    {
+      "n": 36,
+      "t": 4.75,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 46.63823605466704,
+      "y": 45.47349595395181,
+      "z": 7.821019067388068,
+      "intensidade": 0.6539192330594819,
+      "tipoDano": "perfurante",
+      "pesado": true,
+      "bloqueado": false,
+      "regiao": "flanco",
+      "dano": 20.8
+    },
+    {
+      "n": 37,
+      "t": 5.45,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 38,
+      "t": 5.65,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "procurando_abertura",
+      "reason": "oportunidade visual e contato geométrico a confirmar"
+    },
+    {
+      "n": 39,
+      "t": 5.8,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "circulando",
+      "reason": "mudar ângulo dentro do alcance útil"
+    },
+    {
+      "n": 40,
+      "t": 5.8,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.35,
+      "contra": false
+    },
+    {
+      "n": 41,
+      "t": 5.8,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco",
+      "indice": 1,
+      "clip": "spear_follow",
+      "janela": 0.84,
+      "preparo": 0.35200000000000004,
+      "recuperacao": 0.58,
+      "habilidade": 0.85
+    },
+    {
+      "n": 42,
+      "t": 6.2,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_leve",
+      "regiao": "flanco",
+      "dano": 8.4,
+      "gravidade": 0.0477,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 136.9,
+      "contato": 0
+    },
+    {
+      "n": 43,
+      "t": 6.2,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 46.63861452597042,
+      "y": 45.47300009833067,
+      "z": 7.820961163849876,
+      "intensidade": 0.2629289210432523,
+      "tipoDano": "perfurante",
+      "pesado": false,
+      "bloqueado": false,
+      "regiao": "flanco",
+      "dano": 8.4
+    },
+    {
+      "n": 44,
+      "t": 6.3,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "cabeca"
+    },
+    {
+      "n": 45,
+      "t": 6.75,
+      "dia": 20,
+      "tipo": "hunter_fim_sequencia",
+      "id": "hunter-A",
+      "motivo": "risco_alcance_energia_ou_reacao"
+    },
+    {
+      "n": 46,
+      "t": 7,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 47,
+      "t": 7.25,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.4,
+      "contra": false
+    },
+    {
+      "n": 48,
+      "t": 7.25,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco",
+      "indice": 0,
+      "clip": "spear_light",
+      "janela": 0.84,
+      "preparo": 0.4,
+      "recuperacao": 0.58,
+      "habilidade": 0.85
+    },
+    {
+      "n": 49,
+      "t": 7.65,
+      "dia": 20,
+      "tipo": "esquiva",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_leve"
+    },
+    {
+      "n": 50,
+      "t": 7.7,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "circulando",
+      "reason": "mudar ângulo dentro do alcance útil"
+    },
+    {
+      "n": 51,
+      "t": 7.8,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 52,
+      "t": 8.25,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.35,
+      "contra": false
+    },
+    {
+      "n": 53,
+      "t": 8.25,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco",
+      "indice": 1,
+      "clip": "spear_follow",
+      "janela": 0.84,
+      "preparo": 0.35200000000000004,
+      "recuperacao": 0.58,
+      "habilidade": 0.85
+    },
+    {
+      "n": 54,
+      "t": 8.55,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "procurando_abertura",
+      "reason": "oportunidade visual e contato geométrico a confirmar"
+    },
+    {
+      "n": 55,
+      "t": 8.55,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "varrisco-real",
+      "alvo": "hunter-A",
+      "ataque": "mordida",
+      "preparo": 0.69,
+      "contra": false
+    },
+    {
+      "n": 56,
+      "t": 8.6,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "preparando_ataque",
+      "reason": "golpe comprometido; ajuste angular limitado"
+    },
+    {
+      "n": 57,
+      "t": 8.65,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_leve",
+      "regiao": "flanco",
+      "dano": 9.3,
+      "gravidade": 0.0527,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 125.9,
+      "contato": -0.03
+    },
+    {
+      "n": 58,
+      "t": 8.65,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 45.65980409682897,
+      "y": 46.71092939866877,
+      "z": 7.793313290176262,
+      "intensidade": 0.27824273401217214,
+      "tipoDano": "perfurante",
+      "pesado": false,
+      "bloqueado": false,
+      "regiao": "flanco",
+      "dano": 9.3
+    },
+    {
+      "n": 59,
+      "t": 9,
+      "dia": 20,
+      "tipo": "hunter_esquiva_tatica",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "lado": -1,
+      "motivo": "sair_da_trajetoria_e_alcancar_flanco"
+    },
+    {
+      "n": 60,
+      "t": 9,
+      "dia": 20,
+      "tipo": "hunter_cancelamento",
+      "id": "hunter-A",
+      "motivo": "janela_de_saida_pos_impacto"
+    },
+    {
+      "n": 61,
+      "t": 9.25,
+      "dia": 20,
+      "tipo": "golpe_errou",
+      "id": "varrisco-real",
+      "alvo": "hunter-A",
+      "ataque": "mordida",
+      "distancia": 2.02,
+      "folga": 0.81,
+      "vAlvo": 0,
+      "vA": 0,
+      "alvoEstado": "esquivando",
+      "angulo": -24,
+      "motivo": "membro_nao_alcanca",
+      "previstoD": -0.08,
+      "previstoAvanco": 0.31,
+      "avancoReal": 0.13
+    },
+    {
+      "n": 62,
+      "t": 9.3,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "recuando",
+      "reason": "recuperação sob risco; abrindo distância"
+    },
+    {
+      "n": 63,
+      "t": 9.35,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 64,
+      "t": 9.65,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 65,
+      "t": 9.75,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_pesado",
+      "preparo": 0.78,
+      "contra": false
+    },
+    {
+      "n": 66,
+      "t": 9.75,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco",
+      "indice": 0,
+      "clip": "spear_heavy",
+      "janela": 1.5590000000000002,
+      "preparo": 0.78,
+      "recuperacao": 1.05,
+      "habilidade": 0.85
+    },
+    {
+      "n": 67,
+      "t": 10.55,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_pesado",
+      "regiao": "tronco",
+      "dano": 25,
+      "gravidade": 0.1421,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 99.4,
+      "contato": 0.49
+    },
+    {
+      "n": 68,
+      "t": 10.55,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 45.82991923329629,
+      "y": 46.38120828000558,
+      "z": 7.585389972575711,
+      "intensidade": 0.725383693581108,
+      "tipoDano": "perfurante",
+      "pesado": true,
+      "bloqueado": false,
+      "regiao": "tronco",
+      "dano": 25
+    },
+    {
+      "n": 69,
+      "t": 10.9,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 70,
+      "t": 11.6,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "circulando",
+      "reason": "mudar ângulo dentro do alcance útil"
+    },
+    {
+      "n": 71,
+      "t": 11.6,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.35,
+      "contra": false
+    },
+    {
+      "n": 72,
+      "t": 11.6,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco",
+      "indice": 1,
+      "clip": "spear_follow",
+      "janela": 0.852,
+      "preparo": 0.35200000000000004,
+      "recuperacao": 0.58,
+      "habilidade": 0.85
+    },
+    {
+      "n": 73,
+      "t": 12,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_leve",
+      "regiao": "tronco",
+      "dano": 8,
+      "gravidade": 0.0455,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 89.8,
+      "contato": 0.04
+    },
+    {
+      "n": 74,
+      "t": 12,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 45.33682491960139,
+      "y": 46.25462006006539,
+      "z": 7.649286868979828,
+      "intensidade": 0.2561227819459545,
+      "tipoDano": "perfurante",
+      "pesado": false,
+      "bloqueado": false,
+      "regiao": "tronco",
+      "dano": 8
+    },
+    {
+      "n": 75,
+      "t": 12.05,
+      "dia": 20,
+      "tipo": "conflito_fim",
+      "id": "varrisco-real",
+      "conflito": "cf1",
+      "perdedor": "varrisco-real",
+      "vencedor": "hunter-A",
+      "motivo": "cedeu",
+      "faseFinal": "intimidacao",
+      "duracao": 11.1,
+      "golpes": 1,
+      "motivoDisputa": "ataque_hunter"
+    },
+    {
+      "n": 76,
+      "t": 12.45,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 77,
+      "t": 12.55,
+      "dia": 20,
+      "tipo": "hunter_fim_sequencia",
+      "id": "hunter-A",
+      "motivo": "risco_alcance_energia_ou_reacao"
+    },
+    {
+      "n": 78,
+      "t": 13.6,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 79,
+      "t": 15.15,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 80,
+      "t": 16.35,
+      "dia": 20,
+      "tipo": "hunter_reavaliacao",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "motivo": "aproximacao_sem_progresso",
+      "distancia": 5.398825550641245
+    },
+    {
+      "n": 81,
+      "t": 17.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 82,
+      "t": 17.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 83,
+      "t": 17.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 84,
+      "t": 17.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 85,
+      "t": 17.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 86,
+      "t": 17.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 87,
+      "t": 17.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 88,
+      "t": 17.6,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 89,
+      "t": 17.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 90,
+      "t": 17.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 91,
+      "t": 17.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 92,
+      "t": 17.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 93,
+      "t": 17.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 94,
+      "t": 17.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 95,
+      "t": 17.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 96,
+      "t": 17.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 97,
+      "t": 18,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 98,
+      "t": 18.7,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 99,
+      "t": 18.75,
+      "dia": 20,
+      "tipo": "conflito_inicio",
+      "id": "hunter-A",
+      "rival": "varrisco-real",
+      "motivo": "ataque_hunter",
+      "conflito": "cf2",
+      "recurso": null
+    },
+    {
+      "n": 100,
+      "t": 18.75,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.4,
+      "contra": false
+    },
+    {
+      "n": 101,
+      "t": 18.75,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas",
+      "indice": 0,
+      "clip": "spear_light",
+      "janela": 0.852,
+      "preparo": 0.4,
+      "recuperacao": 0.58,
+      "habilidade": 0.85
+    },
+    {
+      "n": 102,
+      "t": 18.8,
+      "dia": 20,
+      "tipo": "conflito_fim",
+      "id": "varrisco-real",
+      "conflito": "cf2",
+      "perdedor": "varrisco-real",
+      "vencedor": "hunter-A",
+      "motivo": "cedeu",
+      "faseFinal": "observacao",
+      "duracao": 0.1,
+      "golpes": 0,
+      "motivoDisputa": "ataque_hunter"
+    },
+    {
+      "n": 103,
+      "t": 19.15,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 104,
+      "t": 19.15,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_leve",
+      "regiao": "pernas",
+      "dano": 8,
+      "gravidade": 0.0453,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 75,
+      "contato": -0.34
+    },
+    {
+      "n": 105,
+      "t": 19.15,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 62.24151734316976,
+      "y": 52.48723984206375,
+      "z": 8.820731691146538,
+      "intensidade": 0.2561227819459545,
+      "tipoDano": "perfurante",
+      "pesado": false,
+      "bloqueado": false,
+      "regiao": "pernas",
+      "dano": 8
+    },
+    {
+      "n": 106,
+      "t": 19.75,
+      "dia": 20,
+      "tipo": "hunter_fim_sequencia",
+      "id": "hunter-A",
+      "motivo": "risco_alcance_energia_ou_reacao"
+    },
+    {
+      "n": 107,
+      "t": 20.8,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 108,
+      "t": 22.35,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 109,
+      "t": 23.1,
+      "dia": 20,
+      "tipo": "hunter_reavaliacao",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "motivo": "aproximacao_sem_progresso",
+      "distancia": 10.560561739607294
+    },
+    {
+      "n": 110,
+      "t": 24.35,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 111,
+      "t": 25.9,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 112,
+      "t": 26.7,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "pressionando",
+      "reason": "presa em deslocamento; perseguição com frenagem na faixa de golpe"
+    },
+    {
+      "n": 113,
+      "t": 27.3,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 114,
+      "t": 27.45,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 115,
+      "t": 27.65,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "recuando",
+      "reason": "arma/membro sem espaço útil; recuperar alcance"
+    },
+    {
+      "n": 116,
+      "t": 28.4,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "circulando",
+      "reason": "mudar ângulo dentro do alcance útil"
+    },
+    {
+      "n": 117,
+      "t": 29,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 118,
+      "t": 29.1,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 119,
+      "t": 30,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "circulando",
+      "reason": "mudar ângulo dentro do alcance útil"
+    },
+    {
+      "n": 120,
+      "t": 30.55,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "recuando",
+      "reason": "arma/membro sem espaço útil; recuperar alcance"
+    },
+    {
+      "n": 121,
+      "t": 30.55,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "flanco"
+    },
+    {
+      "n": 122,
+      "t": 31.2,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "circulando",
+      "reason": "mudar ângulo dentro do alcance útil"
+    },
+    {
+      "n": 123,
+      "t": 31.4,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "recuando",
+      "reason": "arma/membro sem espaço útil; recuperar alcance"
+    },
+    {
+      "n": 124,
+      "t": 32.05,
+      "dia": 20,
+      "tipo": "tatica_estado",
+      "id": "varrisco-real",
+      "phase": "aproximando",
+      "reason": "ajuste de superfície, velocidade e espaço livre"
+    },
+    {
+      "n": 125,
+      "t": 32.1,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "cabeca"
+    },
+    {
+      "n": 126,
+      "t": 33.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 127,
+      "t": 33.2,
+      "dia": 20,
+      "tipo": "conflito_inicio",
+      "id": "hunter-A",
+      "rival": "varrisco-real",
+      "motivo": "ataque_hunter",
+      "conflito": "cf3",
+      "recurso": null
+    },
+    {
+      "n": 128,
+      "t": 33.2,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "preparo": 0.4,
+      "contra": false
+    },
+    {
+      "n": 129,
+      "t": 33.2,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "cabeca",
+      "indice": 0,
+      "clip": "spear_light",
+      "janela": 0.852,
+      "preparo": 0.4,
+      "recuperacao": 0.58,
+      "habilidade": 0.85
+    },
+    {
+      "n": 130,
+      "t": 33.25,
+      "dia": 20,
+      "tipo": "conflito_fim",
+      "id": "varrisco-real",
+      "conflito": "cf3",
+      "perdedor": "varrisco-real",
+      "vencedor": "hunter-A",
+      "motivo": "cedeu",
+      "faseFinal": "observacao",
+      "duracao": 0,
+      "golpes": 0,
+      "motivoDisputa": "ataque_hunter"
+    },
+    {
+      "n": 131,
+      "t": 33.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 132,
+      "t": 33.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 133,
+      "t": 33.6,
+      "dia": 20,
+      "tipo": "golpe_errou",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_leve",
+      "distancia": 3,
+      "folga": 0.49,
+      "vAlvo": 0.5,
+      "vA": 0,
+      "alvoEstado": "recuando",
+      "angulo": -14,
+      "motivo": "membro_nao_alcanca",
+      "previstoD": -0.54,
+      "previstoAvanco": 0,
+      "avancoReal": 0.04
+    },
+    {
+      "n": 134,
+      "t": 33.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 135,
+      "t": 33.65,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 136,
+      "t": 33.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 137,
+      "t": 33.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 138,
+      "t": 33.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 139,
+      "t": 33.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 140,
+      "t": 33.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 141,
+      "t": 33.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 142,
+      "t": 34,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 143,
+      "t": 34.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 144,
+      "t": 34.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 145,
+      "t": 34.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 146,
+      "t": 34.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 147,
+      "t": 34.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 148,
+      "t": 34.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 149,
+      "t": 34.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 150,
+      "t": 34.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 151,
+      "t": 34.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 152,
+      "t": 34.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 153,
+      "t": 34.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 154,
+      "t": 34.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 155,
+      "t": 34.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 156,
+      "t": 34.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 157,
+      "t": 34.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 158,
+      "t": 34.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 159,
+      "t": 34.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 160,
+      "t": 34.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 161,
+      "t": 34.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 162,
+      "t": 35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 163,
+      "t": 35.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 164,
+      "t": 35.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 165,
+      "t": 35.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 166,
+      "t": 35.2,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 167,
+      "t": 35.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 168,
+      "t": 35.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 169,
+      "t": 35.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 170,
+      "t": 35.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 171,
+      "t": 35.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 172,
+      "t": 35.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 173,
+      "t": 35.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 174,
+      "t": 35.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 175,
+      "t": 35.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 176,
+      "t": 35.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 177,
+      "t": 35.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 178,
+      "t": 35.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 179,
+      "t": 35.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 180,
+      "t": 35.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 181,
+      "t": 35.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 182,
+      "t": 35.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 183,
+      "t": 36,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 184,
+      "t": 36.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 185,
+      "t": 36.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 186,
+      "t": 36.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 187,
+      "t": 36.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 188,
+      "t": 36.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 189,
+      "t": 36.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 190,
+      "t": 36.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 191,
+      "t": 36.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 192,
+      "t": 36.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 193,
+      "t": 36.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 194,
+      "t": 36.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 195,
+      "t": 36.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 196,
+      "t": 36.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 197,
+      "t": 36.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 198,
+      "t": 36.75,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 199,
+      "t": 36.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 200,
+      "t": 36.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 201,
+      "t": 36.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 202,
+      "t": 36.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 203,
+      "t": 36.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 204,
+      "t": 37,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 205,
+      "t": 37.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 206,
+      "t": 37.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 207,
+      "t": 37.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 208,
+      "t": 37.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 209,
+      "t": 37.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 210,
+      "t": 37.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 211,
+      "t": 37.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 212,
+      "t": 37.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 213,
+      "t": 37.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 214,
+      "t": 37.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 215,
+      "t": 37.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 216,
+      "t": 37.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 217,
+      "t": 37.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 218,
+      "t": 37.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 219,
+      "t": 37.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 220,
+      "t": 37.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 221,
+      "t": 37.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 222,
+      "t": 37.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 223,
+      "t": 37.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 224,
+      "t": 38,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 225,
+      "t": 38.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 226,
+      "t": 38.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 227,
+      "t": 38.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 228,
+      "t": 38.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 229,
+      "t": 38.25,
+      "dia": 20,
+      "tipo": "preso",
+      "id": "varrisco-real",
+      "x": 68.9,
+      "y": 52,
+      "estado": "recuando"
+    },
+    {
+      "n": 230,
+      "t": 38.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 231,
+      "t": 38.3,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 232,
+      "t": 38.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 233,
+      "t": 38.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 234,
+      "t": 38.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 235,
+      "t": 38.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 236,
+      "t": 38.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 237,
+      "t": 38.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 238,
+      "t": 38.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 239,
+      "t": 38.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 240,
+      "t": 38.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 241,
+      "t": 38.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 242,
+      "t": 38.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 243,
+      "t": 38.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 244,
+      "t": 38.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 245,
+      "t": 38.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 246,
+      "t": 39,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 247,
+      "t": 39.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 248,
+      "t": 39.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 249,
+      "t": 39.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 250,
+      "t": 39.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 251,
+      "t": 39.3,
+      "dia": 20,
+      "tipo": "conflito_inicio",
+      "id": "hunter-A",
+      "rival": "varrisco-real",
+      "motivo": "ataque_hunter",
+      "conflito": "cf4",
+      "recurso": null
+    },
+    {
+      "n": 252,
+      "t": 39.3,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_pesado",
+      "preparo": 0.78,
+      "contra": false
+    },
+    {
+      "n": 253,
+      "t": 39.3,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas",
+      "indice": 0,
+      "clip": "spear_heavy",
+      "janela": 1.5590000000000002,
+      "preparo": 0.78,
+      "recuperacao": 1.05,
+      "habilidade": 0.85
+    },
+    {
+      "n": 254,
+      "t": 39.35,
+      "dia": 20,
+      "tipo": "conflito_fim",
+      "id": "varrisco-real",
+      "conflito": "cf4",
+      "perdedor": "varrisco-real",
+      "vencedor": "hunter-A",
+      "motivo": "cedeu",
+      "faseFinal": "observacao",
+      "duracao": 0.1,
+      "golpes": 0,
+      "motivoDisputa": "ataque_hunter"
+    },
+    {
+      "n": 255,
+      "t": 39.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 256,
+      "t": 39.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 257,
+      "t": 39.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 258,
+      "t": 39.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 259,
+      "t": 39.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 260,
+      "t": 39.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 261,
+      "t": 39.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 262,
+      "t": 39.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 263,
+      "t": 39.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 264,
+      "t": 39.85,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 265,
+      "t": 39.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 266,
+      "t": 39.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 267,
+      "t": 39.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 268,
+      "t": 40,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 269,
+      "t": 40.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 270,
+      "t": 40.1,
+      "dia": 20,
+      "tipo": "esquiva",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_pesado"
+    },
+    {
+      "n": 271,
+      "t": 40.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 272,
+      "t": 40.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 273,
+      "t": 40.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 274,
+      "t": 40.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 275,
+      "t": 40.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 276,
+      "t": 40.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 277,
+      "t": 40.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 278,
+      "t": 40.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 279,
+      "t": 40.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 280,
+      "t": 40.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 281,
+      "t": 40.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 282,
+      "t": 40.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 283,
+      "t": 40.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 284,
+      "t": 40.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 285,
+      "t": 40.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 286,
+      "t": 40.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 287,
+      "t": 40.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 288,
+      "t": 40.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 289,
+      "t": 41,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 290,
+      "t": 41.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 291,
+      "t": 41.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 292,
+      "t": 41.15,
+      "dia": 20,
+      "tipo": "hunter_fim_sequencia",
+      "id": "hunter-A",
+      "motivo": "risco_alcance_energia_ou_reacao"
+    },
+    {
+      "n": 293,
+      "t": 41.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 294,
+      "t": 41.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 295,
+      "t": 41.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 296,
+      "t": 41.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 297,
+      "t": 41.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 298,
+      "t": 41.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 299,
+      "t": 41.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 300,
+      "t": 41.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 301,
+      "t": 41.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 302,
+      "t": 41.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 303,
+      "t": 41.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 304,
+      "t": 41.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 305,
+      "t": 41.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 306,
+      "t": 41.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 307,
+      "t": 41.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 308,
+      "t": 41.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 309,
+      "t": 41.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 310,
+      "t": 42,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 311,
+      "t": 42.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 312,
+      "t": 42.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 313,
+      "t": 42.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 314,
+      "t": 42.2,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 315,
+      "t": 42.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 316,
+      "t": 42.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 317,
+      "t": 42.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 318,
+      "t": 42.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 319,
+      "t": 42.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 320,
+      "t": 42.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 321,
+      "t": 42.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 322,
+      "t": 42.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 323,
+      "t": 42.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 324,
+      "t": 42.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 325,
+      "t": 42.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 326,
+      "t": 42.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 327,
+      "t": 42.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 328,
+      "t": 42.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 329,
+      "t": 42.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 330,
+      "t": 42.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 331,
+      "t": 43,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 332,
+      "t": 43.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 333,
+      "t": 43.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 334,
+      "t": 43.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 335,
+      "t": 43.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 336,
+      "t": 43.25,
+      "dia": 20,
+      "tipo": "preso",
+      "id": "varrisco-real",
+      "x": 69,
+      "y": 52,
+      "estado": "recuando"
+    },
+    {
+      "n": 337,
+      "t": 43.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 338,
+      "t": 43.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 339,
+      "t": 43.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 340,
+      "t": 43.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 341,
+      "t": 43.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 342,
+      "t": 43.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 343,
+      "t": 43.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 344,
+      "t": 43.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 345,
+      "t": 43.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 346,
+      "t": 43.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 347,
+      "t": 43.75,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 348,
+      "t": 43.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 349,
+      "t": 43.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 350,
+      "t": 43.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 351,
+      "t": 43.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 352,
+      "t": 43.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 353,
+      "t": 44,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 354,
+      "t": 44.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 355,
+      "t": 44.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 356,
+      "t": 44.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 357,
+      "t": 44.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 358,
+      "t": 44.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 359,
+      "t": 44.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 360,
+      "t": 44.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 361,
+      "t": 44.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 362,
+      "t": 44.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 363,
+      "t": 44.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 364,
+      "t": 44.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 365,
+      "t": 44.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 366,
+      "t": 44.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 367,
+      "t": 44.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 368,
+      "t": 44.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 369,
+      "t": 44.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 370,
+      "t": 44.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 371,
+      "t": 44.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 372,
+      "t": 44.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 373,
+      "t": 45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 374,
+      "t": 45.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 375,
+      "t": 45.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 376,
+      "t": 45.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 377,
+      "t": 45.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 378,
+      "t": 45.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 379,
+      "t": 45.3,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 380,
+      "t": 45.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 381,
+      "t": 45.4,
+      "dia": 20,
+      "tipo": "conflito_inicio",
+      "id": "hunter-A",
+      "rival": "varrisco-real",
+      "motivo": "ataque_hunter",
+      "conflito": "cf5",
+      "recurso": null
+    },
+    {
+      "n": 382,
+      "t": 45.4,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_pesado",
+      "preparo": 0.78,
+      "contra": false
+    },
+    {
+      "n": 383,
+      "t": 45.4,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas",
+      "indice": 0,
+      "clip": "spear_heavy",
+      "janela": 1.5590000000000002,
+      "preparo": 0.78,
+      "recuperacao": 1.05,
+      "habilidade": 0.85
+    },
+    {
+      "n": 384,
+      "t": 45.45,
+      "dia": 20,
+      "tipo": "conflito_fim",
+      "id": "varrisco-real",
+      "conflito": "cf5",
+      "perdedor": "varrisco-real",
+      "vencedor": "hunter-A",
+      "motivo": "cedeu",
+      "faseFinal": "observacao",
+      "duracao": 0.1,
+      "golpes": 0,
+      "motivoDisputa": "ataque_hunter"
+    },
+    {
+      "n": 385,
+      "t": 45.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 386,
+      "t": 45.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 387,
+      "t": 45.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 388,
+      "t": 45.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 389,
+      "t": 45.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 390,
+      "t": 45.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 391,
+      "t": 45.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 392,
+      "t": 45.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 393,
+      "t": 45.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 394,
+      "t": 45.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 395,
+      "t": 46,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 396,
+      "t": 46.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 397,
+      "t": 46.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 398,
+      "t": 46.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 399,
+      "t": 46.2,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_pesado",
+      "regiao": "pernas",
+      "dano": 16,
+      "gravidade": 0.0906,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 52.4,
+      "contato": -0.26
+    },
+    {
+      "n": 400,
+      "t": 46.2,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 67.8730891343765,
+      "y": 51.584689985626746,
+      "z": 9.775022533103462,
+      "intensidade": 0.5722455638919091,
+      "tipoDano": "perfurante",
+      "pesado": true,
+      "bloqueado": false,
+      "regiao": "pernas",
+      "dano": 16
+    },
+    {
+      "n": 401,
+      "t": 46.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 402,
+      "t": 46.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 403,
+      "t": 46.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 404,
+      "t": 46.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 405,
+      "t": 46.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 406,
+      "t": 46.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 407,
+      "t": 46.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 408,
+      "t": 46.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 409,
+      "t": 46.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 410,
+      "t": 46.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 411,
+      "t": 46.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 412,
+      "t": 46.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 413,
+      "t": 46.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 414,
+      "t": 46.85,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 415,
+      "t": 46.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 416,
+      "t": 46.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 417,
+      "t": 46.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 418,
+      "t": 47,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 419,
+      "t": 47.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 420,
+      "t": 47.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 421,
+      "t": 47.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 422,
+      "t": 47.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 423,
+      "t": 47.25,
+      "dia": 20,
+      "tipo": "hunter_fim_sequencia",
+      "id": "hunter-A",
+      "motivo": "risco_alcance_energia_ou_reacao"
+    },
+    {
+      "n": 424,
+      "t": 47.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 425,
+      "t": 47.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 426,
+      "t": 47.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 427,
+      "t": 47.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 428,
+      "t": 47.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 429,
+      "t": 47.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 430,
+      "t": 47.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 431,
+      "t": 47.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 432,
+      "t": 47.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 433,
+      "t": 47.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 434,
+      "t": 47.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 435,
+      "t": 47.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 436,
+      "t": 47.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 437,
+      "t": 47.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 438,
+      "t": 47.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 439,
+      "t": 48,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 440,
+      "t": 48.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 441,
+      "t": 48.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 442,
+      "t": 48.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 443,
+      "t": 48.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 444,
+      "t": 48.25,
+      "dia": 20,
+      "tipo": "preso",
+      "id": "varrisco-real",
+      "x": 69,
+      "y": 52,
+      "estado": "recuando"
+    },
+    {
+      "n": 445,
+      "t": 48.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 446,
+      "t": 48.3,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 447,
+      "t": 48.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 448,
+      "t": 48.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 449,
+      "t": 48.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 450,
+      "t": 48.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 451,
+      "t": 48.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 452,
+      "t": 48.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 453,
+      "t": 48.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 454,
+      "t": 48.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 455,
+      "t": 48.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 456,
+      "t": 48.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 457,
+      "t": 48.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 458,
+      "t": 48.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 459,
+      "t": 48.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 460,
+      "t": 48.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 461,
+      "t": 49,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 462,
+      "t": 49.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 463,
+      "t": 49.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 464,
+      "t": 49.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 465,
+      "t": 49.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 466,
+      "t": 49.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 467,
+      "t": 49.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 468,
+      "t": 49.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 469,
+      "t": 49.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 470,
+      "t": 49.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 471,
+      "t": 49.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 472,
+      "t": 49.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 473,
+      "t": 49.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 474,
+      "t": 49.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 475,
+      "t": 49.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 476,
+      "t": 49.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 477,
+      "t": 49.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 478,
+      "t": 49.85,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 479,
+      "t": 49.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 480,
+      "t": 49.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 481,
+      "t": 49.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 482,
+      "t": 50,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 483,
+      "t": 50.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 484,
+      "t": 50.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 485,
+      "t": 50.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 486,
+      "t": 50.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 487,
+      "t": 50.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 488,
+      "t": 50.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 489,
+      "t": 50.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 490,
+      "t": 50.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 491,
+      "t": 50.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 492,
+      "t": 50.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 493,
+      "t": 50.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 494,
+      "t": 50.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 495,
+      "t": 50.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 496,
+      "t": 50.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 497,
+      "t": 50.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 498,
+      "t": 50.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 499,
+      "t": 50.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 500,
+      "t": 50.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 501,
+      "t": 50.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 502,
+      "t": 51,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 503,
+      "t": 51.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 504,
+      "t": 51.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 505,
+      "t": 51.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 506,
+      "t": 51.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 507,
+      "t": 51.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 508,
+      "t": 51.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 509,
+      "t": 51.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 510,
+      "t": 51.4,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 511,
+      "t": 51.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 512,
+      "t": 51.45,
+      "dia": 20,
+      "tipo": "presa_escapou_durante_disputa",
+      "id": "hunter-A",
+      "predador": "varrisco-real"
+    },
+    {
+      "n": 513,
+      "t": 51.45,
+      "dia": 20,
+      "tipo": "perseguicao_fim",
+      "id": "varrisco-real",
+      "presa": "hunter-A",
+      "motivo": "desistiu_ferido",
+      "duracao": 51.4
+    },
+    {
+      "n": 514,
+      "t": 51.5,
+      "dia": 20,
+      "tipo": "conflito_inicio",
+      "id": "hunter-A",
+      "rival": "varrisco-real",
+      "motivo": "ataque_hunter",
+      "conflito": "cf6",
+      "recurso": null
+    },
+    {
+      "n": 515,
+      "t": 51.5,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_pesado",
+      "preparo": 0.78,
+      "contra": false
+    },
+    {
+      "n": 516,
+      "t": 51.5,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas",
+      "indice": 0,
+      "clip": "spear_heavy",
+      "janela": 1.5590000000000002,
+      "preparo": 0.78,
+      "recuperacao": 1.05,
+      "habilidade": 0.85
+    },
+    {
+      "n": 517,
+      "t": 51.55,
+      "dia": 20,
+      "tipo": "conflito_fim",
+      "id": "varrisco-real",
+      "conflito": "cf6",
+      "perdedor": "varrisco-real",
+      "vencedor": "hunter-A",
+      "motivo": "cedeu",
+      "faseFinal": "observacao",
+      "duracao": 0,
+      "golpes": 0,
+      "motivoDisputa": "ataque_hunter"
+    },
+    {
+      "n": 518,
+      "t": 51.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 519,
+      "t": 51.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 520,
+      "t": 51.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 521,
+      "t": 51.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 522,
+      "t": 51.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 523,
+      "t": 51.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 524,
+      "t": 51.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 525,
+      "t": 51.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 526,
+      "t": 51.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 527,
+      "t": 52,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 528,
+      "t": 52.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 529,
+      "t": 52.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 530,
+      "t": 52.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 531,
+      "t": 52.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 532,
+      "t": 52.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 533,
+      "t": 52.3,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_pesado",
+      "regiao": "pernas",
+      "dano": 16.7,
+      "gravidade": 0.0945,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 34.9,
+      "contato": -0.24
+    },
+    {
+      "n": 534,
+      "t": 52.3,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 67.9289454937239,
+      "y": 51.531613552080984,
+      "z": 9.801304859386411,
+      "intensidade": 0.58415630731218,
+      "tipoDano": "perfurante",
+      "pesado": true,
+      "bloqueado": false,
+      "regiao": "pernas",
+      "dano": 16.7
+    },
+    {
+      "n": 535,
+      "t": 52.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 536,
+      "t": 52.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 537,
+      "t": 52.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 538,
+      "t": 52.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 539,
+      "t": 52.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 540,
+      "t": 52.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 541,
+      "t": 52.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 542,
+      "t": 52.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 543,
+      "t": 52.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 544,
+      "t": 52.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 545,
+      "t": 52.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 546,
+      "t": 52.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 547,
+      "t": 52.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 548,
+      "t": 52.95,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 549,
+      "t": 52.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 550,
+      "t": 53,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 551,
+      "t": 53.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 552,
+      "t": 53.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 553,
+      "t": 53.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 554,
+      "t": 53.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 555,
+      "t": 53.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 556,
+      "t": 53.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 557,
+      "t": 53.35,
+      "dia": 20,
+      "tipo": "hunter_fim_sequencia",
+      "id": "hunter-A",
+      "motivo": "risco_alcance_energia_ou_reacao"
+    },
+    {
+      "n": 558,
+      "t": 53.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 559,
+      "t": 53.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 560,
+      "t": 53.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 561,
+      "t": 53.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 562,
+      "t": 53.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 563,
+      "t": 53.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 564,
+      "t": 53.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 565,
+      "t": 53.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 566,
+      "t": 53.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 567,
+      "t": 53.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 568,
+      "t": 53.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 569,
+      "t": 53.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 570,
+      "t": 53.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 571,
+      "t": 54,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 572,
+      "t": 54.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 573,
+      "t": 54.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 574,
+      "t": 54.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 575,
+      "t": 54.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 576,
+      "t": 54.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 577,
+      "t": 54.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 578,
+      "t": 54.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 579,
+      "t": 54.4,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 580,
+      "t": 54.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 581,
+      "t": 54.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 582,
+      "t": 54.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 583,
+      "t": 54.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 584,
+      "t": 54.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 585,
+      "t": 54.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 586,
+      "t": 54.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 587,
+      "t": 54.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 588,
+      "t": 54.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 589,
+      "t": 54.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 590,
+      "t": 54.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 591,
+      "t": 54.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 592,
+      "t": 55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 593,
+      "t": 55.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 594,
+      "t": 55.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 595,
+      "t": 55.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 596,
+      "t": 55.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 597,
+      "t": 55.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 598,
+      "t": 55.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 599,
+      "t": 55.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 600,
+      "t": 55.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 601,
+      "t": 55.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 602,
+      "t": 55.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 603,
+      "t": 55.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 604,
+      "t": 55.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 605,
+      "t": 55.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 606,
+      "t": 55.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 607,
+      "t": 55.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 608,
+      "t": 55.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 609,
+      "t": 55.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 610,
+      "t": 55.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 611,
+      "t": 55.95,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 612,
+      "t": 55.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 613,
+      "t": 56,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 614,
+      "t": 56.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 615,
+      "t": 56.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 616,
+      "t": 56.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 617,
+      "t": 56.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 618,
+      "t": 56.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 619,
+      "t": 56.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 620,
+      "t": 56.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 621,
+      "t": 56.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 622,
+      "t": 56.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 623,
+      "t": 56.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 624,
+      "t": 56.55,
+      "dia": 20,
+      "tipo": "preso",
+      "id": "varrisco-real",
+      "x": 69,
+      "y": 52,
+      "estado": "recuando"
+    },
+    {
+      "n": 625,
+      "t": 56.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 626,
+      "t": 56.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 627,
+      "t": 56.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 628,
+      "t": 56.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 629,
+      "t": 56.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 630,
+      "t": 56.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 631,
+      "t": 56.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 632,
+      "t": 56.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 633,
+      "t": 56.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 634,
+      "t": 57,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 635,
+      "t": 57.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 636,
+      "t": 57.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 637,
+      "t": 57.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 638,
+      "t": 57.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 639,
+      "t": 57.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 640,
+      "t": 57.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 641,
+      "t": 57.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 642,
+      "t": 57.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 643,
+      "t": 57.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 644,
+      "t": 57.5,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 645,
+      "t": 57.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 646,
+      "t": 57.6,
+      "dia": 20,
+      "tipo": "conflito_inicio",
+      "id": "hunter-A",
+      "rival": "varrisco-real",
+      "motivo": "ataque_hunter",
+      "conflito": "cf7",
+      "recurso": null
+    },
+    {
+      "n": 647,
+      "t": 57.6,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_pesado",
+      "preparo": 0.78,
+      "contra": false
+    },
+    {
+      "n": 648,
+      "t": 57.6,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas",
+      "indice": 0,
+      "clip": "spear_heavy",
+      "janela": 1.5590000000000002,
+      "preparo": 0.78,
+      "recuperacao": 1.05,
+      "habilidade": 0.85
+    },
+    {
+      "n": 649,
+      "t": 57.65,
+      "dia": 20,
+      "tipo": "conflito_fim",
+      "id": "varrisco-real",
+      "conflito": "cf7",
+      "perdedor": "varrisco-real",
+      "vencedor": "hunter-A",
+      "motivo": "cedeu",
+      "faseFinal": "observacao",
+      "duracao": 0,
+      "golpes": 0,
+      "motivoDisputa": "ataque_hunter"
+    },
+    {
+      "n": 650,
+      "t": 57.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 651,
+      "t": 57.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 652,
+      "t": 57.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 653,
+      "t": 57.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 654,
+      "t": 57.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 655,
+      "t": 57.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 656,
+      "t": 57.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 657,
+      "t": 58,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 658,
+      "t": 58.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 659,
+      "t": 58.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 660,
+      "t": 58.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 661,
+      "t": 58.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 662,
+      "t": 58.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 663,
+      "t": 58.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 664,
+      "t": 58.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 665,
+      "t": 58.4,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_pesado",
+      "regiao": "pernas",
+      "dano": 22.4,
+      "gravidade": 0.1272,
+      "fratura": false,
+      "atordoado": false,
+      "hp": 11.4,
+      "contato": -0.24
+    },
+    {
+      "n": 666,
+      "t": 58.4,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 68.07812569588324,
+      "y": 51.56404789829678,
+      "z": 9.792480180112776,
+      "intensidade": 0.6811437894486727,
+      "tipoDano": "perfurante",
+      "pesado": true,
+      "bloqueado": false,
+      "regiao": "pernas",
+      "dano": 22.4
+    },
+    {
+      "n": 667,
+      "t": 58.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 668,
+      "t": 58.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 669,
+      "t": 58.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 670,
+      "t": 58.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 671,
+      "t": 58.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 672,
+      "t": 58.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 673,
+      "t": 58.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 674,
+      "t": 58.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 675,
+      "t": 58.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 676,
+      "t": 58.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 677,
+      "t": 58.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 678,
+      "t": 59,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 679,
+      "t": 59.05,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 680,
+      "t": 59.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 681,
+      "t": 59.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 682,
+      "t": 59.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 683,
+      "t": 59.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 684,
+      "t": 59.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 685,
+      "t": 59.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 686,
+      "t": 59.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 687,
+      "t": 59.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 688,
+      "t": 59.45,
+      "dia": 20,
+      "tipo": "hunter_fim_sequencia",
+      "id": "hunter-A",
+      "motivo": "risco_alcance_energia_ou_reacao"
+    },
+    {
+      "n": 689,
+      "t": 59.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 690,
+      "t": 59.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 691,
+      "t": 59.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 692,
+      "t": 59.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 693,
+      "t": 59.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 694,
+      "t": 59.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 695,
+      "t": 59.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 696,
+      "t": 59.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 697,
+      "t": 59.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 698,
+      "t": 59.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 699,
+      "t": 59.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 700,
+      "t": 60,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 701,
+      "t": 60.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 702,
+      "t": 60.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 703,
+      "t": 60.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 704,
+      "t": 60.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 705,
+      "t": 60.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 706,
+      "t": 60.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 707,
+      "t": 60.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 708,
+      "t": 60.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 709,
+      "t": 60.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 710,
+      "t": 60.5,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 711,
+      "t": 60.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 712,
+      "t": 60.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 713,
+      "t": 60.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 714,
+      "t": 60.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 715,
+      "t": 60.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 716,
+      "t": 60.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 717,
+      "t": 60.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 718,
+      "t": 60.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 719,
+      "t": 60.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 720,
+      "t": 60.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 721,
+      "t": 61,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 722,
+      "t": 61.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 723,
+      "t": 61.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 724,
+      "t": 61.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 725,
+      "t": 61.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 726,
+      "t": 61.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 727,
+      "t": 61.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 728,
+      "t": 61.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 729,
+      "t": 61.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 730,
+      "t": 61.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 731,
+      "t": 61.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 732,
+      "t": 61.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 733,
+      "t": 61.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 734,
+      "t": 61.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 735,
+      "t": 61.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 736,
+      "t": 61.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 737,
+      "t": 61.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 738,
+      "t": 61.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 739,
+      "t": 61.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 740,
+      "t": 61.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 741,
+      "t": 62,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 742,
+      "t": 62.05,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 743,
+      "t": 62.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 744,
+      "t": 62.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 745,
+      "t": 62.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 746,
+      "t": 62.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 747,
+      "t": 62.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 748,
+      "t": 62.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 749,
+      "t": 62.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 750,
+      "t": 62.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 751,
+      "t": 62.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 752,
+      "t": 62.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 753,
+      "t": 62.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 754,
+      "t": 62.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 755,
+      "t": 62.65,
+      "dia": 20,
+      "tipo": "preso",
+      "id": "varrisco-real",
+      "x": 69,
+      "y": 52,
+      "estado": "recuando"
+    },
+    {
+      "n": 756,
+      "t": 62.65,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 757,
+      "t": 62.7,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 758,
+      "t": 62.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 759,
+      "t": 62.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 760,
+      "t": 62.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 761,
+      "t": 62.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 762,
+      "t": 62.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 763,
+      "t": 63,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 764,
+      "t": 63.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 765,
+      "t": 63.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 766,
+      "t": 63.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 767,
+      "t": 63.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 768,
+      "t": 63.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 769,
+      "t": 63.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 770,
+      "t": 63.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 771,
+      "t": 63.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 772,
+      "t": 63.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 773,
+      "t": 63.5,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 774,
+      "t": 63.55,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 775,
+      "t": 63.6,
+      "dia": 20,
+      "tipo": "hunter_alvo_anatomico",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas"
+    },
+    {
+      "n": 776,
+      "t": 63.6,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 777,
+      "t": 63.7,
+      "dia": 20,
+      "tipo": "conflito_inicio",
+      "id": "hunter-A",
+      "rival": "varrisco-real",
+      "motivo": "ataque_hunter",
+      "conflito": "cf8",
+      "recurso": null
+    },
+    {
+      "n": 778,
+      "t": 63.7,
+      "dia": 20,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "ataque": "golpe_perfurante_pesado",
+      "preparo": 0.78,
+      "contra": false
+    },
+    {
+      "n": 779,
+      "t": 63.7,
+      "dia": 20,
+      "tipo": "hunter_sequencia",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "parte": "pernas",
+      "indice": 0,
+      "clip": "spear_heavy",
+      "janela": 1.5590000000000002,
+      "preparo": 0.78,
+      "recuperacao": 1.05,
+      "habilidade": 0.85
+    },
+    {
+      "n": 780,
+      "t": 63.75,
+      "dia": 20,
+      "tipo": "conflito_fim",
+      "id": "varrisco-real",
+      "conflito": "cf8",
+      "perdedor": "varrisco-real",
+      "vencedor": "hunter-A",
+      "motivo": "cedeu",
+      "faseFinal": "observacao",
+      "duracao": 0,
+      "golpes": 0,
+      "motivoDisputa": "ataque_hunter"
+    },
+    {
+      "n": 781,
+      "t": 63.75,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 782,
+      "t": 63.8,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 783,
+      "t": 63.85,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 784,
+      "t": 63.9,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 785,
+      "t": 63.95,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 786,
+      "t": 64,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 787,
+      "t": 64.05,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 788,
+      "t": 64.1,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 789,
+      "t": 64.15,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 790,
+      "t": 64.2,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 791,
+      "t": 64.25,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 792,
+      "t": 64.3,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 793,
+      "t": 64.35,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 794,
+      "t": 64.4,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 795,
+      "t": 64.45,
+      "dia": 20,
+      "tipo": "precise_collision",
+      "id": "varrisco-real"
+    },
+    {
+      "n": 796,
+      "t": 64.5,
+      "dia": 20,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "atacante": "hunter-A",
+      "ataque": "golpe_perfurante_pesado",
+      "regiao": "pernas",
+      "dano": 21.7,
+      "gravidade": 0.1233,
+      "fratura": false,
+      "atordoado": false,
+      "hp": -11.8,
+      "contato": -0.23
+    },
+    {
+      "n": 797,
+      "t": 64.5,
+      "dia": 20,
+      "tipo": "morte",
+      "id": "varrisco-real",
+      "causa": "combate",
+      "por": "hunter-A",
+      "especie": "varrisco",
+      "idadeAnos": 6,
+      "x": 69,
+      "y": 52
+    },
+    {
+      "n": 798,
+      "t": 64.5,
+      "dia": 20,
+      "tipo": "impacto_arma",
+      "id": "hunter-A",
+      "alvo": "varrisco-real",
+      "x": 68.23671733972799,
+      "y": 51.649343653138814,
+      "z": 9.780433964604292,
+      "intensidade": 0.6692330460284017,
+      "tipoDano": "perfurante",
+      "pesado": true,
+      "bloqueado": false,
+      "regiao": "pernas",
+      "dano": 21.7
+    },
+    {
+      "n": 799,
+      "t": 64.5,
+      "dia": 20,
+      "tipo": "combate_fim",
+      "id": "caca",
+      "vencedor": "azul",
+      "motivo": "criatura derrotada",
+      "situacoes": {
+        "hunter-A": "lutando"
+      }
+    }
+  ]
+}

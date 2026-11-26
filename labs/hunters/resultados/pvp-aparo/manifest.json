@@ -1,0 +1,587 @@
+{
+  "status": "gravado-do-laboratorio-real-aguardando-aprovacao",
+  "cenario": "arena-aparo (Arena dos Caçadores, 1×1 espada × espada, dt 0,05 s)",
+  "semente": 17,
+  "glb": "labs/hunters/assets/hunter-pvp-v11/hunter_pvp_v11.glb",
+  "glbSha256": "9e6a588b15658b80f32c87afd54d497f8d908dbeeb2e5495a975ad9c9c85e542",
+  "renderizador": "hunter-lab.html em Chromium headless (ANGLE SwiftShader), GLBs reais do laboratório",
+  "observacao": "Lâmina, pose de guarda e teste estreito saem da mesma função (src/trajetoria-arma.js), então o contato desenhado é o contato simulado.",
+  "angulos": [
+    {
+      "angulo": "perfil",
+      "azimute": 1.5707963267948966,
+      "video": "duelo-aparo-perfil.webm",
+      "bytes": 1839689,
+      "sha256": "54bdc2012c78a17d49426c229cf9a2150a07d31cfcffb76ae3a549c4e5ff7833",
+      "pngs": [
+        "perfil_aparo1_t1_23.png",
+        "perfil_aparo2_t2_83.png",
+        "perfil_aparo3_t6_29.png",
+        "perfil_aparo4_t9_74.png"
+      ],
+      "aparos": [
+        {
+          "n": 7,
+          "t": 1.228,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.001,
+          "y": 49.443,
+          "z": 1.197,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.722960541146236e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.601893460444135e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 18,
+          "t": 2.828,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.005,
+          "y": 49.474,
+          "z": 1.163,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.9480577918166955e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.240762350643837e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 39,
+          "t": 6.287,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.204,
+          "y": 49.213,
+          "z": 1.141,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.0803330411780889e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.7066469244276883e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 61,
+          "t": 9.738,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.489,
+          "y": 49.05,
+          "z": 1.157,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 9.86943833550999e-9,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 3.7367744291278e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 112,
+          "t": 17.778,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.71,
+          "y": 49.257,
+          "z": 1.197,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.0919947202380964e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.3853446328331896e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 122,
+          "t": 19.375,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.895,
+          "y": 49.424,
+          "z": 1.224,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.0674237143339828e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.3507032630599896e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 132,
+          "t": 20.978,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 61.007,
+          "y": 49.64,
+          "z": 1.239,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 2.4951797534990032e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.448232965479968e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        }
+      ],
+      "desfecho": null,
+      "segundos": 22,
+      "clipes": [
+        "guard_sword",
+        "hunter_walk",
+        "sword_light",
+        "combat_block",
+        "combat_guard_recoil",
+        "combat_step_right",
+        "combat_step_back",
+        "combat_step_left",
+        "combat_dodge",
+        "sword_light_low",
+        "sword_follow",
+        "combat_stagger",
+        "combat_hit",
+        "sword_follow_low"
+      ],
+      "invariantes": [],
+      "estado": [
+        {
+          "id": "hunter-A",
+          "nome": "Arvo",
+          "equipe": "azul",
+          "situacao": "lutando",
+          "postura": "neutra",
+          "controle": "ia",
+          "hp": 58,
+          "hpMax": 97.1,
+          "energia": 26.6,
+          "folego": 26.7,
+          "dor": 0.25,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "hunter-B",
+          "estado": "circulando",
+          "motivo": "procurando flanco com espaço para golpear e sair",
+          "x": 61.42,
+          "y": 48.87,
+          "golpesDados": 10,
+          "golpesRecebidos": 2,
+          "combateJogador": {
+            "habilidade": 0.8,
+            "parte": "flanco",
+            "sequencia": 0,
+            "janela": 0.24511199048122823,
+            "conhecimento": 0.95
+          },
+          "ferimentos": [
+            {
+              "regiao": "cabeca",
+              "gravidade": 0.192,
+              "fratura": false,
+              "sangramento": 0.142
+            },
+            {
+              "regiao": "torax",
+              "gravidade": 0.147,
+              "fratura": false,
+              "sangramento": 0.234
+            }
+          ]
+        },
+        {
+          "id": "hunter-B",
+          "nome": "Brek",
+          "equipe": "verde",
+          "situacao": "lutando",
+          "postura": "comprometida",
+          "controle": "ia",
+          "hp": 94.6,
+          "hpMax": 98.8,
+          "energia": 24.8,
+          "folego": 24.4,
+          "dor": 0,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "hunter-A",
+          "estado": "recuperando",
+          "motivo": "recuperação física antes de decidir o próximo golpe",
+          "x": 60.73,
+          "y": 49.92,
+          "golpesDados": 16,
+          "golpesRecebidos": 1,
+          "combateJogador": {
+            "habilidade": 0.8,
+            "parte": "flanco",
+            "sequencia": 0,
+            "janela": 0.8759999999999999,
+            "conhecimento": 0.95
+          },
+          "ferimentos": [
+            {
+              "regiao": "bracos",
+              "gravidade": 0.039,
+              "fratura": false,
+              "sangramento": 0
+            }
+          ]
+        }
+      ],
+      "hash": "66a76060",
+      "empunhadura": [
+        {
+          "id": "hunter-A",
+          "erroM": 2.220446049250313e-16,
+          "clip": "combat_step_left"
+        },
+        {
+          "id": "hunter-B",
+          "erroM": 6.021031617374889e-9,
+          "clip": "sword_light"
+        }
+      ],
+      "quadro": {
+        "fps": 10,
+        "msQuadro": 2.12,
+        "desenhos": 9,
+        "triangulos": 26048
+      }
+    },
+    {
+      "angulo": "threequarter",
+      "azimute": 2.356194490192345,
+      "video": "duelo-aparo-threequarter.webm",
+      "bytes": 2371645,
+      "sha256": "c7e7f2011583320263605ed949fb34b59b098d5b202b68a81853f1ece703ec0e",
+      "pngs": [
+        "threequarter_aparo1_t1_23.png",
+        "threequarter_aparo2_t2_83.png",
+        "threequarter_aparo3_t6_29.png",
+        "threequarter_aparo4_t9_74.png"
+      ],
+      "aparos": [
+        {
+          "n": 7,
+          "t": 1.228,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.001,
+          "y": 49.443,
+          "z": 1.197,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.722960541146236e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.601893460444135e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 18,
+          "t": 2.828,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.005,
+          "y": 49.474,
+          "z": 1.163,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.9480577918166955e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.240762350643837e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 39,
+          "t": 6.287,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.204,
+          "y": 49.213,
+          "z": 1.141,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.0803330411780889e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.7066469244276883e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 61,
+          "t": 9.738,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.489,
+          "y": 49.05,
+          "z": 1.157,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 9.86943833550999e-9,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 3.7367744291278e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 112,
+          "t": 17.778,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.71,
+          "y": 49.257,
+          "z": 1.197,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.0919947202380964e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.3853446328331896e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 122,
+          "t": 19.375,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.895,
+          "y": 49.424,
+          "z": 1.224,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 1.0674237143339828e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.3507032630599896e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        },
+        {
+          "n": 132,
+          "t": 20.978,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 61.007,
+          "y": 49.64,
+          "z": 1.239,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 2.4951797534990032e-8,
+              "clip": "sword_light"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 2.448232965479968e-8,
+              "clip": "combat_guard_recoil"
+            }
+          ]
+        }
+      ],
+      "desfecho": null,
+      "segundos": 22,
+      "clipes": [
+        "guard_sword",
+        "hunter_walk",
+        "sword_light",
+        "combat_block",
+        "combat_guard_recoil",
+        "combat_step_right",
+        "combat_step_back",
+        "combat_step_left",
+        "combat_dodge",
+        "sword_light_low",
+        "sword_follow",
+        "combat_stagger",
+        "combat_hit",
+        "sword_follow_low"
+      ],
+      "invariantes": [],
+      "estado": [
+        {
+          "id": "hunter-A",
+          "nome": "Arvo",
+          "equipe": "azul",
+          "situacao": "lutando",
+          "postura": "neutra",
+          "controle": "ia",
+          "hp": 58,
+          "hpMax": 97.1,
+          "energia": 26.6,
+          "folego": 26.7,
+          "dor": 0.25,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "hunter-B",
+          "estado": "circulando",
+          "motivo": "procurando flanco com espaço para golpear e sair",
+          "x": 61.42,
+          "y": 48.87,
+          "golpesDados": 10,
+          "golpesRecebidos": 2,
+          "combateJogador": {
+            "habilidade": 0.8,
+            "parte": "flanco",
+            "sequencia": 0,
+            "janela": 0.24511199048122823,
+            "conhecimento": 0.95
+          },
+          "ferimentos": [
+            {
+              "regiao": "cabeca",
+              "gravidade": 0.192,
+              "fratura": false,
+              "sangramento": 0.142
+            },
+            {
+              "regiao": "torax",
+              "gravidade": 0.147,
+              "fratura": false,
+              "sangramento": 0.234
+            }
+          ]
+        },
+        {
+          "id": "hunter-B",
+          "nome": "Brek",
+          "equipe": "verde",
+          "situacao": "lutando",
+          "postura": "comprometida",
+          "controle": "ia",
+          "hp": 94.6,
+          "hpMax": 98.8,
+          "energia": 24.8,
+          "folego": 24.4,
+          "dor": 0,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "hunter-A",
+          "estado": "recuperando",
+          "motivo": "recuperação física antes de decidir o próximo golpe",
+          "x": 60.73,
+          "y": 49.92,
+          "golpesDados": 16,
+          "golpesRecebidos": 1,
+          "combateJogador": {
+            "habilidade": 0.8,
+            "parte": "flanco",
+            "sequencia": 0,
+            "janela": 0.8759999999999999,
+            "conhecimento": 0.95
+          },
+          "ferimentos": [
+            {
+              "regiao": "bracos",
+              "gravidade": 0.039,
+              "fratura": false,
+              "sangramento": 0
+            }
+          ]
+        }
+      ],
+      "hash": "66a76060",
+      "empunhadura": [
+        {
+          "id": "hunter-A",
+          "erroM": 2.220446049250313e-16,
+          "clip": "combat_step_left"
+        },
+        {
+          "id": "hunter-B",
+          "erroM": 6.021031617374889e-9,
+          "clip": "sword_light"
+        }
+      ],
+      "quadro": {
+        "fps": 10,
+        "msQuadro": 2.59,
+        "desenhos": 9,
+        "triangulos": 26048
+      }
+    }
+  ]
+}

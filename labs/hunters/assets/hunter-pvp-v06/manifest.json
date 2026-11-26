@@ -1,0 +1,88 @@
+{
+  "version": "pvp-v06",
+  "status": "experimental-awaiting-director-approval",
+  "source": "labs/hunters/assets/hunter-v05/hunter_combat_v05.glb",
+  "sourceSha256": "1824a6c4085f6492857a7d2e81cdbd008a24e5c065ac488ef485a322f1177ab3",
+  "file": "hunter_pvp_v06.glb",
+  "bytes": 1685756,
+  "sha256": "de7a9e554013fbef13149285e166f4eef10b48e398887efee2ba7b5d53b6f2f4",
+  "triangles": 1000,
+  "joints": 19,
+  "originalClips": 83,
+  "newClips": [
+    {
+      "name": "pvp_sword_01_ready",
+      "duration": 1.15,
+      "impact": null,
+      "label": "01 Guarda inicial",
+      "samples": 29
+    },
+    {
+      "name": "pvp_sword_02_slash_right",
+      "duration": 0.9,
+      "impact": 0.47,
+      "label": "02 Corte horizontal de direita",
+      "samples": 23
+    },
+    {
+      "name": "pvp_sword_03_slash_left",
+      "duration": 0.9,
+      "impact": 0.47,
+      "label": "03 Corte horizontal reverso",
+      "samples": 23
+    },
+    {
+      "name": "pvp_sword_04_overhead",
+      "duration": 1.25,
+      "impact": 0.76,
+      "label": "04 Golpe vertical",
+      "samples": 31
+    },
+    {
+      "name": "pvp_sword_05_thrust",
+      "duration": 0.87,
+      "impact": 0.48,
+      "label": "05 Estocada",
+      "samples": 22
+    },
+    {
+      "name": "pvp_sword_06_guard_high",
+      "duration": 1,
+      "impact": null,
+      "label": "06 Defesa alta",
+      "samples": 25
+    },
+    {
+      "name": "pvp_sword_07_parry",
+      "duration": 0.72,
+      "impact": 0.35,
+      "label": "07 Aparo com espada",
+      "samples": 19
+    },
+    {
+      "name": "pvp_sword_08_dodge",
+      "duration": 0.85,
+      "impact": null,
+      "label": "08 Esquiva lateral",
+      "samples": 22
+    },
+    {
+      "name": "pvp_sword_09_take_hit",
+      "duration": 0.74,
+      "impact": 0.2,
+      "label": "09 Reação ao dano",
+      "samples": 19
+    },
+    {
+      "name": "pvp_sword_10_kneel_injured",
+      "duration": 1.42,
+      "impact": 0.86,
+      "label": "10 Cai de joelho",
+      "samples": 36
+    }
+  ],
+  "originalContractsUnchanged": true,
+  "originalBinaryPrefixUnchanged": true,
+  "generator": "labs/hunters/scripts/animate-hunter-pvp-v06.mjs",
+  "limitations": "Provisional authored body poses: blade is a separate visual attachment. Artistic and game/terrain IK review pending. No Alpha integration."
+}

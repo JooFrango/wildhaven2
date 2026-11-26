@@ -1,0 +1,31 @@
+{
+  "scope": "labs/hunters/ only; same canonical Hunter Lab",
+  "sourceCommit": "f50bd46",
+  "pullRequest": "https://github.com/carioca1111/wildhaven-new/pull/24",
+  "site": {
+    "sourceCommit": "debb217d2990708dc644593a9ae3a2d8c9bd2485",
+    "deploymentId": "appgdep_6af7c0538d608191be6879e08fe14da8",
+    "status": "succeeded",
+    "url": "https://wildhaven-hunter-lab-codex.jvbrmandarino11.chatgpt.site/labs/hunters/hunter-lab.html?revision=epic1",
+    "ownerPrivate": true,
+    "staticPackageBrowserVerified": true,
+    "authenticatedHostedBrowserVerified": false
+  },
+  "tests": {
+    "passed": 62,
+    "failed": 0,
+    "gltfErrors": 0,
+    "gltfWarnings": 0,
+    "pausedPoseFrames": 192,
+    "combatPoseFrames": 300,
+    "tPoseFrames": 0
+  },
+  "remoteAsset": {
+    "commit": "f50bd46",
+    "file": "labs/hunters/assets/hunter-v05/hunter_combat_v05.glb",
+    "bytes": 1557564,
+    "sha256": "1824a6c4085f6492857a7d2e81cdbd008a24e5c065ac488ef485a322f1177ab3",
+    "verification": "Independent Git fetch, sparse checkout, byte count and SHA-256 match"
+  },
+  "artisticStatus": "Experimental, ready for user visual review; synthesized audio provisional; not integrated into Alpha"
+}

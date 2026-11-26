@@ -1,0 +1,168 @@
+{
+  "executedAt": "2026-11-13T10:13:08.805Z",
+  "passed": 24,
+  "results": [
+    {
+      "name": "01 caminhada sobre triângulos do hexágono real",
+      "passed": true,
+      "ms": 984.8461000000002,
+      "details": {
+        "distance": 6.398779343598048
+      }
+    },
+    {
+      "name": "02 obstáculo sólido: navegação desvia e corpo não atravessa",
+      "passed": true,
+      "ms": 626.9831999999997,
+      "details": {
+        "detour": 5.497137436285463,
+        "end": [
+          48.56254700853416,
+          40.79558404992526
+        ]
+      }
+    },
+    {
+      "name": "03 detecção Hunter e ausência de acesso a dados ocultos",
+      "passed": true,
+      "ms": 348.0798999999997
+    },
+    {
+      "name": "04 predador reconhece Hunter físico pela percepção compartilhada",
+      "passed": true,
+      "ms": 551.4780000000001
+    },
+    {
+      "name": "05 Hunter cauteloso foge de criatura",
+      "passed": true,
+      "ms": 365.34729999999945,
+      "details": {
+        "state": "recuando"
+      }
+    },
+    {
+      "name": "06 Hunter e criatura usam ferimentos e ataques compatíveis",
+      "passed": true,
+      "ms": 1908.7329
+    },
+    {
+      "name": "07 PvP: preparação, recuperação e efeito único",
+      "passed": true,
+      "ms": 122.77570000000014
+    },
+    {
+      "name": "08 lança alcança onde espada não alcança",
+      "passed": true,
+      "ms": 270.0740999999998,
+      "details": {
+        "remainingHP": [
+          120,
+          100.98500417953534
+        ]
+      }
+    },
+    {
+      "name": "09 armadura pesada reduz dano e mobilidade",
+      "passed": true,
+      "ms": 262.03659999999945,
+      "details": [
+        {
+          "hp": 100.22378308609204,
+          "speed": 5.704000000000001
+        },
+        {
+          "hp": 106.53079379411925,
+          "speed": 4.4639999999999995
+        }
+      ]
+    },
+    {
+      "name": "10 duelo permite retirada por fadiga",
+      "passed": true,
+      "ms": 220.08779999999933
+    },
+    {
+      "name": "11 perna ferida e fraturada reduz mobilidade",
+      "passed": true,
+      "ms": 116.75430000000051
+    },
+    {
+      "name": "12 sangramento persiste e estabilização é explícita",
+      "passed": true,
+      "ms": 175.3716999999997
+    },
+    {
+      "name": "13 incapacitação em treinamento sem morte",
+      "passed": true,
+      "ms": 144.6909999999989
+    },
+    {
+      "name": "14 equipes reconhecem aliados e não causam fogo amigo pela IA",
+      "passed": true,
+      "ms": 1475.4565999999995
+    },
+    {
+      "name": "15 trocar câmera não muda eventos nem resultados",
+      "passed": true,
+      "ms": 1826.4241000000002
+    },
+    {
+      "name": "16 remoto e retorno preservam golpe pendente e ferimentos",
+      "passed": true,
+      "ms": 669.8670999999995
+    },
+    {
+      "name": "17 persistência retoma no meio de conflito sem recalcular impactos",
+      "passed": true,
+      "ms": 1728.425299999999
+    },
+    {
+      "name": "18 mesma semente + comandos produz a mesma trilha",
+      "passed": true,
+      "ms": 2986.4272999999994,
+      "details": {
+        "seeds": [
+          1,
+          7,
+          17,
+          42,
+          100
+        ]
+      }
+    },
+    {
+      "name": "19 sem alcance, direção ou linha sólida não há dano",
+      "passed": true,
+      "ms": 393.22509999999966
+    },
+    {
+      "name": "20 bloqueio frontal e esquiva alteram contato e energia",
+      "passed": true,
+      "ms": 204.81650000000081
+    },
+    {
+      "name": "21 morte letal é única, estado descartável reinicia limpo",
+      "passed": true,
+      "ms": 215.07120000000214
+    },
+    {
+      "name": "22 veneno usa o módulo ecológico existente",
+      "passed": true,
+      "ms": 165.2585999999974
+    },
+    {
+      "name": "23 ausência de duplicatas, inventário íntegro e dano único em FFA longa",
+      "passed": true,
+      "ms": 1982.0913999999975,
+      "details": {
+        "hits": 37,
+        "events": 484
+      }
+    },
+    {
+      "name": "24 equipamento inválido não corrompe inventário",
+      "passed": true,
+      "ms": 102.08519999999771
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "status": "rendered-from-real-glb-pending-director-approval",
+  "glb": "labs/hunters/assets/hunter-pvp-v11/hunter_pvp_v11.glb",
+  "glbSha256": "9e6a588b15658b80f32c87afd54d497f8d908dbeeb2e5495a975ad9c9c85e542",
+  "renderer": "three.js WebGL (headless Chromium) loading the real v11 GLB with its integrated sword mesh",
+  "previews": [
+    {
+      "file": "pvp11_sword_horizontal_reverse_cut_profile.gif",
+      "angle": "profile",
+      "frames": 48,
+      "width": 480,
+      "height": 560,
+      "bytes": 699859,
+      "sha256": "aed0ae7b604ca0522d3af4e0f4847befe23231bf4932e6245222b1fe349a739d"
+    },
+    {
+      "file": "pvp11_sword_horizontal_reverse_cut_front.gif",
+      "angle": "front",
+      "frames": 48,
+      "width": 480,
+      "height": 560,
+      "bytes": 717282,
+      "sha256": "d4da5e857df7d31a7d8c644fb69726f8fd754b929eddd775413e65a628295076"
+    },
+    {
+      "file": "pvp11_sword_horizontal_reverse_cut_threequarter.gif",
+      "angle": "threequarter",
+      "frames": 48,
+      "width": 480,
+      "height": 560,
+      "bytes": 737736,
+      "sha256": "0b3579842f6fb0e9a628ab66503008e1cd61719a87e37362bf97a858d22d37cd"
+    }
+  ],
+  "keyPoses": {
+    "guard": 0,
+    "preparation": 0.2,
+    "charge": 0.42,
+    "execution": 0.7,
+    "contact": 0.84,
+    "continuation": 1.02,
+    "followEnd": 1.18,
+    "recovery": 1.5
+  },
+  "screenshots": [
+    "pose_reverse_profile_guard_0.png",
+    "pose_reverse_profile_preparation_0_2.png",
+    "pose_reverse_profile_charge_0_42.png",
+    "pose_reverse_profile_execution_0_7.png",
+    "pose_reverse_profile_contact_0_84.png",
+    "pose_reverse_profile_continuation_1_02.png",
+    "pose_reverse_profile_followEnd_1_18.png",
+    "pose_reverse_profile_recovery_1_5.png",
+    "pose_reverse_front_guard_0.png",
+    "pose_reverse_front_preparation_0_2.png",
+    "pose_reverse_front_charge_0_42.png",
+    "pose_reverse_front_execution_0_7.png",
+    "pose_reverse_front_contact_0_84.png",
+    "pose_reverse_front_continuation_1_02.png",
+    "pose_reverse_front_followEnd_1_18.png",
+    "pose_reverse_front_recovery_1_5.png",
+    "pose_reverse_threequarter_guard_0.png",
+    "pose_reverse_threequarter_preparation_0_2.png",
+    "pose_reverse_threequarter_charge_0_42.png",
+    "pose_reverse_threequarter_execution_0_7.png",
+    "pose_reverse_threequarter_contact_0_84.png",
+    "pose_reverse_threequarter_continuation_1_02.png",
+    "pose_reverse_threequarter_followEnd_1_18.png",
+    "pose_reverse_threequarter_recovery_1_5.png"
+  ]
+}

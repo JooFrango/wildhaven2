@@ -1,0 +1,211 @@
+{
+  "executedAt": "2026-11-13T08:29:42.981Z",
+  "url": "http://127.0.0.1:8782/labs/hunters-codex/hunter-lab.html",
+  "viewport": [
+    1600,
+    1000
+  ],
+  "controls": [
+    "start/pause",
+    "reset",
+    "equipment/manual",
+    "add/remove"
+  ],
+  "errors": [],
+  "failed": [],
+  "pvpHits": 2,
+  "creatureHits": 2,
+  "animalHits": 2,
+  "benchmarks": [
+    {
+      "count": 1,
+      "remote": false,
+      "frames": 47,
+      "fps": 11.64952286508037,
+      "frameP95": 100.10000000000036,
+      "step": {
+        "p50": 0.20000004768371582,
+        "p95": 0.40000009536743164,
+        "p99": 2.4000000953674316
+      },
+      "cpuMeanMs": {
+        "hunterAI": 0.008510635254230904,
+        "preciseCollision": 0.014893612963088016,
+        "sharedEcoWithoutHunterAI": 0.20425533233804904,
+        "otherCombatAndAftermath": 0.04680851418921288,
+        "animationAndScene": 0.1319148946315684,
+        "renderSubmission": 0.836170199069571
+      },
+      "heapBytes": 23169271,
+      "activeModels": 1,
+      "drawCalls": 8,
+      "triangles": 1536,
+      "simulatedSeconds": 2.35,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "invariants": "checked each step"
+    },
+    {
+      "count": 2,
+      "remote": false,
+      "frames": 45,
+      "fps": 11.026979342663184,
+      "frameP95": 116.70000000000073,
+      "step": {
+        "p50": 0.7999999523162842,
+        "p95": 1.3000000715255737,
+        "p99": 71.5
+      },
+      "cpuMeanMs": {
+        "hunterAI": 1.1155555539660984,
+        "preciseCollision": 0.019999999470180937,
+        "sharedEcoWithoutHunterAI": 1.9088889016045465,
+        "otherCombatAndAftermath": 0.0533333248562283,
+        "animationAndScene": 0.4400000042385525,
+        "renderSubmission": 1.1888888835906983
+      },
+      "heapBytes": 23853978,
+      "activeModels": 2,
+      "drawCalls": 15,
+      "triangles": 2776,
+      "simulatedSeconds": 2.25,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "invariants": "checked each step"
+    },
+    {
+      "count": 5,
+      "remote": false,
+      "frames": 21,
+      "fps": 5.214929598450419,
+      "frameP95": 250,
+      "step": {
+        "p50": 5.700000047683716,
+        "p95": 38.5,
+        "p99": 44.200000047683716
+      },
+      "cpuMeanMs": {
+        "hunterAI": 9.366666674613953,
+        "preciseCollision": 0.052380947839646114,
+        "sharedEcoWithoutHunterAI": 1.2190476258595784,
+        "otherCombatAndAftermath": 0.06190475963410877,
+        "animationAndScene": 14.428571428571429,
+        "renderSubmission": 13.185714295932225
+      },
+      "heapBytes": 22075487,
+      "activeModels": 5,
+      "drawCalls": 32,
+      "triangles": 6408,
+      "simulatedSeconds": 1.05,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "invariants": "checked each step"
+    },
+    {
+      "count": 10,
+      "remote": false,
+      "frames": 21,
+      "fps": 5.311211714919477,
+      "frameP95": 250.09999999999854,
+      "step": {
+        "p50": 49.90000009536743,
+        "p95": 182.19999992847443,
+        "p99": 183.09999990463257
+      },
+      "cpuMeanMs": {
+        "hunterAI": 56.085714272090364,
+        "preciseCollision": 0.05714285941351028,
+        "sharedEcoWithoutHunterAI": 10.652380966004872,
+        "otherCombatAndAftermath": 0.10952380157652356,
+        "animationAndScene": 2.066666671207973,
+        "renderSubmission": 4.51904761223566
+      },
+      "heapBytes": 22529818,
+      "activeModels": 10,
+      "drawCalls": 63,
+      "triangles": 12520,
+      "simulatedSeconds": 1.05,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "invariants": "checked each step"
+    },
+    {
+      "count": 20,
+      "remote": false,
+      "frames": 18,
+      "fps": 4.686401624619228,
+      "frameP95": 300.09999999999854,
+      "step": {
+        "p50": 215.30000007152557,
+        "p95": 268.39999997615814,
+        "p99": 268.39999997615814
+      },
+      "cpuMeanMs": {
+        "hunterAI": 200.3833333320088,
+        "preciseCollision": 0.155555526415507,
+        "sharedEcoWithoutHunterAI": 7.266666670640309,
+        "otherCombatAndAftermath": 0.11111112435658772,
+        "animationAndScene": 5.266666650772095,
+        "renderSubmission": 6.561111125681135
+      },
+      "heapBytes": 37006535,
+      "activeModels": 20,
+      "drawCalls": 123,
+      "triangles": 24700,
+      "simulatedSeconds": 0.9,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "invariants": "checked each step"
+    },
+    {
+      "count": 50,
+      "remote": false,
+      "frames": 10,
+      "fps": 2.7235340578110754,
+      "frameP95": 583.2999999999993,
+      "step": {
+        "p50": 408.39999997615814,
+        "p95": 537.2000000476837,
+        "p99": 537.2000000476837
+      },
+      "cpuMeanMs": {
+        "hunterAI": 261.19000004529954,
+        "preciseCollision": 0.599999976158142,
+        "sharedEcoWithoutHunterAI": 109.26999996900558,
+        "otherCombatAndAftermath": 0.20000003576278685,
+        "animationAndScene": 9.400000011920929,
+        "renderSubmission": 16.219999980926513
+      },
+      "heapBytes": 55050489,
+      "activeModels": 50,
+      "drawCalls": 303,
+      "triangles": 61240,
+      "simulatedSeconds": 0.5,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "invariants": "checked each step"
+    },
+    {
+      "count": 50,
+      "remote": true,
+      "frames": 16,
+      "fps": 4.011734322894464,
+      "frameP95": 350,
+      "step": {
+        "p50": 264.2000000476837,
+        "p95": 336.2000000476837,
+        "p99": 336.2000000476837
+      },
+      "cpuMeanMs": {
+        "hunterAI": 171.0687500461936,
+        "preciseCollision": 0.45000000298023224,
+        "sharedEcoWithoutHunterAI": 85.5624999627471,
+        "otherCombatAndAftermath": 0.2875000014901161,
+        "animationAndScene": 0.3062499761581421,
+        "renderSubmission": 1.3687500208616257
+      },
+      "heapBytes": 49747938,
+      "activeModels": 1,
+      "drawCalls": 8,
+      "triangles": 1536,
+      "simulatedSeconds": 0.8,
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+      "invariants": "checked each step"
+    }
+  ],
+  "limits": "Headless Chromium with ANGLE SwiftShader software rendering. Four seconds per level, one fixed simulation step per rendered frame; simulation rate is reported, not assumed real time. Render measures CPU submission, not GPU execution. Shared eco includes animal AI, broad collision, locomotion, perception and health; these are not individually profiled. Memory is process JS heap, not total VRAM."
+}

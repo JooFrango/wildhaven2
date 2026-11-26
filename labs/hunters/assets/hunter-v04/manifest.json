@@ -1,0 +1,729 @@
+{
+  "source": "wildhaven PR81 Hunter v02",
+  "sourceSha256": "b1d0074ec3bf5dbefbab003adeb2ab92b65702d97088101f1e5e62d2dc09c930",
+  "file": "hunter_combat_v04.glb",
+  "sha256": "cd814b4359cb344142a8edc6dfa8cfd2094b0670455cbe956dab2f2bd9b1d48f",
+  "bytes": 1186920,
+  "triangles": 1000,
+  "joints": 19,
+  "skins": 1,
+  "originalContractsUnchanged": true,
+  "originalBinaryPrefixUnchanged": true,
+  "originalClipsPreserved": [
+    "Walking",
+    "Running"
+  ],
+  "newClips": [
+    {
+      "name": "combat_guard",
+      "duration": 1.2,
+      "kind": "guard",
+      "samples": 30
+    },
+    {
+      "name": "combat_step_forward",
+      "duration": 0.85,
+      "kind": "step",
+      "vector": [
+        0,
+        1
+      ],
+      "samples": 22
+    },
+    {
+      "name": "combat_step_back",
+      "duration": 0.85,
+      "kind": "step",
+      "vector": [
+        0,
+        -1
+      ],
+      "samples": 22
+    },
+    {
+      "name": "combat_step_left",
+      "duration": 0.85,
+      "kind": "step",
+      "vector": [
+        1,
+        0
+      ],
+      "samples": 22
+    },
+    {
+      "name": "combat_step_right",
+      "duration": 0.85,
+      "kind": "step",
+      "vector": [
+        -1,
+        0
+      ],
+      "samples": 22
+    },
+    {
+      "name": "combat_turn_left",
+      "duration": 0.7,
+      "kind": "step",
+      "vector": [
+        1,
+        0.15
+      ],
+      "samples": 18
+    },
+    {
+      "name": "combat_turn_right",
+      "duration": 0.7,
+      "kind": "step",
+      "vector": [
+        -1,
+        0.15
+      ],
+      "samples": 18
+    },
+    {
+      "name": "spear_light",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "light",
+      "variant": "",
+      "impact": 0.4,
+      "duration": 0.98,
+      "samples": 25
+    },
+    {
+      "name": "spear_heavy",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "",
+      "impact": 0.78,
+      "duration": 1.83,
+      "samples": 45
+    },
+    {
+      "name": "sword_light",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "light",
+      "variant": "",
+      "impact": 0.29,
+      "duration": 0.6699999999999999,
+      "samples": 18
+    },
+    {
+      "name": "sword_heavy",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "",
+      "impact": 0.62,
+      "duration": 1.42,
+      "samples": 36
+    },
+    {
+      "name": "combat_block",
+      "duration": 0.7,
+      "kind": "block",
+      "samples": 18
+    },
+    {
+      "name": "combat_dodge",
+      "duration": 0.65,
+      "kind": "dodge",
+      "samples": 17
+    },
+    {
+      "name": "combat_hit",
+      "duration": 0.5,
+      "kind": "hit",
+      "samples": 13
+    },
+    {
+      "name": "combat_stagger",
+      "duration": 0.8,
+      "kind": "hit",
+      "samples": 21
+    },
+    {
+      "name": "combat_knockdown",
+      "duration": 1.2,
+      "kind": "fall",
+      "samples": 30
+    },
+    {
+      "name": "combat_get_up",
+      "duration": 1.2,
+      "kind": "rise",
+      "samples": 30
+    },
+    {
+      "name": "combat_death",
+      "duration": 1.5,
+      "kind": "fall",
+      "samples": 37
+    },
+    {
+      "name": "combat_surrender",
+      "duration": 1.1,
+      "kind": "surrender",
+      "samples": 28
+    },
+    {
+      "name": "combat_recover",
+      "duration": 0.8,
+      "kind": "recover",
+      "samples": 21
+    },
+    {
+      "name": "spear_counter",
+      "kind": "attack",
+      "weapon": "spear",
+      "move": "counter",
+      "variant": "",
+      "heavy": false,
+      "impact": 0.26,
+      "duration": 0.76,
+      "samples": 20
+    },
+    {
+      "name": "spear_counter_high",
+      "kind": "attack",
+      "weapon": "spear",
+      "move": "counter",
+      "variant": "_high",
+      "heavy": false,
+      "impact": 0.26,
+      "duration": 0.76,
+      "samples": 20
+    },
+    {
+      "name": "spear_counter_low",
+      "kind": "attack",
+      "weapon": "spear",
+      "move": "counter",
+      "variant": "_low",
+      "heavy": false,
+      "impact": 0.26,
+      "duration": 0.76,
+      "samples": 20
+    },
+    {
+      "name": "hunter_walk",
+      "kind": "gait",
+      "duration": 1.05,
+      "stride": 1.2,
+      "lift": 0.09,
+      "stance": 0.62,
+      "samples": 27
+    },
+    {
+      "name": "hunter_jog",
+      "kind": "gait",
+      "duration": 0.8,
+      "stride": 1.85,
+      "lift": 0.14,
+      "stance": 0.48,
+      "samples": 21
+    },
+    {
+      "name": "hunter_run",
+      "kind": "gait",
+      "duration": 0.7,
+      "stride": 2.6,
+      "lift": 0.2,
+      "stance": 0.35,
+      "samples": 18
+    },
+    {
+      "name": "spear_light_high",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "light",
+      "variant": "_high",
+      "impact": 0.4,
+      "duration": 0.98,
+      "samples": 25
+    },
+    {
+      "name": "spear_light_low",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "light",
+      "variant": "_low",
+      "impact": 0.4,
+      "duration": 0.98,
+      "samples": 25
+    },
+    {
+      "name": "spear_follow",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "follow",
+      "variant": "",
+      "impact": 0.35200000000000004,
+      "duration": 0.9319999999999999,
+      "samples": 24
+    },
+    {
+      "name": "spear_follow_high",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "follow",
+      "variant": "_high",
+      "impact": 0.35200000000000004,
+      "duration": 0.9319999999999999,
+      "samples": 24
+    },
+    {
+      "name": "spear_follow_low",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "follow",
+      "variant": "_low",
+      "impact": 0.35200000000000004,
+      "duration": 0.9319999999999999,
+      "samples": 24
+    },
+    {
+      "name": "spear_finish",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "finish",
+      "variant": "",
+      "impact": 0.35200000000000004,
+      "duration": 0.9319999999999999,
+      "samples": 24
+    },
+    {
+      "name": "spear_finish_high",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "finish",
+      "variant": "_high",
+      "impact": 0.35200000000000004,
+      "duration": 0.9319999999999999,
+      "samples": 24
+    },
+    {
+      "name": "spear_finish_low",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": false,
+      "move": "finish",
+      "variant": "_low",
+      "impact": 0.35200000000000004,
+      "duration": 0.9319999999999999,
+      "samples": 24
+    },
+    {
+      "name": "spear_heavy_high",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "_high",
+      "impact": 0.78,
+      "duration": 1.83,
+      "samples": 45
+    },
+    {
+      "name": "spear_heavy_low",
+      "kind": "attack",
+      "weapon": "spear",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "_low",
+      "impact": 0.78,
+      "duration": 1.83,
+      "samples": 45
+    },
+    {
+      "name": "sword_light_high",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "light",
+      "variant": "_high",
+      "impact": 0.29,
+      "duration": 0.6699999999999999,
+      "samples": 18
+    },
+    {
+      "name": "sword_light_low",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "light",
+      "variant": "_low",
+      "impact": 0.29,
+      "duration": 0.6699999999999999,
+      "samples": 18
+    },
+    {
+      "name": "sword_follow",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "follow",
+      "variant": "",
+      "impact": 0.2552,
+      "duration": 0.6352,
+      "samples": 17
+    },
+    {
+      "name": "sword_follow_high",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "follow",
+      "variant": "_high",
+      "impact": 0.2552,
+      "duration": 0.6352,
+      "samples": 17
+    },
+    {
+      "name": "sword_follow_low",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "follow",
+      "variant": "_low",
+      "impact": 0.2552,
+      "duration": 0.6352,
+      "samples": 17
+    },
+    {
+      "name": "sword_finish",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "finish",
+      "variant": "",
+      "impact": 0.2552,
+      "duration": 0.6352,
+      "samples": 17
+    },
+    {
+      "name": "sword_finish_high",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "finish",
+      "variant": "_high",
+      "impact": 0.2552,
+      "duration": 0.6352,
+      "samples": 17
+    },
+    {
+      "name": "sword_finish_low",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": false,
+      "move": "finish",
+      "variant": "_low",
+      "impact": 0.2552,
+      "duration": 0.6352,
+      "samples": 17
+    },
+    {
+      "name": "sword_heavy_high",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "_high",
+      "impact": 0.62,
+      "duration": 1.42,
+      "samples": 36
+    },
+    {
+      "name": "sword_heavy_low",
+      "kind": "attack",
+      "weapon": "sword",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "_low",
+      "impact": 0.62,
+      "duration": 1.42,
+      "samples": 36
+    },
+    {
+      "name": "greatsword_light",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "light",
+      "variant": "",
+      "impact": 0.65,
+      "duration": 1.4300000000000002,
+      "samples": 36
+    },
+    {
+      "name": "greatsword_light_high",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "light",
+      "variant": "_high",
+      "impact": 0.65,
+      "duration": 1.4300000000000002,
+      "samples": 36
+    },
+    {
+      "name": "greatsword_light_low",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "light",
+      "variant": "_low",
+      "impact": 0.65,
+      "duration": 1.4300000000000002,
+      "samples": 36
+    },
+    {
+      "name": "greatsword_follow",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "follow",
+      "variant": "",
+      "impact": 0.5720000000000001,
+      "duration": 1.352,
+      "samples": 34
+    },
+    {
+      "name": "greatsword_follow_high",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "follow",
+      "variant": "_high",
+      "impact": 0.5720000000000001,
+      "duration": 1.352,
+      "samples": 34
+    },
+    {
+      "name": "greatsword_follow_low",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "follow",
+      "variant": "_low",
+      "impact": 0.5720000000000001,
+      "duration": 1.352,
+      "samples": 34
+    },
+    {
+      "name": "greatsword_finish",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "finish",
+      "variant": "",
+      "impact": 0.5720000000000001,
+      "duration": 1.352,
+      "samples": 34
+    },
+    {
+      "name": "greatsword_finish_high",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "finish",
+      "variant": "_high",
+      "impact": 0.5720000000000001,
+      "duration": 1.352,
+      "samples": 34
+    },
+    {
+      "name": "greatsword_finish_low",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": false,
+      "move": "finish",
+      "variant": "_low",
+      "impact": 0.5720000000000001,
+      "duration": 1.352,
+      "samples": 34
+    },
+    {
+      "name": "greatsword_heavy",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "",
+      "impact": 1.15,
+      "duration": 2.4,
+      "samples": 59
+    },
+    {
+      "name": "greatsword_heavy_high",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "_high",
+      "impact": 1.15,
+      "duration": 2.4,
+      "samples": 59
+    },
+    {
+      "name": "greatsword_heavy_low",
+      "kind": "attack",
+      "weapon": "greatsword",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "_low",
+      "impact": 1.15,
+      "duration": 2.4,
+      "samples": 59
+    },
+    {
+      "name": "unarmed_light",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "light",
+      "variant": "",
+      "impact": 0.28,
+      "duration": 0.68,
+      "samples": 18
+    },
+    {
+      "name": "unarmed_light_high",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "light",
+      "variant": "_high",
+      "impact": 0.28,
+      "duration": 0.68,
+      "samples": 18
+    },
+    {
+      "name": "unarmed_light_low",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "light",
+      "variant": "_low",
+      "impact": 0.28,
+      "duration": 0.68,
+      "samples": 18
+    },
+    {
+      "name": "unarmed_follow",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "follow",
+      "variant": "",
+      "impact": 0.24640000000000004,
+      "duration": 0.6464000000000001,
+      "samples": 17
+    },
+    {
+      "name": "unarmed_follow_high",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "follow",
+      "variant": "_high",
+      "impact": 0.24640000000000004,
+      "duration": 0.6464000000000001,
+      "samples": 17
+    },
+    {
+      "name": "unarmed_follow_low",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "follow",
+      "variant": "_low",
+      "impact": 0.24640000000000004,
+      "duration": 0.6464000000000001,
+      "samples": 17
+    },
+    {
+      "name": "unarmed_finish",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "finish",
+      "variant": "",
+      "impact": 0.24640000000000004,
+      "duration": 0.6464000000000001,
+      "samples": 17
+    },
+    {
+      "name": "unarmed_finish_high",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "finish",
+      "variant": "_high",
+      "impact": 0.24640000000000004,
+      "duration": 0.6464000000000001,
+      "samples": 17
+    },
+    {
+      "name": "unarmed_finish_low",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": false,
+      "move": "finish",
+      "variant": "_low",
+      "impact": 0.24640000000000004,
+      "duration": 0.6464000000000001,
+      "samples": 17
+    },
+    {
+      "name": "unarmed_heavy",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "",
+      "impact": 0.52,
+      "duration": 1.17,
+      "samples": 30
+    },
+    {
+      "name": "unarmed_heavy_high",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "_high",
+      "impact": 0.52,
+      "duration": 1.17,
+      "samples": 30
+    },
+    {
+      "name": "unarmed_heavy_low",
+      "kind": "attack",
+      "weapon": "unarmed",
+      "heavy": true,
+      "move": "heavy",
+      "variant": "_low",
+      "impact": 0.52,
+      "duration": 1.17,
+      "samples": 30
+    }
+  ],
+  "sourceGenerator": "labs/hunters/scripts/animate-hunter-v04.mjs",
+  "status": "experimental-animation-review",
+  "limitations": "Original mesh/rig retained; authored skeletal clips and viewer terrain foot locks are experimental, requiring artistic review."
+}

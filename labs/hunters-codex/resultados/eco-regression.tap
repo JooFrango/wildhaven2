@@ -1,0 +1,1154 @@
+TAP version 13
+# Subtest: alimentação: herbívoro faminto vai até o capim, come e a fome cai
+ok 1 - alimentação: herbívoro faminto vai até o capim, come e a fome cai
+  ---
+  duration_ms: 9.4743
+  type: 'test'
+  ...
+# Subtest: fuga: herbívoro vê predador, foge, e volta à atividade quando seguro
+ok 2 - fuga: herbívoro vê predador, foge, e volta à atividade quando seguro
+  ---
+  duration_ms: 7.9461
+  type: 'test'
+  ...
+# Subtest: perseguição e perda de contato: presa some atrás da rocha, predador vai à última posição e desiste
+ok 3 - perseguição e perda de contato: presa some atrás da rocha, predador vai à última posição e desiste
+  ---
+  duration_ms: 7.4241
+  type: 'test'
+  ...
+# Subtest: cansaço: predador com pouca energia persegue e desiste
+ok 4 - cansaço: predador com pouca energia persegue e desiste
+  ---
+  duration_ms: 9.9312
+  type: 'test'
+  ...
+# Subtest: alcance de ataque: só ataca dentro do alcance e captura presa parada
+ok 5 - alcance de ataque: só ataca dentro do alcance e captura presa parada
+  ---
+  duration_ms: 2.0243
+  type: 'test'
+  ...
+# Subtest: colisão: criatura contorna a rocha e nunca a atravessa
+ok 6 - colisão: criatura contorna a rocha e nunca a atravessa
+  ---
+  duration_ms: 3.8273
+  type: 'test'
+  ...
+# Subtest: moita bloqueia visão mas não movimento
+ok 7 - moita bloqueia visão mas não movimento
+  ---
+  duration_ms: 2.1975
+  type: 'test'
+  ...
+# Subtest: cérebro recebe apenas sentidos, nunca o mundo
+ok 8 - cérebro recebe apenas sentidos, nunca o mundo
+  ---
+  duration_ms: 2.2971
+  type: 'test'
+  ...
+# Subtest: mesma semente => mesma trilha de decisões
+ok 9 - mesma semente => mesma trilha de decisões
+  ---
+  duration_ms: 794.8575
+  type: 'test'
+  ...
+# Subtest: sementes diferentes produzem encontros diferentes
+ok 10 - sementes diferentes produzem encontros diferentes
+  ---
+  duration_ms: 46.0017
+  type: 'test'
+  ...
+# Subtest: 30 sementes por cenário sem falhas de invariante
+ok 11 - 30 sementes por cenário sem falhas de invariante
+  ---
+  duration_ms: 2442.8376
+  type: 'test'
+  ...
+# Subtest: interpretarSementes aceita faixas e listas
+ok 12 - interpretarSementes aceita faixas e listas
+  ---
+  duration_ms: 0.8207
+  type: 'test'
+  ...
+# Subtest: validação aponta configuração inválida
+ok 13 - validação aponta configuração inválida
+  ---
+  duration_ms: 0.5085
+  type: 'test'
+  ...
+# Subtest: configs servidas por HTTP (modo página) == configs lidas do disco (modo CLI)
+ok 14 - configs servidas por HTTP (modo página) == configs lidas do disco (modo CLI)
+  ---
+  duration_ms: 766.3638
+  type: 'test'
+  ...
+# Subtest: combate: areia sólida entre os corpos impede o dano, em várias posições e profundidades
+ok 15 - combate: areia sólida entre os corpos impede o dano, em várias posições e profundidades
+  ---
+  duration_ms: 1430.4619
+  type: 'test'
+  ...
+# Subtest: combate: no mesmo meio o contato válido continua causando dano (controle positivo)
+ok 16 - combate: no mesmo meio o contato válido continua causando dano (controle positivo)
+  ---
+  duration_ms: 975.7066
+  type: 'test'
+  ...
+# Subtest: física: o corpo nunca atravessa o leito rochoso durante a natação subterrânea
+ok 17 - física: o corpo nunca atravessa o leito rochoso durante a natação subterrânea
+  ---
+  duration_ms: 13145.3393
+  type: 'test'
+  ...
+# Subtest: combate: a regra vale nos dois sentidos (presa enterrada não fere quem está em cima)
+ok 18 - combate: a regra vale nos dois sentidos (presa enterrada não fere quem está em cima)
+  ---
+  duration_ms: 372.4623
+  type: 'test'
+  ...
+# Subtest: comportamento: a Arraia-de-Areia mergulha e emerge sozinha, em três sementes
+ok 19 - comportamento: a Arraia-de-Areia mergulha e emerge sozinha, em três sementes
+  ---
+  duration_ms: 5397.1779
+  type: 'test'
+  ...
+# Subtest: comportamento: o predador investiga estímulos de vibração
+ok 20 - comportamento: o predador investiga estímulos de vibração
+  ---
+  duration_ms: 2158.5572
+  type: 'test'
+  ...
+# Subtest: comportamento: a presa foge, pelo subsolo ou pela superfície
+ok 21 - comportamento: a presa foge, pelo subsolo ou pela superfície
+  ---
+  duration_ms: 4068.0802
+  type: 'test'
+  ...
+# Subtest: comportamento: ninguém fica preso num estado sem saída
+ok 22 - comportamento: ninguém fica preso num estado sem saída
+  ---
+  duration_ms: 11532.6356
+  type: 'test'
+  ...
+# Subtest: comportamento: o consumo de energia corresponde ao movimento
+ok 23 - comportamento: o consumo de energia corresponde ao movimento
+  ---
+  duration_ms: 289.4283
+  type: 'test'
+  ...
+# Subtest: combate: não há dano sem contato — nenhum golpe atravessa areia sólida
+ok 24 - combate: não há dano sem contato — nenhum golpe atravessa areia sólida
+  ---
+  duration_ms: 9560.6268
+  type: 'test'
+  ...
+# Subtest: combate: ferimentos e morte seguem as regras existentes
+ok 25 - combate: ferimentos e morte seguem as regras existentes
+  ---
+  duration_ms: 6089.441
+  type: 'test'
+  ...
+# Subtest: regressão: os cenários antigos continuam funcionando
+ok 26 - regressão: os cenários antigos continuam funcionando
+  ---
+  duration_ms: 2869.4774
+  type: 'test'
+  ...
+# Subtest: regressão: a mesma semente dá o mesmo hash (paridade determinística)
+ok 27 - regressão: a mesma semente dá o mesmo hash (paridade determinística)
+  ---
+  duration_ms: 3443.7043
+  type: 'test'
+  ...
+# Subtest: regressão: o Arenoceto atravessa a divisa DN_22|DN_23 por baixo da areia
+ok 28 - regressão: o Arenoceto atravessa a divisa DN_22|DN_23 por baixo da areia
+  ---
+  duration_ms: 9046.3628
+  type: 'test'
+  ...
+# Subtest: areia: o volume vem do relevo e o leito rochoso limita a profundidade
+ok 29 - areia: o volume vem do relevo e o leito rochoso limita a profundidade
+  ---
+  duration_ms: 441.3749
+  type: 'test'
+  ...
+# Subtest: areia: água e rocha não são areia navegável (areia nunca é tratada como água)
+ok 30 - areia: água e rocha não são areia navegável (areia nunca é tratada como água)
+  ---
+  duration_ms: 286.0338
+  type: 'test'
+  ...
+# Subtest: física: a criatura não atravessa rocha pelo subsolo
+ok 31 - física: a criatura não atravessa rocha pelo subsolo
+  ---
+  duration_ms: 317.2893
+  type: 'test'
+  ...
+# Subtest: física: a criatura não ultrapassa a profundidade máxima da espécie
+ok 32 - física: a criatura não ultrapassa a profundidade máxima da espécie
+  ---
+  duration_ms: 260.4916
+  type: 'test'
+  ...
+# Subtest: física: o corpo grande não passa onde o pequeno passa (passagem estreita)
+ok 33 - física: o corpo grande não passa onde o pequeno passa (passagem estreita)
+  ---
+  duration_ms: 376.3561
+  type: 'test'
+  ...
+# Subtest: Arenoceto: mergulho enterra metade do corpo antes de 50% da animação, sem deslizar
+ok 34 - Arenoceto: mergulho enterra metade do corpo antes de 50% da animação, sem deslizar
+  ---
+  duration_ms: 314.4185
+  type: 'test'
+  ...
+# Subtest: física: a posição vertical acompanha o relevo real do hexágono
+ok 35 - física: a posição vertical acompanha o relevo real do hexágono
+  ---
+  duration_ms: 335.8586
+  type: 'test'
+  ...
+# Subtest: física: região sem areia navegável impede a natação subterrânea
+ok 36 - física: região sem areia navegável impede a natação subterrânea
+  ---
+  duration_ms: 0.9926
+  type: 'test'
+  ...
+# Subtest: física: a transição superfície↔subsolo não teletransporta
+ok 37 - física: a transição superfície↔subsolo não teletransporta
+  ---
+  duration_ms: 896.3465
+  type: 'test'
+  ...
+# Subtest: física: só emerge onde a emergência é possível
+ok 38 - física: só emerge onde a emergência é possível
+  ---
+  duration_ms: 582.1056
+  type: 'test'
+  ...
+# Subtest: física: pontoDeEmergencia devolve um ponto realmente válido ou null
+ok 39 - física: pontoDeEmergencia devolve um ponto realmente válido ou null
+  ---
+  duration_ms: 260.2949
+  type: 'test'
+  ...
+# Subtest: física: areia sólida entre dois corpos separa os meios
+ok 40 - física: areia sólida entre dois corpos separa os meios
+  ---
+  duration_ms: 208.9109
+  type: 'test'
+  ...
+# Subtest: vibração: estímulo forte dentro do alcance é detectado
+ok 41 - vibração: estímulo forte dentro do alcance é detectado
+  ---
+  duration_ms: 475.7207
+  type: 'test'
+  ...
+# Subtest: vibração: estímulo fraco e distante pode não ser detectado
+ok 42 - vibração: estímulo fraco e distante pode não ser detectado
+  ---
+  duration_ms: 323.8061
+  type: 'test'
+  ...
+# Subtest: vibração: fora do alcance nunca é detectado
+ok 43 - vibração: fora do alcance nunca é detectado
+  ---
+  duration_ms: 238.8786
+  type: 'test'
+  ...
+# Subtest: vibração: a intensidade cai com a distância
+ok 44 - vibração: a intensidade cai com a distância
+  ---
+  duration_ms: 290.5884
+  type: 'test'
+  ...
+# Subtest: vibração: rocha no caminho atenua o estímulo
+ok 45 - vibração: rocha no caminho atenua o estímulo
+  ---
+  duration_ms: 621.2785
+  type: 'test'
+  ...
+# Subtest: vibração: a profundidade entre emissor e receptor atenua
+ok 46 - vibração: a profundidade entre emissor e receptor atenua
+  ---
+  duration_ms: 335.0214
+  type: 'test'
+  ...
+# Subtest: vibração: quem sente não conhece a espécie da fonte
+ok 47 - vibração: quem sente não conhece a espécie da fonte
+  ---
+  duration_ms: 329.6842
+  type: 'test'
+  ...
+# Subtest: vibração: a posição estimada tem erro, não é exata
+ok 48 - vibração: a posição estimada tem erro, não é exata
+  ---
+  duration_ms: 286.8875
+  type: 'test'
+  ...
+# Subtest: vibração: a memória de estímulos antigos decai
+ok 49 - vibração: a memória de estímulos antigos decai
+  ---
+  duration_ms: 264.9928
+  type: 'test'
+  ...
+# Subtest: vibração: estímulos repetidos no mesmo lugar viram uma pista mais forte
+ok 50 - vibração: estímulos repetidos no mesmo lugar viram uma pista mais forte
+  ---
+  duration_ms: 298.4071
+  type: 'test'
+  ...
+# Subtest: vibração: ações mais violentas sacodem mais o substrato
+ok 51 - vibração: ações mais violentas sacodem mais o substrato
+  ---
+  duration_ms: 0.285
+  type: 'test'
+  ...
+# Subtest: vibração: não substitui os outros sentidos — na superfície a visão continua funcionando
+ok 52 - vibração: não substitui os outros sentidos — na superfície a visão continua funcionando
+  ---
+  duration_ms: 398.5575
+  type: 'test'
+  ...
+# Subtest: vibração: sob a areia não há visão, audição nem olfato
+ok 53 - vibração: sob a areia não há visão, audição nem olfato
+  ---
+  duration_ms: 325.3719
+  type: 'test'
+  ...
+# Subtest: alimentação, sede e descanso no nível 1
+ok 54 - alimentação, sede e descanso no nível 1
+  ---
+  duration_ms: 486.1675
+  type: 'test'
+  ...
+# Subtest: reprodução, nascimentos com herança dentro dos limites e envelhecimento (nível 3)
+ok 55 - reprodução, nascimentos com herança dentro dos limites e envelhecimento (nível 3)
+  ---
+  duration_ms: 1276.8706
+  type: 'test'
+  ...
+# Subtest: morte natural por velhice
+ok 56 - morte natural por velhice
+  ---
+  duration_ms: 136.1361
+  type: 'test'
+  ...
+# Subtest: doença: só existe a partir de caso índice, contagia parte do bando e há recuperação
+ok 57 - doença: só existe a partir de caso índice, contagia parte do bando e há recuperação
+  ---
+  duration_ms: 23216.105
+  type: 'test'
+  ...
+# Subtest: migração na seca: a água seca, o grupo muda de área andando (sem teleporte)
+ok 58 - migração na seca: a água seca, o grupo muda de área andando (sem teleporte)
+  ---
+  duration_ms: 2105.3887
+  type: 'test'
+  ...
+# Subtest: carcaça: consumida, decomposta e reciclada (enriquece a vegetação local)
+ok 59 - carcaça: consumida, decomposta e reciclada (enriquece a vegetação local)
+  ---
+  duration_ms: 1285.9043
+  type: 'test'
+  ...
+# Subtest: regeneração de vegetação após pastejo
+ok 60 - regeneração de vegetação após pastejo
+  ---
+  duration_ms: 92.557
+  type: 'test'
+  ...
+# Subtest: dinâmica populacional plausível: 2 anos, presas variadas e um predador (nível 3)
+ok 61 - dinâmica populacional plausível: 2 anos, presas variadas e um predador (nível 3)
+  ---
+  duration_ms: 3528.9097
+  type: 'test'
+  ...
+# Subtest: modos distinguem areia de água e nunca ativam física especial sem controlador
+ok 62 - modos distinguem areia de água e nunca ativam física especial sem controlador
+  ---
+  duration_ms: 5.0515
+  type: 'test'
+  ...
+# Subtest: diagnóstico identifica clipes em falta, duração inválida e animações compatíveis
+ok 63 - diagnóstico identifica clipes em falta, duração inválida e animações compatíveis
+  ---
+  duration_ms: 1.0708
+  type: 'test'
+  ...
+# Subtest: presets guardam cenário, terreno via cenário, seed e seleção; importação rejeita arquivos obsoletos
+ok 64 - presets guardam cenário, terreno via cenário, seed e seleção; importação rejeita arquivos obsoletos
+  ---
+  duration_ms: 1.6191
+  type: 'test'
+  ...
+# Subtest: manifests reais da Arraia-de-Areia e Arenoceto são vinculados ao GLB do catálogo
+ok 65 - manifests reais da Arraia-de-Areia e Arenoceto são vinculados ao GLB do catálogo
+  ---
+  duration_ms: 47.062
+  type: 'test'
+  ...
+# Subtest: arquivos GLB reais possuem header glTF2 e clipes nomeados (sem prévia falsa)
+ok 66 - arquivos GLB reais possuem header glTF2 e clipes nomeados (sem prévia falsa)
+  ---
+  duration_ms: 23.7415
+  type: 'test'
+  ...
+# Subtest: catálogo detecta GLBs reais sem depender do índice de cinco espécies
+ok 67 - catálogo detecta GLBs reais sem depender do índice de cinco espécies
+  ---
+  duration_ms: 73.9521
+  type: 'test'
+  ...
+# Subtest: oficina mapeia apenas clipes que existem, inclusive nado na areia
+ok 68 - oficina mapeia apenas clipes que existem, inclusive nado na areia
+  ---
+  duration_ms: 0.8692
+  type: 'test'
+  ...
+# Subtest: adaptação experimental não altera fichas oficiais e aceita necessidades
+ok 69 - adaptação experimental não altera fichas oficiais e aceita necessidades
+  ---
+  duration_ms: 5.0157
+  type: 'test'
+  ...
+# Subtest: encontro misto cria animais novos e preserva cenário original
+ok 70 - encontro misto cria animais novos e preserva cenário original
+  ---
+  duration_ms: 376.3256
+  type: 'test'
+  ...
+# Subtest: bando: grupo criado com líder dominante e sentinela que vigia
+ok 71 - bando: grupo criado com líder dominante e sentinela que vigia
+  ---
+  duration_ms: 336.1589
+  type: 'test'
+  ...
+# Subtest: alarme: só quem vê o predador sabe onde ele está; os outros recebem a posição de quem chamou
+ok 72 - alarme: só quem vê o predador sabe onde ele está; os outros recebem a posição de quem chamou
+  ---
+  duration_ms: 256.8448
+  type: 'test'
+  ...
+# Subtest: proteção de filhotes: adulto corajoso se põe entre o predador e o filhote
+ok 73 - proteção de filhotes: adulto corajoso se põe entre o predador e o filhote
+  ---
+  duration_ms: 684.5526
+  type: 'test'
+  ...
+# Subtest: separação e reagrupamento: depois do perigo o bando se reagrupa
+ok 74 - separação e reagrupamento: depois do perigo o bando se reagrupa
+  ---
+  duration_ms: 1238.9061
+  type: 'test'
+  ...
+# Subtest: dano localizado: ferida na perna reduz a velocidade; fratura deixa sequela persistente
+ok 75 - dano localizado: ferida na perna reduz a velocidade; fratura deixa sequela persistente
+  ---
+  duration_ms: 48
+  type: 'test'
+  ...
+# Subtest: maior intimida menor: disputa por carcaça termina sem combate na maioria das sementes
+ok 76 - maior intimida menor: disputa por carcaça termina sem combate na maioria das sementes
+  ---
+  duration_ms: 588.5697
+  type: 'test'
+  ...
+# Subtest: território: intruso que permanece provoca disputa territorial (não só proximidade)
+ok 77 - território: intruso que permanece provoca disputa territorial (não só proximidade)
+  ---
+  duration_ms: 92.1906
+  type: 'test'
+  ...
+# Subtest: predador ferido evita combate; predador exausto desiste da perseguição
+ok 78 - predador ferido evita combate; predador exausto desiste da perseguição
+  ---
+  duration_ms: 266.6063
+  type: 'test'
+  ...
+# Subtest: V3: presa aproveita a distração da disputa (cenário disputa-presa-cobertura, 12 sementes; nada automático)
+ok 79 - V3: presa aproveita a distração da disputa (cenário disputa-presa-cobertura, 12 sementes; nada automático)
+  ---
+  duration_ms: 6791.6046
+  type: 'test'
+  ...
+# Subtest: conflitos raramente terminam em morte no bebedouro
+ok 80 - conflitos raramente terminam em morte no bebedouro
+  ---
+  duration_ms: 27853.1281
+  type: 'test'
+  ...
+# Subtest: 20+ animais ativos no nível 1: sem falhas, custo por indivíduo registrado
+ok 81 - 20+ animais ativos no nível 1: sem falhas, custo por indivíduo registrado
+  ---
+  duration_ms: 2260.8249
+  type: 'test'
+  ...
+# Subtest: determinismo: mesma semente → mesma trilha; sementes diferentes → trilhas diferentes
+ok 82 - determinismo: mesma semente → mesma trilha; sementes diferentes → trilhas diferentes
+  ---
+  duration_ms: 7384.1721
+  type: 'test'
+  ...
+# Subtest: persistência: salvar, carregar e continuar = nunca ter parado
+ok 83 - persistência: salvar, carregar e continuar = nunca ter parado
+  ---
+  duration_ms: 5234.4064
+  type: 'test'
+  ...
+# Subtest: níveis de simulação: foco móvel, sem eventos duplicados nem tempo integrado duas vezes
+ok 84 - níveis de simulação: foco móvel, sem eventos duplicados nem tempo integrado duas vezes
+  ---
+  duration_ms: 4860.3329
+  type: 'test'
+  ...
+# Subtest: navegação 3D: paredão e água funda bloqueiam; contorna quando há passagem; Cromátil escala rochas
+ok 85 - navegação 3D: paredão e água funda bloqueiam; contorna quando há passagem; Cromátil escala rochas
+  ---
+  duration_ms: 147.1749
+  type: 'test'
+  ...
+# Subtest: mundo real: Velsari não atravessa o paredão nem o lago durante a simulação
+ok 86 - mundo real: Velsari não atravessa o paredão nem o lago durante a simulação
+  ---
+  duration_ms: 746.5435
+  type: 'test'
+  ...
+# Subtest: src/eco usa só matemática determinística (sem Math.sin/cos/pow/log/exp/hypot/**)
+ok 87 - src/eco usa só matemática determinística (sem Math.sin/cos/pow/log/exp/hypot/**)
+  ---
+  duration_ms: 241.646
+  type: 'test'
+  ...
+# Subtest: paridade página × CLI (configurações V2 por HTTP)
+ok 88 - paridade página × CLI (configurações V2 por HTTP)
+  ---
+  duration_ms: 3521.1083
+  type: 'test'
+  ...
+# Subtest: corredor sai das peças oficiais da composição, nas posições dela
+ok 89 - corredor sai das peças oficiais da composição, nas posições dela
+  ---
+  duration_ms: 4.1201
+  type: 'test'
+  ...
+# Subtest: na divisa não há fresta nem salto de altura
+ok 90 - na divisa não há fresta nem salto de altura
+  ---
+  duration_ms: 7.2848
+  type: 'test'
+  ...
+# Subtest: as duas espécies cruzam a divisa a pé, nos dois sentidos
+ok 91 - as duas espécies cruzam a divisa a pé, nos dois sentidos
+  ---
+  duration_ms: 159.6093
+  type: 'test'
+  ...
+# Subtest: atravessar não reinicia a criatura nem teleporta
+ok 92 - atravessar não reinicia a criatura nem teleporta
+  ---
+  duration_ms: 3669.1352
+  type: 'test'
+  ...
+# Subtest: V3 locomoção: segmento não escapa pela quina entre duas células bloqueadas na diagonal
+ok 93 - V3 locomoção: segmento não escapa pela quina entre duas células bloqueadas na diagonal
+  ---
+  duration_ms: 202.0926
+  type: 'test'
+  ...
+# Subtest: V3 locomoção: margem corporal — Velsari passa na fresta estreita; Varrisco (mais largo) usa a passagem larga
+ok 94 - V3 locomoção: margem corporal — Velsari passa na fresta estreita; Varrisco (mais largo) usa a passagem larga
+  ---
+  duration_ms: 130.4299
+  type: 'test'
+  ...
+# Subtest: V3 locomoção: bebedouro procedural — quase sem bloqueios, corpos não se sobrepõem e ninguém entra em célula intransponível
+ok 95 - V3 locomoção: bebedouro procedural — quase sem bloqueios, corpos não se sobrepõem e ninguém entra em célula intransponível
+  ---
+  duration_ms: 10415.8292
+  type: 'test'
+  ...
+# Subtest: V3 combate: alcance e impacto vêm do GLB (Varrisco: garra curta, mordida longa) e golpe fora do alcance erra
+ok 96 - V3 combate: alcance e impacto vêm do GLB (Varrisco: garra curta, mordida longa) e golpe fora do alcance erra
+  ---
+  duration_ms: 125.9807
+  type: 'test'
+  ...
+# Subtest: V3 saúde: região importa — cabeça atordoa, perna reduz corrida, pescoço sangra mais; carapaça protege
+ok 97 - V3 saúde: região importa — cabeça atordoa, perna reduz corrida, pescoço sangra mais; carapaça protege
+  ---
+  duration_ms: 123.6812
+  type: 'test'
+  ...
+# Subtest: V3 combate: bote de um Varrisco derruba um Velsari; mordida no pescoço pode agarrar e imobilizar
+ok 98 - V3 combate: bote de um Varrisco derruba um Velsari; mordida no pescoço pode agarrar e imobilizar
+  ---
+  duration_ms: 619.3237
+  type: 'test'
+  ...
+# Subtest: V3 combate: cápsula do corpo — ponto atrás da cauda está fora; ponto no meio do corpo está dentro
+ok 99 - V3 combate: cápsula do corpo — ponto atrás da cauda está fora; ponto no meio do corpo está dentro
+  ---
+  duration_ms: 145.8596
+  type: 'test'
+  ...
+# Subtest: V3 social: bando cumprimenta, faz limpeza mútua e filhotes brincam; memórias sociais persistem ao salvar
+ok 100 - V3 social: bando cumprimenta, faz limpeza mútua e filhotes brincam; memórias sociais persistem ao salvar
+  ---
+  duration_ms: 3789.459
+  type: 'test'
+  ...
+# Subtest: V3 social: alarme de outra espécie deixa em alerta (não dispara fuga)
+ok 101 - V3 social: alarme de outra espécie deixa em alerta (não dispara fuga)
+  ---
+  duration_ms: 161.0822
+  type: 'test'
+  ...
+# Subtest: IA Base V1: cenário integrado da savana roda em 5 sementes sem violar invariante nenhum
+ok 102 - IA Base V1: cenário integrado da savana roda em 5 sementes sem violar invariante nenhum
+  ---
+  duration_ms: 37543.9751
+  type: 'test'
+  ...
+# Subtest: IA Base V1: cenário integrado das dunas roda em 5 sementes sem violar invariante nenhum
+ok 103 - IA Base V1: cenário integrado das dunas roda em 5 sementes sem violar invariante nenhum
+  ---
+  duration_ms: 11953.3139
+  type: 'test'
+  ...
+# Subtest: IA Base V1: execução longa não acumula defeito (900 s, uma semente)
+ok 104 - IA Base V1: execução longa não acumula defeito (900 s, uma semente)
+  ---
+  duration_ms: 11252.8591
+  type: 'test'
+  ...
+# Subtest: IA Base V1: salvar e retomar preserva identidade, memórias e estados especiais
+ok 105 - IA Base V1: salvar e retomar preserva identidade, memórias e estados especiais
+  ---
+  duration_ms: 8136.7944
+  type: 'test'
+  ...
+# Subtest: IA Base V1: os Mapas das capacidades sobrevivem ao JSON (antes viravam {} em silêncio)
+ok 106 - IA Base V1: os Mapas das capacidades sobrevivem ao JSON (antes viravam {} em silêncio)
+  ---
+  duration_ms: 5590.6416
+  type: 'test'
+  ...
+# Subtest: IA Base V1: a reciclagem devolve ao solo só a matéria que ficou no local
+ok 107 - IA Base V1: a reciclagem devolve ao solo só a matéria que ficou no local
+  ---
+  duration_ms: 0.5699
+  type: 'test'
+  ...
+# Subtest: IA Base V1 (regressão): território sem raio é recusado na ficha e acusado pelo invariante
+ok 108 - IA Base V1 (regressão): território sem raio é recusado na ficha e acusado pelo invariante
+  ---
+  duration_ms: 88.3228
+  type: 'test'
+  ...
+# Subtest: IA Base V1: espécie nova entra só pelo contrato e não ganha capacidade nenhuma de brinde
+ok 109 - IA Base V1: espécie nova entra só pelo contrato e não ganha capacidade nenhuma de brinde
+  ---
+  duration_ms: 2348.8558
+  type: 'test'
+  ...
+# Subtest: matemática determinística aproxima Math com erro < 1e-12
+ok 110 - matemática determinística aproxima Math com erro < 1e-12
+  ---
+  duration_ms: 48.7253
+  type: 'test'
+  ...
+# Subtest: src/core não usa funções transcendentais do Math (quebram o determinismo entre motores)
+ok 111 - src/core não usa funções transcendentais do Math (quebram o determinismo entre motores)
+  ---
+  duration_ms: 47.9245
+  type: 'test'
+  ...
+# Subtest: linha de visão: rocha bloqueia, campo aberto não
+ok 112 - linha de visão: rocha bloqueia, campo aberto não
+  ---
+  duration_ms: 4.8448
+  type: 'test'
+  ...
+# Subtest: detecção: predador reconhece presa à frente (após o tempo de reconhecimento) e reage
+ok 113 - detecção: predador reconhece presa à frente (após o tempo de reconhecimento) e reage
+  ---
+  duration_ms: 22.5564
+  type: 'test'
+  ...
+# Subtest: camuflagem + imobilidade: presa parada só é vista dentro do alcance efetivo
+ok 114 - camuflagem + imobilidade: presa parada só é vista dentro do alcance efetivo
+  ---
+  duration_ms: 11.9158
+  type: 'test'
+  ...
+# Subtest: presa em movimento é vista mais longe que parada
+ok 115 - presa em movimento é vista mais longe que parada
+  ---
+  duration_ms: 4.2558
+  type: 'test'
+  ...
+# Subtest: capim alto oculta: mesma distância, dentro do capim não é vista
+ok 116 - capim alto oculta: mesma distância, dentro do capim não é vista
+  ---
+  duration_ms: 14.6954
+  type: 'test'
+  ...
+# Subtest: reconhecimento é mais rápido perto do que longe
+ok 117 - reconhecimento é mais rápido perto do que longe
+  ---
+  duration_ms: 8.2647
+  type: 'test'
+  ...
+# Subtest: patas macias (ruidoPassos): o mesmo trote às costas é ouvido ou não
+ok 118 - patas macias (ruidoPassos): o mesmo trote às costas é ouvido ou não
+  ---
+  duration_ms: 4.7728
+  type: 'test'
+  ...
+# Subtest: territórios separados: há encontros em que ninguém percebe ninguém
+ok 119 - territórios separados: há encontros em que ninguém percebe ninguém
+  ---
+  duration_ms: 672.887
+  type: 'test'
+  ...
+# Subtest: só reage ao que percebeu: presa parada e silenciosa às costas não é notada
+ok 120 - só reage ao que percebeu: presa parada e silenciosa às costas não é notada
+  ---
+  duration_ms: 4.0557
+  type: 'test'
+  ...
+# Subtest: obstáculo bloqueia a visão: presa atrás da rocha não é vista
+ok 121 - obstáculo bloqueia a visão: presa atrás da rocha não é vista
+  ---
+  duration_ms: 2.9099
+  type: 'test'
+  ...
+# Subtest: audição: corrida é ouvida atrás de si; rocha abafa o som
+ok 122 - audição: corrida é ouvida atrás de si; rocha abafa o som
+  ---
+  duration_ms: 5.2743
+  type: 'test'
+  ...
+# Subtest: memória: guarda a última posição vista e esquece após memoriaSeg
+ok 123 - memória: guarda a última posição vista e esquece após memoriaSeg
+  ---
+  duration_ms: 33.8101
+  type: 'test'
+  ...
+#     repouso: 14.13 m · ponta a ponta 14.13 m · retidão 1.000 · cruzamentos 0
+#     andou 109.7 m · variação de comprimento 0.00% · curvatura máx 17.2° · retidão 0.939–1.000 · cauda anda 0.279 m/passo
+#     maior desvio do corpo em relação ao rastro da cabeça: 0.67 m
+#     curva 90 graus: variação 0.00% · curvatura máx 18.1° em t=29.3s · folga mínima 0.89 m · retidão mínima 0.806
+#     curva 180 graus: variação 0.00% · curvatura máx 21.6° em t=41.3s · folga mínima 0.86 m · retidão mínima 0.546
+#     corpo em relação ao terreno: de 0.00 m a 0.00 m
+#     retidão 0.244 (enrolada) → 0.940 (estendida) · variação de comprimento 0.00%
+#     12 sementes: 2 inocularam · 2 paralisaram · 0 esperaram o veneno · 2 engoliram
+#       s4: 4.3 kg, fome → 77.1
+#       s5: 4.1 kg, fome → 77.3
+#     Rocantraz de 3813.3 kg e 4.20 m de altura contra serpente de 874 kg: massa_acima_do_limite
+# Subtest: serpáduna: nasce estendida, não enrolada — o defeito da v02 não se repete na simulação
+ok 124 - serpáduna: nasce estendida, não enrolada — o defeito da v02 não se repete na simulação
+  ---
+  duration_ms: 720.8482
+  type: 'test'
+  ...
+# Subtest: serpáduna: em linha reta o corpo ondula, o comprimento se conserva e nada se atravessa
+ok 125 - serpáduna: em linha reta o corpo ondula, o comprimento se conserva e nada se atravessa
+  ---
+  duration_ms: 928.7083
+  type: 'test'
+  ...
+# Subtest: serpáduna: a cauda passa pelo mesmo caminho da cabeça (não desliza de lado)
+ok 126 - serpáduna: a cauda passa pelo mesmo caminho da cabeça (não desliza de lado)
+  ---
+  duration_ms: 637.5634
+  type: 'test'
+  ...
+# Subtest: serpáduna: curva de 90 graus sem esticar, sem atravessar e dentro do limite de curvatura
+ok 127 - serpáduna: curva de 90 graus sem esticar, sem atravessar e dentro do limite de curvatura
+  ---
+  duration_ms: 715.0881
+  type: 'test'
+  ...
+# Subtest: serpáduna: curva de 180 graus sem esticar, sem atravessar e dentro do limite de curvatura
+ok 128 - serpáduna: curva de 180 graus sem esticar, sem atravessar e dentro do limite de curvatura
+  ---
+  duration_ms: 507.1918
+  type: 'test'
+  ...
+# Subtest: serpáduna: numa duna o corpo acompanha o relevo em vez de atravessar o terreno
+ok 129 - serpáduna: numa duna o corpo acompanha o relevo em vez de atravessar o terreno
+  ---
+  duration_ms: 1699.5507
+  type: 'test'
+  ...
+# Subtest: serpáduna: enrola e desenrola sem mudar de comprimento
+ok 130 - serpáduna: enrola e desenrola sem mudar de comprimento
+  ---
+  duration_ms: 941.413
+  type: 'test'
+  ...
+# Subtest: serpáduna: espécie sem a capacidade não ganha corpo de serpente
+ok 131 - serpáduna: espécie sem a capacidade não ganha corpo de serpente
+  ---
+  duration_ms: 440.5548
+  type: 'test'
+  ...
+# Subtest: serpáduna: bote, veneno paralisante, espera e engolir inteira
+ok 132 - serpáduna: bote, veneno paralisante, espera e engolir inteira
+  ---
+  duration_ms: 13805.2265
+  type: 'test'
+  ...
+# Subtest: serpáduna: não engole o que não cabe, e engolida não vira carcaça
+ok 133 - serpáduna: não engole o que não cabe, e engolida não vira carcaça
+  ---
+  duration_ms: 895.9807
+  type: 'test'
+  ...
+# Subtest: serpáduna: durante a digestão não caça
+ok 134 - serpáduna: durante a digestão não caça
+  ---
+  duration_ms: 406.3274
+  type: 'test'
+  ...
+#     parado: 30 m sem → 4 m com | andando: 42.7 → 10.0 m | correndo camuflado: 28.2 m
+#     alcance térmico medido: ar a 8 °C 29 m | 26 °C 17 m | 36,5 °C 0 m
+# Subtest: camuflagem: reduz a distância de detecção visual; correr denuncia mais que andar
+ok 135 - camuflagem: reduz a distância de detecção visual; correr denuncia mais que andar
+  ---
+  duration_ms: 8389.8762
+  type: 'test'
+  ...
+# Subtest: camuflagem: gasta energia por segundo, desliga sem energia e só religa acima do limiar
+ok 136 - camuflagem: gasta energia por segundo, desliga sem energia e só religa acima do limiar
+  ---
+  duration_ms: 331.9658
+  type: 'test'
+  ...
+# Subtest: camuflagem: atacar quebra o efeito e impõe recarga
+ok 137 - camuflagem: atacar quebra o efeito e impõe recarga
+  ---
+  duration_ms: 70.3628
+  type: 'test'
+  ...
+# Subtest: camuflagem: não esconde som — correndo às costas da presa, o caçador camuflado é ouvido
+ok 138 - camuflagem: não esconde som — correndo às costas da presa, o caçador camuflado é ouvido
+  ---
+  duration_ms: 81.0671
+  type: 'test'
+  ...
+# Subtest: camuflagem: espécie sem a capacidade não ganha estado
+ok 139 - camuflagem: espécie sem a capacidade não ganha estado
+  ---
+  duration_ms: 56.338
+  type: 'test'
+  ...
+# Subtest: termorrecepção: percebe o caçador camuflado que a visão não reconhece, sem saber a espécie
+ok 140 - termorrecepção: percebe o caçador camuflado que a visão não reconhece, sem saber a espécie
+  ---
+  duration_ms: 111.4052
+  type: 'test'
+  ...
+# Subtest: termorrecepção: depende do contraste com o ambiente e do esforço do alvo
+ok 141 - termorrecepção: depende do contraste com o ambiente e do esforço do alvo
+  ---
+  duration_ms: 12047.8657
+  type: 'test'
+  ...
+# Subtest: termorrecepção: rocha bloqueia; fora do cone não detecta
+ok 142 - termorrecepção: rocha bloqueia; fora do cone não detecta
+  ---
+  duration_ms: 955.0257
+  type: 'test'
+  ...
+# Subtest: termorrecepção: espécie sem o sentido nunca recebe contato térmico
+ok 143 - termorrecepção: espécie sem o sentido nunca recebe contato térmico
+  ---
+  duration_ms: 63.4205
+  type: 'test'
+  ...
+#     presa reconhece o predador a: céu limpo 45.3 m | chuva intensa 24.6 m | tempestade de areia 6.2 m
+#     30 s de trote: sem nevasca 108.7 m, energia 83.0, ar -1.8 °C | com nevasca 75.6 m, energia 70.1, ar -15.8 °C
+#     achou em 0.1 s, primeira boca em 35.4 s; comeu 230 cupins, fome 80 → 29.0
+#     consumo: Ferrunco 214, Pica-Termita 114; cedeu 1×
+#     fração ao alcance (monte fechado): normal 0.120, chuva 0.180, tempestade de areia 0.036
+#     estágios: fresca → decomposicao → restos → ossos → reciclada (249 s = 4.1 dias)
+#     até os ossos: 34 °C 48 s | 20 °C 102 s | 4 °C 720 s (insetos chegaram: 0)
+#     Carniroca comeu 0.70 kg de 11.04 kg; estágio decomposicao
+# Subtest: clima: tempestade de areia e chuva reduzem a visão DOS ANIMAIS, não só a da câmera
+ok 144 - clima: tempestade de areia e chuva reduzem a visão DOS ANIMAIS, não só a da câmera
+  ---
+  duration_ms: 3735.951
+  type: 'test'
+  ...
+# Subtest: clima: cada evento só acontece no bioma que o comporta
+ok 145 - clima: cada evento só acontece no bioma que o comporta
+  ---
+  duration_ms: 303.126
+  type: 'test'
+  ...
+# Subtest: clima: nevasca esfria, custa energia e deixa a locomoção mais lenta; começa e termina
+ok 146 - clima: nevasca esfria, custa energia e deixa a locomoção mais lenta; começa e termina
+  ---
+  duration_ms: 331.933
+  type: 'test'
+  ...
+# Subtest: clima: sob tempestade de areia os animais procuram abrigo e a perseguição se perde
+ok 147 - clima: sob tempestade de areia os animais procuram abrigo e a perseguição se perde
+  ---
+  duration_ms: 250.3755
+  type: 'test'
+  ...
+# Subtest: clima: voador em tempestade de areia desce; sem tempestade continua no ar
+ok 148 - clima: voador em tempestade de areia desce; sem tempestade continua no ar
+  ---
+  duration_ms: 1404.9414
+  type: 'test'
+  ...
+# Subtest: clima: fatores declarados para os três eventos
+ok 149 - clima: fatores declarados para os três eventos
+  ---
+  duration_ms: 0.7552
+  type: 'test'
+  ...
+# Subtest: cupins: o animal só come depois de localizar a colônia; comer retira população e mata a fome
+ok 150 - cupins: o animal só come depois de localizar a colônia; comer retira população e mata a fome
+  ---
+  duration_ms: 383.689
+  type: 'test'
+  ...
+# Subtest: cupins: sem colônia à vista nem ao faro o animal procura e não ganha energia do nada
+ok 151 - cupins: sem colônia à vista nem ao faro o animal procura e não ganha energia do nada
+  ---
+  duration_ms: 181.4605
+  type: 'test'
+  ...
+# Subtest: cupins: colônia esgota e é abandonada; colônia poupada se recupera
+ok 152 - cupins: colônia esgota e é abandonada; colônia poupada se recupera
+  ---
+  duration_ms: 864.5056
+  type: 'test'
+  ...
+# Subtest: cupins: dois especialistas no mesmo monte — o menor cede ao maior
+ok 153 - cupins: dois especialistas no mesmo monte — o menor cede ao maior
+  ---
+  duration_ms: 542.624
+  type: 'test'
+  ...
+# Subtest: cupins: chuva aumenta a atividade na superfície; tempestade de areia recolhe a colônia
+ok 154 - cupins: chuva aumenta a atividade na superfície; tempestade de areia recolhe a colônia
+  ---
+  duration_ms: 406.9229
+  type: 'test'
+  ...
+# Subtest: carcaça: passa pelos estágios em ordem, deixa ossos e é reciclada; a carne nunca é criada
+ok 155 - carcaça: passa pelos estágios em ordem, deixa ossos e é reciclada; a carne nunca é criada
+  ---
+  duration_ms: 233.1429
+  type: 'test'
+  ...
+# Subtest: carcaça: calor acelera, frio retarda e segura os insetos
+ok 156 - carcaça: calor acelera, frio retarda e segura os insetos
+  ---
+  duration_ms: 519.4911
+  type: 'test'
+  ...
+# Subtest: carcaça: necrófago do catálogo consome o recurso e ele é finito
+ok 157 - carcaça: necrófago do catálogo consome o recurso e ele é finito
+  ---
+  duration_ms: 477.4028
+  type: 'test'
+  ...
+# Subtest: carcaça: limite de objetos persistentes é respeitado
+ok 158 - carcaça: limite de objetos persistentes é respeitado
+  ---
+  duration_ms: 169.5955
+  type: 'test'
+  ...
+# Subtest: carcaça: cenário sem `decomposicao` mantém o comportamento antigo
+ok 159 - carcaça: cenário sem `decomposicao` mantém o comportamento antigo
+  ---
+  duration_ms: 120.8424
+  type: 'test'
+  ...
+#     presa passando a 1,5 m: 11 disparos, 3 golpes, 1 acertos em 12 sementes
+# Subtest: emboscada: vai até a cobertura, espera imóvel e só dispara com a presa vista dentro do alcance
+ok 160 - emboscada: vai até a cobertura, espera imóvel e só dispara com a presa vista dentro do alcance
+  ---
+  duration_ms: 3197.2424
+  type: 'test'
+  ...
+# Subtest: emboscada: presa que passa longe não é atacada — e ele desiste depois do tempo máximo
+ok 161 - emboscada: presa que passa longe não é atacada — e ele desiste depois do tempo máximo
+  ---
+  duration_ms: 225.4374
+  type: 'test'
+  ...
+# Subtest: emboscada: sem presa nenhuma no mundo, nunca dispara (não conhece posições ocultas)
+ok 162 - emboscada: sem presa nenhuma no mundo, nunca dispara (não conhece posições ocultas)
+  ---
+  duration_ms: 152.5618
+  type: 'test'
+  ...
+# Subtest: emboscada: sem cobertura não há emboscada; sem a capacidade na ficha, também não
+ok 163 - emboscada: sem cobertura não há emboscada; sem a capacidade na ficha, também não
+  ---
+  duration_ms: 545.5342
+  type: 'test'
+  ...
+# Subtest: presa: quem tem memória de perigo deixa de escolher destinos perto de onde foi atacada
+ok 164 - presa: quem tem memória de perigo deixa de escolher destinos perto de onde foi atacada
+  ---
+  duration_ms: 295.8625
+  type: 'test'
+  ...
+#     acertos 18/20, erros 2/20 (a 0,9 m)
+#     pico de intensidade: velsari 0.36, folhisco 0.95
+#     18 inoculações; acompanhou a presa em 18; atacou cedo em 0
+# Subtest: veneno: só entra com contato válido — todo golpe que fere inocula, todo golpe que erra não
+ok 165 - veneno: só entra com contato válido — todo golpe que fere inocula, todo golpe que erra não
+  ---
+  duration_ms: 2508.7083
+  type: 'test'
+  ...
+# Subtest: veneno: dose pequena em animal grande dá sintomas leves; a mesma glândula derruba um animal pequeno
+ok 166 - veneno: dose pequena em animal grande dá sintomas leves; a mesma glândula derruba um animal pequeno
+  ---
+  duration_ms: 181.6586
+  type: 'test'
+  ...
+# Subtest: veneno: resistência reduz carga e duração, mas não é imunidade
+ok 167 - veneno: resistência reduz carga e duração, mas não é imunidade
+  ---
+  duration_ms: 168.0812
+  type: 'test'
+  ...
+# Subtest: veneno: sintomas reduzem a mobilidade, expiram e não deixam dano residual
+ok 168 - veneno: sintomas reduzem a mobilidade, expiram e não deixam dano residual
+  ---
+  duration_ms: 147.031
+  type: 'test'
+  ...
+# Subtest: veneno: reserva é finita, recarrega devagar e é poupada em quem não é presa nem ameaça
+ok 169 - veneno: reserva é finita, recarrega devagar e é poupada em quem não é presa nem ameaça
+  ---
+  duration_ms: 316.1136
+  type: 'test'
+  ...
+# Subtest: veneno hemotóxico: dose alta em animal pequeno mata e a causa registrada é envenenamento
+ok 170 - veneno hemotóxico: dose alta em animal pequeno mata e a causa registrada é envenenamento
+  ---
+  duration_ms: 318.0738
+  type: 'test'
+  ...
+# Subtest: veneno: depois de inocular, o predador acompanha a presa em vez de continuar o combate
+ok 171 - veneno: depois de inocular, o predador acompanha a presa em vez de continuar o combate
+  ---
+  duration_ms: 2718.4768
+  type: 'test'
+  ...
+# Subtest: veneno: espécie sem a capacidade não ganha estado nem inocula
+ok 172 - veneno: espécie sem a capacidade não ganha estado nem inocula
+  ---
+  duration_ms: 138.8829
+  type: 'test'
+  ...
+#     altitude máx 22.8 m, 263 m voados, maior passo 1.14 m
+#     folga mínima 3.3 m, altitude máx 12.9 m, desvios 2
+#     tocou a 2.2 m do alvo, vz -0.17 m/s, v 6.3 m/s
+#     energia: subindo 1.80/s, planando 0.12/s
+#     n=1: distância mínima — m, raio médio 0.0 m, alinhamento 0.00, quedas 0, 0.104 ms/passo
+#     n=3: distância mínima 2.47 m, raio médio 4.9 m, alinhamento 0.97, quedas 0, 0.258 ms/passo
+#     n=10: distância mínima 1.41 m, raio médio 8.0 m, alinhamento 0.92, quedas 0, 1.240 ms/passo
+#     n=20: distância mínima 0.77 m, raio médio 14.1 m, alinhamento 0.60, quedas 0, 2.940 ms/passo
+#     no ar ao mesmo tempo 10/10, raio máx 59.7 m (t=186 s), raio após 120 s 18.4, decolagens 20, pousos 10, quedas 0
+# Subtest: voo: decolagem, subida e cruzeiro são deslocamento 3D real, sem salto de posição
+ok 173 - voo: decolagem, subida e cruzeiro são deslocamento 3D real, sem salto de posição
+  ---
+  duration_ms: 769.6996
+  type: 'test'
+  ...
+# Subtest: voo: relevo no caminho é contornado ou sobrevoado — nunca atravessado
+ok 174 - voo: relevo no caminho é contornado ou sobrevoado — nunca atravessado
+  ---
+  duration_ms: 627.2982
+  type: 'test'
+  ...
+# Subtest: voo: não sai do mapa
+ok 175 - voo: não sai do mapa
+  ---
+  duration_ms: 619.326
+  type: 'test'
+  ...
+# Subtest: voo: pouso reduz velocidade, toca o chão no destino e não atravessa a superfície
+ok 176 - voo: pouso reduz velocidade, toca o chão no destino e não atravessa a superfície
+  ---
+  duration_ms: 553.8945
+  type: 'test'
+  ...
+# Subtest: voo: lago não é local de pouso — escolhe a margem
+ok 177 - voo: lago não é local de pouso — escolhe a margem
+  ---
+  duration_ms: 685.611
+  type: 'test'
+  ...
+# Subtest: voo: subir batendo asa custa mais que planar; sem energia não decola
+ok 178 - voo: subir batendo asa custa mais que planar; sem energia não decola
+  ---
+  duration_ms: 1734.9985
+  type: 'test'
+  ...
+# Subtest: voo: asa ferida impede a decolagem e, no ar, obriga a descer
+ok 179 - voo: asa ferida impede a decolagem e, no ar, obriga a descer
+  ---
+  duration_ms: 1034.9222
+  type: 'test'
+  ...
+# Subtest: voo: espécie terrestre não ganha estado de voo
+ok 180 - voo: espécie terrestre não ganha estado de voo
+  ---
+  duration_ms: 568.7894
+  type: 'test'
+  ...
+# Subtest: bando: 1 voador(es) — separação, coesão, alinhamento e custo de CPU
+ok 181 - bando: 1 voador(es) — separação, coesão, alinhamento e custo de CPU
+  ---
+  duration_ms: 525.7604
+  type: 'test'
+  ...
+# Subtest: bando: 3 voador(es) — separação, coesão, alinhamento e custo de CPU
+ok 182 - bando: 3 voador(es) — separação, coesão, alinhamento e custo de CPU
+  ---
+  duration_ms: 787.4935
+  type: 'test'
+  ...
+# Subtest: bando: 10 voador(es) — separação, coesão, alinhamento e custo de CPU
+ok 183 - bando: 10 voador(es) — separação, coesão, alinhamento e custo de CPU
+  ---
+  duration_ms: 1630.2202
+  type: 'test'
+  ...
+# Subtest: bando: 20 voador(es) — separação, coesão, alinhamento e custo de CPU
+ok 184 - bando: 20 voador(es) — separação, coesão, alinhamento e custo de CPU
+  ---
+  duration_ms: 3082.2905
+  type: 'test'
+  ...
+# Subtest: bando: ameaça terrestre faz o grupo decolar, dispersar e depois reagrupar
+ok 185 - bando: ameaça terrestre faz o grupo decolar, dispersar e depois reagrupar
+  ---
+  duration_ms: 3150.872
+  type: 'test'
+  ...
+1..185
+# tests 185
+# suites 0
+# pass 185
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 89813.826

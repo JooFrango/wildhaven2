@@ -1,0 +1,22 @@
+{
+  "pullRequest": "https://github.com/carioca1111/wildhaven-new/pull/24",
+  "source": "f97c7d2dbe61889a73e2c5ddf978991f5895c1d0",
+  "scope": "labs/hunters/ only; visual controller fix; GLB unchanged",
+  "site": {
+    "sourceCommit": "df011e001ea38d6c0f3bbff1de6bb1384aaa7f98",
+    "deploymentId": "appgdep_6af77bbba96c8191b07ed98e0cfb3aef",
+    "status": "succeeded",
+    "url": "https://wildhaven-hunter-lab-codex.jvbrmandarino11.chatgpt.site/labs/hunters/hunter-lab.html?revision=posefix1",
+    "ownerPrivate": true,
+    "staticPackageBrowserVerified": true,
+    "authenticatedHostedBrowserVerified": false
+  },
+  "tests": {
+    "hunterTestsPassed": 37,
+    "legacyMissingClipTFrames": 16,
+    "pausedFramesChecked": 192,
+    "pausedTFrames": 0,
+    "combatFramesChecked": 300,
+    "combatTFrames": 0
+  }
+}

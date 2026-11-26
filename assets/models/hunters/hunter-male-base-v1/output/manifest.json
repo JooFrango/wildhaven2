@@ -1,0 +1,50 @@
+{
+  "id": "hunter-male-base",
+  "version": "1.0",
+  "designStatus": "prototype-awaiting-real-model-review",
+  "heightMeters": 1.72,
+  "defaultPose": "T",
+  "coordinateSystem": "glTF Y-up, forward +Z",
+  "contentNote": "Actual geometry, joint skinning and keyframe animations. No Blender project or hand-painted textures.",
+  "assets": [
+    {
+      "file": "output/hunter_male_base_v1_lod0_animated.glb",
+      "bytes": 285016,
+      "sha256": "dd988bca1548dd9e8d0b9bd033af210c4f6664c15fbf56335240999e01a707b9",
+      "triangles": 1616,
+      "bones": 18,
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "guard",
+        "dodge",
+        "hit",
+        "death"
+      ],
+      "primitive_count": 7,
+      "vertices": 4848
+    },
+    {
+      "file": "output/hunter_male_base_v1_lod1_animated.glb",
+      "bytes": 215148,
+      "sha256": "7c1f487f801a1b5f923753cf4e0a7eade37500a64ac7b9df755e096258f9a3cb",
+      "triangles": 1168,
+      "bones": 18,
+      "clips": [
+        "idle",
+        "walk",
+        "run",
+        "attack",
+        "guard",
+        "dodge",
+        "hit",
+        "death"
+      ],
+      "primitive_count": 7,
+      "vertices": 3504
+    }
+  ],
+  "generator": "build_hunter_base_v1.py"
+}

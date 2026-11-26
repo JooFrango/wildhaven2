@@ -1,0 +1,205 @@
+{
+  "_nota": "Conjunto reduzido de teste. Cada arma gera DOIS ataques (leve e pesado) com alcance, dano, preparo, recarga, custo de energia e altura de impacto próprios. Nenhum equipamento tem modelo 3D oficial: 'visual' descreve o marcador provisório do laboratório, nunca um GLB final.",
+  "armas": {
+    "maos": {
+      "nome": "Mãos nuas",
+      "alcanceM": 0.75,
+      "visual": "nenhum",
+      "ataques": {
+        "leve": {
+          "dano": 7,
+          "preparoSeg": 0.35,
+          "recargaSeg": 0.9,
+          "energia": 2,
+          "alturaImpactoM": 1.3,
+          "tipoDano": "contusao",
+          "regioes": [
+            "cabeca",
+            "pescoco",
+            "torax",
+            "abdomen",
+            "bracos"
+          ]
+        },
+        "pesado": {
+          "dano": 13,
+          "preparoSeg": 0.7,
+          "recargaSeg": 2.0,
+          "energia": 5,
+          "alturaImpactoM": 1.2,
+          "tipoDano": "contusao",
+          "regioes": [
+            "cabeca",
+            "pescoco",
+            "torax",
+            "abdomen"
+          ]
+        }
+      }
+    },
+    "lanca": {
+      "nome": "Lança",
+      "alcanceM": 2.1,
+      "pesoKg": 2.4,
+      "visual": "marcador: haste de depuração a partir da mão direita",
+      "bloqueia": 0.35,
+      "ataques": {
+        "leve": {
+          "dano": 11,
+          "preparoSeg": 0.4,
+          "recargaSeg": 1.1,
+          "energia": 3,
+          "alturaImpactoM": 1.2,
+          "tipoDano": "perfurante",
+          "regioes": [
+            "torax",
+            "abdomen",
+            "pescoco",
+            "bracos",
+            "pernas"
+          ]
+        },
+        "pesado": {
+          "dano": 22,
+          "preparoSeg": 0.85,
+          "recargaSeg": 2.4,
+          "energia": 7,
+          "alturaImpactoM": 1.15,
+          "tipoDano": "perfurante",
+          "regioes": [
+            "torax",
+            "abdomen",
+            "pescoco"
+          ]
+        }
+      }
+    },
+    "espada": {
+      "nome": "Espada simples",
+      "alcanceM": 1.05,
+      "pesoKg": 1.3,
+      "visual": "marcador: lâmina de depuração a partir da mão direita",
+      "bloqueia": 0.55,
+      "ataques": {
+        "leve": {
+          "dano": 13,
+          "preparoSeg": 0.3,
+          "recargaSeg": 0.8,
+          "energia": 2.5,
+          "alturaImpactoM": 1.35,
+          "tipoDano": "corte",
+          "regioes": [
+            "cabeca",
+            "pescoco",
+            "bracos",
+            "torax"
+          ]
+        },
+        "pesado": {
+          "dano": 26,
+          "preparoSeg": 0.75,
+          "recargaSeg": 2.1,
+          "energia": 6,
+          "alturaImpactoM": 1.2,
+          "tipoDano": "corte",
+          "regioes": [
+            "cabeca",
+            "pescoco",
+            "torax",
+            "abdomen",
+            "pernas"
+          ]
+        }
+      }
+    },
+    "montante": {
+      "nome": "Montante de duas mãos",
+      "alcanceM": 1.7,
+      "pesoKg": 5.5,
+      "duasMaos": true,
+      "bloqueia": 0.2,
+      "visual": "malha provisória junto à mão; clipes greatsword v04",
+      "ataques": {
+        "leve": {
+          "dano": 21,
+          "preparoSeg": 0.65,
+          "recargaSeg": 0.78,
+          "energia": 7,
+          "alturaImpactoM": 1.15,
+          "tipoDano": "corte",
+          "regioes": [
+            "cabeca",
+            "pescoco",
+            "torax",
+            "abdomen",
+            "bracos",
+            "pernas",
+            "tronco",
+            "flanco"
+          ]
+        },
+        "pesado": {
+          "dano": 39,
+          "preparoSeg": 1.15,
+          "recargaSeg": 1.25,
+          "energia": 14,
+          "alturaImpactoM": 1.25,
+          "tipoDano": "corte",
+          "regioes": [
+            "cabeca",
+            "pescoco",
+            "torax",
+            "abdomen",
+            "pernas",
+            "tronco",
+            "flanco"
+          ]
+        }
+      }
+    }
+  },
+  "escudos": {
+    "escudo": {
+      "nome": "Escudo",
+      "pesoKg": 4.5,
+      "visual": "marcador: disco de depuração no antebraço esquerdo",
+      "bloqueia": 0.75,
+      "penalidadeVelocidade": 0.04,
+      "penalidadeEsquiva": 0.1
+    }
+  },
+  "armaduras": {
+    "leve": {
+      "nome": "Armadura leve",
+      "pesoKg": 6,
+      "visual": "marcador: contorno de depuração sobre o torso",
+      "protecao": {
+        "cabeca": 0.1,
+        "pescoco": 0.05,
+        "torax": 0.35,
+        "abdomen": 0.3,
+        "bracos": 0.2,
+        "pernas": 0.15
+      },
+      "penalidadeVelocidade": 0.04,
+      "penalidadeEsquiva": 0.08,
+      "custoEnergiaExtra": 0.15
+    },
+    "pesada": {
+      "nome": "Armadura pesada",
+      "pesoKg": 18,
+      "visual": "marcador: contorno de depuração reforçado sobre o torso",
+      "protecao": {
+        "cabeca": 0.45,
+        "pescoco": 0.3,
+        "torax": 0.7,
+        "abdomen": 0.6,
+        "bracos": 0.45,
+        "pernas": 0.4
+      },
+      "penalidadeVelocidade": 0.16,
+      "penalidadeEsquiva": 0.3,
+      "custoEnergiaExtra": 0.6
+    }
+  }
+}

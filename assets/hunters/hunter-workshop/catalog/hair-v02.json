@@ -1,0 +1,90 @@
+[
+  {
+    "id": "hair_short_v02",
+    "displayName": "Curto facetado",
+    "category": "hair",
+    "occupiedSlots": [
+      "hair"
+    ],
+    "attachmentMode": "bone",
+    "attachmentBone": "Head",
+    "rigVersion": "hunter-masculino-1000v-v01",
+    "coordinateSpace": "Head-local (rest pose)",
+    "meshByLod": {
+      "lod0": "hair/short-v02/hair_short_v02.glb"
+    },
+    "materialSet": "hunter-short-v02-uv",
+    "colorOptions": [
+      "dark-brown"
+    ],
+    "hiddenBodyRegions": [],
+    "compatibilityTags": [
+      "short-hair-helmet-clearance"
+    ],
+    "conflictingTags": [
+      "helmet-no-hair"
+    ],
+    "fallbackVariant": null,
+    "revisionOf": "hair_short_v01",
+    "triangles": 300,
+    "verticesExported": 199,
+    "bytes": 20612,
+    "sha256": "d871b4a41de2676bd07e109f8ab69d99c96e0612b11cb9677a8a8804b631a8b5",
+    "animationClips": [],
+    "textureSize": [
+      256,
+      256
+    ],
+    "publishedToGitHub": true,
+    "approvedByUser": false,
+    "integratedInAlpha": false,
+    "modelingNotes": "v02 new silhouette; colors only UV texture",
+    "githubVerified": true,
+    "githubUrl": "https://github.com/carioca1111/wildhaven/blob/wildhaven-hunter-hairs-v02/assets/hunters/hunter-workshop/hair/short-v02/hair_short_v02.glb",
+    "verificationNote": "GLB real recuperado via GitHub e verificado: SHA-256, comprimento binario, 1 mesh, UV, textura interna e topologia"
+  },
+  {
+    "id": "hair_mohawk_v02",
+    "displayName": "Moicano baixo",
+    "category": "hair",
+    "occupiedSlots": [
+      "hair"
+    ],
+    "attachmentMode": "bone",
+    "attachmentBone": "Head",
+    "rigVersion": "hunter-masculino-1000v-v01",
+    "coordinateSpace": "Head-local (rest pose)",
+    "meshByLod": {
+      "lod0": "hair/mohawk-v02/hair_mohawk_v02.glb"
+    },
+    "materialSet": "hunter-mohawk-v02-uv",
+    "colorOptions": [
+      "dark-brown"
+    ],
+    "hiddenBodyRegions": [],
+    "compatibilityTags": [
+      "mohawk-low-crest"
+    ],
+    "conflictingTags": [
+      "helmet-full"
+    ],
+    "fallbackVariant": null,
+    "revisionOf": "hair_mohawk_v01",
+    "triangles": 188,
+    "verticesExported": 96,
+    "bytes": 15956,
+    "sha256": "9cebef11699b2abbb0fb0cbd9bbd380f1a992b96cc012efd1188cd13785c35af",
+    "animationClips": [],
+    "textureSize": [
+      256,
+      256
+    ],
+    "publishedToGitHub": true,
+    "approvedByUser": false,
+    "integratedInAlpha": false,
+    "modelingNotes": "v02 new silhouette; colors only UV texture",
+    "githubVerified": true,
+    "githubUrl": "https://github.com/carioca1111/wildhaven/blob/wildhaven-hunter-hairs-v02/assets/hunters/hunter-workshop/hair/mohawk-v02/hair_mohawk_v02.glb",
+    "verificationNote": "GLB real recuperado via GitHub e verificado: SHA-256, comprimento binario, 1 mesh, UV, textura interna e topologia"
+  }
+]

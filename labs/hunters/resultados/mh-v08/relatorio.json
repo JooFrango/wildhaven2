@@ -1,0 +1,139 @@
+{
+ "url": "http://localhost:5195/hunters/hunter-lab.html?cenario=jogador-espada&semente=23&pve1=1&pve2=1&mh=1",
+ "t": 8.1,
+ "resultado": null,
+ "trocas": [
+  {
+   "t": 0.1,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 1
+  },
+  {
+   "t": 0.4,
+   "clipe": "roar",
+   "estado": "rugindo",
+   "hp": 1
+  },
+  {
+   "t": 2.4,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 1
+  },
+  {
+   "t": 2.6,
+   "clipe": "claw_right",
+   "estado": "atacando",
+   "hp": 1
+  },
+  {
+   "t": 3.35,
+   "clipe": "double_claw",
+   "estado": "atacando",
+   "hp": 0.98
+  },
+  {
+   "t": 4.6,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.98
+  },
+  {
+   "t": 5,
+   "clipe": "hit_heavy_l",
+   "estado": "recuperando",
+   "hp": 0.96
+  },
+  {
+   "t": 7.05,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 0.93
+  },
+  {
+   "t": 7.15,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.93
+  },
+  {
+   "t": 7.35,
+   "clipe": "hit_heavy_l",
+   "estado": "recuperando",
+   "hp": 0.91
+  }
+ ],
+ "eventos": [
+  {
+   "t": 0,
+   "tipo": "monstro_instalado",
+   "ataque": null
+  },
+  {
+   "t": 0.05,
+   "tipo": "monstro_alvo",
+   "ataque": null
+  },
+  {
+   "t": 0.35,
+   "tipo": "monstro_aggro",
+   "ataque": null
+  },
+  {
+   "t": 0.35,
+   "tipo": "monstro_rugido",
+   "ataque": null
+  },
+  {
+   "t": 0.95,
+   "tipo": "monstro_rugido_atordoou",
+   "ataque": null
+  },
+  {
+   "t": 2.6,
+   "tipo": "monstro_golpe",
+   "ataque": "garra_foice"
+  },
+  {
+   "t": 2.95,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 3.35,
+   "tipo": "monstro_golpe",
+   "ataque": "garra_dupla"
+  },
+  {
+   "t": 4.95,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 5.8,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 7.3,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  }
+ ],
+ "clipesUsados": [
+  "walk",
+  "roar",
+  "claw_right",
+  "double_claw",
+  "idle",
+  "hit_heavy_l"
+ ],
+ "capturas": [
+  "roar",
+  "claw_right",
+  "double_claw",
+  "hit_heavy_l"
+ ],
+ "erros": []
+}

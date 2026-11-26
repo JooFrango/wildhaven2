@@ -1,0 +1,382 @@
+TAP version 13
+# Subtest: apresentação deduplica impacto e ferimento do mesmo contato sem alterar o mundo
+ok 1 - apresentação deduplica impacto e ferimento do mesmo contato sem alterar o mundo
+  ---
+  duration_ms: 12.4036
+  type: 'test'
+  ...
+# Subtest: pausa não repete passos, respiração ou eventos; retomar processa uma vez
+ok 2 - pausa não repete passos, respiração ou eventos; retomar processa uma vez
+  ---
+  duration_ms: 1.5009
+  type: 'test'
+  ...
+# Subtest: trocar cenário ou restaurar estado não reproduz eventos históricos
+ok 3 - trocar cenário ou restaurar estado não reproduz eventos históricos
+  ---
+  duration_ms: 2.4201
+  type: 'test'
+  ...
+# Subtest: som desligado não cria AudioContext, fontes ou ruído contínuo
+ok 4 - som desligado não cria AudioContext, fontes ou ruído contínuo
+  ---
+  duration_ms: 1.0358
+  type: 'test'
+  ...
+# Subtest: áudio é desbloqueado explicitamente, limitado e liberado ao descartar
+ok 5 - áudio é desbloqueado explicitamente, limitado e liberado ao descartar
+  ---
+  duration_ms: 15.9766
+  type: 'test'
+  ...
+# Subtest: câmera opcional enquadra o par com deslocamento limitado e não altera estado físico
+ok 6 - câmera opcional enquadra o par com deslocamento limitado e não altera estado físico
+  ---
+  duration_ms: 4.5985
+  type: 'test'
+  ...
+# Subtest: feedback proporcional conserva contraste entre golpe leve e pesado
+ok 7 - feedback proporcional conserva contraste entre golpe leve e pesado
+  ---
+  duration_ms: 0.9468
+  type: 'test'
+  ...
+# Subtest: trilhas usam a trajetória fornecida sem tocar na ação autoritativa
+ok 8 - trilhas usam a trajetória fornecida sem tocar na ação autoritativa
+  ---
+  duration_ms: 1.2038
+  type: 'test'
+  ...
+# Subtest: impactos distantes não sacodem a câmera nem produzem som/partículas locais
+ok 9 - impactos distantes não sacodem a câmera nem produzem som/partículas locais
+  ---
+  duration_ms: 0.9182
+  type: 'test'
+  ...
+# Subtest: 2. Hunter desvia de obstáculos sólidos no caminho
+ok 10 - 2. Hunter desvia de obstáculos sólidos no caminho
+  ---
+  duration_ms: 537.7915
+  type: 'test'
+  ...
+# Subtest: 4 e 5. Hunter cauteloso detecta um predador e se afasta dele
+ok 11 - 4 e 5. Hunter cauteloso detecta um predador e se afasta dele
+  ---
+  duration_ms: 650.5472
+  type: 'test'
+  ...
+# Subtest: 6. Hunter ataca uma criatura usando o combate do ecossistema, e o animal decide por conta própria
+ok 12 - 6. Hunter ataca uma criatura usando o combate do ecossistema, e o animal decide por conta própria
+  ---
+  duration_ms: 1728.7435
+  type: 'test'
+  ...
+# Subtest: 10. duelo decidido por fadiga: quem fica sem energia se retira
+ok 13 - 10. duelo decidido por fadiga: quem fica sem energia se retira
+  ---
+  duration_ms: 936.1287
+  type: 'test'
+  ...
+# Subtest: 11. ferimento na perna reduz a mobilidade de verdade
+ok 14 - 11. ferimento na perna reduz a mobilidade de verdade
+  ---
+  duration_ms: 127.9433
+  type: 'test'
+  ...
+# Subtest: 12. sangramento drena vida ao longo do tempo e pode incapacitar
+ok 15 - 12. sangramento drena vida ao longo do tempo e pode incapacitar
+  ---
+  duration_ms: 210.7677
+  type: 'test'
+  ...
+# Subtest: 13. Hunter incapacitado sai do combate e ninguém continua batendo nele
+ok 16 - 13. Hunter incapacitado sai do combate e ninguém continua batendo nele
+  ---
+  duration_ms: 103.5372
+  type: 'test'
+  ...
+# Subtest: 14. equipes: aliado nunca vira alvo
+ok 17 - 14. equipes: aliado nunca vira alvo
+  ---
+  duration_ms: 2639.6924
+  type: 'test'
+  ...
+# Subtest: 15. trocar o foco de observação não cancela a luta nem muda o resultado
+ok 18 - 15. trocar o foco de observação não cancela a luta nem muda o resultado
+  ---
+  duration_ms: 612.1659
+  type: 'test'
+  ...
+# Subtest: invariantes obrigatórios durante um combate inteiro
+ok 19 - invariantes obrigatórios durante um combate inteiro
+  ---
+  duration_ms: 691.79
+  type: 'test'
+  ...
+# Subtest: 17. ferimentos, conflitos e equipamento sobrevivem a salvar e carregar
+ok 20 - 17. ferimentos, conflitos e equipamento sobrevivem a salvar e carregar
+  ---
+  duration_ms: 1269.8931
+  type: 'test'
+  ...
+# Subtest: a ficha do Hunter é uma ficha de espécie válida do laboratório de criaturas
+ok 21 - a ficha do Hunter é uma ficha de espécie válida do laboratório de criaturas
+  ---
+  duration_ms: 4.5521
+  type: 'test'
+  ...
+# Subtest: 1. Hunter caminha no terreno real e chega onde foi mandado
+ok 22 - 1. Hunter caminha no terreno real e chega onde foi mandado
+  ---
+  duration_ms: 842.4146
+  type: 'test'
+  ...
+# Subtest: 3. um Hunter detecta o outro pela percepção, e só então o toma por alvo
+ok 23 - 3. um Hunter detecta o outro pela percepção, e só então o toma por alvo
+  ---
+  duration_ms: 309.5873
+  type: 'test'
+  ...
+# Subtest: 7. PvP desarmado: a luta acontece, produz ferimentos e termina com um vencedor
+ok 24 - 7. PvP desarmado: a luta acontece, produz ferimentos e termina com um vencedor
+  ---
+  duration_ms: 517.5939
+  type: 'test'
+  ...
+# Subtest: 8. lança contra espada: o alcance maior aparece na distância dos golpes
+ok 25 - 8. lança contra espada: o alcance maior aparece na distância dos golpes
+  ---
+  duration_ms: 427.96
+  type: 'test'
+  ...
+# Subtest: 9. armadura pesada protege mais e custa mobilidade — diferença mecânica verificável
+ok 26 - 9. armadura pesada protege mais e custa mobilidade — diferença mecânica verificável
+  ---
+  duration_ms: 765.5851
+  type: 'test'
+  ...
+# Subtest: os golpes só atingem regiões humanas
+ok 27 - os golpes só atingem regiões humanas
+  ---
+  duration_ms: 336.6211
+  type: 'test'
+  ...
+# Subtest: 18. a mesma semente reproduz o mesmo combate, golpe a golpe
+ok 28 - 18. a mesma semente reproduz o mesmo combate, golpe a golpe
+  ---
+  duration_ms: 621.2119
+  type: 'test'
+  ...
+# Subtest: sementes diferentes produzem combates diferentes
+ok 29 - sementes diferentes produzem combates diferentes
+  ---
+  duration_ms: 1032.6548
+  type: 'test'
+  ...
+# Subtest: leitura visual não consulta saúde, energia, memória ou intenção inimiga
+ok 30 - leitura visual não consulta saúde, energia, memória ou intenção inimiga
+  ---
+  duration_ms: 614.4722
+  type: 'test'
+  ...
+# Subtest: cabeça, flanco e pernas produzem posições/alturas distintas no corpo observado
+ok 31 - cabeça, flanco e pernas produzem posições/alturas distintas no corpo observado
+  ---
+  duration_ms: 373.2732
+  type: 'test'
+  ...
+# Subtest: habilidade muda a latência sem modificar a personalidade
+ok 32 - habilidade muda a latência sem modificar a personalidade
+  ---
+  duration_ms: 295.2028
+  type: 'test'
+  ...
+# Subtest: experiência aprende tempos somente após observar a transição
+ok 33 - experiência aprende tempos somente após observar a transição
+  ---
+  duration_ms: 142.3848
+  type: 'test'
+  ...
+# Subtest: montante espera abertura longa, espada aceita abertura curta e todos reservam saída
+ok 34 - montante espera abertura longa, espada aceita abertura curta e todos reservam saída
+  ---
+  duration_ms: 343.1533
+  type: 'test'
+  ...
+# Subtest: agressividade decide continuar; erro ou interrupção termina a sequência
+ok 35 - agressividade decide continuar; erro ou interrupção termina a sequência
+  ---
+  duration_ms: 171.7536
+  type: 'test'
+  ...
+# Subtest: previsão da investida usa corredor observado, sem esquivar de toda preparação
+ok 36 - previsão da investida usa corredor observado, sem esquivar de toda preparação
+  ---
+  duration_ms: 132.0374
+  type: 'test'
+  ...
+# Subtest: esquiva compromete impulso lateral, cobra energia e respeita bloqueio
+ok 37 - esquiva compromete impulso lateral, cobra energia e respeita bloqueio
+  ---
+  duration_ms: 345.4097
+  type: 'test'
+  ...
+# Subtest: persistência no meio da sequência restaura perfis, leitura e resultados exatamente
+ok 38 - persistência no meio da sequência restaura perfis, leitura e resultados exatamente
+  ---
+  duration_ms: 1242.6007
+  type: 'test'
+  ...
+# Subtest: comando de habilidade é independente e preserva personalidade/equipamento
+ok 39 - comando de habilidade é independente e preserva personalidade/equipamento
+  ---
+  duration_ms: 123.312
+  type: 'test'
+  ...
+# Subtest: sequências reais têm impacto e recuperação; nenhum evento de animação aplica dano
+ok 40 - sequências reais têm impacto e recuperação; nenhum evento de animação aplica dano
+  ---
+  duration_ms: 379.205
+  type: 'test'
+  ...
+# Subtest: GLB v04 preserva malha/rig/v02 e contém marcha, corrida e variantes esqueléticas reais
+ok 41 - GLB v04 preserva malha/rig/v02 e contém marcha, corrida e variantes esqueléticas reais
+  ---
+  duration_ms: 217.5913
+  type: 'test'
+  ...
+# Subtest: lança com escudo mantém a guarda e prepara contra-ataque após contato defendido
+ok 42 - lança com escudo mantém a guarda e prepara contra-ataque após contato defendido
+  ---
+  duration_ms: 120.9883
+  type: 'test'
+  ...
+# Subtest: golpe comprometido limita correção de mira e perseguição distante usa corrida
+ok 43 - golpe comprometido limita correção de mira e perseguição distante usa corrida
+  ---
+  duration_ms: 122.6303
+  type: 'test'
+  ...
+# Subtest: portabilidade: fila futura, equipamento e atributos persistem sem repetir impactos
+ok 44 - portabilidade: fila futura, equipamento e atributos persistem sem repetir impactos
+  ---
+  duration_ms: 2723.9248
+  type: 'test'
+  ...
+# Subtest: portabilidade: esquiva manual desloca o corpo e cobra energia
+ok 45 - portabilidade: esquiva manual desloca o corpo e cobra energia
+  ---
+  duration_ms: 669.1694
+  type: 'test'
+  ...
+# Subtest: portabilidade: geometria precisa usa o mesmo contrato de colisão do Codex e sobrevive ao save
+ok 46 - portabilidade: geometria precisa usa o mesmo contrato de colisão do Codex e sobrevive ao save
+  ---
+  duration_ms: 937.9944
+  type: 'test'
+  ...
+# Subtest: um erro com chain zerada deixa de bloquear o Hunter para sempre
+ok 47 - um erro com chain zerada deixa de bloquear o Hunter para sempre
+  ---
+  duration_ms: 671.3721
+  type: 'test'
+  ...
+# Subtest: erro exige recuperação e saída, sem teleportar nem iniciar outro golpe
+ok 48 - erro exige recuperação e saída, sem teleportar nem iniciar outro golpe
+  ---
+  duration_ms: 96.8123
+  type: 'test'
+  ...
+# Subtest: a cadeia de montante permanece disponível após uma recuperação maior que dois segundos
+ok 49 - a cadeia de montante permanece disponível após uma recuperação maior que dois segundos
+  ---
+  duration_ms: 73.7873
+  type: 'test'
+  ...
+# Subtest: golpe pesado freia o deslocamento e firma apoio antes de começar
+ok 50 - golpe pesado freia o deslocamento e firma apoio antes de começar
+  ---
+  duration_ms: 39.2796
+  type: 'test'
+  ...
+# Subtest: falta de progresso muda a abordagem, sem exigir atributo oculto do adversário
+ok 51 - falta de progresso muda a abordagem, sem exigir atributo oculto do adversário
+  ---
+  duration_ms: 38.4572
+  type: 'test'
+  ...
+# Subtest: recuperação deliberada de fôlego não conta como aproximação travada
+ok 52 - recuperação deliberada de fôlego não conta como aproximação travada
+  ---
+  duration_ms: 36.4215
+  type: 'test'
+  ...
+# Subtest: sobrevivência não apaga compromisso de um golpe ainda em preparo
+ok 53 - sobrevivência não apaga compromisso de um golpe ainda em preparo
+  ---
+  duration_ms: 38.2282
+  type: 'test'
+  ...
+# Subtest: memória de erro e de progresso é persistida sem mudar a reprodução posterior
+ok 54 - memória de erro e de progresso é persistida sem mudar a reprodução posterior
+  ---
+  duration_ms: 263.1412
+  type: 'test'
+  ...
+# Subtest: lâmina varre o corpo no impacto e não acerta antes do preparo
+ok 55 - lâmina varre o corpo no impacto e não acerta antes do preparo
+  ---
+  duration_ms: 138.4385
+  type: 'test'
+  ...
+# Subtest: lâmina acima, atrás ou bloqueada por geometria não aplica contato
+ok 56 - lâmina acima, atrás ou bloqueada por geometria não aplica contato
+  ---
+  duration_ms: 71.0319
+  type: 'test'
+  ...
+# Subtest: arma conserva comprimento durante preparo, golpe e recuperação
+ok 57 - arma conserva comprimento durante preparo, golpe e recuperação
+  ---
+  duration_ms: 1.4963
+  type: 'test'
+  ...
+# Subtest: transformação da arma segue o rumo do corpo em coordenadas do mundo
+ok 58 - transformação da arma segue o rumo do corpo em coordenadas do mundo
+  ---
+  duration_ms: 26.3698
+  type: 'test'
+  ...
+# Subtest: escudo protege de frente, perde bônus por trás e restaura a ficha
+ok 59 - escudo protege de frente, perde bônus por trás e restaura a ficha
+  ---
+  duration_ms: 28.6866
+  type: 'test'
+  ...
+# Subtest: feedback de impacto não duplica dano e impulso respeita a massa
+ok 60 - feedback de impacto não duplica dano e impulso respeita a massa
+  ---
+  duration_ms: 27.552
+  type: 'test'
+  ...
+# Subtest: fôlego baixo também interrompe circulação próxima até recuperar reserva
+ok 61 - fôlego baixo também interrompe circulação próxima até recuperar reserva
+  ---
+  duration_ms: 43.2002
+  type: 'test'
+  ...
+# Subtest: v05 preserva malha, rig e textura; manifesto corresponde ao GLB e à trajetória
+ok 62 - v05 preserva malha, rig e textura; manifesto corresponde ao GLB e à trajetória
+  ---
+  duration_ms: 34.3453
+  type: 'test'
+  ...
+1..62
+# tests 62
+# suites 0
+# pass 62
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 37927.8923

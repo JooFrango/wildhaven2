@@ -1,0 +1,41 @@
+{
+  "id": "hair_short_ponytail_v01",
+  "displayName": "Rabo de cavalo curto",
+  "category": "hair",
+  "occupiedSlots": [
+    "hair"
+  ],
+  "attachmentMode": "bone",
+  "attachmentBone": "Head",
+  "rigVersion": "hunter-masculino-1000v-v01",
+  "coordinateSpace": "Head-local (rest pose)",
+  "meshByLod": {
+    "lod0": "hair/short-ponytail-v01/hair_short_ponytail_v01.glb"
+  },
+  "materialSet": "hunter-hair-short-ponytail-v01",
+  "colorOptions": [
+    "dark-brown"
+  ],
+  "hiddenBodyRegions": [],
+  "compatibilityTags": [
+    "rig-head",
+    "hunter-male-base"
+  ],
+  "conflictingTags": [
+    "helmet-full-no-hair"
+  ],
+  "fallbackVariant": null,
+  "triangles": 560,
+  "verticesExported": 386,
+  "bytes": 31252,
+  "sha256": "a94b6847c8d02f02ac74192dc549b29f4114310dddf3c427876dc4b1a230b20c",
+  "textureSize": [
+    256,
+    256
+  ],
+  "animationClips": [],
+  "status": "blockout-review",
+  "approvedByUser": false,
+  "integratedInAlpha": false,
+  "geometryNotes": "Real 3D volumes, UV-only painted hair strands. One mesh/material; rigid head attachment."
+}

@@ -1,0 +1,282 @@
+{
+  "base": {
+    "commit": "13c54b715bbb248ed86085d1335f4e97aca10801",
+    "cenario": "jogador-espada",
+    "pve1": true,
+    "maxSegundos": 120,
+    "sementes": [
+      7,
+      17,
+      23,
+      31,
+      41,
+      53,
+      67,
+      79,
+      97,
+      101
+    ]
+  },
+  "execucoes": [
+    {
+      "semente": 7,
+      "tempoSeg": 77.5,
+      "desfecho": "criatura derrotada",
+      "golpes": 12,
+      "leves": 12,
+      "pesados": 0,
+      "acertos": 10,
+      "erros": 0,
+      "erroMotivos": [],
+      "contatos": 12,
+      "contatosNaJanela": 12,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 0,
+      "feridasHunter": 0,
+      "vidaHunter": 93.4,
+      "violacoes": 0
+    },
+    {
+      "semente": 17,
+      "tempoSeg": 105.75,
+      "desfecho": "criatura derrotada",
+      "golpes": 21,
+      "leves": 21,
+      "pesados": 0,
+      "acertos": 15,
+      "erros": 2,
+      "erroMotivos": [
+        [
+          "membro_nao_alcanca",
+          2
+        ]
+      ],
+      "contatos": 19,
+      "contatosNaJanela": 19,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 0,
+      "feridasHunter": 0,
+      "vidaHunter": 97.1,
+      "violacoes": 0
+    },
+    {
+      "semente": 23,
+      "tempoSeg": 104.85,
+      "desfecho": "criatura derrotada",
+      "golpes": 19,
+      "leves": 19,
+      "pesados": 0,
+      "acertos": 11,
+      "erros": 5,
+      "erroMotivos": [
+        [
+          "membro_nao_alcanca",
+          5
+        ]
+      ],
+      "contatos": 14,
+      "contatosNaJanela": 14,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 1,
+      "feridasHunter": 0,
+      "vidaHunter": 108.8,
+      "violacoes": 0
+    },
+    {
+      "semente": 31,
+      "tempoSeg": 101.4,
+      "desfecho": "criatura derrotada",
+      "golpes": 12,
+      "leves": 12,
+      "pesados": 0,
+      "acertos": 11,
+      "erros": 0,
+      "erroMotivos": [],
+      "contatos": 12,
+      "contatosNaJanela": 12,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 0,
+      "feridasHunter": 0,
+      "vidaHunter": 108.5,
+      "violacoes": 0
+    },
+    {
+      "semente": 41,
+      "tempoSeg": 76.6,
+      "desfecho": "criatura derrotada",
+      "golpes": 14,
+      "leves": 14,
+      "pesados": 0,
+      "acertos": 8,
+      "erros": 0,
+      "erroMotivos": [],
+      "contatos": 14,
+      "contatosNaJanela": 14,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 0,
+      "feridasHunter": 0,
+      "vidaHunter": 109.3,
+      "violacoes": 0
+    },
+    {
+      "semente": 53,
+      "tempoSeg": 89.3,
+      "desfecho": "criatura derrotada",
+      "golpes": 15,
+      "leves": 15,
+      "pesados": 0,
+      "acertos": 11,
+      "erros": 0,
+      "erroMotivos": [],
+      "contatos": 15,
+      "contatosNaJanela": 15,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 0,
+      "feridasHunter": 0,
+      "vidaHunter": 99,
+      "violacoes": 0
+    },
+    {
+      "semente": 67,
+      "tempoSeg": 76.05,
+      "desfecho": "criatura derrotada",
+      "golpes": 19,
+      "leves": 19,
+      "pesados": 0,
+      "acertos": 12,
+      "erros": 2,
+      "erroMotivos": [
+        [
+          "membro_nao_alcanca",
+          2
+        ]
+      ],
+      "contatos": 17,
+      "contatosNaJanela": 17,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 0,
+      "feridasHunter": 0,
+      "vidaHunter": 102.4,
+      "violacoes": 0
+    },
+    {
+      "semente": 79,
+      "tempoSeg": 83.65,
+      "desfecho": "criatura derrotada",
+      "golpes": 17,
+      "leves": 17,
+      "pesados": 0,
+      "acertos": 11,
+      "erros": 3,
+      "erroMotivos": [
+        [
+          "membro_nao_alcanca",
+          3
+        ]
+      ],
+      "contatos": 14,
+      "contatosNaJanela": 14,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 2,
+      "feridasHunter": 1,
+      "vidaHunter": 60.2,
+      "violacoes": 0
+    },
+    {
+      "semente": 97,
+      "tempoSeg": 65.35,
+      "desfecho": "criatura derrotada",
+      "golpes": 12,
+      "leves": 12,
+      "pesados": 0,
+      "acertos": 9,
+      "erros": 1,
+      "erroMotivos": [
+        [
+          "membro_nao_alcanca",
+          1
+        ]
+      ],
+      "contatos": 11,
+      "contatosNaJanela": 11,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 1,
+      "feridasHunter": 1,
+      "vidaHunter": 66.6,
+      "violacoes": 0
+    },
+    {
+      "semente": 101,
+      "tempoSeg": 53,
+      "desfecho": "criatura derrotada",
+      "golpes": 12,
+      "leves": 12,
+      "pesados": 0,
+      "acertos": 9,
+      "erros": 1,
+      "erroMotivos": [
+        [
+          "membro_nao_alcanca",
+          1
+        ]
+      ],
+      "contatos": 11,
+      "contatosNaJanela": 11,
+      "aparos": 0,
+      "esquivas": 0,
+      "bloqueios": 0,
+      "feridasHunter": 0,
+      "vidaHunter": 100.5,
+      "violacoes": 0
+    }
+  ],
+  "medias": {
+    "tempoSeg": 83.345,
+    "golpes": 15.3,
+    "acertos": 10.7,
+    "erros": 1.4,
+    "aparos": 0,
+    "esquivas": 0,
+    "vidaHunter": 94.58000000000001
+  },
+  "totais": {
+    "golpes": 153,
+    "leves": 153,
+    "pesados": 0,
+    "acertos": 107,
+    "erros": 14,
+    "aparos": 0,
+    "esquivas": 0,
+    "bloqueios": 4,
+    "feridasHunter": 2,
+    "violacoes": 0,
+    "contatos": 139,
+    "contatosNaJanela": 139
+  },
+  "metadados": {
+    "fonte": "GitHub Actions — Node 22 — labs/hunters/scripts/medir-pve1.mjs",
+    "run_url": "https://github.com/carioca1111/wildhaven-new/actions/runs/44552191429",
+    "run_id": 44552191429,
+    "branch_audit": "audit/hunter-pve-cacada-tatica-10-20261119",
+    "base_branch": "feat/hunter-pve-v01-ia",
+    "estado_etapas": "Simulacao e resumo OK; upload de artifact falhou por quota de armazenamento do GitHub Actions",
+    "tipo": "10 simulacoes de estado, sem captura grafica",
+    "configuracao": "Hunter Arvo com espada contra Varrisco, cenario jogador-espada, PvE v01 ligado, tempo maximo de 120s"
+  },
+  "metricasDerivadas": {
+    "vitoriasHunter": 10,
+    "medianaTempoSeg": 80.575,
+    "acertosPorGolpe": 0.6993464052287581,
+    "contatoNaJanelaAtiva": 1,
+    "combatesComHunterFerido": 2
+  }
+}

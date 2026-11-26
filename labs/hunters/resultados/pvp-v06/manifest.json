@@ -1,0 +1,91 @@
+{
+  "status": "rendered-from-real-glb-pending-art-director-review",
+  "sourceGLB": "labs/hunters/assets/hunter-pvp-v06/hunter_pvp_v06.glb",
+  "sourceGLBSha256": "de7a9e554013fbef13149285e166f4eef10b48e398887efee2ba7b5d53b6f2f4",
+  "generatedAt": "2026-11-17T12:31:27.916Z",
+  "renderer": "Three.js WebGL/Chromium SwiftShader; sword is a temporary visualization proxy attached to RightHand",
+  "count": 10,
+  "gifs": [
+    {
+      "name": "pvp_sword_01_ready",
+      "file": "pvp_sword_01_ready.gif",
+      "bytes": 100326,
+      "frames": 14,
+      "sha256": "2552bfc17401508954a943ff4847cc3e515cda1979ddc373e041f8507b01a0ab",
+      "screenshot": "pvp_sword_01_ready.png"
+    },
+    {
+      "name": "pvp_sword_02_slash_right",
+      "file": "pvp_sword_02_slash_right.gif",
+      "bytes": 77824,
+      "frames": 11,
+      "sha256": "69c2c8dd8512f41906eaa75ebf021922ba066f5d9759b1e2016c398ca8d3a0f3",
+      "screenshot": "pvp_sword_02_slash_right.png"
+    },
+    {
+      "name": "pvp_sword_03_slash_left",
+      "file": "pvp_sword_03_slash_left.gif",
+      "bytes": 78557,
+      "frames": 11,
+      "sha256": "6f024d73adee8b4caf79d2ab5167458c9baacc0491b2052c381892403054781d",
+      "screenshot": "pvp_sword_03_slash_left.png"
+    },
+    {
+      "name": "pvp_sword_04_overhead",
+      "file": "pvp_sword_04_overhead.gif",
+      "bytes": 104497,
+      "frames": 15,
+      "sha256": "fdc2ca646329564548e7f33dd14280e5f64d4c70cb253e14fce1e31e4ba8bdf3",
+      "screenshot": "pvp_sword_04_overhead.png"
+    },
+    {
+      "name": "pvp_sword_05_thrust",
+      "file": "pvp_sword_05_thrust.gif",
+      "bytes": 77396,
+      "frames": 11,
+      "sha256": "fb5c00c63d6ae568ab15021d5dac940f60bbe2246de0ccfe0ed7c52d4288467f",
+      "screenshot": "pvp_sword_05_thrust.png"
+    },
+    {
+      "name": "pvp_sword_06_guard_high",
+      "file": "pvp_sword_06_guard_high.gif",
+      "bytes": 86686,
+      "frames": 12,
+      "sha256": "b56c89074bd12749209efae2c71dfb58b7796f877708dae7c7a39387161c9c18",
+      "screenshot": "pvp_sword_06_guard_high.png"
+    },
+    {
+      "name": "pvp_sword_07_parry",
+      "file": "pvp_sword_07_parry.gif",
+      "bytes": 64024,
+      "frames": 9,
+      "sha256": "576dd0eac145ad235e4d9eee5aceba5b338188d1075824f60265b14b400c3c0e",
+      "screenshot": "pvp_sword_07_parry.png"
+    },
+    {
+      "name": "pvp_sword_08_dodge",
+      "file": "pvp_sword_08_dodge.gif",
+      "bytes": 77151,
+      "frames": 11,
+      "sha256": "15cc66a310e9fe7c403bb05aafee6937628718150218370de097ee137ee74b6c",
+      "screenshot": "pvp_sword_08_dodge.png"
+    },
+    {
+      "name": "pvp_sword_09_take_hit",
+      "file": "pvp_sword_09_take_hit.gif",
+      "bytes": 67209,
+      "frames": 9,
+      "sha256": "71114941d071b32ea9dc472f38144ab44719fd29172f601791acd32b9b41e579",
+      "screenshot": "pvp_sword_09_take_hit.png"
+    },
+    {
+      "name": "pvp_sword_10_kneel_injured",
+      "file": "pvp_sword_10_kneel_injured.gif",
+      "bytes": 117653,
+      "frames": 18,
+      "sha256": "809f5e39492abc6993564a2c93a2fbfe4987f020988bdddf5ffc831621325a99",
+      "screenshot": "pvp_sword_10_kneel_injured.png"
+    }
+  ],
+  "errors": []
+}

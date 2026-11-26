@@ -1,0 +1,321 @@
+{
+ "gates": {
+  "joelhoHiperextensaoGraus": 5,
+  "quadrilExtensaoGraus": 30,
+  "triangulosRuins": 90,
+  "triangulosRuinsCoxa": 20,
+  "bracoCabecaM": 0.05,
+  "costuraGraus": 0.5,
+  "slideMmPorQuadro": 2.0,
+  "folgaLaminaM": 0.02,
+  "punhoCabecaM": 0.16,
+  "cotoveloNoContatoGraus": 140,
+  "pontaAcimaDoChaoM": 0.0,
+  "punho": {
+   "extensao": 60,
+   "flexao": 70,
+   "radial": 20,
+   "ulnar": 35
+  }
+ },
+ "clips": {
+  "pve2_b_sword_roll_left": {
+   "frames": 54,
+   "contato": null,
+   "costuraEntrada": 0.131,
+   "costuraSaida": 0.131,
+   "slideMmPorQuadro": 0.03,
+   "folgaLaminaM": 0.192,
+   "punhoCabecaM": 0.455,
+   "pontaAcimaDoChaoM": -0.698,
+   "cotoveloNoContatoGraus": null,
+   "joelhoMinGraus": -0.0,
+   "quadrilExtensaoMaxGraus": -20.2,
+   "triangulosRuins": 79,
+   "triangulosRuinsCoxa": 20,
+   "bracoCabecaM": 0.122,
+   "pior": {
+    "deslizamento": [
+     4,
+     "Left"
+    ],
+    "folga": 41,
+    "ponta": 12
+   },
+   "punho": {
+    "ext": [
+     -0.0,
+     0.0
+    ],
+    "rad": [
+     0,
+     12.0
+    ],
+    "tw": [
+     -0.0,
+     25.0
+    ]
+   },
+   "avancoM": 1.3,
+   "excecoes": [
+    "folgaLaminaM",
+    "pontaAcimaDoChaoM"
+   ],
+   "violacoes": []
+  },
+  "pve2_b_sword_roll_right": {
+   "frames": 54,
+   "contato": null,
+   "costuraEntrada": 0.131,
+   "costuraSaida": 0.131,
+   "slideMmPorQuadro": 0.03,
+   "folgaLaminaM": 0.192,
+   "punhoCabecaM": 0.455,
+   "pontaAcimaDoChaoM": -0.698,
+   "cotoveloNoContatoGraus": null,
+   "joelhoMinGraus": 35.7,
+   "quadrilExtensaoMaxGraus": -20.2,
+   "triangulosRuins": 87,
+   "triangulosRuinsCoxa": 16,
+   "bracoCabecaM": 0.122,
+   "pior": {
+    "deslizamento": [
+     34,
+     "Left"
+    ],
+    "folga": 41,
+    "ponta": 12
+   },
+   "punho": {
+    "ext": [
+     -0.0,
+     0.0
+    ],
+    "rad": [
+     0,
+     12.0
+    ],
+    "tw": [
+     -0.0,
+     25.0
+    ]
+   },
+   "avancoM": -1.3,
+   "excecoes": [
+    "folgaLaminaM",
+    "pontaAcimaDoChaoM"
+   ],
+   "violacoes": []
+  },
+  "pve2_c_sword_charge_loop": {
+   "frames": 60,
+   "contato": null,
+   "costuraEntrada": null,
+   "costuraSaida": 0.0,
+   "slideMmPorQuadro": 0.03,
+   "folgaLaminaM": 0.055,
+   "punhoCabecaM": 0.291,
+   "pontaAcimaDoChaoM": 1.091,
+   "cotoveloNoContatoGraus": null,
+   "joelhoMinGraus": 42.8,
+   "quadrilExtensaoMaxGraus": -21.4,
+   "triangulosRuins": 40,
+   "triangulosRuinsCoxa": 4,
+   "bracoCabecaM": 0.07,
+   "pior": {
+    "deslizamento": [
+     32,
+     "Right"
+    ],
+    "folga": 1,
+    "ponta": 19
+   },
+   "punho": {
+    "ext": [
+     -10.1,
+     0.0
+    ],
+    "rad": [
+     0,
+     14.8
+    ],
+    "tw": [
+     -86.3,
+     10.0
+    ]
+   },
+   "avancoM": 0,
+   "excecoes": [],
+   "violacoes": []
+  },
+  "pve2_c_sword_charge_release": {
+   "frames": 72,
+   "contato": 0.15,
+   "costuraEntrada": null,
+   "costuraSaida": 0.131,
+   "slideMmPorQuadro": 0.04,
+   "folgaLaminaM": 0.055,
+   "punhoCabecaM": 0.291,
+   "pontaAcimaDoChaoM": 0.017,
+   "cotoveloNoContatoGraus": 140.3,
+   "joelhoMinGraus": 19.2,
+   "quadrilExtensaoMaxGraus": -0.4,
+   "triangulosRuins": 77,
+   "triangulosRuinsCoxa": 13,
+   "bracoCabecaM": 0.07,
+   "pior": {
+    "deslizamento": [
+     33,
+     "Left"
+    ],
+    "folga": 0,
+    "ponta": 19
+   },
+   "punho": {
+    "ext": [
+     -33.8,
+     10.2
+    ],
+    "rad": [
+     -27.1,
+     14.8
+    ],
+    "tw": [
+     -86.3,
+     93.7
+    ]
+   },
+   "avancoM": 0.51,
+   "excecoes": [],
+   "violacoes": []
+  },
+  "pve2_c_sword_combo_1": {
+   "frames": 48,
+   "contato": 0.3,
+   "costuraEntrada": 0.131,
+   "costuraSaida": 0.131,
+   "slideMmPorQuadro": 0.03,
+   "folgaLaminaM": 0.021,
+   "punhoCabecaM": 0.374,
+   "pontaAcimaDoChaoM": 0.134,
+   "cotoveloNoContatoGraus": 143.5,
+   "joelhoMinGraus": 1.6,
+   "quadrilExtensaoMaxGraus": 14.8,
+   "triangulosRuins": 73,
+   "triangulosRuinsCoxa": 6,
+   "bracoCabecaM": 0.053,
+   "pior": {
+    "deslizamento": [
+     33,
+     "Left"
+    ],
+    "folga": 7,
+    "ponta": 25
+   },
+   "punho": {
+    "ext": [
+     -51.8,
+     11.0
+    ],
+    "rad": [
+     -29.7,
+     12.0
+    ],
+    "tw": [
+     -20.2,
+     99.2
+    ]
+   },
+   "avancoM": 0.13,
+   "excecoes": [],
+   "violacoes": []
+  },
+  "pve2_c_sword_combo_2": {
+   "frames": 51,
+   "contato": 0.3333,
+   "costuraEntrada": 0.131,
+   "costuraSaida": 0.131,
+   "slideMmPorQuadro": 0.03,
+   "folgaLaminaM": 0.105,
+   "punhoCabecaM": 0.423,
+   "pontaAcimaDoChaoM": 0.915,
+   "cotoveloNoContatoGraus": 157.9,
+   "joelhoMinGraus": 32.7,
+   "quadrilExtensaoMaxGraus": -12.7,
+   "triangulosRuins": 63,
+   "triangulosRuinsCoxa": 5,
+   "bracoCabecaM": 0.097,
+   "pior": {
+    "deslizamento": [
+     23,
+     "Left"
+    ],
+    "folga": 31,
+    "ponta": 22
+   },
+   "punho": {
+    "ext": [
+     -1.5,
+     22.1
+    ],
+    "rad": [
+     -30.0,
+     14.4
+    ],
+    "tw": [
+     -85.0,
+     85.0
+    ]
+   },
+   "avancoM": 0.08,
+   "excecoes": [],
+   "violacoes": []
+  },
+  "pve2_c_sword_combo_3": {
+   "frames": 66,
+   "contato": 0.3667,
+   "costuraEntrada": 0.131,
+   "costuraSaida": 0.131,
+   "slideMmPorQuadro": 0.02,
+   "folgaLaminaM": 0.022,
+   "punhoCabecaM": 0.504,
+   "pontaAcimaDoChaoM": 0.468,
+   "cotoveloNoContatoGraus": 157.1,
+   "joelhoMinGraus": 10.1,
+   "quadrilExtensaoMaxGraus": 13.4,
+   "triangulosRuins": 57,
+   "triangulosRuinsCoxa": 9,
+   "bracoCabecaM": 0.104,
+   "pior": {
+    "deslizamento": [
+     61,
+     "Left"
+    ],
+    "folga": 9,
+    "ponta": 10
+   },
+   "punho": {
+    "ext": [
+     -11.7,
+     42.7
+    ],
+    "rad": [
+     -30.0,
+     12.0
+    ],
+    "tw": [
+     -96.4,
+     87.7
+    ]
+   },
+   "avancoM": 0.43,
+   "excecoes": [],
+   "violacoes": []
+  }
+ },
+ "violacoes": [],
+ "glb": {
+  "bytes": 923844,
+  "sha256": "941c70d8941194e5d1bd4caf7d07cde586da15780cd6c0ca1bb9a74ce8deb3c0"
+ }
+}

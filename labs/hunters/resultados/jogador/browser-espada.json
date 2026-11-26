@@ -1,0 +1,270 @@
+{
+  "report": {
+    "outcome": null,
+    "seconds": 120,
+    "clips": [
+      "hunter_walk",
+      "hunter_jog",
+      "sword_light",
+      "sword_follow",
+      "combat_step_back",
+      "combat_step_right",
+      "combat_dodge",
+      "hunter_run",
+      "guard_sword",
+      "recover_sword",
+      "sword_heavy_high",
+      "combat_step_left",
+      "sword_light_low",
+      "sword_follow_low"
+    ],
+    "violations": [],
+    "frameMs": 226.89358490548045,
+    "events": 221,
+    "state": [
+      {
+        "id": "hunter-A",
+        "nome": "Arvo",
+        "equipe": "azul",
+        "situacao": "lutando",
+        "postura": "neutra",
+        "controle": "ia",
+        "hp": 97.1,
+        "hpMax": 97.1,
+        "energia": 37.1,
+        "folego": 26.7,
+        "dor": 0,
+        "equipamento": {
+          "arma": "espada",
+          "escudo": null,
+          "armadura": "leve"
+        },
+        "alvo": "varrisco-real",
+        "estado": "recuperando",
+        "motivo": "retoma fôlego antes de perseguir; conserva reserva de defesa",
+        "x": 15.76,
+        "y": 83.45,
+        "golpesDados": 23,
+        "golpesRecebidos": 0,
+        "combateJogador": {
+          "habilidade": 0.85,
+          "parte": "cabeca",
+          "sequencia": 0,
+          "janela": 1.5590000000000002,
+          "conhecimento": 0.9
+        },
+        "ferimentos": []
+      }
+    ],
+    "presentation": {
+      "events": 221,
+      "impactos": 7,
+      "sons": 235,
+      "vozes": 235,
+      "passos": 159,
+      "respiracoes": 25,
+      "cameraFrames": 541,
+      "audio": "ready",
+      "voices": 0,
+      "particles": 0,
+      "trails": 0,
+      "cinematica": true,
+      "lastCues": [
+        {
+          "kind": "respiracao",
+          "intensity": 0.06332291365832037,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "respiracao",
+          "intensity": 0.05287291365832049,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "passo",
+          "intensity": 0.1,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "passo",
+          "intensity": 0.1,
+          "audibility": 1,
+          "heavy": true
+        },
+        {
+          "kind": "passo",
+          "intensity": 0.1,
+          "audibility": 1,
+          "heavy": true
+        },
+        {
+          "kind": "passo",
+          "intensity": 0.1,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "respiracao",
+          "intensity": 0.056025471062318095,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.34,
+          "audibility": 1,
+          "heavy": true
+        },
+        {
+          "kind": "ar",
+          "intensity": 0.3,
+          "audibility": 1,
+          "heavy": true
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.16,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "roupa",
+          "intensity": 0.1,
+          "audibility": 0.9137978479595041,
+          "heavy": false
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.16,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "ar",
+          "intensity": 0.13,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "respiracao",
+          "intensity": 0.0662097571456139,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "respiracao",
+          "intensity": 0.05670975714561402,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.34,
+          "audibility": 1,
+          "heavy": true
+        },
+        {
+          "kind": "respiracao",
+          "intensity": 0.05694270516857332,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "ar",
+          "intensity": 0.3,
+          "audibility": 1,
+          "heavy": true
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.16,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "ar",
+          "intensity": 0.13,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.16,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "ar",
+          "intensity": 0.13,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.16,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "ar",
+          "intensity": 0.13,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "respiracao",
+          "intensity": 0.06387480892061238,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.16,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "ar",
+          "intensity": 0.13,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "passo",
+          "intensity": 0.1,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "esforco",
+          "intensity": 0.16,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "ar",
+          "intensity": 0.13,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "respiracao",
+          "intensity": 0.06629840174534106,
+          "audibility": 1,
+          "heavy": false
+        },
+        {
+          "kind": "respiracao",
+          "intensity": 0.05691715174534117,
+          "audibility": 1,
+          "heavy": false
+        }
+      ]
+    },
+    "audioTracks": 1
+  },
+  "errors": []
+}

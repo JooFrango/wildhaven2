@@ -1,0 +1,132 @@
+{
+ "semente": 1,
+ "segundos": 60,
+ "linhas": [
+  {
+   "hunters": 1,
+   "passos": 600,
+   "decisao": true,
+   "msPassoP50": 0.012,
+   "msPassoP95": 0.036,
+   "msPassoP99": 0.152,
+   "msPassoPior": 15.714,
+   "msPorHunterSeg": 0.4385,
+   "fatorTempoReal": 2280.5,
+   "memoriaMB": 20.5,
+   "vivos": 1,
+   "hash": "5df4e03e",
+   "resultado": "em andamento",
+   "invariantes": 0,
+   "eventos": {
+    "ataques": 0,
+    "ferimentos": 0
+   },
+   "msSemDecisaoP50": 0.01
+  },
+  {
+   "hunters": 2,
+   "passos": 600,
+   "decisao": true,
+   "msPassoP50": 0.029,
+   "msPassoP95": 0.141,
+   "msPassoP99": 0.444,
+   "msPassoPior": 4.536,
+   "msPorHunterSeg": 0.2976,
+   "fatorTempoReal": 1680.3,
+   "memoriaMB": 22.6,
+   "vivos": 2,
+   "hash": "4fe260f8",
+   "resultado": "adversários fora de combate",
+   "invariantes": 0,
+   "eventos": {
+    "ataques": 5,
+    "ferimentos": 4
+   },
+   "msSemDecisaoP50": 0.024
+  },
+  {
+   "hunters": 5,
+   "passos": 600,
+   "decisao": true,
+   "msPassoP50": 0.072,
+   "msPassoP95": 0.231,
+   "msPassoP99": 0.368,
+   "msPassoPior": 8.889,
+   "msPorHunterSeg": 0.2389,
+   "fatorTempoReal": 837.2,
+   "memoriaMB": 22.6,
+   "vivos": 5,
+   "hash": "a0e58c63",
+   "resultado": "adversários fora de combate",
+   "invariantes": 0,
+   "eventos": {
+    "ataques": 57,
+    "ferimentos": 19
+   },
+   "msSemDecisaoP50": 0.065
+  },
+  {
+   "hunters": 10,
+   "passos": 600,
+   "decisao": true,
+   "msPassoP50": 0.197,
+   "msPassoP95": 0.502,
+   "msPassoP99": 0.73,
+   "msPassoPior": 2.329,
+   "msPorHunterSeg": 0.2622,
+   "fatorTempoReal": 381.3,
+   "memoriaMB": 55.4,
+   "vivos": 10,
+   "hash": "679febfa",
+   "resultado": "adversários fora de combate",
+   "invariantes": 0,
+   "eventos": {
+    "ataques": 116,
+    "ferimentos": 50
+   },
+   "msSemDecisaoP50": 0.254
+  },
+  {
+   "hunters": 20,
+   "passos": 600,
+   "decisao": true,
+   "msPassoP50": 0.715,
+   "msPassoP95": 1.293,
+   "msPassoP99": 1.778,
+   "msPassoPior": 2.741,
+   "msPorHunterSeg": 0.3826,
+   "fatorTempoReal": 130.7,
+   "memoriaMB": 24.6,
+   "vivos": 20,
+   "hash": "0c0a5ae1",
+   "resultado": "adversários fora de combate",
+   "invariantes": 0,
+   "eventos": {
+    "ataques": 301,
+    "ferimentos": 114
+   },
+   "msSemDecisaoP50": 1.004
+  },
+  {
+   "hunters": 50,
+   "passos": 600,
+   "decisao": true,
+   "msPassoP50": 13.86,
+   "msPassoP95": 24.036,
+   "msPassoP99": 26.547,
+   "msPassoPior": 41.942,
+   "msPorHunterSeg": 2.8868,
+   "fatorTempoReal": 6.9,
+   "memoriaMB": 49.6,
+   "vivos": 50,
+   "hash": "61de84c5",
+   "resultado": "adversários fora de combate",
+   "invariantes": 0,
+   "eventos": {
+    "ataques": 744,
+    "ferimentos": 289
+   },
+   "msSemDecisaoP50": 18.343
+  }
+ ]
+}

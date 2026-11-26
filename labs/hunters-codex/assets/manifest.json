@@ -1,0 +1,40 @@
+{
+  "source": {
+    "repo": "carioca1111/wildhaven",
+    "pr": 81,
+    "commit": "f6c6eff2be765127098938f5070fc80328cdef5b"
+  },
+  "assets": [
+    {
+      "file": "hunter_masculino_1000tri_v02.glb",
+      "bytes": 266828,
+      "sha256": "b1d0074ec3bf5dbefbab003adeb2ab92b65702d97088101f1e5e62d2dc09c930",
+      "triangles": 1000,
+      "bones": 19,
+      "skins": 1,
+      "clips": [
+        "Running",
+        "Walking"
+      ]
+    },
+    {
+      "file": "hunter_basecolor_v02.png",
+      "bytes": 175393,
+      "sha256": "3eaaf435c67d5d93a209ec69cb51ea176a8a9a9303a91bb61a249ce18cad4994"
+    },
+    {
+      "file": "hex52-crop.glb",
+      "bytes": 47716,
+      "sha256": "5c50945572fbb2cd50655726a2a811b58e022a4de51dbf907196bfe8d242aff8",
+      "triangles": 367,
+      "bones": 0,
+      "skins": 0,
+      "clips": []
+    }
+  ],
+  "referenceComparison": {
+    "suppliedThisTurn": "No new binary attachment: filenames in the mission refer to existing v02",
+    "previousLocalRevision": "Matches GLB and PNG recovered from PR81 branch",
+    "hunterWorkshopBase": "Preserved in original location; not substituted for v02"
+  }
+}

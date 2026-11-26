@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven — Hunter Lab</title>
+<style>
+  :root { color-scheme: dark; --fundo: #14181b; --painel: #1d2328; --linha: #2c343a; --texto: #dfe6ea; --fraco: #93a1aa;
+          --azul: #4e9bd6; --verde: #63b86a; --perigo: #d2544c; --ok: #6fbf73; --alerta: #d9a441; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 13px/1.45 system-ui, sans-serif; background: var(--fundo); color: var(--texto);
+         display: grid; grid-template-columns: 1fr 360px; height: 100vh; overflow: hidden; }
+  @media (max-width: 900px) { body { grid-template-columns: 1fr; grid-template-rows: 55vh 45vh; } }
+  #palco { position: relative; min-width: 0; }
+  #palco canvas { display: block; width: 100%; height: 100%; }
+  #hud { position: absolute; inset: 8px auto auto 8px; background: #0009; padding: 6px 9px; border-radius: 6px;
+         font: 11px/1.5 ui-monospace, monospace; pointer-events: none; white-space: pre; }
+  #aviso { position: absolute; inset: auto auto 8px 8px; background: #0009; padding: 6px 9px; border-radius: 6px; font-size: 12px; }
+  #aviso.erro { background: #5c1f1c; color: #ffd9d6; }
+  #lado { overflow-y: auto; border-left: 1px solid var(--linha); background: var(--painel); padding: 10px; }
+  h1 { font-size: 15px; margin: 0 0 2px; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--fraco);
+       margin: 14px 0 6px; border-bottom: 1px solid var(--linha); padding-bottom: 4px; }
+  .sub { color: var(--fraco); font-size: 11px; margin: 0 0 6px; }
+  .linha { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; flex-wrap: wrap; }
+  .linha > label { color: var(--fraco); min-width: 68px; }
+  button { background: #2a3238; color: var(--texto); border: 1px solid var(--linha); border-radius: 5px;
+           padding: 5px 9px; cursor: pointer; font-size: 12px; }
+  button:hover { background: #343d44; }
+  button.ativo { background: var(--azul); border-color: var(--azul); color: #06121c; }
+  select, input { background: #11161a; color: var(--texto); border: 1px solid var(--linha); border-radius: 5px; padding: 4px 6px; font-size: 12px; }
+  select { max-width: 100%; }
+  input[type=number] { width: 72px; }
+  input[type=range] { width: 120px; }
+  .ficha { border: 1px solid var(--linha); border-radius: 6px; padding: 7px; margin-bottom: 7px; background: #171c20; cursor: pointer; }
+  .ficha.sel { border-color: var(--azul); }
+  .ficha .topo { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
+  .ficha .nome { font-weight: 600; }
+  .ficha .eq { color: var(--fraco); font-size: 11px; }
+  .barra { height: 6px; border-radius: 3px; background: #2a3238; overflow: hidden; margin-top: 4px; }
+  .barra > i { display: block; height: 100%; }
+  .tag { display: inline-block; padding: 1px 5px; border-radius: 3px; font-size: 10px; background: #2a3238; color: var(--fraco); }
+  .tag.lutando { background: #3b2a22; color: var(--alerta); }
+  .tag.rendido, .tag.incapacitado, .tag.morto { background: #3b2220; color: var(--perigo); }
+  table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  td { padding: 1px 0; vertical-align: top; }
+  td:first-child { color: var(--fraco); padding-right: 6px; white-space: nowrap; }
+  #eventos { font: 11px/1.4 ui-monospace, monospace; max-height: 180px; overflow-y: auto; background: #11161a;
+             border: 1px solid var(--linha); border-radius: 5px; padding: 6px; }
+  #eventos div { white-space: pre-wrap; }
+  .nota { color: var(--fraco); font-size: 11px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div id="palco"><div id="hud"></div><div id="aviso">Carregando…</div></div>
+<aside id="lado">
+  <h1>Hunter Lab</h1>
+  <p class="sub">Combate, PvP e encontros com criaturas sobre o núcleo do laboratório de IA. Clipes esqueléticos atuais, decisões por abertura e golpes por região do corpo.</p>
+
+  <h2>Simulação</h2>
+  <div class="linha">
+    <label for="cenario">Cenário</label>
+    <select id="cenario"></select>
+  </div>
+  <div class="linha">
+    <label for="semente">Semente</label>
+    <input type="number" id="semente" value="1" min="0" step="1">
+    <button id="reiniciar">Reiniciar</button>
+  </div>
+  <div class="linha">
+    <button id="rodar">Iniciar</button>
+    <button id="passo">Passo</button>
+    <label for="vel">Velocidade</label>
+    <input type="range" id="vel" min="0.25" max="8" step="0.25" value="1">
+    <span id="velTxt">1,0×</span>
+  </div>
+  <div class="linha">
+    <button id="ia" class="ativo">IA ligada</button>
+    <button id="camera">Câmera livre</button>
+    <button id="marcadores" class="ativo">Marcadores</button>
+  </div>
+
+  <h2>Apresentação</h2><div class="linha"><label><input type="checkbox" id="sonsCombate"> Som</label><label><input type="checkbox" id="cinematicaCombate" checked> Câmera cinematográfica</label><label><input type="checkbox" id="efeitosCombate" checked> Efeitos</label></div>
+  <h2>Personagens</h2>
+  <div id="fichas"></div>
+  <div class="linha">
+    <label for="arma">Arma</label>
+    <select id="arma"></select>
+    <label for="armadura">Armadura</label>
+    <select id="armadura"></select>
+  </div>
+  <div class="linha">
+    <label for="escudo">Escudo</label>
+    <select id="escudo"><option value="">nenhum</option><option value="escudo">escudo</option></select>
+    <label for="equipe">Equipe</label>
+    <select id="equipe"></select>
+  </div>
+  <div class="linha">
+    <label for="agressividade">Agressivo</label>
+    <input type="range" id="agressividade" min="0" max="1" step="0.05" value="0.5">
+    <label for="cautela">Cauteloso</label>
+    <input type="range" id="cautela" min="0" max="1" step="0.05" value="0.5">
+  </div>
+  <div class="linha">
+    <button id="adicionar">Adicionar Hunter</button>
+    <button id="remover">Remover selecionado</button>
+    <button id="manual">Controle manual</button>
+  </div>
+  <p class="nota">Manual: W/S/A/D anda, Shift corre, J ataca, K bloqueia. O Hunter continua decidindo sozinho
+    quando o corpo não aguenta — recuo e rendição não são do jogador.</p>
+
+  <h2>Editar Hunter selecionado</h2>
+  <div class="linha"><label>Habilidade</label><input id="habilidadeJogador" type="number" min="0" max="1" step=".05" value=".65"></div><p class="nota">Habilidade controla leitura e reação. Agressividade e cautela controlam o risco aceito.</p>
+  <p class="nota">Arma e armadura usam os seletores acima. Alterações entram no próximo passo.</p>
+  <div class="linha"><label>Agressividade</label><input id="agressividadeTatica" type="number" min="0" max="1" step=".05" value=".65"><label>Cautela</label><input id="cautelaTatica" type="number" min="0" max="1" step=".05" value=".4"></div>
+  <div class="linha"><label>Disciplina</label><input id="disciplinaTatica" type="number" min="0" max="1" step=".05" value=".6"></div>
+  <div class="linha"><label>Força</label><input id="forcaTatica" type="number" min=".5" max="1.5" step=".1" value="1"><label>Velocidade</label><input id="velocidadeTatica" type="number" min=".5" max="1.5" step=".1" value="1"></div>
+  <div class="linha"><label>Resistência</label><input id="resistenciaTatica" type="number" min=".5" max="1.5" step=".1" value="1"><label>Sentidos</label><input id="sentidosTatica" type="number" min=".5" max="1.5" step=".1" value="1"></div>
+  <div class="linha"><button id="aplicarTatico">Aplicar ao selecionado</button><button id="rendirTatico">Render-se</button><button id="estabilizarTatico">Estancar sangramento</button></div>
+  <p class="nota">Manual: H ataque pesado; Espaço esquiva física. Sem cura instantânea.</p>
+  <h2>Salvar e restaurar</h2><button id="exportarTatico">Baixar estado JSON</button><input type="file" id="importarTatico" accept="application/json">
+  <p><a href="../combate-tatico/index.html">Comparar quatro confrontos antes/depois</a></p>
+  <p><a href="viewer/index.html">Ver caminhada, corrida e clipes atuais</a> · <a href="resultados/jogador/index.html">Ver vídeos e resultados desta atualização</a></p>
+  <h2 id="tituloPve2" hidden>Animações do rig v13 (PvE v02)</h2>
+  <div class="linha" id="painelPve2" hidden>
+    <label for="clipePve2">Clipe</label>
+    <select id="clipePve2"></select>
+    <button id="tocarPve2">Tocar</button>
+    <button id="soltarPve2">Soltar</button>
+  </div>
+  <p class="nota" id="notaPve2" hidden>O clipe escolhido toca em laço no Hunter selecionado, no relógio real e sem
+    passar pela decisão da IA (funciona também com a simulação pausada). <em>Soltar</em> devolve a escolha à simulação.
+    Controle manual no modo PvE v02: W/S/A/D anda, Shift corre (pegada reversa), J golpeia e encadeia o combo 1 → 2 → 3,
+    H carrega e libera o golpe pesado, Espaço rola 1,3 m (A ou D escolhem o lado), K sobe a guarda.</p>
+  <h2>Diagnóstico</h2>
+  <table id="diag"></table>
+  <div id="eventos"></div>
+  <p class="nota" id="limites"></p>
+</aside>
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/" } }</script>
+<script>window.WILDHAVEN_MODELOS = window.WILDHAVEN_MODELOS ?? '/repo/';</script>
+<script type="module" src="src/web3d/app-hunters.js?revision=epic1"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Wildhaven — Hunter Base v1 / Visualizador GLB</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:#1e2025;color:#eee;font:14px system-ui}
+header{display:flex;align-items:center;flex-wrap:wrap;gap:12px;padding:12px 18px;background:#2c2e35}
+b{font-size:17px}input,select{background:#383c45;color:#eee;padding:7px;max-width:100%;border:1px solid #626670;border-radius:6px}
+#canvas{height:calc(100vh - 86px);min-height:360px}#status{color:#aab5b4;font-size:12px}
+label{display:flex;align-items:center;gap:6px}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head><body><header><b>WILDHAVEN · HUNTER BASE V1</b>
+<label>Arquivo GLB <input type="file" id="load" accept=".glb,model/gltf-binary"/></label>
+<label>Clipe <select id="clip" disabled><option>Abra um GLB</option></select></label>
+<label><input type="checkbox" id="bones"/> Exibir ossos</label><span id="status">Visualização local; arquivo não é enviado à internet</span>
+</header><div id="canvas"></div>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const el=document.getElementById('canvas');const scene=new THREE.Scene();scene.background=new THREE.Color('#24262b');
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(el.clientWidth,el.clientHeight);el.appendChild(renderer.domElement);
+scene.add(new THREE.HemisphereLight(0xffffff,0x665d53,2.0));
+const light=new THREE.DirectionalLight(0xffffff,2.2);light.position.set(-2,5,4);scene.add(light);
+const camera=new THREE.PerspectiveCamera(35,el.clientWidth/el.clientHeight,.05,50);camera.position.set(2.5,1.5,4);
+const controls=new OrbitControls(camera,renderer.domElement);controls.target.set(0,.9,0);controls.enableDamping=true;controls.update();
+const grid=new THREE.GridHelper(6,24,0x666975,0x353840);grid.position.y=-.025;scene.add(grid);
+const chooser=document.getElementById('clip'),status=document.getElementById('status');
+let model=null,mixer=null,clips=[],skeleton=null,rest=[];
+function resetPose(){if(!model)return;model.traverse(n=>{if(n.isBone){const r=rest.find(v=>v.id===n.uuid);if(r){n.position.copy(r.pos);n.quaternion.copy(r.quat);n.scale.copy(r.scale)}}});}
+document.getElementById('load').addEventListener('change',async ev=>{
+const file=ev.target.files[0];if(!file)return;
+if(mixer)mixer.stopAllAction();if(model)scene.remove(model);if(skeleton)scene.remove(skeleton);
+model=null;mixer=null;skeleton=null;rest=[];
+const url=URL.createObjectURL(file);
+try{const gltf=await new GLTFLoader().loadAsync(url);
+model=gltf.scene;scene.add(model);clips=gltf.animations;
+model.traverse(n=>{if(n.isBone)rest.push({id:n.uuid,pos:n.position.clone(),quat:n.quaternion.clone(),scale:n.scale.clone()})});
+mixer=new THREE.AnimationMixer(model);
+skeleton=new THREE.SkeletonHelper(model);skeleton.visible=document.getElementById('bones').checked;scene.add(skeleton);
+chooser.innerHTML='<option value="-1">T-pose original</option>'+clips.map((a,i)=>'<option value="'+i+'">'+a.name+' ('+a.duration.toFixed(2)+'s)</option>').join('');
+chooser.disabled=false;chooser.value='-1';status.textContent=file.name+' · '+clips.length+' clipes';
+}catch(e){status.textContent='Erro lendo GLB: '+e.message;console.error(e)}
+finally{URL.revokeObjectURL(url)}
+});
+chooser.addEventListener('change',()=>{if(!mixer)return;mixer.stopAllAction();resetPose();let i=Number(chooser.value);if(i>=0)mixer.clipAction(clips[i]).reset().play()});
+document.getElementById('bones').addEventListener('change',e=>{if(skeleton)skeleton.visible=e.target.checked});
+const clock=new THREE.Clock();
+renderer.setAnimationLoop(()=>{if(mixer)mixer.update(Math.min(clock.getDelta(),.05));controls.update();renderer.render(scene,camera)});
+addEventListener('resize',()=>{renderer.setSize(el.clientWidth,el.clientHeight);camera.aspect=el.clientWidth/el.clientHeight;camera.updateProjectionMatrix()});
+</script></body></html>

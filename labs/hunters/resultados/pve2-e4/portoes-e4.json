@@ -1,0 +1,132 @@
+{
+ "gates": {
+  "slideMmPorQuadro": 2.0,
+  "slideRolamentoMm": 5.0,
+  "peAbaixoDoChaoMm": 5.0,
+  "plantadoAcimaMm": 15.0,
+  "costuraGraus": 0.5,
+  "folgaLaminaM": 0.02,
+  "pontaAcimaDoChaoM": 0.05,
+  "punho": {
+   "extensao": 60,
+   "flexao": 70,
+   "radial": 20,
+   "ulnar": 35
+  }
+ },
+ "clips": {
+  "pve2_a_sword_jog": {
+   "frames": 35,
+   "speedMs": 3.1,
+   "stride": 1.8083333333333333,
+   "slideMmPorQuadro": 0.01,
+   "slideRolamentoMm": 3.39,
+   "peAbaixoDoChaoMm": 0,
+   "plantadoAcimaMm": 3.6,
+   "costuraGraus": 0.0,
+   "folgaLaminaM": 0.066,
+   "pontaAcimaDoChaoM": 0.52,
+   "punho": {
+    "ext": [
+     -0.0,
+     0.0
+    ],
+    "rad": [
+     -25.0,
+     8.0
+    ],
+    "tw": [
+     0,
+     10.0
+    ]
+   },
+   "violacoes": []
+  },
+  "pve2_a_sword_run": {
+   "frames": 34,
+   "speedMs": 5.6,
+   "stride": 3.173333333333333,
+   "slideMmPorQuadro": 0,
+   "slideRolamentoMm": 4.43,
+   "peAbaixoDoChaoMm": 0,
+   "plantadoAcimaMm": 3.3,
+   "costuraGraus": 0.0,
+   "folgaLaminaM": 0.038,
+   "pontaAcimaDoChaoM": 0.117,
+   "punho": {
+    "ext": [
+     -10.1,
+     0.0
+    ],
+    "rad": [
+     -14.8,
+     8.0
+    ],
+    "tw": [
+     -13.7,
+     10.0
+    ]
+   },
+   "violacoes": []
+  },
+  "pve2_a_sword_walk": {
+   "frames": 50,
+   "speedMs": 1.4,
+   "stride": 1.1666666666666667,
+   "slideMmPorQuadro": 0.02,
+   "slideRolamentoMm": 1.64,
+   "peAbaixoDoChaoMm": 3.1,
+   "plantadoAcimaMm": 4.4,
+   "costuraGraus": 0.0,
+   "folgaLaminaM": 0.052,
+   "pontaAcimaDoChaoM": 0.18,
+   "punho": {
+    "ext": [
+     -0.0,
+     0.0
+    ],
+    "rad": [
+     -25.0,
+     8.0
+    ],
+    "tw": [
+     0,
+     10.0
+    ]
+   },
+   "violacoes": []
+  },
+  "pve2_b_sword_guard": {
+   "frames": 180,
+   "speedMs": 0,
+   "stride": null,
+   "slideMmPorQuadro": 0.03,
+   "slideRolamentoMm": 0,
+   "peAbaixoDoChaoMm": 0,
+   "plantadoAcimaMm": 0.2,
+   "costuraGraus": 0.0,
+   "folgaLaminaM": 0.23,
+   "pontaAcimaDoChaoM": 1.088,
+   "punho": {
+    "ext": [
+     -0.0,
+     0.0
+    ],
+    "rad": [
+     0,
+     12.0
+    ],
+    "tw": [
+     -0.0,
+     25.0
+    ]
+   },
+   "violacoes": []
+  }
+ },
+ "violacoes": [],
+ "glb": {
+  "bytes": 923844,
+  "sha256": "941c70d8941194e5d1bd4caf7d07cde586da15780cd6c0ca1bb9a74ce8deb3c0"
+ }
+}

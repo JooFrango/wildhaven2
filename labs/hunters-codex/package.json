@@ -1,0 +1,1 @@
+{"name":"wildhaven-hunter-lab-codex","private":true,"version":"1.0.0","type":"module","engines":{"node":">=22"},"scripts":{"dev":"node scripts/server.mjs","test":"node --test test/*.test.mjs","derive":"node scripts/derive.mjs","browser":"node scripts/browser.mjs"},"dependencies":{"three":"0.181.0"},"devDependencies":{"playwright-core":"1.56.1"}}

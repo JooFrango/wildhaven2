@@ -1,0 +1,507 @@
+{
+  "url": "http://127.0.0.1:8782/labs/hunters/hunter-lab.html?cenario=jogador-espada&pve1=1&pve2=1&semente=17",
+  "cenario": "jogador-espada",
+  "segundosSimulados": 32.2,
+  "quadro": {
+    "fps": 10,
+    "msQuadro": 2.19,
+    "desenhos": 8,
+    "triangulos": 5504
+  },
+  "amostragem": "pose medida uma vez por quadro de vídeo (~10 fps no headless): 0,1 s entre amostras",
+  "painel": [
+    {
+      "clipe": "pve2_a_sword_jog",
+      "clipeDesenhado": "pve2_a_sword_jog",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.3123
+    },
+    {
+      "clipe": "pve2_a_sword_run",
+      "clipeDesenhado": "pve2_a_sword_run",
+      "pegada": "reverse",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.2871
+    },
+    {
+      "clipe": "pve2_a_sword_walk",
+      "clipeDesenhado": "pve2_a_sword_walk",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.2493
+    },
+    {
+      "clipe": "pve2_b_sword_guard",
+      "clipeDesenhado": "pve2_b_sword_guard",
+      "pegada": "normal",
+      "pesPlantados": true,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.5187
+    },
+    {
+      "clipe": "pve2_b_sword_roll_left",
+      "clipeDesenhado": "pve2_b_sword_roll_left",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 1.1731
+    },
+    {
+      "clipe": "pve2_b_sword_roll_right",
+      "clipeDesenhado": "pve2_b_sword_roll_right",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 1.2635
+    },
+    {
+      "clipe": "pve2_c_sword_charge_loop",
+      "clipeDesenhado": "pve2_c_sword_charge_loop",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.5771
+    },
+    {
+      "clipe": "pve2_c_sword_charge_release",
+      "clipeDesenhado": "pve2_c_sword_charge_release",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.8668
+    },
+    {
+      "clipe": "pve2_c_sword_combo_1",
+      "clipeDesenhado": "pve2_c_sword_combo_1",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.8188
+    },
+    {
+      "clipe": "pve2_c_sword_combo_2",
+      "clipeDesenhado": "pve2_c_sword_combo_2",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.3801
+    },
+    {
+      "clipe": "pve2_c_sword_combo_3",
+      "clipeDesenhado": "pve2_c_sword_combo_3",
+      "pegada": "normal",
+      "pesPlantados": false,
+      "saltoNaTrocaM": 0,
+      "saltoMaxNoClipeM": 0.7929
+    }
+  ],
+  "clipesVistosNoJogo": [
+    "pve2_b_sword_guard",
+    "pve2_a_sword_walk",
+    "pve2_c_sword_combo_1",
+    "pve2_c_sword_combo_2",
+    "pve2_b_sword_roll_right",
+    "pve2_b_sword_roll_left",
+    "pve2_a_sword_jog",
+    "pve2_a_sword_run"
+  ],
+  "trocasDeClipe": 38,
+  "saltoDaPoseNaTrocaM": {
+    "max": 0,
+    "porTroca": [
+      {
+        "t": 1.1,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.495
+      },
+      {
+        "t": 5.2,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.4066
+      },
+      {
+        "t": 10.8,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_c_sword_combo_1",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.7712
+      },
+      {
+        "t": 11.6,
+        "de": "pve2_c_sword_combo_1",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.0237
+      },
+      {
+        "t": 12.2,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_c_sword_combo_2",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.3016
+      },
+      {
+        "t": 13,
+        "de": "pve2_c_sword_combo_2",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.0234
+      },
+      {
+        "t": 15,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.4334
+      },
+      {
+        "t": 18,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_b_sword_roll_right",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.97
+      },
+      {
+        "t": 18.9,
+        "de": "pve2_b_sword_roll_right",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.0419
+      },
+      {
+        "t": 19.6,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_b_sword_roll_left",
+        "naTrocaM": 0,
+        "maxSeguintes": 1.1473
+      },
+      {
+        "t": 19.8,
+        "de": "pve2_b_sword_roll_left",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.9246
+      },
+      {
+        "t": 20.3,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_b_sword_roll_left",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.025
+      },
+      {
+        "t": 20.5,
+        "de": "pve2_b_sword_roll_left",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.0163
+      },
+      {
+        "t": 21.4,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.3822
+      },
+      {
+        "t": 21.8,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_a_sword_jog",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.1759
+      },
+      {
+        "t": 24,
+        "de": "pve2_a_sword_jog",
+        "para": "pve2_a_sword_run",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.2853
+      },
+      {
+        "t": 24.4,
+        "de": "pve2_a_sword_run",
+        "para": "pve2_a_sword_jog",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.1954
+      },
+      {
+        "t": 24.6,
+        "de": "pve2_a_sword_jog",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.191
+      },
+      {
+        "t": 24.9,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.4382
+      },
+      {
+        "t": 25.6,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_c_sword_combo_1",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.7712
+      },
+      {
+        "t": 26.4,
+        "de": "pve2_c_sword_combo_1",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.3992
+      },
+      {
+        "t": 26.8,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.5071
+      },
+      {
+        "t": 27.2,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.4747
+      },
+      {
+        "t": 27.7,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_a_sword_jog",
+        "naTrocaM": 0,
+        "maxSeguintes": null
+      },
+      {
+        "t": 27.8,
+        "de": "pve2_a_sword_jog",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.2118
+      },
+      {
+        "t": 28.1,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.5172
+      },
+      {
+        "t": 28.3,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.3988
+      },
+      {
+        "t": 28.8,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_a_sword_jog",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.1649
+      },
+      {
+        "t": 29,
+        "de": "pve2_a_sword_jog",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.1587
+      },
+      {
+        "t": 29.8,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_a_sword_jog",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.2139
+      },
+      {
+        "t": 30,
+        "de": "pve2_a_sword_jog",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.2845
+      },
+      {
+        "t": 30.3,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.4169
+      },
+      {
+        "t": 30.7,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.3956
+      },
+      {
+        "t": 31.2,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_a_sword_jog",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.3223
+      },
+      {
+        "t": 31.4,
+        "de": "pve2_a_sword_jog",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.0977
+      },
+      {
+        "t": 31.7,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": null
+      },
+      {
+        "t": 31.8,
+        "de": "pve2_b_sword_guard",
+        "para": "pve2_a_sword_walk",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.1174
+      },
+      {
+        "t": 32.2,
+        "de": "pve2_a_sword_walk",
+        "para": "pve2_b_sword_guard",
+        "naTrocaM": 0,
+        "maxSeguintes": 0.4971
+      }
+    ]
+  },
+  "pesPlantadosEmAlgumQuadro": true,
+  "velocidadeMaxMs": 4.83,
+  "pegadaPorClipe": {
+    "pve2_b_sword_guard": [
+      "normal"
+    ],
+    "pve2_a_sword_walk": [
+      "normal"
+    ],
+    "pve2_c_sword_combo_1": [
+      "normal"
+    ],
+    "pve2_c_sword_combo_2": [
+      "normal"
+    ],
+    "pve2_b_sword_roll_right": [
+      "normal"
+    ],
+    "pve2_b_sword_roll_left": [
+      "normal"
+    ],
+    "pve2_a_sword_jog": [
+      "normal"
+    ],
+    "pve2_a_sword_run": [
+      "reverse"
+    ]
+  },
+  "caminhouM": 2.927,
+  "correuM": 1.167,
+  "rolamentos": [
+    {
+      "clipes": [
+        "pve2_b_sword_roll_right"
+      ],
+      "metros": 1.375,
+      "segundos": 0.8
+    },
+    {
+      "clipes": [
+        "pve2_b_sword_roll_left",
+        "pve2_b_sword_guard"
+      ],
+      "metros": 1.371,
+      "segundos": 0.8
+    }
+  ],
+  "comboClipes": [
+    "pve2_c_sword_combo_1",
+    "pve2_c_sword_combo_2"
+  ],
+  "cargaClipes": [
+    "pve2_b_sword_guard"
+  ],
+  "quadrosComAvancoAutorado": 13,
+  "eventos": [
+    {
+      "t": 10.75,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "lado": null,
+      "ataque": "golpe_corte_leve"
+    },
+    {
+      "t": 11.05,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "lado": null,
+      "ataque": "golpe_corte_leve"
+    },
+    {
+      "t": 12.15,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "lado": null,
+      "ataque": "golpe_corte_leve"
+    },
+    {
+      "t": 12.5,
+      "tipo": "ferimento",
+      "id": "varrisco-real",
+      "lado": null,
+      "ataque": "golpe_corte_leve"
+    },
+    {
+      "t": 17.95,
+      "tipo": "hunter_rolamento",
+      "id": "hunter-A",
+      "lado": "right",
+      "ataque": null
+    },
+    {
+      "t": 19.05,
+      "tipo": "ataque_inicio",
+      "id": "varrisco-real",
+      "lado": null,
+      "ataque": "mordida"
+    },
+    {
+      "t": 19.55,
+      "tipo": "hunter_rolamento",
+      "id": "hunter-A",
+      "lado": "left",
+      "ataque": null
+    },
+    {
+      "t": 19.75,
+      "tipo": "ferimento",
+      "id": "hunter-A",
+      "lado": null,
+      "ataque": "mordida"
+    },
+    {
+      "t": 25.55,
+      "tipo": "ataque_inicio",
+      "id": "hunter-A",
+      "lado": null,
+      "ataque": "golpe_corte_leve"
+    }
+  ],
+  "invariantes": [],
+  "erros": [],
+  "fonte": "Canvas real do Hunter Lab, Chrome via Playwright (ANGLE SwiftShader). Controle manual por teclado, sequência guiada pelo relógio da simulação."
+}

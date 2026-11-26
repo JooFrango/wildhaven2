@@ -1,0 +1,24 @@
+{
+  "pullRequest": "https://github.com/carioca1111/wildhaven-new/pull/24",
+  "base": "48acee90579dc51119dfc96df719faf9995fa055",
+  "sourceVerified": "99ea5463964761de420edc2ae5840b0f7347ed33",
+  "scope": "labs/hunters/ only",
+  "asset": {
+    "path": "labs/hunters/assets/hunter-v04/hunter_combat_v04.glb",
+    "sha256": "cd814b4359cb344142a8edc6dfa8cfd2094b0670455cbe956dab2f2bd9b1d48f",
+    "bytes": 1186920,
+    "fetchedIndependentlyFromGitHub": true
+  },
+  "site": {
+    "url": "https://wildhaven-hunter-lab-codex.jvbrmandarino11.chatgpt.site/labs/hunters/hunter-lab.html",
+    "sourceCommit": "bf5845b2d244887eb1c5433e2cbb802999324095",
+    "deploymentId": "appgdep_6af7759747a88191a76b3fdd300080cf",
+    "status": "succeeded",
+    "audience": "owner-private",
+    "staticPackageBrowserVerified": true,
+    "authenticatedHostedBrowserVerified": false
+  },
+  "tests": 37,
+  "gltfErrors": 0,
+  "gltfWarnings": 0
+}

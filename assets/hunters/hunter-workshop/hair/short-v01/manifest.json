@@ -1,0 +1,39 @@
+{
+  "id": "hair_short_v01",
+  "displayName": "Curto",
+  "category": "hair",
+  "occupiedSlots": [
+    "hair"
+  ],
+  "attachmentMode": "bone",
+  "attachmentBone": "Head",
+  "rigVersion": "hunter-masculino-1000v-v01",
+  "coordinateSpace": "Head-local (rest pose)",
+  "geometry": "rigid low poly",
+  "meshByLod": {
+    "lod0": "hair/short-v01/hair_short_v01.glb"
+  },
+  "materialSet": "UV-painted PBR opaque, texture embedded",
+  "colorOptions": [
+    "dark-brown"
+  ],
+  "hiddenBodyRegions": [],
+  "compatibilityTags": [
+    "hair-short-under-helmet"
+  ],
+  "conflictingTags": [
+    "helmet-no-hair"
+  ],
+  "fallbackVariant": null,
+  "triangles": 156,
+  "verticesExported": 117,
+  "bytes": 13080,
+  "sha256": "00a4b8789f2d37194715defa3c0c2bae9f94ecae4d8148feea893a1fe7b1f165",
+  "animationClips": [],
+  "publishedToGitHub": true,
+  "approvedByUser": false,
+  "integratedInAlpha": false,
+  "githubVerified": true,
+  "githubUrl": "https://github.com/carioca1111/wildhaven/blob/wildhaven-hunter-workshop-assets-v01/assets/hunters/hunter-workshop/hair/short-v01/hair_short_v01.glb",
+  "verificationNote": "SHA-256 e tamanho conferidos sobre GLB recuperado da branch; GLB real com textura UV embutida."
+}

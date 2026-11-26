@@ -1,0 +1,1600 @@
+{
+  "status": "gravado-do-laboratorio-real-aguardando-aprovacao",
+  "cenario": "arena-aparo (Arena dos Caçadores, 1×1 espada × espada, dt 0,05 s)",
+  "semente": 17,
+  "glb": "labs/hunters/assets/hunter-pvp-v12/hunter_pvp_v12.glb",
+  "glbSha256": "b36f7a82b852e0f2cfcda665c2098ae3730c472e03711120b03737f8908d2c25",
+  "biblioteca": [
+    "pvp12_guard",
+    "pvp12_sword_horizontal_cut",
+    "pvp12_sword_block"
+  ],
+  "renderizador": "hunter-lab.html em Chromium headless (ANGLE SwiftShader), GLBs reais do laboratório",
+  "observacao": "Lâmina, pose de guarda e teste estreito saem da mesma função (src/trajetoria-arma.js), então o contato desenhado é o contato simulado.",
+  "angulos": [
+    {
+      "angulo": "perfil",
+      "azimute": 1.5707963267948966,
+      "video": "duelo-pvp12-perfil.webm",
+      "bytes": 1311083,
+      "sha256": "3db972ddd208377789ed507fe2623d07eda79e0fa82613335d964e86d0ef036a",
+      "pngs": [
+        "perfil_aparo1_t1_23.png",
+        "perfil_aparo2_t2_83.png",
+        "perfil_aparo3_t4_59.png",
+        "perfil_aparo4_t8_04.png"
+      ],
+      "aparos": [
+        {
+          "n": 7,
+          "t": 1.228,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.004,
+          "y": 49.469,
+          "z": 1.169,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.00002971590507137528,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_reverse_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.020190953155734367,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 18,
+          "t": 2.828,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.099,
+          "y": 49.57,
+          "z": 1.231,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.000045153284165647576,
+              "referencia": "socket",
+              "clip": "pvp12_sword_diagonal_down"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.012383429420211508,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 30,
+          "t": 4.587,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 59.922,
+          "y": 49.685,
+          "z": 1.195,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.00018082085773452527,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.005390982506008976,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 52,
+          "t": 8.039,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.112,
+          "y": 49.175,
+          "z": 1.158,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.00002910649707364837,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_reverse_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.021230021492848798,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 71,
+          "t": 10.688,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.006,
+          "y": 48.747,
+          "z": 1.186,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.00018082234700900408,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.006959570049886096,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 92,
+          "t": 14.188,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.323,
+          "y": 48.463,
+          "z": 1.17,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.0000470342975970919,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_reverse_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.02089255766858786,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        }
+      ],
+      "desfecho": null,
+      "segundos": 18,
+      "clipes": [
+        "pvp12_guard",
+        "pvp12_step_forward",
+        "pvp12_sword_horizontal_reverse_cut",
+        "pvp12_sword_block",
+        "pvp12_step_right",
+        "pvp12_step_back",
+        "pvp12_sword_thrust",
+        "pvp12_step_left",
+        "pvp12_sword_diagonal_down",
+        "pvp12_sword_horizontal_cut"
+      ],
+      "ordem": [
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 0.05
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 0.05
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 0.1
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 0.1
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 0.95
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 1.15
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 1.25
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 1.6
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 1.7
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 1.75
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 1.75
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 1.95
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_diagonal_down",
+          "t": 2.55
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 2.55
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 2.65
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 2.75
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 2.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 3.2
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 3.3
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 3.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 3.35
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 3.55
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 3.65
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 4.15
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 4.15
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_cut",
+          "t": 4.3
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 4.45
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 4.5
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 4.6
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 4.95
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 5.05
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 5.1
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 5.1
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 5.35
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 5.4
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 5.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 5.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 6.25
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 6.3
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 6.4
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 6.45
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 6.7
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 7.2
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 7.3
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 7.4
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 7.75
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 7.75
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 7.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 7.95
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 8.05
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 8.4
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 8.5
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 8.55
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 8.55
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 8.75
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 8.85
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_diagonal_down",
+          "t": 9.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 9.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 9.45
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 9.55
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 10.05
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 10.1
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 10.35
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_cut",
+          "t": 10.4
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 10.6
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 10.7
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 11.05
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 11.15
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 11.2
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 11.2
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 11.45
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 11.5
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 12
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 12
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 12.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 12.45
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_diagonal_down",
+          "t": 12.55
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 12.6
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 12.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 13.25
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 13.35
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 13.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 13.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 14
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 14.1
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 14.2
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 14.55
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 14.65
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 14.7
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 14.7
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 14.9
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 15
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 15.5
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 15.5
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 15.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 15.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_diagonal_down",
+          "t": 16
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 16.05
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 16.3
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 16.7
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 17.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 17.7
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 17.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 17.85
+        }
+      ],
+      "invariantes": [],
+      "estado": [
+        {
+          "id": "hunter-A",
+          "nome": "Arvo",
+          "equipe": "azul",
+          "situacao": "lutando",
+          "postura": "neutra",
+          "controle": "ia",
+          "hp": 69.1,
+          "hpMax": 97.1,
+          "energia": 19.5,
+          "folego": 26.7,
+          "dor": 0.14,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "hunter-B",
+          "estado": "recuperando",
+          "motivo": "retoma fôlego antes de perseguir; conserva reserva de defesa",
+          "x": 60.16,
+          "y": 47.53,
+          "golpesDados": 7,
+          "golpesRecebidos": 2,
+          "combateJogador": {
+            "habilidade": 0.8,
+            "parte": "flanco",
+            "sequencia": 0,
+            "janela": 0.8919999999999999,
+            "conhecimento": 0.95
+          },
+          "ferimentos": [
+            {
+              "regiao": "torax",
+              "gravidade": 0.137,
+              "fratura": false,
+              "sangramento": 0.169
+            },
+            {
+              "regiao": "bracos",
+              "gravidade": 0.1,
+              "fratura": false,
+              "sangramento": 0.072
+            }
+          ]
+        },
+        {
+          "id": "hunter-B",
+          "nome": "Brek",
+          "equipe": "verde",
+          "situacao": "lutando",
+          "postura": "neutra",
+          "controle": "ia",
+          "hp": 98.8,
+          "hpMax": 98.8,
+          "energia": 43.3,
+          "folego": 24.4,
+          "dor": 0,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "hunter-A",
+          "estado": "avaliando",
+          "motivo": "firma os pés e freia antes de comprometer o golpe",
+          "x": 60.92,
+          "y": 48.66,
+          "golpesDados": 12,
+          "golpesRecebidos": 0,
+          "combateJogador": {
+            "habilidade": 0.8,
+            "parte": "flanco",
+            "sequencia": 0,
+            "janela": 0.8759999999999999,
+            "conhecimento": 0.95
+          },
+          "ferimentos": []
+        }
+      ],
+      "hash": "b38d4059",
+      "empunhadura": [
+        {
+          "id": "hunter-A",
+          "erroM": 1.1102230246251565e-16,
+          "referencia": "socket",
+          "clip": "pvp12_step_left"
+        },
+        {
+          "id": "hunter-B",
+          "erroM": 1.1102230246251565e-16,
+          "referencia": "socket",
+          "clip": "pvp12_step_forward"
+        }
+      ],
+      "quadro": {
+        "fps": 10,
+        "msQuadro": 2.67,
+        "desenhos": 9,
+        "triangulos": 26048
+      }
+    },
+    {
+      "angulo": "threequarter",
+      "azimute": 2.356194490192345,
+      "video": "duelo-pvp12-threequarter.webm",
+      "bytes": 1877241,
+      "sha256": "5d9451450dae9f17c574841122e94cf4039749d623ca8db1aea191bb4532eb14",
+      "pngs": [
+        "threequarter_aparo1_t1_23.png",
+        "threequarter_aparo2_t2_83.png",
+        "threequarter_aparo3_t4_59.png",
+        "threequarter_aparo4_t8_04.png"
+      ],
+      "aparos": [
+        {
+          "n": 7,
+          "t": 1.228,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.004,
+          "y": 49.469,
+          "z": 1.169,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.00002971590507137528,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_reverse_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.020190953155734367,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 18,
+          "t": 2.828,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.099,
+          "y": 49.57,
+          "z": 1.231,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.000045153284165647576,
+              "referencia": "socket",
+              "clip": "pvp12_sword_diagonal_down"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.012383429420211508,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 30,
+          "t": 4.587,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 59.922,
+          "y": 49.685,
+          "z": 1.195,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.00018082085773452527,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.005390982506008976,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 52,
+          "t": 8.039,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.112,
+          "y": 49.175,
+          "z": 1.158,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.00002910649707364837,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_reverse_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.021230021492848798,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 71,
+          "t": 10.688,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.006,
+          "y": 48.747,
+          "z": 1.186,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.00018082234700900408,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.006959570049886096,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        },
+        {
+          "n": 92,
+          "t": 14.188,
+          "atacante": "hunter-A",
+          "defensor": "hunter-B",
+          "x": 60.323,
+          "y": 48.463,
+          "z": 1.17,
+          "empunhadura": [
+            {
+              "id": "hunter-A",
+              "erroM": 0.0000470342975970919,
+              "referencia": "socket",
+              "clip": "pvp12_sword_horizontal_reverse_cut"
+            },
+            {
+              "id": "hunter-B",
+              "erroM": 0.02089255766858786,
+              "referencia": "socket",
+              "clip": "pvp12_guard"
+            }
+          ]
+        }
+      ],
+      "desfecho": null,
+      "segundos": 18,
+      "clipes": [
+        "pvp12_guard",
+        "pvp12_step_forward",
+        "pvp12_sword_horizontal_reverse_cut",
+        "pvp12_sword_block",
+        "pvp12_step_right",
+        "pvp12_step_back",
+        "pvp12_sword_thrust",
+        "pvp12_step_left",
+        "pvp12_sword_diagonal_down",
+        "pvp12_sword_horizontal_cut"
+      ],
+      "ordem": [
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 0.05
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 0.05
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 0.1
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 0.1
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 0.95
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 1.15
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 1.25
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 1.6
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 1.7
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 1.75
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 1.75
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 1.95
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_diagonal_down",
+          "t": 2.55
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 2.55
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 2.65
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 2.75
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 2.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 3.2
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 3.3
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 3.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 3.35
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 3.55
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 3.65
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 4.15
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 4.15
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_cut",
+          "t": 4.3
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 4.45
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 4.5
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 4.6
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 4.95
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 5.05
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 5.1
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 5.1
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 5.35
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 5.4
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 5.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 5.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 6.25
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 6.3
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 6.4
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 6.45
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 6.7
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 7.2
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 7.3
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 7.4
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 7.75
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 7.75
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 7.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 7.95
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 8.05
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 8.4
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 8.5
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 8.55
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 8.55
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 8.75
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 8.85
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_diagonal_down",
+          "t": 9.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 9.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 9.45
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 9.55
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 10.05
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 10.1
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 10.35
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_cut",
+          "t": 10.4
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 10.6
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 10.7
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 11.05
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 11.15
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 11.2
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 11.2
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 11.45
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 11.5
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 12
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 12
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 12.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 12.45
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_diagonal_down",
+          "t": 12.55
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 12.6
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 12.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 13.25
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 13.35
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 13.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 13.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 14
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 14.1
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_guard",
+          "t": 14.2
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_block",
+          "t": 14.55
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 14.65
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_back",
+          "t": 14.7
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_thrust",
+          "t": 14.7
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 14.9
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 15
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_forward",
+          "t": 15.5
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 15.5
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 15.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 15.9
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_diagonal_down",
+          "t": 16
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 16.05
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_guard",
+          "t": 16.3
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_sword_horizontal_reverse_cut",
+          "t": 16.7
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_back",
+          "t": 17.35
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_right",
+          "t": 17.7
+        },
+        {
+          "id": "hunter-A",
+          "clip": "pvp12_step_left",
+          "t": 17.85
+        },
+        {
+          "id": "hunter-B",
+          "clip": "pvp12_step_forward",
+          "t": 17.85
+        }
+      ],
+      "invariantes": [],
+      "estado": [
+        {
+          "id": "hunter-A",
+          "nome": "Arvo",
+          "equipe": "azul",
+          "situacao": "lutando",
+          "postura": "neutra",
+          "controle": "ia",
+          "hp": 69.1,
+          "hpMax": 97.1,
+          "energia": 19.5,
+          "folego": 26.7,
+          "dor": 0.14,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "hunter-B",
+          "estado": "recuperando",
+          "motivo": "retoma fôlego antes de perseguir; conserva reserva de defesa",
+          "x": 60.16,
+          "y": 47.53,
+          "golpesDados": 7,
+          "golpesRecebidos": 2,
+          "combateJogador": {
+            "habilidade": 0.8,
+            "parte": "flanco",
+            "sequencia": 0,
+            "janela": 0.8919999999999999,
+            "conhecimento": 0.95
+          },
+          "ferimentos": [
+            {
+              "regiao": "torax",
+              "gravidade": 0.137,
+              "fratura": false,
+              "sangramento": 0.169
+            },
+            {
+              "regiao": "bracos",
+              "gravidade": 0.1,
+              "fratura": false,
+              "sangramento": 0.072
+            }
+          ]
+        },
+        {
+          "id": "hunter-B",
+          "nome": "Brek",
+          "equipe": "verde",
+          "situacao": "lutando",
+          "postura": "neutra",
+          "controle": "ia",
+          "hp": 98.8,
+          "hpMax": 98.8,
+          "energia": 43.3,
+          "folego": 24.4,
+          "dor": 0,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "hunter-A",
+          "estado": "avaliando",
+          "motivo": "firma os pés e freia antes de comprometer o golpe",
+          "x": 60.92,
+          "y": 48.66,
+          "golpesDados": 12,
+          "golpesRecebidos": 0,
+          "combateJogador": {
+            "habilidade": 0.8,
+            "parte": "flanco",
+            "sequencia": 0,
+            "janela": 0.8759999999999999,
+            "conhecimento": 0.95
+          },
+          "ferimentos": []
+        }
+      ],
+      "hash": "b38d4059",
+      "empunhadura": [
+        {
+          "id": "hunter-A",
+          "erroM": 1.1102230246251565e-16,
+          "referencia": "socket",
+          "clip": "pvp12_step_left"
+        },
+        {
+          "id": "hunter-B",
+          "erroM": 1.1102230246251565e-16,
+          "referencia": "socket",
+          "clip": "pvp12_step_forward"
+        }
+      ],
+      "quadro": {
+        "fps": 10,
+        "msQuadro": 2.21,
+        "desenhos": 9,
+        "triangulos": 26048
+      }
+    }
+  ]
+}

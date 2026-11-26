@@ -1,0 +1,34 @@
+{
+  "status": "rendered-from-real-glb-pending-director-approval",
+  "previews": [
+    {
+      "file": "pvp08_sword_horizontal_review_threequarter.gif",
+      "angle": "threequarter",
+      "frames": 41,
+      "bytes": 329655,
+      "sha256": "d2c02e94225fafee09f7eb8a937bd748af16a1d9867545bbef6064f7dfe6ba45"
+    },
+    {
+      "file": "pvp08_sword_horizontal_review_front.gif",
+      "angle": "front",
+      "frames": 41,
+      "bytes": 318784,
+      "sha256": "24f35ebb62841621c39199b00a2775d58db525258e6e0f1a26cb4b4a52dc72f0"
+    }
+  ],
+  "glb": "labs/hunters/assets/hunter-pvp-v08/hunter_pvp_v08.glb",
+  "glbSha256": "e7d2a3c6e262ac47cc9fde4e2468296e64823344cc94db38c3d315b798b2fdb8",
+  "renderer": "three.js WebGL Chromium - real GLB v08 with integrated sword mesh; front & threequarter views",
+  "contactFrames": [
+    "pose_0.png",
+    "pose_0_26.png",
+    "pose_0_64.png",
+    "pose_0_88.png",
+    "pose_1_16.png",
+    "pose_1_4.png",
+    "pose_1_87.png",
+    "pose_2_2.png",
+    "pose_front_1_16.png"
+  ],
+  "errors": []
+}

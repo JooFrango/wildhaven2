@@ -1,0 +1,32 @@
+{
+  "id": "hair_short_v01",
+  "displayName": "Cabelo Curto",
+  "category": "hair",
+  "occupiedSlots": [
+    "hair"
+  ],
+  "attachmentMode": "bone",
+  "attachmentBone": "Head",
+  "meshByLod": {
+    "lod0": null,
+    "lod1": null
+  },
+  "materialSet": "hunter-hair-common-v01",
+  "colorOptions": [
+    "brown",
+    "black",
+    "blond"
+  ],
+  "hiddenBodyRegions": [
+    "scalp"
+  ],
+  "compatibilityTags": [
+    "helmet-short-hair"
+  ],
+  "conflictingTags": [
+    "helmet-full-without-hair"
+  ],
+  "fallbackVariant": null,
+  "rigVersion": "hunter-masculino-1000v-v01",
+  "status": "example-only-no-asset"
+}

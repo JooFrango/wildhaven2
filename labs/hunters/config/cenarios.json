@@ -1,0 +1,349 @@
+[
+  {
+    "id": "arena-duelo",
+    "nome": "Arena — duelo 1 contra 1 (treino)",
+    "descricao": "Terreno pequeno e plano, sem criaturas: o cenário para olhar o combate de perto. Treino: ninguém morre.",
+    "dt": 0.1, "duracaoSeg": 600, "modoCombate": "treino",
+    "relogio": { "segundosPorDia": 900, "diaInicial": 20, "horaInicial": 10 },
+    "clima": { "chanceIncendio": 0 },
+    "terreno": { "tipo": "procedural", "largura": 120, "profundidade": 100, "res": 1, "amplitude": 0.4, "capim": 40 },
+    "populacoes": [],
+    "camera": { "x": 60, "y": 50, "distancia": 18 },
+    "hunters": [
+      { "id": "hunter-A", "nome": "Arvo", "equipe": "azul", "x": 55, "y": 50, "direcaoGraus": 0, "equipamento": { "arma": "lanca", "armadura": "leve" }, "personalidade": { "agressividade": 0.65, "cautela": 0.35, "disciplina": 0.6 } },
+      { "id": "hunter-B", "nome": "Brek", "equipe": "verde", "x": 65, "y": 50, "direcaoGraus": 180, "equipamento": { "arma": "espada", "escudo": "escudo", "armadura": "leve" }, "personalidade": { "agressividade": 0.4, "cautela": 0.6, "disciplina": 0.75 } }
+    ]
+  },
+  {
+    "id": "arena-obstaculos",
+    "nome": "Arena — obstáculos e desnível (treino)",
+    "descricao": "Rochas e um barranco entre os dois: serve para ver o golpe ser barrado por obstáculo sólido e a mobilidade cair na subida.",
+    "dt": 0.1, "duracaoSeg": 600, "modoCombate": "treino",
+    "relogio": { "segundosPorDia": 900, "diaInicial": 20, "horaInicial": 10 },
+    "clima": { "chanceIncendio": 0 },
+    "terreno": {
+      "tipo": "procedural", "largura": 120, "profundidade": 100, "res": 1, "amplitude": 3, "capim": 40,
+      "rochas": [[60, 50, 2.5], [52, 44, 1.8], [68, 57, 2.0], [60, 62, 1.5]],
+      "arbustos": [[48, 55, 3], [72, 46, 3]]
+    },
+    "populacoes": [],
+    "camera": { "x": 60, "y": 50, "distancia": 22 },
+    "hunters": [
+      { "id": "hunter-A", "nome": "Arvo", "equipe": "azul", "x": 48, "y": 50, "direcaoGraus": 0, "equipamento": { "arma": "espada", "armadura": "leve" }, "personalidade": { "agressividade": 0.6, "cautela": 0.4, "disciplina": 0.5 } },
+      { "id": "hunter-B", "nome": "Brek", "equipe": "verde", "x": 72, "y": 50, "direcaoGraus": 180, "equipamento": { "arma": "lanca" }, "personalidade": { "agressividade": 0.5, "cautela": 0.5, "disciplina": 0.5 } }
+    ]
+  },
+  {
+    "id": "arena-equipes",
+    "nome": "Arena — equipes 2 contra 2 (treino)",
+    "descricao": "Identificação de aliado e inimigo: cada Hunter só ataca quem não é da sua equipe.",
+    "dt": 0.1, "duracaoSeg": 600, "modoCombate": "treino",
+    "relogio": { "segundosPorDia": 900, "diaInicial": 20, "horaInicial": 10 },
+    "clima": { "chanceIncendio": 0 },
+    "terreno": { "tipo": "procedural", "largura": 120, "profundidade": 100, "res": 1, "amplitude": 0.4, "capim": 40 },
+    "populacoes": [],
+    "camera": { "x": 60, "y": 50, "distancia": 26 },
+    "hunters": [
+      { "id": "azul-1", "nome": "Arvo", "equipe": "azul", "x": 52, "y": 47, "direcaoGraus": 0, "equipamento": { "arma": "lanca", "armadura": "leve" } },
+      { "id": "azul-2", "nome": "Dain", "equipe": "azul", "x": 52, "y": 53, "direcaoGraus": 0, "equipamento": { "arma": "espada", "escudo": "escudo" } },
+      { "id": "verde-1", "nome": "Brek", "equipe": "verde", "x": 68, "y": 47, "direcaoGraus": 180, "equipamento": { "arma": "espada", "armadura": "pesada" } },
+      { "id": "verde-2", "nome": "Oren", "equipe": "verde", "x": 68, "y": 53, "direcaoGraus": 180, "equipamento": { "arma": "lanca" } }
+    ]
+  },
+  {
+    "id": "arena-letal",
+    "nome": "Arena — combate letal experimental",
+    "descricao": "Mesmo duelo, sem a regra de treino: a morte simulada acontece e fica no estado descartável desta simulação. Não altera nenhum Hunter de produção.",
+    "dt": 0.1, "duracaoSeg": 600, "modoCombate": "letal",
+    "relogio": { "segundosPorDia": 900, "diaInicial": 20, "horaInicial": 10 },
+    "clima": { "chanceIncendio": 0 },
+    "terreno": { "tipo": "procedural", "largura": 120, "profundidade": 100, "res": 1, "amplitude": 0.4, "capim": 40 },
+    "populacoes": [],
+    "camera": { "x": 60, "y": 50, "distancia": 18 },
+    "hunters": [
+      { "id": "hunter-A", "nome": "Arvo", "equipe": "azul", "x": 55, "y": 50, "direcaoGraus": 0, "equipamento": { "arma": "espada" }, "personalidade": { "agressividade": 0.85, "cautela": 0.15, "orgulho": 0.9 } },
+      { "id": "hunter-B", "nome": "Brek", "equipe": "verde", "x": 65, "y": 50, "direcaoGraus": 180, "equipamento": { "arma": "lanca" }, "personalidade": { "agressividade": 0.8, "cautela": 0.2, "orgulho": 0.9 } }
+    ]
+  },
+  {
+    "id": "arena-aparo",
+    "nome": "Arena — duelo 1 contra 1, espada contra espada (treino)",
+    "descricao": "A mesma Arena dos Caçadores do duelo 1×1, com as duas espadas e sem escudo: é aqui que a lâmina apara a lâmina, o golpe para no ponto de contato e o defensor revida. Passo de 0,05 s para a leitura da preparação caber dentro do golpe.",
+    "dt": 0.05, "duracaoSeg": 600, "modoCombate": "treino",
+    "relogio": { "segundosPorDia": 900, "diaInicial": 20, "horaInicial": 10 },
+    "clima": { "chanceIncendio": 0 },
+    "terreno": { "tipo": "procedural", "largura": 120, "profundidade": 100, "res": 1, "amplitude": 0.4, "capim": 40 },
+    "populacoes": [],
+    "camera": { "x": 60, "y": 50, "distancia": 14 },
+    "hunters": [
+      { "id": "hunter-A", "nome": "Arvo", "equipe": "azul", "x": 58.5, "y": 50, "direcaoGraus": 0, "equipamento": { "arma": "espada", "escudo": null, "armadura": "leve" }, "personalidade": { "agressividade": 0.7, "cautela": 0.35, "disciplina": 0.65 }, "habilidade": 0.8 },
+      { "id": "hunter-B", "nome": "Brek", "equipe": "verde", "x": 61.5, "y": 50, "direcaoGraus": 180, "equipamento": { "arma": "espada", "escudo": null, "armadura": "leve" }, "personalidade": { "agressividade": 0.5, "cautela": 0.55, "disciplina": 0.75 }, "habilidade": 0.8 }
+    ]
+  },
+  {
+    "id": "hex52-encontro",
+    "nome": "Hexágono 52 — Hunter e criaturas reais",
+    "descricao": "Hexágono oficial 52 inteiro, o mesmo terreno derivado do GLB que o laboratório de IA usa. Dois Hunters e um grupo de animais reais no mesmo mundo, com a ecologia ligada.",
+    "dt": 0.1, "duracaoSeg": 1800, "modoCombate": "treino",
+    "relogio": { "segundosPorDia": 900, "diaInicial": 30, "horaInicial": 9, "diasPorAno": 365 },
+    "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0.01, "chanceChuvaSeca": 0, "chanceIncendio": 0, "temperaturaC": 27 },
+    "terreno": { "tipo": "derivado", "arquivo": "config/eco/terrenos/hex52-savana-acacia-5km.json" },
+    "camera": { "x": 2160, "y": 2480, "distancia": 30 },
+    "populacoes": [
+      { "especie": "folhisco", "grupos": [{ "x": 2190, "y": 2500, "raio": 12, "adultos": 4, "filhotes": 1, "raioCasa": 90 }] },
+      { "especie": "velsari", "individuos": [{ "id": "velsari-1", "x": 2120, "y": 2440 }] },
+      { "especie": "varrisco", "individuos": [{ "id": "varrisco-1", "x": 2230, "y": 2410 }] }
+    ],
+    "hunters": [
+      { "id": "hunter-A", "nome": "Arvo", "equipe": "azul", "x": 2155, "y": 2480, "direcaoGraus": 0, "equipamento": { "arma": "lanca", "armadura": "leve" }, "personalidade": { "agressividade": 0.6, "cautela": 0.5, "disciplina": 0.6 } },
+      { "id": "hunter-B", "nome": "Brek", "equipe": "verde", "x": 2168, "y": 2480, "direcaoGraus": 180, "equipamento": { "arma": "espada", "escudo": "escudo" }, "personalidade": { "agressividade": 0.45, "cautela": 0.6, "disciplina": 0.7 } }
+    ]
+  }
+,{
+  "id": "hex52-tatico",
+  "nome": "Hex 52 — recorte real e colisões precisas",
+  "descricao": "Terreno pequeno e plano, sem criaturas: o cenário para olhar o combate de perto. Treino: ninguém morre.",
+  "dt": 0.05,
+  "duracaoSeg": 600,
+  "modoCombate": "treino",
+  "relogio": {
+    "segundosPorDia": 900,
+    "diaInicial": 20,
+    "horaInicial": 10
+  },
+  "clima": {
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "recorteCodex": true
+  },
+  "populacoes": [],
+  "camera": {
+    "x": 50,
+    "y": 45,
+    "distancia": 12
+  },
+  "hunters": [
+    {
+      "id": "hunter-A",
+      "nome": "Arvo",
+      "equipe": "azul",
+      "x": 44,
+      "y": 45,
+      "direcaoGraus": 0,
+      "equipamento": {
+        "arma": "lanca",
+        "armadura": "leve"
+      },
+      "personalidade": {
+        "agressividade": 0.65,
+        "cautela": 0.35,
+        "disciplina": 0.6
+      }
+    },
+    {
+      "id": "hunter-B",
+      "nome": "Brek",
+      "equipe": "verde",
+      "x": 49,
+      "y": 45,
+      "direcaoGraus": 180,
+      "equipamento": {
+        "arma": "espada",
+        "escudo": "escudo",
+        "armadura": "leve"
+      },
+      "personalidade": {
+        "agressividade": 0.4,
+        "cautela": 0.6,
+        "disciplina": 0.75
+      }
+    }
+  ]
+}
+,{
+  "id": "jogador-lanca",
+  "nome": "Caçada tática — lança e escudo",
+  "descricao": "Hunter lê preparações, escolhe partes e decide quanto da sequência pode completar.",
+  "dt": 0.05,
+  "duracaoSeg": 600,
+  "modoCombate": "treino",
+  "relogio": {
+    "segundosPorDia": 900,
+    "diaInicial": 20,
+    "horaInicial": 10
+  },
+  "clima": {
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "recorteCodex": true
+  },
+  "populacoes": [
+    {
+      "especie": "varrisco",
+      "individuos": [
+        {
+          "id": "varrisco-real",
+          "x": 52,
+          "y": 45,
+          "idadeAnos": 6,
+          "direcaoGraus": 180,
+          "fome": 70,
+          "sede": 0
+        }
+      ]
+    }
+  ],
+  "camera": {
+    "x": 50,
+    "y": 45,
+    "distancia": 12
+  },
+  "hunters": [
+    {
+      "id": "hunter-A",
+      "nome": "Arvo",
+      "equipe": "azul",
+      "x": 44,
+      "y": 45,
+      "direcaoGraus": 0,
+      "equipamento": {
+        "arma": "lanca",
+        "escudo": "escudo",
+        "armadura": "leve"
+      },
+      "personalidade": {
+        "agressividade": 0.72,
+        "cautela": 0.35,
+        "disciplina": 0.7
+      },
+      "habilidade": 0.85
+    }
+  ]
+},{
+  "id": "jogador-espada",
+  "nome": "Caçada tática — espada leve",
+  "descricao": "Hunter lê preparações, escolhe partes e decide quanto da sequência pode completar.",
+  "dt": 0.05,
+  "duracaoSeg": 600,
+  "modoCombate": "treino",
+  "relogio": {
+    "segundosPorDia": 900,
+    "diaInicial": 20,
+    "horaInicial": 10
+  },
+  "clima": {
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "recorteCodex": true
+  },
+  "populacoes": [
+    {
+      "especie": "varrisco",
+      "individuos": [
+        {
+          "id": "varrisco-real",
+          "x": 52,
+          "y": 45,
+          "idadeAnos": 6,
+          "direcaoGraus": 180,
+          "fome": 70,
+          "sede": 0
+        }
+      ]
+    }
+  ],
+  "camera": {
+    "x": 50,
+    "y": 45,
+    "distancia": 12
+  },
+  "hunters": [
+    {
+      "id": "hunter-A",
+      "nome": "Arvo",
+      "equipe": "azul",
+      "x": 44,
+      "y": 45,
+      "direcaoGraus": 0,
+      "equipamento": {
+        "arma": "espada",
+        "escudo": null,
+        "armadura": "leve"
+      },
+      "personalidade": {
+        "agressividade": 0.72,
+        "cautela": 0.35,
+        "disciplina": 0.7
+      },
+      "habilidade": 0.85
+    }
+  ]
+},{
+  "id": "jogador-montante",
+  "nome": "Caçada tática — montante",
+  "descricao": "Hunter lê preparações, escolhe partes e decide quanto da sequência pode completar.",
+  "dt": 0.05,
+  "duracaoSeg": 600,
+  "modoCombate": "treino",
+  "relogio": {
+    "segundosPorDia": 900,
+    "diaInicial": 20,
+    "horaInicial": 10
+  },
+  "clima": {
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "recorteCodex": true
+  },
+  "populacoes": [
+    {
+      "especie": "varrisco",
+      "individuos": [
+        {
+          "id": "varrisco-real",
+          "x": 52,
+          "y": 45,
+          "idadeAnos": 6,
+          "direcaoGraus": 180,
+          "fome": 70,
+          "sede": 0
+        }
+      ]
+    }
+  ],
+  "camera": {
+    "x": 50,
+    "y": 45,
+    "distancia": 12
+  },
+  "hunters": [
+    {
+      "id": "hunter-A",
+      "nome": "Arvo",
+      "equipe": "azul",
+      "x": 44,
+      "y": 45,
+      "direcaoGraus": 0,
+      "equipamento": {
+        "arma": "montante",
+        "escudo": null,
+        "armadura": "leve"
+      },
+      "personalidade": {
+        "agressividade": 0.72,
+        "cautela": 0.35,
+        "disciplina": 0.7
+      },
+      "habilidade": 0.85
+    }
+  ]
+}
+]

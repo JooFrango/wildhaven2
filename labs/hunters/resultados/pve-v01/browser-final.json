@@ -1,0 +1,401 @@
+{
+  "reports": [
+    {
+      "weapon": "espada",
+      "acoes": [
+        {
+          "nome": "sword_light",
+          "start": 1.2,
+          "impact": 1.6167,
+          "end": 2.3499999999999996,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_follow",
+          "start": 2.35,
+          "impact": 2.7667,
+          "end": 3.5,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 4,
+          "impact": 4.4167,
+          "end": 5.1499999999999995,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_follow",
+          "start": 5.15,
+          "impact": 5.5667,
+          "end": 6.3,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 6.85,
+          "impact": 7.266699999999999,
+          "end": 7.999999999999999,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_follow",
+          "start": 8,
+          "impact": 8.4167,
+          "end": 9.15,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 9.65,
+          "impact": 10.0667,
+          "end": 10.8,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 11.15,
+          "impact": 11.5667,
+          "end": 12.3,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 12.8,
+          "impact": 13.216700000000001,
+          "end": 13.950000000000001,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_follow",
+          "start": 14,
+          "impact": 14.4167,
+          "end": 15.15,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 21.25,
+          "impact": 21.6667,
+          "end": 22.4,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 27.35,
+          "impact": 27.7667,
+          "end": 28.5,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 33.45,
+          "impact": 33.8667,
+          "end": 34.6,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 39.6,
+          "impact": 40.0167,
+          "end": 40.75,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 45.75,
+          "impact": 46.1667,
+          "end": 46.9,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 51.9,
+          "impact": 52.3167,
+          "end": 53.05,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 58.05,
+          "impact": 58.466699999999996,
+          "end": 59.199999999999996,
+          "clip": "pve1_c_sword_light"
+        },
+        {
+          "nome": "sword_light",
+          "start": 64.2,
+          "impact": 64.61670000000001,
+          "end": 65.35000000000001,
+          "clip": "pve1_c_sword_light"
+        }
+      ],
+      "outcome": {
+        "vencedor": "azul",
+        "t": 64.65,
+        "motivo": "criatura derrotada",
+        "situacoes": {
+          "hunter-A": "lutando"
+        }
+      },
+      "seconds": 64.65,
+      "clips": [
+        "pve1_b_sword_guard",
+        "pve1_a_sword_run",
+        "pve1_c_sword_light",
+        "pve1_b_sword_step_back",
+        "pve1_b_sword_step_forward",
+        "pve1_b_sword_step_right"
+      ],
+      "violations": [],
+      "frameMs": 288.5132743362832,
+      "events": 694,
+      "state": [
+        {
+          "id": "hunter-A",
+          "nome": "Arvo",
+          "equipe": "azul",
+          "situacao": "lutando",
+          "postura": "comprometida",
+          "controle": "ia",
+          "hp": 97.1,
+          "hpMax": 97.1,
+          "energia": 60.1,
+          "folego": 26.7,
+          "dor": 0,
+          "equipamento": {
+            "arma": "espada",
+            "escudo": null,
+            "armadura": "leve"
+          },
+          "alvo": "varrisco-real",
+          "estado": "preparando_ataque",
+          "motivo": "golpe comprometido; aguardando contato físico",
+          "x": 61.75,
+          "y": 57.63,
+          "golpesDados": 18,
+          "golpesRecebidos": 0,
+          "combateJogador": {
+            "habilidade": 0.85,
+            "parte": "pernas",
+            "sequencia": 1,
+            "janela": 0.63,
+            "conhecimento": 0.875
+          },
+          "ferimentos": []
+        }
+      ],
+      "presentation": {
+        "events": 694,
+        "impactos": 13,
+        "sons": 78,
+        "vozes": 78,
+        "passos": 39,
+        "respiracoes": 0,
+        "cameraFrames": 237,
+        "audio": "ready",
+        "voices": 0,
+        "particles": 4,
+        "trails": 0,
+        "cinematica": true,
+        "lastCues": [
+          {
+            "kind": "esforco",
+            "intensity": 0.16,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "impacto",
+            "intensity": 0.3360949163392028,
+            "audibility": 0.9569740128729154,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "esforco",
+            "intensity": 0.16,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "roupa",
+            "intensity": 0.1,
+            "audibility": 0.9390136717651354,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "esforco",
+            "intensity": 0.16,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "impacto",
+            "intensity": 0.2799442687864966,
+            "audibility": 0.9627052290702149,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.9080921998944512,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.8855728754338535,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.859443357306207,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "esforco",
+            "intensity": 0.16,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "impacto",
+            "intensity": 0.28675040788379436,
+            "audibility": 0.9548818722484479,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "esforco",
+            "intensity": 0.16,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "impacto",
+            "intensity": 0.3463041249851494,
+            "audibility": 0.9693556075159527,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "esforco",
+            "intensity": 0.16,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "impacto",
+            "intensity": 0.3377964511135273,
+            "audibility": 0.9693619244355688,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "esforco",
+            "intensity": 0.16,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "impacto",
+            "intensity": 0.30376575562703867,
+            "audibility": 0.9693721490662385,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "esforco",
+            "intensity": 0.16,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "impacto",
+            "intensity": 0.3173780338216341,
+            "audibility": 0.9694051710251856,
+            "heavy": false
+          },
+          {
+            "kind": "fim",
+            "intensity": 0.17,
+            "audibility": 1,
+            "heavy": false
+          }
+        ]
+      },
+      "audioTracks": 1
+    }
+  ],
+  "errors": [],
+  "source": "Actual Hunter Lab canvas; Chromium ANGLE SwiftShader. Playback 2x; limit 120 simulated seconds stated explicitly when no outcome."
+}

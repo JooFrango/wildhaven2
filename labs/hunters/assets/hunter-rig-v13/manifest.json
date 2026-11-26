@@ -1,0 +1,1656 @@
+{
+ "assetId": "wildhaven.hunter.rig-v13.blockout",
+ "version": "v13-e4-lote2-rolamento-refeito",
+ "status": "pending-director-approval",
+ "plan": "docs/PLANO-EVOLUCAO-PVE.md etapas E0 (aprovada 2026-11-19) e E1",
+ "docs": "docs/RIG-V13-E0.md, docs/RIG-V13-E1.md, docs/PVE2-E4-LOTE1.md, docs/PVE2-E4-LOTE2.md",
+ "source": {
+  "path": "../../assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb",
+  "sha256": "90f7cf659aa4243e07f6bef0ff28e0d616815f344095ad57e81dca817cbc5cf8",
+  "note": "corpo base fornecido pelo diretor; forma não remodelada"
+ },
+ "generator": [
+  "source/rig-v13/build_hunter_rig_v13.py",
+  "source/rig-v13/e4_comum.py",
+  "source/rig-v13/author_e4_locomocao.py",
+  "source/rig-v13/author_e4_combate.py",
+  "source/rig-v13/export_review_rig_v13.py",
+  "source/rig-v13/review_e4_locomocao.py",
+  "source/rig-v13/review_e4_combate.py"
+ ],
+ "blender": "5.3",
+ "model": {
+  "path": "assets/hunter-rig-v13/hunter_rig_v13_blockout.glb",
+  "bytes": 923844,
+  "sha256": "941c70d8941194e5d1bd4caf7d07cde586da15780cd6c0ca1bb9a74ce8deb3c0",
+  "triangles": 2482,
+  "trianglesSword": 60,
+  "joints": 46,
+  "clips": [
+   "pve2_a_sword_jog",
+   "pve2_a_sword_run",
+   "pve2_a_sword_walk",
+   "pve2_b_sword_guard",
+   "pve2_b_sword_roll_left",
+   "pve2_b_sword_roll_right",
+   "pve2_c_sword_charge_loop",
+   "pve2_c_sword_charge_release",
+   "pve2_c_sword_combo_1",
+   "pve2_c_sword_combo_2",
+   "pve2_c_sword_combo_3",
+   "rig13_stress"
+  ],
+  "weapon": "Espada_v12 (malha da v12) filha de WeaponSocket_R"
+ },
+ "sourceBlend": {
+  "path": "assets/hunter-rig-v13/hunter_rig_v13_source.blend",
+  "bytes": 951428,
+  "sha256": "21988ca470e904f002d32555863faf4956a9ab4bb59093426e4e4c8ad54c0d29"
+ },
+ "grip": {
+  "path": "assets/hunter-rig-v13/grip-v13.json",
+  "bytes": 887,
+  "sha256": "db81bb93e24d3c4a9a0c9cf198011d5701388c9c26ec45fdbc594c25ca63a079",
+  "Right": {
+   "centro": [
+    -0.7579452395439148,
+    0.049648672342300415,
+    1.2096997499465942
+   ],
+   "lamina": [
+    -0.15424083173274994,
+    -0.9878752827644348,
+    -0.017672793939709663
+   ],
+   "guarda": [
+    -0.9814537167549133,
+    0.15525002777576447,
+    -0.11245419830083847
+   ],
+   "folgaMinM": 0.014703408943767022,
+   "verticesEncostados": 11,
+   "coberturaSetores": 11,
+   "curvaturaDedos": [
+    -90,
+    -95
+   ]
+  },
+  "Left": {
+   "centro": [
+    0.7753475308418274,
+    0.041264526546001434,
+    1.213235855102539
+   ],
+   "lamina": [
+    0.13268204033374786,
+    -0.9910025000572205,
+    -0.0175941064953804
+   ],
+   "guarda": [
+    0.9824029803276062,
+    0.13384348154067993,
+    -0.1302701085805893
+   ],
+   "folgaMinM": 0.015738358816662933,
+   "verticesEncostados": 10,
+   "coberturaSetores": 10,
+   "curvaturaDedos": [
+    -90,
+    -80
+   ]
+  }
+ },
+ "checks": {
+  "headVerticesPreserved": "132/132",
+  "influencesMax": 4,
+  "ikRestRotationErrorDeg": {
+   "bracoDireito": 0.8,
+   "pernaDireita": 0.81,
+   "bracoEsquerdo": 0.44,
+   "pernaEsquerda": 0.61
+  },
+  "gates": {
+   "raio_min": {
+    "ombro": 0.75,
+    "cotovelo": 0.7,
+    "antebraco_15": 0.8,
+    "antebraco_50": 0.85,
+    "punho_90": 0.85,
+    "joelho": 0.65,
+    "canela_50": 0.85
+   },
+   "torcao_max_graus": {
+    "antebraco_15": 15
+   }
+  },
+  "violations": []
+ },
+ "deformation": {
+  "1": {
+   "pronacaoGraus": 0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1,
+     "cotovelo": 1,
+     "antebraco_15": 1,
+     "antebraco_50": 1,
+     "punho_90": 1,
+     "joelho": 1,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 1,
+     "antebraco_15": 1,
+     "antebraco_50": 1,
+     "punho_90": 1,
+     "joelho": 1,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0,
+     "cotovelo": 0,
+     "antebraco_15": 0,
+     "antebraco_50": 0,
+     "punho_90": 0,
+     "joelho": 0,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": 0,
+     "cotovelo": 0,
+     "antebraco_15": 0,
+     "antebraco_50": 0,
+     "punho_90": 0,
+     "joelho": 0,
+     "canela_50": 0
+    }
+   }
+  },
+  "12": {
+   "pronacaoGraus": 85,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1,
+     "cotovelo": 0.724,
+     "antebraco_15": 0.842,
+     "antebraco_50": 0.972,
+     "punho_90": 0.997,
+     "joelho": 1,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 0.741,
+     "antebraco_15": 0.326,
+     "antebraco_50": 0.994,
+     "punho_90": 0.962,
+     "joelho": 1,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0,
+     "cotovelo": 0.8,
+     "antebraco_15": 6.8,
+     "antebraco_50": 45.3,
+     "punho_90": 57.5,
+     "joelho": 0,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": 0,
+     "cotovelo": -5.2,
+     "antebraco_15": 32.8,
+     "antebraco_50": 47.9,
+     "punho_90": 68.2,
+     "joelho": 0,
+     "canela_50": 0
+    }
+   }
+  },
+  "24": {
+   "pronacaoGraus": -80,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1,
+     "cotovelo": 0.907,
+     "antebraco_15": 0.938,
+     "antebraco_50": 0.975,
+     "punho_90": 0.997,
+     "joelho": 1,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 0.935,
+     "antebraco_15": 0.833,
+     "antebraco_50": 1.004,
+     "punho_90": 0.966,
+     "joelho": 1,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0,
+     "cotovelo": -0.8,
+     "antebraco_15": -8.6,
+     "antebraco_50": -42.7,
+     "punho_90": -54.2,
+     "joelho": 0,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": 0,
+     "cotovelo": -9.9,
+     "antebraco_15": -47.7,
+     "antebraco_50": -41.9,
+     "punho_90": -64.2,
+     "joelho": 0,
+     "canela_50": 0
+    }
+   }
+  },
+  "36": {
+   "pronacaoGraus": 70,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 0.821,
+     "cotovelo": 0.707,
+     "antebraco_15": 0.842,
+     "antebraco_50": 0.981,
+     "punho_90": 0.998,
+     "joelho": 0.755,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 0.843,
+     "cotovelo": 0.757,
+     "antebraco_15": 0.345,
+     "antebraco_50": 0.993,
+     "punho_90": 0.974,
+     "joelho": 0.547,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": -6.3,
+     "cotovelo": 1,
+     "antebraco_15": 5.2,
+     "antebraco_50": 37.3,
+     "punho_90": 47.4,
+     "joelho": 7.4,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": -4.2,
+     "cotovelo": -6.8,
+     "antebraco_15": 15.5,
+     "antebraco_50": 39.6,
+     "punho_90": 56.2,
+     "joelho": 32.1,
+     "canela_50": 0
+    }
+   }
+  },
+  "48": {
+   "pronacaoGraus": 0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.002,
+     "cotovelo": 1,
+     "antebraco_15": 1,
+     "antebraco_50": 1,
+     "punho_90": 1,
+     "joelho": 0.705,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 1.004,
+     "cotovelo": 1,
+     "antebraco_15": 1,
+     "antebraco_50": 1,
+     "punho_90": 1,
+     "joelho": 0.479,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0.5,
+     "cotovelo": 0,
+     "antebraco_15": 0,
+     "antebraco_50": 0,
+     "punho_90": 0,
+     "joelho": 10.1,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": 0.8,
+     "cotovelo": 0,
+     "antebraco_15": 0,
+     "antebraco_50": 0,
+     "punho_90": 0,
+     "joelho": 45.8,
+     "canela_50": 0
+    }
+   }
+  },
+  "60": {
+   "pronacaoGraus": 0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1,
+     "cotovelo": 0.811,
+     "antebraco_15": 0.912,
+     "antebraco_50": 1,
+     "punho_90": 0.995,
+     "joelho": 1,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 0.901,
+     "antebraco_15": 0.664,
+     "antebraco_50": 1.051,
+     "punho_90": 0.9,
+     "joelho": 1,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0,
+     "cotovelo": -0.4,
+     "antebraco_15": -1.6,
+     "antebraco_50": 0,
+     "punho_90": -0.2,
+     "joelho": 0,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": 0,
+     "cotovelo": -6.7,
+     "antebraco_15": -22.3,
+     "antebraco_50": 0.9,
+     "punho_90": 6.3,
+     "joelho": 0,
+     "canela_50": 0
+    }
+   }
+  },
+  "72": {
+   "pronacaoGraus": -17.6,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1,
+     "cotovelo": 0.956,
+     "antebraco_15": 0.974,
+     "antebraco_50": 0.999,
+     "punho_90": 0.99,
+     "joelho": 1,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 0.976,
+     "antebraco_15": 0.874,
+     "antebraco_50": 1.038,
+     "punho_90": 0.846,
+     "joelho": 1,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0,
+     "cotovelo": -0.5,
+     "antebraco_15": -2.2,
+     "antebraco_50": -9.4,
+     "punho_90": -11.9,
+     "joelho": 0,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": 0,
+     "cotovelo": -4.3,
+     "antebraco_15": -13.4,
+     "antebraco_50": -7.7,
+     "punho_90": -18.2,
+     "joelho": 0,
+     "canela_50": 0
+    }
+   }
+  },
+  "84": {
+   "pronacaoGraus": 0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 0.898,
+     "cotovelo": 1,
+     "antebraco_15": 1,
+     "antebraco_50": 1,
+     "punho_90": 1,
+     "joelho": 1,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 0.915,
+     "cotovelo": 1,
+     "antebraco_15": 1,
+     "antebraco_50": 1,
+     "punho_90": 1,
+     "joelho": 1,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 14.4,
+     "cotovelo": 0,
+     "antebraco_15": 0,
+     "antebraco_50": 0,
+     "punho_90": 0,
+     "joelho": 0,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": 11.9,
+     "cotovelo": 0,
+     "antebraco_15": 0,
+     "antebraco_50": 0,
+     "punho_90": 0,
+     "joelho": 0,
+     "canela_50": 0
+    }
+   }
+  },
+  "96": {
+   "pronacaoGraus": 0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.005,
+     "cotovelo": 0.845,
+     "antebraco_15": 0.926,
+     "antebraco_50": 1,
+     "punho_90": 1,
+     "joelho": 0.965,
+     "canela_50": 1
+    },
+    "base_v12": {
+     "ombro": 1.007,
+     "cotovelo": 0.916,
+     "antebraco_15": 0.698,
+     "antebraco_50": 1.056,
+     "punho_90": 1,
+     "joelho": 0.956,
+     "canela_50": 1
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": -3.5,
+     "cotovelo": -0.5,
+     "antebraco_15": -1.3,
+     "antebraco_50": 0,
+     "punho_90": 0,
+     "joelho": 1.3,
+     "canela_50": 0
+    },
+    "base_v12": {
+     "ombro": -3,
+     "cotovelo": -5.7,
+     "antebraco_15": -18.4,
+     "antebraco_50": 1.4,
+     "punho_90": 0,
+     "joelho": 2.5,
+     "canela_50": 0
+    }
+   }
+  }
+ },
+ "renders": [
+  {
+   "path": "resultados/rig-v13/antebraco_q12_base.png",
+   "bytes": 371155,
+   "sha256": "cf7ac995d5d56b96fc8c0db79b729dce6c3aea70f7a8c96f3f70317f10f8e476"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q12_v13.png",
+   "bytes": 361609,
+   "sha256": "f4e8ab472b3f1a74cd14d9ab6228fcf2fcf620369edb4aef2b72547a93300753"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q24_base.png",
+   "bytes": 360868,
+   "sha256": "9a8d6831a4771452c39326b01dd668cd12ad392b593bfbadeafeffac35fd2012"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q24_v13.png",
+   "bytes": 357889,
+   "sha256": "97b56ce21f53768db5d5ae7a98667006a49dfbb975e2c3732b68771e3d7fcf9d"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q36_base.png",
+   "bytes": 403729,
+   "sha256": "94c3aabdf81fb70378fbfa327e5022b095122e06a5c3609f43c16c65420a55ba"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q36_v13.png",
+   "bytes": 426820,
+   "sha256": "f9fb0ca62f2ee16750d75b17e7db0d79b6264a6f8ca77c2f20eb13d291df4414"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q48_base.png",
+   "bytes": 287010,
+   "sha256": "4345dfea3334b4c74eca6201cee25a17e6c26f004d5b741f179702e420abf8bc"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q48_v13.png",
+   "bytes": 305152,
+   "sha256": "d9128f609f2c26082dbca380d7d28818e7254a6f5896f4e072be3c48d7c02488"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q60_base.png",
+   "bytes": 402592,
+   "sha256": "84c77b8a09331d9beb294da4d20251e9053fd5a3bc826675a3f72c9188d4a79a"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q60_v13.png",
+   "bytes": 417470,
+   "sha256": "898024799ce8e48aef9ee01e42326d479c17c4decb54c0ba8c7264b2018a5605"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q72_base.png",
+   "bytes": 303298,
+   "sha256": "1dd7717542dd884207201bf247e29a583f92918be36f26938fc3e500248c7c4f"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q72_v13.png",
+   "bytes": 295919,
+   "sha256": "8cf44d74c7530b33bf0f130576a64dd8b181fd113ddfc2588703dfaa42f25c1e"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q84_base.png",
+   "bytes": 347830,
+   "sha256": "8b9ae106b4b93355c141ea9a1dacb0006441998c6e8b35fd1404bcc760232e8f"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q84_v13.png",
+   "bytes": 393479,
+   "sha256": "3e4db169ac0a6e23905eed7ab36d57396473036849cebdb1ccf7106df5cee322"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q96_base.png",
+   "bytes": 352515,
+   "sha256": "90d778e894767e3793d19591ef07cd7f60d45cd5b25dc7a18d85a7d0fe3bdfaa"
+  },
+  {
+   "path": "resultados/rig-v13/antebraco_q96_v13.png",
+   "bytes": 358739,
+   "sha256": "84ac77bdbaa0add45c0ebf1ef0b40ec0969f9f2e912ce4049bce8c6d942380e1"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q12_frente.png",
+   "bytes": 719274,
+   "sha256": "662ef4cd2d063568612b31f62a1eb2ee0b3df4c32e0a38e09efb05071e614918"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q12_perfil.png",
+   "bytes": 633314,
+   "sha256": "6f2a816b158efff72511d29f30b40ffe801e733cfc320062ccacce71bbd26904"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q12_tres-quartos.png",
+   "bytes": 728955,
+   "sha256": "a56923fe822aedeb7eb926598a1f3c2e6dccca6bcc2c21a4199303a425795aa0"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q24_frente.png",
+   "bytes": 723735,
+   "sha256": "eef529a9b4635aed38977bada56ea5cc1c9b6b6e893b6e316b02169ea7be5a02"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q24_perfil.png",
+   "bytes": 635339,
+   "sha256": "2f5f2fdd9e41420491dc1c8d82b0447cef1eafea4a9108091ac18786bfc40a53"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q24_tres-quartos.png",
+   "bytes": 731936,
+   "sha256": "993bc9eb90ac7f836c9fc058a8ee7853c987290c8913383300b94b56b874ad81"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q36_frente.png",
+   "bytes": 713061,
+   "sha256": "dfec08b0ee2975be39b4d3aa36880ba6fd8f45099a3e051219dac478001cfe37"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q36_perfil.png",
+   "bytes": 647655,
+   "sha256": "196a0d3c93f1acdba8661a29e2310db3db80306940c888aafe3c8f374ddacde2"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q36_tres-quartos.png",
+   "bytes": 730337,
+   "sha256": "d941d2ab6d6784ec8aa6fa1919b4a2013801136d47b01d27b0ffa98a52cc3910"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q48_frente.png",
+   "bytes": 701330,
+   "sha256": "8ed29017b89e1a19a9472688a95ee978b3a58419aab30deb31dbb5162240e19b"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q48_perfil.png",
+   "bytes": 629131,
+   "sha256": "f8a4442e8642fe5a7b8203b58743c60a17e13afe8925a51e1b1a30cdfbc73d3d"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q48_tres-quartos.png",
+   "bytes": 705434,
+   "sha256": "c32df02babebe0a2182acba9ff5c2d2965a3b6acd0e0b292a07a403507f3674b"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q60_frente.png",
+   "bytes": 721028,
+   "sha256": "cfc57f028005efaeb0c8d042872f6492d5ce67318fd424defa11538d90b03524"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q60_perfil.png",
+   "bytes": 625687,
+   "sha256": "1c9978f9e3b31341b50cf96331bebdad315154bfaf4a1c0561bb186b0445f012"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q60_tres-quartos.png",
+   "bytes": 728911,
+   "sha256": "44cae8c073abf22639df44a32b4efc4f84f9ccef4a0bcf75c0fe250cb8af6e1c"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q72_frente.png",
+   "bytes": 719382,
+   "sha256": "802a2db6681cea8f4161cc4e68a9e98acca1f7c699a9da014ff3ec8cd6698aa5"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q72_perfil.png",
+   "bytes": 627383,
+   "sha256": "c3ca05c29e2d1778aca9715e692219047ca118e602f9caeeb15eeea6d4265ae7"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q72_tres-quartos.png",
+   "bytes": 727424,
+   "sha256": "4b7d6fc2e33cd5f62098c52617195e27edfad0fc00f9918cc4b85b2c891fd917"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q84_frente.png",
+   "bytes": 708644,
+   "sha256": "6321183cc9d9cbc347e9faa84f15884201b59027326b0154d70756714a060348"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q84_perfil.png",
+   "bytes": 630444,
+   "sha256": "92fe8f6e457ffbac63759574bf16367af824c1dcc75f200b2ebdd048cf74d704"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q84_tres-quartos.png",
+   "bytes": 725876,
+   "sha256": "b9bf724121b1bc23deb4fec44eff1c89779c92d20817f6c270ef7436581c2aea"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q96_frente.png",
+   "bytes": 708530,
+   "sha256": "fd6b02674267009f7423dad5da60ec2e86b25b91a754905a9190a3617a99f116"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q96_perfil.png",
+   "bytes": 660233,
+   "sha256": "0a77118ab3dc11d8a9c56f7c040078b4859cb3c90aa34ff74505a45a5739acbf"
+  },
+  {
+   "path": "resultados/rig-v13/estresse_q96_tres-quartos.png",
+   "bytes": 719348,
+   "sha256": "e40b53b98b0d3654077ce5b98f8c456561f91c28427a190c599514b430fbbd36"
+  },
+  {
+   "path": "resultados/rig-v13/v13_mao_cima.png",
+   "bytes": 341215,
+   "sha256": "74aa0be0999e2a38370cd1d7142f34db4e17168c5bdb28848735db5e70806236"
+  },
+  {
+   "path": "resultados/rig-v13/v13_mao_frente.png",
+   "bytes": 302552,
+   "sha256": "348706f8997c1b856d8b297bce47109f601c1122daab82ee93b9b6915a1795db"
+  },
+  {
+   "path": "resultados/rig-v13/v13_mao_palma.png",
+   "bytes": 343808,
+   "sha256": "480976d18f54f17412d8ff9c5106c367eca73ad80e415bd2e2a755a0902c38a5"
+  },
+  {
+   "path": "resultados/rig-v13/v13_repouso_frente.png",
+   "bytes": 464189,
+   "sha256": "e5cedf1b8f4bf2982fad021cdf2770f03021cd72a66d9629c7da1365d6d37496"
+  },
+  {
+   "path": "resultados/rig-v13/v13_repouso_perfil.png",
+   "bytes": 415151,
+   "sha256": "980619aae37d19bad095f9d1291763d15c9cdf993d0da19a4f7cd8d7cf02f99a"
+  },
+  {
+   "path": "resultados/rig-v13/v13_repouso_tres-quartos.png",
+   "bytes": 476154,
+   "sha256": "316dd17a0d3f366fd153aeb28ea15f0a37b598da3580e3d0e89e0ac71cc3617b"
+  }
+ ],
+ "e4": {
+  "portoes": {
+   "slideMmPorQuadro": 2,
+   "slideRolamentoMm": 5,
+   "peAbaixoDoChaoMm": 5,
+   "plantadoAcimaMm": 15,
+   "costuraGraus": 0.5,
+   "folgaLaminaM": 0.02,
+   "pontaAcimaDoChaoM": 0.05,
+   "punho": {
+    "extensao": 60,
+    "flexao": 70,
+    "radial": 20,
+    "ulnar": 35
+   }
+  },
+  "clips": {
+   "pve2_a_sword_jog": {
+    "frames": 35,
+    "speedMs": 3.1,
+    "stride": 1.8083333333333333,
+    "slideMmPorQuadro": 0.01,
+    "slideRolamentoMm": 3.39,
+    "peAbaixoDoChaoMm": 0,
+    "plantadoAcimaMm": 3.6,
+    "costuraGraus": 0,
+    "folgaLaminaM": 0.066,
+    "pontaAcimaDoChaoM": 0.52,
+    "punho": {
+     "ext": [
+      0,
+      0
+     ],
+     "rad": [
+      -25,
+      8
+     ],
+     "tw": [
+      0,
+      10
+     ]
+    },
+    "violacoes": []
+   },
+   "pve2_a_sword_run": {
+    "frames": 34,
+    "speedMs": 5.6,
+    "stride": 3.173333333333333,
+    "slideMmPorQuadro": 0,
+    "slideRolamentoMm": 4.43,
+    "peAbaixoDoChaoMm": 0,
+    "plantadoAcimaMm": 3.3,
+    "costuraGraus": 0,
+    "folgaLaminaM": 0.038,
+    "pontaAcimaDoChaoM": 0.117,
+    "punho": {
+     "ext": [
+      -10.1,
+      0
+     ],
+     "rad": [
+      -14.8,
+      8
+     ],
+     "tw": [
+      -13.7,
+      10
+     ]
+    },
+    "violacoes": []
+   },
+   "pve2_a_sword_walk": {
+    "frames": 50,
+    "speedMs": 1.4,
+    "stride": 1.1666666666666667,
+    "slideMmPorQuadro": 0.02,
+    "slideRolamentoMm": 1.64,
+    "peAbaixoDoChaoMm": 3.1,
+    "plantadoAcimaMm": 4.4,
+    "costuraGraus": 0,
+    "folgaLaminaM": 0.052,
+    "pontaAcimaDoChaoM": 0.18,
+    "punho": {
+     "ext": [
+      0,
+      0
+     ],
+     "rad": [
+      -25,
+      8
+     ],
+     "tw": [
+      0,
+      10
+     ]
+    },
+    "violacoes": []
+   },
+   "pve2_b_sword_guard": {
+    "frames": 180,
+    "speedMs": 0,
+    "stride": null,
+    "slideMmPorQuadro": 0.03,
+    "slideRolamentoMm": 0,
+    "peAbaixoDoChaoMm": 0,
+    "plantadoAcimaMm": 0.2,
+    "costuraGraus": 0,
+    "folgaLaminaM": 0.23,
+    "pontaAcimaDoChaoM": 1.088,
+    "punho": {
+     "ext": [
+      0,
+      0
+     ],
+     "rad": [
+      0,
+      12
+     ],
+     "tw": [
+      0,
+      25
+     ]
+    },
+    "violacoes": []
+   }
+  },
+  "violacoes": [],
+  "videos": [
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_jog_frente.mp4",
+    "bytes": 211980,
+    "sha256": "2b92e29d3c3b25718f3fbafff90b3eda4e1ea1780b5fc4048bdc7a96a0383ec0"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_jog_perfil.mp4",
+    "bytes": 129533,
+    "sha256": "ba21ad0cf9c0428f4aed7715ebd7e381ecdd4197027136a64d7d31e6e71c3efb"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_jog_perfil_a.png",
+    "bytes": 319775,
+    "sha256": "91a9385ca55d82fb23b3c01c1b791a9cf6baf9cbecd63978687d1e4447544590"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_jog_perfil_b.png",
+    "bytes": 317393,
+    "sha256": "4e01253d8be265011fb72907cf6c30b59f71fe5d80f3dce9d99b8551c1339d7e"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_jog_perfil_c.png",
+    "bytes": 319666,
+    "sha256": "0a354fc57dd0bae083f4d53d0e15dc9a0c0c87fe684250a1f76b9dba328b2cda"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_jog_perfil_d.png",
+    "bytes": 318433,
+    "sha256": "91f90e139223c4dcdb2ff99639290f1299fe4b8e6660477a14c48feea0aeb0cd"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_jog_tres-quartos.mp4",
+    "bytes": 180511,
+    "sha256": "66780e090563a90935da8c47963f0716288a1880d4f7ea7f513232d5ce0a4ca9"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_run_frente.mp4",
+    "bytes": 221333,
+    "sha256": "3fa6b1ad15845a567a600d3e84315377c8e498eca78a803b40b71597d4f6ed77"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_run_perfil.mp4",
+    "bytes": 145341,
+    "sha256": "bff5a98162cb0ea9c004759af551b4b9789343dcabbff006474203d16faa3f51"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_run_perfil_a.png",
+    "bytes": 318674,
+    "sha256": "df90e63da2ecad560f3feb8370cc5888d2a33eaf99e9c49f347c00747d3088f8"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_run_perfil_b.png",
+    "bytes": 319964,
+    "sha256": "fff0e7f27acd8c72a6df0046ee8397c522d9bd1e9d8c24ef91ad5fd187f25327"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_run_perfil_c.png",
+    "bytes": 320116,
+    "sha256": "cb1b0b3a73348c823af3f9eae76d73fa4bf0f916a251368a57f4e08e9764ef01"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_run_perfil_d.png",
+    "bytes": 320967,
+    "sha256": "a1716864284aa7733901eefb907853b47a93567c9b0c69a17f164e48e91c6bf2"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_run_tres-quartos.mp4",
+    "bytes": 193736,
+    "sha256": "0a23d545103563866ef6ab329e82b4b058a84f1065655d21704714d822f0e675"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_walk_frente.mp4",
+    "bytes": 262061,
+    "sha256": "f5efa107b404625e9c2892534ff86966e9c86d101dbc92f391beee241dd9820c"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_walk_perfil.mp4",
+    "bytes": 147715,
+    "sha256": "145e70100579815af0999bf43fdbdbdb2a907032336e3806105954eebe790e20"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_walk_perfil_a.png",
+    "bytes": 317080,
+    "sha256": "0fcdca4f0d03b9c1eb0cf95201888abbbcfb3e58e0b260e6f4fe4ca447d86dfc"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_walk_perfil_b.png",
+    "bytes": 312020,
+    "sha256": "28c19e8dc5a069d0f2fe203fcee597d21232477c53e1b1b8e9b390d8cc142838"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_walk_perfil_c.png",
+    "bytes": 319733,
+    "sha256": "56fcfa32a271c6e9fef2b824adb5a91601c18c0916b2d17ec71dacc8feb41196"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_walk_perfil_d.png",
+    "bytes": 312240,
+    "sha256": "74c58be53575cf07d24f97fb0204768690876d1e7597efbf9dd3617df629b4ee"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_a_sword_walk_tres-quartos.mp4",
+    "bytes": 217523,
+    "sha256": "9ea974c285e80f7853f2b8fbc0d2466a3ebb87fd245de9d0483b8b0b63bccc84"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_guard_frente.mp4",
+    "bytes": 104056,
+    "sha256": "ddbd60b502bab44e691868d9a8e268b96beb1611cd47f9d24936b1ff511f420b"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_guard_perfil.mp4",
+    "bytes": 86001,
+    "sha256": "0d245b3e0dd80b25b710270a24d1d8e7e73db03ac5a033e90ffe510aa15033ca"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_guard_perfil_a.png",
+    "bytes": 317544,
+    "sha256": "1021632b32daa84f01987e2ab10ad555e97fb7d0bc816e5399b0d1b7f5bff47a"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_guard_perfil_b.png",
+    "bytes": 317286,
+    "sha256": "7afba6c5d7c4889eea16905083ad2a099e073f47f86e58f43c5c625f36fc7024"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_guard_perfil_c.png",
+    "bytes": 317563,
+    "sha256": "e7270538a97d07898ddefd0d22299dcc292e626922e59e3fa0acdb8c21e6247d"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_guard_perfil_d.png",
+    "bytes": 317406,
+    "sha256": "866280beef35dc26d5798f4b4cf4270769b518b1bacd08fabed79943ceeb7636"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_guard_tres-quartos.mp4",
+    "bytes": 140906,
+    "sha256": "32deade967f4523cfbb8b3131e1bb11ee362397b4a73bf9df2683c9a934d64be"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_frente.mp4",
+    "bytes": 79487,
+    "sha256": "571fe402573595f395df8cdf70a9edd59beb9d4032493b15a609f77d82a0f5de"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_perfil.mp4",
+    "bytes": 70558,
+    "sha256": "8f84df28d8860191d04f1a46d3ee3df5d4ea73fbf7e4fdde427948f6e208c58c"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_perfil_antecipacao.png",
+    "bytes": 342896,
+    "sha256": "b7ef46148f722b285c78167688648cf3fe0171310edae7f58930227c230253ac"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_perfil_contato.png",
+    "bytes": 342896,
+    "sha256": "1a8efddba5668c1331cf8f85b8b1dd24af4b479e2e38ba7dab42d6e8bff66bbe"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_perfil_continuacao.png",
+    "bytes": 342896,
+    "sha256": "c0aea0a8222416447bf82f9ff946e1f052332832ea402be6da833f515603ba2e"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_tres-quartos.mp4",
+    "bytes": 101386,
+    "sha256": "449f8b24ff2fb6c9ecaf241b22ab753c2ab76f31443132767a41e1fcd1bfb1f3"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_tres-quartos_antecipacao.png",
+    "bytes": 481532,
+    "sha256": "97295e93ba27989911068934d22a8f3637ac357afbd99a0b9331ebee7f745ce8"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_tres-quartos_contato.png",
+    "bytes": 481532,
+    "sha256": "8bfaf786fd667b4ea60280354cb49b1c576a7bac49f86c37b01a27f75113a037"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_left_tres-quartos_continuacao.png",
+    "bytes": 481532,
+    "sha256": "7eb8e52311f030f51963096d536bded993f1c2945a5e0fa2dd8ce7997cd5a0e5"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_frente.mp4",
+    "bytes": 78398,
+    "sha256": "7cbf7300df876c297ff26866f5e429a9bfbd2b2559b044cb13369596584a5b3e"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_perfil.mp4",
+    "bytes": 72437,
+    "sha256": "835a17f5679a0f9017001caddbcd701ae5baeffb2df74d240bf0cae6a1b8cea9"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_perfil_antecipacao.png",
+    "bytes": 347611,
+    "sha256": "28c53f7f9c8bf9f97752d04601d42ccd1352a3c81b6be9c42795a36d9d3c3085"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_perfil_contato.png",
+    "bytes": 347611,
+    "sha256": "9a78aad42a103e34dbef795bf968e01aaf64e8c0e1f84e4ff4ead0e76ec8b535"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_perfil_continuacao.png",
+    "bytes": 347611,
+    "sha256": "a1c0f69b47fca7c8c8d94cbfe9ed71b3d29522686156cf4c706c8a3ec797deac"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_tres-quartos.mp4",
+    "bytes": 109863,
+    "sha256": "d35e80c55f2e1dab82cbe34e8e159ab2adcd12a7d6d9fbe5d5e3cfef7ca42b60"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_tres-quartos_antecipacao.png",
+    "bytes": 487647,
+    "sha256": "8b94f7cbc1d7f47134331eae41b7e188697942483c40cefdf68721a1925cad61"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_tres-quartos_contato.png",
+    "bytes": 487647,
+    "sha256": "0bff20d7979fb3c4cd8fffb416cfaf18f1f7441f9aa0497a8120bdc9207b87b2"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_b_sword_roll_right_tres-quartos_continuacao.png",
+    "bytes": 487647,
+    "sha256": "a0632dbbe333a6d4a56714fe7c61255e2b428de2719602f8f3b2fa49f5499a2e"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_frente.mp4",
+    "bytes": 28887,
+    "sha256": "7cd17e004510df1cb866f1443b940f214c3c3e12e85c8e280d72ff2f937f51b7"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_perfil.mp4",
+    "bytes": 32822,
+    "sha256": "8bcb67af65d2a8371bbedc20b0595da4e9ef217df26eb3b682480bbcb385ce04"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_perfil_antecipacao.png",
+    "bytes": 353862,
+    "sha256": "bd77d8baec87db736e6980bb744ae66d3419157da8d260cc2a0f682060b67f37"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_perfil_contato.png",
+    "bytes": 353862,
+    "sha256": "bbc6d943d4d2e1af3332888267926ab0c2ee08f67846dd7d74af54fc47302d5a"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_perfil_continuacao.png",
+    "bytes": 353862,
+    "sha256": "f8a01e28bc7fbd211fc097d1ab946085c3a5e32c3a5155ddbfd766205a4ab210"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_tres-quartos.mp4",
+    "bytes": 57971,
+    "sha256": "47a35350adeeb41027de8aca36a93a4399cefa4524ae1a89e72203bbd2aff5a9"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_tres-quartos_antecipacao.png",
+    "bytes": 484210,
+    "sha256": "c35e5d3252c052005350ba99ba40b420884e12985534925b30fa2ec1483ebf31"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_tres-quartos_contato.png",
+    "bytes": 484210,
+    "sha256": "503a1d82708d5b7a52f8f4430ecca1c912bcce1a479d5f83601425afa3f384a4"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_loop_tres-quartos_continuacao.png",
+    "bytes": 484210,
+    "sha256": "e9d5edcce3a90f374f233a6072a7165cb4b36163cb785abe4de63b23e16f026d"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_frente.mp4",
+    "bytes": 70138,
+    "sha256": "cdd470d9980860a8454d432095d4ea552e98d0e89dea8fa7255b82363cfe7396"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_perfil.mp4",
+    "bytes": 63133,
+    "sha256": "fa88ebfe7e29dacf0cd289a9f34ad36b70ad24b1e9591a7c7259712b78604b2f"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_perfil_antecipacao.png",
+    "bytes": 354554,
+    "sha256": "059610261ba43195114d96e25ac38939a9e6b6d6838b1256a07d8ffb05618789"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_perfil_contato.png",
+    "bytes": 343856,
+    "sha256": "22542e34387949b4c352dc12dd6919f3fa599ca8a4fdd9fb145d403d3fc79ab4"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_perfil_continuacao.png",
+    "bytes": 341894,
+    "sha256": "f092fcc65dab7dc4ade3a2181bb5c68f598a358f36ee987b20b03df9b3a8c3ee"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_tres-quartos.mp4",
+    "bytes": 104127,
+    "sha256": "921bdd1f252b1ee43bb4a9edf7cd31404f17670ff29e47fc921189f27d2d2896"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_tres-quartos_antecipacao.png",
+    "bytes": 485702,
+    "sha256": "62e693e2ae63854ecee83e53c9a9e4562840d42b89cddda5cf46273cbc8af425"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_tres-quartos_contato.png",
+    "bytes": 481974,
+    "sha256": "c4cd38ab89599a370a8206817bfb04b25c99dcb4a1ab423dac0c59e2655dd56e"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_charge_release_tres-quartos_continuacao.png",
+    "bytes": 482431,
+    "sha256": "9fac7e04b777656dfe48bb097d27231d2628ff7191562fb06dfa905c20f940dc"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_frente.mp4",
+    "bytes": 58248,
+    "sha256": "28eb9c0b21fcadc4fe1aa4c5a8a1596d3bc515b2009fb8e8fbe8f40d20479765"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_perfil.mp4",
+    "bytes": 51699,
+    "sha256": "f1c7e43e01a57204f84a3739501c5c0f27018ab5374045e65520a91a40a98534"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_perfil_antecipacao.png",
+    "bytes": 357413,
+    "sha256": "728bc4e5cebf21c41f80477e3b35942e37481c43b251a972a7f445034379300b"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_perfil_contato.png",
+    "bytes": 344185,
+    "sha256": "d3372dca6171d0a5597c7da5227c8a911a8f42451beb1ef1a993b3f947a4b0df"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_perfil_continuacao.png",
+    "bytes": 345336,
+    "sha256": "aec0fbd9ab5c8354bdc65b80acf7a6b62eccc20466b4d46fdbb6a616d706459f"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_tres-quartos.mp4",
+    "bytes": 77015,
+    "sha256": "86c3d8a1010c73c614d9d93b11e5d04342b7b405c64903da058b0222de7c4f69"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_tres-quartos_antecipacao.png",
+    "bytes": 489308,
+    "sha256": "c44d5a55bea739b5b6826466a6e35302f5fb85f05afc05abd06964d1f537b19c"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_tres-quartos_contato.png",
+    "bytes": 478236,
+    "sha256": "aee11a44011687ef3ee324f95878f3d01a1af8817183343bc545c1ec25b274dc"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_1_tres-quartos_continuacao.png",
+    "bytes": 481020,
+    "sha256": "008637dc744cfbeab89846c8857cc9cb354a6a9c4059a0f6d0d0fd01c3946ece"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_frente.mp4",
+    "bytes": 55711,
+    "sha256": "6a32265919dd0123e1aa4901e52a156160b59b5854f974692e81aeea82a67248"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_perfil.mp4",
+    "bytes": 49744,
+    "sha256": "071d826a720925253ef6839e6cef893d22869945e73733dd46930e27f5944b70"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_perfil_antecipacao.png",
+    "bytes": 341561,
+    "sha256": "a01a0b1c944804000a78533f570b75aa2e5bdca85967a63f4ef46182e1889888"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_perfil_contato.png",
+    "bytes": 349365,
+    "sha256": "dd810fd8d2dae1dfef658d3efaf67dfc286aa4aacda794f084d9aa4e94f97f0b"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_perfil_continuacao.png",
+    "bytes": 348997,
+    "sha256": "05e433e8c37ebab1f47d7ce261b4cb153a009daed58806cfaf273af7e5dbb716"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_tres-quartos.mp4",
+    "bytes": 74221,
+    "sha256": "418e58fae9253d62e22ef2c1ef2ea7eea13d17800d4cacb9a4aeff26c44d30e3"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_tres-quartos_antecipacao.png",
+    "bytes": 478710,
+    "sha256": "fe9a3b00c67d3901ea639df64c8899416dfbbb9a8810d4743c0391b7ebd4c5f7"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_tres-quartos_contato.png",
+    "bytes": 483222,
+    "sha256": "9055dfff5be92bdff9af095a20b393dd457973ad05a5072d5328a62505a46849"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_2_tres-quartos_continuacao.png",
+    "bytes": 483925,
+    "sha256": "d047db809ed6cc194e097bca6c0596b94f980368f6ef91982064d010ec9a8af4"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_frente.mp4",
+    "bytes": 73138,
+    "sha256": "af623196b99864227a31043f2e19ffdac99051f7cc768f2a0a2906f084a43b3f"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_perfil.mp4",
+    "bytes": 64653,
+    "sha256": "c8fbb2e9b4b6d696e7fdd3ed61722ba9e0a6984e986929e14517a6cac7995098"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_perfil_antecipacao.png",
+    "bytes": 352055,
+    "sha256": "6599bdcec2b0e870714f5a2274713155c0414e5c6547cc0759c8a17b90bb8798"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_perfil_contato.png",
+    "bytes": 341910,
+    "sha256": "b45d16d02430ddf969ae98b5a2bbc5efc84a9acebc488c723186ec6227dd59ac"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_perfil_continuacao.png",
+    "bytes": 345858,
+    "sha256": "8b328c387cf55769e5d7da98d92b37ee673678f2a8006da5ee452e30745a7832"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_tres-quartos.mp4",
+    "bytes": 100200,
+    "sha256": "b282044fcafe7cf7c3b02bf6aaa261c1b512f23b6396f4923139d4d190973bb7"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_tres-quartos_antecipacao.png",
+    "bytes": 484986,
+    "sha256": "529bef58af94dd0f5e5b71390f08980e125cc50641f1909c1c5cdaf2acafc253"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_tres-quartos_contato.png",
+    "bytes": 480407,
+    "sha256": "9190d818834ec2a6f8e9c4af771bcf26dac4b155f0a0cef48c8fecba25330e84"
+   },
+   {
+    "path": "resultados/pve2-e4/pve2_c_sword_combo_3_tres-quartos_continuacao.png",
+    "bytes": 484312,
+    "sha256": "52ac3994d8e41baba4df0034892152e0a9200490e590827c1ca1b030d3b97239"
+   }
+  ]
+ },
+ "trajectories": {
+  "path": "src/trajetorias-pve2.js",
+  "bytes": 28589,
+  "sha256": "7b3e5990950cbda3dec11894c007c53212c3c6507078e86a604e594834567ac6"
+ },
+ "e4combate": {
+  "portoes": {
+   "joelhoHiperextensaoGraus": 5,
+   "quadrilExtensaoGraus": 30,
+   "triangulosRuins": 90,
+   "triangulosRuinsCoxa": 20,
+   "bracoCabecaM": 0.05,
+   "costuraGraus": 0.5,
+   "slideMmPorQuadro": 2,
+   "folgaLaminaM": 0.02,
+   "punhoCabecaM": 0.16,
+   "cotoveloNoContatoGraus": 140,
+   "pontaAcimaDoChaoM": 0,
+   "punho": {
+    "extensao": 60,
+    "flexao": 70,
+    "radial": 20,
+    "ulnar": 35
+   }
+  },
+  "clips": {
+   "pve2_b_sword_roll_left": {
+    "frames": 54,
+    "contato": null,
+    "costuraEntrada": 0.131,
+    "costuraSaida": 0.131,
+    "slideMmPorQuadro": 0.03,
+    "folgaLaminaM": 0.192,
+    "punhoCabecaM": 0.455,
+    "pontaAcimaDoChaoM": -0.698,
+    "cotoveloNoContatoGraus": null,
+    "joelhoMinGraus": 0,
+    "quadrilExtensaoMaxGraus": -20.2,
+    "triangulosRuins": 79,
+    "triangulosRuinsCoxa": 20,
+    "bracoCabecaM": 0.122,
+    "pior": {
+     "deslizamento": [
+      4,
+      "Left"
+     ],
+     "folga": 41,
+     "ponta": 12
+    },
+    "punho": {
+     "ext": [
+      0,
+      0
+     ],
+     "rad": [
+      0,
+      12
+     ],
+     "tw": [
+      0,
+      25
+     ]
+    },
+    "avancoM": 1.3,
+    "excecoes": [
+     "folgaLaminaM",
+     "pontaAcimaDoChaoM"
+    ],
+    "violacoes": []
+   },
+   "pve2_b_sword_roll_right": {
+    "frames": 54,
+    "contato": null,
+    "costuraEntrada": 0.131,
+    "costuraSaida": 0.131,
+    "slideMmPorQuadro": 0.03,
+    "folgaLaminaM": 0.192,
+    "punhoCabecaM": 0.455,
+    "pontaAcimaDoChaoM": -0.698,
+    "cotoveloNoContatoGraus": null,
+    "joelhoMinGraus": 35.7,
+    "quadrilExtensaoMaxGraus": -20.2,
+    "triangulosRuins": 87,
+    "triangulosRuinsCoxa": 16,
+    "bracoCabecaM": 0.122,
+    "pior": {
+     "deslizamento": [
+      34,
+      "Left"
+     ],
+     "folga": 41,
+     "ponta": 12
+    },
+    "punho": {
+     "ext": [
+      0,
+      0
+     ],
+     "rad": [
+      0,
+      12
+     ],
+     "tw": [
+      0,
+      25
+     ]
+    },
+    "avancoM": -1.3,
+    "excecoes": [
+     "folgaLaminaM",
+     "pontaAcimaDoChaoM"
+    ],
+    "violacoes": []
+   },
+   "pve2_c_sword_charge_loop": {
+    "frames": 60,
+    "contato": null,
+    "costuraEntrada": null,
+    "costuraSaida": 0,
+    "slideMmPorQuadro": 0.03,
+    "folgaLaminaM": 0.055,
+    "punhoCabecaM": 0.291,
+    "pontaAcimaDoChaoM": 1.091,
+    "cotoveloNoContatoGraus": null,
+    "joelhoMinGraus": 42.8,
+    "quadrilExtensaoMaxGraus": -21.4,
+    "triangulosRuins": 40,
+    "triangulosRuinsCoxa": 4,
+    "bracoCabecaM": 0.07,
+    "pior": {
+     "deslizamento": [
+      32,
+      "Right"
+     ],
+     "folga": 1,
+     "ponta": 19
+    },
+    "punho": {
+     "ext": [
+      -10.1,
+      0
+     ],
+     "rad": [
+      0,
+      14.8
+     ],
+     "tw": [
+      -86.3,
+      10
+     ]
+    },
+    "avancoM": 0,
+    "excecoes": [],
+    "violacoes": []
+   },
+   "pve2_c_sword_charge_release": {
+    "frames": 72,
+    "contato": 0.15,
+    "costuraEntrada": null,
+    "costuraSaida": 0.131,
+    "slideMmPorQuadro": 0.04,
+    "folgaLaminaM": 0.055,
+    "punhoCabecaM": 0.291,
+    "pontaAcimaDoChaoM": 0.017,
+    "cotoveloNoContatoGraus": 140.3,
+    "joelhoMinGraus": 19.2,
+    "quadrilExtensaoMaxGraus": -0.4,
+    "triangulosRuins": 77,
+    "triangulosRuinsCoxa": 13,
+    "bracoCabecaM": 0.07,
+    "pior": {
+     "deslizamento": [
+      33,
+      "Left"
+     ],
+     "folga": 0,
+     "ponta": 19
+    },
+    "punho": {
+     "ext": [
+      -33.8,
+      10.2
+     ],
+     "rad": [
+      -27.1,
+      14.8
+     ],
+     "tw": [
+      -86.3,
+      93.7
+     ]
+    },
+    "avancoM": 0.51,
+    "excecoes": [],
+    "violacoes": []
+   },
+   "pve2_c_sword_combo_1": {
+    "frames": 48,
+    "contato": 0.3,
+    "costuraEntrada": 0.131,
+    "costuraSaida": 0.131,
+    "slideMmPorQuadro": 0.03,
+    "folgaLaminaM": 0.021,
+    "punhoCabecaM": 0.374,
+    "pontaAcimaDoChaoM": 0.134,
+    "cotoveloNoContatoGraus": 143.5,
+    "joelhoMinGraus": 1.6,
+    "quadrilExtensaoMaxGraus": 14.8,
+    "triangulosRuins": 73,
+    "triangulosRuinsCoxa": 6,
+    "bracoCabecaM": 0.053,
+    "pior": {
+     "deslizamento": [
+      33,
+      "Left"
+     ],
+     "folga": 7,
+     "ponta": 25
+    },
+    "punho": {
+     "ext": [
+      -51.8,
+      11
+     ],
+     "rad": [
+      -29.7,
+      12
+     ],
+     "tw": [
+      -20.2,
+      99.2
+     ]
+    },
+    "avancoM": 0.13,
+    "excecoes": [],
+    "violacoes": []
+   },
+   "pve2_c_sword_combo_2": {
+    "frames": 51,
+    "contato": 0.3333,
+    "costuraEntrada": 0.131,
+    "costuraSaida": 0.131,
+    "slideMmPorQuadro": 0.03,
+    "folgaLaminaM": 0.105,
+    "punhoCabecaM": 0.423,
+    "pontaAcimaDoChaoM": 0.915,
+    "cotoveloNoContatoGraus": 157.9,
+    "joelhoMinGraus": 32.7,
+    "quadrilExtensaoMaxGraus": -12.7,
+    "triangulosRuins": 63,
+    "triangulosRuinsCoxa": 5,
+    "bracoCabecaM": 0.097,
+    "pior": {
+     "deslizamento": [
+      23,
+      "Left"
+     ],
+     "folga": 31,
+     "ponta": 22
+    },
+    "punho": {
+     "ext": [
+      -1.5,
+      22.1
+     ],
+     "rad": [
+      -30,
+      14.4
+     ],
+     "tw": [
+      -85,
+      85
+     ]
+    },
+    "avancoM": 0.08,
+    "excecoes": [],
+    "violacoes": []
+   },
+   "pve2_c_sword_combo_3": {
+    "frames": 66,
+    "contato": 0.3667,
+    "costuraEntrada": 0.131,
+    "costuraSaida": 0.131,
+    "slideMmPorQuadro": 0.02,
+    "folgaLaminaM": 0.022,
+    "punhoCabecaM": 0.504,
+    "pontaAcimaDoChaoM": 0.468,
+    "cotoveloNoContatoGraus": 157.1,
+    "joelhoMinGraus": 10.1,
+    "quadrilExtensaoMaxGraus": 13.4,
+    "triangulosRuins": 57,
+    "triangulosRuinsCoxa": 9,
+    "bracoCabecaM": 0.104,
+    "pior": {
+     "deslizamento": [
+      61,
+      "Left"
+     ],
+     "folga": 9,
+     "ponta": 10
+    },
+    "punho": {
+     "ext": [
+      -11.7,
+      42.7
+     ],
+     "rad": [
+      -30,
+      12
+     ],
+     "tw": [
+      -96.4,
+      87.7
+     ]
+    },
+    "avancoM": 0.43,
+    "excecoes": [],
+    "violacoes": []
+   }
+  },
+  "violacoes": []
+ }
+}

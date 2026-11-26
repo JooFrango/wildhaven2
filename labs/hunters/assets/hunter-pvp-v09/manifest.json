@@ -1,0 +1,99 @@
+{
+  "version": "pvp-v09-horizontal-cut",
+  "status": "pending-director-approval",
+  "source": "labs/hunters/assets/hunter-v05/hunter_combat_v05.glb",
+  "sourceSha256": "1824a6c4085f6492857a7d2e81cdbd008a24e5c065ac488ef485a322f1177ab3",
+  "file": "hunter_pvp_v09.glb",
+  "sha256": "a34f080d11241a174f0b0450406ac3068058b7000a4f36c1854f3b320f2f99df",
+  "bytes": 1605940,
+  "characterTriangles": 1000,
+  "swordTriangles": 60,
+  "skinJoints": 19,
+  "joints": [
+    "Hips",
+    "Spine02",
+    "Spine",
+    "neck",
+    "Head",
+    "LeftShoulder",
+    "LeftArm",
+    "LeftForeArm",
+    "LeftHand",
+    "RightShoulder",
+    "RightArm",
+    "RightForeArm",
+    "RightHand",
+    "LeftUpLeg",
+    "LeftLeg",
+    "LeftFoot",
+    "RightUpLeg",
+    "RightLeg",
+    "RightFoot"
+  ],
+  "oldClips": 83,
+  "clips": 84,
+  "newClips": [
+    {
+      "name": "pvp09_sword_horizontal_cut",
+      "duration": 1.9,
+      "contact": 0.84,
+      "phases": {
+        "guard": 0,
+        "preparation": 0.1,
+        "charge": 0.42,
+        "execution": 0.62,
+        "contact": 0.84,
+        "continuation": 0.86,
+        "recovery": 1.18,
+        "guardReturn": 1.9
+      },
+      "fps": 60,
+      "frames": 115
+    }
+  ],
+  "weaponSocket": "WeaponSocket_Right_PvP09",
+  "socketTranslation": [
+    0.009218021907301907,
+    -0.09379711365144208,
+    0.03271283489919864
+  ],
+  "socketRotation": [
+    -0.8501392022648925,
+    0.4433542776156128,
+    -0.20162308954492442,
+    -0.2001210969637055
+  ],
+  "gripAngleDeg": 75,
+  "originalBinaryPrefixUnchanged": true,
+  "qa": {
+    "maxHandError": 4.382911021895475e-8,
+    "maxFootError": 0.000004473866558188701,
+    "maxFootSlideOnPlant": 0.000028194699396522083,
+    "minElbowDeg": 108.54396479503109,
+    "maxElbowDeg": 166.9726069452345,
+    "maxWristDeviationDeg": 51.22070536138557,
+    "maxForearmTwistDeg": 174.50546780059832,
+    "twistRangeDeg": [
+      -4.188798564676464,
+      174.50546780059832
+    ],
+    "maxSwordBodyPenetration": 0,
+    "minFreeHandHeight": 0.88,
+    "maxFreeHandHeight": 0.97997180335097,
+    "samples": 115
+  },
+  "qaLimits": {
+    "maxHandError": 0.01,
+    "maxFootError": 0.012,
+    "maxFootSlideOnPlant": 0.002,
+    "maxWristDeviationDeg": 60,
+    "maxForearmTwistDeg": 200,
+    "maxSwordBodyPenetration": 0,
+    "maxFreeHandHeight": 1.05
+  },
+  "limitations": [
+    "Rig de 19 ossos sem dedos: a mão não fecha, o cabo passa sob a palma.",
+    "Sem ossos de dedo do pé: o pivô do calcanhar gira o pé inteiro em torno da bola do pé.",
+    "Somente versão in-place; sem variante root motion."
+  ]
+}

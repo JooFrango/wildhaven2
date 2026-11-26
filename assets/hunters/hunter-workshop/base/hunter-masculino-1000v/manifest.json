@@ -1,0 +1,61 @@
+{
+  "assetId": "wildhaven.hunter.base.masculino-1000v",
+  "version": "v01-user-reference",
+  "source": "modelo e textura fornecidos pelo responsavel em 2026-11-10",
+  "approval": "base-de-referencia; sem integracao ao jogo",
+  "format": "glTF 2.0 GLB",
+  "model": {
+    "path": "hunter_masculino_1000v.glb",
+    "bytes": 254744,
+    "sha256": "90f7cf659aa4243e07f6bef0ff28e0d616815f344095ad57e81dca817cbc5cf8",
+    "meshes": 1,
+    "primitives": 1,
+    "verticesExported": 959,
+    "triangles": 1000,
+    "skinCount": 1,
+    "jointCount": 19,
+    "animationClips": [
+      "Running",
+      "Walking"
+    ],
+    "embeddedImageCount": 1
+  },
+  "texture": {
+    "path": "hunter_textura.png",
+    "bytes": 150407,
+    "sha256": "053700541b5917975346888e7b67b12997e3d28fa5da9b6b6403cef05d348914",
+    "dimensions": [
+      512,
+      512
+    ],
+    "note": "bytes identicos a imagem interna no GLB"
+  },
+  "skeleton": {
+    "jointNames": [
+      "Hips",
+      "Spine02",
+      "Spine",
+      "neck",
+      "Head",
+      "LeftShoulder",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftHand",
+      "RightShoulder",
+      "RightArm",
+      "RightForeArm",
+      "RightHand",
+      "LeftUpLeg",
+      "LeftLeg",
+      "LeftFoot",
+      "RightUpLeg",
+      "RightLeg",
+      "RightFoot"
+    ],
+    "reusePolicy": "preservar joint names, bind matrices, pose e escala"
+  },
+  "publication": {
+    "githubBinaryUploaded": true,
+    "branch": "main"
+  }
+}

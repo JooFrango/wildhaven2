@@ -1,0 +1,720 @@
+{
+  "status": "rendered-from-real-glb-pending-director-approval",
+  "glb": "labs/hunters/assets/hunter-pve-v01/hunter_pve_v01.glb",
+  "glbSha256": "9c94bcdba88512cbc0263807e65a5339922c4a6509d19ef170365c8e04bf5e09",
+  "renderer": "three.js WebGL (headless Chromium) loading the real PvE v01 GLB with its integrated sword mesh",
+  "clipes": {
+    "pve1_b_sword_guard": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_guard_profile.gif",
+          "angle": "profile",
+          "frames": 61,
+          "width": 480,
+          "height": 560,
+          "bytes": 875361,
+          "sha256": "4c29d63fdb14a1f336ce700f161c82b7d34fc280ddc28b80da0af7e3dfc972e2"
+        },
+        {
+          "file": "pve1_b_sword_guard_front.gif",
+          "angle": "front",
+          "frames": 61,
+          "width": 480,
+          "height": 560,
+          "bytes": 902130,
+          "sha256": "6c21d779f6fb0d29e6166934d174440c34450fd563cc5517c6b70f9bf9e64a56"
+        },
+        {
+          "file": "pve1_b_sword_guard_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 61,
+          "width": 480,
+          "height": 560,
+          "bytes": 950838,
+          "sha256": "f4aaefa5cadbd4e43c8644903bd3571818991ecdb8b7fccaee658a2baeb8e0eb"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "inspira": 0.6,
+        "expira": 1.2,
+        "ajuste": 1.8,
+        "guardReturn": 2.398
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_guard_profile_guard_0.png",
+        "pose_pve1_b_sword_guard_profile_inspira_0_6.png",
+        "pose_pve1_b_sword_guard_profile_expira_1_2.png",
+        "pose_pve1_b_sword_guard_profile_ajuste_1_8.png",
+        "pose_pve1_b_sword_guard_profile_guardReturn_2_398.png",
+        "pose_pve1_b_sword_guard_front_guard_0.png",
+        "pose_pve1_b_sword_guard_front_inspira_0_6.png",
+        "pose_pve1_b_sword_guard_front_expira_1_2.png",
+        "pose_pve1_b_sword_guard_front_ajuste_1_8.png",
+        "pose_pve1_b_sword_guard_front_guardReturn_2_398.png",
+        "pose_pve1_b_sword_guard_threequarter_guard_0.png",
+        "pose_pve1_b_sword_guard_threequarter_inspira_0_6.png",
+        "pose_pve1_b_sword_guard_threequarter_expira_1_2.png",
+        "pose_pve1_b_sword_guard_threequarter_ajuste_1_8.png",
+        "pose_pve1_b_sword_guard_threequarter_guardReturn_2_398.png"
+      ]
+    },
+    "pve1_b_sword_step_forward": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_step_forward_profile.gif",
+          "angle": "profile",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 307322,
+          "sha256": "cd40a88642691451eba4bff969f06549b7ec4454627aa40f07aa56508a03448b"
+        },
+        {
+          "file": "pve1_b_sword_step_forward_front.gif",
+          "angle": "front",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 323093,
+          "sha256": "022300588379d71e71c52ea9145d809f5ac6cad5d7505c5be614d7f5c5a08d22"
+        },
+        {
+          "file": "pve1_b_sword_step_forward_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 342442,
+          "sha256": "023a2c2727ff543e67e6ed61a74de36f4f1816dbd69ede60299893e4f98e0a9c"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "apoioA": 0.2125,
+        "troca": 0.425,
+        "apoioB": 0.6375,
+        "guardReturn": 0.848
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_step_forward_profile_guard_0.png",
+        "pose_pve1_b_sword_step_forward_profile_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_forward_profile_troca_0_425.png",
+        "pose_pve1_b_sword_step_forward_profile_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_forward_profile_guardReturn_0_848.png",
+        "pose_pve1_b_sword_step_forward_front_guard_0.png",
+        "pose_pve1_b_sword_step_forward_front_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_forward_front_troca_0_425.png",
+        "pose_pve1_b_sword_step_forward_front_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_forward_front_guardReturn_0_848.png",
+        "pose_pve1_b_sword_step_forward_threequarter_guard_0.png",
+        "pose_pve1_b_sword_step_forward_threequarter_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_forward_threequarter_troca_0_425.png",
+        "pose_pve1_b_sword_step_forward_threequarter_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_forward_threequarter_guardReturn_0_848.png"
+      ]
+    },
+    "pve1_b_sword_step_back": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_step_back_profile.gif",
+          "angle": "profile",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 305801,
+          "sha256": "40f357cbafe02d03c74523b2ccdf207baef7dcd04f7b3ca13642c3fd0c0fcdc5"
+        },
+        {
+          "file": "pve1_b_sword_step_back_front.gif",
+          "angle": "front",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 323257,
+          "sha256": "b87607b96f37b087c1b9083e4501d77846738b91acfb96c2d36e9d851bc2aa7b"
+        },
+        {
+          "file": "pve1_b_sword_step_back_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 342307,
+          "sha256": "caf079640d8459428a38b9ea8613ded31e5f258381491eca2cd3e7490a697f96"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "apoioA": 0.2125,
+        "troca": 0.425,
+        "apoioB": 0.6375,
+        "guardReturn": 0.848
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_step_back_profile_guard_0.png",
+        "pose_pve1_b_sword_step_back_profile_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_back_profile_troca_0_425.png",
+        "pose_pve1_b_sword_step_back_profile_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_back_profile_guardReturn_0_848.png",
+        "pose_pve1_b_sword_step_back_front_guard_0.png",
+        "pose_pve1_b_sword_step_back_front_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_back_front_troca_0_425.png",
+        "pose_pve1_b_sword_step_back_front_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_back_front_guardReturn_0_848.png",
+        "pose_pve1_b_sword_step_back_threequarter_guard_0.png",
+        "pose_pve1_b_sword_step_back_threequarter_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_back_threequarter_troca_0_425.png",
+        "pose_pve1_b_sword_step_back_threequarter_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_back_threequarter_guardReturn_0_848.png"
+      ]
+    },
+    "pve1_b_sword_step_left": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_step_left_profile.gif",
+          "angle": "profile",
+          "frames": 23,
+          "width": 480,
+          "height": 560,
+          "bytes": 315923,
+          "sha256": "1eb25d4344d21ceaf12fa6121910d1ac4439da2900632e70e457439259cba493"
+        },
+        {
+          "file": "pve1_b_sword_step_left_front.gif",
+          "angle": "front",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 319909,
+          "sha256": "2e0251b92997dea78dfda5a0d512c1d53448a721fa111df19b1015a9eaa1d64a"
+        },
+        {
+          "file": "pve1_b_sword_step_left_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 343001,
+          "sha256": "b6c63be42c7c2f2f2d25c9420fc9bd55a4f3bd31590411f4aa68fbd1c9ee72c4"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "apoioA": 0.2125,
+        "troca": 0.425,
+        "apoioB": 0.6375,
+        "guardReturn": 0.848
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_step_left_profile_guard_0.png",
+        "pose_pve1_b_sword_step_left_profile_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_left_profile_troca_0_425.png",
+        "pose_pve1_b_sword_step_left_profile_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_left_profile_guardReturn_0_848.png",
+        "pose_pve1_b_sword_step_left_front_guard_0.png",
+        "pose_pve1_b_sword_step_left_front_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_left_front_troca_0_425.png",
+        "pose_pve1_b_sword_step_left_front_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_left_front_guardReturn_0_848.png",
+        "pose_pve1_b_sword_step_left_threequarter_guard_0.png",
+        "pose_pve1_b_sword_step_left_threequarter_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_left_threequarter_troca_0_425.png",
+        "pose_pve1_b_sword_step_left_threequarter_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_left_threequarter_guardReturn_0_848.png"
+      ]
+    },
+    "pve1_b_sword_step_right": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_step_right_profile.gif",
+          "angle": "profile",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 315384,
+          "sha256": "544cbce78b4dae10b63f31dc00b044ff5563c30c89bbded756d8111a6250244d"
+        },
+        {
+          "file": "pve1_b_sword_step_right_front.gif",
+          "angle": "front",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 320173,
+          "sha256": "f302904939d51ff7338a2b91021caaf8ffeb61f93d3ff0f14bb39977da43ae17"
+        },
+        {
+          "file": "pve1_b_sword_step_right_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 22,
+          "width": 480,
+          "height": 560,
+          "bytes": 342430,
+          "sha256": "b9af2e4f9ad7ce58f7232b8429a675f04b6d616b1d11999cb1a66afc28e40e3a"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "apoioA": 0.2125,
+        "troca": 0.425,
+        "apoioB": 0.6375,
+        "guardReturn": 0.848
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_step_right_profile_guard_0.png",
+        "pose_pve1_b_sword_step_right_profile_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_right_profile_troca_0_425.png",
+        "pose_pve1_b_sword_step_right_profile_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_right_profile_guardReturn_0_848.png",
+        "pose_pve1_b_sword_step_right_front_guard_0.png",
+        "pose_pve1_b_sword_step_right_front_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_right_front_troca_0_425.png",
+        "pose_pve1_b_sword_step_right_front_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_right_front_guardReturn_0_848.png",
+        "pose_pve1_b_sword_step_right_threequarter_guard_0.png",
+        "pose_pve1_b_sword_step_right_threequarter_apoioA_0_2125.png",
+        "pose_pve1_b_sword_step_right_threequarter_troca_0_425.png",
+        "pose_pve1_b_sword_step_right_threequarter_apoioB_0_6375.png",
+        "pose_pve1_b_sword_step_right_threequarter_guardReturn_0_848.png"
+      ]
+    },
+    "pve1_a_sword_run": {
+      "previews": [
+        {
+          "file": "pve1_a_sword_run_profile.gif",
+          "angle": "profile",
+          "frames": 17,
+          "width": 480,
+          "height": 560,
+          "bytes": 227797,
+          "sha256": "a2bd2101d76e200156d6c93076ae0f5d2c4a5f34fbf8b640fe96d569f88e9ac4"
+        },
+        {
+          "file": "pve1_a_sword_run_front.gif",
+          "angle": "front",
+          "frames": 17,
+          "width": 480,
+          "height": 560,
+          "bytes": 227733,
+          "sha256": "c7a46c16b5880ddf6334e5ea5756bc5a4c5c4141858f126253316a0ac52735d8"
+        },
+        {
+          "file": "pve1_a_sword_run_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 17,
+          "width": 480,
+          "height": 560,
+          "bytes": 243980,
+          "sha256": "16a0031c0351c0554bb703b2c54b134bfc2e965bad7d17e06c7029cce3459e81"
+        }
+      ],
+      "keyPoses": {
+        "apoioE": 0,
+        "vooA": 0.1625,
+        "apoioD": 0.325,
+        "vooB": 0.48750000000000004,
+        "ciclo": 0.648
+      },
+      "screenshots": [
+        "pose_pve1_a_sword_run_profile_apoioE_0.png",
+        "pose_pve1_a_sword_run_profile_vooA_0_1625.png",
+        "pose_pve1_a_sword_run_profile_apoioD_0_325.png",
+        "pose_pve1_a_sword_run_profile_vooB_0_48750000000000004.png",
+        "pose_pve1_a_sword_run_profile_ciclo_0_648.png",
+        "pose_pve1_a_sword_run_front_apoioE_0.png",
+        "pose_pve1_a_sword_run_front_vooA_0_1625.png",
+        "pose_pve1_a_sword_run_front_apoioD_0_325.png",
+        "pose_pve1_a_sword_run_front_vooB_0_48750000000000004.png",
+        "pose_pve1_a_sword_run_front_ciclo_0_648.png",
+        "pose_pve1_a_sword_run_threequarter_apoioE_0.png",
+        "pose_pve1_a_sword_run_threequarter_vooA_0_1625.png",
+        "pose_pve1_a_sword_run_threequarter_apoioD_0_325.png",
+        "pose_pve1_a_sword_run_threequarter_vooB_0_48750000000000004.png",
+        "pose_pve1_a_sword_run_threequarter_ciclo_0_648.png"
+      ]
+    },
+    "pve1_b_sword_block": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_block_profile.gif",
+          "angle": "profile",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 358923,
+          "sha256": "6116d626b6337a81433a99960247bef600ae4981cdaa995d14d4b8fd0c4710c8"
+        },
+        {
+          "file": "pve1_b_sword_block_front.gif",
+          "angle": "front",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 364604,
+          "sha256": "61559bf588057c7220416b2b62231d4932bbc22004b3871ca677e9faa9e27c9c"
+        },
+        {
+          "file": "pve1_b_sword_block_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 389551,
+          "sha256": "99eedbcef3095ae0bff2cf47de5bb0e5ec1115031ab912b6bdf25410fec91641"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "subida": 0.18,
+        "posto": 0.3,
+        "impacto": 0.38,
+        "absorcao": 0.52,
+        "recovery": 0.72,
+        "guardReturn": 0.998
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_block_profile_guard_0.png",
+        "pose_pve1_b_sword_block_profile_subida_0_18.png",
+        "pose_pve1_b_sword_block_profile_posto_0_3.png",
+        "pose_pve1_b_sword_block_profile_impacto_0_38.png",
+        "pose_pve1_b_sword_block_profile_absorcao_0_52.png",
+        "pose_pve1_b_sword_block_profile_recovery_0_72.png",
+        "pose_pve1_b_sword_block_profile_guardReturn_0_998.png",
+        "pose_pve1_b_sword_block_front_guard_0.png",
+        "pose_pve1_b_sword_block_front_subida_0_18.png",
+        "pose_pve1_b_sword_block_front_posto_0_3.png",
+        "pose_pve1_b_sword_block_front_impacto_0_38.png",
+        "pose_pve1_b_sword_block_front_absorcao_0_52.png",
+        "pose_pve1_b_sword_block_front_recovery_0_72.png",
+        "pose_pve1_b_sword_block_front_guardReturn_0_998.png",
+        "pose_pve1_b_sword_block_threequarter_guard_0.png",
+        "pose_pve1_b_sword_block_threequarter_subida_0_18.png",
+        "pose_pve1_b_sword_block_threequarter_posto_0_3.png",
+        "pose_pve1_b_sword_block_threequarter_impacto_0_38.png",
+        "pose_pve1_b_sword_block_threequarter_absorcao_0_52.png",
+        "pose_pve1_b_sword_block_threequarter_recovery_0_72.png",
+        "pose_pve1_b_sword_block_threequarter_guardReturn_0_998.png"
+      ]
+    },
+    "pve1_b_sword_dodge_left": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_dodge_left_profile.gif",
+          "angle": "profile",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 344176,
+          "sha256": "ea7cd6a92464301278596bb508deccfa1ffdb63a6f65170ebe05a5689c98caa1"
+        },
+        {
+          "file": "pve1_b_sword_dodge_left_front.gif",
+          "angle": "front",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 367206,
+          "sha256": "c5abc34fd7ccdacd694c7955ce6e6d58ed37fad13652794c6a131fd53730203b"
+        },
+        {
+          "file": "pve1_b_sword_dodge_left_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 394051,
+          "sha256": "9e622b5837ac7f5ba6371f70e266bf47584ebbca7c0d6ea331113e80ecb2fe64"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "agacha": 0.1,
+        "impulso": 0.2,
+        "voo": 0.29,
+        "aterrissa": 0.38,
+        "absorve": 0.48,
+        "recovery": 0.6,
+        "guardReturn": 0.998
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_dodge_left_profile_guard_0.png",
+        "pose_pve1_b_sword_dodge_left_profile_agacha_0_1.png",
+        "pose_pve1_b_sword_dodge_left_profile_impulso_0_2.png",
+        "pose_pve1_b_sword_dodge_left_profile_voo_0_29.png",
+        "pose_pve1_b_sword_dodge_left_profile_aterrissa_0_38.png",
+        "pose_pve1_b_sword_dodge_left_profile_absorve_0_48.png",
+        "pose_pve1_b_sword_dodge_left_profile_recovery_0_6.png",
+        "pose_pve1_b_sword_dodge_left_profile_guardReturn_0_998.png",
+        "pose_pve1_b_sword_dodge_left_front_guard_0.png",
+        "pose_pve1_b_sword_dodge_left_front_agacha_0_1.png",
+        "pose_pve1_b_sword_dodge_left_front_impulso_0_2.png",
+        "pose_pve1_b_sword_dodge_left_front_voo_0_29.png",
+        "pose_pve1_b_sword_dodge_left_front_aterrissa_0_38.png",
+        "pose_pve1_b_sword_dodge_left_front_absorve_0_48.png",
+        "pose_pve1_b_sword_dodge_left_front_recovery_0_6.png",
+        "pose_pve1_b_sword_dodge_left_front_guardReturn_0_998.png",
+        "pose_pve1_b_sword_dodge_left_threequarter_guard_0.png",
+        "pose_pve1_b_sword_dodge_left_threequarter_agacha_0_1.png",
+        "pose_pve1_b_sword_dodge_left_threequarter_impulso_0_2.png",
+        "pose_pve1_b_sword_dodge_left_threequarter_voo_0_29.png",
+        "pose_pve1_b_sword_dodge_left_threequarter_aterrissa_0_38.png",
+        "pose_pve1_b_sword_dodge_left_threequarter_absorve_0_48.png",
+        "pose_pve1_b_sword_dodge_left_threequarter_recovery_0_6.png",
+        "pose_pve1_b_sword_dodge_left_threequarter_guardReturn_0_998.png"
+      ]
+    },
+    "pve1_b_sword_dodge_right": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_dodge_right_profile.gif",
+          "angle": "profile",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 349975,
+          "sha256": "53b00f927f49743f5368e0e6bbf7b42fca5ebfc7ab2dec9a0d7e3a203d0b9260"
+        },
+        {
+          "file": "pve1_b_sword_dodge_right_front.gif",
+          "angle": "front",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 356865,
+          "sha256": "961258b8a583ed25a6452377155c0c3df44a9e7ea012da9d0b593b39e889eb45"
+        },
+        {
+          "file": "pve1_b_sword_dodge_right_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 25,
+          "width": 480,
+          "height": 560,
+          "bytes": 390797,
+          "sha256": "33726a726fda1d323eb13b1a79d1797818d49a0d363789efe66c4ad80a55cd11"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "agacha": 0.1,
+        "impulso": 0.2,
+        "voo": 0.29,
+        "aterrissa": 0.38,
+        "absorve": 0.48,
+        "recovery": 0.6,
+        "guardReturn": 0.998
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_dodge_right_profile_guard_0.png",
+        "pose_pve1_b_sword_dodge_right_profile_agacha_0_1.png",
+        "pose_pve1_b_sword_dodge_right_profile_impulso_0_2.png",
+        "pose_pve1_b_sword_dodge_right_profile_voo_0_29.png",
+        "pose_pve1_b_sword_dodge_right_profile_aterrissa_0_38.png",
+        "pose_pve1_b_sword_dodge_right_profile_absorve_0_48.png",
+        "pose_pve1_b_sword_dodge_right_profile_recovery_0_6.png",
+        "pose_pve1_b_sword_dodge_right_profile_guardReturn_0_998.png",
+        "pose_pve1_b_sword_dodge_right_front_guard_0.png",
+        "pose_pve1_b_sword_dodge_right_front_agacha_0_1.png",
+        "pose_pve1_b_sword_dodge_right_front_impulso_0_2.png",
+        "pose_pve1_b_sword_dodge_right_front_voo_0_29.png",
+        "pose_pve1_b_sword_dodge_right_front_aterrissa_0_38.png",
+        "pose_pve1_b_sword_dodge_right_front_absorve_0_48.png",
+        "pose_pve1_b_sword_dodge_right_front_recovery_0_6.png",
+        "pose_pve1_b_sword_dodge_right_front_guardReturn_0_998.png",
+        "pose_pve1_b_sword_dodge_right_threequarter_guard_0.png",
+        "pose_pve1_b_sword_dodge_right_threequarter_agacha_0_1.png",
+        "pose_pve1_b_sword_dodge_right_threequarter_impulso_0_2.png",
+        "pose_pve1_b_sword_dodge_right_threequarter_voo_0_29.png",
+        "pose_pve1_b_sword_dodge_right_threequarter_aterrissa_0_38.png",
+        "pose_pve1_b_sword_dodge_right_threequarter_absorve_0_48.png",
+        "pose_pve1_b_sword_dodge_right_threequarter_recovery_0_6.png",
+        "pose_pve1_b_sword_dodge_right_threequarter_guardReturn_0_998.png"
+      ]
+    },
+    "pve1_c_sword_light": {
+      "previews": [
+        {
+          "file": "pve1_c_sword_light_profile.gif",
+          "angle": "profile",
+          "frames": 29,
+          "width": 480,
+          "height": 560,
+          "bytes": 428383,
+          "sha256": "c765c6e4b78529ed083475e311ed02046f4f6b30c3e34891777c25fcb5f159fe"
+        },
+        {
+          "file": "pve1_c_sword_light_front.gif",
+          "angle": "front",
+          "frames": 29,
+          "width": 480,
+          "height": 560,
+          "bytes": 426286,
+          "sha256": "27ff07a9cfeda1797c995aa787640554866f1eeb014eaeb4c93c5d394310c115"
+        },
+        {
+          "file": "pve1_c_sword_light_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 29,
+          "width": 480,
+          "height": 560,
+          "bytes": 443608,
+          "sha256": "350ad37baea79ca5efd893e55ffe7a0c8aed4d0203c62bbd085054fbf5d74f4c"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "anticipation": 0.14,
+        "charge": 0.24,
+        "activeStart": 0.3,
+        "contact": 0.4167,
+        "activeEnd": 0.5,
+        "recovery": 0.56,
+        "guardReturn": 1.148
+      },
+      "screenshots": [
+        "pose_pve1_c_sword_light_profile_guard_0.png",
+        "pose_pve1_c_sword_light_profile_anticipation_0_14.png",
+        "pose_pve1_c_sword_light_profile_charge_0_24.png",
+        "pose_pve1_c_sword_light_profile_activeStart_0_3.png",
+        "pose_pve1_c_sword_light_profile_contact_0_4167.png",
+        "pose_pve1_c_sword_light_profile_activeEnd_0_5.png",
+        "pose_pve1_c_sword_light_profile_recovery_0_56.png",
+        "pose_pve1_c_sword_light_profile_guardReturn_1_148.png",
+        "pose_pve1_c_sword_light_front_guard_0.png",
+        "pose_pve1_c_sword_light_front_anticipation_0_14.png",
+        "pose_pve1_c_sword_light_front_charge_0_24.png",
+        "pose_pve1_c_sword_light_front_activeStart_0_3.png",
+        "pose_pve1_c_sword_light_front_contact_0_4167.png",
+        "pose_pve1_c_sword_light_front_activeEnd_0_5.png",
+        "pose_pve1_c_sword_light_front_recovery_0_56.png",
+        "pose_pve1_c_sword_light_front_guardReturn_1_148.png",
+        "pose_pve1_c_sword_light_threequarter_guard_0.png",
+        "pose_pve1_c_sword_light_threequarter_anticipation_0_14.png",
+        "pose_pve1_c_sword_light_threequarter_charge_0_24.png",
+        "pose_pve1_c_sword_light_threequarter_activeStart_0_3.png",
+        "pose_pve1_c_sword_light_threequarter_contact_0_4167.png",
+        "pose_pve1_c_sword_light_threequarter_activeEnd_0_5.png",
+        "pose_pve1_c_sword_light_threequarter_recovery_0_56.png",
+        "pose_pve1_c_sword_light_threequarter_guardReturn_1_148.png"
+      ]
+    },
+    "pve1_c_sword_heavy": {
+      "previews": [
+        {
+          "file": "pve1_c_sword_heavy_profile.gif",
+          "angle": "profile",
+          "frames": 50,
+          "width": 480,
+          "height": 560,
+          "bytes": 738787,
+          "sha256": "d09750fe81151f3c0662c034fdefceb5b14fbe6110dcbdf817d09cc6adc7230f"
+        },
+        {
+          "file": "pve1_c_sword_heavy_front.gif",
+          "angle": "front",
+          "frames": 50,
+          "width": 480,
+          "height": 560,
+          "bytes": 742514,
+          "sha256": "5c7c79e4e10067a8e983c092fc9c13e0ee115b2bbae9b39bbec3b41960b8d643"
+        },
+        {
+          "file": "pve1_c_sword_heavy_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 50,
+          "width": 480,
+          "height": 560,
+          "bytes": 774195,
+          "sha256": "7f03cb30e22d5554eb0e78538057eb695705414dd558fec5b443df76e6543a69"
+        }
+      ],
+      "keyPoses": {
+        "guard": 0,
+        "anticipation": 0.25,
+        "charge": 0.5,
+        "activeStart": 0.82,
+        "contact": 0.9333,
+        "activeEnd": 1.05,
+        "recovery": 1.2,
+        "guardReturn": 1.998
+      },
+      "screenshots": [
+        "pose_pve1_c_sword_heavy_profile_guard_0.png",
+        "pose_pve1_c_sword_heavy_profile_anticipation_0_25.png",
+        "pose_pve1_c_sword_heavy_profile_charge_0_5.png",
+        "pose_pve1_c_sword_heavy_profile_activeStart_0_82.png",
+        "pose_pve1_c_sword_heavy_profile_contact_0_9333.png",
+        "pose_pve1_c_sword_heavy_profile_activeEnd_1_05.png",
+        "pose_pve1_c_sword_heavy_profile_recovery_1_2.png",
+        "pose_pve1_c_sword_heavy_profile_guardReturn_1_998.png",
+        "pose_pve1_c_sword_heavy_front_guard_0.png",
+        "pose_pve1_c_sword_heavy_front_anticipation_0_25.png",
+        "pose_pve1_c_sword_heavy_front_charge_0_5.png",
+        "pose_pve1_c_sword_heavy_front_activeStart_0_82.png",
+        "pose_pve1_c_sword_heavy_front_contact_0_9333.png",
+        "pose_pve1_c_sword_heavy_front_activeEnd_1_05.png",
+        "pose_pve1_c_sword_heavy_front_recovery_1_2.png",
+        "pose_pve1_c_sword_heavy_front_guardReturn_1_998.png",
+        "pose_pve1_c_sword_heavy_threequarter_guard_0.png",
+        "pose_pve1_c_sword_heavy_threequarter_anticipation_0_25.png",
+        "pose_pve1_c_sword_heavy_threequarter_charge_0_5.png",
+        "pose_pve1_c_sword_heavy_threequarter_activeStart_0_82.png",
+        "pose_pve1_c_sword_heavy_threequarter_contact_0_9333.png",
+        "pose_pve1_c_sword_heavy_threequarter_activeEnd_1_05.png",
+        "pose_pve1_c_sword_heavy_threequarter_recovery_1_2.png",
+        "pose_pve1_c_sword_heavy_threequarter_guardReturn_1_998.png"
+      ]
+    },
+    "pve1_b_sword_recover": {
+      "previews": [
+        {
+          "file": "pve1_b_sword_recover_profile.gif",
+          "angle": "profile",
+          "frames": 50,
+          "width": 480,
+          "height": 560,
+          "bytes": 698862,
+          "sha256": "7e0a6fe28cc2286138b284b930b5c03c787b1e0b528fb4754a5f9ea63cc67c23"
+        },
+        {
+          "file": "pve1_b_sword_recover_front.gif",
+          "angle": "front",
+          "frames": 50,
+          "width": 480,
+          "height": 560,
+          "bytes": 764728,
+          "sha256": "a420c3a3be43bb6f9547bd3421164ce5a29778d221d53c7721089c298b2d92bc"
+        },
+        {
+          "file": "pve1_b_sword_recover_threequarter.gif",
+          "angle": "threequarter",
+          "frames": 50,
+          "width": 480,
+          "height": 560,
+          "bytes": 774994,
+          "sha256": "d805eca996b06c26d0d386fc846d8275448d45e38d70c5c3a41af1124b7629a3"
+        }
+      ],
+      "keyPoses": {
+        "expira": 0,
+        "inspira": 0.7,
+        "solta": 1.4,
+        "ciclo": 1.998
+      },
+      "screenshots": [
+        "pose_pve1_b_sword_recover_profile_expira_0.png",
+        "pose_pve1_b_sword_recover_profile_inspira_0_7.png",
+        "pose_pve1_b_sword_recover_profile_solta_1_4.png",
+        "pose_pve1_b_sword_recover_profile_ciclo_1_998.png",
+        "pose_pve1_b_sword_recover_front_expira_0.png",
+        "pose_pve1_b_sword_recover_front_inspira_0_7.png",
+        "pose_pve1_b_sword_recover_front_solta_1_4.png",
+        "pose_pve1_b_sword_recover_front_ciclo_1_998.png",
+        "pose_pve1_b_sword_recover_threequarter_expira_0.png",
+        "pose_pve1_b_sword_recover_threequarter_inspira_0_7.png",
+        "pose_pve1_b_sword_recover_threequarter_solta_1_4.png",
+        "pose_pve1_b_sword_recover_threequarter_ciclo_1_998.png"
+      ]
+    }
+  }
+}

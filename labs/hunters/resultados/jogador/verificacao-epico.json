@@ -1,0 +1,728 @@
+{
+  "rows": [
+    {
+      "weapon": "lanca",
+      "worst": {
+        "t": 19.2,
+        "clip": [
+          {
+            "id": "varrisco-real",
+            "pes": false
+          },
+          {
+            "id": "hunter-A",
+            "clip": "spear_light_low",
+            "pes": false
+          }
+        ],
+        "state": "recuperando",
+        "action": {
+          "name": "spear_light",
+          "start": 18.75,
+          "impact": 19.15,
+          "end": 19.729999999999997,
+          "reach": 2.1,
+          "heading": 0.10762817912687692,
+          "goal": "pernas",
+          "aimHeight": 0.322,
+          "cancelAfter": 19.526999999999997
+        }
+      },
+      "attackFrames": 111,
+      "maxHiltError": 4.801974113881789e-8,
+      "tPose": 0,
+      "stats": {
+        "events": 111,
+        "impactos": 7,
+        "sons": 105,
+        "vozes": 105,
+        "passos": 76,
+        "respiracoes": 3,
+        "cameraFrames": 268,
+        "audio": "ready",
+        "voices": 1,
+        "particles": 0,
+        "trails": 0,
+        "cinematica": true,
+        "lastCues": [
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.9012620213594049,
+            "heavy": false
+          },
+          {
+            "kind": "impacto",
+            "intensity": 0.2561227819459545,
+            "audibility": 0.9269926317624089,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.8930024219443177,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.84058164415613,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.798289669649981,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7429843875929387,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "respiracao",
+            "intensity": 0.058665619232605465,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7195140274806805,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7148808699447446,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7272206524690298,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7354999017485726,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.719594266738562,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6900180577354158,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6486758874875506,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6176692395134022,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.5763271420105791,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.5424158416928627,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.489665711594615,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.4501027694637989,
+            "heavy": false
+          },
+          {
+            "kind": "respiracao",
+            "intensity": 0.06275502973554675,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.40551840993860666,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.4425053780034339,
+            "heavy": false
+          }
+        ]
+      },
+      "invariants": []
+    },
+    {
+      "weapon": "espada",
+      "worst": {
+        "t": 3.8,
+        "clip": [
+          {
+            "id": "varrisco-real",
+            "pes": false
+          },
+          {
+            "id": "hunter-A",
+            "clip": "sword_follow",
+            "pes": false
+          }
+        ],
+        "state": "preparando_ataque",
+        "action": {
+          "name": "sword_follow",
+          "start": 3.75,
+          "impact": 4.0052,
+          "end": 4.3852,
+          "reach": 1.05,
+          "heading": -0.9328825436834886,
+          "goal": "flanco",
+          "aimHeight": 0.826,
+          "cancelAfter": 4.2522
+        }
+      },
+      "attackFrames": 81,
+      "maxHiltError": 0.01968002347824167,
+      "tPose": 0,
+      "stats": {
+        "events": 104,
+        "impactos": 7,
+        "sons": 135,
+        "vozes": 135,
+        "passos": 103,
+        "respiracoes": 3,
+        "cameraFrames": 265,
+        "audio": "ready",
+        "voices": 0,
+        "particles": 0,
+        "trails": 0,
+        "cinematica": true,
+        "lastCues": [
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.790928149561791,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.8002007713907261,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.8050941837866716,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "respiracao",
+            "intensity": 0.06385981004741527,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7919875920065678,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7624579270724233,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.730390907306085,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.698323887539484,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6662568677726778,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6341898480058717,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6021228282390655,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.5700558084722592,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.5379887887054526,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.5059217689386459,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.47385474917183934,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.4432163008336042,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "respiracao",
+            "intensity": 0.06579892598542196,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          }
+        ]
+      },
+      "invariants": []
+    },
+    {
+      "weapon": "montante",
+      "worst": {
+        "t": 3.8,
+        "clip": [
+          {
+            "id": "varrisco-real",
+            "pes": false
+          },
+          {
+            "id": "hunter-A",
+            "clip": "greatsword_heavy",
+            "pes": false
+          }
+        ],
+        "state": "recuperando",
+        "action": {
+          "name": "greatsword_heavy",
+          "start": 2.6,
+          "impact": 3.75,
+          "end": 5,
+          "reach": 1.7,
+          "heading": -1.619156843009302,
+          "goal": "flanco",
+          "aimHeight": 0.826,
+          "cancelAfter": 4.5625
+        }
+      },
+      "attackFrames": 38,
+      "maxHiltError": 6.916067900564425e-8,
+      "tPose": 0,
+      "stats": {
+        "events": 46,
+        "impactos": 1,
+        "sons": 113,
+        "vozes": 113,
+        "passos": 104,
+        "respiracoes": 2,
+        "cameraFrames": 265,
+        "audio": "ready",
+        "voices": 0,
+        "particles": 0,
+        "trails": 0,
+        "cinematica": true,
+        "lastCues": [
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6427761039904412,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6528829351122645,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6642443276233825,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6756161673017825,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6907735804703735,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7021346681560731,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "respiracao",
+            "intensity": 0.05056886566213357,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7134952373147272,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7248656395721061,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7362304185446711,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7398772731285517,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.7250097854538798,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.1,
+            "audibility": 1,
+            "heavy": false
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.676388431664745,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.6429305173542784,
+            "heavy": true
+          },
+          {
+            "kind": "passo",
+            "intensity": 0.16,
+            "audibility": 0.616588717335008,
+            "heavy": true
+          },
+          {
+            "kind": "respiracao",
+            "intensity": 0.05213251430988117,
+            "audibility": 1,
+            "heavy": false
+          }
+        ]
+      },
+      "invariants": []
+    }
+  ],
+  "errors": []
+}

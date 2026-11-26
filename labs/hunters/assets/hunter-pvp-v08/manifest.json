@@ -1,0 +1,56 @@
+{
+  "version": "pvp-v08-single-swing-review",
+  "status": "pending-art-director-approval",
+  "source": "labs/hunters/assets/hunter-v05/hunter_combat_v05.glb",
+  "sourceSha256": "1824a6c4085f6492857a7d2e81cdbd008a24e5c065ac488ef485a322f1177ab3",
+  "file": "hunter_pvp_v08.glb",
+  "sha256": "e7d2a3c6e262ac47cc9fde4e2468296e64823344cc94db38c3d315b798b2fdb8",
+  "bytes": 1604032,
+  "characterTriangles": 1000,
+  "skinJoints": 19,
+  "oldClips": 83,
+  "newClips": [
+    {
+      "name": "pvp08_sword_horizontal_review",
+      "duration": 2.25,
+      "impact": 1.16,
+      "phases": {
+        "ready": 0,
+        "anticipation": 0.26,
+        "load": 0.64,
+        "windup": 0.88,
+        "strike": 1.16,
+        "follow": 1.4,
+        "recover": 1.87,
+        "guard": 2.25
+      }
+    }
+  ],
+  "frames": 110,
+  "integratedSword": true,
+  "weaponSocket": "WeaponSocket_Right_PvP08",
+  "socketTranslation": [
+    0.04954156279795515,
+    -0.0706076506330896,
+    0.025694226645289926
+  ],
+  "socketRotation": [
+    -0.19808313516618836,
+    -0.563930287401554,
+    0.4665902147651315,
+    -0.6519503634438821
+  ],
+  "originalBinaryPrefixUnchanged": true,
+  "originalModelsAndSkinUntouched": true,
+  "ikDiagnostics": {
+    "maxHandError": 4.3445987921529717e-8,
+    "maxFootError": 0.061110247903205135,
+    "minArmExtension": 0.25389012782935694,
+    "maxArmExtension": 0.3872771320586371,
+    "maxWristDeflectionRadians": 1.1500000000000004,
+    "minElbowAngleDegrees": 65.5102811635517,
+    "maxElbowAngleDegrees": 111.57792612291273,
+    "sampleCount": 110
+  },
+  "limitations": "Only horizontal sword swing, experimental. No Alpha integration or director approval."
+}

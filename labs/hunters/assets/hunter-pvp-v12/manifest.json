@@ -1,0 +1,360 @@
+{
+  "version": "pvp-v12-biblioteca-pvp-nova",
+  "status": "pending-director-approval",
+  "source": "labs/hunters/assets/hunter-v05/hunter_combat_v05.glb",
+  "sourceSha256": "1824a6c4085f6492857a7d2e81cdbd008a24e5c065ac488ef485a322f1177ab3",
+  "file": "hunter_pvp_v12.glb",
+  "sha256": "b36f7a82b852e0f2cfcda665c2098ae3730c472e03711120b03737f8908d2c25",
+  "bytes": 1993452,
+  "characterTriangles": 1000,
+  "swordTriangles": 60,
+  "skinJoints": 23,
+  "joints": [
+    "Hips",
+    "Spine02",
+    "Spine",
+    "neck",
+    "Head",
+    "LeftShoulder",
+    "LeftArm",
+    "LeftForeArm",
+    "LeftHand",
+    "RightShoulder",
+    "RightArm",
+    "RightForeArm",
+    "RightHand",
+    "LeftUpLeg",
+    "LeftLeg",
+    "LeftFoot",
+    "RightUpLeg",
+    "RightLeg",
+    "RightFoot",
+    "RightFingers1",
+    "RightFingers2",
+    "LeftFingers1",
+    "LeftFingers2"
+  ],
+  "oldClips": 83,
+  "clips": 93,
+  "newClips": [
+    {
+      "name": "pvp12_guard",
+      "duration": 3.2,
+      "contact": null,
+      "requiresExtension": false,
+      "phases": {
+        "guard": 0,
+        "inspira": 0.8,
+        "expira": 1.6,
+        "ajuste": 2.4,
+        "guardReturn": 3.2
+      },
+      "fps": 60,
+      "frames": 193
+    },
+    {
+      "name": "pvp12_sword_horizontal_cut",
+      "duration": 1.9,
+      "contact": 0.9167,
+      "requiresExtension": true,
+      "phases": {
+        "guard": 0,
+        "preparation": 0.24,
+        "charge": 0.44,
+        "execution": 0.7,
+        "contact": 0.9167,
+        "continuation": 1.02,
+        "recovery": 1.52,
+        "guardReturn": 1.9
+      },
+      "fps": 60,
+      "frames": 115
+    },
+    {
+      "name": "pvp12_sword_block",
+      "duration": 1.1,
+      "contact": 0.3,
+      "requiresExtension": false,
+      "phases": {
+        "guard": 0,
+        "subida": 0.16,
+        "posto": 0.3,
+        "impacto": 0.38,
+        "absorcao": 0.52,
+        "recovery": 0.78,
+        "guardReturn": 1.1
+      },
+      "fps": 60,
+      "frames": 67
+    },
+    {
+      "name": "pvp12_step_forward",
+      "duration": 0.85,
+      "contact": null,
+      "requiresExtension": false,
+      "pesLineares": true,
+      "pesPercorrem": true,
+      "phases": {
+        "guard": 0,
+        "apoioA": 0.2125,
+        "troca": 0.425,
+        "apoioB": 0.6375,
+        "guardReturn": 0.85
+      },
+      "fps": 60,
+      "frames": 52
+    },
+    {
+      "name": "pvp12_step_back",
+      "duration": 0.85,
+      "contact": null,
+      "requiresExtension": false,
+      "pesLineares": true,
+      "pesPercorrem": true,
+      "phases": {
+        "guard": 0,
+        "apoioA": 0.2125,
+        "troca": 0.425,
+        "apoioB": 0.6375,
+        "guardReturn": 0.85
+      },
+      "fps": 60,
+      "frames": 52
+    },
+    {
+      "name": "pvp12_step_left",
+      "duration": 0.85,
+      "contact": null,
+      "requiresExtension": false,
+      "pesLineares": true,
+      "pesPercorrem": true,
+      "phases": {
+        "guard": 0,
+        "apoioA": 0.2125,
+        "troca": 0.425,
+        "apoioB": 0.6375,
+        "guardReturn": 0.85
+      },
+      "fps": 60,
+      "frames": 52
+    },
+    {
+      "name": "pvp12_step_right",
+      "duration": 0.85,
+      "contact": null,
+      "requiresExtension": false,
+      "pesLineares": true,
+      "pesPercorrem": true,
+      "phases": {
+        "guard": 0,
+        "apoioA": 0.2125,
+        "troca": 0.425,
+        "apoioB": 0.6375,
+        "guardReturn": 0.85
+      },
+      "fps": 60,
+      "frames": 52
+    },
+    {
+      "name": "pvp12_sword_horizontal_reverse_cut",
+      "duration": 1.9,
+      "contact": 0.8833,
+      "requiresExtension": true,
+      "phases": {
+        "guard": 0,
+        "preparation": 0.22,
+        "charge": 0.42,
+        "execution": 0.7,
+        "contact": 0.8833,
+        "continuation": 1.02,
+        "recovery": 1.4,
+        "guardReturn": 1.9
+      },
+      "fps": 60,
+      "frames": 115
+    },
+    {
+      "name": "pvp12_sword_diagonal_down",
+      "duration": 2.1,
+      "contact": 0.9667,
+      "requiresExtension": true,
+      "phases": {
+        "guard": 0,
+        "preparation": 0.3,
+        "charge": 0.55,
+        "execution": 0.8,
+        "contact": 0.9667,
+        "continuation": 1.1,
+        "recovery": 1.62,
+        "guardReturn": 2.1
+      },
+      "fps": 60,
+      "frames": 127
+    },
+    {
+      "name": "pvp12_sword_thrust",
+      "duration": 1.5,
+      "contact": 0.5833,
+      "requiresExtension": true,
+      "phases": {
+        "guard": 0,
+        "recolhe": 0.18,
+        "carga": 0.32,
+        "disparo": 0.52,
+        "contact": 0.5833,
+        "retorno": 0.84,
+        "recovery": 1.1,
+        "guardReturn": 1.5
+      },
+      "fps": 60,
+      "frames": 91
+    }
+  ],
+  "perClipQa": {
+    "pvp12_guard": {
+      "minElbowDeg": 94.03254027652463,
+      "maxElbowDeg": 95.93659846343235,
+      "maxWristDeviationDeg": 12.104097124739718,
+      "maxForearmTwistDeg": 2.6169409148583354,
+      "maxFootSlideOnPlant": 0
+    },
+    "pvp12_sword_horizontal_cut": {
+      "minElbowDeg": 94.82522486372095,
+      "maxElbowDeg": 161.59950049982177,
+      "maxWristDeviationDeg": 51.199205080438354,
+      "maxForearmTwistDeg": 175.14250745921674,
+      "maxFootSlideOnPlant": 0.00020958329908771223
+    },
+    "pvp12_sword_block": {
+      "minElbowDeg": 91.21812270708551,
+      "maxElbowDeg": 133.64970923022122,
+      "maxWristDeviationDeg": 34.06465965562687,
+      "maxForearmTwistDeg": 23.703630905554835,
+      "maxFootSlideOnPlant": 0
+    },
+    "pvp12_step_forward": {
+      "minElbowDeg": 89.11572160175105,
+      "maxElbowDeg": 98.9640996302183,
+      "maxWristDeviationDeg": 16.071510268884765,
+      "maxForearmTwistDeg": 4.188884213875905,
+      "maxFootSlideOnPlant": 0
+    },
+    "pvp12_step_back": {
+      "minElbowDeg": 89.11572160175105,
+      "maxElbowDeg": 98.9640996302183,
+      "maxWristDeviationDeg": 16.071510268884765,
+      "maxForearmTwistDeg": 4.188884213875905,
+      "maxFootSlideOnPlant": 0
+    },
+    "pvp12_step_left": {
+      "minElbowDeg": 89.11572160175105,
+      "maxElbowDeg": 98.9640996302183,
+      "maxWristDeviationDeg": 16.071510268884765,
+      "maxForearmTwistDeg": 4.188884213875905,
+      "maxFootSlideOnPlant": 0
+    },
+    "pvp12_step_right": {
+      "minElbowDeg": 89.11572160175105,
+      "maxElbowDeg": 98.9640996302183,
+      "maxWristDeviationDeg": 16.071510268884765,
+      "maxForearmTwistDeg": 4.188884213875905,
+      "maxFootSlideOnPlant": 0
+    },
+    "pvp12_sword_horizontal_reverse_cut": {
+      "minElbowDeg": 86.46980411350451,
+      "maxElbowDeg": 153.4518500535551,
+      "maxWristDeviationDeg": 57.64687808218666,
+      "maxForearmTwistDeg": 108.90565015325981,
+      "maxFootSlideOnPlant": 0.0001816388592093543
+    },
+    "pvp12_sword_diagonal_down": {
+      "minElbowDeg": 77.28970659870042,
+      "maxElbowDeg": 142.06083005814867,
+      "maxWristDeviationDeg": 59.32591035396745,
+      "maxForearmTwistDeg": 151.65622259987128,
+      "maxFootSlideOnPlant": 0.00027944439878360705
+    },
+    "pvp12_sword_thrust": {
+      "minElbowDeg": 86.85564853287418,
+      "maxElbowDeg": 166.58903221943277,
+      "maxWristDeviationDeg": 44.18718169551191,
+      "maxForearmTwistDeg": 130.82191789563345,
+      "maxFootSlideOnPlant": 0
+    }
+  },
+  "weaponSocket": "WeaponSocket_Right_PvP12",
+  "socketTranslation": [
+    0.013531937701563718,
+    -0.06390608851068531,
+    0.022469947245563483
+  ],
+  "socketRotation": [
+    -0.8501392022648925,
+    0.4433542776156128,
+    -0.20162308954492442,
+    -0.2001210969637055
+  ],
+  "gripAngleDeg": 75,
+  "originalBinaryPrefixUnchanged": true,
+  "qa": {
+    "maxHandError": 5.659698181594851e-8,
+    "maxFootError": 0.008757077569747234,
+    "maxFootSlideOnPlant": 0.00027944439878360705,
+    "minElbowDeg": 77.28970659870042,
+    "maxElbowDeg": 166.58903221943277,
+    "maxWristDeviationDeg": 59.32591035396745,
+    "maxForearmTwistDeg": 175.14250745921674,
+    "twistRangeDeg": [
+      -91.18490376302623,
+      175.14250745921674
+    ],
+    "maxSwordBodyPenetration": 0,
+    "minFreeHandHeight": 0.8351857964409721,
+    "maxFreeHandHeight": 1.0210568513119533,
+    "samples": 916,
+    "maxFootTravelOnPlant": 0.010216470588235327,
+    "oldClipSkinDeltaM": 7.435306196999738e-8,
+    "grip": {
+      "alongHandM": 0.06400000000000002,
+      "palmOffsetM": -0.025999999999999933,
+      "minVertexToHandleAxisM": 0.0140692626951678,
+      "handleRadiusM": 0.015,
+      "vertsWithin15mm": 24
+    }
+  },
+  "qaLimits": {
+    "maxHandError": 0.01,
+    "maxFootError": 0.012,
+    "maxFootSlideOnPlant": 0.002,
+    "maxWristDeviationDeg": 60,
+    "maxForearmTwistDeg": 200,
+    "maxSwordBodyPenetration": 0,
+    "maxFreeHandHeight": 1.05
+  },
+  "fingerRig": {
+    "bones": [
+      "RightFingers1",
+      "RightFingers2",
+      "LeftFingers1",
+      "LeftFingers2"
+    ],
+    "knuckleM": 0.1,
+    "middleM": 0.152,
+    "curlRad": {
+      "Right": [
+        1.3,
+        1.55
+      ],
+      "Left": [
+        0.45,
+        0.55
+      ]
+    },
+    "note": "Ossos novos ficam em identidade nos 83 clipes antigos (sem canais); IBM = L^-1 x IBM_mao, logo o skin antigo e identico."
+  },
+  "limitations": [
+    "Dedos fecham como dois blocos (proximal+distal) por mão; sem dedos individuais nem polegar animado.",
+    "Sem ossos de dedo do pé: o pivô do calcanhar gira o pé inteiro em torno da bola do pé.",
+    "Somente versão in-place; sem variante root motion."
+  ]
+}

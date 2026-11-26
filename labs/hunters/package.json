@@ -1,0 +1,13 @@
+{
+  "name": "wildhaven-lab-hunters",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Laboratório dos Hunters do Wildhaven: combate Hunter × Hunter e Hunter × criatura sobre o núcleo do laboratório de IA das criaturas. Sem dependências.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "dev": "node ../ia-criaturas/scripts/servidor.mjs --dir .. --porta 5195",
+    "duelo": "node scripts/duelo.mjs"
+  }
+}

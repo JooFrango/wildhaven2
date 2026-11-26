@@ -1,0 +1,466 @@
+{
+ "url": "http://localhost:5195/hunters/hunter-lab.html?cenario=jogador-espada&semente=23&pve1=1&pve2=1&mh=1",
+ "t": 30.9,
+ "resultado": null,
+ "trocas": [
+  {
+   "t": 0.1,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 1
+  },
+  {
+   "t": 0.4,
+   "clipe": "roar",
+   "estado": "rugindo",
+   "hp": 1
+  },
+  {
+   "t": 2.4,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 1
+  },
+  {
+   "t": 2.6,
+   "clipe": "claw_right",
+   "estado": "atacando",
+   "hp": 1
+  },
+  {
+   "t": 3.4,
+   "clipe": "double_claw",
+   "estado": "preparando",
+   "hp": 0.98
+  },
+  {
+   "t": 4.6,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.98
+  },
+  {
+   "t": 5,
+   "clipe": "hit_heavy_l",
+   "estado": "recuperando",
+   "hp": 0.96
+  },
+  {
+   "t": 7,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 0.93
+  },
+  {
+   "t": 7.2,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.93
+  },
+  {
+   "t": 7.3,
+   "clipe": "hit_heavy_l",
+   "estado": "recuperando",
+   "hp": 0.91
+  },
+  {
+   "t": 9.4,
+   "clipe": "sickle_kick",
+   "estado": "atacando",
+   "hp": 0.88
+  },
+  {
+   "t": 10.65,
+   "clipe": "turn_right",
+   "estado": "reposicionando",
+   "hp": 0.86
+  },
+  {
+   "t": 11.05,
+   "clipe": "walk",
+   "estado": "reposicionando",
+   "hp": 0.84
+  },
+  {
+   "t": 11.35,
+   "clipe": "run",
+   "estado": "reposicionando",
+   "hp": 0.84
+  },
+  {
+   "t": 12.55,
+   "clipe": "walk",
+   "estado": "reposicionando",
+   "hp": 0.84
+  },
+  {
+   "t": 12.85,
+   "clipe": "run",
+   "estado": "reposicionando",
+   "hp": 0.84
+  },
+  {
+   "t": 13.45,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 0.84
+  },
+  {
+   "t": 14.25,
+   "clipe": "backstep_tail",
+   "estado": "preparando",
+   "hp": 0.84
+  },
+  {
+   "t": 15.35,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 0.84
+  },
+  {
+   "t": 15.65,
+   "clipe": "run",
+   "estado": "perseguindo",
+   "hp": 0.84
+  },
+  {
+   "t": 15.95,
+   "clipe": "walk",
+   "estado": "encarando",
+   "hp": 0.84
+  },
+  {
+   "t": 16.15,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.84
+  },
+  {
+   "t": 16.25,
+   "clipe": "hit_heavy_l",
+   "estado": "recuperando",
+   "hp": 0.82
+  },
+  {
+   "t": 17.15,
+   "clipe": "hit_head",
+   "estado": "perseguindo",
+   "hp": 0.8
+  },
+  {
+   "t": 17.8,
+   "clipe": "idle",
+   "estado": "perseguindo",
+   "hp": 0.8
+  },
+  {
+   "t": 17.9,
+   "clipe": "walk",
+   "estado": "perseguindo",
+   "hp": 0.8
+  },
+  {
+   "t": 18.1,
+   "clipe": "idle",
+   "estado": "perseguindo",
+   "hp": 0.8
+  },
+  {
+   "t": 18.2,
+   "clipe": "claw_right",
+   "estado": "preparando",
+   "hp": 0.8
+  },
+  {
+   "t": 19.2,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.78
+  },
+  {
+   "t": 19.8,
+   "clipe": "hit_heavy_l",
+   "estado": "recuperando",
+   "hp": 0.75
+  },
+  {
+   "t": 21.8,
+   "clipe": "bite_heavy",
+   "estado": "atacando",
+   "hp": 0.73
+  },
+  {
+   "t": 23,
+   "clipe": "hit_head",
+   "estado": "recuperando",
+   "hp": 0.7
+  },
+  {
+   "t": 23.7,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.7
+  },
+  {
+   "t": 23.8,
+   "clipe": "hit_head",
+   "estado": "rugindo",
+   "hp": 0.69
+  },
+  {
+   "t": 24.5,
+   "clipe": "roar",
+   "estado": "rugindo",
+   "hp": 0.69
+  },
+  {
+   "t": 25.8,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.69
+  },
+  {
+   "t": 26,
+   "clipe": "sickle_kick",
+   "estado": "atacando",
+   "hp": 0.69
+  },
+  {
+   "t": 27,
+   "clipe": "idle",
+   "estado": "encarando",
+   "hp": 0.67
+  },
+  {
+   "t": 27.6,
+   "clipe": "stagger",
+   "estado": "recuperando",
+   "hp": 0.64
+  },
+  {
+   "t": 28.4,
+   "clipe": "fall",
+   "estado": "caido",
+   "hp": 0.62
+  },
+  {
+   "t": 29.9,
+   "clipe": "get_up",
+   "estado": "caido",
+   "hp": 0.62
+  }
+ ],
+ "eventos": [
+  {
+   "t": 0,
+   "tipo": "monstro_instalado",
+   "ataque": null
+  },
+  {
+   "t": 0.05,
+   "tipo": "monstro_alvo",
+   "ataque": null
+  },
+  {
+   "t": 0.35,
+   "tipo": "monstro_aggro",
+   "ataque": null
+  },
+  {
+   "t": 0.35,
+   "tipo": "monstro_rugido",
+   "ataque": null
+  },
+  {
+   "t": 0.95,
+   "tipo": "monstro_rugido_atordoou",
+   "ataque": null
+  },
+  {
+   "t": 2.6,
+   "tipo": "monstro_golpe",
+   "ataque": "garra_foice"
+  },
+  {
+   "t": 2.95,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 3.35,
+   "tipo": "monstro_golpe",
+   "ataque": "garra_dupla"
+  },
+  {
+   "t": 4.95,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 5.8,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 7.3,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 8.25,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 8.25,
+   "tipo": "monstro_vacilo",
+   "ataque": null
+  },
+  {
+   "t": 9.4,
+   "tipo": "monstro_golpe",
+   "ataque": "chute_garra"
+  },
+  {
+   "t": 9.8,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 11.1,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 14.2,
+   "tipo": "monstro_golpe",
+   "ataque": "rabada_recuo"
+  },
+  {
+   "t": 16.25,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 17.1,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 18.15,
+   "tipo": "monstro_golpe",
+   "ataque": "garra_foice"
+  },
+  {
+   "t": 18.4,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 19.75,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 19.75,
+   "tipo": "monstro_vacilo",
+   "ataque": null
+  },
+  {
+   "t": 20.6,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 21.8,
+   "tipo": "monstro_golpe",
+   "ataque": "mordida_pesada"
+  },
+  {
+   "t": 23,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 23.8,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 23.8,
+   "tipo": "monstro_raiva",
+   "ataque": null
+  },
+  {
+   "t": 23.8,
+   "tipo": "monstro_rugido",
+   "ataque": null
+  },
+  {
+   "t": 24.45,
+   "tipo": "monstro_rugido_atordoou",
+   "ataque": null
+  },
+  {
+   "t": 26,
+   "tipo": "monstro_golpe",
+   "ataque": "chute_garra"
+  },
+  {
+   "t": 26.25,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 27.55,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 27.55,
+   "tipo": "monstro_vacilo",
+   "ataque": null
+  },
+  {
+   "t": 28.4,
+   "tipo": "monstro_reacao",
+   "ataque": null
+  },
+  {
+   "t": 28.4,
+   "tipo": "monstro_queda",
+   "ataque": null
+  }
+ ],
+ "clipesUsados": [
+  "walk",
+  "roar",
+  "claw_right",
+  "double_claw",
+  "idle",
+  "hit_heavy_l",
+  "sickle_kick",
+  "turn_right",
+  "run",
+  "backstep_tail",
+  "hit_head",
+  "bite_heavy",
+  "stagger",
+  "fall",
+  "get_up"
+ ],
+ "capturas": [
+  "roar",
+  "claw_right",
+  "double_claw",
+  "hit_heavy_l",
+  "sickle_kick",
+  "backstep_tail",
+  "hit_head",
+  "bite_heavy",
+  "stagger",
+  "fall",
+  "get_up"
+ ],
+ "erros": []
+}
