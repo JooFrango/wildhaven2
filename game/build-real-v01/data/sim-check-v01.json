@@ -1,0 +1,65 @@
+{
+  "hunter": {
+    "clip": "Walking",
+    "crossings": [
+      {
+        "from": "HV_01",
+        "sim_time_s": 137.4,
+        "step_m": 0.2346600000012332,
+        "tick": 687,
+        "to": "ER_18",
+        "x": 29232.660076713,
+        "z": -5622.660076712995
+      },
+      {
+        "from": "ER_18",
+        "sim_time_s": 207.0,
+        "step_m": 0.23466000000007625,
+        "tick": 1035,
+        "to": "HV_01",
+        "x": 29227.0,
+        "z": -5625.603444122645
+      }
+    ],
+    "distance_walked_m": 1377.1601494820682,
+    "goal": {
+      "tile": "ER_24",
+      "x": 27047.430330008472,
+      "z": -1849.5190473587822
+    },
+    "heading": -0.7853981633962548,
+    "id": "hunter-001",
+    "name": "Hunter do Workshop",
+    "plan_failures": 0,
+    "rest_until_s": 242.54076680960134,
+    "rng_state": 2239412456,
+    "speed_mps": 1.1733,
+    "state": "caminhando",
+    "tile_id": "HV_01",
+    "x": 28701.977066800453,
+    "y": 915.1023563232421,
+    "z": -4691.977066800457
+  },
+  "maxAllowedStepMeters": 0.234660001,
+  "maxStepMeters": 0.2346600000012332,
+  "residencyConsistent": true,
+  "schema": "wildhaven.sim-check.v1",
+  "simSeconds": 1200.0,
+  "stepSeconds": 0.2,
+  "streaming": {
+    "cap_bytes": 268435456,
+    "evictions": 0,
+    "hits": 328909,
+    "load_errors": 0,
+    "misses": 42,
+    "pinned_chunks": 15,
+    "resident_bytes": 6881280,
+    "resident_chunks": 42
+  },
+  "ticks": 6000,
+  "ticksWithoutCompiledGround": 0,
+  "ticksWithoutCompiledGroundSamples": [],
+  "tileByPositionNow": "HV_01",
+  "walkSpeedMps": 1.1733,
+  "wallSeconds": 0.119050948
+}
