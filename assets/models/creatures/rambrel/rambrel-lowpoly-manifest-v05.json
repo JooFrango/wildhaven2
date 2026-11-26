@@ -1,0 +1,115 @@
+{
+  "id": "rambrel",
+  "version": "v03",
+  "status": "artistic_review_pending",
+  "proposedStyle": "organic_midpoly",
+  "source": "tmp-savanna-build/source/rambrel/rambrel-savanna-sculpted-skinned-source-v03.glb",
+  "lods": [
+    {
+      "path": "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD0.glb",
+      "bytes": 842548,
+      "sha256": "577eb16f0c28e66a18b05bfcefcd1044b5ae036a5e047af857e032615905ce4c",
+      "triangles": 22426,
+      "originalTriangles": 72344,
+      "reductionPercent": 69.0,
+      "source": "/home/runner/work/wildhaven/wildhaven/tmp-savanna-build/source/rambrel/rambrel-savanna-sculpted-skinned-source-v03.glb",
+      "lod": "LOD0",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "run",
+        "browse",
+        "chew",
+        "alert",
+        "headbutt",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 113,
+      "remeshedPrimitives": 35
+    },
+    {
+      "path": "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD1.glb",
+      "bytes": 476168,
+      "sha256": "e72be9e670933639e5c5a44431eb7662c1c0cab7636e33a5ea9ec72aebbb7365",
+      "triangles": 10143,
+      "originalTriangles": 72344,
+      "reductionPercent": 86.0,
+      "source": "/home/runner/work/wildhaven/wildhaven/tmp-savanna-build/source/rambrel/rambrel-savanna-sculpted-skinned-source-v03.glb",
+      "lod": "LOD1",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "run",
+        "browse",
+        "chew",
+        "alert",
+        "headbutt",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 113,
+      "remeshedPrimitives": 35
+    },
+    {
+      "path": "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD2.glb",
+      "bytes": 390532,
+      "sha256": "d4484e0d5eb2449ecb89fab538ffdf23c5f6600160ff9c665eadefbcf5dc9f7a",
+      "triangles": 7410,
+      "originalTriangles": 72344,
+      "reductionPercent": 89.8,
+      "source": "/home/runner/work/wildhaven/wildhaven/tmp-savanna-build/source/rambrel/rambrel-savanna-sculpted-skinned-source-v03.glb",
+      "lod": "LOD2",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "run",
+        "browse",
+        "chew",
+        "alert",
+        "headbutt",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 113,
+      "remeshedPrimitives": 35
+    }
+  ],
+  "fullSourceRetained": true,
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "run",
+    "browse",
+    "chew",
+    "alert",
+    "headbutt",
+    "defend",
+    "rest",
+    "death"
+  ],
+  "skinnedJoints": 17,
+  "integration": {
+    "gameplay": false,
+    "spawns": false,
+    "ai": false
+  },
+  "method": "quadric surface simplification + normal recompute + joint and color projection; original GLB skin and animation channels preserved",
+  "note": "Counts reflect actual exported GLB polygons. Pixel fidelity requires review. No gameplay changes."
+}
