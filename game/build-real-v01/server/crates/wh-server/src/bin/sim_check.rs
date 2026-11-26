@@ -157,6 +157,7 @@ fn demo(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::err
         if let Some(solo) = solo {
             let r = w.order(Order::Cacar { species: "lobrapedra".into(), hunters: vec![solo], transporte: "carroca".into(), carroca: Some("nailon".into()) });
             note(&mut steps, w, &format!("ordem Caçar Lobrapedra com Hunter sozinho: {:?}", r), r.is_ok());
+            let t_order = w.tick;
             let dbg = std::env::var("WH_DEBUG").is_ok();
             let ok = run_until(w, ticks * 2, |w| {
                 if dbg && w.tick % 3000 == 0 {
@@ -166,7 +167,7 @@ fn demo(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::err
                         eprintln!("t={:.0} {:?} pos=({:.0},{:.0}) campo={:?} lobrapedra+próxima={:?} n={}", w.sim_time_s, h.activity, h.mv.x, h.mv.z, camp, near, w.game.creatures.iter().filter(|c| c.species == "lobrapedra").count());
                     }
                 }
-                w.game.events.iter().any(|e| matches!(e.kind.as_str(), "resgate" | "morte")) || w.game.expeditions.iter().any(|e| e.species == "lobrapedra" && e.kills > 0)
+                w.game.events.iter().any(|e| e.tick > t_order && matches!(e.kind.as_str(), "ferimento" | "morte")) || w.game.expeditions.iter().any(|e| e.species == "lobrapedra" && e.kills > 0)
             });
             note(&mut steps, w, "Hunter sozinho: ferimento → resgate/morte, ou abate", ok);
             run_until(w, ticks * 2, |w| {
@@ -174,6 +175,8 @@ fn demo(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::err
             });
             let st = w.game.expeditions.iter().filter(|e| e.species == "lobrapedra").map(|e| e.state.clone()).collect::<Vec<_>>();
             note(&mut steps, w, &format!("expedição do predador encerrada: {:?}", st), st.iter().all(|s| s == "concluida" || s == "fracassada"));
+            let after: Vec<String> = w.game.events.iter().filter(|e| e.tick > t_order && matches!(e.kind.as_str(), "ferimento" | "resgate" | "morte" | "abate")).map(|e| e.text.clone()).collect();
+            note(&mut steps, w, &format!("desfecho do predador: {:?}", after), !after.is_empty());
         }
     }
     let dead: Vec<String> = w.game.hunters.iter().filter(|h| !h.alive).map(|h| h.name.clone()).collect();

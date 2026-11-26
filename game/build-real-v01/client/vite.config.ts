@@ -15,5 +15,5 @@ export default defineConfig({
       "/physics": server,
     },
   },
-  build: { outDir: "dist", emptyOutDir: true, chunkSizeWarningLimit: 900 },
+  build: { outDir: "dist", assetsDir: "static", emptyOutDir: true, chunkSizeWarningLimit: 900 },
 });

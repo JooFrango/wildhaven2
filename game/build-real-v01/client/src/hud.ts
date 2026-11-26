@@ -19,6 +19,8 @@ export class Hud {
   private gameplay: Gameplay | null = null;
   private openPage: string | null = null;
   private fichas = new Map<string, any>();
+  private rows = new Map<string, HTMLButtonElement>();
+  private bestSig = "";
   constructor(private root: HTMLElement, private continent: ContinentSummary, private onSelect: (id: string) => void, private log: (s: string) => void) {
     fetch("/api/v1/gameplay").then(r => r.json()).then(g => (this.gameplay = g)).catch(() => {});
   }
@@ -32,14 +34,24 @@ export class Hud {
 
   render(s: SnapshotFull) {
     const g = s.game;
+    // linhas criadas uma vez e atualizadas no lugar (cliques não se perdem entre renders)
     const list = this.root.querySelector("#hunters")!;
-    list.innerHTML = "";
     for (const h of s.hunters) {
-      const row = el("button", "hrow" + (h.id === this.selected ? " sel" : "") + (h.alive ? "" : " dead"));
-      const bar = el("span", "hp"); const fill = el("i"); fill.style.width = `${Math.max(0, (100 * h.hp) / h.hp_max)}%`; bar.append(fill);
-      row.append(el("b", "", h.name + (h.role === "socorrista" ? " ✚" : "")), bar, el("small", "", ATIVIDADE[h.activity] ?? h.activity));
-      row.onclick = () => { this.selected = h.id; this.onSelect(h.id); };
-      list.append(row);
+      let row = this.rows.get(h.id);
+      if (!row) {
+        row = el("button", "hrow") as HTMLButtonElement;
+        const bar = el("span", "hp"); bar.append(el("i"));
+        row.append(el("b"), bar, el("small"));
+        const id = h.id;
+        row.onclick = () => { this.selected = id; this.onSelect(id); };
+        row.dataset.id = h.id;
+        list.append(row);
+        this.rows.set(h.id, row);
+      }
+      row.className = "hrow" + (h.id === this.selected ? " sel" : "") + (h.alive ? "" : " dead");
+      (row.children[0] as HTMLElement).textContent = h.name + (h.role === "socorrista" ? " ✚" : "");
+      ((row.children[1] as HTMLElement).firstChild as HTMLElement).style.width = `${Math.max(0, (100 * h.hp) / h.hp_max)}%`;
+      (row.children[2] as HTMLElement).textContent = ATIVIDADE[h.activity] ?? h.activity;
     }
     this.root.querySelector("#money")!.textContent = `Dinheiro: ${g.money.toFixed(0)} · Itens na vila: ${g.village_storage.length}`;
     // ficha + inventário do selecionado
@@ -52,27 +64,30 @@ export class Hud {
       const sk = el("div", "skills");
       for (const [k, v] of Object.entries(sel.skills)) sk.append(el("span", "", `${k.replace("_", " ")} ${v.level}`));
       ficha.append(sk);
-      const inv = this.root.querySelector("#inventario")!;
+      const inv = document.getElementById("inventario")!;
       inv.textContent = `Inventário (${sel.name}): ` + (sel.inventory.length ? sel.inventory.join(", ") : "vazio") + ` · arma: ${sel.arma}`;
     }
     this.renderBestiary(s);
   }
 
-  private renderBestiary(s: SnapshotFull) {
+  private renderBestiary(s: SnapshotFull, force = false) {
     const pages = Object.values(s.game.bestiary.pages);
+    const sig = JSON.stringify([this.openPage, pages.map(p => [p.species, p.avistamentos, p.abates, p.conhecimento, p.habitats.length]), this.fichas.get(this.openPage ?? "") ? 1 : 0]);
+    if (!force && sig === this.bestSig) return;
+    this.bestSig = sig;
     const box = this.root.querySelector("#bestiario")!;
     const listEl = box.querySelector(".pages")!;
     listEl.innerHTML = pages.length ? "" : "<i>Nenhuma espécie avistada ainda. Ordene uma exploração.</i>";
     for (const p of pages) {
       const b = el("button", "page" + (p.species === this.openPage ? " sel" : ""), `${p.nome} (${p.avistamentos})`);
-      b.onclick = () => { this.openPage = p.species; this.renderBestiary(s); };
+      b.onclick = () => { this.openPage = p.species; this.renderBestiary(s, true); };
       listEl.append(b);
     }
     const det = box.querySelector(".detail")!;
     const p = pages.find(x => x.species === this.openPage);
     det.innerHTML = "";
     if (!p) return;
-    if (!this.fichas.has(p.species)) { this.fichas.set(p.species, null); fetch(`/fichas/${p.species}.json`).then(r => r.json()).then(f => this.fichas.set(p.species, f)).catch(() => {}); }
+    if (!this.fichas.has(p.species)) { this.fichas.set(p.species, null); fetch(`/fichas/${p.species}.json`).then(r => r.json()).then(f => { this.fichas.set(p.species, f); this.renderBestiary(s, true); }).catch(() => {}); }
     const f = this.fichas.get(p.species);
     det.append(el("h3", "", p.nome));
     det.append(el("div", "", `Conhecimento de Monstros: ${p.conhecimento} · avistamentos ${p.avistamentos} · abates ${p.abates}`));
