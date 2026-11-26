@@ -1,0 +1,1367 @@
+{
+ "_ajuda": "Gerado por npm run perfis-modelos (auditoria dos GLBs originais, somente leitura). velNatural em unidades do modelo por segundo: multiplicar pela escala aplicada.",
+ "perfis": {
+  "velsari": {
+   "glb": "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD0.glb",
+   "sha256": "f073b93fc3927eb0e26691d198d868749e3238b8355887d6b37f13122479e87a",
+   "bytes": 1135904,
+   "frente": "+Z",
+   "evidenciaFrente": "Velsari_Head→Velsari_Tail Δ=(0.00,1.28)",
+   "ossos": 0,
+   "extensao": [
+    0.8185,
+    1.6417,
+    2.0313
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.45,
+     "velNatural": 0.601,
+     "rootMotion": 0
+    },
+    "run": {
+     "duracao": 0.68,
+     "velNatural": 3.005,
+     "rootMotion": 0
+    },
+    "leap": {
+     "duracao": 1.07,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "graze": {
+     "duracao": 2.65,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 1.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "call": {
+     "duracao": 1.5,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "flee": {
+     "duracao": 0.65,
+     "velNatural": 3.146,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 1.45,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 1.024,
+    "trasMin": -1.007,
+    "centro": 0.008,
+    "ataques": {
+     "coice": {
+      "clipe": "leap",
+      "osso": "Velsari_BackLeft_Ankle",
+      "duracao": 1.07,
+      "tImpacto": 1.07,
+      "alcance": -0.425,
+      "sentido": "tras",
+      "alturaImpacto": 0.11,
+      "avancoNoClipe": 0.096
+     }
+    }
+   }
+  },
+  "cromatil": {
+   "glb": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb",
+   "sha256": "e20a09480c52ad9156b89a0911cbe69b99a82c202a8f2a0c641083946a14415d",
+   "bytes": 321120,
+   "frente": "+X",
+   "evidenciaFrente": "head→tail0 Δ=(1.02,0.00)",
+   "ossos": 0,
+   "extensao": [
+    2.522,
+    0.6681,
+    0.7536
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.2,
+     "velNatural": 0.084,
+     "rootMotion": 0
+    },
+    "scurry": {
+     "duracao": 0.75,
+     "velNatural": 0.467,
+     "rootMotion": 0
+    },
+    "bask": {
+     "duracao": 3.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "forage": {
+     "duracao": 2.8,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "head_tilt": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "tail_whip": {
+     "duracao": 1.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "threat": {
+     "duracao": 1.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "retreat": {
+     "duracao": 1.35,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 3.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 2,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 1.047,
+    "trasMin": -1.475,
+    "centro": -0.214,
+    "ataques": {
+     "chicotada_cauda": {
+      "clipe": "tail_whip",
+      "osso": "tail2",
+      "duracao": 1.3,
+      "tImpacto": 0.52,
+      "alcance": -0.947,
+      "sentido": "tras",
+      "alturaImpacto": 0.255,
+      "avancoNoClipe": 0.123
+     }
+    }
+   }
+  },
+  "tarruco": {
+   "glb": "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD0.glb",
+   "sha256": "33e619c3c0d5f01dd6ffe9297f82ce49df784c80b42453f0c156fb32d332c1e4",
+   "bytes": 1264452,
+   "frente": "+Z",
+   "evidenciaFrente": "Tarruco_Head→Tarruco_Tail Δ=(0.00,0.90)",
+   "ossos": 0,
+   "extensao": [
+    0.9012,
+    0.9853,
+    1.4336
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.45,
+     "velNatural": 0.226,
+     "rootMotion": 0
+    },
+    "trot": {
+     "duracao": 0.73,
+     "velNatural": 0.844,
+     "rootMotion": 0
+    },
+    "dig": {
+     "duracao": 1.45,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "forage": {
+     "duracao": 2.85,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 1.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "flee": {
+     "duracao": 0.65,
+     "velNatural": 1.425,
+     "rootMotion": 0
+    },
+    "sniff": {
+     "duracao": 1.7,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 1.45,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 0.706,
+    "trasMin": -0.728,
+    "centro": -0.011,
+    "ataques": {
+     "mordida_defensiva": {
+      "clipe": "alert",
+      "osso": "Tarruco_ForeheadCrest",
+      "duracao": 1.9,
+      "tImpacto": 0.348,
+      "alcance": 0.706,
+      "sentido": "frente",
+      "alturaImpacto": 0.643,
+      "avancoNoClipe": 0
+     }
+    }
+   }
+  },
+  "varrisco": {
+   "glb": "assets/models/creatures/varrisco/v02/varrisco-animated-v02-LOD0.glb",
+   "sha256": "774f80944633a65bce0663a0ee8e65a3d8f868270303ccb431fbb63e15b4c678",
+   "bytes": 667968,
+   "frente": "+X",
+   "evidenciaFrente": "head→tailA Δ=(1.45,0.00)",
+   "ossos": 22,
+   "extensao": [
+    3.0731,
+    1.4889,
+    0.9088
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 3.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.35,
+     "velNatural": 0.95,
+     "rootMotion": 0
+    },
+    "run": {
+     "duracao": 0.73,
+     "velNatural": 4.019,
+     "rootMotion": 0
+    },
+    "stalk": {
+     "duracao": 2.35,
+     "velNatural": 0.332,
+     "rootMotion": 0
+    },
+    "turn_left": {
+     "duracao": 1.15,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "turn_right": {
+     "duracao": 1.15,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 1.55,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "sniff": {
+     "duracao": 1.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "bite": {
+     "duracao": 0.92,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "claw_slash": {
+     "duracao": 1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "pounce": {
+     "duracao": 1.24,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "feed": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "drink": {
+     "duracao": 2.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "threat_display": {
+     "duracao": 2.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 3.25,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hurt": {
+     "duracao": 1.05,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 2.6,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 1.24,
+    "trasMin": -1.833,
+    "centro": -0.296,
+    "ataques": {
+     "mordida": {
+      "clipe": "bite",
+      "osso": "head",
+      "duracao": 0.92,
+      "tImpacto": 0.69,
+      "alcance": 1.24,
+      "sentido": "frente",
+      "alturaImpacto": 1.355,
+      "avancoNoClipe": 0
+     },
+     "garra_foice": {
+      "clipe": "claw_slash",
+      "osso": "handL",
+      "duracao": 1,
+      "tImpacto": 0.25,
+      "alcance": 0.554,
+      "sentido": "frente",
+      "alturaImpacto": 0.728,
+      "avancoNoClipe": 0
+     },
+     "bote": {
+      "clipe": "pounce",
+      "osso": "head",
+      "duracao": 1.24,
+      "tImpacto": 0.496,
+      "alcance": 1.473,
+      "sentido": "frente",
+      "alturaImpacto": 1.412,
+      "avancoNoClipe": 0.233
+     }
+    }
+   }
+  },
+  "rocantraz": {
+   "glb": "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD0.glb",
+   "sha256": "b2455283afe6a7018e7b9bb55ddc06c3a3af67a79a680c379e7d05df50c7de94",
+   "bytes": 2570936,
+   "frente": "+Z",
+   "evidenciaFrente": "Rocantraz04_Head→Rocantraz04_Tail0 Δ=(0.00,1.75)",
+   "ossos": 0,
+   "extensao": [
+    4.0572,
+    6.0703,
+    9.3529
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.4,
+     "velNatural": 0.548,
+     "rootMotion": 0
+    },
+    "stalk": {
+     "duracao": 2.5,
+     "velNatural": 0.306,
+     "rootMotion": 0
+    },
+    "run": {
+     "duracao": 0.73,
+     "velNatural": 1.575,
+     "rootMotion": 0
+    },
+    "charge": {
+     "duracao": 0.73,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "bite": {
+     "duracao": 1.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "swipe": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "roar": {
+     "duracao": 2.36,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "feed": {
+     "duracao": 2.8,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "defend": {
+     "duracao": 2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 2.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "die": {
+     "duracao": 1.55,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 2.394,
+    "trasMin": -6.959,
+    "centro": -2.282,
+    "ataques": {
+     "mordida": {
+      "clipe": "bite",
+      "osso": "Rocantraz04_ForeheadPlate_0",
+      "duracao": 1.4,
+      "tImpacto": 0.303,
+      "alcance": 3.444,
+      "sentido": "frente",
+      "alturaImpacto": 5.235,
+      "avancoNoClipe": 1.05
+     },
+     "golpe": {
+      "clipe": "swipe",
+      "osso": "Rocantraz04_RightHandClaw_0",
+      "duracao": 1.6,
+      "tImpacto": 0.16,
+      "alcance": 1.741,
+      "sentido": "frente",
+      "alturaImpacto": 2.875,
+      "avancoNoClipe": 0.781
+     }
+    }
+   }
+  },
+  "boscaranha": {
+   "glb": "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD0.glb",
+   "sha256": "208218ea188c1bdaa41a460ab91ca9c303c8094be319b0d690c5e8d2e69937a5",
+   "bytes": 588336,
+   "frente": "-Z",
+   "evidenciaFrente": "sem ossos nomeados",
+   "ossos": 33,
+   "extensao": [
+    2.1919,
+    1.027,
+    2.1907
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "scuttle": {
+     "duracao": 0.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "sprint": {
+     "duracao": 0.56,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "stalk": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "ambush": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "sense_vibrations": {
+     "duracao": 2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "vigilance": {
+     "duracao": 2.5,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "pounce": {
+     "duracao": 1.28,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "bite": {
+     "duracao": 0.92,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "silk_wrap": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "feed": {
+     "duracao": 3.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "climb": {
+     "duracao": 1.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "threat_display": {
+     "duracao": 2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "retreat": {
+     "duracao": 1.15,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "turn_left": {
+     "duracao": 1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "turn_right": {
+     "duracao": 1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "groom": {
+     "duracao": 2.8,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "nest": {
+     "duracao": 3.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hurt": {
+     "duracao": 0.76,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 2.7,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 1,
+    "trasMin": -1.19,
+    "centro": -0.095,
+    "ataques": {
+     "mordida": {
+      "clipe": "bite",
+      "osso": "Chelicera_L",
+      "duracao": 0.92,
+      "tImpacto": 0.199,
+      "alcance": 1.008,
+      "sentido": "frente",
+      "alturaImpacto": 0.359,
+      "avancoNoClipe": 0.008
+     },
+     "bote": {
+      "clipe": "pounce",
+      "osso": "Leg_L1_Tip",
+      "duracao": 1.28,
+      "tImpacto": 0.32,
+      "alcance": 1.15,
+      "sentido": "frente",
+      "alturaImpacto": 0.245,
+      "avancoNoClipe": 0.149
+     }
+    }
+   }
+  },
+  "folhisco": {
+   "glb": "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb",
+   "sha256": "0ef862fbb4c24937850861e5878339e25a0fa45b2858e581d8b445167a126933",
+   "bytes": 462504,
+   "frente": "-Z",
+   "evidenciaFrente": "Head→Tail Δ=(0.00,-0.27)",
+   "ossos": 11,
+   "extensao": [
+    0.3309,
+    0.4032,
+    0.5741
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "run": {
+     "duracao": 0.6,
+     "velNatural": 0.028,
+     "rootMotion": 0
+    },
+    "peck": {
+     "duracao": 1.25,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "scratch": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "scan_head": {
+     "duracao": 2.8,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alarm_call": {
+     "duracao": 1.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "jump_flap": {
+     "duracao": 1.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hide": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hurt": {
+     "duracao": 0.8,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0.008
+    },
+    "drink": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "preen": {
+     "duracao": 2.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "sleep": {
+     "duracao": 3.5,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 0.233,
+    "trasMin": -0.341,
+    "centro": -0.054,
+    "ataques": {
+     "bicada": {
+      "clipe": "peck",
+      "osso": "LowerBeak",
+      "duracao": 1.25,
+      "tImpacto": 0.938,
+      "alcance": 0.279,
+      "sentido": "frente",
+      "alturaImpacto": 0.258,
+      "avancoNoClipe": 0.016
+     }
+    }
+   }
+  },
+  "proto-cacador-camuflado": {
+   "glb": "assets/models/creatures/varrisco/v02/varrisco-animated-v02-LOD0.glb",
+   "sha256": "774f80944633a65bce0663a0ee8e65a3d8f868270303ccb431fbb63e15b4c678",
+   "bytes": 667968,
+   "frente": "+X",
+   "evidenciaFrente": "head→tailA Δ=(1.45,0.00)",
+   "ossos": 22,
+   "extensao": [
+    3.0731,
+    1.4889,
+    0.9088
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 3.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.35,
+     "velNatural": 0.95,
+     "rootMotion": 0
+    },
+    "run": {
+     "duracao": 0.73,
+     "velNatural": 4.019,
+     "rootMotion": 0
+    },
+    "stalk": {
+     "duracao": 2.35,
+     "velNatural": 0.332,
+     "rootMotion": 0
+    },
+    "turn_left": {
+     "duracao": 1.15,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "turn_right": {
+     "duracao": 1.15,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 1.55,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "sniff": {
+     "duracao": 1.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "bite": {
+     "duracao": 0.92,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "claw_slash": {
+     "duracao": 1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "pounce": {
+     "duracao": 1.24,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "feed": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "drink": {
+     "duracao": 2.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "threat_display": {
+     "duracao": 2.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 3.25,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hurt": {
+     "duracao": 1.05,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 2.6,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 1.24,
+    "trasMin": -1.833,
+    "centro": -0.296,
+    "ataques": {
+     "mordida": {
+      "clipe": "bite",
+      "osso": "head",
+      "duracao": 0.92,
+      "tImpacto": 0.69,
+      "alcance": 1.24,
+      "sentido": "frente",
+      "alturaImpacto": 1.355,
+      "avancoNoClipe": 0
+     },
+     "garra_foice": {
+      "clipe": "claw_slash",
+      "osso": "handL",
+      "duracao": 1,
+      "tImpacto": 0.25,
+      "alcance": 0.554,
+      "sentido": "frente",
+      "alturaImpacto": 0.728,
+      "avancoNoClipe": 0
+     },
+     "bote": {
+      "clipe": "pounce",
+      "osso": "head",
+      "duracao": 1.24,
+      "tImpacto": 0.496,
+      "alcance": 1.473,
+      "sentido": "frente",
+      "alturaImpacto": 1.412,
+      "avancoNoClipe": 0.233
+     }
+    }
+   }
+  },
+  "proto-serpente-termica": {
+   "glb": "assets/models/creatures/gravarto/v02/gravarto-v02-animated-LOD0.glb",
+   "sha256": "848bea01332c99235dce0ded19dbc78b1246119eac646a4de1a2fe9fec1ced29",
+   "bytes": 5365036,
+   "frente": "+X",
+   "evidenciaFrente": "head→tail01 Δ=(3.33,0.00)",
+   "ossos": 27,
+   "extensao": [
+    6.26,
+    1.633,
+    2.6962
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 3.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.85,
+     "velNatural": 0.245,
+     "rootMotion": 0
+    },
+    "trot": {
+     "duracao": 1.16,
+     "velNatural": 0.709,
+     "rootMotion": 0
+    },
+    "short_sprint": {
+     "duracao": 0.81,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "stalk": {
+     "duracao": 2.65,
+     "velNatural": 0.048,
+     "rootMotion": 0
+    },
+    "turn_left": {
+     "duracao": 1.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "turn_right": {
+     "duracao": 1.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 1.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "sniff": {
+     "duracao": 2.4,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "bite": {
+     "duracao": 0.95,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "tail_sweep": {
+     "duracao": 1.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "threaten": {
+     "duracao": 1.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "feed": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "drink": {
+     "duracao": 3.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hurt": {
+     "duracao": 1.05,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 2.5,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": {
+    "frenteMax": 2.54,
+    "trasMin": -3.72,
+    "centro": -0.59,
+    "ataques": {
+     "mordida": {
+      "clipe": "bite",
+      "osso": "head",
+      "duracao": 0.95,
+      "tImpacto": 0.491,
+      "alcance": 2.645,
+      "sentido": "frente",
+      "alturaImpacto": 0.956,
+      "avancoNoClipe": 0.105
+     }
+    }
+   }
+  },
+  "carniroca": {
+   "glb": "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD0.glb",
+   "sha256": "bb074a3822150a9a8e817aa46b0deb40fa9c3f9f407049eb36175f907a45a278",
+   "bytes": 568820,
+   "frente": "-Z",
+   "evidenciaFrente": "Head→Tail Δ=(0.00,-0.47)",
+   "ossos": 18,
+   "extensao": [
+    2.0346,
+    1.0729,
+    1.0662
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "breathing": {
+     "duracao": 3.2,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.4,
+     "velNatural": 0.354,
+     "rootMotion": 0
+    },
+    "hop": {
+     "duracao": 0.8,
+     "velNatural": 1.51,
+     "rootMotion": 0
+    },
+    "takeoff": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "fly": {
+     "duracao": 1.45,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "glide": {
+     "duracao": 2.7,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "flap_hard": {
+     "duracao": 0.72,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "bank_left": {
+     "duracao": 2.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "bank_right": {
+     "duracao": 2.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "land": {
+     "duracao": 1.7,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "wing_fold": {
+     "duracao": 1.5,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "perch": {
+     "duracao": 2.5,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "scan": {
+     "duracao": 2.7,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "approach_carcass": {
+     "duracao": 1.8,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "peck_carrion": {
+     "duracao": 1.55,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "tear_meat": {
+     "duracao": 1.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "swallow": {
+     "duracao": 1.1,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "threaten": {
+     "duracao": 1.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "call": {
+     "duracao": 1.7,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "preen": {
+     "duracao": 2.9,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 2.5,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "sleep": {
+     "duracao": 3.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hurt": {
+     "duracao": 0.85,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 2.8,
+     "velNatural": null,
+     "rootMotion": 0.25
+    }
+   },
+   "anatomia": {
+    "frenteMax": 0.45,
+    "trasMin": -0.616,
+    "centro": -0.083,
+    "ataques": {
+     "bicada": {
+      "clipe": "peck_carrion",
+      "osso": "Head",
+      "duracao": 1.55,
+      "tImpacto": 0.982,
+      "alcance": 0.419,
+      "sentido": "frente",
+      "alturaImpacto": 1.009,
+      "avancoNoClipe": 0.144
+     }
+    }
+   }
+  },
+  "pica-termita": {
+   "glb": "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD0.glb",
+   "sha256": "810f0b045c7e421ccea7a56634553f12592cfb3250593283791bd3092e8e23d1",
+   "bytes": 1235248,
+   "frente": "+Z",
+   "evidenciaFrente": "PicaTermita_Head→PicaTermita_Tail Δ=(0.00,0.75)",
+   "ossos": 0,
+   "extensao": [
+    2.1043,
+    2.2528,
+    2.8346
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.25,
+     "velNatural": 0.494,
+     "rootMotion": 0
+    },
+    "hop": {
+     "duracao": 2.3,
+     "velNatural": 0.397,
+     "rootMotion": 0
+    },
+    "fly": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "land": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "lookout": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "inspect": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "peck": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "feed": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "tongue_out": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "tongue_in": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "crest_display": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "wing_spread": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "flee": {
+     "duracao": 0.75,
+     "velNatural": 1.236,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hurt": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 1.45,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": null
+  },
+  "ferrunco": {
+   "glb": "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD0.glb",
+   "sha256": "0b0efbc4e4ced4304118e9ad0b7ae9aaea86cbf57ff6ccffafb27e106483af37",
+   "bytes": 1353608,
+   "frente": "+Z",
+   "evidenciaFrente": "Ferrunco_Head→Ferrunco_Tail Δ=(0.00,2.15)",
+   "ossos": 0,
+   "extensao": [
+    1.75,
+    1.7526,
+    4.339
+   ],
+   "clipes": {
+    "idle": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "walk": {
+     "duracao": 1.25,
+     "velNatural": 0.816,
+     "rootMotion": 0
+    },
+    "trot": {
+     "duracao": 1,
+     "velNatural": 1.715,
+     "rootMotion": 0
+    },
+    "sniff": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "inspect": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "dig": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "feed": {
+     "duracao": 1.6,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "tongue_out": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "tongue_in": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "alert": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "defend": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "flee": {
+     "duracao": 0.75,
+     "velNatural": 3.429,
+     "rootMotion": 0
+    },
+    "rest": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "sleep": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "hurt": {
+     "duracao": 2.3,
+     "velNatural": null,
+     "rootMotion": 0
+    },
+    "death": {
+     "duracao": 1.45,
+     "velNatural": null,
+     "rootMotion": 0
+    }
+   },
+   "anatomia": null
+  }
+ }
+}

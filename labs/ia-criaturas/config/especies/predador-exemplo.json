@@ -1,0 +1,70 @@
+{
+  "id": "predador-exemplo",
+  "nome": "Predador de exemplo",
+  "comportamento": "predador",
+  "bioma": "a-definir",
+  "origem": {
+    "ficha": null,
+    "_ajuda": "Troque por caminho da ficha real e do GLB original do repositório. Não copie binários."
+  },
+  "modelo": {
+    "glb": null,
+    "escala": 1,
+    "clipes": { "parado": null, "andar": null, "trote": null, "corrida": null, "ataque": null, "farejar": null, "descansar": null }
+  },
+  "visual": { "cor": "#e0703c", "rotulo": "P" },
+
+  "corpo": { "raio": 0.7 },
+  "furtividade": {
+    "_ajuda": "camuflagem: fração do alcance de visão alheio que some. fatorParado: visibilidade quando imóvel. ruidoPassos: patas macias < 1.",
+    "camuflagem": 0.2,
+    "fatorParado": 0.7,
+    "ruidoPassos": 0.7
+  },
+  "movimento": { "andar": 1.6, "trote": 4, "corrida": 9, "aceleracao": 8, "giroGrausSeg": 200, "fatorCurvaFechada": 0.6 },
+  "percepcao": {
+    "visao": { "alcance": 26, "anguloGraus": 140, "alcanceProximo": 2, "tempoReconhecimentoSeg": 0.9 },
+    "audicao": { "alcance": 16, "erroRelativo": 0.2 },
+    "memoriaSeg": 14,
+    "modificadoresPorEstado": {
+      "descansando": { "visao": 0.7 }
+    }
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.05,
+    "custoCorridaPorSeg": 8,
+    "recuperacaoPorSeg": 3,
+    "fatorRecuperacaoParado": 0.5,
+    "fomePorSeg": 0.2,
+    "comerPorSeg": 0,
+    "limiteExaustao": 5
+  },
+  "ataque": { "alcance": 1.5, "chanceAcerto": 0.4, "recargaSeg": 0.9, "custoEnergia": 3, "saciedadeCaptura": 70 },
+  "relacoes": { "presas": ["herbivoro-exemplo"], "teme": [] },
+  "decisao": {
+    "fomeCacar": 35,
+    "fomeDesesperada": 75,
+    "margemDesespero": 5,
+    "energiaDescanso": 30,
+    "energiaRetomar": 65,
+    "energiaDesistir": 15,
+    "pausaAposDesistirSeg": 8,
+    "distanciaCorrida": 13,
+    "antecipacaoMaxSeg": 0.8,
+    "ritmoAproximacao": "andar",
+    "tempoSemContatoMaxSeg": 5,
+    "raioChegadaUltimaPosicao": 1.5,
+    "raioChegadaPatrulha": 1.5
+  },
+  "balanceamento": {
+    "status": "provisorio",
+    "provisorios": [
+      "movimento.corrida", "percepcao.visao.alcance", "percepcao.visao.anguloGraus",
+      "necessidades.custoCorridaPorSeg", "ataque.alcance", "ataque.chanceAcerto", "ataque.recargaSeg",
+      "decisao.energiaDesistir", "decisao.distanciaCorrida", "decisao.tempoSemContatoMaxSeg",
+      "furtividade.camuflagem", "furtividade.ruidoPassos", "percepcao.visao.tempoReconhecimentoSeg"
+    ],
+    "notas": "Valores de exemplo. Predador ~10% mais rápido que a presa, porém gasta 2,5x mais energia correndo."
+  }
+}

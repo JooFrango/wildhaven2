@@ -1,0 +1,8 @@
+{
+  "_ajuda": "Liste aqui os arquivos de espécie e cenário carregados pela página e pelo simulador. A ordem dos cenários é a ordem do seletor.",
+  "especies": ["herbivoro-exemplo.json", "predador-exemplo.json", "boneco-teste.json"],
+  "cenarios": [
+    "campo-aberto.json", "obstaculo.json", "predador-cansado.json",
+    "territorios-separados.json", "capim-alto.json", "aproximacao-furtiva.json"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": "herbivoro-exemplo",
+  "nome": "Herbívoro de exemplo",
+  "comportamento": "herbivoro",
+  "bioma": "a-definir",
+  "origem": {
+    "ficha": null,
+    "_ajuda": "Troque por caminho da ficha real (ex.: creatures/species/<id>.md) e do GLB original. Não copie binários: referencie o caminho do repositório."
+  },
+  "modelo": {
+    "glb": null,
+    "escala": 1,
+    "clipes": { "parado": null, "andar": null, "trote": null, "corrida": null, "comer": null, "alerta": null, "descansar": null, "morte": null }
+  },
+  "visual": { "cor": "#8fc46a", "rotulo": "H" },
+
+  "corpo": { "raio": 0.6 },
+  "furtividade": {
+    "_ajuda": "camuflagem: fração do alcance de visão alheio que some (0 = nenhuma). fatorParado: multiplica a visibilidade quando imóvel. ruidoPassos: multiplica o alcance em que é ouvido.",
+    "camuflagem": 0.25,
+    "fatorParado": 0.6,
+    "ruidoPassos": 1
+  },
+  "movimento": { "andar": 1.4, "trote": 3.5, "corrida": 8.2, "aceleracao": 7, "giroGrausSeg": 260, "fatorCurvaFechada": 0.6 },
+  "percepcao": {
+    "visao": { "alcance": 20, "anguloGraus": 300, "alcanceProximo": 2.5, "tempoReconhecimentoSeg": 0.6 },
+    "audicao": { "alcance": 14, "erroRelativo": 0.15 },
+    "memoriaSeg": 10,
+    "modificadoresPorEstado": {
+      "comendo": { "visao": 0.6, "audicao": 0.8 },
+      "descansando": { "visao": 0.8 }
+    }
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.05,
+    "custoCorridaPorSeg": 3.2,
+    "recuperacaoPorSeg": 3,
+    "fatorRecuperacaoParado": 0.5,
+    "fomePorSeg": 0.35,
+    "comerPorSeg": 5,
+    "fomePorUnidade": 1,
+    "limiteExaustao": 6
+  },
+  "relacoes": { "teme": ["predador-exemplo"], "come": ["vegetacao"] },
+  "decisao": {
+    "fomeProcurar": 50,
+    "fomeSaciado": 15,
+    "energiaDescanso": 20,
+    "energiaRetomar": 55,
+    "tempoAlertaSeg": 2.5,
+    "distanciaPanicoAudicao": 6,
+    "tempoCalmaSeg": 5,
+    "tempoRecuperarSeg": 2,
+    "distanciaSegura": 22,
+    "distanciaFuga": 15,
+    "reavaliarFugaSeg": 0.5,
+    "bonusEsconderijo": 10,
+    "penalidadeCurva": 1.5,
+    "ritmoFuga": "corrida",
+    "raioBuscaAlimento": 16,
+    "raioVagar": 8
+  },
+  "balanceamento": {
+    "status": "provisorio",
+    "provisorios": [
+      "movimento.corrida", "movimento.trote", "percepcao.visao.alcance", "percepcao.audicao.alcance",
+      "necessidades.custoCorridaPorSeg", "necessidades.recuperacaoPorSeg", "necessidades.fomePorSeg",
+      "decisao.tempoCalmaSeg", "decisao.distanciaSegura", "decisao.bonusEsconderijo", "decisao.penalidadeCurva",
+      "furtividade.camuflagem", "furtividade.fatorParado", "percepcao.visao.tempoReconhecimentoSeg"
+    ],
+    "notas": "Valores de exemplo para o laboratório. Substituir pelos da ficha da espécie escolhida."
+  }
+}

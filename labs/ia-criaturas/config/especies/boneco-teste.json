@@ -1,0 +1,21 @@
+{
+  "id": "boneco-teste",
+  "nome": "Boneco de teste",
+  "comportamento": "estatico",
+  "origem": { "ficha": null, "_ajuda": "Alvo controlado para testes isolados (parado ou rota fixa). Não reage a nada." },
+  "modelo": { "glb": null, "clipes": {} },
+  "visual": { "cor": "#9aa4b2", "rotulo": "B" },
+  "corpo": { "raio": 0.6 },
+  "movimento": { "andar": 1.4, "trote": 3.5, "corrida": 7.5, "aceleracao": 7, "giroGrausSeg": 260 },
+  "percepcao": {
+    "visao": { "alcance": 0, "anguloGraus": 0, "alcanceProximo": 0 },
+    "audicao": { "alcance": 0 },
+    "memoriaSeg": 1
+  },
+  "necessidades": {
+    "energiaMax": 100, "custoBasePorSeg": 0, "custoCorridaPorSeg": 0, "recuperacaoPorSeg": 0,
+    "fomePorSeg": 0, "comerPorSeg": 0, "limiteExaustao": 0
+  },
+  "relacoes": { "teme": [], "presas": [] },
+  "decisao": {}
+}

@@ -1,0 +1,18 @@
+{
+  "_ajuda": "Doenças contagiosas do laboratório. NÃO vêm das fichas oficiais (o Wildhaven ainda não define doenças): são placeholders mecânicos, marcados como provisórios. Nunca surgem espontaneamente: só a partir de um caso índice declarado no cenário. Infecção de ferida é tratada em saude.js.",
+  "doencas": [
+    {
+      "id": "febre-de-bando",
+      "nome": "Febre de bando (placeholder)",
+      "provisorio": true,
+      "especies": ["velsari", "tarruco"],
+      "transmissaoPorSegContato": 0.0025,
+      "raioContatoM": 3.0,
+      "incubacaoDias": 3,
+      "duracaoMinDias": 5,
+      "progressaoDia": 0.18,
+      "recuperacaoDia": 0.8,
+      "danoDiaFracao": 0.05
+    }
+  ]
+}

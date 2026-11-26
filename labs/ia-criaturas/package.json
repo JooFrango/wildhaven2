@@ -1,0 +1,29 @@
+{
+  "name": "wildhaven-lab-ia-criaturas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Laboratório independente para desenvolver e testar a IA das criaturas do Wildhaven (percepção, memória, fome, energia e decisão).",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node scripts/servidor.mjs",
+    "test": "node --test test/*.test.mjs",
+    "simular": "node scripts/simular.mjs --sementes 1-30",
+    "reproduzir": "node scripts/reproduzir.mjs",
+    "paridade": "node scripts/hashes.mjs",
+    "clipes": "node scripts/clipes-glb.mjs",
+    "auditar-glb": "node scripts/auditar-glb.mjs",
+    "perfis-modelos": "node scripts/perfis-modelos.mjs",
+    "eco": "node scripts/eco-simular.mjs",
+    "inspecionar-rig": "node scripts/inspecionar-rig.mjs",
+    "v3:locomocao": "node scripts/v3-linha-base.mjs --rotulo depois",
+    "v3:combate": "node scripts/v3-combate.mjs --sementes 1-30",
+    "v3:fugas": "node scripts/v3-fugas.mjs --sementes 1-40",
+    "v3:social": "node scripts/v3-social.mjs --sementes 1-10 --cenarios bebedouro,bebedouro-real,savana-viva",
+    "v3:relatorio": "node scripts/v3-relatorio.mjs",
+    "demo-hospedada": "node scripts/montar-demo-hospedada.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/servidor.mjs --dir dist --porta 5181",
+    "verificar": "node --test test/*.test.mjs && node scripts/simular.mjs --sementes 1-30 --falhar-se-erro && node scripts/build.mjs"
+  }
+}
