@@ -1,0 +1,25 @@
+/** Structural and contact-specific gate for 1 v08 Hunter PvP sword swing. */
+import {readFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
+const out=new URL('../assets/hunter-pvp-v08/',import.meta.url);
+const man=JSON.parse(await readFile(new URL('manifest.json',out),'utf8'));
+const raw=await readFile(new URL(man.file,out));
+const source=await readFile(new URL('../assets/hunter-v05/hunter_combat_v05.glb',import.meta.url));
+const parse=bytes=>{if(bytes.toString('ascii',0,4)!=='glTF'||bytes.readUInt32LE(8)!==bytes.length)throw Error('Bad GLB header');const jl=bytes.readUInt32LE(12);return{doc:JSON.parse(bytes.toString('utf8',20,20+jl)),binary:bytes.subarray(28+jl)}};
+const a=parse(raw),b=parse(source),sha=x=>createHash('sha256').update(x).digest('hex');
+if(sha(raw)!==man.sha256||sha(source)!==man.sourceSha256)throw Error('Hash mismatch');
+if(a.doc.skins.length!==1||a.doc.skins[0].joints.length!==19)throw Error('Hunter skin changed');
+if(a.doc.animations.length!==b.doc.animations.length+1)throw Error('Unexpected animation count');
+if(a.doc.animations.at(-1).name!=='pvp08_sword_horizontal_review')throw Error('Expected one v08 clip');
+for(let i=0;i<b.doc.animations.length;i++)if(JSON.stringify(a.doc.animations[i])!==JSON.stringify(b.doc.animations[i]))throw Error('Original animation altered');
+for(const field of ['skins','images','textures'])if(JSON.stringify(a.doc[field])!==JSON.stringify(b.doc[field]))throw Error('Original '+field+' modified');
+for(let i=0;i<b.doc.meshes.length;i++)if(JSON.stringify(a.doc.meshes[i])!==JSON.stringify(b.doc.meshes[i]))throw Error('Character mesh overwritten');
+for(let i=0;i<b.doc.materials.length;i++)if(JSON.stringify(a.doc.materials[i])!==JSON.stringify(b.doc.materials[i]))throw Error('Character material overwritten');
+if(!a.binary.subarray(0,b.binary.length).equals(b.binary))throw Error('Original BIN prefix changed');
+const hand=a.doc.nodes.findIndex(n=>n.name==='RightHand'),sock=a.doc.nodes.findIndex(n=>n.name==='WeaponSocket_Right_PvP08');
+const sword=a.doc.nodes.findIndex(n=>n.name==='PvP08_SwordAttachedToRightHand');
+if(hand<0||sock<0||sword<0)throw Error('Missing attached sword chain');
+if(!a.doc.nodes[hand].children?.includes(sock)||!a.doc.nodes[sock].children?.includes(sword))throw Error('Sword is NOT parented to RightHand');
+if(typeof a.doc.nodes[sword].mesh!=='number')throw Error('Sword must be real GLB mesh, not viewer proxy');
+const clip=a.doc.animations.at(-1);if(clip.channels.length<19||clip.extras?.impact!==1.16)throw Error('Incomplete animation channels or contact event');
+if(man.ikDiagnostics.maxHandError>.075||man.ikDiagnostics.maxFootError>.065||man.ikDiagnostics.maxWristDeflectionRadians>1.16||man.ikDiagnostics.minElbowAngleDegrees<15)throw Error('IK residual too large');
+console.log(JSON.stringify({verified:true,size:raw.length,sha256:sha(raw),characterTriangles:1000,joints:19,originalClips:b.doc.animations.length,newClips:1,integratedWeaponMesh:a.doc.nodes[sword].mesh,handSocketParent:hand,frames:man.frames,ik:man.ikDiagnostics},null,2));

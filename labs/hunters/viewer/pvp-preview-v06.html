@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven • Hunter PvP v06 — 10 clipes para aprovação</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<style>
+  :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#101a1c;color:#e5e4d7;font:15px system-ui;display:grid;grid-template-columns:minmax(0,1fr) 330px;min-height:100vh}
+  main{position:relative;min-height:630px;background:#243436}#stage{width:100%;height:100%;display:block}aside{padding:22px 18px;background:#172527;border-left:1px solid #415559;overflow:auto}
+  h1{font:28px Georgia;margin:0 0 12px}.sub{font-size:13px;color:#abbab7;line-height:1.5}h2{font-size:16px;margin:25px 0 12px}
+  select,button{width:100%;border:1px solid #627b79;border-radius:6px;padding:10px;color:#fff;background:#2f4648;font:inherit;margin-top:8px;cursor:pointer}
+  button:hover{background:#425c59}button:disabled{opacity:.5;cursor:wait}.primary{background:#836237;border-color:#b88c4c}#status{font-size:13px;color:#e4c38c;min-height:3em;margin:14px 0}
+  #tag{position:absolute;bottom:24px;left:20px;padding:10px 14px;border-radius:6px;background:#0d1b1ec4;font:16px Georgia;max-width:75%}
+  .small{font-size:12px;color:#a7b6b3;line-height:1.5}.flag{color:#ffd39a}
+  @media(max-width:770px){body{display:flex;flex-direction:column}main{height:60vh;min-height:360px}aside{border:0;border-top:1px solid #415559}}
+</style>
+<main>
+  <canvas id="stage"></canvas>
+  <div id="tag">Carregando Hunter v06...</div>
+</main>
+<aside>
+  <h1>Hunter PvP · v06</h1>
+  <p class="sub">Revisão artística experimental. Dez animações esqueléticas novas feitas sobre o rig de 19 juntas do Hunter v05. A textura e a malha originais são preservadas.</p>
+  <h2>Movimento para avaliar</h2>
+  <select id="clip"></select>
+  <button id="toggle">Pausar animação</button>
+  <button id="export">Exportar GIF deste movimento</button>
+  <button id="exportAll" class="primary">Gerar os 10 GIFs separados</button>
+  <div id="status">Lendo GLB real...</div>
+  <p class="small">Os GIFs são capturas quadro a quadro do GLB esquelético em Three.js. A espada cinza é um objeto de visualização temporário preso à mão direita, não uma malha adicionada ao modelo original.</p>
+  <p class="small flag">O render do GLB e a fidelidade às artes ainda dependem de revisão do diretor. Nenhuma animação foi integrada à Alpha.</p>
+  <p class="small"><a href="../assets/hunter-pvp-v06/hunter_pvp_v06.glb" download style="color:#e4bf86">Baixar GLB desta revisão</a></p>
+</aside>
+<script type="module">
+import * as T from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {encodeGif} from './gif89a.mjs';
+const $=id=>document.getElementById(id);
+const specs=[
+ ['pvp_sword_01_ready','01 • Guarda / preparação'],
+ ['pvp_sword_02_slash_right','02 • Corte horizontal direito'],
+ ['pvp_sword_03_slash_left','03 • Corte horizontal reverso'],
+ ['pvp_sword_04_overhead','04 • Golpe vertical'],
+ ['pvp_sword_05_thrust','05 • Estocada'],
+ ['pvp_sword_06_guard_high','06 • Defesa alta'],
+ ['pvp_sword_07_parry','07 • Aparo'],
+ ['pvp_sword_08_dodge','08 • Esquiva lateral'],
+ ['pvp_sword_09_take_hit','09 • Reação ao dano'],
+ ['pvp_sword_10_kneel_injured','10 • Ferido, cai de joelho']
+];
+const scene=new T.Scene();scene.background=new T.Color(0x283a3b);
+scene.add(new T.HemisphereLight(0xf9ecd6,0x42515a,2.1));
+const sun=new T.DirectionalLight(0xffe7ba,2.6);sun.position.set(2,5,4);scene.add(sun);
+const floor=new T.Mesh(new T.PlaneGeometry(20,20),new T.MeshStandardMaterial({color:0x46514b,roughness:.9}));floor.rotation.x=-Math.PI/2;floor.position.y=-.06;scene.add(floor);
+const grid=new T.GridHelper(8,16,0x586c68,0x364e4c);grid.position.y=-.049;scene.add(grid);
+const renderer=new T.WebGLRenderer({canvas:$('stage'),antialias:true,preserveDrawingBuffer:true});renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
+const camera=new T.OrthographicCamera(-1.35,1.35,1.75,-1.75,.01,100);camera.position.set(2.6,1.8,4.2);camera.lookAt(0,.87,0);
+let mixer,model,hand,sword,clipMap,selected=specs[0][0],playing=true,elapsed=0,recording=false,clock=performance.now();
+for(const [id,label] of specs){const o=document.createElement('option');o.value=id;o.textContent=label;$('clip').append(o);}
+function makeSword(){
+  const g=new T.Group();
+  const blade=new T.Mesh(new T.BoxGeometry(.065,.63,.027),new T.MeshStandardMaterial({color:0xc4c7c5,metalness:.72,roughness:.3}));blade.position.y=.36;g.add(blade);
+  const tip=new T.Mesh(new T.ConeGeometry(.04,.115,4),new T.MeshStandardMaterial({color:0xcdd1cd,metalness:.65,roughness:.3}));tip.position.y=.73;tip.rotation.y=Math.PI/4;g.add(tip);
+  const grip=new T.Mesh(new T.CylinderGeometry(.025,.025,.19,8),new T.MeshStandardMaterial({color:0x553c2c,roughness:1}));grip.position.y=-.1;g.add(grip);
+  const cross=new T.Mesh(new T.BoxGeometry(.23,.045,.07),new T.MeshStandardMaterial({color:0x899495,metalness:.65,roughness:.4}));g.add(cross);
+  return g;
+}
+function fit(){
+  const w=$('stage').clientWidth,h=$('stage').clientHeight;renderer.setSize(w,h,false);
+  const ar=w/h;camera.left=-1.65*ar;camera.right=1.65*ar;camera.top=1.65;camera.bottom=-1.65;camera.updateProjectionMatrix();
+}
+function updateSword(){
+  if(!hand||!sword)return;
+  model.updateMatrixWorld(true);hand.getWorldPosition(sword.position);hand.getWorldQuaternion(sword.quaternion);
+  // The accessory's local Y axis is parallel to the hand's local reference axis.
+  sword.quaternion.multiply(new T.Quaternion().setFromEuler(new T.Euler(0,0,-Math.PI/2)));
+}
+function render(){updateSword();renderer.render(scene,camera);}
+function play(name){
+  if(!mixer||!clipMap[name])return;
+  selected=name;elapsed=0;mixer.stopAllAction();mixer.time=0;
+  const action=mixer.clipAction(clipMap[name]);action.reset();action.setLoop(T.LoopRepeat,Infinity);action.play();
+  $('clip').value=name;$('tag').textContent=specs.find(x=>x[0]===name)?.[1]??name;
+  mixer.setTime(0);render();
+}
+try{
+  const gltf=await new GLTFLoader().loadAsync('../assets/hunter-pvp-v06/hunter_pvp_v06.glb');
+  model=gltf.scene;model.rotation.y=-.18;scene.add(model);
+  hand=model.getObjectByName('RightHand');if(!hand)throw Error('Rig incompatível: RightHand ausente');
+  sword=makeSword();scene.add(sword);
+  mixer=new T.AnimationMixer(model);clipMap=Object.fromEntries(gltf.animations.map(c=>[c.name,c]));
+  const missing=specs.filter(s=>!clipMap[s[0]]);if(missing.length)throw Error('Faltam clipes: '+missing.map(s=>s[0]).join(', '));
+  play(selected);$('status').textContent=`GLB real carregado. ${gltf.animations.length} clipes, incluindo os 10 desta revisão.`;
+  window.hunterPvpPreview={clips:specs.map(s=>s[0]),play,model,clipMap,select:name=>play(name),get status(){return 'ready'}};
+}catch(err){$('status').textContent='Não foi possível carregar a revisão v06: '+err.message;console.error(err);}
+$('clip').onchange=e=>play(e.target.value);
+$('toggle').onclick=()=>{playing=!playing;$('toggle').textContent=playing?'Pausar animação':'Reproduzir animação';};
+async function exportGif(name){
+  if(!clipMap?.[name])throw Error('O GLB v06 ainda não possui o clipe '+name);
+  const before=selected,wasPlaying=playing,wasElapsed=elapsed;playing=false;recording=true;
+  const clip=clipMap[name],w=300,h=380,fps=12,count=Math.ceil(clip.duration*fps);
+  const frames=[];const scratch=document.createElement('canvas');scratch.width=w;scratch.height=h;
+  const ctx=scratch.getContext('2d',{willReadFrequently:true});
+  renderer.setSize(w,h,false);const ar=w/h;camera.left=-1.65*ar;camera.right=1.65*ar;camera.updateProjectionMatrix();
+  play(name);
+  for(let i=0;i<count;i++){
+    mixer.setTime(i/fps);render();ctx.drawImage(renderer.domElement,0,0,w,h);
+    frames.push(new Uint8Array(ctx.getImageData(0,0,w,h).data));
+    if(i%4===0)await new Promise(resolve=>requestAnimationFrame(resolve));
+  }
+  const bytes=encodeGif(frames,w,h,{fps});
+  const url=URL.createObjectURL(new Blob([bytes],{type:'image/gif'}));
+  const link=document.createElement('a');link.href=url;link.download=name+'.gif';document.body.appendChild(link);link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+  recording=false;playing=wasPlaying;play(before);elapsed=wasElapsed;fit();
+  return {name,bytes:bytes.length,frames:count};
+}
+$('export').onclick=async()=>{
+  const b=$('export');b.disabled=true;
+  try{$('status').textContent='Capturando GIF real do GLB...';const o=await exportGif(selected);$('status').textContent=`${o.name}.gif • ${o.frames} quadros • ${o.bytes} bytes`;}
+  catch(e){$('status').textContent=e.message;console.error(e)}finally{b.disabled=false}
+};
+$('exportAll').onclick=async()=>{
+  const b=$('exportAll');b.disabled=true;
+  try{for(let i=0;i<specs.length;i++){$('status').textContent=`Exportando ${i+1}/10: ${specs[i][0]}`;await exportGif(specs[i][0]);await new Promise(resolve=>setTimeout(resolve,100));}$('status').textContent='Dez GIFs gerados a partir do GLB. Confira a permissão de múltiplos downloads do navegador.';}
+  catch(e){$('status').textContent=e.message;console.error(e)}finally{b.disabled=false}
+};
+function frame(now){const dt=Math.min(.07,(now-clock)/1000);clock=now;if(mixer&&!recording){if(playing){mixer.update(dt);elapsed+=dt;}fit();render();}requestAnimationFrame(frame);}requestAnimationFrame(frame);
+</script>
+</html>

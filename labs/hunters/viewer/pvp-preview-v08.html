@@ -1,0 +1,55 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven — PvP v08 | 1 corte real para avaliação</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#171d21;color:#eff1e9;font:14px system-ui,Arial;display:grid;grid-template-columns:minmax(0,1fr) 330px;min-height:100vh}main{position:relative;min-height:620px;background:#343b40}canvas{display:block;width:100%;height:100%}aside{padding:22px;background:#1e252a;border-left:1px solid #41494f}h1{font-family:Georgia,serif;font-size:26px;margin:0 0 8px}p{line-height:1.55;color:#bdc8c6}button{width:100%;padding:12px;margin-top:10px;border:1px solid #808885;border-radius:5px;background:#303c40;color:#fff;cursor:pointer}button.primary{background:#7f5f3d;border-color:#bc8d54}#caption{position:absolute;left:16px;bottom:16px;background:#161d20dc;padding:10px 15px;border-radius:5px;color:#e7e2d5}small{color:#aebcb8}#status{margin-top:15px;color:#e9cfa2;line-height:1.5}
+@media(max-width:770px){body{display:block}main{min-height:60vh;height:60vh}aside{border-left:0}}
+</style></head><body>
+<main><canvas id="stage"></canvas><div id="caption">01 — Corte horizontal v08 (braço/ombro/punho)</div></main><aside>
+<h1>Hunter PvP v08</h1><p>Somente <strong>um</strong> movimento. A espada é malha real do GLB ligada ao punho. Revisão v08: ombro inicia o ataque, cotovelo acompanha arco guiado, punho limitado anatomicamente; braço livre como contrapeso. Avaliação artística pendente.</p>
+<button id="front">Vista frontal</button><button id="quarter">Vista 3/4</button><button id="pause">Pausar</button><button id="slow">Velocidade 0,5×</button><button id="export" class="primary">Exportar GIF real</button>
+<p><small>Arraste a barra para examinar preparação, transferência de peso, impacto e recuperação. A arte aprovada é só referência visual; o resultado mostrado é render do GLB real.</small></p>
+<input id="scrub" style="width:100%" type="range" min="0" max="225" value="0"><div id="time">0.00 / 2.25 s</div>
+<div id="status">Carregando GLB real...</div><p><a href="../assets/hunter-pvp-v08/hunter_pvp_v08.glb" style="color:#edc78f" download>GLB de revisão v08</a></p>
+<p><small>Reprovado até avaliação do diretor. Não integrado à Alpha ou às arenas.</small></p></aside>
+<script type="module">
+import * as T from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';import {encodeGif} from './gif89a.mjs';
+const $=id=>document.getElementById(id),NAME='pvp08_sword_horizontal_review',DURATION=2.25;
+const scene=new T.Scene();scene.background=new T.Color(0x434a4d);
+scene.add(new T.HemisphereLight(0xffe7cd,0x58616a,2.5));
+const sun=new T.DirectionalLight(0xffe5bb,2.7);sun.position.set(2.1,5.8,4.2);scene.add(sun);
+const fill=new T.DirectionalLight(0xe3ebf4,1.2);fill.position.set(-3,2,-4);scene.add(fill);
+const floor=new T.Mesh(new T.PlaneGeometry(10,10),new T.MeshStandardMaterial({color:0x5b625f,roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-.024;scene.add(floor);
+const stage=$('stage'),renderer=new T.WebGLRenderer({canvas:stage,antialias:true,preserveDrawingBuffer:true});renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;renderer.setPixelRatio(1);
+const camera=new T.OrthographicCamera(-1.30,1.30,1.38,-1.38,.01,100);camera.position.set(1.35,1.72,5.1);camera.lookAt(0,.86,.1);
+let viewMode='threequarter';
+function setAngle(mode){viewMode=mode==='front'?'front':'threequarter';
+ if(viewMode==='front')camera.position.set(0,1.76,5.5);
+ else camera.position.set(1.35,1.72,5.1);
+ camera.lookAt(0,.86,.1);camera.updateProjectionMatrix();render();}
+let mixer,action,model,playing=true,slow=false,recording=false,last=performance.now(),t=0;
+const f=()=>{const w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);const aspect=w/h;camera.left=-1.40*aspect;camera.right=1.40*aspect;camera.top=1.40;camera.bottom=-1.40;camera.updateProjectionMatrix();};
+function render(){renderer.render(scene,camera)}
+function setTime(s){t=Math.max(0,Math.min(DURATION-.002,s));if(mixer)mixer.setTime(t);$('scrub').value=String(Math.round(t*100));$('time').textContent=`${t.toFixed(2)} / 2.25 s`;render();}
+try{const g=await new GLTFLoader().loadAsync('../assets/hunter-pvp-v08/hunter_pvp_v08.glb');model=g.scene;model.rotation.y=-.12;scene.add(model);
+ const weapon=model.getObjectByName('PvP08_SwordAttachedToRightHand'),socket=model.getObjectByName('WeaponSocket_Right_PvP08');if(!weapon||!socket)throw Error('Espada/socket integrados ausentes no GLB');
+ const clip=g.animations.find(x=>x.name===NAME);if(!clip)throw Error('Falta o clipe '+NAME);
+ mixer=new T.AnimationMixer(model);action=mixer.clipAction(clip);action.setLoop(T.LoopRepeat,Infinity).play();f();setTime(0);
+ window.pvp08={get status(){return 'ready'},setTime,render,setAngle,get viewMode(){return viewMode},get sword(){return weapon},get model(){return model},get duration(){return clip.duration}};
+ $('status').textContent=`GLB real carregado: ${g.animations.length} clipes, 19 ossos, espada integrada ao socket, sem proxy externa.`;
+}catch(e){$('status').textContent='ERRO: '+e.message;console.error(e);}
+$('front').onclick=()=>setAngle('front');$('quarter').onclick=()=>setAngle('threequarter');
+$('pause').onclick=()=>{playing=!playing;$('pause').textContent=playing?'Pausar':'Reproduzir';};
+$('slow').onclick=()=>{slow=!slow;$('slow').textContent=slow?'Velocidade 1×':'Velocidade 0,5×';};
+$('scrub').oninput=e=>{playing=false;$('pause').textContent='Reproduzir';setTime(Number(e.target.value)/100);};
+async function exportGif(){if(!mixer)throw Error('GLB ainda não carregado');const prev=t;recording=true;playing=false;
+ const w=480,h=560,fps=18,count=Math.ceil(DURATION*fps),frames=[];const scratch=document.createElement('canvas');scratch.width=w;scratch.height=h;const ctx=scratch.getContext('2d',{willReadFrequently:true});
+ renderer.setSize(w,h,false);camera.left=-1.40*w/h;camera.right=1.40*w/h;camera.updateProjectionMatrix();
+ for(let i=0;i<count;i++){mixer.setTime(i/fps);render();ctx.drawImage(renderer.domElement,0,0,w,h);frames.push(new Uint8Array(ctx.getImageData(0,0,w,h).data));if(i%6===0)await new Promise(r=>requestAnimationFrame(r));}
+ const gif=encodeGif(frames,w,h,{fps});if(gif.length<25000)throw Error('GIF aparentemente vazio');const blob=new Blob([gif],{type:'image/gif'}),href=URL.createObjectURL(blob),a=document.createElement('a');a.href=href;a.download=NAME+'_'+viewMode+'.gif';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);
+ recording=false;f();setTime(prev);$('status').textContent=`GIF real exportado: ${frames.length} quadros, ${(gif.length/1024).toFixed(0)} KB.`;
+ return {frames:frames.length,bytes:gif.length};
+}
+$('export').onclick=async()=>{try{$('export').disabled=true;await exportGif();}catch(e){$('status').textContent=e.message;console.error(e)}finally{$('export').disabled=false}};
+let tick=performance.now();function loop(now){const dt=Math.min(.05,(now-tick)/1000);tick=now;if(mixer&&!recording){if(playing){setTime((t+dt*(slow?.5:1))%DURATION);}f();render();}requestAnimationFrame(loop);}requestAnimationFrame(loop);
+</script></body></html>

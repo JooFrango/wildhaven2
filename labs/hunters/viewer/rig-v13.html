@@ -1,0 +1,20 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Hunter rig v13</title>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+<style>body{margin:0;background:#152327;color:#f3e6ce;font:14px system-ui}header{padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}canvas{display:block;width:100vw;height:calc(100vh - 56px)}select,button{background:#304447;color:#eee5d5;padding:6px;border:1px solid #77857d}</style>
+<header><b>Hunter rig v13 · PvE v02 (GLB real)</b><select id="clip"></select><button id="play">Pausar</button><label><input id="root" type="checkbox" checked> deslocamento</label><span id="info"></span></header><canvas></canvas>
+<script type="module">
+// Revisão dos clipes pve2_* no GLB real. O deslocamento do corpo vem de rootMotion (extras), como a simulação fará.
+import * as T from 'three';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const c=document.querySelector('canvas'),r=new T.WebGLRenderer({canvas:c,antialias:true});r.setPixelRatio(devicePixelRatio);
+const s=new T.Scene();s.background=new T.Color(0x203033);s.add(new T.HemisphereLight(0xffffff,0x445544,2.2));const d=new T.DirectionalLight(0xffffff,1.6);d.position.set(2,4,3);s.add(d);
+s.add(new T.GridHelper(20,40,0x667766,0x3b4a4a));const cam=new T.PerspectiveCamera(40,1,.05,100);cam.position.set(3,1.6,3.2);const oc=new OrbitControls(cam,c);oc.target.set(0,.9,0);
+const g=await new GLTFLoader().loadAsync('../assets/hunter-rig-v13/hunter_rig_v13_blockout.glb'),m=g.scene;s.add(m);const mix=new T.AnimationMixer(m);
+const ex=Object.fromEntries(g.parser.json.animations.map(a=>[a.name,a.extras??{}])),sel=document.getElementById('clip');
+for(const a of g.animations.filter(a=>a.name.startsWith('pve2_')).sort((x,y)=>x.name.localeCompare(y.name)))sel.add(new Option(a.name,a.name));
+let act,clip,play=true;function use(n){mix.stopAllAction();clip=g.animations.find(a=>a.name===n);act=mix.clipAction(clip).play();document.getElementById('info').textContent=`${clip.duration.toFixed(2)} s · ${ex[n].loop?'laço':'único'}`;}
+sel.onchange=()=>use(sel.value);document.getElementById('play').onclick=e=>{play=!play;e.target.textContent=play?'Pausar':'Tocar';};use(sel.value);
+const clock=new T.Clock();function frame(){const dt=clock.getDelta();if(play)mix.update(dt);
+ const rm=ex[sel.value].rootMotion,useRoot=document.getElementById('root').checked;m.position.set(0,0,0);
+ if(useRoot&&rm?.curve){const i=Math.min(rm.curve.length-1,Math.round(act.time*60)),v=rm.curve[i]*1;if(rm.axis==='x')m.position.x=v;else m.position.z=v;}
+ const w=c.clientWidth,h=c.clientHeight;if(c.width!==w*devicePixelRatio){r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}oc.update();r.render(s,cam);requestAnimationFrame(frame);}frame();
+</script></html>

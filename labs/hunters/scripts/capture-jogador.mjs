@@ -1,0 +1,27 @@
+import {createRequire} from 'node:module';import {fileURLToPath} from 'node:url';import {writeFile} from 'node:fs/promises';import assert from 'node:assert/strict';
+const require=createRequire(new URL('../../hunters-codex/package.json',import.meta.url)),{chromium}=require('playwright-core'),b=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']}),p=await b.newPage({viewport:{width:1200,height:760}}),errors=[],reports=[];
+p.on('pageerror',e=>errors.push(e.stack));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url())});
+// --pve1: mesma gravação com a biblioteca PvE v01 (?pve1=1), só espada; saída em resultados/pve-v01/.
+const PVE=process.argv.includes('--pve1'),ARGS=process.argv.slice(2).filter(a=>!a.startsWith('--')),DIR=PVE?'../resultados/pve-v01/':'../resultados/jogador/';
+try{
+ for(const weapon of (ARGS[0]?[ARGS[0]]:PVE?['espada']:['lanca','espada','montante'])){
+  await p.goto('http://127.0.0.1:8782/labs/hunters/hunter-lab.html?cenario=jogador-'+weapon+'&semente=17'+(PVE?'&pve1=1':''));await p.waitForFunction(()=>window.hunterLab?.mundo?.geometriaHunter,null,{timeout:60000});
+  await p.locator('#sonsCombate').check();await p.waitForFunction(()=>hunterLab.apresentacao().audio==='ready');if(await p.locator('#marcadores').evaluate(e=>e.classList.contains('ativo')))await p.locator('#marcadores').click();
+  const result=await p.evaluate(async([weapon,PVE_])=>{
+   const api=hunterLab,canvas=document.querySelector('#palco canvas'),out=document.createElement('canvas');out.width=800;out.height=600;const ctx=out.getContext('2d'),stream=out.captureStream(15),chunks=[];const audio=api.audioCaptura();for(const t of audio?.getAudioTracks()??[])stream.addTrack(t);const rec=new MediaRecorder(stream,{mimeType:'video/webm;codecs=vp8,opus',videoBitsPerSecond:800000});rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};const done=new Promise(r=>rec.onstop=r);rec.start();
+   const start=performance.now(),stills={},clips=new Set(),frameTimes=[],acoes=new Map();let prev=start;
+   while(api.mundo.t<120&&!api.mundo.resultado){await new Promise(requestAnimationFrame);const now=performance.now();frameTimes.push(now-prev);prev=now;const until=(now-start)/1000*2;while(api.mundo.t<until&&!api.mundo.resultado&&api.mundo.t<120)api.avancar(.05);
+    await new Promise(requestAnimationFrame);
+    ctx.drawImage(canvas,0,0,800,600);ctx.fillStyle='#15272bea';ctx.fillRect(0,0,800,48);ctx.fillRect(0,548,800,52);ctx.fillStyle='#eed8a1';ctx.font='18px sans-serif';ctx.fillText('HUNTER LAB / '+weapon.toUpperCase()+' / GLBs REAIS / 2×',18,31);
+    const a=api.mundo.hunters[0],s=a.hunter.jogador,clip=api.clipes().find(v=>v.id===a.id)?.clip;clips.add(clip);const ac=a.hunter.action;if(ac&&!acoes.has(ac.start))acoes.set(ac.start,{nome:ac.name,start:ac.start,impact:ac.impact,end:ac.end,clip});ctx.font='16px sans-serif';ctx.fillText(api.mundo.t.toFixed(2)+' s · '+a.estado+' · alvo: '+(s?.goal??'—')+' · sequência '+(s?.chain??0),18,580);
+    if(clip&&/light|follow|heavy|dodge|run|block/.test(clip)&&!stills[clip]&&Object.keys(stills).length<(PVE_?6:3))stills[clip]=out.toDataURL('image/png').split(',')[1];
+   }
+   ctx.fillStyle='#15272b';ctx.fillRect(0,548,800,52);ctx.fillStyle='#eed8a1';ctx.font='18px sans-serif';const outcome=api.resultado();ctx.fillText(outcome?'DESFECHO: '+outcome.motivo:'FIM DA AMOSTRA: 120 s simulados; confronto sem desfecho',18,580);await new Promise(r=>setTimeout(r,500));rec.stop();await done;stream.getTracks().forEach(t=>t.stop());
+   const bytes=new Uint8Array(await new Blob(chunks).arrayBuffer());let raw='';for(let i=0;i<bytes.length;i+=32768)raw+=String.fromCharCode(...bytes.subarray(i,i+32768));
+   return{base64:btoa(raw),stills,acoes:[...acoes.values()],outcome,seconds:api.mundo.t,clips:[...clips],violations:api.invariantes(),frameMs:frameTimes.reduce((s,x)=>s+x,0)/frameTimes.length,events:api.mundo.eventos.length,state:api.estado(),presentation:api.apresentacao(),audioTracks:stream.getAudioTracks().length};
+  },[weapon,PVE]);
+  const {base64,stills,...report}=result;await writeFile(new URL(DIR+weapon+'-real.webm',import.meta.url),Buffer.from(base64,'base64'));for(const [name,png]of Object.entries(stills))await writeFile(new URL(DIR+weapon+'-'+name+'.png',import.meta.url),Buffer.from(png,'base64'));await p.screenshot({path:fileURLToPath(new URL(DIR+weapon+'-final.png',import.meta.url))});assert.deepEqual(report.violations,[]);reports.push({weapon,...report});await writeFile(new URL(DIR+'browser-'+weapon+'.json',import.meta.url),JSON.stringify({report,errors},null,2));console.log(JSON.stringify({weapon,seconds:report.seconds,outcome:report.outcome,clips:report.clips}));
+ }
+ if(!ARGS[0]&&!PVE){await p.goto('http://127.0.0.1:8782/labs/hunters/viewer/index.html');await p.waitForFunction(()=>window.hunterGallery,null,{timeout:60000});await p.evaluate(()=>hunterGallery.time(.35));await p.screenshot({path:fileURLToPath(new URL('../resultados/jogador/galeria-real.png',import.meta.url))});assert.equal(await p.evaluate(()=>hunterGallery.clips.length),83);}
+ assert.deepEqual(errors,[]);await writeFile(new URL(DIR+'browser-final.json',import.meta.url),JSON.stringify({reports,errors,source:'Actual Hunter Lab canvas; Chromium ANGLE SwiftShader. Playback 2x; limit 120 simulated seconds stated explicitly when no outcome.'},null,2));
+}finally{await b.close();}

@@ -1,0 +1,431 @@
+{
+ "frames": {
+  "1": {
+   "pronacaoGraus": -0.0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.0,
+     "cotovelo": 1.0,
+     "antebraco_15": 1.0,
+     "antebraco_50": 1.0,
+     "punho_90": 1.0,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 1.0,
+     "antebraco_15": 1.0,
+     "antebraco_50": 1.0,
+     "punho_90": 1.0,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0.0,
+     "cotovelo": 0.0,
+     "antebraco_15": 0.0,
+     "antebraco_50": 0.0,
+     "punho_90": 0.0,
+     "joelho": 0.0,
+     "canela_50": 0.0
+    },
+    "base_v12": {
+     "ombro": 0.0,
+     "cotovelo": 0.0,
+     "antebraco_15": 0.0,
+     "antebraco_50": -0.0,
+     "punho_90": 0.0,
+     "joelho": -0.0,
+     "canela_50": -0.0
+    }
+   }
+  },
+  "12": {
+   "pronacaoGraus": 85.0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.0,
+     "cotovelo": 0.724,
+     "antebraco_15": 0.842,
+     "antebraco_50": 0.972,
+     "punho_90": 0.997,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 0.741,
+     "antebraco_15": 0.326,
+     "antebraco_50": 0.994,
+     "punho_90": 0.962,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0.0,
+     "cotovelo": 0.8,
+     "antebraco_15": 6.8,
+     "antebraco_50": 45.3,
+     "punho_90": 57.5,
+     "joelho": 0.0,
+     "canela_50": 0.0
+    },
+    "base_v12": {
+     "ombro": 0.0,
+     "cotovelo": -5.2,
+     "antebraco_15": 32.8,
+     "antebraco_50": 47.9,
+     "punho_90": 68.2,
+     "joelho": -0.0,
+     "canela_50": -0.0
+    }
+   }
+  },
+  "24": {
+   "pronacaoGraus": -80.0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.0,
+     "cotovelo": 0.907,
+     "antebraco_15": 0.938,
+     "antebraco_50": 0.975,
+     "punho_90": 0.997,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 0.935,
+     "antebraco_15": 0.833,
+     "antebraco_50": 1.004,
+     "punho_90": 0.966,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0.0,
+     "cotovelo": -0.8,
+     "antebraco_15": -8.6,
+     "antebraco_50": -42.7,
+     "punho_90": -54.2,
+     "joelho": 0.0,
+     "canela_50": 0.0
+    },
+    "base_v12": {
+     "ombro": 0.0,
+     "cotovelo": -9.9,
+     "antebraco_15": -47.7,
+     "antebraco_50": -41.9,
+     "punho_90": -64.2,
+     "joelho": -0.0,
+     "canela_50": -0.0
+    }
+   }
+  },
+  "36": {
+   "pronacaoGraus": 70.0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 0.821,
+     "cotovelo": 0.707,
+     "antebraco_15": 0.842,
+     "antebraco_50": 0.981,
+     "punho_90": 0.998,
+     "joelho": 0.755,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 0.843,
+     "cotovelo": 0.757,
+     "antebraco_15": 0.345,
+     "antebraco_50": 0.993,
+     "punho_90": 0.974,
+     "joelho": 0.547,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": -6.3,
+     "cotovelo": 1.0,
+     "antebraco_15": 5.2,
+     "antebraco_50": 37.3,
+     "punho_90": 47.4,
+     "joelho": 7.4,
+     "canela_50": -0.0
+    },
+    "base_v12": {
+     "ombro": -4.2,
+     "cotovelo": -6.8,
+     "antebraco_15": 15.5,
+     "antebraco_50": 39.6,
+     "punho_90": 56.2,
+     "joelho": 32.1,
+     "canela_50": 0.0
+    }
+   }
+  },
+  "48": {
+   "pronacaoGraus": 0.0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.002,
+     "cotovelo": 1.0,
+     "antebraco_15": 1.0,
+     "antebraco_50": 1.0,
+     "punho_90": 1.0,
+     "joelho": 0.705,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 1.004,
+     "cotovelo": 1.0,
+     "antebraco_15": 1.0,
+     "antebraco_50": 1.0,
+     "punho_90": 1.0,
+     "joelho": 0.479,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0.5,
+     "cotovelo": 0.0,
+     "antebraco_15": -0.0,
+     "antebraco_50": 0.0,
+     "punho_90": -0.0,
+     "joelho": 10.1,
+     "canela_50": 0.0
+    },
+    "base_v12": {
+     "ombro": 0.8,
+     "cotovelo": -0.0,
+     "antebraco_15": 0.0,
+     "antebraco_50": -0.0,
+     "punho_90": 0.0,
+     "joelho": 45.8,
+     "canela_50": 0.0
+    }
+   }
+  },
+  "60": {
+   "pronacaoGraus": -0.0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.0,
+     "cotovelo": 0.811,
+     "antebraco_15": 0.912,
+     "antebraco_50": 1.0,
+     "punho_90": 0.995,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 0.901,
+     "antebraco_15": 0.664,
+     "antebraco_50": 1.051,
+     "punho_90": 0.9,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0.0,
+     "cotovelo": -0.4,
+     "antebraco_15": -1.6,
+     "antebraco_50": -0.0,
+     "punho_90": -0.2,
+     "joelho": 0.0,
+     "canela_50": 0.0
+    },
+    "base_v12": {
+     "ombro": 0.0,
+     "cotovelo": -6.7,
+     "antebraco_15": -22.3,
+     "antebraco_50": 0.9,
+     "punho_90": 6.3,
+     "joelho": -0.0,
+     "canela_50": -0.0
+    }
+   }
+  },
+  "72": {
+   "pronacaoGraus": -17.6,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.0,
+     "cotovelo": 0.956,
+     "antebraco_15": 0.974,
+     "antebraco_50": 0.999,
+     "punho_90": 0.99,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 0.998,
+     "cotovelo": 0.976,
+     "antebraco_15": 0.874,
+     "antebraco_50": 1.038,
+     "punho_90": 0.846,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 0.0,
+     "cotovelo": -0.5,
+     "antebraco_15": -2.2,
+     "antebraco_50": -9.4,
+     "punho_90": -11.9,
+     "joelho": 0.0,
+     "canela_50": 0.0
+    },
+    "base_v12": {
+     "ombro": 0.0,
+     "cotovelo": -4.3,
+     "antebraco_15": -13.4,
+     "antebraco_50": -7.7,
+     "punho_90": -18.2,
+     "joelho": -0.0,
+     "canela_50": -0.0
+    }
+   }
+  },
+  "84": {
+   "pronacaoGraus": -0.0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 0.898,
+     "cotovelo": 1.0,
+     "antebraco_15": 1.0,
+     "antebraco_50": 1.0,
+     "punho_90": 1.0,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 0.915,
+     "cotovelo": 1.0,
+     "antebraco_15": 1.0,
+     "antebraco_50": 1.0,
+     "punho_90": 1.0,
+     "joelho": 1.0,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": 14.4,
+     "cotovelo": 0.0,
+     "antebraco_15": 0.0,
+     "antebraco_50": -0.0,
+     "punho_90": 0.0,
+     "joelho": 0.0,
+     "canela_50": 0.0
+    },
+    "base_v12": {
+     "ombro": 11.9,
+     "cotovelo": 0.0,
+     "antebraco_15": 0.0,
+     "antebraco_50": -0.0,
+     "punho_90": 0.0,
+     "joelho": -0.0,
+     "canela_50": -0.0
+    }
+   }
+  },
+  "96": {
+   "pronacaoGraus": -0.0,
+   "raioRelativo": {
+    "v13": {
+     "ombro": 1.005,
+     "cotovelo": 0.845,
+     "antebraco_15": 0.926,
+     "antebraco_50": 1.0,
+     "punho_90": 1.0,
+     "joelho": 0.965,
+     "canela_50": 1.0
+    },
+    "base_v12": {
+     "ombro": 1.007,
+     "cotovelo": 0.916,
+     "antebraco_15": 0.698,
+     "antebraco_50": 1.056,
+     "punho_90": 1.0,
+     "joelho": 0.956,
+     "canela_50": 1.0
+    }
+   },
+   "torcaoSuperficieGraus": {
+    "v13": {
+     "ombro": -3.5,
+     "cotovelo": -0.5,
+     "antebraco_15": -1.3,
+     "antebraco_50": -0.0,
+     "punho_90": -0.0,
+     "joelho": 1.3,
+     "canela_50": -0.0
+    },
+    "base_v12": {
+     "ombro": -3.0,
+     "cotovelo": -5.7,
+     "antebraco_15": -18.4,
+     "antebraco_50": 1.4,
+     "punho_90": -0.0,
+     "joelho": 2.5,
+     "canela_50": -0.0
+    }
+   }
+  }
+ },
+ "ringVertices": {
+  "v13": {
+   "ombro": 9,
+   "cotovelo": 17,
+   "antebraco_15": 12,
+   "antebraco_50": 5,
+   "punho_90": 19,
+   "joelho": 14,
+   "canela_50": 7
+  },
+  "base_v12": {
+   "ombro": 5,
+   "cotovelo": 4,
+   "antebraco_15": 5,
+   "antebraco_50": 1,
+   "punho_90": 10,
+   "joelho": 1,
+   "canela_50": 7
+  }
+ },
+ "gates": {
+  "raio_min": {
+   "ombro": 0.75,
+   "cotovelo": 0.7,
+   "antebraco_15": 0.8,
+   "antebraco_50": 0.85,
+   "punho_90": 0.85,
+   "joelho": 0.65,
+   "canela_50": 0.85
+  },
+  "torcao_max_graus": {
+   "antebraco_15": 15
+  }
+ },
+ "violacoes": [],
+ "glb": {
+  "path": "labs/hunters/assets/hunter-rig-v13/hunter_rig_v13_blockout.glb",
+  "bytes": 923844,
+  "sha256": "941c70d8941194e5d1bd4caf7d07cde586da15780cd6c0ca1bb9a74ce8deb3c0"
+ }
+}

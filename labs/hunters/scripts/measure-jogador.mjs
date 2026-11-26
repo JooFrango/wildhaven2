@@ -1,0 +1,13 @@
+import {readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';
+import {carregarHunterLab} from '../src/node-hunters.mjs';import {criarMundoHunters,passoHunters,salvarMundoHunters} from '../src/mundo-hunters.js';
+const LAB=await carregarHunterLab(),scenarios=JSON.parse(await readFile(new URL('../config/cenarios.json',import.meta.url),'utf8')),nav=JSON.parse(await readFile(new URL('../../hunters-codex/assets/terrain-nav.json',import.meta.url),'utf8')),geometry=JSON.parse(await readFile(new URL('../../hunters-codex/assets/terrain-geometry.json',import.meta.url),'utf8')),rows=[];
+for(const enabled of [false,true])for(const weapon of ['lanca','espada','montante'])for(const seed of [1,17,42]){
+ const c=structuredClone(scenarios.find(c=>c.id==='jogador-'+weapon));c.terreno.dados=nav;c.geometriaPrecisa=geometry;
+ const species=structuredClone(LAB.cfg.especies);species.varrisco.dieta.presas.push('hunter');
+ const m=criarMundoHunters({...LAB.cfg,especies:species,cenarios:{[c.id]:c}},c,seed,{fichaHunter:LAB.fichaHunter,equipamentos:LAB.equipamentos,combateJogador:enabled}),cpu=[],states=new Set();
+ while(m.t<120&&!m.resultado){const t=performance.now();passoHunters(m);cpu.push(performance.now()-t);states.add(m.hunters[0].estado);}
+ const ev=m.eventos,seq=ev.filter(e=>e.tipo==='hunter_sequencia'),sorted=cpu.toSorted((a,b)=>a-b),hash=createHash('sha256').update(JSON.stringify(salvarMundoHunters(m))).digest('hex');
+ const row={enabled,weapon,seed,seconds:m.t,outcome:m.resultado??{motivo:'limite_de_observacao_120s'},attacks:ev.filter(e=>e.tipo==='ataque_inicio'&&e.id==='hunter-A').length,hits:ev.filter(e=>e.tipo==='ferimento'&&e.atacante==='hunter-A').length,misses:ev.filter(e=>e.tipo==='golpe_errou'&&e.id==='hunter-A').length,sequences:seq.length,maxChain:Math.max(0,...seq.map(e=>e.indice+1)),heavy:seq.filter(e=>e.clip.includes('heavy')).length,defenses:ev.filter(e=>e.tipo==='hunter_bloqueio_tatico').length,evades:ev.filter(e=>e.tipo==='hunter_esquiva_tatica').length,cancels:ev.filter(e=>e.tipo==='hunter_cancelamento').length,parts:[...new Set(seq.map(e=>e.parte))],states:[...states],cpuMs:{p50:sorted[Math.floor(sorted.length*.5)],p95:sorted[Math.floor(sorted.length*.95)]},hp:m.hunters[0].saude.hp,energy:m.hunters[0].energia,hash};rows.push(row);console.log(JSON.stringify(row));
+ if(enabled&&seed===17)await writeFile(new URL('../resultados/jogador/'+weapon+'-events.json',import.meta.url),JSON.stringify({row,events:ev},null,2));
+}
+await writeFile(new URL('../resultados/jogador/comparacao.json',import.meta.url),JSON.stringify({executedAt:new Date().toISOString(),baseline:'Player-like policy disabled versus enabled in the current lab; same contact solver, terrain, species, seed and equipment',rows},null,2));
