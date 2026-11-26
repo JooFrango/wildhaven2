@@ -1,0 +1,77 @@
+{
+  "format": "glTF2-binary",
+  "version": "v0.1",
+  "creature": "arumbar",
+  "gameIntegrated": false,
+  "rig": "hierarchical transform pivots (no weighted skin)",
+  "source": "original Three.js procedural polygon meshes",
+  "bytes": 839860,
+  "sha256": "150c8e1f6cc3801a65a62d7f8210b5e5565a587b4add988e509d9422bf91f74b",
+  "meshInstances": 307,
+  "meshDefinitions": 51,
+  "nodes": 330,
+  "animationNames": [
+    "idle",
+    "walk",
+    "run",
+    "graze",
+    "drink",
+    "alert",
+    "charge",
+    "death"
+  ],
+  "clips": 8,
+  "channelsPerClip": [
+    66,
+    66,
+    66,
+    66,
+    66,
+    66,
+    66,
+    66
+  ],
+  "jointNames": [
+    "Arumbar_Body",
+    "Arumbar_Neck",
+    "Arumbar_Head",
+    "Arumbar_Jaw",
+    "Arumbar_FrontLeft_ShoulderOrHip",
+    "Arumbar_FrontLeft_Knee",
+    "Arumbar_FrontLeft_Ankle",
+    "Arumbar_FrontRight_ShoulderOrHip",
+    "Arumbar_FrontRight_Knee",
+    "Arumbar_FrontRight_Ankle",
+    "Arumbar_BackLeft_ShoulderOrHip",
+    "Arumbar_BackLeft_Knee",
+    "Arumbar_BackLeft_Ankle",
+    "Arumbar_BackRight_ShoulderOrHip",
+    "Arumbar_BackRight_Knee",
+    "Arumbar_BackRight_Ankle",
+    "Arumbar_Tail0",
+    "Arumbar_Tail1",
+    "Arumbar_Tail2",
+    "Arumbar_Tail3",
+    "Arumbar_Tail4",
+    "Arumbar_Tassel"
+  ],
+  "ecology": {
+    "id": "arumbar",
+    "name": "Arumbar — Titã das Savanas",
+    "habitat": [
+      "savanna"
+    ],
+    "rarity": "rare",
+    "social": "predominantly solitary",
+    "adultLengthM": 5.2,
+    "shoulderHeightM": 2.8,
+    "massKgTarget": 3500,
+    "capPopulationPerSuitable5kmHex": 2,
+    "habitatHexOccupancyTarget": [
+      0.15,
+      0.25
+    ],
+    "chanceSolitaryAdult": 0.85,
+    "note": "Targets for future ecological balancing; no live spawn has been implemented."
+  }
+}

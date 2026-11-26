@@ -1,0 +1,146 @@
+{
+  "species": "brejaveo",
+  "version": "v02",
+  "stage": "rig_skinning_animations",
+  "status": "technical_validation_pending_art_director_review",
+  "base_glb": "../brejaveo_v01/brejaveo-v01-anatomia-blockout.glb",
+  "base_sha256": "eaa65d74edbe0e3e14d84b66bea3328917b1b174308cc4d2207475feffb40977",
+  "glb": "brejaveo-v02-skinned-animated-LOD0.glb",
+  "bytes": 695708,
+  "sha256": "c184a77c3505cfbad400dbebeb7af5e4171b65c91ac6f3300c1d229ef12276da",
+  "triangles": 3692,
+  "meshes": 89,
+  "weighted_skin": true,
+  "skins": 1,
+  "joints": 33,
+  "animations": 24,
+  "clips": {
+    "idle": {
+      "duration": 3.0,
+      "frames": 37,
+      "channels": 10
+    },
+    "walk": {
+      "duration": 1.3,
+      "frames": 24,
+      "channels": 27
+    },
+    "run": {
+      "duration": 0.75,
+      "frames": 14,
+      "channels": 27
+    },
+    "wade": {
+      "duration": 1.55,
+      "frames": 28,
+      "channels": 27
+    },
+    "stalk": {
+      "duration": 1.8,
+      "frames": 33,
+      "channels": 27
+    },
+    "takeoff": {
+      "duration": 1.7,
+      "frames": 31,
+      "channels": 27
+    },
+    "fly": {
+      "duration": 1.8,
+      "frames": 33,
+      "channels": 27
+    },
+    "glide": {
+      "duration": 2.4,
+      "frames": 44,
+      "channels": 27
+    },
+    "landing": {
+      "duration": 1.7,
+      "frames": 31,
+      "channels": 27
+    },
+    "tongue_aim": {
+      "duration": 1.4,
+      "frames": 26,
+      "channels": 10
+    },
+    "tongue_strike": {
+      "duration": 1.45,
+      "frames": 27,
+      "channels": 12
+    },
+    "tongue_hook_pull": {
+      "duration": 1.6,
+      "frames": 29,
+      "channels": 11
+    },
+    "bite_swallow": {
+      "duration": 1.6,
+      "frames": 29,
+      "channels": 10
+    },
+    "ambush": {
+      "duration": 1.3,
+      "frames": 24,
+      "channels": 10
+    },
+    "feed": {
+      "duration": 2.1,
+      "frames": 38,
+      "channels": 10
+    },
+    "hide": {
+      "duration": 2.0,
+      "frames": 25,
+      "channels": 14
+    },
+    "rest": {
+      "duration": 3.0,
+      "frames": 37,
+      "channels": 14
+    },
+    "sleep": {
+      "duration": 3.4,
+      "frames": 41,
+      "channels": 14
+    },
+    "alert": {
+      "duration": 1.7,
+      "frames": 31,
+      "channels": 10
+    },
+    "threat": {
+      "duration": 1.7,
+      "frames": 31,
+      "channels": 12
+    },
+    "hurt": {
+      "duration": 1.2,
+      "frames": 22,
+      "channels": 10
+    },
+    "death": {
+      "duration": 2.3,
+      "frames": 42,
+      "channels": 8
+    },
+    "turn_left": {
+      "duration": 1.9,
+      "frames": 35,
+      "channels": 28
+    },
+    "turn_right": {
+      "duration": 1.9,
+      "frames": 35,
+      "channels": 28
+    }
+  },
+  "texture": "embedded_v01_uv_atlas",
+  "texture_sha256": "08c78c9af3a6d5fa21d2278e656c6b6e00b5e1feaa0a8da77564463d05f45fba",
+  "limitations": [
+    "Predation/latch contact requires simulation and collision integration; none is claimed.",
+    "No Alpha integration, no LOD1/LOD2 at this stage.",
+    "Approval of animations by director and independent QA pending."
+  ]
+}

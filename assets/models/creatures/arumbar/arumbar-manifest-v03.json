@@ -1,0 +1,79 @@
+{
+  "name": "Arumbar",
+  "version": "v03",
+  "source": "original 3D surface lofts + high-poly sculpt",
+  "gameplayIntegrated": false,
+  "ecology": {
+    "id": "arumbar",
+    "name": "Arumbar — Titã das Savanas",
+    "habitat": [
+      "savanna"
+    ],
+    "rarity": "rare",
+    "social": "predominantly solitary",
+    "adultLengthM": 5.2,
+    "shoulderHeightM": 2.8,
+    "massKgTarget": 3500,
+    "capPopulationPerSuitable5kmHex": 2,
+    "habitatHexOccupancyTarget": [
+      0.15,
+      0.25
+    ],
+    "chanceSolitaryAdult": 0.85,
+    "note": "Targets for future ecological balancing; no live spawn has been implemented.",
+    "version": "0.3.0",
+    "gameIntegrated": false,
+    "targets": [
+      "shoulder-heavy body",
+      "short bovine skull",
+      "integrated armor",
+      "anatomical limb joints",
+      "soft layered mane",
+      "graduated materials",
+      "inertial locomotion and feeding motion"
+    ]
+  },
+  "geometry": {
+    "visibleMeshes": 287,
+    "triangles": 145516
+  },
+  "jointCount": 70,
+  "glb": {
+    "meshInstances": 287,
+    "meshDefinitions": 287,
+    "trianglesInMeshDefinitions": 133756,
+    "joints": 358,
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "graze",
+      "drink",
+      "alert",
+      "charge",
+      "death"
+    ],
+    "channelsPerClip": [
+      210,
+      210,
+      210,
+      210,
+      210,
+      210,
+      210,
+      210
+    ],
+    "bytes": 6678460,
+    "sha256": "cdb4ee8121c497348635e2077e9188e6d5808c9a77a780c61ee6628cae1773cf"
+  },
+  "sourceFiles": [
+    "arumbar.mjs",
+    "arumbar-anatomy-v03.mjs",
+    "export-v03.mjs"
+  ],
+  "limitations": [
+    "rig is hierarchical rigid pivot animation, not a skinned/blended armature",
+    "clips in place; no navigation / physical collision or terrain adaptation",
+    "adult rarity and territory rules are metadata, not live spawn logic"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "glb_reimported": true,
+  "glb_bytes": 466968,
+  "glb_sha256": "b06878ac4c590f20fdea154c52225b9c57c23cf93aa763860f5b55bc1d875603",
+  "meshes": 86,
+  "faces_total": 5164,
+  "vertices_total": 2903,
+  "with_uv": 86,
+  "bbox_m": [
+    [
+      -2.816580057144165,
+      -1.6921347379684448,
+      0.005152771715074778
+    ],
+    [
+      2.699970006942749,
+      1.6921347379684448,
+      2.243797540664673
+    ]
+  ],
+  "dimensions_m": [
+    5.516550064086914,
+    3.3842694759368896,
+    2.238644768949598
+  ],
+  "has_skin": false,
+  "animation_clips": 0,
+  "real_render_file_list": [
+    "brejaveo-v03-comparativo-conceito-glb.png",
+    "brejaveo-v03-real-glb-frente.png",
+    "brejaveo-v03-real-glb-3-vistas.png",
+    "brejaveo-v03-real-glb-tres-quartos.png",
+    "brejaveo-v03-real-glb-perfil.png"
+  ],
+  "shape_status": "pending director review"
+}

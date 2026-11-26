@@ -1,0 +1,73 @@
+{
+  "speciesId": "boscaranha",
+  "version": "0.1.0",
+  "status": "prototype_binary_published_in_github",
+  "approval": "pending",
+  "createdAt": "2026-11-07",
+  "format": "glTF 2.0 GLB",
+  "verticesLOD0": 10128,
+  "verticesLOD1": 4613,
+  "models": [
+    {
+      "lod": 0,
+      "filename": "boscaranha_animated_v01.glb",
+      "bytes": 843480,
+      "sha256": "c5a1399ddbc4b7b48d7e391a7efc5fbfde27229d325e898cab8ac9a0f7f084ec",
+      "triangles": 17344
+    },
+    {
+      "lod": 1,
+      "filename": "boscaranha_LOD1_animated_v01.glb",
+      "bytes": 462068,
+      "sha256": "b3cd59ada4ae06f72be4e35f95d93517310088c925505c84d9e57d44a398500a",
+      "triangles": 7629
+    }
+  ],
+  "joints": 33,
+  "materials": 25,
+  "animationCount": 22,
+  "clips": [
+    "idle",
+    "walk",
+    "scuttle",
+    "sprint",
+    "stalk",
+    "ambush",
+    "sense_vibrations",
+    "vigilance",
+    "pounce",
+    "bite",
+    "silk_wrap",
+    "feed",
+    "climb",
+    "threat_display",
+    "retreat",
+    "turn_left",
+    "turn_right",
+    "groom",
+    "nest",
+    "rest",
+    "hurt",
+    "death"
+  ],
+  "sourceFile": "generate_boscaranha.py",
+  "viewer": "index.html",
+  "validation": "boscaranha_validation.json",
+  "notes": "GLBs originais publicados e verificados em commit 7b8cb97496fe8a3d4a5dab4f5c019b0f2413e998. Arte, aprovação visual e integração ao runtime seguem seus estados separados; código gerador e demais prévias podem ter armazenamento independente.",
+  "binaryPublished": true,
+  "binaryCommitSha": "7b8cb97496fe8a3d4a5dab4f5c019b0f2413e998",
+  "publishedFiles": [
+    {
+      "path": "assets/models/creatures/boscaranha/boscaranha_animated_v01.glb",
+      "bytes": 843480,
+      "sha256": "c5a1399ddbc4b7b48d7e391a7efc5fbfde27229d325e898cab8ac9a0f7f084ec",
+      "gitBlobSha": "9e125f3884e4d0593b4183e0e0a03bf557f0e5ad"
+    },
+    {
+      "path": "assets/models/creatures/boscaranha/boscaranha_LOD1_animated_v01.glb",
+      "bytes": 462068,
+      "sha256": "b3cd59ada4ae06f72be4e35f95d93517310088c925505c84d9e57d44a398500a",
+      "gitBlobSha": "9ae3e7c7a6d5255189611bf6706f8068efbd3caa"
+    }
+  ]
+}

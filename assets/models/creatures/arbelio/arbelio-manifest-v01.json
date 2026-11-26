@@ -1,0 +1,80 @@
+{
+  "id": "arbelio",
+  "version": "v01",
+  "status": "asset_for_art_review",
+  "gameplayIntegrated": false,
+  "LODs": [
+    {
+      "path": "arbelio-savanna-animated-v01-LOD0.glb",
+      "bytes": 306536,
+      "sha256": "e93b89d3546bbb15d62f48a55099e53d1935529583296ae7c758ef7e47db7f9f",
+      "triangleCount": 7076,
+      "nodes": 18,
+      "meshNodes": 17,
+      "animationNames": [
+        "idle",
+        "walk",
+        "climb",
+        "leap",
+        "grip",
+        "forage",
+        "balance",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 0
+    },
+    {
+      "path": "arbelio-savanna-animated-v01-LOD1.glb",
+      "bytes": 238300,
+      "sha256": "4e304fd98ba48cddbcafab8ba81951ca3a6a6d1b3231c2b924f5f760dbebc117",
+      "triangleCount": 4470,
+      "nodes": 18,
+      "meshNodes": 17,
+      "animationNames": [
+        "idle",
+        "walk",
+        "climb",
+        "leap",
+        "grip",
+        "forage",
+        "balance",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 1
+    },
+    {
+      "path": "arbelio-savanna-animated-v01-LOD2.glb",
+      "bytes": 199904,
+      "sha256": "16d1ace45be02c338b5b7d4f2326fdcd83a995e0270c70732562d9c722d37da7",
+      "triangleCount": 3102,
+      "nodes": 18,
+      "meshNodes": 17,
+      "animationNames": [
+        "idle",
+        "walk",
+        "climb",
+        "leap",
+        "grip",
+        "forage",
+        "balance",
+        "alert",
+        "flee",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 2
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "renderer": "Three.js WebGL screenshot of actual Arumbar geometry",
+  "meshInstances": 307,
+  "shots": [
+    {
+      "name": "arumbar-real-3d-three-quarter-v01.png",
+      "bytes": 279735,
+      "view": "threeQuarter",
+      "animation": "idle"
+    },
+    {
+      "name": "arumbar-real-3d-side-v01.png",
+      "bytes": 286519,
+      "view": "side",
+      "animation": "idle"
+    },
+    {
+      "name": "arumbar-real-3d-front-v01.png",
+      "bytes": 331596,
+      "view": "front",
+      "animation": "alert"
+    },
+    {
+      "name": "arumbar-real-3d-grazing-v01.png",
+      "bytes": 304519,
+      "view": "grazing",
+      "animation": "graze"
+    },
+    {
+      "name": "arumbar-real-3d-running-v01.png",
+      "bytes": 274910,
+      "view": "threeQuarter",
+      "animation": "run"
+    }
+  ]
+}

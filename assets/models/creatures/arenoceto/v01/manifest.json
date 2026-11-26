@@ -1,0 +1,52 @@
+{
+  "species": "Arenoceto",
+  "version": "v01",
+  "stage": "static_uv_textured_blockout",
+  "approval": {
+    "concept": "approved_in_chat_2026-11-09",
+    "form": "awaiting_user_review"
+  },
+  "asset": "arenoceto-v01-textured-blockout.glb",
+  "texture": "textures/arenoceto-v01-handpaint-atlas.png",
+  "bytes": 1184076,
+  "sha256": "ef6e9aa0bb9d5437098866b64c0c4b9d53e02d8ec5bdb45bc9863e2932e86d33",
+  "texture_sha256": "716f39a34629e7e6e47a0ec0c59b88f4ac17d3b9631e482071792fb9f133e286",
+  "triangles": 2052,
+  "mesh_groups": 1,
+  "nodes": 2,
+  "skins": 0,
+  "bones": 0,
+  "animation_clips": 0,
+  "lods_generated": 0,
+  "painted_patterns": "original raster atlas UV, no polygons for stains/colors",
+  "bounds_m": [
+    [
+      -20.3,
+      0.318,
+      -10.9
+    ],
+    [
+      17.1,
+      10.9,
+      10.9
+    ]
+  ],
+  "triangles_by_structure": {
+    "trunk": 960,
+    "wedge_cranium": 256,
+    "lower_filter_jaw": 224,
+    "mouth_shadow": 12,
+    "keratin_filter": 208,
+    "sand_paddle": 24,
+    "sand_paddle_edge": 24,
+    "recessed_orbit": 4,
+    "amber_eye": 4,
+    "pupil": 2,
+    "nostril": 2,
+    "rear_keel": 8,
+    "caudal_peduncle": 96,
+    "caudal_sail": 12,
+    "dorsal_armor": 144,
+    "cranial_shield": 72
+  }
+}

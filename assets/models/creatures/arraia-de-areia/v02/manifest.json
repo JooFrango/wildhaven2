@@ -1,0 +1,73 @@
+{
+  "project": "Wildhaven",
+  "species": "Arraia-de-Areia",
+  "id": "arraia-de-areia",
+  "version": "v02",
+  "based_on": "v01 blockout (user-approved shape)",
+  "stage": "anatomical_refinement_static_uv",
+  "status": {
+    "concept": "approved_by_user",
+    "v01_shape": "approved_by_user",
+    "v02_refinement": "awaiting_artistic_review",
+    "integration": "not_in_game"
+  },
+  "model": "arraia-de-areia-v02-anatomia-refinada.glb",
+  "texture": "textures/arraia-de-areia-v02-pintura-uv-refinada.png",
+  "texture_embedded": true,
+  "texture_resolution": [
+    2048,
+    2048
+  ],
+  "materials": 1,
+  "meshes": 1,
+  "triangles": 6576,
+  "vertices_flat_shaded": 19728,
+  "joints": 0,
+  "skins": 0,
+  "animation_clips": 0,
+  "lods": 0,
+  "bytes_glb": 4710600,
+  "sha256_glb": "456478469e0b7396ef09dc5a1cfafc45ba4a9123ccd978b971635fa53038b995",
+  "bytes_texture": 4069268,
+  "sha256_texture": "5ecc858b005c094951d8115d0dc4d685a11d7b30a232428c761cd3c91ad82315",
+  "bounds_m": [
+    [
+      -12.6,
+      0.94,
+      -9.0
+    ],
+    [
+      7.23,
+      5.35,
+      9.0
+    ]
+  ],
+  "approx_wingspan_m": 18.0,
+  "approx_length_m": 19.830000400543213,
+  "textures_are_paint_only": true,
+  "color_patches_extra_meshes": 0,
+  "feature_triangle_groups": {
+    "dorsal_mantle": 2484,
+    "ventral_mantle": 2484,
+    "leading_trailing_wing_edge": 184,
+    "wing_tip_edge": 108,
+    "mouth_cavity": 8,
+    "upper_jaw_brim": 8,
+    "lower_jaw_lip": 8,
+    "filtering_keratin_barb": 510,
+    "front_sand_tusk": 160,
+    "inset_orbital_rim": 40,
+    "iris_inset": 20,
+    "pupil_recess": 2,
+    "medial_osteoderm": 48,
+    "scapular_support": 48,
+    "flexible_muscular_tail": 180,
+    "tail_defensive_spines": 54,
+    "tail_fin": 2,
+    "pectoral_fin_support": 168,
+    "cephalic_sensory_ridge": 56,
+    "buccal_corner_fold": 4
+  },
+  "render_source": "VTK vtkGLTFImporter reimports this GLB",
+  "source_v01": "assets/models/creatures/arraia-de-areia/v01/source/build.py"
+}

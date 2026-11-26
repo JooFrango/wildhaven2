@@ -1,0 +1,38 @@
+{
+  "species": "brejaveo",
+  "stage": "blockout",
+  "version": "v01",
+  "approved_concept": true,
+  "shape_approved": false,
+  "repo_target": "carioca1111/wildhaven-new",
+  "file": "brejaveo-v01-anatomia-blockout.glb",
+  "bytes": 246804,
+  "sha256": "eaa65d74edbe0e3e14d84b66bea3328917b1b174308cc4d2207475feffb40977",
+  "triangles": 3692,
+  "vertices": 2169,
+  "meshes": 89,
+  "skins": 0,
+  "joints": 0,
+  "animations": 0,
+  "dimensions_xyz_m": [
+    5.457,
+    6.961,
+    2.65
+  ],
+  "bounds_xyz_m": [
+    [
+      -2.856489896774292,
+      -3.4803273677825928,
+      0.0202298853546381
+    ],
+    [
+      2.600260019302368,
+      3.4803273677825928,
+      2.6700356006622314
+    ]
+  ],
+  "texture": "textures/brejaveo-v01-atlas-uv.png",
+  "texture_sha256": "08c78c9af3a6d5fa21d2278e656c6b6e00b5e1feaa0a8da77564463d05f45fba",
+  "render_source": "reimported GLB",
+  "notes": "No meshes added exclusively for spots, skin painting, or membrane color. Wing and limb bones are structural."
+}

@@ -1,0 +1,67 @@
+{
+  "project": "Wildhaven",
+  "species": "Arraia-de-Areia",
+  "id": "arraia-de-areia",
+  "version": "v01",
+  "status": {
+    "concept": "approved_by_user",
+    "blockout_artistic_review": "pending",
+    "integration": "not_in_game"
+  },
+  "stage": "static_UV_painted_anatomical_blockout",
+  "model": "arraia-de-areia-v01-blockout-texturizado.glb",
+  "texture": "textures/arraia-de-areia-v01-albedo-pintado-uv.png",
+  "texture_embedded": true,
+  "texture_resolution": [
+    2048,
+    2048
+  ],
+  "materials": 1,
+  "meshes": 1,
+  "triangles": 6296,
+  "vertices_flat_shaded": 18888,
+  "joints": 0,
+  "skins": 0,
+  "animation_clips": 0,
+  "lods": 0,
+  "bytes_glb": 4681744,
+  "sha256_glb": "4bdd0d072ed62585fa16399cd97fe49d93b52918d50d2cfcdc45b493e1b21d67",
+  "bytes_texture": 4054904,
+  "sha256_texture": "8d3245db63db535619b9881b928dff773e1f7e1f6661a3e8012dc27ec43aa37b",
+  "bounds_m": [
+    [
+      -12.6,
+      0.94,
+      -9.0
+    ],
+    [
+      7.23,
+      5.35,
+      9.0
+    ]
+  ],
+  "approx_wingspan_m": 18.0,
+  "approx_length_m": 19.830000400543213,
+  "textures_are_paint_only": true,
+  "color_patches_extra_meshes": 0,
+  "feature_triangle_groups": {
+    "dorsal_mantle": 2484,
+    "ventral_mantle": 2484,
+    "leading_trailing_wing_edge": 184,
+    "wing_tip_edge": 108,
+    "mouth_cavity": 8,
+    "upper_jaw_brim": 8,
+    "lower_jaw_lip": 8,
+    "filtering_keratin_barb": 510,
+    "front_sand_tusk": 160,
+    "orbital_bony_brow": 4,
+    "eye_inset": 4,
+    "pupil_recess": 2,
+    "medial_osteoderm": 48,
+    "scapular_support": 48,
+    "flexible_muscular_tail": 180,
+    "tail_defensive_spines": 54,
+    "tail_fin": 2
+  },
+  "render_source": "VTK vtkGLTFImporter loads exported real GLB"
+}

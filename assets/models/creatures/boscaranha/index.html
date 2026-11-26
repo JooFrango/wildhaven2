@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Wildhaven • Boscaranha 3D</title>
+<style>
+:root{color-scheme:dark;--bg:#121d1b;--panel:#202a25;--line:#506654;--gold:#e0bb78;--text:#f4eedb;--muted:#a3b4a5;--green:#8fbd8e}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{background:linear-gradient(115deg,#172b25,#121b1a);border-bottom:1px solid #3f5745;padding:15px 16px 13px;display:flex;align-items:center;gap:12px;justify-content:space-between}
+.mark{letter-spacing:.21em;font:700 12px Georgia,serif;color:var(--gold)}h1{margin:2px 0 0;font:25px Georgia,serif}.tag{font-size:11px;color:#d2dcb7;border:1px solid #526e56;border-radius:90px;padding:4px 8px}
+main{max-width:1200px;margin:0 auto;padding:12px}.stage{height:min(63vh,650px);min-height:345px;border:1px solid var(--line);border-radius:14px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#39483c,#1b2622 64%,#14201d)}
+#canvas{width:100%;height:100%;display:block;touch-action:none}.stage-hint{position:absolute;bottom:10px;left:12px;font-size:12px;color:#d7e1c6;background:#101b17ba;padding:6px 10px;border:1px solid #48604c;border-radius:10px;pointer-events:none}.state{position:absolute;top:10px;left:12px;color:#e9e1c5;background:#102018c8;border:1px solid #4a6650;border-radius:9px;padding:6px 10px;max-width:90%}
+.control-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.panel{background:#202c25;border:1px solid #405749;border-radius:12px;padding:12px}.panel h2{margin:0 0 8px;font:18px Georgia,serif;color:var(--gold)}label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}select,button{background:#14231c;color:#f4f0dc;border:1px solid #526951;border-radius:9px;padding:11px 10px;font:inherit;width:100%;font-size:14px}button{cursor:pointer;background:#32553b;font-weight:700}button.secondary{background:#1a2d24}select:focus,button:focus{outline:2px solid var(--gold);outline-offset:2px}.button-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.speedrow{display:flex;gap:8px;align-items:center;margin-top:10px}.speedrow input{width:100%;accent-color:#ddbb7a}small,footer{color:var(--muted)}.row{display:flex;gap:8px;align-items:center;justify-content:space-between}.meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:12px 0}.meta div{text-align:center;background:#1b2922;border:1px solid #354b3d;border-radius:9px;padding:9px}.meta strong{display:block;font-size:17px;color:var(--gold)}footer{padding:0 4px 22px;font-size:12px}#error{color:#ffcfbd;white-space:pre-wrap} @media(max-width:690px){header{padding:12px}h1{font-size:22px}.stage{height:48vh;min-height:340px}.control-grid{grid-template-columns:1fr}.meta{gap:5px}.meta div{padding:7px 3px}.meta strong{font-size:14px}}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.166.1/examples/jsm/"}}</script>
+</head>
+<body>
+<header><div><div class="mark">WILDHAVEN · FAUNA DE AURALIS</div><h1>Boscaranha <small>· modelo animado v0.1</small></h1></div><span class="tag">22 animações</span></header>
+<main>
+  <section class="stage" aria-label="Visualizador 3D interativo"><canvas id="canvas"></canvas><div class="state" id="status">Carregando o modelo 3D…</div><div class="stage-hint">Arraste para girar · pinça para zoom</div></section>
+  <div class="meta"><div><strong>33</strong><small>ossos</small></div><div><strong>17.344</strong><small>triângulos</small></div><div><strong>2</strong><small>níveis de detalhe</small></div></div>
+  <div class="control-grid">
+   <section class="panel"><h2>Detalhamento</h2><label for="variant">Qualidade da malha</label><select id="variant"><option value="detail">LOD0 · 17.344 triângulos (detalhado)</option><option value="lite">LOD1 · 7.629 triângulos (otimizado)</option></select><div class="button-grid"><button class="secondary" id="reset">Restaurar câmera</button><button class="secondary" id="pause">Pausar animação</button></div></section>
+   <section class="panel"><h2>Movimento</h2><label for="action">Ação reproduzida no esqueleto</label><select id="action"></select><div class="speedrow"><label for="speed">Velocidade</label><input type="range" id="speed" min="0.25" max="2" step="0.25" value="1"/><output id="speedVal">1×</output></div></section>
+  </div>
+  <p id="error"></p>
+  <footer>Boscaranha 3D: protótipo original com oito patas e 22 movimentos. Animações são in-place: o controlador de IA do jogo moverá o personagem sobre o terreno. Requer conexão de internet para carregar a biblioteca Three.js. Rode por servidor HTTP local, não via file://.</footer>
+</main>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+const $=id=>document.getElementById(id), cnv=$('canvas'), status=$('status'), err=$('error');
+const renderer=new THREE.WebGLRenderer({canvas:cnv,antialias:true,alpha:true,powerPreference:'low-power'});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.22;
+const scene=new THREE.Scene();scene.fog=new THREE.Fog(0x1c2b25,8,17);
+const camera=new THREE.PerspectiveCamera(42,1,.04,80);
+const controls=new OrbitControls(camera,cnv);controls.enableDamping=true;controls.dampingFactor=.07;controls.target.set(0,.50,0);controls.minDistance=1.35;controls.maxDistance=9;controls.maxPolarAngle=Math.PI*.75;controls.enablePan=false;
+const home=()=>{camera.position.set(2.9,1.9,-3.7);controls.target.set(0,.50,0);controls.update()};home();
+scene.add(new THREE.HemisphereLight(0xe9f6dc,0x6b6c51,2.1));
+const light=new THREE.DirectionalLight(0xffe7b6,2.5);light.position.set(-3,7,-3);scene.add(light);
+const rim=new THREE.DirectionalLight(0xb8d9bb,1.35);rim.position.set(4,3,5);scene.add(rim);
+const floor=new THREE.Mesh(new THREE.CylinderGeometry(1.9,2,.10,40),new THREE.MeshStandardMaterial({color:0x314137,roughness:1}));floor.position.y=-.04;scene.add(floor);
+const inset=new THREE.Mesh(new THREE.CircleGeometry(1.86,48),new THREE.MeshStandardMaterial({color:0x49644b,roughness:1,side:THREE.DoubleSide}));inset.rotation.x=-Math.PI/2;inset.position.y=.018;scene.add(inset);
+const loader=new GLTFLoader();let model=null,mixer=null,cur=null,clips=[];
+const opts=['idle','walk','scuttle','sprint','stalk','ambush','sense_vibrations','vigilance','pounce','bite','silk_wrap','feed','climb','threat_display','retreat','turn_left','turn_right','groom','nest','rest','hurt','death'];
+const translations={idle:'Parada / respiração',walk:'Caminhar',scuttle:'Correr em oito patas',sprint:'Arrancada rápida',stalk:'Espreitar a presa',ambush:'Preparar emboscada',sense_vibrations:'Sentir vibrações',vigilance:'Vigiar o ambiente',pounce:'Dar o bote',bite:'Morder com quelíceras',silk_wrap:'Envolver com seda',feed:'Alimentar-se',climb:'Escalar',threat_display:'Postura de intimidação',retreat:'Recuar',turn_left:'Virar à esquerda',turn_right:'Virar à direita',groom:'Limpar as patas',nest:'Preparar abrigo',rest:'Descansar',hurt:'Sofrer dano',death:'Morrer'};
+for(const id of opts){const o=document.createElement('option');o.value=id;o.textContent=translations[id]||id;$('action').appendChild(o)}
+function play(name){if(!mixer)return;const clip=THREE.AnimationClip.findByName(clips,name);if(!clip){status.textContent='Ação indisponível: '+name;return}
+ if(cur)cur.fadeOut(.15);
+ const nxt=mixer.clipAction(clip);nxt.reset();nxt.enabled=true;nxt.setEffectiveWeight(1);nxt.setEffectiveTimeScale(1);
+ nxt.setLoop(['turn_left','turn_right','pounce','bite','hurt','death'].includes(name)?THREE.LoopOnce:THREE.LoopRepeat,Infinity);
+ nxt.clampWhenFinished=true;nxt.fadeIn(.15).play();cur=nxt;
+ status.textContent=($('variant').value==='detail'?'LOD0 · Detalhado':'LOD1 · Leve')+' · '+(translations[name]||name);
+}
+let serial=0;
+async function loadVariant(){const id=++serial;const v=$('variant').value;status.textContent='Carregando variante '+(v==='detail'?'detalhada':'leve')+'…';err.textContent='';
+ try{const gltf=await loader.loadAsync(v==='detail'?'boscaranha_animated_v01.glb':'boscaranha_LOD1_animated_v01.glb');if(id!==serial)return;
+ if(model){scene.remove(model);model.traverse(o=>{if(o.isMesh){o.geometry.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material])m?.dispose()}})}
+ model=gltf.scene;scene.add(model);clips=gltf.animations;mixer=new THREE.AnimationMixer(model);cur=null;play($('action').value||'idle');}
+ catch(e){status.textContent='Não foi possível carregar o GLB';err.textContent='Verifique se os arquivos GLB estão na mesma pasta do index.html e abra usando um servidor HTTP.\n'+e.message}
+}
+$('variant').addEventListener('change',loadVariant);$('action').addEventListener('change',()=>play($('action').value));$('reset').addEventListener('click',home);
+$('pause').addEventListener('click',()=>{if(!mixer)return;mixer.timeScale=mixer.timeScale?0:Number($('speed').value);$('pause').textContent=mixer.timeScale?'Pausar animação':'Continuar animação'});
+$('speed').addEventListener('input',()=>{$('speedVal').textContent=$('speed').value+'×';if(mixer&&mixer.timeScale)mixer.timeScale=Number($('speed').value)});
+function resize(){const {width,height}=cnv.getBoundingClientRect();renderer.setSize(Math.max(1,width),Math.max(1,height),false);camera.aspect=width/height;camera.updateProjectionMatrix()}
+window.addEventListener('resize',resize);resize();
+const clock=new THREE.Clock();function animate(){requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.06);if(mixer)mixer.update(dt);controls.update();renderer.render(scene,camera)}animate();loadVariant();
+</script>
+</body></html>

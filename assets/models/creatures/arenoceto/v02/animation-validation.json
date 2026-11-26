@@ -1,0 +1,130 @@
+{
+  "glb_sha256": "2c70d4c14c7fa6148c4f3d76a292f8bb57a5b8fe6a4cee0d96d27d413fa92bfd",
+  "weighted_skin_verified": true,
+  "original_texture_bytes_identical": true,
+  "original_mesh_uv_and_indices_identical": true,
+  "joint_inverse_bind_verified": true,
+  "all_clip_channels_and_loop_seams_valid": true,
+  "clips": {
+    "idle": {
+      "duration_seconds": 6.0,
+      "channels": 17,
+      "max_vertex_movement_m": 0.9451,
+      "loop": true
+    },
+    "swim_sand": {
+      "duration_seconds": 4.0,
+      "channels": 17,
+      "max_vertex_movement_m": 4.7072,
+      "loop": true
+    },
+    "swim_fast": {
+      "duration_seconds": 2.700000047683716,
+      "channels": 17,
+      "max_vertex_movement_m": 6.5643,
+      "loop": true
+    },
+    "turn_left": {
+      "duration_seconds": 3.5,
+      "channels": 17,
+      "max_vertex_movement_m": 9.6403,
+      "loop": false
+    },
+    "turn_right": {
+      "duration_seconds": 3.5,
+      "channels": 17,
+      "max_vertex_movement_m": 9.6403,
+      "loop": false
+    },
+    "dive": {
+      "duration_seconds": 4.0,
+      "channels": 17,
+      "max_vertex_movement_m": 6.2851,
+      "loop": false
+    },
+    "surface": {
+      "duration_seconds": 4.0,
+      "channels": 17,
+      "max_vertex_movement_m": 5.1185,
+      "loop": false
+    },
+    "burrow": {
+      "duration_seconds": 4.599999904632568,
+      "channels": 17,
+      "max_vertex_movement_m": 7.696,
+      "loop": false
+    },
+    "breach": {
+      "duration_seconds": 5.0,
+      "channels": 17,
+      "max_vertex_movement_m": 12.8478,
+      "loop": false
+    },
+    "filter_feed": {
+      "duration_seconds": 5.0,
+      "channels": 17,
+      "max_vertex_movement_m": 1.6289,
+      "loop": true
+    },
+    "sift_sediment": {
+      "duration_seconds": 5.0,
+      "channels": 17,
+      "max_vertex_movement_m": 1.1414,
+      "loop": true
+    },
+    "alert": {
+      "duration_seconds": 3.0,
+      "channels": 17,
+      "max_vertex_movement_m": 0.9002,
+      "loop": false
+    },
+    "threat_display": {
+      "duration_seconds": 4.5,
+      "channels": 17,
+      "max_vertex_movement_m": 3.7538,
+      "loop": true
+    },
+    "bellow": {
+      "duration_seconds": 4.0,
+      "channels": 17,
+      "max_vertex_movement_m": 2.336,
+      "loop": false
+    },
+    "charge": {
+      "duration_seconds": 2.700000047683716,
+      "channels": 17,
+      "max_vertex_movement_m": 9.0963,
+      "loop": true
+    },
+    "fin_sweep": {
+      "duration_seconds": 4.0,
+      "channels": 17,
+      "max_vertex_movement_m": 7.1092,
+      "loop": true
+    },
+    "tail_slam": {
+      "duration_seconds": 3.299999952316284,
+      "channels": 17,
+      "max_vertex_movement_m": 2.6425,
+      "loop": false
+    },
+    "hurt": {
+      "duration_seconds": 2.5,
+      "channels": 17,
+      "max_vertex_movement_m": 3.8348,
+      "loop": false
+    },
+    "rest": {
+      "duration_seconds": 6.0,
+      "channels": 17,
+      "max_vertex_movement_m": 0.3783,
+      "loop": true
+    },
+    "death": {
+      "duration_seconds": 6.0,
+      "channels": 17,
+      "max_vertex_movement_m": 9.0378,
+      "loop": false
+    }
+  }
+}

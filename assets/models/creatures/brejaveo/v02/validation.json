@@ -1,0 +1,51 @@
+{
+  "status": "structural_and_cpu_skinned_render_passed",
+  "file": "brejaveo-v02-skinned-animated-LOD0.glb",
+  "sha256": "c184a77c3505cfbad400dbebeb7af5e4171b65c91ac6f3300c1d229ef12276da",
+  "bytes": 695708,
+  "geometry_parts": 89,
+  "triangles": 3692,
+  "skins": 1,
+  "joint_count": 33,
+  "animation_count": 24,
+  "clip_names": [
+    "idle",
+    "walk",
+    "run",
+    "wade",
+    "stalk",
+    "takeoff",
+    "fly",
+    "glide",
+    "landing",
+    "tongue_aim",
+    "tongue_strike",
+    "tongue_hook_pull",
+    "bite_swallow",
+    "ambush",
+    "feed",
+    "hide",
+    "rest",
+    "sleep",
+    "alert",
+    "threat",
+    "hurt",
+    "death",
+    "turn_left",
+    "turn_right"
+  ],
+  "max_deviation_m_at_sample": {
+    "walk": 0.4846191704273224,
+    "fly": 2.2237682342529297,
+    "tongue_strike": 1.8527346849441528,
+    "tongue_hook_pull": 1.5750997066497803,
+    "death": 2.3157007694244385
+  },
+  "texture_uv": "v01 atlas preserved and included in GLB",
+  "preview_method": "CPU skinned vertex positions obtained by evaluating exported glTF animation channels+inverse bind matrices; VTK mesh render (not generated concept art)",
+  "limits": [
+    "No browser runtime or gameplay-contact integration was tested.",
+    "IK/foot contact not independently validated.",
+    "Awaiting director review of motions and QA independent audit."
+  ]
+}

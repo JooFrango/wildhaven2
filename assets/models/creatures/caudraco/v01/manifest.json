@@ -1,0 +1,438 @@
+{
+  "species_id": "caudraco",
+  "name": "Caudraco",
+  "version": "v01",
+  "base": "main:9e84c8b8750a041a9f41c10dc192ee05ee9f339d",
+  "approved_concept": "user approved four reptile concepts and asked to build GLBs; individual designs remain under review",
+  "stage": "static_textured_blockout_for_form_approval",
+  "habitat": "rocky_desert",
+  "diet": "herbivore",
+  "description": "Spiked muscular defensive tail; herbivore of shrubs, seeds and seedpods",
+  "defense": "tail_sweep_and_burrow_block",
+  "length_design_m": 0.95,
+  "mass_design_kg": 6.0,
+  "glb": "caudraco-v01-textured-blockout.glb",
+  "bytes": 3619064,
+  "sha256": "b89299deaee686fe55fc8f7ccadb58f112f8991d3cd2b870f70b255d77d45d29",
+  "triangle_count": 1888,
+  "triangle_count_method": "sum mesh primitive triangles after actual GLB reimport",
+  "glb_meshes": 1,
+  "materials": 1,
+  "uv_atlas_px": [
+    2048,
+    2048
+  ],
+  "painted_markings_not_extra_polygons": true,
+  "paint_map": "texture/caudraco-v01-painted-albedo.png",
+  "skins": 0,
+  "joints": 0,
+  "animations": 0,
+  "lods": 1,
+  "skeleton": "not requested until form approval",
+  "components_authoring": 93,
+  "components": [
+    {
+      "name": "barrel_trunk",
+      "triangles": 220
+    },
+    {
+      "name": "neck_transition",
+      "triangles": 68
+    },
+    {
+      "name": "faceted_skull",
+      "triangles": 116
+    },
+    {
+      "name": "actual_lower_jaw",
+      "triangles": 56
+    },
+    {
+      "name": "recessed_eye_-1",
+      "triangles": 72
+    },
+    {
+      "name": "nostril_-1",
+      "triangles": 8
+    },
+    {
+      "name": "recessed_eye_1",
+      "triangles": 72
+    },
+    {
+      "name": "nostril_1",
+      "triangles": 8
+    },
+    {
+      "name": "heavy_spined_tail",
+      "triangles": 164
+    },
+    {
+      "name": "front_leg_-1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_0.17_-1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_0.17_-1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_-1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_-1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_-1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "front_leg_1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_0.17_1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_0.17_1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_1_3",
+      "triangles": 8
+    },
+    {
+      "name": "back_leg_-1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_-0.13_-1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_-0.13_-1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.13_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.13_-1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.13_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.13_-1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.13_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.13_-1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.13_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "back_leg_1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_-0.13_1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_-0.13_1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.13_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.13_1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.13_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.13_1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.13_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.13_1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.13_1_3",
+      "triangles": 8
+    },
+    {
+      "name": "tail_defensive_ring_0_0",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_0_1",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_0_2",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_0_3",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_0_4",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_0_5",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_1_0",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_1_1",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_1_2",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_1_3",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_1_4",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_1_5",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_2_0",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_2_1",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_2_2",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_2_3",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_2_4",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_2_5",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_3_0",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_3_1",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_3_2",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_3_3",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_3_4",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_3_5",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_4_0",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_4_1",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_4_2",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_4_3",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_4_4",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_4_5",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_5_0",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_5_1",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_5_2",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_5_3",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_5_4",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_5_5",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_6_0",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_6_1",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_6_2",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_6_3",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_6_4",
+      "triangles": 6
+    },
+    {
+      "name": "tail_defensive_ring_6_5",
+      "triangles": 6
+    },
+    {
+      "name": "brow_hook_-1",
+      "triangles": 6
+    },
+    {
+      "name": "brow_hook_1",
+      "triangles": 6
+    }
+  ],
+  "render_evidence_source_sha256": "b89299deaee686fe55fc8f7ccadb58f112f8991d3cd2b870f70b255d77d45d29",
+  "previews": {
+    "caudraco-v01-real-glb-profile.png": {
+      "bytes": 383885,
+      "sha256": "f959a0c16f336aeaecd7b2cc826d6e9e1bf91472c1dabe2225b554677cc2fbcc",
+      "source_glb_sha256": "b89299deaee686fe55fc8f7ccadb58f112f8991d3cd2b870f70b255d77d45d29",
+      "camera_view": "profile"
+    },
+    "caudraco-v01-real-glb-front.png": {
+      "bytes": 372173,
+      "sha256": "a4ca6406d9e569c9d50d22e85a33aae1e38f983d1c69496c7f791b9b3eefa5fa",
+      "source_glb_sha256": "b89299deaee686fe55fc8f7ccadb58f112f8991d3cd2b870f70b255d77d45d29",
+      "camera_view": "front"
+    },
+    "caudraco-v01-real-glb-three-quarter.png": {
+      "bytes": 376115,
+      "sha256": "bd60e4b3beb2e25b8351c201c57fe0bf5703e5e08c07196509a4a2df886b0bc8",
+      "source_glb_sha256": "b89299deaee686fe55fc8f7ccadb58f112f8991d3cd2b870f70b255d77d45d29",
+      "camera_view": "three-quarter"
+    },
+    "caudraco-v01-three-real-glb-views.png": {
+      "bytes": 523200,
+      "sha256": "a8ef91d96d387c739d412205832bdf0115edea2b910e102af415eea1ad687717",
+      "source_glb_sha256": "b89299deaee686fe55fc8f7ccadb58f112f8991d3cd2b870f70b255d77d45d29",
+      "camera_view": "contact_sheet"
+    }
+  },
+  "integrated_game": false,
+  "art_status": "pending_form_approval",
+  "publication": "branch_published_pending_artistic_review",
+  "git_blob_sha1": "62c4e7a6d123e0b4741e632e75e3d38f238931e2"
+}

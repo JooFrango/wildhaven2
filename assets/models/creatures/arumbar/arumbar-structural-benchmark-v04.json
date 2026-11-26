@@ -1,0 +1,131 @@
+{
+  "source": {
+    "bytes": 6678460,
+    "sha256": "cdb4ee8121c497348635e2077e9188e6d5808c9a77a780c61ee6628cae1773cf",
+    "trianglesMeshDefinitions": 145516,
+    "trianglesDrawnPerInstance": 145516,
+    "meshDefinitions": 287,
+    "meshNodes": 287,
+    "primitives": 287,
+    "estimatedDrawCalls": 287,
+    "materials": 17,
+    "nodes": 358,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "graze",
+      "drink",
+      "alert",
+      "charge",
+      "death"
+    ]
+  },
+  "lods": [
+    {
+      "lod": 0,
+      "triangles": 37935,
+      "drawCalls": 100,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 379350,
+          "drawCallsPerFrame": 1000
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 948375,
+          "drawCallsPerFrame": 2500
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 1896750,
+          "drawCallsPerFrame": 5000
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 3793500,
+          "drawCallsPerFrame": 10000
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 7587000,
+          "drawCallsPerFrame": 20000
+        }
+      ]
+    },
+    {
+      "lod": 1,
+      "triangles": 15937,
+      "drawCalls": 100,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 159370,
+          "drawCallsPerFrame": 1000
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 398425,
+          "drawCallsPerFrame": 2500
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 796850,
+          "drawCallsPerFrame": 5000
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 1593700,
+          "drawCallsPerFrame": 10000
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 3187400,
+          "drawCallsPerFrame": 20000
+        }
+      ]
+    },
+    {
+      "lod": 2,
+      "triangles": 6453,
+      "drawCalls": 100,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 64530,
+          "drawCallsPerFrame": 1000
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 161325,
+          "drawCallsPerFrame": 2500
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 322650,
+          "drawCallsPerFrame": 5000
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 645300,
+          "drawCallsPerFrame": 10000
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 1290600,
+          "drawCallsPerFrame": 20000
+        }
+      ]
+    }
+  ],
+  "instances": [
+    10,
+    25,
+    50,
+    100,
+    200
+  ]
+}
