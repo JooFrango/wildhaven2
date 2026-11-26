@@ -1,0 +1,25 @@
+{
+  "creature": "Torvardo",
+  "version": "v03 blockout",
+  "workflow": "silhouette/anatomy/planes approval before rig",
+  "status": "artistic_review_pending",
+  "glb": "torvardo-v03-anatomy-blockout.glb",
+  "authoring_parts": 145,
+  "export_mesh_groups": 1,
+  "triangles": 3910,
+  "bytes": 235624,
+  "sha256": "2a342dcb9aa61a5887b901f7d63870087072d33eb311baeda9a807d7bc2f6ef6",
+  "animations": [],
+  "rig": "NOT YET — intentionally deferred until blockout approved",
+  "feature_map": [
+    "pronounced thoracic hump",
+    "flat-sculpt shoulder/haunch planes",
+    "keratin forehead boss",
+    "two outward-curled horns",
+    "layered shingle-mane",
+    "recessed eyes and nostrils",
+    "differentiated fetlocks and cleft hooves",
+    "non-tubular flanks",
+    "faceted head"
+  ]
+}

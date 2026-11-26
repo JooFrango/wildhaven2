@@ -1,0 +1,26 @@
+{
+  "creature": "Garruva",
+  "version": "v03 blockout",
+  "species_role": "terrestrial_reptilian_scavenger_not_bird",
+  "stage": "silhouette_anatomy_in_artistic_review",
+  "status": "artistic_review_pending",
+  "glb": "garruva-v03-anatomy-blockout.glb",
+  "authoring_parts": 125,
+  "export_mesh_groups": 1,
+  "triangles": 4252,
+  "bytes": 256140,
+  "sha256": "c3e2c6e5bf5f439f2ade25852f192c3bf3eb38ba88f130c7a9f80af11673042d",
+  "animations": [],
+  "rig": "NOT YET — anatomical approval first",
+  "scale_basis": "designed length approx 3.8m in scene units (X span)",
+  "visual_features": [
+    "long wedge-like predatory skull and cutting tooth line",
+    "amber recessed eyes in flattened angular brow",
+    "dark red skin around neck and jaw; no feathers or wings",
+    "elongated powerful faceted axial mass, not Raizauro herbivore shell",
+    "splayed forelimbs, visible elbows, running hocks, individual claws",
+    "low axial scute ridge and lightweight integrated osteoderms",
+    "lengthened tapered tail as counterbalance",
+    "flat-shaded original 3D geometry with per-face natural palette"
+  ]
+}

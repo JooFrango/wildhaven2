@@ -1,0 +1,28 @@
+{
+  "creature": "Mastélio",
+  "version": "v03 pilot blockout",
+  "stage": "silhouette_anatomy_in_artistic_review",
+  "previous_versions_unchanged": true,
+  "concept": "mastélio_na_savana_dourada.png",
+  "pipeline": "anatomical_blockout -> user_visual_approval -> rig/animation -> LODs",
+  "glb": "mastelio-v03-anatomy-blockout.glb",
+  "authoring_parts": 103,
+  "export_mesh_groups": 1,
+  "triangles": 3570,
+  "bytes": 215244,
+  "sha256": "2a24193a176e5f0338298867896c5a169bc595167316dd646b34077be34964a9",
+  "animations": [],
+  "rig": "NOT YET: blockout before rig",
+  "features": [
+    "distinct huge fan ears with concave inner pinna",
+    "squared head/jaw and brow",
+    "continuous low-poly curl of prehensile proboscis",
+    "upper neck mane made from layered wedges",
+    "faceted deep torso with ivory coat patches baked into faces",
+    "hip and shoulder directional planes",
+    "four robust weight-bearing columnar limbs",
+    "separate toe nails / accurate ground support",
+    "short tapered tufted tail"
+  ],
+  "style_reference": "Torvardo v03 faceted silhouette and Wildhaven official 3D creature guide v1.0"
+}

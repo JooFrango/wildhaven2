@@ -1,0 +1,26 @@
+{
+  "creature": "Raizauro",
+  "version": "v03 blockout",
+  "workflow": "silhouette/anatomy/planes review before rig/animation",
+  "status": "artistic_review_pending",
+  "source_reference": "raizauro_escavador_na_savana.png",
+  "glb": "raizauro-v03-anatomy-blockout.glb",
+  "authoring_parts": 139,
+  "export_mesh_groups": 1,
+  "triangles": 4822,
+  "bytes": 290348,
+  "sha256": "e0f79a4be45c69f13b0e75f7a56a2f7389770783b51ab5982b9e6a1329b065f6",
+  "animations": [],
+  "rig": "NOT YET — visual approval first",
+  "feature_map": [
+    "broad armored reptile trunk",
+    "faceted overlapped dorsal scutes integrated with back",
+    "heavy flared shoulder shield",
+    "massive forelimbs with separate digging toes and keratin claws",
+    "thick sectioned tail with integrated dorsal scutes",
+    "bony cheeks and brow with recessed ochre eyes",
+    "hooked digging beak",
+    "deep jaw line and throat",
+    "flat-shaded faces with restrained palette"
+  ]
+}
