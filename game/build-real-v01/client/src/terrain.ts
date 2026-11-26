@@ -31,6 +31,23 @@ export class TerrainView {
   private pinnedVisual = new Set<string>();
   private gltf = new GLTFLoader();
   stats = { chunkErrors: 0, glbErrors: 0 };
+  /** Chunks decodificados por célula de chunk global (vários hexes podem dividir a mesma). */
+  private decoded = new Map<string, Decoded[]>();
+
+  /** Amostra a física WHP1 já carregada (coordenadas GLOBAIS). Só apresentação. */
+  sampleGlobal(x: number, z: number): { h: number; water: boolean; blocked: boolean } | null {
+    const list = this.decoded.get(`${Math.floor(x / 256)}/${Math.floor(z / 256)}`);
+    if (!list) return null;
+    for (const d of list) {
+      const i = Math.floor((x - d.x0) / d.res), j = Math.floor((z - d.z0) / d.res);
+      if (i < 0 || j < 0 || i >= d.nx || j >= d.nz) continue;
+      const k = j * d.nx + i, h = d.heights[k] + d.baseY;
+      if (Number.isFinite(h)) return { h, water: Number.isFinite(d.water[k]), blocked: d.blocked[k] === 1 };
+    }
+    return null;
+  }
+  /** Mesma amostra em coordenadas de render (origem local). */
+  heightLocal = (x: number, z: number) => this.sampleGlobal(x + this.origin.x, z + this.origin.z)?.h ?? null;
 
   constructor(private origin: { x: number; z: number }, private tiles: Map<string, ContinentTile>) {
     this.physicsGroup.name = "physics";
@@ -51,7 +68,13 @@ export class TerrainView {
     const mesh = this.chunkMesh(d);
     mesh.name = key;
     this.physicsGroup.add(mesh);
-    return { value: mesh, bytes: d.heights.length * 10, dispose: (m: THREE.Mesh) => { this.physicsGroup.remove(m); m.geometry.dispose(); } };
+    const ck = `${ix}/${iz}`;
+    this.decoded.set(ck, [...(this.decoded.get(ck) ?? []), d]);
+    return { value: mesh, bytes: d.heights.length * 10, dispose: (m: THREE.Mesh) => {
+      this.physicsGroup.remove(m); m.geometry.dispose();
+      const rest = (this.decoded.get(ck) ?? []).filter(x => x !== d);
+      if (rest.length) this.decoded.set(ck, rest); else this.decoded.delete(ck);
+    } };
   }
 
   private chunkMesh(d: Decoded) {
