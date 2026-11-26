@@ -194,9 +194,28 @@ impl TerrainStore {
         keys
     }
 
+    /// A célula pertence ao hex que contém o seu CENTRO (cada tile só rasteriza células
+    /// cujo centro está dentro da sua malha; a grade é global e alinhada entre tiles).
     pub fn sample(&mut self, x: f64, z: f64) -> Option<Cell> {
-        let key = self.chunk_key_at(x, z)?;
+        let first = self.sample_in(x, z, x, z);
+        if first.is_some() {
+            return first;
+        }
+        let r = self.cell_meters();
+        let (cx, cz) = (((x / r).floor() + 0.5) * r, ((z / r).floor() + 0.5) * r);
+        self.sample_in(cx, cz, x, z)
+    }
+
+    fn cell_meters(&self) -> f64 {
+        2.0 // resolução do lote 272 (--res 2); conferida no índice de cada chunk
+    }
+
+    fn sample_in(&mut self, tx: f64, tz: f64, x: f64, z: f64) -> Option<Cell> {
+        let key = self.chunk_key_at(tx, tz)?;
         let c = self.ensure(&key)?;
+        if c.res as f64 != self.cell_meters() {
+            return None;
+        }
         let cell = c.cell(x, z)?;
         if cell.h.is_finite() {
             Some(cell)

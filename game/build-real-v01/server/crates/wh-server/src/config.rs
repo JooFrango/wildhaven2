@@ -29,7 +29,7 @@ fn env(k: &str) -> Option<String> {
 
 impl Config {
     pub fn from_env() -> Result<Self, String> {
-        let repo_root = PathBuf::from(env("WH_REPO_ROOT").unwrap_or_else(|| "../..".into()));
+        let repo_root = PathBuf::from(env("WH_REPO_ROOT").unwrap_or_else(|| "../../..".into()));
         let r = |k: &str, d: &str| repo_root.join(env(k).unwrap_or_else(|| d.into()));
         let manifest = r("WH_MANIFEST", "build real/continental/data/continent-272.manifest.json");
         let sources_dir = r("WH_SOURCES_DIR", ".generated/sources");
