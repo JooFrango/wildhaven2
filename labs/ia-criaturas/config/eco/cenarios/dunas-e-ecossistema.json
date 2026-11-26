@@ -1,0 +1,126 @@
+{
+  "id": "dunas-e-ecossistema",
+  "nome": "Dunas E — ecossistema das dunas (as quatro espécies)",
+  "descricao": "As quatro espécies aprovadas das dunas no hexágono DN_19: Arenoceto filtrador, Arraias-de-Areia, Escarvão e Serracórion, cada uma com a dieta e as capacidades que seus GLBs sustentam. Simulação longa para observar interações autônomas: exploração, alimentação, descanso, caça por vibração, emboscada, fuga e territorialidade.",
+  "dt": 0.1,
+  "duracaoSeg": 900,
+  "relogio": {
+    "segundosPorDia": 600,
+    "diaInicial": 12,
+    "horaInicial": 9,
+    "diasPorAno": 365
+  },
+  "clima": {
+    "fracaoChuvosa": 0.2,
+    "chanceChuvaChuvosa": 0.15,
+    "chanceChuvaSeca": 0.02,
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "arquivo": "config/eco/terrenos/dunas-dn19-interior.json"
+  },
+  "populacoes": [
+    {
+      "especie": "arenoceto",
+      "individuos": [
+        {
+          "id": "arenoceto-eco",
+          "x": 110,
+          "y": 400,
+          "profundidadeInicialM": 8,
+          "direcaoGraus": 40,
+          "raioCasa": 180,
+          "fome": [
+            45,
+            70
+          ]
+        }
+      ]
+    },
+    {
+      "especie": "arraia-de-areia",
+      "individuos": [
+        {
+          "id": "arraia-eco-1",
+          "x": 200,
+          "y": 330,
+          "profundidadeInicialM": 1.5,
+          "direcaoGraus": 120,
+          "raioCasa": 170,
+          "fome": [
+            40,
+            70
+          ]
+        },
+        {
+          "id": "arraia-eco-2",
+          "x": 160,
+          "y": 450,
+          "direcaoGraus": -60,
+          "raioCasa": 170,
+          "fome": [
+            45,
+            75
+          ]
+        },
+        {
+          "id": "arraia-eco-3",
+          "x": 260,
+          "y": 400,
+          "profundidadeInicialM": 2.5,
+          "direcaoGraus": 200,
+          "raioCasa": 170,
+          "fome": [
+            35,
+            65
+          ]
+        }
+      ]
+    },
+    {
+      "especie": "escarvao",
+      "individuos": [
+        {
+          "id": "escarvao-eco",
+          "x": 330,
+          "y": 470,
+          "profundidadeInicialM": 0.9,
+          "direcaoGraus": 150,
+          "raioCasa": 80,
+          "fome": [
+            50,
+            80
+          ],
+          "territorio": {
+            "x": 330,
+            "y": 470,
+            "raio": 60
+          }
+        }
+      ]
+    },
+    {
+      "especie": "serracorion",
+      "individuos": [
+        {
+          "id": "serracorion-eco",
+          "x": 260,
+          "y": 300,
+          "direcaoGraus": 230,
+          "raioCasa": 190,
+          "fome": [
+            55,
+            85
+          ],
+          "territorio": {
+            "x": 260,
+            "y": 330,
+            "raio": 170
+          }
+        }
+      ]
+    }
+  ],
+  "observacao": null
+}

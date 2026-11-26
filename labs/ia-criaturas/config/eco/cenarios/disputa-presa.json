@@ -1,0 +1,27 @@
+{
+  "id": "disputa-presa",
+  "nome": "Dois Varriscos, uma presa (campo aberto)",
+  "descricao": "Um Velsari sozinho, com lesão leve na perna, pastando; dois Varriscos famintos chegam por lados diferentes. Quando os dois perseguem a mesma presa, podem disputá-la (observação → intimidação → confronto → combate). A presa pode perceber a distração e fugir, buscar cobertura ou esconder-se — ou não. Pouca cobertura.",
+  "dt": 0.1,
+  "duracaoSeg": 180,
+  "relogio": { "segundosPorDia": 600, "diaInicial": 30, "horaInicial": 17.2, "diasPorAno": 365 },
+  "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0, "chanceChuvaSeca": 0, "chanceIncendio": 0 },
+  "terreno": {
+    "tipo": "procedural", "largura": 180, "profundidade": 130, "res": 1, "amplitude": 1.8, "capim": 50,
+    "lago": { "x": 122, "y": 66, "raio": 5, "fundo": 1.2 },
+    "rochas": [{ "x": 120, "y": 30, "raio": 2.5, "altura": 2 }, { "x": 60, "y": 110, "raio": 2, "altura": 1.5 }],
+    "arbustos": [
+      { "x": 128, "y": 92, "raio": 5, "ocultacao": 75, "alimento": 20 },
+      { "x": 150, "y": 50, "raio": 4, "ocultacao": 70, "alimento": 20 },
+      { "x": 86, "y": 22, "raio": 4, "ocultacao": 70, "alimento": 20 }
+    ]
+  },
+  "populacoes": [
+    { "especie": "velsari", "individuos": [{ "id": "presa", "x": 100, "y": 64, "raioCasa": 50, "fome": [45, 75], "sede": [10, 30], "energia": [60, 95], "ferimentos": [{ "regiao": "pernas", "gravidade": 0.25, "origem": "cenario" }], "_nota": "lesão leve na perna (mobilidade ~80%): presa alcançável pelos dois predadores" }] },
+    { "especie": "varrisco", "individuos": [
+      { "id": "varrisco-norte", "x": 82, "y": 36, "direcaoGraus": 55, "fome": [70, 95], "energia": [60, 100], "sexo": "M", "territorio": { "x": 60, "y": 22, "raio": 45 } },
+      { "id": "varrisco-sul", "x": 82, "y": 92, "direcaoGraus": -55, "fome": [70, 95], "energia": [60, 100], "sexo": "M", "territorio": { "x": 60, "y": 108, "raio": 45 } }
+    ] }
+  ],
+  "observacao": null
+}

@@ -1,0 +1,326 @@
+{
+ "id": "v7-c-bandos-no-ceu",
+ "nome": "V7·C — Bandos no céu",
+ "descricao": "EXPERIMENTAL. Doze Carnirocas (GLB real com clipes de decolagem, voo, planeio e pouso): metade no ar, metade pousada num terreno com morros de 18–30 m. Um Varrisco passa pelo grupo pousado. Mostra voo 3D, coesão, desvio de relevo, fuga, dispersão e pouso.",
+ "dt": 0.1,
+ "duracaoSeg": 240,
+ "relogio": {
+  "segundosPorDia": 600,
+  "diaInicial": 30,
+  "horaInicial": 10,
+  "diasPorAno": 365
+ },
+ "clima": {
+  "fracaoChuvosa": 0.4,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 22
+ },
+ "terreno": {
+  "tipo": "procedural",
+  "largura": 420,
+  "profundidade": 320,
+  "res": 2,
+  "amplitude": 5,
+  "capim": 30,
+  "rochas": [
+   {
+    "x": 250,
+    "y": 150,
+    "raio": 24,
+    "altura": 30
+   },
+   {
+    "x": 150,
+    "y": 230,
+    "raio": 16,
+    "altura": 18
+   },
+   {
+    "x": 320,
+    "y": 90,
+    "raio": 14,
+    "altura": 22
+   }
+  ],
+  "arbustos": [
+   {
+    "x": 120,
+    "y": 120,
+    "raio": 8,
+    "ocultacao": 70,
+    "alimento": 20
+   },
+   {
+    "x": 200,
+    "y": 80,
+    "raio": 7,
+    "ocultacao": 70,
+    "alimento": 20
+   }
+  ]
+ },
+ "populacoes": [
+  {
+   "especie": "carniroca",
+   "individuos": [
+    {
+     "id": "ar-1",
+     "x": 130,
+     "y": 150,
+     "direcaoGraus": 0,
+     "altitudeInicialM": 18,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "ar-2",
+     "x": 140,
+     "y": 150,
+     "direcaoGraus": 0,
+     "altitudeInicialM": 20,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "ar-3",
+     "x": 150,
+     "y": 150,
+     "direcaoGraus": 0,
+     "altitudeInicialM": 22,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "ar-4",
+     "x": 130,
+     "y": 160,
+     "direcaoGraus": 0,
+     "altitudeInicialM": 24,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "ar-5",
+     "x": 140,
+     "y": 160,
+     "direcaoGraus": 0,
+     "altitudeInicialM": 26,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "ar-6",
+     "x": 150,
+     "y": 160,
+     "direcaoGraus": 0,
+     "altitudeInicialM": 28,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "chao-1",
+     "x": 150,
+     "y": 110,
+     "direcaoGraus": 0,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "chao-2",
+     "x": 154,
+     "y": 110,
+     "direcaoGraus": 60,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "chao-3",
+     "x": 158,
+     "y": 110,
+     "direcaoGraus": 120,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "chao-4",
+     "x": 150,
+     "y": 114,
+     "direcaoGraus": 180,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "chao-5",
+     "x": 154,
+     "y": 114,
+     "direcaoGraus": 240,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "chao-6",
+     "x": 158,
+     "y": 114,
+     "direcaoGraus": 300,
+     "fome": [
+      10,
+      20
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "varrisco",
+   "individuos": [
+    {
+     "id": "ameaca",
+     "x": 100,
+     "y": 108,
+     "direcaoGraus": 0,
+     "casa": {
+      "x": 160,
+      "y": 112,
+      "raio": 30
+     },
+     "territorio": {
+      "x": 160,
+      "y": 112,
+      "raio": 60
+     },
+     "fome": [
+      20,
+      30
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    }
+   ]
+  }
+ ]
+}

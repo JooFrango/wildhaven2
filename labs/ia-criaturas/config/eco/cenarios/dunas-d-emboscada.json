@@ -1,0 +1,80 @@
+{
+  "id": "dunas-d-emboscada",
+  "nome": "Dunas D — emboscada do Serracórion",
+  "descricao": "Um Serracórion enterrado a 2 m no caminho de duas Arraias-de-Areia. Ele sente as vibrações, aproxima-se por baixo, avalia distância, energia e ponto de saída, emerge e ataca. A presa pode mergulhar para escapar. Nenhum golpe atravessa areia sólida: o contato só existe quando os dois corpos estão no mesmo meio.",
+  "dt": 0.1,
+  "duracaoSeg": 480,
+  "relogio": {
+    "segundosPorDia": 600,
+    "diaInicial": 12,
+    "horaInicial": 9,
+    "diasPorAno": 365
+  },
+  "clima": {
+    "fracaoChuvosa": 0.2,
+    "chanceChuvaChuvosa": 0.15,
+    "chanceChuvaSeca": 0.02,
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "arquivo": "config/eco/terrenos/dunas-dn19-interior.json"
+  },
+  "populacoes": [
+    {
+      "especie": "serracorion",
+      "individuos": [
+        {
+          "id": "serracorion-emboscada",
+          "x": 150,
+          "y": 400,
+          "profundidadeInicialM": 2,
+          "direcaoGraus": 0,
+          "raioCasa": 180,
+          "fome": [
+            60,
+            85
+          ],
+          "energia": [
+            80,
+            100
+          ],
+          "territorio": {
+            "x": 150,
+            "y": 400,
+            "raio": 170
+          }
+        }
+      ]
+    },
+    {
+      "especie": "arraia-de-areia",
+      "individuos": [
+        {
+          "id": "arraia-presa-1",
+          "x": 90,
+          "y": 330,
+          "profundidadeInicialM": 1.5,
+          "direcaoGraus": 60,
+          "raioCasa": 140,
+          "fome": [
+            40,
+            65
+          ]
+        },
+        {
+          "id": "arraia-presa-2",
+          "x": 60,
+          "y": 420,
+          "direcaoGraus": 20,
+          "raioCasa": 140,
+          "fome": [
+            35,
+            60
+          ]
+        }
+      ]
+    }
+  ],
+  "observacao": null
+}

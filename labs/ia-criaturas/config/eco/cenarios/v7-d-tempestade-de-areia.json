@@ -1,0 +1,139 @@
+{
+ "id": "v7-d-tempestade-de-areia",
+ "nome": "V7·D — Tempestade de areia",
+ "descricao": "EXPERIMENTAL. Dunas procedurais do laboratório. Um Varrisco caça um Velsari; um Serracórion (percepção por vibração) está na área. Aos 25 s começa uma tempestade de areia de 110 s: a visão dos animais cai para 15%, a locomoção fica mais lenta e eles procuram abrigo.",
+ "dt": 0.1,
+ "duracaoSeg": 200,
+ "relogio": {
+  "segundosPorDia": 600,
+  "diaInicial": 30,
+  "horaInicial": 15,
+  "diasPorAno": 365
+ },
+ "clima": {
+  "fracaoChuvosa": 0.4,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 34,
+  "eventos": [
+   {
+    "tipo": "tempestade_areia",
+    "inicioSeg": 25,
+    "duracaoSeg": 110,
+    "intensidade": 1
+   }
+  ]
+ },
+ "terreno": {
+  "tipo": "procedural",
+  "largura": 220,
+  "profundidade": 160,
+  "res": 1,
+  "amplitude": 4,
+  "capim": 5,
+  "areia": true,
+  "rochas": [
+   {
+    "x": 130,
+    "y": 70,
+    "raio": 3,
+    "altura": 2.6
+   },
+   {
+    "x": 90,
+    "y": 110,
+    "raio": 2.6,
+    "altura": 2.2
+   }
+  ],
+  "arbustos": [
+   {
+    "x": 150,
+    "y": 96,
+    "raio": 5,
+    "ocultacao": 70,
+    "alimento": 15
+   },
+   {
+    "x": 108,
+    "y": 60,
+    "raio": 4,
+    "ocultacao": 65,
+    "alimento": 10
+   }
+  ]
+ },
+ "populacoes": [
+  {
+   "especie": "varrisco",
+   "individuos": [
+    {
+     "id": "predador",
+     "x": 70,
+     "y": 84,
+     "direcaoGraus": 0,
+     "fome": [
+      75,
+      85
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      92,
+      98
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "velsari",
+   "individuos": [
+    {
+     "id": "presa",
+     "x": 112,
+     "y": 82,
+     "direcaoGraus": 30,
+     "raioCasa": 30,
+     "fome": [
+      55,
+      70
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      80,
+      95
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "serracorion",
+   "individuos": [
+    {
+     "id": "serracorion",
+     "x": 120,
+     "y": 100,
+     "direcaoGraus": 180,
+     "fome": [
+      40,
+      55
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      85,
+      95
+     ]
+    }
+   ]
+  }
+ ]
+}

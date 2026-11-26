@@ -1,0 +1,18 @@
+{
+  "id": "travessia-divisa",
+  "nome": "Travessia da divisa (Oásis das Dunas → Oásis dos Contrafortes)",
+  "descricao": "Corredor de 800×400 m a cavalo na divisa entre duas peças oficiais vizinhas da composição: SE (04_oasis_dunas.glb, dunas) a oeste e X7 (15_oasis_transicao_5km.glb, peça de transição deserto→floresta) a leste. A divisa cai em x = 400 m, no fundo do vale seco; os dois lados sobem até ~50 m. Altura, água e obstáculos saem dos mesmos GLBs que aparecem na tela, numa grade contínua: a criatura atravessa sem troca de terreno. Bando de Velsaris pastando sobre a divisa, um Varrisco que começa a oeste e tem território a leste (vai e volta pela emenda) e um Tarruco do lado dos contrafortes.",
+  "dt": 0.1,
+  "duracaoSeg": 600,
+  "relogio": { "segundosPorDia": 600, "diaInicial": 12, "horaInicial": 8, "diasPorAno": 365 },
+  "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0.5, "chanceChuvaSeca": 0.05, "chanceIncendio": 0 },
+  "terreno": { "tipo": "derivado", "arquivo": "config/eco/terrenos/corredor-oasis-dunas-transicao.json" },
+  "populacoes": [
+    { "especie": "velsari", "grupos": [{ "x": 400, "y": 200, "raio": 12, "adultos": 5, "filhotes": 2, "raioCasa": 170, "fome": [45, 75], "sede": [35, 65] }] },
+    { "especie": "varrisco", "individuos": [
+      { "id": "varrisco-divisa", "x": 200, "y": 150, "direcaoGraus": 15, "fome": [30, 60], "energia": [70, 100], "sexo": "M", "raioCasa": 200, "territorio": { "x": 600, "y": 210, "raio": 200 } }
+    ] },
+    { "especie": "tarruco", "individuos": [{ "id": "tarruco-contrafortes", "x": 640, "y": 260, "raioCasa": 70, "fome": 55 }] }
+  ],
+  "observacao": null
+}

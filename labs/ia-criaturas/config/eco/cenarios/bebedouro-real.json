@@ -1,0 +1,20 @@
+{
+  "id": "bebedouro-real",
+  "nome": "Bebedouro no rio (recorte do hexágono real)",
+  "descricao": "Recorte de 240×200 m do hexágono 52_savana_bosques_de_acacia_5km (somente leitura): margem norte do rio, arbustos e relevo reais. Bando de Velsaris bebendo, dois Varriscos com territórios sobrepostos, Cromátil e Tarruco nos arbustos. O rio é fundo: nenhum destes animais o atravessa.",
+  "dt": 0.1,
+  "duracaoSeg": 300,
+  "relogio": { "segundosPorDia": 600, "diaInicial": 12, "horaInicial": 16.8, "diasPorAno": 365 },
+  "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0.5, "chanceChuvaSeca": 0.05, "chanceIncendio": 0 },
+  "terreno": { "tipo": "derivado", "arquivo": "config/eco/terrenos/savana-bosques-acacia-rio.json" },
+  "populacoes": [
+    { "especie": "velsari", "grupos": [{ "x": 130, "y": 128, "raio": 5, "adultos": 6, "filhotes": 2, "raioCasa": 60, "fome": [20, 70], "sede": [40, 80] }] },
+    { "especie": "cromatil", "individuos": [{ "id": "cromatil-arbusto", "x": 34, "y": 104, "raioCasa": 20, "fome": 40 }] },
+    { "especie": "tarruco", "individuos": [{ "id": "tarruco-arbusto", "x": 76, "y": 116, "raioCasa": 30, "fome": 55 }] },
+    { "especie": "varrisco", "individuos": [
+      { "id": "varrisco-a", "x": 25, "y": 40, "direcaoGraus": 30, "fome": [25, 90], "energia": [55, 100], "sexo": "M", "territorio": { "x": 70, "y": 80, "raio": 200 } },
+      { "id": "varrisco-b", "x": 215, "y": 45, "direcaoGraus": 150, "fome": [25, 90], "energia": [55, 100], "sexo": "M", "territorio": { "x": 190, "y": 90, "raio": 160 } }
+    ] }
+  ],
+  "observacao": null
+}

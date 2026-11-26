@@ -1,0 +1,23 @@
+{
+  "id": "v7-a-cacador-camuflado",
+  "nome": "V7·A — O caçador camuflado",
+  "descricao": "EXPERIMENTAL. Um predador hipotético com camuflagem óptica ativa espreita um Velsari; no caminho há um protótipo termossensível, que não o vê mas sente o calor. Nada é roteirizado: a camuflagem liga na espreita, gasta energia e quebra no ataque.",
+  "dt": 0.1,
+  "duracaoSeg": 240,
+  "relogio": { "segundosPorDia": 600, "diaInicial": 30, "horaInicial": 17.2, "diasPorAno": 365 },
+  "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0, "chanceChuvaSeca": 0, "chanceIncendio": 0, "temperaturaC": 20 },
+  "terreno": {
+    "tipo": "procedural", "largura": 180, "profundidade": 120, "res": 1, "amplitude": 1.5, "capim": 35,
+    "rochas": [{ "x": 60, "y": 40, "raio": 2.5, "altura": 2.2 }, { "x": 118, "y": 84, "raio": 3, "altura": 2.5 }, { "x": 96, "y": 30, "raio": 2, "altura": 1.8 }],
+    "arbustos": [
+      { "x": 52, "y": 66, "raio": 7, "ocultacao": 80, "alimento": 20 }, { "x": 70, "y": 82, "raio": 6, "ocultacao": 75, "alimento": 20 },
+      { "x": 126, "y": 52, "raio": 7, "ocultacao": 80, "alimento": 25 }, { "x": 140, "y": 78, "raio": 6, "ocultacao": 75, "alimento": 20 },
+      { "x": 30, "y": 40, "raio": 6, "ocultacao": 75, "alimento": 20 }
+    ]
+  },
+  "populacoes": [
+    { "especie": "proto-cacador-camuflado", "individuos": [{ "id": "cacador", "x": 36, "y": 60, "direcaoGraus": 0, "fome": [70, 80], "sede": [10, 20], "energia": [92, 98] }] },
+    { "especie": "proto-serpente-termica", "individuos": [{ "id": "serpentino", "x": 50, "y": 57, "direcaoGraus": 180, "fome": [10, 20], "sede": [10, 20], "energia": [85, 95] }] },
+    { "especie": "velsari", "individuos": [{ "id": "presa", "x": 63, "y": 61, "direcaoGraus": 20, "raioCasa": 25, "fome": [55, 70], "sede": [10, 25], "energia": [80, 95] }] }
+  ]
+}

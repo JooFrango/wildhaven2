@@ -1,0 +1,152 @@
+{
+ "id": "v7-b-mordedura-venenosa",
+ "nome": "V7·B — Mordedura venenosa",
+ "descricao": "EXPERIMENTAL. Uma Boscaranha (veneno neurotóxico experimental) caça entre rochas e arbustos. Um Folhisco é presa vulnerável; um Cromátil com resistência individual alta é presa resistente. Mostra inoculação, sintomas, mudança de movimento e desfecho. A comida está nos arbustos: é por onde as presas passam e onde a Boscaranha embosca.",
+ "dt": 0.1,
+ "duracaoSeg": 600,
+ "relogio": {
+  "segundosPorDia": 600,
+  "diaInicial": 30,
+  "horaInicial": 15.5,
+  "diasPorAno": 365
+ },
+ "clima": {
+  "fracaoChuvosa": 0.4,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 18
+ },
+ "terreno": {
+  "tipo": "procedural",
+  "largura": 140,
+  "profundidade": 110,
+  "res": 1,
+  "amplitude": 1.2,
+  "capim": 4,
+  "rochas": [
+   {
+    "x": 58,
+    "y": 50,
+    "raio": 2.2,
+    "altura": 1.6
+   },
+   {
+    "x": 82,
+    "y": 70,
+    "raio": 2.6,
+    "altura": 2
+   },
+   {
+    "x": 92,
+    "y": 44,
+    "raio": 1.8,
+    "altura": 1.4
+   }
+  ],
+  "arbustos": [
+   {
+    "x": 64,
+    "y": 62,
+    "raio": 5,
+    "ocultacao": 75,
+    "alimento": 45
+   },
+   {
+    "x": 78,
+    "y": 48,
+    "raio": 5,
+    "ocultacao": 75,
+    "alimento": 45
+   },
+   {
+    "x": 94,
+    "y": 60,
+    "raio": 6,
+    "ocultacao": 80,
+    "alimento": 45
+   },
+   {
+    "x": 50,
+    "y": 40,
+    "raio": 4,
+    "ocultacao": 70,
+    "alimento": 45
+   }
+  ]
+ },
+ "populacoes": [
+  {
+   "especie": "boscaranha",
+   "individuos": [
+    {
+     "id": "boscaranha",
+     "x": 78,
+     "y": 49,
+     "direcaoGraus": 20,
+     "fome": [
+      75,
+      85
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      92,
+      98
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "folhisco",
+   "individuos": [
+    {
+     "id": "vulneravel",
+     "x": 87,
+     "y": 53,
+     "direcaoGraus": 30,
+     "raioCasa": 12,
+     "fome": [
+      70,
+      80
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      80,
+      95
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "cromatil",
+   "individuos": [
+    {
+     "id": "resistente",
+     "x": 85,
+     "y": 41,
+     "direcaoGraus": -40,
+     "raioCasa": 12,
+     "resistenciaVeneno": 0.75,
+     "fome": [
+      70,
+      80
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      80,
+      95
+     ]
+    }
+   ]
+  }
+ ]
+}

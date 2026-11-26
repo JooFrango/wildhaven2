@@ -1,0 +1,73 @@
+{
+  "id": "dunas-c-vibracoes",
+  "nome": "Dunas C — vibrações: quem anda em cima, quem sente embaixo",
+  "descricao": "Um Escarvão enterrado a 0,9 m e um bando de Velsaris que atravessa a duna por cima. O Escarvão não vê os Velsaris: sente os passos pelo substrato, com erro de posição, investiga a pista, confunde estímulos e perde o contato quando eles param. Serve para ver detecção, investigação, perda de contato e decaimento da memória de vibrações.",
+  "dt": 0.1,
+  "duracaoSeg": 480,
+  "relogio": {
+    "segundosPorDia": 600,
+    "diaInicial": 12,
+    "horaInicial": 9,
+    "diasPorAno": 365
+  },
+  "clima": {
+    "fracaoChuvosa": 0.2,
+    "chanceChuvaChuvosa": 0.15,
+    "chanceChuvaSeca": 0.02,
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "arquivo": "config/eco/terrenos/dunas-dn19-interior.json"
+  },
+  "populacoes": [
+    {
+      "especie": "escarvao",
+      "individuos": [
+        {
+          "id": "escarvao-espreita",
+          "x": 300,
+          "y": 400,
+          "profundidadeInicialM": 0.9,
+          "direcaoGraus": 0,
+          "raioCasa": 70,
+          "fome": [
+            15,
+            35
+          ],
+          "territorio": {
+            "x": 300,
+            "y": 400,
+            "raio": 60
+          },
+          "energia": [
+            85,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "especie": "velsari",
+      "grupos": [
+        {
+          "x": 300,
+          "y": 380,
+          "raio": 14,
+          "adultos": 4,
+          "filhotes": 1,
+          "raioCasa": 55,
+          "fome": [
+            40,
+            70
+          ],
+          "sede": [
+            30,
+            60
+          ]
+        }
+      ]
+    }
+  ],
+  "observacao": null
+}

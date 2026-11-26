@@ -1,0 +1,33 @@
+{
+  "id": "bebedouro",
+  "nome": "Bebedouro na savana",
+  "descricao": "Bando de 6 Velsaris adultos e 2 filhotes no bebedouro; dois Varriscos com territórios sobrepostos; Cromáteis nas rochas e um Tarruco no capinzal. Nada é roteirizado: as decisões dependem só de percepção, necessidades e temperamento.",
+  "dt": 0.1,
+  "duracaoSeg": 300,
+  "relogio": { "segundosPorDia": 600, "diaInicial": 12, "horaInicial": 16.8, "diasPorAno": 365 },
+  "clima": { "fracaoChuvosa": 0.4, "chanceChuvaChuvosa": 0.5, "chanceChuvaSeca": 0.05, "chanceIncendio": 0 },
+  "terreno": {
+    "tipo": "procedural", "largura": 200, "profundidade": 160, "res": 1, "amplitude": 2.5, "capim": 55,
+    "lago": { "x": 104, "y": 88, "raio": 13, "fundo": 2.2 },
+    "penhasco": { "x": 158, "y0": 15, "y1": 75, "altura": 9 },
+    "rochas": [
+      { "x": 126, "y": 70, "raio": 2.2, "altura": 1.6 }, { "x": 131, "y": 74, "raio": 1.6, "altura": 1.3 },
+      { "x": 80, "y": 112, "raio": 2.0, "altura": 1.5 }, { "x": 52, "y": 70, "raio": 3.0, "altura": 2.5 }
+    ],
+    "arbustos": [
+      { "x": 60, "y": 85, "raio": 7, "ocultacao": 70, "alimento": 25 }, { "x": 72, "y": 98, "raio": 5, "ocultacao": 65, "alimento": 20 },
+      { "x": 84, "y": 76, "raio": 4, "ocultacao": 60, "alimento": 20 }, { "x": 140, "y": 120, "raio": 8, "ocultacao": 75, "alimento": 30 },
+      { "x": 40, "y": 120, "raio": 6, "ocultacao": 70, "alimento": 25 }
+    ]
+  },
+  "populacoes": [
+    { "especie": "velsari", "grupos": [{ "x": 112, "y": 104, "raio": 5, "adultos": 6, "filhotes": 2, "raioCasa": 60, "fome": [20, 70], "sede": [30, 75] }] },
+    { "especie": "cromatil", "individuos": [{ "id": "cromatil-rochas", "x": 124, "y": 73, "raioCasa": 20, "fome": 40 }, { "id": "cromatil-norte", "x": 82, "y": 109, "raioCasa": 20, "fome": 50 }] },
+    { "especie": "tarruco", "individuos": [{ "id": "tarruco-capinzal", "x": 138, "y": 116, "raioCasa": 30, "fome": 55 }] },
+    { "especie": "varrisco", "individuos": [
+      { "id": "varrisco-a", "x": 34, "y": 82, "direcaoGraus": 0, "fome": [25, 90], "energia": [55, 100], "sexo": "M", "territorio": { "x": 70, "y": 85, "raio": 200 } },
+      { "id": "varrisco-b", "x": 70, "y": 150, "direcaoGraus": -45, "fome": [25, 90], "energia": [55, 100], "sexo": "M", "territorio": { "x": 60, "y": 140, "raio": 160 } }
+    ] }
+  ],
+  "observacao": null
+}

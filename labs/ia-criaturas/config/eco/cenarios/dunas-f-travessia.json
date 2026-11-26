@@ -1,0 +1,74 @@
+{
+  "id": "dunas-f-travessia",
+  "nome": "Dunas F — travessia subterrânea entre dois hexágonos reais",
+  "descricao": "Corredor de 800×400 m a cavalo na divisa entre DN_22 (oeste) e DN_23 (leste), duas peças realmente vizinhas da composição (mesmo Z, Δx = 4330,127 m). A divisa cai em x = 400 m e o corpo de areia atravessa a emenda com 20–45 m de espessura na faixa y 300–400: o Arenoceto cruza de um hexágono ao outro SEM sair da areia. Fora dessa faixa o leito rochoso aflora e a passagem subterrânea não existe — o bloqueio é físico, não cenográfico.",
+  "dt": 0.1,
+  "duracaoSeg": 600,
+  "relogio": {
+    "segundosPorDia": 600,
+    "diaInicial": 12,
+    "horaInicial": 9,
+    "diasPorAno": 365
+  },
+  "clima": {
+    "fracaoChuvosa": 0.2,
+    "chanceChuvaChuvosa": 0.15,
+    "chanceChuvaSeca": 0.02,
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "arquivo": "config/eco/terrenos/corredor-megadunas-dn22-dn23.json"
+  },
+  "populacoes": [
+    {
+      "especie": "arenoceto",
+      "individuos": [
+        {
+          "id": "arenoceto-travessia",
+          "x": 250,
+          "y": 350,
+          "profundidadeInicialM": 8,
+          "direcaoGraus": 0,
+          "raioCasa": 260,
+          "fome": [
+            40,
+            65
+          ],
+          "energia": [
+            85,
+            100
+          ],
+          "casa": {
+            "x": 400,
+            "y": 350,
+            "raio": 170
+          }
+        }
+      ]
+    },
+    {
+      "especie": "arraia-de-areia",
+      "individuos": [
+        {
+          "id": "arraia-travessia",
+          "x": 560,
+          "y": 360,
+          "profundidadeInicialM": 2,
+          "direcaoGraus": 180,
+          "raioCasa": 200,
+          "fome": [
+            40,
+            70
+          ],
+          "casa": {
+            "x": 420,
+            "y": 350,
+            "raio": 150
+          }
+        }
+      ]
+    }
+  ],
+  "observacao": null
+}

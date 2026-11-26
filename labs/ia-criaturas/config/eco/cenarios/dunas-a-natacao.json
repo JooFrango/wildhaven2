@@ -1,0 +1,47 @@
+{
+  "id": "dunas-a-natacao",
+  "nome": "Dunas A — natação subterrânea do Arenoceto",
+  "descricao": "Interior do hexágono oficial DN_19 (megadunes-massif-v03), 600×600 m a res 2 m com 113 m de desnível real. O volume de areia derivado da própria malha tem 45 m de espessura nas cristas e leito rochoso exposto nos corredores entre as dunas — o Arenoceto precisa contornar esses corredores por baixo ou emergir. Um indivíduo começa NA SUPERFÍCIE e mergulha sozinho nos primeiros segundos: acompanhe aceleração, raio de curva, mudança de profundidade, bloqueio no leito e emergência.",
+  "dt": 0.1,
+  "duracaoSeg": 420,
+  "relogio": {
+    "segundosPorDia": 600,
+    "diaInicial": 12,
+    "horaInicial": 9,
+    "diasPorAno": 365
+  },
+  "clima": {
+    "fracaoChuvosa": 0.2,
+    "chanceChuvaChuvosa": 0.15,
+    "chanceChuvaSeca": 0.02,
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "arquivo": "config/eco/terrenos/dunas-dn19-interior.json"
+  },
+  "populacoes": [
+    {
+      "especie": "arenoceto",
+      "individuos": [
+        {
+          "id": "arenoceto-1",
+          "x": 120,
+          "y": 390,
+          "profundidadeInicialM": 0,
+          "direcaoGraus": 20,
+          "raioCasa": 150,
+          "fome": [
+            40,
+            60
+          ],
+          "energia": [
+            80,
+            100
+          ]
+        }
+      ]
+    }
+  ],
+  "observacao": null
+}

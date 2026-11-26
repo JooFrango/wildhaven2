@@ -1,0 +1,66 @@
+{
+  "id": "dunas-b-arraia",
+  "nome": "Dunas B — Arraia-de-Areia rente à superfície",
+  "descricao": "Mesmo hexágono DN_19. Três Arraias-de-Areia, uma delas já submersa a 1,5 m: deslocamento fluido, curvas fechadas, mergulhos e mudanças graduais de profundidade, sempre no terço superior do corpo de areia (glide_shallow).",
+  "dt": 0.1,
+  "duracaoSeg": 420,
+  "relogio": {
+    "segundosPorDia": 600,
+    "diaInicial": 12,
+    "horaInicial": 9,
+    "diasPorAno": 365
+  },
+  "clima": {
+    "fracaoChuvosa": 0.2,
+    "chanceChuvaChuvosa": 0.15,
+    "chanceChuvaSeca": 0.02,
+    "chanceIncendio": 0
+  },
+  "terreno": {
+    "tipo": "derivado",
+    "arquivo": "config/eco/terrenos/dunas-dn19-interior.json"
+  },
+  "populacoes": [
+    {
+      "especie": "arraia-de-areia",
+      "individuos": [
+        {
+          "id": "arraia-1",
+          "x": 180,
+          "y": 330,
+          "profundidadeInicialM": 1.5,
+          "direcaoGraus": 90,
+          "raioCasa": 160,
+          "fome": [
+            45,
+            70
+          ]
+        },
+        {
+          "id": "arraia-2",
+          "x": 150,
+          "y": 420,
+          "direcaoGraus": 160,
+          "raioCasa": 160,
+          "fome": [
+            30,
+            55
+          ]
+        },
+        {
+          "id": "arraia-3",
+          "x": 90,
+          "y": 300,
+          "profundidadeInicialM": 3,
+          "direcaoGraus": -40,
+          "raioCasa": 160,
+          "fome": [
+            50,
+            75
+          ]
+        }
+      ]
+    }
+  ],
+  "observacao": null
+}
