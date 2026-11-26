@@ -1,0 +1,259 @@
+{
+  "mapa": "world/playable-eastern-range-v01/composicao_149_hex.json",
+  "origem_mapa": "f17bdf7623875805128cf09cd58aa02ddc223a91",
+  "entregas": [
+    {
+      "pr": 24,
+      "modelos": [
+        "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD0.glb",
+        "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD1.glb",
+        "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD2.glb",
+        "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-savanna-animated-v03-LOD0.glb",
+        "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-savanna-animated-v03-LOD1.glb",
+        "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-savanna-animated-v03-LOD2.glb",
+        "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD0.glb",
+        "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD1.glb",
+        "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD2.glb",
+        "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD0.glb",
+        "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD1.glb",
+        "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 25,
+      "modelos": [
+        "assets/models/creatures/arumbar/arumbar-savanna-optimized-v04-LOD0.glb",
+        "assets/models/creatures/arumbar/arumbar-savanna-optimized-v04-LOD1.glb",
+        "assets/models/creatures/arumbar/arumbar-savanna-optimized-v04-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 26,
+      "modelos": [
+        "assets/models/creatures/dunlingua/dunlingua-optimized-v03-LOD0.glb",
+        "assets/models/creatures/dunlingua/dunlingua-optimized-v03-LOD1.glb",
+        "assets/models/creatures/dunlingua/dunlingua-optimized-v03-LOD2.glb",
+        "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD0.glb",
+        "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD1.glb",
+        "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD2.glb",
+        "assets/models/creatures/rocantraz/rocantraz-forest-biped-optimized-v05-LOD0.glb",
+        "assets/models/creatures/rocantraz/rocantraz-forest-biped-optimized-v05-LOD1.glb",
+        "assets/models/creatures/rocantraz/rocantraz-forest-biped-optimized-v05-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 27,
+      "modelos": [
+        "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb",
+        "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD1.glb",
+        "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD2.glb",
+        "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD0.glb",
+        "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD1.glb",
+        "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 28,
+      "modelos": [
+        "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD0.glb",
+        "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD1.glb",
+        "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD2.glb",
+        "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD0.glb",
+        "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD1.glb",
+        "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 29,
+      "modelos": [
+        "assets/models/creatures/detritivoros/cascarrumo-optimized-v02-LOD0.glb",
+        "assets/models/creatures/detritivoros/cascarrumo-optimized-v02-LOD1.glb",
+        "assets/models/creatures/detritivoros/cascarrumo-optimized-v02-LOD2.glb",
+        "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD0.glb",
+        "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD1.glb",
+        "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 30,
+      "modelos": [
+        "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD0.glb",
+        "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD1.glb",
+        "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD2.glb",
+        "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD0.glb",
+        "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD1.glb",
+        "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 31,
+      "modelos": [
+        "assets/models/creatures/detritivoros/dunebrio-optimized-v02-LOD0.glb",
+        "assets/models/creatures/detritivoros/dunebrio-optimized-v02-LOD1.glb",
+        "assets/models/creatures/detritivoros/dunebrio-optimized-v02-LOD2.glb",
+        "assets/models/creatures/detritivoros/nivelio-optimized-v02-LOD0.glb",
+        "assets/models/creatures/detritivoros/nivelio-optimized-v02-LOD1.glb",
+        "assets/models/creatures/detritivoros/nivelio-optimized-v02-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 32,
+      "modelos": [
+        "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb",
+        "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD1.glb",
+        "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD2.glb",
+        "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD0.glb",
+        "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD1.glb",
+        "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD2.glb",
+        "assets/models/creatures/silvarano/silvarano-tropical-optimized-v02-LOD0.glb",
+        "assets/models/creatures/silvarano/silvarano-tropical-optimized-v02-LOD1.glb",
+        "assets/models/creatures/silvarano/silvarano-tropical-optimized-v02-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 34,
+      "modelos": [
+        "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD0.glb",
+        "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD1.glb",
+        "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD2.glb",
+        "assets/models/creatures/cavoru/cavoru-plains-optimized-v02-LOD0.glb",
+        "assets/models/creatures/cavoru/cavoru-plains-optimized-v02-LOD1.glb",
+        "assets/models/creatures/cavoru/cavoru-plains-optimized-v02-LOD2.glb",
+        "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD0.glb",
+        "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD1.glb",
+        "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD2.glb",
+        "assets/models/creatures/nharuk/v02/nharuk-tropical-optimized-v03-LOD0.glb",
+        "assets/models/creatures/nharuk/v02/nharuk-tropical-optimized-v03-LOD1.glb",
+        "assets/models/creatures/nharuk/v02/nharuk-tropical-optimized-v03-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 35,
+      "modelos": [
+        "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD0.glb",
+        "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD1.glb",
+        "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD2.glb",
+        "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD0.glb",
+        "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD1.glb",
+        "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 36,
+      "modelos": [
+        "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD0.glb",
+        "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD1.glb",
+        "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 39,
+      "modelos": [
+        "assets/models/creatures/torvardo-v03-pilot/torvardo-v03-anatomy-blockout.glb"
+      ]
+    },
+    {
+      "pr": 40,
+      "modelos": [
+        "assets/models/creatures/raizauro-v03-pilot/raizauro-v03-anatomy-blockout.glb"
+      ]
+    },
+    {
+      "pr": 42,
+      "modelos": [
+        "assets/models/creatures/mastelio-v03-pilot/mastelio-v03-anatomy-blockout.glb"
+      ]
+    },
+    {
+      "pr": 44,
+      "modelos": [
+        "assets/models/creatures/garruva-v03-pilot/garruva-v03-anatomy-blockout.glb"
+      ]
+    },
+    {
+      "pr": 46,
+      "modelos": [
+        "assets/models/creatures/arbelio/arbelio-savanna-faceted-v02-LOD0.glb",
+        "assets/models/creatures/arbelio/arbelio-savanna-faceted-v02-LOD1.glb",
+        "assets/models/creatures/arbelio/arbelio-savanna-faceted-v02-LOD2.glb",
+        "assets/models/creatures/sevilho/sevilho-savanna-faceted-v02-LOD0.glb",
+        "assets/models/creatures/sevilho/sevilho-savanna-faceted-v02-LOD1.glb",
+        "assets/models/creatures/sevilho/sevilho-savanna-faceted-v02-LOD2.glb"
+      ]
+    },
+    {
+      "pr": 49,
+      "modelos": [
+        "assets/models/creatures/varrisco/v02/varrisco-animated-v02-LOD0.glb"
+      ]
+    },
+    {
+      "pr": 52,
+      "modelos": [
+        "assets/models/creatures/gravarto/v02/gravarto-v02-animated-LOD0.glb"
+      ]
+    },
+    {
+      "pr": 58,
+      "modelos": [
+        "assets/models/creatures/caudraco/v02/caudraco-v02-animated-LOD0.glb",
+        "assets/models/creatures/lajurim/v02/lajurim-v02-animated-LOD0.glb"
+      ]
+    },
+    {
+      "pr": 59,
+      "modelos": [
+        "assets/models/creatures/cornevio/v02/cornevio-v02-animated-LOD0.glb",
+        "assets/models/creatures/fossario/v02/fossario-v02-animated-LOD0.glb"
+      ]
+    },
+    {
+      "pr": 63,
+      "modelos": [
+        "assets/models/creatures/arenoceto/v02/arenoceto-v02-skinned-animated-LOD0.glb"
+      ]
+    },
+    {
+      "pr": 64,
+      "modelos": [
+        "assets/models/creatures/dodarro/dodarro_montaria_v02_blockout.glb",
+        "assets/models/creatures/dodarro/dodarro_selvagem_v02_blockout.glb"
+      ]
+    },
+    {
+      "pr": 67,
+      "modelos": [
+        "assets/models/creatures/arraia-de-areia/v03/arraia-de-areia-v03-rig-animated-LOD0.glb"
+      ]
+    },
+    {
+      "pr": 73,
+      "modelos": [
+        "assets/models/creatures/escarvao/v02/escarvao_cobre_rig_anim_v02.glb",
+        "assets/models/creatures/escarvao/v02/escarvao_oliva_rig_anim_v02.glb",
+        "assets/models/creatures/escarvao/v02/escarvao_rubro_rig_anim_v02.glb"
+      ]
+    },
+    {
+      "pr": 76,
+      "modelos": [
+        "assets/models/creatures/serracorion/v03/serracorion-v03-rig-animado-LOD0.glb"
+      ]
+    },
+    {
+      "pr": 71,
+      "modelos": [
+        "assets/hunters/hunter-workshop/hair/mohawk-v02/hair_mohawk_v02.glb",
+        "assets/hunters/hunter-workshop/hair/short-v02/hair_short_v02.glb"
+      ]
+    },
+    {
+      "pr": 78,
+      "modelos": [
+        "assets/hunters/hunter-workshop/hair/short-ponytail-v01/hair_short_ponytail_v01.glb",
+        "assets/hunters/hunter-workshop/hair/swept-back-v01/hair_swept_back_v01.glb"
+      ]
+    }
+  ],
+  "nota": "Os PRs registram a etapa artística, a publicação e as fontes completas de cada entrega. O catálogo inclui modelos em revisão. A presença do GLB não comprova integração no gameplay."
+}
