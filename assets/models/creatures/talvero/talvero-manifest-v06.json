@@ -1,0 +1,83 @@
+{
+  "id": "talvero",
+  "version": "v06",
+  "status": "preliminary_art_review",
+  "reference": "Prior actual GLB and species approved written direction. Original concept image not recovered.",
+  "method": "Shape deformation in rest space, coat vertex marks, embedded 96x96 UV microtexture, animation retiming plus neck/head/jaw/tail rotational layers. Original limb track values and skin weights retained.",
+  "validation": "GitHub file readback, SHA-256, indexed triangle counts, bounds, normalized weights and quaternion, finite monotonic clip keys; software static render; independent full playback and concept comparison pending.",
+  "gameplayIntegrated": false,
+  "source": "assets/models/creatures/talvero/refine-medium-pair-v06-v04.mjs",
+  "LODs": [
+    {
+      "path": "assets/models/creatures/talvero/talvero-savanna-animated-v06-LOD0.glb",
+      "base": "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD0.glb",
+      "bytes": 887336,
+      "triangles": 25247,
+      "sha256": "e86564190e730ba614710033a196fdfabbf729a98f788b0c2cea49c91b897d1a",
+      "gitBlob": "d8dee8ec51f6ab1038d92651d0aca83523fc530f",
+      "skinJoints": 17,
+      "animations": [
+        "idle",
+        "walk",
+        "trot",
+        "gallop",
+        "graze",
+        "alert",
+        "flee",
+        "kick",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    },
+    {
+      "path": "assets/models/creatures/talvero/talvero-savanna-animated-v06-LOD1.glb",
+      "base": "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD1.glb",
+      "bytes": 472772,
+      "triangles": 9929,
+      "sha256": "d665174adad26f4828af81ebfdb5a1a167f42b63a628c270b06e4af8a9ab8b86",
+      "gitBlob": "78602ad9e7414722a09c02b92ce9a100c55c7702",
+      "skinJoints": 17,
+      "animations": [
+        "idle",
+        "walk",
+        "trot",
+        "gallop",
+        "graze",
+        "alert",
+        "flee",
+        "kick",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    },
+    {
+      "path": "assets/models/creatures/talvero/talvero-savanna-animated-v06-LOD2.glb",
+      "base": "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD2.glb",
+      "bytes": 345204,
+      "triangles": 5571,
+      "sha256": "7786c3550f76fa48af3bfa7a9b215575fc2adb923096456f79403165207a6e05",
+      "gitBlob": "2c5800e38a9b932480e14470734dba310d090112",
+      "skinJoints": 17,
+      "animations": [
+        "idle",
+        "walk",
+        "trot",
+        "gallop",
+        "graze",
+        "alert",
+        "flee",
+        "kick",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    }
+  ],
+  "preview": {
+    "path": "assets/models/creatures/talvero/talvero-v06-real-glb-3views.png",
+    "sha256OfModel": "e86564190e730ba614710033a196fdfabbf729a98f788b0c2cea49c91b897d1a",
+    "renderer": "software rasterizer using exported joint matrices, triangle geometry, vertex colors and approximate texture lighting"
+  }
+}

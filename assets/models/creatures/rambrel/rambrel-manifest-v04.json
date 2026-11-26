@@ -1,0 +1,86 @@
+{
+  "id": "rambrel",
+  "version": "v04",
+  "status": "preliminary_art_review",
+  "reference": "Prior actual GLB and species approved written direction. Original concept image not recovered.",
+  "method": "Shape deformation in rest space, coat vertex marks, embedded 96x96 UV microtexture, animation retiming plus neck/head/jaw/tail rotational layers. Original limb track values and skin weights retained.",
+  "validation": "GitHub file readback, SHA-256, indexed triangle counts, bounds, normalized weights and quaternion, finite monotonic clip keys; software static render; independent full playback and concept comparison pending.",
+  "gameplayIntegrated": false,
+  "source": "assets/models/creatures/talvero/refine-medium-pair-v06-v04.mjs",
+  "LODs": [
+    {
+      "path": "assets/models/creatures/rambrel/rambrel-savanna-animated-v04-LOD0.glb",
+      "base": "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD0.glb",
+      "bytes": 930864,
+      "triangles": 22426,
+      "sha256": "b7011f03922d91cf7ad696bf56df404f283835ce91cc093be638cfb8f30463b0",
+      "gitBlob": "a6bc05cc5cf5d2aac2adf94a311b51aafb8de990",
+      "skinJoints": 17,
+      "animations": [
+        "idle",
+        "walk",
+        "trot",
+        "run",
+        "browse",
+        "chew",
+        "alert",
+        "headbutt",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    },
+    {
+      "path": "assets/models/creatures/rambrel/rambrel-savanna-animated-v04-LOD1.glb",
+      "base": "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD1.glb",
+      "bytes": 519624,
+      "triangles": 10143,
+      "sha256": "015575ab4f2364388d81c6b636d097847173b2d9fb2cb01a27f7b380d229fa68",
+      "gitBlob": "6d2ce6b135c2434730d0f106d6fd06575731a8db",
+      "skinJoints": 17,
+      "animations": [
+        "idle",
+        "walk",
+        "trot",
+        "run",
+        "browse",
+        "chew",
+        "alert",
+        "headbutt",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    },
+    {
+      "path": "assets/models/creatures/rambrel/rambrel-savanna-animated-v04-LOD2.glb",
+      "base": "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD2.glb",
+      "bytes": 423164,
+      "triangles": 7410,
+      "sha256": "1bbcf5c9b6b92752d110aabc982e4eb8888ff51f365ffafb3df424ce2a54c5f3",
+      "gitBlob": "42b33c0b60e895221591288bc7dd3741ad9d185e",
+      "skinJoints": 17,
+      "animations": [
+        "idle",
+        "walk",
+        "trot",
+        "run",
+        "browse",
+        "chew",
+        "alert",
+        "headbutt",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    }
+  ],
+  "preview": {
+    "path": "assets/models/creatures/rambrel/rambrel-v04-real-glb-3views.png",
+    "sha256OfModel": "b7011f03922d91cf7ad696bf56df404f283835ce91cc093be638cfb8f30463b0",
+    "renderer": "software rasterizer using exported joint matrices, triangle geometry, vertex colors and approximate texture lighting"
+  }
+}
