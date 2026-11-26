@@ -1,0 +1,242 @@
+{
+  "id": "cromatil",
+  "version": "v02",
+  "status": "preliminary_art_review_not_approved",
+  "gameplayIntegrated": false,
+  "reference": "Original V01 and approved written species description; original concept image not recovered",
+  "rig": "Existing articulated rigid pivots, no skin weights",
+  "texture": "Embedded 64x64 procedural RGB PNG and UVs",
+  "source": "assets/models/creatures/frutavil/refine-pair-v02.mjs",
+  "validation": "Branch file readback: Git blob SHA and bytes match; SHA256 computed; header, buffer bounds, triangle count, 11 clips, 37 monotonic finite keys per channel and normalized rotation checked. Software rasterizer of actual GLB bind pose and selected animation keyframes; independent Blender/Three.js playback and concept comparison pending.",
+  "LODs": [
+    {
+      "path": "assets/models/creatures/cromatil/cromatil-savanna-animated-v02-LOD0.glb",
+      "base": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb",
+      "bytes": 521552,
+      "sha256": "1496948194db9de827de7cfa902abe95d665d89982491f1ff7115967f748658f",
+      "gitBlob": "a919664f2dc34207c6dcb6297189eec8c9ac4d17",
+      "triangles": 7283,
+      "materials": 11,
+      "nodes": 19,
+      "skins": 0,
+      "textureImages": 1,
+      "clips": [
+        {
+          "name": "idle",
+          "duration": 3.54,
+          "keys": 37
+        },
+        {
+          "name": "walk",
+          "duration": 1.3200000524520874,
+          "keys": 37
+        },
+        {
+          "name": "scurry",
+          "duration": 0.6900000000000001,
+          "keys": 37
+        },
+        {
+          "name": "bask",
+          "duration": 3.794999945163726,
+          "keys": 37
+        },
+        {
+          "name": "forage",
+          "duration": 3.1359999465942385,
+          "keys": 37
+        },
+        {
+          "name": "head_tilt",
+          "duration": 2.5440001010894777,
+          "keys": 37
+        },
+        {
+          "name": "tail_whip",
+          "duration": 1.4559999465942384,
+          "keys": 37
+        },
+        {
+          "name": "threat",
+          "duration": 1.6239999723434446,
+          "keys": 37
+        },
+        {
+          "name": "retreat",
+          "duration": 1.2960000228881836,
+          "keys": 37
+        },
+        {
+          "name": "rest",
+          "duration": 3.5840000534057617,
+          "keys": 37
+        },
+        {
+          "name": "death",
+          "duration": 2.36,
+          "keys": 37
+        }
+      ]
+    },
+    {
+      "path": "assets/models/creatures/cromatil/cromatil-savanna-animated-v02-LOD1.glb",
+      "base": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD1.glb",
+      "bytes": 408736,
+      "sha256": "f867782594141acd890feeffd583746415295da83f3e45bf4b742c64c055fef8",
+      "gitBlob": "7afbb8644837e913934fd9288ab891d047ea54e7",
+      "triangles": 3780,
+      "materials": 11,
+      "nodes": 19,
+      "skins": 0,
+      "textureImages": 1,
+      "clips": [
+        {
+          "name": "idle",
+          "duration": 3.54,
+          "keys": 37
+        },
+        {
+          "name": "walk",
+          "duration": 1.3200000524520874,
+          "keys": 37
+        },
+        {
+          "name": "scurry",
+          "duration": 0.6900000000000001,
+          "keys": 37
+        },
+        {
+          "name": "bask",
+          "duration": 3.794999945163726,
+          "keys": 37
+        },
+        {
+          "name": "forage",
+          "duration": 3.1359999465942385,
+          "keys": 37
+        },
+        {
+          "name": "head_tilt",
+          "duration": 2.5440001010894777,
+          "keys": 37
+        },
+        {
+          "name": "tail_whip",
+          "duration": 1.4559999465942384,
+          "keys": 37
+        },
+        {
+          "name": "threat",
+          "duration": 1.6239999723434446,
+          "keys": 37
+        },
+        {
+          "name": "retreat",
+          "duration": 1.2960000228881836,
+          "keys": 37
+        },
+        {
+          "name": "rest",
+          "duration": 3.5840000534057617,
+          "keys": 37
+        },
+        {
+          "name": "death",
+          "duration": 2.36,
+          "keys": 37
+        }
+      ]
+    },
+    {
+      "path": "assets/models/creatures/cromatil/cromatil-savanna-animated-v02-LOD2.glb",
+      "base": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD2.glb",
+      "bytes": 366216,
+      "sha256": "b50b4eb1ac4c3c417cc77469264d99de06c725b16e4b37b27cb1c4317f8f8496",
+      "gitBlob": "2ea7cbbbd1c4e55067f8469b4b205965725b710a",
+      "triangles": 2632,
+      "materials": 11,
+      "nodes": 19,
+      "skins": 0,
+      "textureImages": 1,
+      "clips": [
+        {
+          "name": "idle",
+          "duration": 3.54,
+          "keys": 37
+        },
+        {
+          "name": "walk",
+          "duration": 1.3200000524520874,
+          "keys": 37
+        },
+        {
+          "name": "scurry",
+          "duration": 0.6900000000000001,
+          "keys": 37
+        },
+        {
+          "name": "bask",
+          "duration": 3.794999945163726,
+          "keys": 37
+        },
+        {
+          "name": "forage",
+          "duration": 3.1359999465942385,
+          "keys": 37
+        },
+        {
+          "name": "head_tilt",
+          "duration": 2.5440001010894777,
+          "keys": 37
+        },
+        {
+          "name": "tail_whip",
+          "duration": 1.4559999465942384,
+          "keys": 37
+        },
+        {
+          "name": "threat",
+          "duration": 1.6239999723434446,
+          "keys": 37
+        },
+        {
+          "name": "retreat",
+          "duration": 1.2960000228881836,
+          "keys": 37
+        },
+        {
+          "name": "rest",
+          "duration": 3.5840000534057617,
+          "keys": 37
+        },
+        {
+          "name": "death",
+          "duration": 2.36,
+          "keys": 37
+        }
+      ]
+    }
+  ],
+  "previews": [
+    {
+      "path": "assets/models/creatures/cromatil/cromatil-v02-real-glb-3views.png",
+      "sha256OfModel": "1496948194db9de827de7cfa902abe95d665d89982491f1ff7115967f748658f",
+      "views": [
+        "profile",
+        "front",
+        "three_quarters"
+      ]
+    },
+    {
+      "path": "assets/models/creatures/cromatil/cromatil-v02-tail_whip-poses.png",
+      "sha256OfModel": "1496948194db9de827de7cfa902abe95d665d89982491f1ff7115967f748658f",
+      "clip": "tail_whip",
+      "keys": [
+        0,
+        9,
+        18,
+        27
+      ]
+    }
+  ]
+}
