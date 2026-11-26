@@ -1,0 +1,242 @@
+{
+  "id": "frutavil",
+  "version": "v02",
+  "status": "preliminary_art_review_not_approved",
+  "gameplayIntegrated": false,
+  "reference": "Original V01 and approved written species description; original concept image not recovered",
+  "rig": "Existing articulated rigid pivots, no skin weights",
+  "texture": "Embedded 64x64 procedural RGB PNG and UVs",
+  "source": "assets/models/creatures/frutavil/refine-pair-v02.mjs",
+  "validation": "Branch file readback: Git blob SHA and bytes match; SHA256 computed; header, buffer bounds, triangle count, 11 clips, 37 monotonic finite keys per channel and normalized rotation checked. Software rasterizer of actual GLB bind pose and selected animation keyframes; independent Blender/Three.js playback and concept comparison pending.",
+  "LODs": [
+    {
+      "path": "assets/models/creatures/frutavil/frutavil-savanna-animated-v02-LOD0.glb",
+      "base": "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD0.glb",
+      "bytes": 392288,
+      "sha256": "b7a911038a97791640a68925f608674a2e256d78ebeabc9f15b9cb331b2e6afb",
+      "gitBlob": "2b4766db5ce09e8ec54e5da1bd1f8946b9d346d0",
+      "triangles": 5724,
+      "materials": 11,
+      "nodes": 13,
+      "skins": 0,
+      "textureImages": 1,
+      "clips": [
+        {
+          "name": "idle",
+          "duration": 3.54,
+          "keys": 37
+        },
+        {
+          "name": "walk",
+          "duration": 1.0920000433921815,
+          "keys": 37
+        },
+        {
+          "name": "hop",
+          "duration": 0.94,
+          "keys": 37
+        },
+        {
+          "name": "perch",
+          "duration": 2.16,
+          "keys": 37
+        },
+        {
+          "name": "peck",
+          "duration": 1.2189999747276308,
+          "keys": 37
+        },
+        {
+          "name": "eat_fruit",
+          "duration": 2.7600001096725464,
+          "keys": 37
+        },
+        {
+          "name": "wing_flap",
+          "duration": 0.7019999742507935,
+          "keys": 37
+        },
+        {
+          "name": "short_flight",
+          "duration": 1.155000025033951,
+          "keys": 37
+        },
+        {
+          "name": "alert",
+          "duration": 1.9619999480247499,
+          "keys": 37
+        },
+        {
+          "name": "rest",
+          "duration": 3.5840000534057617,
+          "keys": 37
+        },
+        {
+          "name": "death",
+          "duration": 2.36,
+          "keys": 37
+        }
+      ]
+    },
+    {
+      "path": "assets/models/creatures/frutavil/frutavil-savanna-animated-v02-LOD1.glb",
+      "base": "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD1.glb",
+      "bytes": 320164,
+      "sha256": "da87ad44a15dc742447ab7723e038362ad3f6c310fa78ad0eeeb54972b0b3c08",
+      "gitBlob": "fcc62f6bb9e98aa48b8633a414f244feec56a93d",
+      "triangles": 3514,
+      "materials": 11,
+      "nodes": 13,
+      "skins": 0,
+      "textureImages": 1,
+      "clips": [
+        {
+          "name": "idle",
+          "duration": 3.54,
+          "keys": 37
+        },
+        {
+          "name": "walk",
+          "duration": 1.0920000433921815,
+          "keys": 37
+        },
+        {
+          "name": "hop",
+          "duration": 0.94,
+          "keys": 37
+        },
+        {
+          "name": "perch",
+          "duration": 2.16,
+          "keys": 37
+        },
+        {
+          "name": "peck",
+          "duration": 1.2189999747276308,
+          "keys": 37
+        },
+        {
+          "name": "eat_fruit",
+          "duration": 2.7600001096725464,
+          "keys": 37
+        },
+        {
+          "name": "wing_flap",
+          "duration": 0.7019999742507935,
+          "keys": 37
+        },
+        {
+          "name": "short_flight",
+          "duration": 1.155000025033951,
+          "keys": 37
+        },
+        {
+          "name": "alert",
+          "duration": 1.9619999480247499,
+          "keys": 37
+        },
+        {
+          "name": "rest",
+          "duration": 3.5840000534057617,
+          "keys": 37
+        },
+        {
+          "name": "death",
+          "duration": 2.36,
+          "keys": 37
+        }
+      ]
+    },
+    {
+      "path": "assets/models/creatures/frutavil/frutavil-savanna-animated-v02-LOD2.glb",
+      "base": "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD2.glb",
+      "bytes": 268360,
+      "sha256": "c23c1128ad7504646b574d35708c595a2e169ffaed9eec7cc1fdf64986ab6243",
+      "gitBlob": "b087848de63e12eb2cfb8141542646965bf5f9c1",
+      "triangles": 2118,
+      "materials": 11,
+      "nodes": 13,
+      "skins": 0,
+      "textureImages": 1,
+      "clips": [
+        {
+          "name": "idle",
+          "duration": 3.54,
+          "keys": 37
+        },
+        {
+          "name": "walk",
+          "duration": 1.0920000433921815,
+          "keys": 37
+        },
+        {
+          "name": "hop",
+          "duration": 0.94,
+          "keys": 37
+        },
+        {
+          "name": "perch",
+          "duration": 2.16,
+          "keys": 37
+        },
+        {
+          "name": "peck",
+          "duration": 1.2189999747276308,
+          "keys": 37
+        },
+        {
+          "name": "eat_fruit",
+          "duration": 2.7600001096725464,
+          "keys": 37
+        },
+        {
+          "name": "wing_flap",
+          "duration": 0.7019999742507935,
+          "keys": 37
+        },
+        {
+          "name": "short_flight",
+          "duration": 1.155000025033951,
+          "keys": 37
+        },
+        {
+          "name": "alert",
+          "duration": 1.9619999480247499,
+          "keys": 37
+        },
+        {
+          "name": "rest",
+          "duration": 3.5840000534057617,
+          "keys": 37
+        },
+        {
+          "name": "death",
+          "duration": 2.36,
+          "keys": 37
+        }
+      ]
+    }
+  ],
+  "previews": [
+    {
+      "path": "assets/models/creatures/frutavil/frutavil-v02-real-glb-3views.png",
+      "sha256OfModel": "b7a911038a97791640a68925f608674a2e256d78ebeabc9f15b9cb331b2e6afb",
+      "views": [
+        "profile",
+        "front",
+        "three_quarters"
+      ]
+    },
+    {
+      "path": "assets/models/creatures/frutavil/frutavil-v02-wing_flap-poses.png",
+      "sha256OfModel": "b7a911038a97791640a68925f608674a2e256d78ebeabc9f15b9cb331b2e6afb",
+      "clip": "wing_flap",
+      "keys": [
+        0,
+        9,
+        18,
+        27
+      ]
+    }
+  ]
+}
