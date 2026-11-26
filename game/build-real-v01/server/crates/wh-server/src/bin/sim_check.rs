@@ -22,14 +22,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let report: PortalReport = serde_json::from_slice(&std::fs::read(root.join("build real/integracao/relatorio-continental-272.json"))?)?;
     let portals = PortalIndex::from_report(report)?;
     let continent = Arc::new(Continent::from_manifest(manifest)?);
-    let allowed: HashSet<String> = portals.certified.clone();
+    let physics_dir = root.join(".generated/physics-272");
+    let allowed: HashSet<String> = portals.certified.iter()
+        .filter(|t| physics_dir.join(format!("{t}-physics-v01")).join("index.json").is_file()).cloned().collect();
     let speeds: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v01/data/hunter-workshop-clip-speeds.json"))?)?;
     let walk = speeds["clips"].as_array().unwrap().iter().find(|c| c["name"] == "Walking").unwrap()["speedMetersPerSecond"].as_f64().unwrap();
     let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v01/data/spawn-v01.json"))?)?;
     let s = &spawn["hunters"][0];
     let h = Hunter::new(s["id"].as_str().unwrap(), s["name"].as_str().unwrap(), s["x"].as_f64().unwrap(), s["z"].as_f64().unwrap(),
         s["tile"].as_str().unwrap(), walk, spawn["seed"].as_u64().unwrap() as u32);
-    let terrain = TerrainStore::new(continent.clone(), root.join(".generated/physics-272"), allowed, 256 * 1024 * 1024);
+    let terrain = TerrainStore::new(continent.clone(), physics_dir, allowed, 256 * 1024 * 1024);
     let mut w = World::new(WorldClock::new(0), terrain, portals, vec![h]);
     let mut max_step: f64 = 0.0;
     let mut last = (w.hunters[0].x, w.hunters[0].z);

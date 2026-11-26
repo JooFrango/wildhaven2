@@ -21,6 +21,7 @@
  *   node "build real/continental/tools/fetch-sources.mjs" --out .generated/sources
  *   [--mirror-commit <sha>] [--legacy-remote legacy] [--original-remote original]
  *   [--link]  (usa hardlink da working tree quando o blob coincide; economiza disco)
+ *   [--around <ID>]  (modo leve: só o hex <ID> e seus vizinhos no grafo)
  */
 import {readFile, writeFile, mkdir, link, stat, rm} from "node:fs/promises";
 import {execFileSync, spawnSync} from "node:child_process";
@@ -67,7 +68,10 @@ const remoteFor = tile => tile.source.repository === "carioca1111/wildhaven" ? o
 
 await mkdir(out, {recursive: true});
 const items = [];
-for (const tile of manifest.tiles) {
+const around = opts.around ? new Set([opts.around, ...manifest.edges.filter(e => e.includes(opts.around)).flat()]) : null;
+if (around && !manifest.tiles.some(t => t.id === opts.around)) throw Error("--around: hex desconhecido " + opts.around);
+const selected = around ? manifest.tiles.filter(t => around.has(t.id)) : manifest.tiles;
+for (const tile of selected) {
   const dest = join(out, rootFor(tile), tile.source.path);
   const mirrorPath = MIRROR_PREFIX + "/" + tile.id + "/" + basename(tile.source.path);
   const attempts = [];
@@ -115,7 +119,7 @@ for (const tile of manifest.tiles) {
     sha256Checked: tile.source.sha256 ? "manifest" : "computed-only", method});
 }
 const report = {schema: "wildhaven.continental.fetch-report.v1", mirror: {repository: MIRROR_REPOSITORY, commit: mirrorCommit, prefix: MIRROR_PREFIX},
-  requested: manifest.tiles.length, ok: items.filter(i => i.ok).length, failed: items.filter(i => !i.ok).length, items};
+  requested: selected.length, around: opts.around ?? null, ok: items.filter(i => i.ok).length, failed: items.filter(i => !i.ok).length, items};
 await writeFile(join(out, "fetch-report.json"), JSON.stringify(report, null, 2) + "\n");
 console.log("[fetch] " + report.ok + "/" + report.requested + " GLBs verificados (bytes + SHA-1 blob" + " + SHA-256 quando registrado)");
 if (report.failed) process.exitCode = 1;

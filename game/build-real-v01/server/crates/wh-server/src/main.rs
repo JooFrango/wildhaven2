@@ -59,7 +59,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         }
     }
-    eprintln!("[wh-server] {} tiles liberados ao runtime", allowed.len());
+    // Modo leve (--around): só entra no runtime o hex cujo pacote existe no disco.
+    let before = allowed.len();
+    allowed.retain(|t| cfg.physics_dir.join(format!("{t}-physics-v01")).join("index.json").is_file());
+    eprintln!("[wh-server] {} tiles liberados ao runtime ({} certificados sem pacote local ignorados)", allowed.len(), before - allowed.len());
 
     let speeds: serde_json::Value = serde_json::from_slice(&std::fs::read(&cfg.clip_speeds)?)?;
     let walk = speeds["clips"]

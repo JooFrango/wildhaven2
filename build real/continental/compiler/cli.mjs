@@ -112,7 +112,11 @@ async function compileOne(tile, file){
   }catch(e){await rm(staging,{recursive:true,force:true});throw e;}
 }
 await mkdir(outBase,{recursive:true});
-const tiles=opts.all?manifest.tiles:manifest.tiles.filter(t=>t.id===opts.tile);
+// --around <ID>: lote leve com o hex e seus vizinhos no grafo (exige --all)
+if(opts.around&&!opts.all)throw Error("--around exige --all");
+const around=opts.around?new Set([opts.around,...manifest.edges.filter(e=>e.includes(opts.around)).flat()]):null;
+if(around&&!manifest.tiles.some(t=>t.id===opts.around))throw Error("--around: hex desconhecido "+opts.around);
+const tiles=opts.all?manifest.tiles.filter(t=>!around||around.has(t.id)):manifest.tiles.filter(t=>t.id===opts.tile);
 if(!tiles.length)throw Error("Unknown ID "+opts.tile);
 const report=[];
 for(const tile of tiles){
