@@ -1,0 +1,270 @@
+{
+  "species_id": "cornevio",
+  "name": "Cornévio",
+  "version": "v02",
+  "stage": "skinned_animated_for_artistic_review",
+  "previous_static_glb_preserved": true,
+  "v01_base": {
+    "relative_path": "../v01/cornevio-v01-textured-blockout.glb",
+    "bytes": 3635016,
+    "sha256": "b582703ad6e417746547d4b11b73e60e5fcc74ef523f33eb2f8fb2cdeb096e27"
+  },
+  "glb": {
+    "path": "cornevio-v02-animated-LOD0.glb",
+    "bytes": 3909804,
+    "sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4",
+    "triangles": 1536,
+    "triangle_count_method": "mesh primitive triangles indexed after reimport",
+    "vertices": 4608,
+    "uv_texture_px": [
+      2048,
+      2048
+    ],
+    "materials": 1,
+    "skins": 1,
+    "joints": 26,
+    "bone_names": [
+      "root",
+      "pelvis",
+      "spine",
+      "chest",
+      "neck",
+      "head",
+      "jaw",
+      "tail1",
+      "tail2",
+      "tail3",
+      "foreR_upper",
+      "foreR_elbow",
+      "foreR_wrist",
+      "foreR_paw",
+      "foreL_upper",
+      "foreL_elbow",
+      "foreL_wrist",
+      "foreL_paw",
+      "hindR_upper",
+      "hindR_elbow",
+      "hindR_wrist",
+      "hindR_paw",
+      "hindL_upper",
+      "hindL_elbow",
+      "hindL_wrist",
+      "hindL_paw"
+    ],
+    "animation_count": 16
+  },
+  "texture": {
+    "source_v01_embedded_identical": true,
+    "painted_markings_not_polygons": true
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.0846,
+      "samples": 73
+    },
+    {
+      "name": "walk",
+      "duration_seconds": 1.65,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.2472,
+      "samples": 41
+    },
+    {
+      "name": "trot",
+      "duration_seconds": 1.12,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.3095,
+      "samples": 28
+    },
+    {
+      "name": "flee",
+      "duration_seconds": 0.74,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.42,
+      "samples": 25
+    },
+    {
+      "name": "turn_left",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "channels": 10,
+      "max_angle_rad": 0.18,
+      "samples": 32
+    },
+    {
+      "name": "turn_right",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "channels": 10,
+      "max_angle_rad": 0.18,
+      "samples": 32
+    },
+    {
+      "name": "alert",
+      "duration_seconds": 1.45,
+      "loop": false,
+      "channels": 5,
+      "max_angle_rad": 0.12,
+      "samples": 36
+    },
+    {
+      "name": "sniff",
+      "duration_seconds": 2.3,
+      "loop": true,
+      "channels": 5,
+      "max_angle_rad": 0.12,
+      "samples": 56
+    },
+    {
+      "name": "forage",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "channels": 8,
+      "max_angle_rad": 0.18,
+      "samples": 73
+    },
+    {
+      "name": "feed",
+      "duration_seconds": 2.6,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.1984,
+      "samples": 63
+    },
+    {
+      "name": "drink",
+      "duration_seconds": 2.7,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.2496,
+      "samples": 66
+    },
+    {
+      "name": "rest",
+      "duration_seconds": 2.2,
+      "loop": false,
+      "channels": 15,
+      "max_angle_rad": 0.19,
+      "samples": 54
+    },
+    {
+      "name": "hurt",
+      "duration_seconds": 0.95,
+      "loop": false,
+      "channels": 3,
+      "max_angle_rad": 0.1195,
+      "samples": 25
+    },
+    {
+      "name": "death",
+      "duration_seconds": 2.4,
+      "loop": false,
+      "channels": 15,
+      "max_angle_rad": 0.32,
+      "samples": 59
+    },
+    {
+      "name": "inflate",
+      "duration_seconds": 2.2,
+      "loop": false,
+      "channels": 5,
+      "max_angle_rad": 0.14,
+      "samples": 54
+    },
+    {
+      "name": "horn_threat",
+      "duration_seconds": 1.9,
+      "loop": false,
+      "channels": 5,
+      "max_angle_rad": 0.2298,
+      "samples": 47
+    }
+  ],
+  "defense_specials": [
+    "inflate",
+    "horn_threat"
+  ],
+  "rig": "weighted glTF skin with JOINTS_0, WEIGHTS_0 and inverse-bind-matrices",
+  "limitations": [
+    "in-place, possible foot sliding",
+    "no physics/IK ground adjustment",
+    "no terrain interaction, IA or gameplay",
+    "visual approval pending",
+    "LOD0 only in this stage"
+  ],
+  "approval": {
+    "concepts": "user approved 4 designs",
+    "v01_form": "user requested animations",
+    "animations_v02": "awaiting artistic review"
+  },
+  "publication": "branch_published_pending_artistic_review",
+  "integrated_game": false,
+  "previews": {
+    "cornevio-v02-real-glb-three-quarter.png": {
+      "bytes": 315833,
+      "sha256": "28bb02c0512d531aaf11d91c01f3abfd840e112d0bcb73fd60024ea7425636cb",
+      "source_glb_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4"
+    },
+    "cornevio-v02-three-real-glb-views.png": {
+      "bytes": 667530,
+      "sha256": "aa680a804f6292b171b866ae43da581701e8ff59454e32c32c90a2bbb1a42c44",
+      "source_glb_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4"
+    },
+    "cornevio-v02-real-glb-profile.png": {
+      "bytes": 312118,
+      "sha256": "d6f1412c3d93937c966db00786a7c3aa6a4b4b4569319b281597d5f0a93e9eab",
+      "source_glb_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4"
+    },
+    "cornevio-v02-inflate-real-glb.gif": {
+      "bytes": 1268449,
+      "sha256": "7b7bd7c1de5d20a90d312bd00761a12b252d24e96a5eede79c3e5008baa1d846",
+      "source_glb_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4"
+    },
+    "cornevio-v02-horn_threat-real-glb.gif": {
+      "bytes": 1837898,
+      "sha256": "a692a755d97374a355d40ecf284b407ec88d8380250509710eeaee7a0a625662",
+      "source_glb_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4"
+    },
+    "cornevio-v02-real-glb-front.png": {
+      "bytes": 283846,
+      "sha256": "a2001afff1f4c563eac02fa0d6d67633a304052f09dcb3b9cfd4f1b3c2864960",
+      "source_glb_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4"
+    },
+    "cornevio-v02-walk-real-glb.gif": {
+      "bytes": 1848109,
+      "sha256": "fce024cb2a2927a49ebc36afb4cf0b0da9b615a32896f638b1ad256690d47d6c",
+      "source_glb_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4"
+    }
+  },
+  "glb_reimport_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4",
+  "animation_playback_validation": {
+    "reimport_sha256": "445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4",
+    "rest_pose_max_error_m": 1.4901161193847656e-08,
+    "per_clip_vertex_movement_m": {
+      "idle": 0.00952,
+      "walk": 0.03094,
+      "trot": 0.04063,
+      "flee": 0.05636,
+      "turn_left": 0.20002,
+      "turn_right": 0.20002,
+      "alert": 0.02563,
+      "sniff": 0.02562,
+      "forage": 0.04479,
+      "feed": 0.05068,
+      "drink": 0.05858,
+      "rest": 0.04689,
+      "hurt": 0.03187,
+      "death": 0.24066,
+      "inflate": 0.07971,
+      "horn_threat": 0.0784
+    },
+    "method": "CPU linear blend skinning from exported GLB inverse bind matrices, keyframes, JOINTS_0 and WEIGHTS_0"
+  }
+}

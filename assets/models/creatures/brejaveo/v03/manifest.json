@@ -1,0 +1,33 @@
+{
+  "species": "brejaveo",
+  "version": "v03",
+  "stage": "replacement_blockout",
+  "shape_approved": false,
+  "original_concept_approved": true,
+  "source_art": "/mnt/data/76213.png",
+  "replaces_for_review": "v01 and v02 visual direction; files preserved",
+  "file": "brejaveo-v03-anatomia-blockout.glb",
+  "bytes": 466968,
+  "sha256": "b06878ac4c590f20fdea154c52225b9c57c23cf93aa763860f5b55bc1d875603",
+  "triangles": 5164,
+  "vertices": 2903,
+  "mesh_count": 86,
+  "dimensions_xyz_m": [
+    5.517,
+    3.384,
+    2.239
+  ],
+  "skins": 0,
+  "joints": 0,
+  "animations": 0,
+  "texture": "brejaveo-v03-atlas-uv.png",
+  "texture_sha256": "5a51cfdac9d834c826997d7694ee7dbadcb9e8c517aa09eb2f995772ab0f782f",
+  "preview_source": "exported GLB reimported with trimesh and rendered with VTK",
+  "review_notes": [
+    "Folded backswept wing membrane integrated with front limbs",
+    "Low elongated reptilian skull and inset iris with rear-swept horns",
+    "Substantial haunches and short strong forearms",
+    "Purple mottling + beige underside exclusively by UV atlas",
+    "Tongue neutral/resting only; no rig or animation in v03 blockout"
+  ]
+}

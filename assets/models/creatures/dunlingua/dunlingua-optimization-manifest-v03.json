@@ -1,0 +1,243 @@
+{
+  "species": "dunlingua",
+  "variant": "desert",
+  "version": "v03",
+  "source": "assets/models/creatures/dunlingua/dunlingua-animated-v02.glb",
+  "sourceStats": {
+    "bytes": 1244508,
+    "sha256": "7e226a2897684ec50ff2de677c31047daa6915fdd495885be268c19af9f11eaf",
+    "trianglesMeshDefinitions": 3182,
+    "trianglesDrawnPerInstance": 13604,
+    "meshDefinitions": 54,
+    "meshNodes": 250,
+    "primitives": 54,
+    "estimatedDrawCalls": 250,
+    "materials": 16,
+    "nodes": 271,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "scent",
+      "inspect",
+      "dig",
+      "feed",
+      "tongue_out",
+      "tongue_in",
+      "sun_bask",
+      "alert",
+      "defend",
+      "flee",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "animationSignature": "9e9c5a73619c0a9708783fc987b1d523e1a764b2fb0933e30d51a0c2844caf33",
+  "lods": [
+    {
+      "bytes": 1471876,
+      "sha256": "cc893d55f56a57456e48d66f415c29d30711305794fe9ebfe66a0862f6085e1c",
+      "trianglesMeshDefinitions": 11957,
+      "trianglesDrawnPerInstance": 11957,
+      "meshDefinitions": 53,
+      "meshNodes": 53,
+      "primitives": 53,
+      "estimatedDrawCalls": 53,
+      "materials": 16,
+      "nodes": 324,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "scent",
+        "inspect",
+        "dig",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "sun_bask",
+        "alert",
+        "defend",
+        "flee",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 12000,
+      "animationSignature": "9e9c5a73619c0a9708783fc987b1d523e1a764b2fb0933e30d51a0c2844caf33",
+      "batchedGroups": 53,
+      "sourceMeshNodes": 250
+    },
+    {
+      "bytes": 1328708,
+      "sha256": "6452634581ba273dfbf8a060bab075c2ea24cbefff93ebfde7303e6daa882b54",
+      "trianglesMeshDefinitions": 5964,
+      "trianglesDrawnPerInstance": 5964,
+      "meshDefinitions": 53,
+      "meshNodes": 53,
+      "primitives": 53,
+      "estimatedDrawCalls": 53,
+      "materials": 16,
+      "nodes": 324,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "scent",
+        "inspect",
+        "dig",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "sun_bask",
+        "alert",
+        "defend",
+        "flee",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 6000,
+      "animationSignature": "9e9c5a73619c0a9708783fc987b1d523e1a764b2fb0933e30d51a0c2844caf33",
+      "batchedGroups": 53,
+      "sourceMeshNodes": 250
+    },
+    {
+      "bytes": 1251172,
+      "sha256": "777de080c26b881437ed807d457fb32de9abb9939952df1763245e601e9abdd4",
+      "trianglesMeshDefinitions": 2447,
+      "trianglesDrawnPerInstance": 2447,
+      "meshDefinitions": 53,
+      "meshNodes": 53,
+      "primitives": 53,
+      "estimatedDrawCalls": 53,
+      "materials": 16,
+      "nodes": 324,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "scent",
+        "inspect",
+        "dig",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "sun_bask",
+        "alert",
+        "defend",
+        "flee",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 2500,
+      "animationSignature": "9e9c5a73619c0a9708783fc987b1d523e1a764b2fb0933e30d51a0c2844caf33",
+      "batchedGroups": 53,
+      "sourceMeshNodes": 250
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 471973,
+      "boundsMin": [
+        -0.7805112600326538,
+        -0.07039999961853027,
+        -2.998744487762451
+      ],
+      "boundsMax": [
+        0.7805112600326538,
+        1.846742868423462,
+        2.5025455951690674
+      ]
+    },
+    "front": {
+      "bytes": 442977,
+      "boundsMin": [
+        -0.7805112600326538,
+        -0.07039999961853027,
+        -2.998744487762451
+      ],
+      "boundsMax": [
+        0.7805112600326538,
+        1.846742868423462,
+        2.5025455951690674
+      ]
+    },
+    "three-quarter": {
+      "bytes": 85224,
+      "boundsMin": [
+        -0.7805112600326538,
+        -0.07039999961853027,
+        -2.998744487762451
+      ],
+      "boundsMax": [
+        0.7805112600326538,
+        1.846742868423462,
+        2.5025455951690674
+      ]
+    },
+    "wireframe": {
+      "bytes": 143069,
+      "boundsMin": [
+        -0.7805112600326538,
+        -0.07039999961853027,
+        -2.998744487762451
+      ],
+      "boundsMax": [
+        0.7805112600326538,
+        1.846742868423462,
+        2.5025455951690674
+      ]
+    },
+    "dig": {
+      "bytes": 84547,
+      "boundsMin": [
+        -0.7805112600326538,
+        -0.33671247959136963,
+        -2.9063966274261475
+      ],
+      "boundsMax": [
+        0.7805112600326538,
+        1.8515589237213135,
+        2.5073935985565186
+      ]
+    },
+    "feed": {
+      "bytes": 89295,
+      "boundsMin": [
+        -0.7805112600326538,
+        -0.1416493058204651,
+        -2.997979164123535
+      ],
+      "boundsMax": [
+        0.7805112600326538,
+        1.8580617904663086,
+        2.3275256156921387
+      ]
+    }
+  },
+  "method": [
+    "batch static child meshes by animated parent + material",
+    "bake local transforms before batching",
+    "VTK quadric decimation with volume preservation",
+    "nearest-surface transport of retained vertex attributes",
+    "preserve animation sampler arrays and clip names"
+  ],
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+}

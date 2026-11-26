@@ -1,0 +1,207 @@
+{
+  "species": "cascarrumo",
+  "variant": "forest-detritivore",
+  "version": "v02",
+  "source": "assets/models/creatures/detritivoros/cascarrumo-animated.glb",
+  "sourceStats": {
+    "bytes": 902900,
+    "sha256": "a45001300e4cda1a1886590abb88fadf21abb9b7036b41c524de82433a0c5006",
+    "trianglesMeshDefinitions": 1472,
+    "trianglesDrawnPerInstance": 7440,
+    "meshDefinitions": 10,
+    "meshNodes": 96,
+    "primitives": 10,
+    "estimatedDrawCalls": 96,
+    "materials": 7,
+    "nodes": 134,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "cascarrumo_idle",
+      "cascarrumo_walk",
+      "cascarrumo_feed",
+      "cascarrumo_flee",
+      "cascarrumo_defend",
+      "cascarrumo_rest",
+      "cascarrumo_die"
+    ]
+  },
+  "animationSignature": "4184d449765c64314a52ffc30d89ccfdfb21b95b6ed29b5fc75d8bb5cb661479",
+  "lods": [
+    {
+      "bytes": 1029976,
+      "sha256": "23cd6d90c2d7e4a963d1b4920bffd0a0eac017c29b7bbf1182a62cd6debbf8bf",
+      "trianglesMeshDefinitions": 6476,
+      "trianglesDrawnPerInstance": 6476,
+      "meshDefinitions": 70,
+      "meshNodes": 70,
+      "primitives": 70,
+      "estimatedDrawCalls": 70,
+      "materials": 7,
+      "nodes": 204,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "cascarrumo_idle",
+        "cascarrumo_walk",
+        "cascarrumo_feed",
+        "cascarrumo_flee",
+        "cascarrumo_defend",
+        "cascarrumo_rest",
+        "cascarrumo_die"
+      ],
+      "targetTriangles": 6500,
+      "animationSignature": "4184d449765c64314a52ffc30d89ccfdfb21b95b6ed29b5fc75d8bb5cb661479",
+      "batchedGroups": 70,
+      "sourceMeshNodes": 96
+    },
+    {
+      "bytes": 957268,
+      "sha256": "c1946c2969ebe0c177a7c5f4f9d9b141e00b79c472d39e514d6fc1d14196a559",
+      "trianglesMeshDefinitions": 3170,
+      "trianglesDrawnPerInstance": 3170,
+      "meshDefinitions": 70,
+      "meshNodes": 70,
+      "primitives": 70,
+      "estimatedDrawCalls": 70,
+      "materials": 7,
+      "nodes": 204,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "cascarrumo_idle",
+        "cascarrumo_walk",
+        "cascarrumo_feed",
+        "cascarrumo_flee",
+        "cascarrumo_defend",
+        "cascarrumo_rest",
+        "cascarrumo_die"
+      ],
+      "targetTriangles": 3200,
+      "animationSignature": "4184d449765c64314a52ffc30d89ccfdfb21b95b6ed29b5fc75d8bb5cb661479",
+      "batchedGroups": 70,
+      "sourceMeshNodes": 96
+    },
+    {
+      "bytes": 914204,
+      "sha256": "8057a634f42cd137541d542993dc90dd5730f0440da7ebfe3bda3f61a85531b7",
+      "trianglesMeshDefinitions": 1296,
+      "trianglesDrawnPerInstance": 1296,
+      "meshDefinitions": 70,
+      "meshNodes": 70,
+      "primitives": 70,
+      "estimatedDrawCalls": 70,
+      "materials": 7,
+      "nodes": 204,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "cascarrumo_idle",
+        "cascarrumo_walk",
+        "cascarrumo_feed",
+        "cascarrumo_flee",
+        "cascarrumo_defend",
+        "cascarrumo_rest",
+        "cascarrumo_die"
+      ],
+      "targetTriangles": 1300,
+      "animationSignature": "4184d449765c64314a52ffc30d89ccfdfb21b95b6ed29b5fc75d8bb5cb661479",
+      "batchedGroups": 70,
+      "sourceMeshNodes": 96
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 202446,
+      "boundsMin": [
+        -0.53534996509552,
+        0.06508034467697144,
+        -0.7117824554443359
+      ],
+      "boundsMax": [
+        0.53534996509552,
+        0.6725861430168152,
+        1.0826067924499512
+      ]
+    },
+    "front": {
+      "bytes": 192512,
+      "boundsMin": [
+        -0.53534996509552,
+        0.06508034467697144,
+        -0.7117824554443359
+      ],
+      "boundsMax": [
+        0.53534996509552,
+        0.6725861430168152,
+        1.0826067924499512
+      ]
+    },
+    "three-quarter": {
+      "bytes": 83122,
+      "boundsMin": [
+        -0.53534996509552,
+        0.06508034467697144,
+        -0.7117824554443359
+      ],
+      "boundsMax": [
+        0.53534996509552,
+        0.6725861430168152,
+        1.0826067924499512
+      ]
+    },
+    "wireframe": {
+      "bytes": 247839,
+      "boundsMin": [
+        -0.53534996509552,
+        0.06508034467697144,
+        -0.7117824554443359
+      ],
+      "boundsMax": [
+        0.53534996509552,
+        0.6725861430168152,
+        1.0826067924499512
+      ]
+    },
+    "cascarrumo_feed": {
+      "bytes": 87152,
+      "boundsMin": [
+        -0.53534996509552,
+        0.005877768620848656,
+        -0.6797991991043091
+      ],
+      "boundsMax": [
+        0.53534996509552,
+        0.6776221394538879,
+        1.0848846435546875
+      ]
+    },
+    "cascarrumo_defend": {
+      "bytes": 73973,
+      "boundsMin": [
+        -0.5478044152259827,
+        -0.09834756702184677,
+        -0.764136552810669
+      ],
+      "boundsMax": [
+        0.5194711089134216,
+        0.5763659477233887,
+        1.035082459449768
+      ]
+    }
+  },
+  "method": [
+    "batch static child meshes by animated parent + material",
+    "bake local transforms before batching",
+    "VTK quadric decimation with volume preservation",
+    "nearest-surface transport of retained vertex attributes",
+    "preserve animation sampler arrays and clip names"
+  ],
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+}

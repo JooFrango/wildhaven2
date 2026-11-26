@@ -1,0 +1,211 @@
+{
+  "species": "nivelio",
+  "variant": "snow-mountain",
+  "version": "v02",
+  "source": "assets/models/creatures/detritivoros/nivelio-animated.glb",
+  "sourceStats": {
+    "bytes": 419176,
+    "sha256": "f45c5c4d73811eaabec2e637c89dfdb4d245a7482141218466084831d5ec0eae",
+    "trianglesMeshDefinitions": 1616,
+    "trianglesDrawnPerInstance": 2752,
+    "meshDefinitions": 9,
+    "meshNodes": 31,
+    "primitives": 9,
+    "estimatedDrawCalls": 31,
+    "materials": 5,
+    "nodes": 44,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "nivelio_idle",
+      "nivelio_walk",
+      "nivelio_feed",
+      "nivelio_flee",
+      "nivelio_defend",
+      "nivelio_rest",
+      "nivelio_die"
+    ]
+  },
+  "animationSignature": "642ae1971f2ed0820e4d3f469a2180015855c22c527b4dbc4f57f7153937367d",
+  "resolvedPreviewActions": [
+    "nivelio_feed",
+    "nivelio_flee"
+  ],
+  "lods": [
+    {
+      "bytes": 339964,
+      "sha256": "7eb16045432f5146b5862ae73e54e1fc07c9bb8bed735ba40d368425635f7f15",
+      "trianglesMeshDefinitions": 2394,
+      "trianglesDrawnPerInstance": 2394,
+      "meshDefinitions": 22,
+      "meshNodes": 22,
+      "primitives": 22,
+      "estimatedDrawCalls": 22,
+      "materials": 5,
+      "nodes": 66,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "nivelio_idle",
+        "nivelio_walk",
+        "nivelio_feed",
+        "nivelio_flee",
+        "nivelio_defend",
+        "nivelio_rest",
+        "nivelio_die"
+      ],
+      "targetTriangles": 2400,
+      "animationSignature": "642ae1971f2ed0820e4d3f469a2180015855c22c527b4dbc4f57f7153937367d",
+      "batchedGroups": 22,
+      "sourceMeshNodes": 31
+    },
+    {
+      "bytes": 313404,
+      "sha256": "c003e9ca91b07249ceced1519496cb8cdd81624cbf87be697d1f2a5778645e43",
+      "trianglesMeshDefinitions": 1186,
+      "trianglesDrawnPerInstance": 1186,
+      "meshDefinitions": 22,
+      "meshNodes": 22,
+      "primitives": 22,
+      "estimatedDrawCalls": 22,
+      "materials": 5,
+      "nodes": 66,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "nivelio_idle",
+        "nivelio_walk",
+        "nivelio_feed",
+        "nivelio_flee",
+        "nivelio_defend",
+        "nivelio_rest",
+        "nivelio_die"
+      ],
+      "targetTriangles": 1200,
+      "animationSignature": "642ae1971f2ed0820e4d3f469a2180015855c22c527b4dbc4f57f7153937367d",
+      "batchedGroups": 22,
+      "sourceMeshNodes": 31
+    },
+    {
+      "bytes": 297832,
+      "sha256": "4a41db5c71e9783d6e22f6a41b89f67be7f0f3bcd2e0cb4411d8585470ae194e",
+      "trianglesMeshDefinitions": 477,
+      "trianglesDrawnPerInstance": 477,
+      "meshDefinitions": 22,
+      "meshNodes": 22,
+      "primitives": 22,
+      "estimatedDrawCalls": 22,
+      "materials": 5,
+      "nodes": 66,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "nivelio_idle",
+        "nivelio_walk",
+        "nivelio_feed",
+        "nivelio_flee",
+        "nivelio_defend",
+        "nivelio_rest",
+        "nivelio_die"
+      ],
+      "targetTriangles": 500,
+      "animationSignature": "642ae1971f2ed0820e4d3f469a2180015855c22c527b4dbc4f57f7153937367d",
+      "batchedGroups": 22,
+      "sourceMeshNodes": 31
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 162540,
+      "boundsMin": [
+        -0.47436001896858215,
+        -0.0031606978736817837,
+        -0.6281256079673767
+      ],
+      "boundsMax": [
+        0.47436001896858215,
+        0.543404757976532,
+        0.5866408944129944
+      ]
+    },
+    "front": {
+      "bytes": 154555,
+      "boundsMin": [
+        -0.47436001896858215,
+        -0.0031606978736817837,
+        -0.6281256079673767
+      ],
+      "boundsMax": [
+        0.47436001896858215,
+        0.543404757976532,
+        0.5866408944129944
+      ]
+    },
+    "three-quarter": {
+      "bytes": 83716,
+      "boundsMin": [
+        -0.47436001896858215,
+        -0.0031606978736817837,
+        -0.6281256079673767
+      ],
+      "boundsMax": [
+        0.47436001896858215,
+        0.543404757976532,
+        0.5866408944129944
+      ]
+    },
+    "wireframe": {
+      "bytes": 205058,
+      "boundsMin": [
+        -0.47436001896858215,
+        -0.0031606978736817837,
+        -0.6281256079673767
+      ],
+      "boundsMax": [
+        0.47436001896858215,
+        0.543404757976532,
+        0.5866408944129944
+      ]
+    },
+    "nivelio_feed": {
+      "bytes": 86189,
+      "boundsMin": [
+        -0.47435998916625977,
+        0.027274424210190773,
+        -0.6194307208061218
+      ],
+      "boundsMax": [
+        0.47435998916625977,
+        0.5536573529243469,
+        0.5943074226379395
+      ]
+    },
+    "nivelio_flee": {
+      "bytes": 99004,
+      "boundsMin": [
+        -0.47248879075050354,
+        0.18972130119800568,
+        -0.4635034501552582
+      ],
+      "boundsMax": [
+        0.4763406217098236,
+        0.8383599519729614,
+        0.5855506062507629
+      ]
+    }
+  },
+  "method": [
+    "batch static child meshes by animated parent + material",
+    "bake local transforms before batching",
+    "VTK quadric decimation with volume preservation",
+    "nearest-surface transport of retained vertex attributes",
+    "preserve animation sampler arrays and clip names"
+  ],
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+}

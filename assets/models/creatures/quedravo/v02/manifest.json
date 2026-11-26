@@ -1,0 +1,45 @@
+{
+  "species_id": "quedravo",
+  "version": "v02",
+  "stage": "blockout_optimized_for_form_review",
+  "concept_approved": true,
+  "geometry_approved": false,
+  "previous_version": "v01 unchanged; PR #26",
+  "repository": "carioca1111/wildhaven-new",
+  "working_branch": "feat/quedravo-blockout-2000tris-v02",
+  "glb": "quedravo_v02_blockout_2000.glb",
+  "sha256": "51739b996dfd82e7d01209cb4347df42488952feb16468c764962645ea14ee5e",
+  "bytes": 1388384,
+  "triangles": 2000,
+  "mesh_groups": 9,
+  "material_count": 1,
+  "uv_atlas": "quedravo_v02_uv_atlas.png",
+  "texture_original_identical": true,
+  "skin_count": 0,
+  "animation_count": 0,
+  "additional_color_only_meshes": 0,
+  "reduction_triangles_percent": 70.81,
+  "reduction_bytes_percent": 17.65,
+  "wingspan_m": 11.0365,
+  "renders": [
+    "previews/quedravo_v02_real_glb_frente.png",
+    "previews/quedravo_v02_real_glb_perfil.png",
+    "previews/quedravo_v02_real_glb_tres_quartos.png"
+  ],
+  "comparison": "previews/comparativo_v01_v02.png",
+  "source": [
+    "source/build.py",
+    "source/render.py",
+    "source/validate.py"
+  ],
+  "quality_limits": "Close-up feather 3D volume and some small-face faceting reduced. Silhouette and UV atlas retained; artistic approval pending.",
+  "alpha_modified": false,
+  "status": {
+    "technical_local": "passed",
+    "artistic": "pending_review",
+    "github_binary_publication": "published_git_blob_sha_and_byte_size_verified",
+    "remote_full_sha256_redownload": "not_performed"
+  },
+  "github_pr": "https://github.com/carioca1111/wildhaven-new/pull/27",
+  "git_blob_sha": "d0c8ba4cd482931a437401a4ee932628adeb8b28"
+}

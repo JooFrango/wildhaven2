@@ -1,0 +1,211 @@
+{
+  "species": "dunebrio",
+  "variant": "desert",
+  "version": "v02",
+  "source": "assets/models/creatures/detritivoros/dunebrio-animated.glb",
+  "sourceStats": {
+    "bytes": 503788,
+    "sha256": "9dbd3269a09e901bdbe0ff5d6399ba7e2a4b7021663c82febcdd961e1f7723ad",
+    "trianglesMeshDefinitions": 2768,
+    "trianglesDrawnPerInstance": 3648,
+    "meshDefinitions": 10,
+    "meshNodes": 29,
+    "primitives": 10,
+    "estimatedDrawCalls": 29,
+    "materials": 5,
+    "nodes": 41,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "dunebrio_idle",
+      "dunebrio_walk",
+      "dunebrio_feed",
+      "dunebrio_flee",
+      "dunebrio_defend",
+      "dunebrio_rest",
+      "dunebrio_die"
+    ]
+  },
+  "animationSignature": "98674b332fbba6ea9ab31f764d911263dd61ad9d756da8c45d9dc55d986bc75b",
+  "resolvedPreviewActions": [
+    "dunebrio_feed",
+    "dunebrio_defend"
+  ],
+  "lods": [
+    {
+      "bytes": 331764,
+      "sha256": "adcd46b3b9ca238a1a13d6b4e1456f0ce19631a834e3004c96942963dc975636",
+      "trianglesMeshDefinitions": 2988,
+      "trianglesDrawnPerInstance": 2988,
+      "meshDefinitions": 21,
+      "meshNodes": 21,
+      "primitives": 21,
+      "estimatedDrawCalls": 21,
+      "materials": 5,
+      "nodes": 62,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "dunebrio_idle",
+        "dunebrio_walk",
+        "dunebrio_feed",
+        "dunebrio_flee",
+        "dunebrio_defend",
+        "dunebrio_rest",
+        "dunebrio_die"
+      ],
+      "targetTriangles": 3000,
+      "animationSignature": "98674b332fbba6ea9ab31f764d911263dd61ad9d756da8c45d9dc55d986bc75b",
+      "batchedGroups": 21,
+      "sourceMeshNodes": 29
+    },
+    {
+      "bytes": 298552,
+      "sha256": "11354fc677bd19c57c03d959060c5bdeea7a31db5ee88d3876564984ee31c25b",
+      "trianglesMeshDefinitions": 1480,
+      "trianglesDrawnPerInstance": 1480,
+      "meshDefinitions": 21,
+      "meshNodes": 21,
+      "primitives": 21,
+      "estimatedDrawCalls": 21,
+      "materials": 5,
+      "nodes": 62,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "dunebrio_idle",
+        "dunebrio_walk",
+        "dunebrio_feed",
+        "dunebrio_flee",
+        "dunebrio_defend",
+        "dunebrio_rest",
+        "dunebrio_die"
+      ],
+      "targetTriangles": 1500,
+      "animationSignature": "98674b332fbba6ea9ab31f764d911263dd61ad9d756da8c45d9dc55d986bc75b",
+      "batchedGroups": 21,
+      "sourceMeshNodes": 29
+    },
+    {
+      "bytes": 277084,
+      "sha256": "7558850a408feb8a5fd1e4f70a32fc10fabdd15529dfd1b73c9b9de11a46bd19",
+      "trianglesMeshDefinitions": 580,
+      "trianglesDrawnPerInstance": 580,
+      "meshDefinitions": 21,
+      "meshNodes": 21,
+      "primitives": 21,
+      "estimatedDrawCalls": 21,
+      "materials": 5,
+      "nodes": 62,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "dunebrio_idle",
+        "dunebrio_walk",
+        "dunebrio_feed",
+        "dunebrio_flee",
+        "dunebrio_defend",
+        "dunebrio_rest",
+        "dunebrio_die"
+      ],
+      "targetTriangles": 600,
+      "animationSignature": "98674b332fbba6ea9ab31f764d911263dd61ad9d756da8c45d9dc55d986bc75b",
+      "batchedGroups": 21,
+      "sourceMeshNodes": 29
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 221092,
+      "boundsMin": [
+        -0.7526400089263916,
+        0.08017619699239731,
+        -0.7379012107849121
+      ],
+      "boundsMax": [
+        0.7526400089263916,
+        0.839647114276886,
+        1.1947081089019775
+      ]
+    },
+    "front": {
+      "bytes": 230068,
+      "boundsMin": [
+        -0.7526400089263916,
+        0.08017619699239731,
+        -0.7379012107849121
+      ],
+      "boundsMax": [
+        0.7526400089263916,
+        0.839647114276886,
+        1.1947081089019775
+      ]
+    },
+    "three-quarter": {
+      "bytes": 71463,
+      "boundsMin": [
+        -0.7526400089263916,
+        0.08017619699239731,
+        -0.7379012107849121
+      ],
+      "boundsMax": [
+        0.7526400089263916,
+        0.839647114276886,
+        1.1947081089019775
+      ]
+    },
+    "wireframe": {
+      "bytes": 231449,
+      "boundsMin": [
+        -0.7526400089263916,
+        0.08017619699239731,
+        -0.7379012107849121
+      ],
+      "boundsMax": [
+        0.7526400089263916,
+        0.839647114276886,
+        1.1947081089019775
+      ]
+    },
+    "dunebrio_feed": {
+      "bytes": 76598,
+      "boundsMin": [
+        -0.7526400089263916,
+        0.0500950925052166,
+        -0.7109546661376953
+      ],
+      "boundsMax": [
+        0.7526400089263916,
+        0.8538447618484497,
+        1.2050716876983643
+      ]
+    },
+    "dunebrio_defend": {
+      "bytes": 64100,
+      "boundsMin": [
+        -0.7526400089263916,
+        0.10972634702920914,
+        -0.7821906805038452
+      ],
+      "boundsMax": [
+        0.7526400089263916,
+        0.830917477607727,
+        1.0820164680480957
+      ]
+    }
+  },
+  "method": [
+    "batch static child meshes by animated parent + material",
+    "bake local transforms before batching",
+    "VTK quadric decimation with volume preservation",
+    "nearest-surface transport of retained vertex attributes",
+    "preserve animation sampler arrays and clip names"
+  ],
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+}

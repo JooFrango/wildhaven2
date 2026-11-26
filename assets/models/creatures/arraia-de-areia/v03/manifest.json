@@ -1,0 +1,218 @@
+{
+  "species": "Arraia-de-Areia",
+  "version": "v03",
+  "stage": "rig_and_glTF_animations",
+  "status": {
+    "concept": "approved",
+    "v01_shape": "approved",
+    "v02_refinement": "proceeded_to_rig_on_user_request",
+    "v03_animations": "awaiting_visual_review",
+    "integration": "not_in_game"
+  },
+  "base_glb": "arraia-de-areia-v02-anatomia-refinada.glb",
+  "base_glb_sha256": "456478469e0b7396ef09dc5a1cfafc45ba4a9123ccd978b971635fa53038b995",
+  "glb": "arraia-de-areia-v03-rig-animated-LOD0.glb",
+  "sha256": "c6d20ba62d51632db0a660974e9febb3ba65a09e6e56ab1ccf59269b0da4f672",
+  "bytes": 5607416,
+  "triangles": 6576,
+  "vertices": 19728,
+  "meshes": 1,
+  "materials": 1,
+  "texture_resolution": [
+    2048,
+    2048
+  ],
+  "skins": 1,
+  "joint_count": 23,
+  "joint_names": [
+    "root",
+    "mantle_center",
+    "mantle_rear",
+    "mantle_front",
+    "head",
+    "lower_jaw",
+    "filter_rake",
+    "tusk_L",
+    "tusk_R",
+    "tail_root",
+    "tail_mid",
+    "tail_distal",
+    "tail_tip",
+    "wing_L_root",
+    "wing_L_inner",
+    "wing_L_mid",
+    "wing_L_outer",
+    "wing_L_tip",
+    "wing_R_root",
+    "wing_R_inner",
+    "wing_R_mid",
+    "wing_R_outer",
+    "wing_R_tip"
+  ],
+  "animation_count": 22,
+  "clips": [
+    {
+      "name": "idle",
+      "duration_s": 5.0,
+      "keyframes": 33,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "swim_sand",
+      "duration_s": 3.6,
+      "keyframes": 37,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "swim_fast",
+      "duration_s": 2.4,
+      "keyframes": 37,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "glide_shallow",
+      "duration_s": 4.8,
+      "keyframes": 33,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "dive",
+      "duration_s": 4.0,
+      "keyframes": 33,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "surface",
+      "duration_s": 3.8,
+      "keyframes": 33,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "burrow",
+      "duration_s": 4.5,
+      "keyframes": 37,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "turn_left",
+      "duration_s": 3.2,
+      "keyframes": 33,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "turn_right",
+      "duration_s": 3.2,
+      "keyframes": 33,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "feed_roots",
+      "duration_s": 5.2,
+      "keyframes": 37,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "filter_feed",
+      "duration_s": 4.5,
+      "keyframes": 37,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "scavenge",
+      "duration_s": 5.0,
+      "keyframes": 37,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "alert",
+      "duration_s": 2.9,
+      "keyframes": 29,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "threat_display",
+      "duration_s": 4.2,
+      "keyframes": 37,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "fin_slap",
+      "duration_s": 2.9,
+      "keyframes": 33,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "tail_sweep",
+      "duration_s": 3.2,
+      "keyframes": 37,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "charge",
+      "duration_s": 2.7,
+      "keyframes": 37,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "evade",
+      "duration_s": 3.4,
+      "keyframes": 33,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "hurt",
+      "duration_s": 2.2,
+      "keyframes": 29,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "rest",
+      "duration_s": 6.0,
+      "keyframes": 33,
+      "loop": true,
+      "channels": 24
+    },
+    {
+      "name": "death",
+      "duration_s": 5.3,
+      "keyframes": 41,
+      "loop": false,
+      "channels": 24
+    },
+    {
+      "name": "breach",
+      "duration_s": 4.8,
+      "keyframes": 41,
+      "loop": false,
+      "channels": 24
+    }
+  ],
+  "geometry_uv_topology_identical_to_v02": true,
+  "embedded_albedo_byte_identical_to_v02": true,
+  "color_patches_extra_meshes": 0,
+  "rig_type": "genuine glTF weighted skin (JOINTS_0/WEIGHTS_0 + inverse bind matrices)",
+  "lods_created": 0,
+  "gameplay_integration": "not_started",
+  "independent_glb_playback_verified": true,
+  "real_preview_pngs": 4,
+  "real_preview_gifs": 6
+}

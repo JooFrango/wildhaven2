@@ -1,0 +1,270 @@
+{
+  "species_id": "caudraco",
+  "name": "Caudraco",
+  "version": "v02",
+  "stage": "skinned_animated_for_artistic_review",
+  "previous_static_glb_preserved": true,
+  "v01_base": {
+    "relative_path": "../v01/caudraco-v01-textured-blockout.glb",
+    "bytes": 3619064,
+    "sha256": "b89299deaee686fe55fc8f7ccadb58f112f8991d3cd2b870f70b255d77d45d29"
+  },
+  "glb": {
+    "path": "caudraco-v02-animated-LOD0.glb",
+    "bytes": 3952788,
+    "sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d",
+    "triangles": 1888,
+    "triangle_count_method": "mesh primitive triangles indexed after reimport",
+    "vertices": 5664,
+    "uv_texture_px": [
+      2048,
+      2048
+    ],
+    "materials": 1,
+    "skins": 1,
+    "joints": 26,
+    "bone_names": [
+      "root",
+      "pelvis",
+      "spine",
+      "chest",
+      "neck",
+      "head",
+      "jaw",
+      "tail1",
+      "tail2",
+      "tail3",
+      "foreR_upper",
+      "foreR_elbow",
+      "foreR_wrist",
+      "foreR_paw",
+      "foreL_upper",
+      "foreL_elbow",
+      "foreL_wrist",
+      "foreL_paw",
+      "hindR_upper",
+      "hindR_elbow",
+      "hindR_wrist",
+      "hindR_paw",
+      "hindL_upper",
+      "hindL_elbow",
+      "hindL_wrist",
+      "hindL_paw"
+    ],
+    "animation_count": 16
+  },
+  "texture": {
+    "source_v01_embedded_identical": true,
+    "painted_markings_not_polygons": true
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.0846,
+      "samples": 73
+    },
+    {
+      "name": "walk",
+      "duration_seconds": 1.65,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.2472,
+      "samples": 41
+    },
+    {
+      "name": "trot",
+      "duration_seconds": 1.12,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.3095,
+      "samples": 28
+    },
+    {
+      "name": "flee",
+      "duration_seconds": 0.74,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.42,
+      "samples": 25
+    },
+    {
+      "name": "turn_left",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "channels": 10,
+      "max_angle_rad": 0.18,
+      "samples": 32
+    },
+    {
+      "name": "turn_right",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "channels": 10,
+      "max_angle_rad": 0.18,
+      "samples": 32
+    },
+    {
+      "name": "alert",
+      "duration_seconds": 1.45,
+      "loop": false,
+      "channels": 5,
+      "max_angle_rad": 0.12,
+      "samples": 36
+    },
+    {
+      "name": "sniff",
+      "duration_seconds": 2.3,
+      "loop": true,
+      "channels": 5,
+      "max_angle_rad": 0.12,
+      "samples": 56
+    },
+    {
+      "name": "forage",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "channels": 8,
+      "max_angle_rad": 0.18,
+      "samples": 73
+    },
+    {
+      "name": "feed",
+      "duration_seconds": 2.6,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.1984,
+      "samples": 63
+    },
+    {
+      "name": "drink",
+      "duration_seconds": 2.7,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.2496,
+      "samples": 66
+    },
+    {
+      "name": "rest",
+      "duration_seconds": 2.2,
+      "loop": false,
+      "channels": 15,
+      "max_angle_rad": 0.19,
+      "samples": 54
+    },
+    {
+      "name": "hurt",
+      "duration_seconds": 0.95,
+      "loop": false,
+      "channels": 3,
+      "max_angle_rad": 0.1195,
+      "samples": 25
+    },
+    {
+      "name": "death",
+      "duration_seconds": 2.4,
+      "loop": false,
+      "channels": 15,
+      "max_angle_rad": 0.32,
+      "samples": 59
+    },
+    {
+      "name": "tail_sweep",
+      "duration_seconds": 1.25,
+      "loop": false,
+      "channels": 7,
+      "max_angle_rad": 0.7692,
+      "samples": 31
+    },
+    {
+      "name": "burrow_block",
+      "duration_seconds": 1.7,
+      "loop": false,
+      "channels": 5,
+      "max_angle_rad": 0.3,
+      "samples": 42
+    }
+  ],
+  "defense_specials": [
+    "tail_sweep",
+    "burrow_block"
+  ],
+  "rig": "weighted glTF skin with JOINTS_0, WEIGHTS_0 and inverse-bind-matrices",
+  "limitations": [
+    "in-place, possible foot sliding",
+    "no physics/IK ground adjustment",
+    "no terrain interaction, IA or gameplay",
+    "visual approval pending",
+    "LOD0 only in this stage"
+  ],
+  "approval": {
+    "concepts": "user approved 4 designs",
+    "v01_form": "user requested animations",
+    "animations_v02": "awaiting artistic review"
+  },
+  "publication": "branch_published_pending_artistic_review",
+  "integrated_game": false,
+  "previews": {
+    "caudraco-v02-burrow_block-real-glb.gif": {
+      "bytes": 1111814,
+      "sha256": "e49ae8d7501e0e8100d5337c88eb118c3fbfaa78c92f59ac68fc83a0197a7dc8",
+      "source_glb_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d"
+    },
+    "caudraco-v02-real-glb-profile.png": {
+      "bytes": 302525,
+      "sha256": "bbd2fbbf7c65f7169534242e30934b40780a3831ea6583d571adc4a2aecc6726",
+      "source_glb_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d"
+    },
+    "caudraco-v02-real-glb-front.png": {
+      "bytes": 297569,
+      "sha256": "b71e6d88457fc49f2eb4f097cda325c66c20c959abc45bf9645387ee4c006b91",
+      "source_glb_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d"
+    },
+    "caudraco-v02-walk-real-glb.gif": {
+      "bytes": 1663519,
+      "sha256": "0b25d1ef787a95b2f81a24a087b7fd790e21ca1a60ed10a7c79d997c3cd7bec6",
+      "source_glb_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d"
+    },
+    "caudraco-v02-tail_sweep-real-glb.gif": {
+      "bytes": 1662566,
+      "sha256": "497f43701eb7fb98d539121e8ec613405268bd0051a9e842fb0d5b4a7c8bd9c6",
+      "source_glb_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d"
+    },
+    "caudraco-v02-three-real-glb-views.png": {
+      "bytes": 611122,
+      "sha256": "331204d64801d6e208a4755bac652a58d43e545e518b98fbd88b061016507963",
+      "source_glb_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d"
+    },
+    "caudraco-v02-real-glb-three-quarter.png": {
+      "bytes": 288097,
+      "sha256": "7ba5c82eeb2b50302d96437554da1b6ca70f057ecb98a9b6ec2406296183f09f",
+      "source_glb_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d"
+    }
+  },
+  "glb_reimport_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d",
+  "animation_playback_validation": {
+    "reimport_sha256": "e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d",
+    "rest_pose_max_error_m": 2.9802322387695312e-08,
+    "per_clip_vertex_movement_m": {
+      "idle": 0.04057,
+      "walk": 0.06307,
+      "trot": 0.11333,
+      "flee": 0.11391,
+      "turn_left": 0.2637,
+      "turn_right": 0.2637,
+      "alert": 0.02787,
+      "sniff": 0.02785,
+      "forage": 0.06025,
+      "feed": 0.06877,
+      "drink": 0.0802,
+      "rest": 0.05566,
+      "hurt": 0.05224,
+      "death": 0.28732,
+      "tail_sweep": 0.22753,
+      "burrow_block": 0.11449
+    },
+    "method": "CPU linear blend skinning from exported GLB inverse bind matrices, keyframes, JOINTS_0 and WEIGHTS_0"
+  }
+}

@@ -1,0 +1,769 @@
+{
+  "species_id": "clavascarnio",
+  "name": "Clavascárnio — Caçador Couraçado das Dunas",
+  "stage": "static blockout pending director form approval",
+  "version": "v01",
+  "concept": "User-provided Clavascárnio illustration (approved 2026-11-12)",
+  "reference": "Torvardo v03 with Mastélio v03 and Garruva v03 as secondary style examples",
+  "asset": "clavascarnio-v01-blockout.glb",
+  "bytes": 1620012,
+  "sha256": "a5922011981db80dbfdfaa9fcf7e8c2bfe45d962c5d23b459932a86260bb8d96",
+  "meshes": 144,
+  "nodes": 145,
+  "triangles_source": 6152,
+  "triangles_reimported": 6152,
+  "joint_count": 0,
+  "skins": 0,
+  "animations": 0,
+  "LOD_levels": [
+    "blockout only"
+  ],
+  "bounds_m": [
+    [
+      -2.488,
+      -0.0,
+      -2.8897
+    ],
+    [
+      2.4882,
+      3.0,
+      1.5933
+    ]
+  ],
+  "dimensions_m": {
+    "width_x": 4.976,
+    "height_y": 3.0,
+    "length_z": 4.483
+  },
+  "materials_uv": 1,
+  "texture_atlas": "clavascarnio-uv-v01.png",
+  "parts": [
+    {
+      "name": "cephalothorax_carapace_primary",
+      "triangles": 256,
+      "palette": 0
+    },
+    {
+      "name": "carapace_keel_L",
+      "triangles": 48,
+      "palette": 4
+    },
+    {
+      "name": "front_brow_L",
+      "triangles": 36,
+      "palette": 1
+    },
+    {
+      "name": "carapace_keel_R",
+      "triangles": 48,
+      "palette": 4
+    },
+    {
+      "name": "front_brow_R",
+      "triangles": 36,
+      "palette": 1
+    },
+    {
+      "name": "ventral_scutum_01",
+      "triangles": 48,
+      "palette": 3
+    },
+    {
+      "name": "ventral_scutum_02",
+      "triangles": 48,
+      "palette": 3
+    },
+    {
+      "name": "ventral_scutum_03",
+      "triangles": 48,
+      "palette": 3
+    },
+    {
+      "name": "ventral_scutum_04",
+      "triangles": 48,
+      "palette": 3
+    },
+    {
+      "name": "ventral_scutum_05",
+      "triangles": 48,
+      "palette": 3
+    },
+    {
+      "name": "rim_spur_L_01",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "rim_spur_L_02",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "rim_spur_L_03",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "rim_spur_L_04",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "rim_spur_L_05",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "dorsal_spike_L_01",
+      "triangles": 40,
+      "palette": 1
+    },
+    {
+      "name": "dorsal_spike_L_02",
+      "triangles": 40,
+      "palette": 1
+    },
+    {
+      "name": "dorsal_spike_L_03",
+      "triangles": 40,
+      "palette": 1
+    },
+    {
+      "name": "dorsal_spike_L_04",
+      "triangles": 40,
+      "palette": 1
+    },
+    {
+      "name": "rim_spur_R_01",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "rim_spur_R_02",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "rim_spur_R_03",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "rim_spur_R_04",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "rim_spur_R_05",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "dorsal_spike_R_01",
+      "triangles": 40,
+      "palette": 1
+    },
+    {
+      "name": "dorsal_spike_R_02",
+      "triangles": 40,
+      "palette": 1
+    },
+    {
+      "name": "dorsal_spike_R_03",
+      "triangles": 40,
+      "palette": 1
+    },
+    {
+      "name": "dorsal_spike_R_04",
+      "triangles": 40,
+      "palette": 1
+    },
+    {
+      "name": "walk_L1_coxa",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "walk_L1_femur",
+      "triangles": 42,
+      "palette": 1
+    },
+    {
+      "name": "walk_L1_tibia",
+      "triangles": 42,
+      "palette": 4
+    },
+    {
+      "name": "walk_L1_digging_claw",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "walk_L1_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_L1_tarsal_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_L1_spur",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "walk_L2_coxa",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "walk_L2_femur",
+      "triangles": 42,
+      "palette": 1
+    },
+    {
+      "name": "walk_L2_tibia",
+      "triangles": 42,
+      "palette": 4
+    },
+    {
+      "name": "walk_L2_digging_claw",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "walk_L2_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_L2_tarsal_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_L2_spur",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "walk_L3_coxa",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "walk_L3_femur",
+      "triangles": 42,
+      "palette": 1
+    },
+    {
+      "name": "walk_L3_tibia",
+      "triangles": 42,
+      "palette": 4
+    },
+    {
+      "name": "walk_L3_digging_claw",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "walk_L3_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_L3_tarsal_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_L3_spur",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "walk_L4_coxa",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "walk_L4_femur",
+      "triangles": 42,
+      "palette": 1
+    },
+    {
+      "name": "walk_L4_tibia",
+      "triangles": 42,
+      "palette": 4
+    },
+    {
+      "name": "walk_L4_digging_claw",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "walk_L4_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_L4_tarsal_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_L4_spur",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "walk_R1_coxa",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "walk_R1_femur",
+      "triangles": 42,
+      "palette": 1
+    },
+    {
+      "name": "walk_R1_tibia",
+      "triangles": 42,
+      "palette": 4
+    },
+    {
+      "name": "walk_R1_digging_claw",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "walk_R1_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_R1_tarsal_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_R1_spur",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "walk_R2_coxa",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "walk_R2_femur",
+      "triangles": 42,
+      "palette": 1
+    },
+    {
+      "name": "walk_R2_tibia",
+      "triangles": 42,
+      "palette": 4
+    },
+    {
+      "name": "walk_R2_digging_claw",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "walk_R2_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_R2_tarsal_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_R2_spur",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "walk_R3_coxa",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "walk_R3_femur",
+      "triangles": 42,
+      "palette": 1
+    },
+    {
+      "name": "walk_R3_tibia",
+      "triangles": 42,
+      "palette": 4
+    },
+    {
+      "name": "walk_R3_digging_claw",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "walk_R3_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_R3_tarsal_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_R3_spur",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "walk_R4_coxa",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "walk_R4_femur",
+      "triangles": 42,
+      "palette": 1
+    },
+    {
+      "name": "walk_R4_tibia",
+      "triangles": 42,
+      "palette": 4
+    },
+    {
+      "name": "walk_R4_digging_claw",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "walk_R4_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_R4_tarsal_hinge",
+      "triangles": 20,
+      "palette": 2
+    },
+    {
+      "name": "walk_R4_spur",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "cheliped_L_merus",
+      "triangles": 54,
+      "palette": 2
+    },
+    {
+      "name": "cheliped_L_elbow",
+      "triangles": 80,
+      "palette": 2
+    },
+    {
+      "name": "cheliped_L_carpus",
+      "triangles": 54,
+      "palette": 1
+    },
+    {
+      "name": "chela_L_palm",
+      "triangles": 88,
+      "palette": 0
+    },
+    {
+      "name": "chela_L_fixed_finger",
+      "triangles": 72,
+      "palette": 1
+    },
+    {
+      "name": "chela_L_opposing_finger",
+      "triangles": 72,
+      "palette": 1
+    },
+    {
+      "name": "chela_L_upper_tooth_1",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_L_lower_tooth_1",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_L_upper_tooth_2",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_L_lower_tooth_2",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_L_upper_tooth_3",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_L_lower_tooth_3",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_L_upper_tooth_4",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_L_lower_tooth_4",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_L_armored_spur_0",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "chela_L_armored_spur_1",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "chela_L_armored_spur_2",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "chela_L_armored_spur_3",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "cheliped_R_merus",
+      "triangles": 54,
+      "palette": 2
+    },
+    {
+      "name": "cheliped_R_elbow",
+      "triangles": 80,
+      "palette": 2
+    },
+    {
+      "name": "cheliped_R_carpus",
+      "triangles": 54,
+      "palette": 1
+    },
+    {
+      "name": "chela_R_palm",
+      "triangles": 88,
+      "palette": 0
+    },
+    {
+      "name": "chela_R_fixed_finger",
+      "triangles": 72,
+      "palette": 1
+    },
+    {
+      "name": "chela_R_opposing_finger",
+      "triangles": 72,
+      "palette": 1
+    },
+    {
+      "name": "chela_R_upper_tooth_1",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_R_lower_tooth_1",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_R_upper_tooth_2",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_R_lower_tooth_2",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_R_upper_tooth_3",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_R_lower_tooth_3",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_R_upper_tooth_4",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_R_lower_tooth_4",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "chela_R_armored_spur_0",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "chela_R_armored_spur_1",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "chela_R_armored_spur_2",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "chela_R_armored_spur_3",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "eyestalk_L",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "compound_eye_L",
+      "triangles": 80,
+      "palette": 6
+    },
+    {
+      "name": "eye_brow_spike_L",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "palp_L_0",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "palp_L_1",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "facial_horn_L",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "eyestalk_R",
+      "triangles": 42,
+      "palette": 2
+    },
+    {
+      "name": "compound_eye_R",
+      "triangles": 80,
+      "palette": 6
+    },
+    {
+      "name": "eye_brow_spike_R",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "palp_R_0",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "palp_R_1",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "facial_horn_R",
+      "triangles": 40,
+      "palette": 4
+    },
+    {
+      "name": "oral_maxilliped_01",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "oral_maxilliped_02",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "oral_maxilliped_03",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "oral_maxilliped_04",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "oral_maxilliped_05",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "oral_maxilliped_06",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "oral_maxilliped_07",
+      "triangles": 36,
+      "palette": 2
+    },
+    {
+      "name": "oral_cutting_tooth_0",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "oral_cutting_tooth_1",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "oral_cutting_tooth_2",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "oral_cutting_tooth_3",
+      "triangles": 40,
+      "palette": 3
+    },
+    {
+      "name": "oral_cutting_tooth_4",
+      "triangles": 40,
+      "palette": 3
+    }
+  ],
+  "approval": {
+    "concept": "approved",
+    "blockout": "pending",
+    "rig": "not started",
+    "final": "not started"
+  },
+  "integration": "Not integrated into Alpha or runtime."
+}
