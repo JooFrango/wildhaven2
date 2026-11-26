@@ -21,7 +21,7 @@ fn assert_has(obj: &Value, keys: &[String], what: &str) {
 fn hunter_clock_streaming_match_schema_v1() {
     let s = schema();
     let mut h = Hunter::new("h1", "Hunter", 1.0, 2.0, "C", 1.1733, 9);
-    h.crossings.push(Crossing { tick: 1, sim_time_s: 0.2, from: "C".into(), to: "E".into(), x: 0.0, z: 0.0, step_m: 0.23 });
+    h.mv.crossings.push(Crossing { tick: 1, sim_time_s: 0.2, from: "C".into(), to: "E".into(), x: 0.0, z: 0.0, step_m: 0.23 });
     let hv = serde_json::to_value(&h).unwrap();
     assert_has(&hv, &required(&s["$defs"]["hunter"]), "hunter");
     assert_has(&hv["crossings"][0], &required(&s["$defs"]["hunter"]["properties"]["crossings"]["items"]), "crossing");

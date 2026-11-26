@@ -1,7 +1,10 @@
-//! Simulação autoritativa: passo fixo, janelas de streaming por Hunter, snapshot v1.
+//! Simulação autoritativa: passo fixo, janelas de streaming por ator (Hunters e
+//! carroças, nunca a câmera), gameplay e snapshot v1 (campos de gameplay aditivos).
 
 use crate::clock::{ClockState, WorldClock};
-use crate::hunter::{AiParams, Hunter};
+use crate::data::GameData;
+use crate::game::{Ctx, GameState, GameView, Order};
+use crate::hunter::Hunter;
 use crate::nav::NavParams;
 use crate::portals::PortalIndex;
 use crate::terrain::{StreamStats, TerrainStore};
@@ -15,12 +18,12 @@ pub struct World {
     pub clock: WorldClock,
     pub terrain: TerrainStore,
     pub portals: PortalIndex,
-    pub hunters: Vec<Hunter>,
+    pub data: GameData,
+    pub game: GameState,
     pub tick: u64,
     pub sim_time_s: f64,
     pub window_radius_m: f64,
     pub nav: NavParams,
-    pub ai: AiParams,
     pub window: Vec<(String, i32, i32)>,
 }
 
@@ -40,46 +43,43 @@ pub struct Snapshot<'a> {
     pub hunters: &'a [Hunter],
     pub streaming: StreamStats,
     pub window: Vec<WindowChunk>,
+    pub game: GameView<'a>,
 }
 
 impl World {
-    pub fn new(clock: WorldClock, terrain: TerrainStore, portals: PortalIndex, hunters: Vec<Hunter>) -> Self {
-        Self {
-            clock,
-            terrain,
-            portals,
-            hunters,
-            tick: 0,
-            sim_time_s: 0.0,
-            window_radius_m: 384.0,
-            nav: NavParams::default(),
-            ai: AiParams::default(),
-            window: vec![],
-        }
+    pub fn new(clock: WorldClock, terrain: TerrainStore, portals: PortalIndex, data: GameData, game: GameState) -> Self {
+        Self { clock, terrain, portals, data, game, tick: 0, sim_time_s: 0.0, window_radius_m: 384.0, nav: NavParams::default(), window: vec![] }
+    }
+
+    pub fn ctx_run<R>(&mut self, f: impl FnOnce(&mut GameState, &mut Ctx) -> R) -> R {
+        let mut ctx = Ctx { t: &mut self.terrain, portals: &self.portals, nav: &self.nav, data: &self.data, dt: STEP_SECONDS, tick: self.tick, now: self.sim_time_s };
+        f(&mut self.game, &mut ctx)
+    }
+
+    pub fn order(&mut self, o: Order) -> Result<String, String> {
+        self.ctx_run(|g, c| g.order(o, c))
     }
 
     pub fn step(&mut self) {
         self.tick += 1;
         self.sim_time_s = self.tick as f64 * STEP_SECONDS;
-        let pos: Vec<(f64, f64)> = self.hunters.iter().map(|h| (h.x, h.z)).collect();
+        let pos = self.game.actor_positions();
         self.window = self.terrain.update_windows(&pos, self.window_radius_m);
-        for h in self.hunters.iter_mut() {
-            h.step(&mut self.terrain, &self.portals, &self.nav, &self.ai, STEP_SECONDS, self.tick, self.sim_time_s);
-        }
+        self.ctx_run(|g, c| g.step(c));
     }
 
     pub fn snapshot(&self, now_ms: u64) -> Snapshot<'_> {
-        let mut window: Vec<WindowChunk> =
-            self.window.iter().map(|(t, ix, iz)| WindowChunk { tile: t.clone(), ix: *ix, iz: *iz }).collect();
+        let mut window: Vec<WindowChunk> = self.window.iter().map(|(t, ix, iz)| WindowChunk { tile: t.clone(), ix: *ix, iz: *iz }).collect();
         window.sort_by(|a, b| (&a.tile, a.ix, a.iz).cmp(&(&b.tile, b.ix, b.iz)));
         Snapshot {
             schema: SNAPSHOT_SCHEMA,
             tick: self.tick,
             sim_time_s: self.sim_time_s,
             clock: self.clock.state(now_ms),
-            hunters: &self.hunters,
+            hunters: &self.game.hunters,
             streaming: self.terrain.stats.clone(),
             window,
+            game: self.game.view(&self.data),
         }
     }
 }
