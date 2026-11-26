@@ -1,0 +1,204 @@
+{
+  "species": "cervalume",
+  "revision": "v02",
+  "source": "assets/models/creatures/cervalume/v02/cervalume-animated-v02.glb",
+  "sourceStats": {
+    "bytes": 302264,
+    "sha256": "2d2795b38616daf59d74fd8f302a0d866ea5bfdbbf2084a7ced2eb58b33eeb35",
+    "trianglesMeshDefinitions": 1626,
+    "trianglesDrawnPerInstance": 1626,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 12,
+    "estimatedDrawCalls": 12,
+    "materials": 12,
+    "nodes": 25,
+    "skins": 1,
+    "skinJointCounts": [
+      23
+    ],
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "idle",
+      "graze",
+      "alert",
+      "flee",
+      "defend",
+      "antler_push",
+      "follow_herd",
+      "drink",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "animationSignature": "55858e6486a6db9123224130a7e1187b89b393d4f903ac191a9e18924954e9ec",
+  "lods": [
+    {
+      "bytes": 115172,
+      "sha256": "e2917785e8ead0fe9bc663f0066bdc9e4b8971c408480d360d1e0d89df8a4bf9",
+      "trianglesMeshDefinitions": 1492,
+      "trianglesDrawnPerInstance": 1492,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 12,
+      "estimatedDrawCalls": 12,
+      "materials": 12,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "graze",
+        "alert",
+        "flee",
+        "defend",
+        "antler_push",
+        "follow_herd",
+        "drink",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 1500,
+      "animationSignature": "55858e6486a6db9123224130a7e1187b89b393d4f903ac191a9e18924954e9ec",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 90412,
+      "sha256": "55f773713a766242817a963bff2e9e5a3ba4f1182b2892343c047f89b1670e9b",
+      "trianglesMeshDefinitions": 896,
+      "trianglesDrawnPerInstance": 896,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 12,
+      "estimatedDrawCalls": 12,
+      "materials": 12,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "graze",
+        "alert",
+        "flee",
+        "defend",
+        "antler_push",
+        "follow_herd",
+        "drink",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 900,
+      "animationSignature": "55858e6486a6db9123224130a7e1187b89b393d4f903ac191a9e18924954e9ec",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 69272,
+      "sha256": "af071ca3b7a3da1c0845447ef3901738104b537c5e8bf76591dd95c62b6c2230",
+      "trianglesMeshDefinitions": 447,
+      "trianglesDrawnPerInstance": 447,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 12,
+      "estimatedDrawCalls": 12,
+      "materials": 12,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "graze",
+        "alert",
+        "flee",
+        "defend",
+        "antler_push",
+        "follow_herd",
+        "drink",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 450,
+      "animationSignature": "55858e6486a6db9123224130a7e1187b89b393d4f903ac191a9e18924954e9ec",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 331230,
+      "boundsMin": [
+        -0.43155696988105774,
+        0.20499999821186066,
+        -1.877500057220459
+      ],
+      "boundsMax": [
+        0.4399999976158142,
+        2.322676420211792,
+        0.9932228922843933
+      ]
+    },
+    "front": {
+      "bytes": 332879,
+      "boundsMin": [
+        -0.43155696988105774,
+        0.20499999821186066,
+        -1.877500057220459
+      ],
+      "boundsMax": [
+        0.4399999976158142,
+        2.322676420211792,
+        0.9932228922843933
+      ]
+    },
+    "three-quarter": {
+      "bytes": 77634,
+      "boundsMin": [
+        -0.43155696988105774,
+        0.20499999821186066,
+        -1.877500057220459
+      ],
+      "boundsMax": [
+        0.4399999976158142,
+        2.322676420211792,
+        0.9932228922843933
+      ]
+    },
+    "wireframe": {
+      "bytes": 169482,
+      "boundsMin": [
+        -0.43155696988105774,
+        0.20499999821186066,
+        -1.877500057220459
+      ],
+      "boundsMax": [
+        0.4399999976158142,
+        2.322676420211792,
+        0.9932228922843933
+      ]
+    }
+  },
+  "style": "official-guide-defined-planes",
+  "artisticStatus": "revision_artistic_pending_user_approval"
+}

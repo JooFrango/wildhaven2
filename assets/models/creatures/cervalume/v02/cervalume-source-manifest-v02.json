@@ -1,0 +1,23 @@
+{
+  "file": "assets/models/creatures/cervalume/v02/cervalume-animated-v02.glb",
+  "bytes": 302264,
+  "sha256": "2d2795b38616daf59d74fd8f302a0d866ea5bfdbbf2084a7ced2eb58b33eeb35",
+  "triangles": 1626,
+  "joints": 23,
+  "animations": [
+    "walk",
+    "trot",
+    "run",
+    "idle",
+    "graze",
+    "alert",
+    "flee",
+    "defend",
+    "antler_push",
+    "follow_herd",
+    "drink",
+    "rest",
+    "hurt",
+    "death"
+  ]
+}

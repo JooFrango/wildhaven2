@@ -1,0 +1,591 @@
+{
+  "species": "escarvao",
+  "label": "Escarvão",
+  "version": "v01",
+  "stage": "static_anatomical_blockout",
+  "reference": "Wildhaven Torvardo v03; approved Escarvao concept",
+  "coordinate_system": "X forward, Y up, Z lateral",
+  "scale": "metres; bounds measured from geometry below; candidate scale pending art review",
+  "bounding_box_m": {
+    "x_length": 5.205,
+    "y_height": 2.678,
+    "z_width": 4.052
+  },
+  "variants": [
+    {
+      "variant": "cobre",
+      "glb": "escarvao_cobre_blockout_v01.glb",
+      "bytes": 1487248,
+      "sha256": "8c49a92f8f0926ea28a1eaa5421414700f82471a6c4892115b087a0ffd84904c",
+      "tris": 3487,
+      "vertices": 10461,
+      "meshes": 1,
+      "textures": 1,
+      "skins": 0,
+      "joints": 0,
+      "animations": 0,
+      "texture_filename": "textures/escarvao_cobre_uv_v01.png",
+      "texture_sha256": "c6578e30789bc9341464f582520e6c0ec3ddb685650bbe9905e64b43a89012b7",
+      "github_git_blob_sha1": "d812ed7855da679c49b235901e60561eb44a3628"
+    },
+    {
+      "variant": "rubro",
+      "glb": "escarvao_rubro_blockout_v01.glb",
+      "bytes": 1483092,
+      "sha256": "9461f0d3d71eee743ccbdf1c58534ed309c4dd578a10e3b16b5c492abe53b6df",
+      "tris": 3487,
+      "vertices": 10461,
+      "meshes": 1,
+      "textures": 1,
+      "skins": 0,
+      "joints": 0,
+      "animations": 0,
+      "texture_filename": "textures/escarvao_rubro_uv_v01.png",
+      "texture_sha256": "74eaef223f5ea4082d5e76d46c01035f00fc93226c5f9ef2b1be2e94f0ae4518",
+      "github_git_blob_sha1": "3b69dc2d00ec15d501aff73fd69eafe39b00df6b"
+    },
+    {
+      "variant": "oliva",
+      "glb": "escarvao_oliva_blockout_v01.glb",
+      "bytes": 1486944,
+      "sha256": "2388bece1308a0974df651d6d04e92bda2f34b7367db1bc94a4fbe901c037c34",
+      "tris": 3487,
+      "vertices": 10461,
+      "meshes": 1,
+      "textures": 1,
+      "skins": 0,
+      "joints": 0,
+      "animations": 0,
+      "texture_filename": "textures/escarvao_oliva_uv_v01.png",
+      "texture_sha256": "565da8c3f42be692cb6a1c01f765ac4e46dd6106bb7f6452ccef323e7a082be5",
+      "github_git_blob_sha1": "325c2c2962659bc99b666e0d1829a02d2d9a77df"
+    }
+  ],
+  "anatomical_parts": 102,
+  "part_triangles": [
+    {
+      "name": "abdomen_core",
+      "faces": 188,
+      "anatomical_material": "shell_dark"
+    },
+    {
+      "name": "cephalothorax_shield",
+      "faces": 140,
+      "anatomical_material": "shell"
+    },
+    {
+      "name": "sternum",
+      "faces": 76,
+      "anatomical_material": "underside"
+    },
+    {
+      "name": "tergite_00",
+      "faces": 24,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "lateral_carapace_tooth_0_-1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "lateral_carapace_tooth_0_1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "tergite_01",
+      "faces": 24,
+      "anatomical_material": "shell"
+    },
+    {
+      "name": "lateral_carapace_tooth_1_-1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "lateral_carapace_tooth_1_1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "tergite_02",
+      "faces": 24,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "lateral_carapace_tooth_2_-1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "lateral_carapace_tooth_2_1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "tergite_03",
+      "faces": 24,
+      "anatomical_material": "shell"
+    },
+    {
+      "name": "lateral_carapace_tooth_3_-1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "lateral_carapace_tooth_3_1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "tergite_04",
+      "faces": 24,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "lateral_carapace_tooth_4_-1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "lateral_carapace_tooth_4_1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "tergite_05",
+      "faces": 24,
+      "anatomical_material": "shell"
+    },
+    {
+      "name": "lateral_carapace_tooth_5_-1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "lateral_carapace_tooth_5_1",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "cranial_brow",
+      "faces": 21,
+      "anatomical_material": "carapace_ridge"
+    },
+    {
+      "name": "orbital_socket_-1",
+      "faces": 44,
+      "anatomical_material": "shell_dark"
+    },
+    {
+      "name": "recessed_eye_-1",
+      "faces": 44,
+      "anatomical_material": "eye"
+    },
+    {
+      "name": "mandible_-1",
+      "faces": 44,
+      "anatomical_material": "mandible"
+    },
+    {
+      "name": "orbital_socket_1",
+      "faces": 44,
+      "anatomical_material": "shell_dark"
+    },
+    {
+      "name": "recessed_eye_1",
+      "faces": 44,
+      "anatomical_material": "eye"
+    },
+    {
+      "name": "mandible_1",
+      "faces": 44,
+      "anatomical_material": "mandible"
+    },
+    {
+      "name": "leg_-1_0_coxa",
+      "faces": 44,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_-1_0_femur",
+      "faces": 44,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "leg_-1_0_tibia",
+      "faces": 38,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_-1_0_tarsus",
+      "faces": 38,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "leg_-1_0_crest",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "leg_-1_1_coxa",
+      "faces": 44,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_-1_1_femur",
+      "faces": 44,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "leg_-1_1_tibia",
+      "faces": 38,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_-1_1_tarsus",
+      "faces": 38,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "leg_-1_1_crest",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "leg_-1_2_coxa",
+      "faces": 44,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_-1_2_femur",
+      "faces": 44,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "leg_-1_2_tibia",
+      "faces": 38,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_-1_2_tarsus",
+      "faces": 38,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "leg_-1_2_crest",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "leg_-1_3_coxa",
+      "faces": 44,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_-1_3_femur",
+      "faces": 44,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "leg_-1_3_tibia",
+      "faces": 38,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_-1_3_tarsus",
+      "faces": 38,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "leg_-1_3_crest",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "leg_1_0_coxa",
+      "faces": 44,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_1_0_femur",
+      "faces": 44,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "leg_1_0_tibia",
+      "faces": 38,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_1_0_tarsus",
+      "faces": 38,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "leg_1_0_crest",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "leg_1_1_coxa",
+      "faces": 44,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_1_1_femur",
+      "faces": 44,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "leg_1_1_tibia",
+      "faces": 38,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_1_1_tarsus",
+      "faces": 38,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "leg_1_1_crest",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "leg_1_2_coxa",
+      "faces": 44,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_1_2_femur",
+      "faces": 44,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "leg_1_2_tibia",
+      "faces": 38,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_1_2_tarsus",
+      "faces": 38,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "leg_1_2_crest",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "leg_1_3_coxa",
+      "faces": 44,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_1_3_femur",
+      "faces": 44,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "leg_1_3_tibia",
+      "faces": 38,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "leg_1_3_tarsus",
+      "faces": 38,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "leg_1_3_crest",
+      "faces": 4,
+      "anatomical_material": "spike"
+    },
+    {
+      "name": "pedipalp_-1",
+      "faces": 56,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "forearm_-1",
+      "faces": 56,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "palm_-1",
+      "faces": 76,
+      "anatomical_material": "palm"
+    },
+    {
+      "name": "upper_chela_-1",
+      "faces": 76,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "lower_chela_-1",
+      "faces": 76,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "upper_chela_tooth_-1_0",
+      "faces": 4,
+      "anatomical_material": "sting"
+    },
+    {
+      "name": "lower_chela_tooth_-1_0",
+      "faces": 4,
+      "anatomical_material": "sting"
+    },
+    {
+      "name": "upper_chela_tooth_-1_1",
+      "faces": 4,
+      "anatomical_material": "sting"
+    },
+    {
+      "name": "lower_chela_tooth_-1_1",
+      "faces": 4,
+      "anatomical_material": "sting"
+    },
+    {
+      "name": "palm_plate_-1",
+      "faces": 15,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "pedipalp_1",
+      "faces": 56,
+      "anatomical_material": "limb_dark"
+    },
+    {
+      "name": "forearm_1",
+      "faces": 56,
+      "anatomical_material": "limb"
+    },
+    {
+      "name": "palm_1",
+      "faces": 76,
+      "anatomical_material": "palm"
+    },
+    {
+      "name": "upper_chela_1",
+      "faces": 76,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "lower_chela_1",
+      "faces": 76,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "upper_chela_tooth_1_0",
+      "faces": 4,
+      "anatomical_material": "sting"
+    },
+    {
+      "name": "lower_chela_tooth_1_0",
+      "faces": 4,
+      "anatomical_material": "sting"
+    },
+    {
+      "name": "upper_chela_tooth_1_1",
+      "faces": 4,
+      "anatomical_material": "sting"
+    },
+    {
+      "name": "lower_chela_tooth_1_1",
+      "faces": 4,
+      "anatomical_material": "sting"
+    },
+    {
+      "name": "palm_plate_1",
+      "faces": 15,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "metasoma_segment_0",
+      "faces": 56,
+      "anatomical_material": "tail"
+    },
+    {
+      "name": "tail_dorsal_0",
+      "faces": 12,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "metasoma_segment_1",
+      "faces": 56,
+      "anatomical_material": "tail"
+    },
+    {
+      "name": "tail_dorsal_1",
+      "faces": 12,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "metasoma_segment_2",
+      "faces": 56,
+      "anatomical_material": "tail"
+    },
+    {
+      "name": "tail_dorsal_2",
+      "faces": 12,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "metasoma_segment_3",
+      "faces": 56,
+      "anatomical_material": "tail"
+    },
+    {
+      "name": "tail_dorsal_3",
+      "faces": 12,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "metasoma_segment_4",
+      "faces": 56,
+      "anatomical_material": "tail"
+    },
+    {
+      "name": "tail_dorsal_4",
+      "faces": 12,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "metasoma_segment_5",
+      "faces": 56,
+      "anatomical_material": "tail"
+    },
+    {
+      "name": "tail_dorsal_5",
+      "faces": 12,
+      "anatomical_material": "tail_shield"
+    },
+    {
+      "name": "poison_bulb",
+      "faces": 36,
+      "anatomical_material": "pincer"
+    },
+    {
+      "name": "scimitar_stinger",
+      "faces": 76,
+      "anatomical_material": "sting"
+    }
+  ],
+  "approval": {
+    "concept": "approved_to_blockout",
+    "form": "awaiting_user_review",
+    "refinement": "not_started"
+  },
+  "publication": {
+    "github": "verified_published_branch",
+    "branch": "wildhaven-escarvao-uv-blockout-v01",
+    "pr_number": 72,
+    "workflow_run": "https://github.com/carioca1111/wildhaven/actions/runs/42770177511",
+    "verification": "file sizes and Git object SHA1 remotely listed by GitHub Contents API exactly equal local git hash-object; local and CI build validated GLB SHA256 bytes",
+    "integration": "none"
+  },
+  "note": "All color/pattern variations are UV painted textures; 100% identical geometry across 3 GLBs. No rig/clips/LODs at blockout stage."
+}

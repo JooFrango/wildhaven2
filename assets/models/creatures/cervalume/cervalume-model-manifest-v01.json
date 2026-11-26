@@ -1,0 +1,219 @@
+{
+  "species": "cervalume",
+  "source": "assets/models/creatures/cervalume/cervalume-animated-v01.glb",
+  "sourceStats": {
+    "bytes": 452568,
+    "sha256": "5ec41a5c85844f89ccdfb031be83ef0367333b98769cbda22ef5dda2a1dab502",
+    "trianglesMeshDefinitions": 9816,
+    "trianglesDrawnPerInstance": 9816,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 15,
+    "estimatedDrawCalls": 15,
+    "materials": 15,
+    "nodes": 25,
+    "skins": 1,
+    "skinJointCounts": [
+      23
+    ],
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "idle",
+      "breathing",
+      "drink",
+      "rest",
+      "sleep",
+      "hurt",
+      "death",
+      "turn_left",
+      "turn_right",
+      "graze",
+      "alert",
+      "flee",
+      "defend",
+      "antler_push",
+      "follow_herd"
+    ]
+  },
+  "animationSignature": "51cc47bf63604ae355cb36923b0dc3c2f6988abfc42e0a91c37521cde93ae565",
+  "lods": [
+    {
+      "bytes": 257128,
+      "sha256": "e1ec3cb003995ca79fb158f6e643e39421ca596b7acac8ed67877e5a0bf9e1c0",
+      "trianglesMeshDefinitions": 6189,
+      "trianglesDrawnPerInstance": 6189,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 15,
+      "estimatedDrawCalls": 15,
+      "materials": 15,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "breathing",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death",
+        "turn_left",
+        "turn_right",
+        "graze",
+        "alert",
+        "flee",
+        "defend",
+        "antler_push",
+        "follow_herd"
+      ],
+      "targetTriangles": 6200,
+      "animationSignature": "51cc47bf63604ae355cb36923b0dc3c2f6988abfc42e0a91c37521cde93ae565",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 173756,
+      "sha256": "0127eab6b72bbff63bc26dc59cc48be21250ac432e83802766bfa8701ea2bf06",
+      "trianglesMeshDefinitions": 3490,
+      "trianglesDrawnPerInstance": 3490,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 15,
+      "estimatedDrawCalls": 15,
+      "materials": 15,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "breathing",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death",
+        "turn_left",
+        "turn_right",
+        "graze",
+        "alert",
+        "flee",
+        "defend",
+        "antler_push",
+        "follow_herd"
+      ],
+      "targetTriangles": 3500,
+      "animationSignature": "51cc47bf63604ae355cb36923b0dc3c2f6988abfc42e0a91c37521cde93ae565",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 109812,
+      "sha256": "3292adc0ce367389889372b047f2e8b75d9210079358bae5f83c7e03b8fa337e",
+      "trianglesMeshDefinitions": 1391,
+      "trianglesDrawnPerInstance": 1391,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 15,
+      "estimatedDrawCalls": 15,
+      "materials": 15,
+      "nodes": 25,
+      "skins": 1,
+      "skinJointCounts": [
+        23
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "breathing",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death",
+        "turn_left",
+        "turn_right",
+        "graze",
+        "alert",
+        "flee",
+        "defend",
+        "antler_push",
+        "follow_herd"
+      ],
+      "targetTriangles": 1400,
+      "animationSignature": "51cc47bf63604ae355cb36923b0dc3c2f6988abfc42e0a91c37521cde93ae565",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 336728,
+      "boundsMin": [
+        -0.43593186140060425,
+        0.16494229435920715,
+        -1.860811710357666
+      ],
+      "boundsMax": [
+        0.4399999976158142,
+        2.3639044761657715,
+        1.1298772096633911
+      ]
+    },
+    "front": {
+      "bytes": 340633,
+      "boundsMin": [
+        -0.43593186140060425,
+        0.16494229435920715,
+        -1.860811710357666
+      ],
+      "boundsMax": [
+        0.4399999976158142,
+        2.3639044761657715,
+        1.1298772096633911
+      ]
+    },
+    "three-quarter": {
+      "bytes": 84198,
+      "boundsMin": [
+        -0.43593186140060425,
+        0.16494229435920715,
+        -1.860811710357666
+      ],
+      "boundsMax": [
+        0.4399999976158142,
+        2.3639044761657715,
+        1.1298772096633911
+      ]
+    },
+    "wireframe": {
+      "bytes": 202866,
+      "boundsMin": [
+        -0.43593186140060425,
+        0.16494229435920715,
+        -1.860811710357666
+      ],
+      "boundsMax": [
+        0.4399999976158142,
+        2.3639044761657715,
+        1.1298772096633911
+      ]
+    }
+  },
+  "method": "preserve-layout",
+  "artisticStatus": "modeled_candidate_pending_user_preview_approval"
+}

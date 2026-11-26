@@ -1,0 +1,25 @@
+import {chromium} from "@playwright/test";
+import {spawn} from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
+import {fileURLToPath} from "node:url";
+const dir=path.dirname(fileURLToPath(import.meta.url));
+const repo=path.resolve(dir,"../../../../..");
+const pub=path.join(dir,"public");fs.mkdirSync(pub,{recursive:true});
+fs.copyFileSync(path.join(repo,"assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD0.glb"),path.join(pub,"silvarano.glb"));
+fs.copyFileSync(path.join(repo,"assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb"),path.join(pub,"folhisco.glb"));
+const out=path.join(repo,"assets/models/creatures/fauna-optimization-v07/previews/animated_frames");fs.mkdirSync(out,{recursive:true});
+const server=spawn(process.execPath,[path.join(dir,"node_modules/vite/bin/vite.js"),"--host","127.0.0.1","--port","5497","--strictPort"],{cwd:dir,stdio:["ignore","pipe","pipe"]});
+let log="";server.stdout.on("data",d=>log+=d);server.stderr.on("data",d=>log+=d);
+async function ready(){for(let i=0;i<100;i++){try{const r=await fetch("http://127.0.0.1:5497/");if(r.ok)return;}catch{} await new Promise(r=>setTimeout(r,250));}throw new Error("Vite not ready "+log)}
+let browser;
+try{
+ await ready();browser=await chromium.launch({headless:true,args:["--no-sandbox","--disable-dev-shm-usage","--use-gl=angle","--use-angle=swiftshader","--enable-unsafe-swiftshader","--enable-webgl"]});
+ const page=await browser.newPage({viewport:{width:1240,height:620},deviceScaleFactor:1});
+ await page.goto("http://127.0.0.1:5497/",{waitUntil:"networkidle",timeout:60000});
+ await page.waitForFunction(()=>window.__wildhavenPreview?.ready===true,null,{timeout:30000});
+ for(let i=0;i<16;i++){
+   const phase=i/16;await page.evaluate(p=>window.__wildhavenPreview.renderPhase(p),phase);await page.waitForTimeout(80);
+   await page.locator("#preview-root").screenshot({path:path.join(out,String(i).padStart(2,"0")+".png"),animations:"disabled"});
+ }
+}finally{await browser?.close();server.kill("SIGTERM")}

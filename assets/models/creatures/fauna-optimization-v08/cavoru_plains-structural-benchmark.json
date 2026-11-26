@@ -1,0 +1,154 @@
+{
+  "species": "cavoru",
+  "variant": "plains",
+  "source": {
+    "bytes": 938428,
+    "sha256": "4a902f142f695d472d8ba2604fa29d33939ddadf87d4086668b43ade2b181d21",
+    "trianglesMeshDefinitions": 21300,
+    "trianglesDrawnPerInstance": 21300,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 32,
+    "estimatedDrawCalls": 32,
+    "materials": 33,
+    "nodes": 26,
+    "skins": 1,
+    "skinJointCounts": [
+      24
+    ],
+    "animations": [
+      "walk",
+      "trot",
+      "short_sprint",
+      "juvenile_follow",
+      "idle",
+      "breathing",
+      "graze",
+      "sniff_ground",
+      "dig_shallow",
+      "pull_tuber",
+      "chew",
+      "drink",
+      "lookout",
+      "freeze",
+      "warning_call",
+      "regroup",
+      "flee_start",
+      "dodge",
+      "push_defense",
+      "dust_roll",
+      "groom",
+      "rest",
+      "sleep",
+      "hurt",
+      "death",
+      "turn_left",
+      "turn_right"
+    ]
+  },
+  "instances": [
+    10,
+    25,
+    50,
+    100,
+    200
+  ],
+  "lods": [
+    {
+      "lod": 0,
+      "triangles": 16473,
+      "drawCalls": 32,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 164730,
+          "drawCallsPerFrame": 320
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 411825,
+          "drawCallsPerFrame": 800
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 823650,
+          "drawCallsPerFrame": 1600
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 1647300,
+          "drawCallsPerFrame": 3200
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 3294600,
+          "drawCallsPerFrame": 6400
+        }
+      ]
+    },
+    {
+      "lod": 1,
+      "triangles": 7980,
+      "drawCalls": 32,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 79800,
+          "drawCallsPerFrame": 320
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 199500,
+          "drawCallsPerFrame": 800
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 399000,
+          "drawCallsPerFrame": 1600
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 798000,
+          "drawCallsPerFrame": 3200
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 1596000,
+          "drawCallsPerFrame": 6400
+        }
+      ]
+    },
+    {
+      "lod": 2,
+      "triangles": 3185,
+      "drawCalls": 32,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 31850,
+          "drawCallsPerFrame": 320
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 79625,
+          "drawCallsPerFrame": 800
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 159250,
+          "drawCallsPerFrame": 1600
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 318500,
+          "drawCallsPerFrame": 3200
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 637000,
+          "drawCallsPerFrame": 6400
+        }
+      ]
+    }
+  ]
+}

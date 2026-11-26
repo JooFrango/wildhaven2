@@ -1,0 +1,86 @@
+{
+  "species": "Fulgaronte",
+  "id": "fulgaronte",
+  "revision": "v04",
+  "stage": "rig_skinning_and_animation_clips",
+  "base_blockout": "fulgaronte_v04_blockout_fiel.glb",
+  "form_approved": false,
+  "note": "Clipes entregues a pedido do diretor antes da aprovacao da forma; publicar animacao nao aprova o blockout.",
+  "glb": "fulgaronte_v04_animado.glb",
+  "bytes": 1993632,
+  "sha256": "59a9eb8d456fcfd2ea031c3ec8aae0409e64445638ef2b62849c3371eb6274b1",
+  "triangles": 2688,
+  "meshes": 1,
+  "materials": [
+    "Fulgaronte v04 UV"
+  ],
+  "skins": 1,
+  "bones": 36,
+  "joints_in_skin": 36,
+  "deformation": "skinned vertex weights, up to 2 bones per vertex; no rigid pivot parenting",
+  "vertices_with_weights": 6560,
+  "clips": [
+    {
+      "name": "alert",
+      "seconds": 2.0,
+      "frames_at_24fps": 48,
+      "channels": 108
+    },
+    {
+      "name": "death",
+      "seconds": 3.0,
+      "frames_at_24fps": 72,
+      "channels": 108
+    },
+    {
+      "name": "electric_charge",
+      "seconds": 2.5,
+      "frames_at_24fps": 60,
+      "channels": 108
+    },
+    {
+      "name": "feed",
+      "seconds": 3.0,
+      "frames_at_24fps": 72,
+      "channels": 108
+    },
+    {
+      "name": "hit_react",
+      "seconds": 1.5,
+      "frames_at_24fps": 36,
+      "channels": 108
+    },
+    {
+      "name": "idle",
+      "seconds": 4.0,
+      "frames_at_24fps": 96,
+      "channels": 108
+    },
+    {
+      "name": "rest",
+      "seconds": 3.0,
+      "frames_at_24fps": 72,
+      "channels": 108
+    },
+    {
+      "name": "swim",
+      "seconds": 2.542,
+      "frames_at_24fps": 61,
+      "channels": 108
+    },
+    {
+      "name": "walk",
+      "seconds": 2.042,
+      "frames_at_24fps": 49,
+      "channels": 108
+    }
+  ],
+  "clip_count": 9,
+  "fps": 24,
+  "vfx_electricity": false,
+  "lods": 0,
+  "editable_project": "source/fulgaronte_v04_animado.blend",
+  "generator": "source/rig_animate.py (Blender 5.3 bundled Python)",
+  "static_blockout_unchanged": true,
+  "no_alpha_changes": true
+}

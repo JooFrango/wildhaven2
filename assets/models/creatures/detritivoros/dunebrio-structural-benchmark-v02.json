@@ -1,0 +1,148 @@
+{
+  "species": "dunebrio",
+  "variant": "desert",
+  "source": {
+    "bytes": 503788,
+    "sha256": "9dbd3269a09e901bdbe0ff5d6399ba7e2a4b7021663c82febcdd961e1f7723ad",
+    "trianglesMeshDefinitions": 2768,
+    "trianglesDrawnPerInstance": 3648,
+    "meshDefinitions": 10,
+    "meshNodes": 29,
+    "primitives": 10,
+    "estimatedDrawCalls": 29,
+    "materials": 5,
+    "nodes": 41,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "dunebrio_idle",
+      "dunebrio_walk",
+      "dunebrio_feed",
+      "dunebrio_flee",
+      "dunebrio_defend",
+      "dunebrio_rest",
+      "dunebrio_die"
+    ]
+  },
+  "instances": [
+    10,
+    25,
+    50,
+    100,
+    200,
+    500
+  ],
+  "lods": [
+    {
+      "lod": 0,
+      "triangles": 2988,
+      "drawCalls": 21,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 29880,
+          "drawCallsPerFrame": 210
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 74700,
+          "drawCallsPerFrame": 525
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 149400,
+          "drawCallsPerFrame": 1050
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 298800,
+          "drawCallsPerFrame": 2100
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 597600,
+          "drawCallsPerFrame": 4200
+        },
+        {
+          "instances": 500,
+          "trianglesPerFrame": 1494000,
+          "drawCallsPerFrame": 10500
+        }
+      ]
+    },
+    {
+      "lod": 1,
+      "triangles": 1480,
+      "drawCalls": 21,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 14800,
+          "drawCallsPerFrame": 210
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 37000,
+          "drawCallsPerFrame": 525
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 74000,
+          "drawCallsPerFrame": 1050
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 148000,
+          "drawCallsPerFrame": 2100
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 296000,
+          "drawCallsPerFrame": 4200
+        },
+        {
+          "instances": 500,
+          "trianglesPerFrame": 740000,
+          "drawCallsPerFrame": 10500
+        }
+      ]
+    },
+    {
+      "lod": 2,
+      "triangles": 580,
+      "drawCalls": 21,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 5800,
+          "drawCallsPerFrame": 210
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 14500,
+          "drawCallsPerFrame": 525
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 29000,
+          "drawCallsPerFrame": 1050
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 58000,
+          "drawCallsPerFrame": 2100
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 116000,
+          "drawCallsPerFrame": 4200
+        },
+        {
+          "instances": 500,
+          "trianglesPerFrame": 290000,
+          "drawCallsPerFrame": 10500
+        }
+      ]
+    }
+  ]
+}

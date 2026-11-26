@@ -1,0 +1,270 @@
+{
+  "species_id": "fossario",
+  "name": "Fossário",
+  "version": "v02",
+  "stage": "skinned_animated_for_artistic_review",
+  "previous_static_glb_preserved": true,
+  "v01_base": {
+    "relative_path": "../v01/fossario-v01-textured-blockout.glb",
+    "bytes": 3606492,
+    "sha256": "1fc4f5e33058e096c3f8b7e591e5477e8f695ca6ca345c2e07e7cbb4ef90deae"
+  },
+  "glb": {
+    "path": "fossario-v02-animated-LOD0.glb",
+    "bytes": 3891960,
+    "sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad",
+    "triangles": 1602,
+    "triangle_count_method": "mesh primitive triangles indexed after reimport",
+    "vertices": 4806,
+    "uv_texture_px": [
+      2048,
+      2048
+    ],
+    "materials": 1,
+    "skins": 1,
+    "joints": 26,
+    "bone_names": [
+      "root",
+      "pelvis",
+      "spine",
+      "chest",
+      "neck",
+      "head",
+      "jaw",
+      "tail1",
+      "tail2",
+      "tail3",
+      "foreR_upper",
+      "foreR_elbow",
+      "foreR_wrist",
+      "foreR_paw",
+      "foreL_upper",
+      "foreL_elbow",
+      "foreL_wrist",
+      "foreL_paw",
+      "hindR_upper",
+      "hindR_elbow",
+      "hindR_wrist",
+      "hindR_paw",
+      "hindL_upper",
+      "hindL_elbow",
+      "hindL_wrist",
+      "hindL_paw"
+    ],
+    "animation_count": 16
+  },
+  "texture": {
+    "source_v01_embedded_identical": true,
+    "painted_markings_not_polygons": true
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.0846,
+      "samples": 73
+    },
+    {
+      "name": "walk",
+      "duration_seconds": 1.65,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.2472,
+      "samples": 41
+    },
+    {
+      "name": "trot",
+      "duration_seconds": 1.12,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.3095,
+      "samples": 28
+    },
+    {
+      "name": "flee",
+      "duration_seconds": 0.74,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.42,
+      "samples": 25
+    },
+    {
+      "name": "turn_left",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "channels": 10,
+      "max_angle_rad": 0.18,
+      "samples": 32
+    },
+    {
+      "name": "turn_right",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "channels": 10,
+      "max_angle_rad": 0.18,
+      "samples": 32
+    },
+    {
+      "name": "alert",
+      "duration_seconds": 1.45,
+      "loop": false,
+      "channels": 5,
+      "max_angle_rad": 0.12,
+      "samples": 36
+    },
+    {
+      "name": "sniff",
+      "duration_seconds": 2.3,
+      "loop": true,
+      "channels": 5,
+      "max_angle_rad": 0.12,
+      "samples": 56
+    },
+    {
+      "name": "forage",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "channels": 8,
+      "max_angle_rad": 0.18,
+      "samples": 73
+    },
+    {
+      "name": "feed",
+      "duration_seconds": 2.6,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.1984,
+      "samples": 63
+    },
+    {
+      "name": "drink",
+      "duration_seconds": 2.7,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.2496,
+      "samples": 66
+    },
+    {
+      "name": "rest",
+      "duration_seconds": 2.2,
+      "loop": false,
+      "channels": 15,
+      "max_angle_rad": 0.19,
+      "samples": 54
+    },
+    {
+      "name": "hurt",
+      "duration_seconds": 0.95,
+      "loop": false,
+      "channels": 3,
+      "max_angle_rad": 0.1195,
+      "samples": 25
+    },
+    {
+      "name": "death",
+      "duration_seconds": 2.4,
+      "loop": false,
+      "channels": 15,
+      "max_angle_rad": 0.32,
+      "samples": 59
+    },
+    {
+      "name": "dig",
+      "duration_seconds": 1.45,
+      "loop": true,
+      "channels": 14,
+      "max_angle_rad": 0.3897,
+      "samples": 36
+    },
+    {
+      "name": "tail_decoy",
+      "duration_seconds": 1.8,
+      "loop": true,
+      "channels": 4,
+      "max_angle_rad": 0.4498,
+      "samples": 44
+    }
+  ],
+  "defense_specials": [
+    "dig",
+    "tail_decoy"
+  ],
+  "rig": "weighted glTF skin with JOINTS_0, WEIGHTS_0 and inverse-bind-matrices",
+  "limitations": [
+    "in-place, possible foot sliding",
+    "no physics/IK ground adjustment",
+    "no terrain interaction, IA or gameplay",
+    "visual approval pending",
+    "LOD0 only in this stage"
+  ],
+  "approval": {
+    "concepts": "user approved 4 designs",
+    "v01_form": "user requested animations",
+    "animations_v02": "awaiting artistic review"
+  },
+  "publication": "branch_published_pending_artistic_review",
+  "integrated_game": false,
+  "previews": {
+    "fossario-v02-real-glb-three-quarter.png": {
+      "bytes": 268125,
+      "sha256": "60caa89da569de75a2dd04ef537dca8cb8dc461a61bc226c91fd469cb38e78cc",
+      "source_glb_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad"
+    },
+    "fossario-v02-dig-real-glb.gif": {
+      "bytes": 1574277,
+      "sha256": "e49ccfc1eaf4ea2f929b410c93983b1b92f03f3fda9221b7e0294195df250dfc",
+      "source_glb_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad"
+    },
+    "fossario-v02-three-real-glb-views.png": {
+      "bytes": 526745,
+      "sha256": "119cee92a58702741296d3a876d97f3ba8fed0bb739b341cf1dc412a51f6bbed",
+      "source_glb_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad"
+    },
+    "fossario-v02-real-glb-profile.png": {
+      "bytes": 275591,
+      "sha256": "339ab8e5a3c8a46d41214305036789685619a06e350b42a35cc17451322dc227",
+      "source_glb_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad"
+    },
+    "fossario-v02-tail_decoy-real-glb.gif": {
+      "bytes": 1568824,
+      "sha256": "e5ec53295efd80503ed60d31e5f86717ed69c329aa9eff1123ea37c29be1e4be",
+      "source_glb_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad"
+    },
+    "fossario-v02-real-glb-front.png": {
+      "bytes": 288378,
+      "sha256": "ba86df0a3e09ce7bec5787f48c9e8ae3218592ed0f509f2390f6e3090d142754",
+      "source_glb_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad"
+    },
+    "fossario-v02-walk-real-glb.gif": {
+      "bytes": 1567197,
+      "sha256": "cecd258277940bcdf3c474070a4ce6ea23caea8494eb2b93e4782f1b6a80bad6",
+      "source_glb_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad"
+    }
+  },
+  "glb_reimport_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad",
+  "animation_playback_validation": {
+    "reimport_sha256": "930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad",
+    "rest_pose_max_error_m": 1.4901161193847656e-08,
+    "per_clip_vertex_movement_m": {
+      "idle": 0.03672,
+      "walk": 0.05766,
+      "trot": 0.10318,
+      "flee": 0.1037,
+      "turn_left": 0.26577,
+      "turn_right": 0.26577,
+      "alert": 0.02913,
+      "sniff": 0.02911,
+      "forage": 0.06233,
+      "feed": 0.07063,
+      "drink": 0.08177,
+      "rest": 0.05761,
+      "hurt": 0.05008,
+      "death": 0.28882,
+      "dig": 0.04941,
+      "tail_decoy": 0.14869
+    },
+    "method": "CPU linear blend skinning from exported GLB inverse bind matrices, keyframes, JOINTS_0 and WEIGHTS_0"
+  }
+}

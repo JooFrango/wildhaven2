@@ -1,0 +1,39 @@
+{
+  "species_id": "fulgaronte",
+  "version": "v01",
+  "stage": "blockout_form_review",
+  "concept_approved": true,
+  "blockout_form_approved": false,
+  "biome": "extremo norte glacial, lagos e costas geladas",
+  "anatomy": "quadruped semiaquatic crocodilian with structural dorsal fins, front membranes, caudal fin",
+  "glb": "fulgaronte_v01_blockout.glb",
+  "sha256": "f178ae761f9758397d65c3711674bae7f1327f4cf9b068db3e7dc33603892556",
+  "bytes": 449968,
+  "triangles": 3124,
+  "meshes": 1,
+  "atlas_uv": "fulgaronte_v01_uv_atlas.png",
+  "rig_joints": 0,
+  "skins": 0,
+  "animation_clips": 0,
+  "triangles_calculation": "sum of triangle faces in GLB reimport, no instances",
+  "geometry_bounds_m": [
+    [
+      -10.239999771118164,
+      0.05143743008375168,
+      -2.25
+    ],
+    [
+      5.760000228881836,
+      5.154653072357178,
+      2.25
+    ]
+  ],
+  "scale_m": {
+    "height": 5.1,
+    "length_x": 16.0,
+    "width_z": 4.5
+  },
+  "alpha_modified": false,
+  "geometry_color_only_meshes": 0,
+  "note": "Electric arcs and final overload are VFX/gameplay concepts, not included in blockout; shape awaits director approval."
+}

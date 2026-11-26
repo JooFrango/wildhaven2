@@ -1,0 +1,310 @@
+{
+  "species_id": "cornevio",
+  "name": "Cornévio",
+  "version": "v01",
+  "base": "main:9e84c8b8750a041a9f41c10dc192ee05ee9f339d",
+  "approved_concept": "user approved four reptile concepts and asked to build GLBs; individual designs remain under review",
+  "stage": "static_textured_blockout_for_form_approval",
+  "habitat": "desert",
+  "diet": "herbivore",
+  "description": "Two short rearward brow horns, broad body, threatening rib expansion",
+  "defense": "rib_expand_and_horns",
+  "length_design_m": 0.55,
+  "mass_design_kg": 1.5,
+  "glb": "cornevio-v01-textured-blockout.glb",
+  "bytes": 3635016,
+  "sha256": "b582703ad6e417746547d4b11b73e60e5fcc74ef523f33eb2f8fb2cdeb096e27",
+  "triangle_count": 1536,
+  "triangle_count_method": "sum mesh primitive triangles after actual GLB reimport",
+  "glb_meshes": 1,
+  "materials": 1,
+  "uv_atlas_px": [
+    2048,
+    2048
+  ],
+  "painted_markings_not_extra_polygons": true,
+  "paint_map": "texture/cornevio-v01-painted-albedo.png",
+  "skins": 0,
+  "joints": 0,
+  "animations": 0,
+  "lods": 1,
+  "skeleton": "not requested until form approval",
+  "components_authoring": 61,
+  "components": [
+    {
+      "name": "short_rhombus_trunk",
+      "triangles": 164
+    },
+    {
+      "name": "neck",
+      "triangles": 68
+    },
+    {
+      "name": "faceted_skull",
+      "triangles": 92
+    },
+    {
+      "name": "actual_lower_jaw",
+      "triangles": 56
+    },
+    {
+      "name": "recessed_eye_-1",
+      "triangles": 72
+    },
+    {
+      "name": "nostril_-1",
+      "triangles": 8
+    },
+    {
+      "name": "recessed_eye_1",
+      "triangles": 72
+    },
+    {
+      "name": "nostril_1",
+      "triangles": 8
+    },
+    {
+      "name": "compact_tail",
+      "triangles": 56
+    },
+    {
+      "name": "front_leg_-1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_0.14_-1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_0.14_-1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.14_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.14_-1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.14_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.14_-1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.14_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.14_-1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.14_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "front_leg_1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_0.14_1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_0.14_1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.14_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.14_1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.14_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.14_1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.14_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.14_1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.14_1_3",
+      "triangles": 8
+    },
+    {
+      "name": "back_leg_-1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_-0.10_-1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_-0.10_-1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.10_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.10_-1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.10_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.10_-1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.10_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.10_-1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.10_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "back_leg_1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_-0.10_1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_-0.10_1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.10_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.10_1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.10_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.10_1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.10_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.10_1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.10_1_3",
+      "triangles": 8
+    },
+    {
+      "name": "backward_brow_horn_-1",
+      "triangles": 10
+    },
+    {
+      "name": "rigid_cheek_flange_-1",
+      "triangles": 8
+    },
+    {
+      "name": "backward_brow_horn_1",
+      "triangles": 10
+    },
+    {
+      "name": "rigid_cheek_flange_1",
+      "triangles": 8
+    },
+    {
+      "name": "lateral_rib_keel_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "lateral_rib_keel_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "lateral_rib_keel_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "lateral_rib_keel_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "lateral_rib_keel_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "lateral_rib_keel_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "lateral_rib_keel_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "lateral_rib_keel_1_3",
+      "triangles": 8
+    }
+  ],
+  "render_evidence_source_sha256": "b582703ad6e417746547d4b11b73e60e5fcc74ef523f33eb2f8fb2cdeb096e27",
+  "previews": {
+    "cornevio-v01-real-glb-profile.png": {
+      "bytes": 331573,
+      "sha256": "b98db02d2a9436da0cc78e543080a44e4d107cfefc85afad8946490348d6c35c",
+      "source_glb_sha256": "b582703ad6e417746547d4b11b73e60e5fcc74ef523f33eb2f8fb2cdeb096e27",
+      "camera_view": "profile"
+    },
+    "cornevio-v01-real-glb-front.png": {
+      "bytes": 351275,
+      "sha256": "acea8d6ef4dffc8b625107f141dd3ad696c0bc94edf5c6ef249ab3677aa1f73a",
+      "source_glb_sha256": "b582703ad6e417746547d4b11b73e60e5fcc74ef523f33eb2f8fb2cdeb096e27",
+      "camera_view": "front"
+    },
+    "cornevio-v01-real-glb-three-quarter.png": {
+      "bytes": 337656,
+      "sha256": "72de51344ee58567ad98b25405b97f1166d4c9b847f0247879e28d6d22d0a2ef",
+      "source_glb_sha256": "b582703ad6e417746547d4b11b73e60e5fcc74ef523f33eb2f8fb2cdeb096e27",
+      "camera_view": "three-quarter"
+    },
+    "cornevio-v01-three-real-glb-views.png": {
+      "bytes": 439344,
+      "sha256": "2b41bd6dde6c79269910e81724266e1eb8755f9e91db363f9355f026cb4c6af3",
+      "source_glb_sha256": "b582703ad6e417746547d4b11b73e60e5fcc74ef523f33eb2f8fb2cdeb096e27",
+      "camera_view": "contact_sheet"
+    }
+  },
+  "integrated_game": false,
+  "art_status": "pending_form_approval",
+  "publication": "branch_published_pending_artistic_review",
+  "git_blob_sha1": "5744cc0eed6980141b4b505ec4e05d124319c834"
+}

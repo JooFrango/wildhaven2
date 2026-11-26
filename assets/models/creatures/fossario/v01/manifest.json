@@ -1,0 +1,290 @@
+{
+  "species_id": "fossario",
+  "name": "Fossário",
+  "version": "v01",
+  "base": "main:9e84c8b8750a041a9f41c10dc192ee05ee9f339d",
+  "approved_concept": "user approved four reptile concepts and asked to build GLBs; individual designs remain under review",
+  "stage": "static_textured_blockout_for_form_approval",
+  "habitat": "dunes",
+  "diet": "herbivore",
+  "description": "Streamlined wedge snout, shovel claws and bright decoy tail markings",
+  "defense": "rapid_sand_burrow_and_tail_decoy",
+  "length_design_m": 0.8,
+  "mass_design_kg": 2.5,
+  "glb": "fossario-v01-textured-blockout.glb",
+  "bytes": 3606492,
+  "sha256": "1fc4f5e33058e096c3f8b7e591e5477e8f695ca6ca345c2e07e7cbb4ef90deae",
+  "triangle_count": 1602,
+  "triangle_count_method": "sum mesh primitive triangles after actual GLB reimport",
+  "glb_meshes": 1,
+  "materials": 1,
+  "uv_atlas_px": [
+    2048,
+    2048
+  ],
+  "painted_markings_not_extra_polygons": true,
+  "paint_map": "texture/fossario-v01-painted-albedo.png",
+  "skins": 0,
+  "joints": 0,
+  "animations": 0,
+  "lods": 1,
+  "skeleton": "not requested until form approval",
+  "components_authoring": 56,
+  "components": [
+    {
+      "name": "streamlined_skink_torso",
+      "triangles": 188
+    },
+    {
+      "name": "elongated_neck",
+      "triangles": 68
+    },
+    {
+      "name": "faceted_skull",
+      "triangles": 92
+    },
+    {
+      "name": "actual_lower_jaw",
+      "triangles": 56
+    },
+    {
+      "name": "recessed_eye_-1",
+      "triangles": 72
+    },
+    {
+      "name": "nostril_-1",
+      "triangles": 8
+    },
+    {
+      "name": "recessed_eye_1",
+      "triangles": 72
+    },
+    {
+      "name": "nostril_1",
+      "triangles": 8
+    },
+    {
+      "name": "nasal_sand_shovel_crest",
+      "triangles": 10
+    },
+    {
+      "name": "flexible_attention_tail",
+      "triangles": 140
+    },
+    {
+      "name": "front_leg_-1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_0.17_-1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_0.17_-1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_-1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_-1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_-1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "front_leg_1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_0.17_1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_0.17_1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.17_1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.17_1_3",
+      "triangles": 8
+    },
+    {
+      "name": "back_leg_-1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_-0.12_-1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_-0.12_-1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_-1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_-1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_-1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "back_leg_1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_-0.12_1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_-0.12_1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_1_3",
+      "triangles": 8
+    },
+    {
+      "name": "sand_scrape_digging_claw_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "sand_scrape_digging_claw_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "sand_scrape_digging_claw_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "sand_scrape_digging_claw_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "sand_scrape_digging_claw_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "sand_scrape_digging_claw_1_2",
+      "triangles": 8
+    }
+  ],
+  "render_evidence_source_sha256": "1fc4f5e33058e096c3f8b7e591e5477e8f695ca6ca345c2e07e7cbb4ef90deae",
+  "previews": {
+    "fossario-v01-real-glb-profile.png": {
+      "bytes": 340315,
+      "sha256": "0b22df2fbb87f76b830200b940b07ea3e61a402e07c6c6da744e4d3f97ce0ea6",
+      "source_glb_sha256": "1fc4f5e33058e096c3f8b7e591e5477e8f695ca6ca345c2e07e7cbb4ef90deae",
+      "camera_view": "profile"
+    },
+    "fossario-v01-real-glb-front.png": {
+      "bytes": 345279,
+      "sha256": "cd0a46d958543fa29a6b00826f5d36ac49925d141237bfdc5f7f819c1bd4a578",
+      "source_glb_sha256": "1fc4f5e33058e096c3f8b7e591e5477e8f695ca6ca345c2e07e7cbb4ef90deae",
+      "camera_view": "front"
+    },
+    "fossario-v01-real-glb-three-quarter.png": {
+      "bytes": 337919,
+      "sha256": "926e649d567151b7e66f7e564727b152c0dc08e1542f57b8c6a3f6d1d004b778",
+      "source_glb_sha256": "1fc4f5e33058e096c3f8b7e591e5477e8f695ca6ca345c2e07e7cbb4ef90deae",
+      "camera_view": "three-quarter"
+    },
+    "fossario-v01-three-real-glb-views.png": {
+      "bytes": 445458,
+      "sha256": "cf70b8a793cfa13f1942c6d4de6c7a9e9125103709c7245a0e84f28ea24ed480",
+      "source_glb_sha256": "1fc4f5e33058e096c3f8b7e591e5477e8f695ca6ca345c2e07e7cbb4ef90deae",
+      "camera_view": "contact_sheet"
+    }
+  },
+  "integrated_game": false,
+  "art_status": "pending_form_approval",
+  "publication": "branch_published_pending_artistic_review",
+  "git_blob_sha1": "4ceb052b2a908c6dea829382becb513ff7f215a7"
+}

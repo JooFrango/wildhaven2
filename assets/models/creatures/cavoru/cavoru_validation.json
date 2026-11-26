@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "forest",
+    "lod": 0,
+    "bytes": 1035236,
+    "sha256": "146d29a7b42154873fd0a8da5a7a013d1b7ced54a752cf839e62c2584feed69c",
+    "joints": 24,
+    "animations": 27,
+    "vertices": 13330,
+    "triangles": 23610,
+    "importedMeshes": 32,
+    "valid": true
+  },
+  {
+    "variant": "forest",
+    "lod": 1,
+    "bytes": 534744,
+    "sha256": "15e9ebd1a76d67226e8adfbeb7dd5cb78e3ff49040791b930a08eb0e024cc5d3",
+    "joints": 24,
+    "animations": 27,
+    "vertices": 6170,
+    "triangles": 10552,
+    "importedMeshes": 32,
+    "valid": true
+  },
+  {
+    "variant": "plains",
+    "lod": 0,
+    "bytes": 938428,
+    "sha256": "4a902f142f695d472d8ba2604fa29d33939ddadf87d4086668b43ade2b181d21",
+    "joints": 24,
+    "animations": 27,
+    "vertices": 11893,
+    "triangles": 21300,
+    "importedMeshes": 32,
+    "valid": true
+  },
+  {
+    "variant": "plains",
+    "lod": 1,
+    "bytes": 497420,
+    "sha256": "df764568c5be549a9e8a714f4b31a5d7d8713f23e817766050d3bae2f9dfb392",
+    "joints": 24,
+    "animations": 27,
+    "vertices": 5606,
+    "triangles": 9708,
+    "importedMeshes": 32,
+    "valid": true
+  }
+]

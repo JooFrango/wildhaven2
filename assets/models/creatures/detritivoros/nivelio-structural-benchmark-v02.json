@@ -1,0 +1,148 @@
+{
+  "species": "nivelio",
+  "variant": "snow-mountain",
+  "source": {
+    "bytes": 419176,
+    "sha256": "f45c5c4d73811eaabec2e637c89dfdb4d245a7482141218466084831d5ec0eae",
+    "trianglesMeshDefinitions": 1616,
+    "trianglesDrawnPerInstance": 2752,
+    "meshDefinitions": 9,
+    "meshNodes": 31,
+    "primitives": 9,
+    "estimatedDrawCalls": 31,
+    "materials": 5,
+    "nodes": 44,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "nivelio_idle",
+      "nivelio_walk",
+      "nivelio_feed",
+      "nivelio_flee",
+      "nivelio_defend",
+      "nivelio_rest",
+      "nivelio_die"
+    ]
+  },
+  "instances": [
+    10,
+    25,
+    50,
+    100,
+    200,
+    500
+  ],
+  "lods": [
+    {
+      "lod": 0,
+      "triangles": 2394,
+      "drawCalls": 22,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 23940,
+          "drawCallsPerFrame": 220
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 59850,
+          "drawCallsPerFrame": 550
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 119700,
+          "drawCallsPerFrame": 1100
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 239400,
+          "drawCallsPerFrame": 2200
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 478800,
+          "drawCallsPerFrame": 4400
+        },
+        {
+          "instances": 500,
+          "trianglesPerFrame": 1197000,
+          "drawCallsPerFrame": 11000
+        }
+      ]
+    },
+    {
+      "lod": 1,
+      "triangles": 1186,
+      "drawCalls": 22,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 11860,
+          "drawCallsPerFrame": 220
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 29650,
+          "drawCallsPerFrame": 550
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 59300,
+          "drawCallsPerFrame": 1100
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 118600,
+          "drawCallsPerFrame": 2200
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 237200,
+          "drawCallsPerFrame": 4400
+        },
+        {
+          "instances": 500,
+          "trianglesPerFrame": 593000,
+          "drawCallsPerFrame": 11000
+        }
+      ]
+    },
+    {
+      "lod": 2,
+      "triangles": 477,
+      "drawCalls": 22,
+      "scenarios": [
+        {
+          "instances": 10,
+          "trianglesPerFrame": 4770,
+          "drawCallsPerFrame": 220
+        },
+        {
+          "instances": 25,
+          "trianglesPerFrame": 11925,
+          "drawCallsPerFrame": 550
+        },
+        {
+          "instances": 50,
+          "trianglesPerFrame": 23850,
+          "drawCallsPerFrame": 1100
+        },
+        {
+          "instances": 100,
+          "trianglesPerFrame": 47700,
+          "drawCallsPerFrame": 2200
+        },
+        {
+          "instances": 200,
+          "trianglesPerFrame": 95400,
+          "drawCallsPerFrame": 4400
+        },
+        {
+          "instances": 500,
+          "trianglesPerFrame": 238500,
+          "drawCallsPerFrame": 11000
+        }
+      ]
+    }
+  ]
+}

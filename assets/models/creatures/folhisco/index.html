@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wildhaven — Folhisco | Ateliê de animações</title>
+  <style>
+    :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;--bg:#111b1b;--card:#192828;--muted:#9eb0a7;--line:#31413f;--accent:#efb765}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:#f5efdf}header{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;justify-content:space-between}
+    .logo{letter-spacing:.14em;text-transform:uppercase;font:700 22px Georgia,serif}.pill{font-size:12px;background:#304138;padding:6px 12px;border:1px solid #52674b;border-radius:99px;color:#c6dfac}
+    .layout{display:grid;grid-template-columns:minmax(0,1fr) 325px;height:calc(100vh - 72px);min-height:500px}
+    .stage{min-height:490px;position:relative;overflow:hidden;background:radial-gradient(circle at center,#42544e,#1a2929 65%)}
+    canvas{display:block;width:100%;height:100%}.stage-note{position:absolute;bottom:16px;left:16px;padding:10px 14px;border-radius:10px;background:#13201fc7;color:#dbe4d2;font-size:12px;pointer-events:none}
+    aside{background:#1a2726;padding:24px;overflow:auto;border-left:1px solid var(--line)} h1{font:600 30px Georgia,serif;margin:0 0 10px}p{color:var(--muted);line-height:1.5;font-size:14px;margin:4px 0 20px}
+    label{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:#cfdfd4;margin:22px 0 8px}
+    select,input[type=range]{width:100%;accent-color:var(--accent)}select,button{background:#293937;border:1px solid #42514b;border-radius:9px;color:#f8f1e7;padding:11px 12px;font-size:14px}
+    select:focus,button:focus{outline:2px solid var(--accent)}button{cursor:pointer;flex:1}button:hover{background:#364943}button.primary{background:#926a32;border-color:#ad8550;font-weight:600}
+    .btns{display:flex;gap:8px;margin-top:12px}.stat{font-variant-numeric:tabular-nums;color:var(--accent)}.tog{display:flex;align-items:center;gap:9px;color:#d6ded7;font-size:13px;margin:14px 0}.tog input{accent-color:#deb279}
+    .facts{border-top:1px solid var(--line);padding-top:14px;margin-top:25px;font-size:12px;color:var(--muted);line-height:1.8}
+    .error{display:none;background:#633b34;color:#ffe4d7;padding:12px;border-radius:8px;line-height:1.5;margin-top:14px}
+    @media(max-width:780px){.layout{display:flex;flex-direction:column;height:auto}.stage{height:54vh;min-height:340px}aside{border-left:0;border-top:1px solid var(--line);padding:20px}}
+  </style>
+  <script type="importmap">
+  {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <header><div class="logo">WILDHAVEN <span style="font:400 12px system-ui;color:#b4c2ba;letter-spacing:0">/ ATELIÊ DE CRIATURAS</span></div><span class="pill">FOLHISCO · v0.1</span></header>
+  <main class="layout">
+    <div class="stage" id="stage"><div class="stage-note" id="stageNote">Carregando modelo 3D…</div></div>
+    <aside>
+      <h1>Folhisco</h1>
+      <p>Ave herbívora · Bosque das Cascatas · Malha 3D original com armadura animada.</p>
+      <label for="clip">Animação</label>
+      <select id="clip" aria-label="Escolher animação"><option>Carregando…</option></select>
+      <div class="btns"><button class="primary" id="play">⏸ Pausar</button><button id="reset">↺ Reiniciar</button></div>
+      <label for="speed">Velocidade <span id="speedValue" class="stat">1.0×</span></label>
+      <input id="speed" type="range" min="0.25" max="2.5" step="0.05" value="1">
+      <label>Aparência e inspeção</label>
+      <div class="tog"><input id="wireframe" type="checkbox"><span>Mostrar malha de polígonos</span></div>
+      <div class="tog"><input id="skeleton" type="checkbox"><span>Mostrar esqueleto</span></div>
+      <div class="tog"><input id="rotate" type="checkbox" checked><span>Rotação lenta automática</span></div>
+      <div class="btns"><button id="camera">Restaurar câmera</button></div>
+      <div class="error" id="error"></div>
+      <div class="facts"><strong>Estrutura</strong><br>11 articulações · 15 clipes · ~16,2 mil triângulos<br>GLB com skin e pesos rígidos por região anatômica.<br><br><strong>Controles</strong><br>Arraste para girar; role para aproximar; escolha uma ação no menu.<br><br>Este visualizador usa Three.js pela CDN e precisa de conexão à internet para abrir. O arquivo GLB não depende da CDN.</div>
+    </aside>
+  </main>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+const stage=document.querySelector('#stage');
+const note=document.querySelector('#stageNote');
+const error=document.querySelector('#error');
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.5;
+renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#283c36');scene.fog=new THREE.Fog('#283c36',2.7,5.5);
+const camera=new THREE.PerspectiveCamera(38,1,0.01,15);
+camera.position.set(1.05,.66,-1.25);
+const orbit=new OrbitControls(camera,renderer.domElement);orbit.target.set(0,.19,0);orbit.enableDamping=true;orbit.maxPolarAngle=Math.PI*.49;orbit.minDistance=.58;orbit.maxDistance=3.0;orbit.update();
+scene.add(new THREE.HemisphereLight('#fff0d7','#304339',2.15));
+const sun=new THREE.DirectionalLight('#ffdeb5',3.25);sun.position.set(-1.1,2.2,-1.7);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.near=.1;sun.shadow.camera.far=10;sun.shadow.normalBias=.02;scene.add(sun);
+const rim=new THREE.DirectionalLight('#bad0b8',2.25);rim.position.set(1.2,.6,1.5);scene.add(rim);
+const floor=new THREE.Mesh(new THREE.CircleGeometry(1.1,64),new THREE.MeshStandardMaterial({color:'#344435',roughness:1}));floor.rotation.x=-Math.PI/2;floor.position.y=-.015;floor.receiveShadow=true;scene.add(floor);
+const ring=new THREE.Mesh(new THREE.RingGeometry(.72,.85,72),new THREE.MeshStandardMaterial({color:'#546045',roughness:1,side:THREE.DoubleSide}));ring.rotation.x=-Math.PI/2;ring.position.y=-.012;scene.add(ring);
+let root,mixer,actions=[],currentAction,helper;
+const clipSelect=document.querySelector('#clip');
+const short={idle:'Parado / respiração',walk:'Caminhar',run:'Correr e fugir',peck:'Bicar e comer',scratch:'Ciscar com patas',scan_head:'Observar ao redor',alert:'Alerta',alarm_call:'Grito de alarme',jump_flap:'Salto com asas',hide:'Abaixar e esconder',hurt:'Receber dano',death:'Morrer',drink:'Beber água',preen:'Arrumar penas',sleep:'Repousar'};
+function playClip(name){
+ const animation=actions.find(x=>x.getClip().name===name);if(!animation)return;
+ const prev=currentAction;animation.reset();animation.enabled=true;
+ animation.setLoop(['death','hurt'].includes(name)?THREE.LoopOnce:THREE.LoopRepeat,Infinity);
+ animation.clampWhenFinished=['death','hurt'].includes(name);
+ animation.play();if(prev && prev!==animation)animation.crossFadeFrom(prev,.18,true);
+ currentAction=animation;paused=false;document.querySelector('#play').textContent='⏸ Pausar';
+}
+let paused=false;
+function fail(e){console.error(e);error.style.display='block';error.textContent='Falha ao carregar o GLB. Abra esta pasta com um servidor HTTP local (python -m http.server 8765) e mantenha a conexão com a internet para importar Three.js.';note.textContent='Erro ao carregar';}
+new GLTFLoader().load('./folhisco_animated_v01.glb',gltf=>{
+ root=gltf.scene;root.name='Folhisco';scene.add(root);
+ root.traverse(child=>{if(child.isMesh){child.castShadow=true;child.frustumCulled=false;}});
+ mixer=new THREE.AnimationMixer(root);
+ actions=gltf.animations.map(clip=>mixer.clipAction(clip));
+ const preferred=['idle','walk','run','peck','scratch','scan_head','alert','alarm_call','jump_flap','hide','hurt','death','drink','preen','sleep'];
+ clipSelect.innerHTML='';
+ for(const name of preferred){const found=gltf.animations.find(a=>a.name===name);if(!found)continue;const option=document.createElement('option');option.value=name;option.textContent=`${short[name]||name} — ${found.duration.toFixed(2)} s`;clipSelect.append(option)}
+ clipSelect.addEventListener('change',()=>playClip(clipSelect.value));
+ playClip('idle');
+ helper=new THREE.SkeletonHelper(root);helper.visible=false;scene.add(helper);
+ note.textContent=`${gltf.animations.length} animações encontradas · ${root.getObjectByName('Body')?'rig carregado':'modelo carregado'}`;
+},undefined,fail);
+
+function resize(){const w=stage.clientWidth,h=stage.clientHeight;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false)}
+new ResizeObserver(resize).observe(stage);resize();
+document.querySelector('#play').onclick=()=>{paused=!paused;document.querySelector('#play').textContent=paused?'▶ Continuar':'⏸ Pausar'};
+document.querySelector('#reset').onclick=()=>{if(currentAction){currentAction.reset().play();paused=false;document.querySelector('#play').textContent='⏸ Pausar'}};
+document.querySelector('#speed').oninput=e=>document.querySelector('#speedValue').textContent=Number(e.target.value).toFixed(2)+'×';
+document.querySelector('#wireframe').onchange=e=>{if(root)root.traverse(o=>{if(o.isMesh){const materials=Array.isArray(o.material)?o.material:[o.material];for(const m of materials)m.wireframe=e.target.checked}})};
+document.querySelector('#skeleton').onchange=e=>{if(helper)helper.visible=e.target.checked};
+document.querySelector('#camera').onclick=()=>{camera.position.set(1.05,.66,-1.25);orbit.target.set(0,.19,0);orbit.update()};
+const clock=new THREE.Clock();let accumulated=0;
+function animate(){requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.05);if(mixer&&!paused)mixer.update(dt*Number(document.querySelector('#speed').value));
+ if(root&&document.querySelector('#rotate').checked){accumulated+=dt;root.rotation.y=Math.sin(accumulated*.24)*.25}
+ orbit.update();renderer.render(scene,camera)}animate();
+</script>
+</body>
+</html>
