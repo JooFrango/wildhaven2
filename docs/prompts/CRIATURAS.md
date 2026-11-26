@@ -68,9 +68,11 @@ Metas iniciais do guia anterior, por animal final em LOD0, mantidas como planeja
 
 | Porte | Triângulos de referência |
 | --- | ---: |
-| Pequeno | 4.000–8.000 |
+| Pequeno | **Máximo absoluto de 1.500 triângulos no LOD0** |
 | Médio | 12.000–26.000 |
 | Grande | 18.000–26.000; exceções justificadas pela silhueta/estruturas |
+
+**Regra do responsável (2026-11-26):** qualquer animal pequeno, inclusive retrabalhos, deve ter no máximo 1.500 triângulos efetivamente renderizados no LOD0, contando todas as malhas e instâncias do animal. Polígonos não triangulados não são um meio de contornar o limite. LODs inferiores devem ser mais leves. Validar o GLB exportado e não marcar como aprovado se ultrapassar o teto; preferir textura para detalhes que não alteram a silhueta. As metas genéricas anteriores não se sobrepõem a este teto.
 
 LOD1 busca redução de 40%–65% e LOD2 de 65%–85%, **ambas em relação ao LOD0**. São metas de planejamento, não garantia de qualidade nem limites absolutos. Planeje LOD0/1/2; entregue os níveis que o uso justificar e explique ausências. Não criar arquivos duplicados para alegar três LODs. Preserve rig/clipes compatíveis ou documente a diferença.
 
