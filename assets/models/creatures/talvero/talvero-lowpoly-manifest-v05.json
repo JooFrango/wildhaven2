@@ -1,0 +1,111 @@
+{
+  "id": "talvero",
+  "version": "v05",
+  "status": "artistic_review_pending",
+  "proposedStyle": "organic_midpoly",
+  "source": "assets/models/creatures/talvero/talvero-savanna-anatomy-skinned-v04.glb",
+  "lods": [
+    {
+      "path": "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD0.glb",
+      "bytes": 801760,
+      "sha256": "4296123fedb777b4a07bd6b7ab1ba86b95648a74873580380c268fadf854e786",
+      "triangles": 25247,
+      "originalTriangles": 113234,
+      "reductionPercent": 77.7,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/talvero/talvero-savanna-anatomy-skinned-v04.glb",
+      "lod": "LOD0",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "gallop",
+        "graze",
+        "alert",
+        "flee",
+        "kick",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 77,
+      "remeshedPrimitives": 42
+    },
+    {
+      "path": "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD1.glb",
+      "bytes": 426424,
+      "sha256": "e86b16deb55945b7d415043917fcaef9b99bbdb1bc794d0e842d044a957f84fa",
+      "triangles": 9929,
+      "originalTriangles": 113234,
+      "reductionPercent": 91.2,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/talvero/talvero-savanna-anatomy-skinned-v04.glb",
+      "lod": "LOD1",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "gallop",
+        "graze",
+        "alert",
+        "flee",
+        "kick",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 77,
+      "remeshedPrimitives": 42
+    },
+    {
+      "path": "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD2.glb",
+      "bytes": 311052,
+      "sha256": "a6a8fe76b8af478202ab0217b71bda41e1ec648f76e4c630ec966127c5a3c6b8",
+      "triangles": 5571,
+      "originalTriangles": 113234,
+      "reductionPercent": 95.1,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/talvero/talvero-savanna-anatomy-skinned-v04.glb",
+      "lod": "LOD2",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "gallop",
+        "graze",
+        "alert",
+        "flee",
+        "kick",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 77,
+      "remeshedPrimitives": 42
+    }
+  ],
+  "fullSourceRetained": true,
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "gallop",
+    "graze",
+    "alert",
+    "flee",
+    "kick",
+    "rest",
+    "death"
+  ],
+  "skinnedJoints": 17,
+  "integration": {
+    "gameplay": false,
+    "spawns": false,
+    "ai": false
+  },
+  "method": "quadric surface simplification + normal recompute + joint and color projection; original GLB skin and animation channels preserved",
+  "note": "Counts reflect actual exported GLB polygons. Pixel fidelity requires review. No gameplay changes."
+}
