@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "v01": {
+    "bytes": 1685920,
+    "sha256": "288c2ac9bea54e694f32ebc11877b4ce8626dc80177c8409253645ac6633a66b",
+    "triangles": 6852,
+    "meshes": 9,
+    "span_m": 11.0365,
+    "bounds_min": [
+      -2.76,
+      0.02127,
+      -5.51825
+    ],
+    "bounds_max": [
+      1.94,
+      4.17022,
+      5.51825
+    ],
+    "image_count": 1,
+    "skin_count": 0,
+    "clip_count": 0,
+    "material_count": 1
+  },
+  "v02": {
+    "bytes": 1388384,
+    "sha256": "51739b996dfd82e7d01209cb4347df42488952feb16468c764962645ea14ee5e",
+    "triangles": 2000,
+    "meshes": 9,
+    "span_m": 11.0365,
+    "bounds_min": [
+      -2.76,
+      0.0214,
+      -5.51825
+    ],
+    "bounds_max": [
+      1.94,
+      4.16987,
+      5.51825
+    ],
+    "image_count": 1,
+    "skin_count": 0,
+    "clip_count": 0,
+    "material_count": 1
+  },
+  "reduction_triangles_pct": 70.81,
+  "reduction_glb_bytes_pct": 17.65,
+  "texture_byte_identical_to_v01": true,
+  "verified_cameras": [
+    "frente",
+    "perfil",
+    "tres_quartos"
+  ],
+  "render_source": "vtkGLTFImporter read from exported GLB",
+  "no_alpha_changes": true,
+  "visual_quality_qualification": "Silhouette and bounds preserved. Low-detail feathers and head closeups do differ; director must approve."
+}

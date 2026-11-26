@@ -1,0 +1,302 @@
+{
+  "species_id": "lajurim",
+  "name": "Lajurim",
+  "version": "v01",
+  "base": "main:9e84c8b8750a041a9f41c10dc192ee05ee9f339d",
+  "approved_concept": "user approved four reptile concepts and asked to build GLBs; individual designs remain under review",
+  "stage": "static_textured_blockout_for_form_approval",
+  "habitat": "rocky_desert",
+  "diet": "herbivore",
+  "description": "Extremely dorsoventrally flattened body and bracing flanks for rock crevices",
+  "defense": "wedge_brace_in_rock_crevice",
+  "length_design_m": 0.7,
+  "mass_design_kg": 3.0,
+  "glb": "lajurim-v01-textured-blockout.glb",
+  "bytes": 3647328,
+  "sha256": "e858c8fdde62ae670abfc988c3607a96b9b7984f5e4332ab3e4e12a340a618f7",
+  "triangle_count": 1588,
+  "triangle_count_method": "sum mesh primitive triangles after actual GLB reimport",
+  "glb_meshes": 1,
+  "materials": 1,
+  "uv_atlas_px": [
+    2048,
+    2048
+  ],
+  "painted_markings_not_extra_polygons": true,
+  "paint_map": "texture/lajurim-v01-painted-albedo.png",
+  "skins": 0,
+  "joints": 0,
+  "animations": 0,
+  "lods": 1,
+  "skeleton": "not requested until form approval",
+  "components_authoring": 59,
+  "components": [
+    {
+      "name": "extremely_flat_slab_body",
+      "triangles": 220
+    },
+    {
+      "name": "broad_slab_neck",
+      "triangles": 68
+    },
+    {
+      "name": "faceted_skull",
+      "triangles": 92
+    },
+    {
+      "name": "actual_lower_jaw",
+      "triangles": 56
+    },
+    {
+      "name": "recessed_eye_-1",
+      "triangles": 72
+    },
+    {
+      "name": "nostril_-1",
+      "triangles": 8
+    },
+    {
+      "name": "recessed_eye_1",
+      "triangles": 72
+    },
+    {
+      "name": "nostril_1",
+      "triangles": 8
+    },
+    {
+      "name": "short_flat_tail",
+      "triangles": 92
+    },
+    {
+      "name": "front_leg_-1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_0.18_-1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_0.18_-1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.18_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.18_-1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.18_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.18_-1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.18_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.18_-1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.18_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "front_leg_1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_0.18_1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_0.18_1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.18_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.18_1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.18_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.18_1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.18_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_0.18_1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_0.18_1_3",
+      "triangles": 8
+    },
+    {
+      "name": "back_leg_-1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_-0.12_-1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_-0.12_-1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_-1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_-1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_-1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_-1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_-1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_-1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_-1_3",
+      "triangles": 8
+    },
+    {
+      "name": "back_leg_1",
+      "triangles": 76
+    },
+    {
+      "name": "foot_-0.12_1",
+      "triangles": 38
+    },
+    {
+      "name": "toe_digit_-0.12_1_0",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_1_0",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_1_1",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_1_1",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_1_2",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_1_2",
+      "triangles": 8
+    },
+    {
+      "name": "toe_digit_-0.12_1_3",
+      "triangles": 16
+    },
+    {
+      "name": "toe_claw_-0.12_1_3",
+      "triangles": 8
+    },
+    {
+      "name": "flank_wedged_brace_-1_0",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_-1_1",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_-1_2",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_-1_3",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_-1_4",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_1_0",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_1_1",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_1_2",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_1_3",
+      "triangles": 6
+    },
+    {
+      "name": "flank_wedged_brace_1_4",
+      "triangles": 6
+    }
+  ],
+  "render_evidence_source_sha256": "e858c8fdde62ae670abfc988c3607a96b9b7984f5e4332ab3e4e12a340a618f7",
+  "previews": {
+    "lajurim-v01-real-glb-profile.png": {
+      "bytes": 334950,
+      "sha256": "ba47609cc457f89d7d6f14385b108b9292077922353efcb2dedf7b7475d6ec52",
+      "source_glb_sha256": "e858c8fdde62ae670abfc988c3607a96b9b7984f5e4332ab3e4e12a340a618f7",
+      "camera_view": "profile"
+    },
+    "lajurim-v01-real-glb-front.png": {
+      "bytes": 362069,
+      "sha256": "c8946fe1150508ad04724d31ed6dc9e880a3ec2a984c280777b16c61709b528b",
+      "source_glb_sha256": "e858c8fdde62ae670abfc988c3607a96b9b7984f5e4332ab3e4e12a340a618f7",
+      "camera_view": "front"
+    },
+    "lajurim-v01-real-glb-three-quarter.png": {
+      "bytes": 345469,
+      "sha256": "ad765d3c38ce19323b4f454de3c76404409d845d7bce8c56ed0a0e4deae15bf2",
+      "source_glb_sha256": "e858c8fdde62ae670abfc988c3607a96b9b7984f5e4332ab3e4e12a340a618f7",
+      "camera_view": "three-quarter"
+    },
+    "lajurim-v01-three-real-glb-views.png": {
+      "bytes": 436785,
+      "sha256": "f16dcc887ee8808641c2574b3f0f10111635e89098d77641a84b92ea81d8c6b2",
+      "source_glb_sha256": "e858c8fdde62ae670abfc988c3607a96b9b7984f5e4332ab3e4e12a340a618f7",
+      "camera_view": "contact_sheet"
+    }
+  },
+  "integrated_game": false,
+  "art_status": "pending_form_approval",
+  "publication": "branch_published_pending_artistic_review",
+  "git_blob_sha1": "4a488f3823776448f8ae311be490327a6dafbecb"
+}

@@ -1,0 +1,227 @@
+{
+  "species": "lobrapedra",
+  "source": "assets/models/creatures/lobrapedra/lobrapedra-animated-v01.glb",
+  "sourceStats": {
+    "bytes": 332092,
+    "sha256": "30d5bd17ba935c362c2afa58ec72f0222276d7d5a6294a1157b711b92e42b026",
+    "trianglesMeshDefinitions": 6642,
+    "trianglesDrawnPerInstance": 6642,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 16,
+    "estimatedDrawCalls": 16,
+    "materials": 16,
+    "nodes": 24,
+    "skins": 1,
+    "skinJointCounts": [
+      22
+    ],
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "idle",
+      "breathing",
+      "drink",
+      "rest",
+      "sleep",
+      "hurt",
+      "death",
+      "turn_left",
+      "turn_right",
+      "stalk",
+      "chase",
+      "pounce",
+      "bite",
+      "growl",
+      "feed",
+      "alert",
+      "retreat"
+    ]
+  },
+  "animationSignature": "5c64d24f54ba3d34345757e1d501ecc52eb3d29f7a1273f296c2323c6707cf2c",
+  "lods": [
+    {
+      "bytes": 219812,
+      "sha256": "7cf33859bbc7fd0bb23a991bb2a3091a939250a77370eef267de7a0479c9cd8d",
+      "trianglesMeshDefinitions": 4786,
+      "trianglesDrawnPerInstance": 4786,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 16,
+      "estimatedDrawCalls": 16,
+      "materials": 16,
+      "nodes": 24,
+      "skins": 1,
+      "skinJointCounts": [
+        22
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "breathing",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death",
+        "turn_left",
+        "turn_right",
+        "stalk",
+        "chase",
+        "pounce",
+        "bite",
+        "growl",
+        "feed",
+        "alert",
+        "retreat"
+      ],
+      "targetTriangles": 4800,
+      "animationSignature": "5c64d24f54ba3d34345757e1d501ecc52eb3d29f7a1273f296c2323c6707cf2c",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 151124,
+      "sha256": "2fd730b5a6f207d4c4f11d2172b0274b9d7614f44f1238f91610da36c1c2e1e8",
+      "trianglesMeshDefinitions": 2589,
+      "trianglesDrawnPerInstance": 2589,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 16,
+      "estimatedDrawCalls": 16,
+      "materials": 16,
+      "nodes": 24,
+      "skins": 1,
+      "skinJointCounts": [
+        22
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "breathing",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death",
+        "turn_left",
+        "turn_right",
+        "stalk",
+        "chase",
+        "pounce",
+        "bite",
+        "growl",
+        "feed",
+        "alert",
+        "retreat"
+      ],
+      "targetTriangles": 2600,
+      "animationSignature": "5c64d24f54ba3d34345757e1d501ecc52eb3d29f7a1273f296c2323c6707cf2c",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 103800,
+      "sha256": "6f9aada1335b9a122fad13a30bf0413b612f6fc6e4bd0d32c2a52b5e9ea2f398",
+      "trianglesMeshDefinitions": 1093,
+      "trianglesDrawnPerInstance": 1093,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 16,
+      "estimatedDrawCalls": 16,
+      "materials": 16,
+      "nodes": 24,
+      "skins": 1,
+      "skinJointCounts": [
+        22
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "breathing",
+        "drink",
+        "rest",
+        "sleep",
+        "hurt",
+        "death",
+        "turn_left",
+        "turn_right",
+        "stalk",
+        "chase",
+        "pounce",
+        "bite",
+        "growl",
+        "feed",
+        "alert",
+        "retreat"
+      ],
+      "targetTriangles": 1100,
+      "animationSignature": "5c64d24f54ba3d34345757e1d501ecc52eb3d29f7a1273f296c2323c6707cf2c",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 358956,
+      "boundsMin": [
+        -0.42535069584846497,
+        0.11500000208616257,
+        -1.6383702754974365
+      ],
+      "boundsMax": [
+        0.4300000071525574,
+        1.4397822618484497,
+        1.5389063358306885
+      ]
+    },
+    "front": {
+      "bytes": 342134,
+      "boundsMin": [
+        -0.42535069584846497,
+        0.11500000208616257,
+        -1.6383702754974365
+      ],
+      "boundsMax": [
+        0.4300000071525574,
+        1.4397822618484497,
+        1.5389063358306885
+      ]
+    },
+    "three-quarter": {
+      "bytes": 61597,
+      "boundsMin": [
+        -0.42535069584846497,
+        0.11500000208616257,
+        -1.6383702754974365
+      ],
+      "boundsMax": [
+        0.4300000071525574,
+        1.4397822618484497,
+        1.5389063358306885
+      ]
+    },
+    "wireframe": {
+      "bytes": 160886,
+      "boundsMin": [
+        -0.42535069584846497,
+        0.11500000208616257,
+        -1.6383702754974365
+      ],
+      "boundsMax": [
+        0.4300000071525574,
+        1.4397822618484497,
+        1.5389063358306885
+      ]
+    }
+  },
+  "method": "preserve-layout",
+  "artisticStatus": "modeled_candidate_pending_user_preview_approval"
+}

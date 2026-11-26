@@ -1,0 +1,212 @@
+{
+  "species": "lobrapedra",
+  "revision": "v02",
+  "source": "assets/models/creatures/lobrapedra/v02/lobrapedra-animated-v02.glb",
+  "sourceStats": {
+    "bytes": 261732,
+    "sha256": "a464cd989dde2a496415599e6539f466c20019f961434be415b05fc6d2abeba9",
+    "trianglesMeshDefinitions": 1372,
+    "trianglesDrawnPerInstance": 1372,
+    "meshDefinitions": 1,
+    "meshNodes": 1,
+    "primitives": 12,
+    "estimatedDrawCalls": 12,
+    "materials": 12,
+    "nodes": 24,
+    "skins": 1,
+    "skinJointCounts": [
+      22
+    ],
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "idle",
+      "stalk",
+      "chase",
+      "pounce",
+      "bite",
+      "growl",
+      "feed",
+      "alert",
+      "retreat",
+      "drink",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "animationSignature": "e4bec0485061492f161d26f3bfbd2ec4fee0d9019363e4fa2dbee1aa207a3bb9",
+  "lods": [
+    {
+      "bytes": 111980,
+      "sha256": "c871e1a1aec0ab510ad19541c98e13b53fcd2024390114f9b31f57619a893ba3",
+      "trianglesMeshDefinitions": 1246,
+      "trianglesDrawnPerInstance": 1246,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 12,
+      "estimatedDrawCalls": 12,
+      "materials": 12,
+      "nodes": 24,
+      "skins": 1,
+      "skinJointCounts": [
+        22
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "stalk",
+        "chase",
+        "pounce",
+        "bite",
+        "growl",
+        "feed",
+        "alert",
+        "retreat",
+        "drink",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 1250,
+      "animationSignature": "e4bec0485061492f161d26f3bfbd2ec4fee0d9019363e4fa2dbee1aa207a3bb9",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 84512,
+      "sha256": "fec131581dfc0d711dbdf6ad563cf91ca286aa0fe7d37c224708a6c9a7815e47",
+      "trianglesMeshDefinitions": 746,
+      "trianglesDrawnPerInstance": 746,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 12,
+      "estimatedDrawCalls": 12,
+      "materials": 12,
+      "nodes": 24,
+      "skins": 1,
+      "skinJointCounts": [
+        22
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "stalk",
+        "chase",
+        "pounce",
+        "bite",
+        "growl",
+        "feed",
+        "alert",
+        "retreat",
+        "drink",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 750,
+      "animationSignature": "e4bec0485061492f161d26f3bfbd2ec4fee0d9019363e4fa2dbee1aa207a3bb9",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    },
+    {
+      "bytes": 65884,
+      "sha256": "38510e01bcba794fe97903c84c5df0a53827da715dd7538b48dc39d98fc20f3e",
+      "trianglesMeshDefinitions": 373,
+      "trianglesDrawnPerInstance": 373,
+      "meshDefinitions": 1,
+      "meshNodes": 1,
+      "primitives": 12,
+      "estimatedDrawCalls": 12,
+      "materials": 12,
+      "nodes": 24,
+      "skins": 1,
+      "skinJointCounts": [
+        22
+      ],
+      "animations": [
+        "walk",
+        "trot",
+        "run",
+        "idle",
+        "stalk",
+        "chase",
+        "pounce",
+        "bite",
+        "growl",
+        "feed",
+        "alert",
+        "retreat",
+        "drink",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 380,
+      "animationSignature": "e4bec0485061492f161d26f3bfbd2ec4fee0d9019363e4fa2dbee1aa207a3bb9",
+      "preservedMeshDefinitions": 1,
+      "preservedMeshNodes": 1
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 349882,
+      "boundsMin": [
+        -0.4203508198261261,
+        0.12250000238418579,
+        -1.6649999618530273
+      ],
+      "boundsMax": [
+        0.4300000071525574,
+        1.4049999713897705,
+        1.4225268363952637
+      ]
+    },
+    "front": {
+      "bytes": 333425,
+      "boundsMin": [
+        -0.4203508198261261,
+        0.12250000238418579,
+        -1.6649999618530273
+      ],
+      "boundsMax": [
+        0.4300000071525574,
+        1.4049999713897705,
+        1.4225268363952637
+      ]
+    },
+    "three-quarter": {
+      "bytes": 54810,
+      "boundsMin": [
+        -0.4203508198261261,
+        0.12250000238418579,
+        -1.6649999618530273
+      ],
+      "boundsMax": [
+        0.4300000071525574,
+        1.4049999713897705,
+        1.4225268363952637
+      ]
+    },
+    "wireframe": {
+      "bytes": 135374,
+      "boundsMin": [
+        -0.4203508198261261,
+        0.12250000238418579,
+        -1.6649999618530273
+      ],
+      "boundsMax": [
+        0.4300000071525574,
+        1.4049999713897705,
+        1.4225268363952637
+      ]
+    }
+  },
+  "style": "official-guide-defined-planes",
+  "artisticStatus": "revision_artistic_pending_user_approval"
+}

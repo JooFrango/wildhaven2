@@ -1,0 +1,7 @@
+{
+  "source_sha256": "7d531cc4add70fe5b147b2caf4755df4a3aea2f29ab8a313eb2178adca2300ed",
+  "structural_checks": true,
+  "actual_movement_in_five_rendered_clips": true,
+  "artistic_qa": false,
+  "gameplay_integration": false
+}

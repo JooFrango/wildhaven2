@@ -1,0 +1,25 @@
+{
+  "file": "assets/models/creatures/lobrapedra/v02/lobrapedra-animated-v02.glb",
+  "bytes": 261732,
+  "sha256": "a464cd989dde2a496415599e6539f466c20019f961434be415b05fc6d2abeba9",
+  "triangles": 1372,
+  "joints": 22,
+  "animations": [
+    "walk",
+    "trot",
+    "run",
+    "idle",
+    "stalk",
+    "chase",
+    "pounce",
+    "bite",
+    "growl",
+    "feed",
+    "alert",
+    "retreat",
+    "drink",
+    "rest",
+    "hurt",
+    "death"
+  ]
+}

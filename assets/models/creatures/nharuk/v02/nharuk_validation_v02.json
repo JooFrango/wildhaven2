@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "tropical",
+    "lod": 0,
+    "bytes": 919640,
+    "sha256": "781ed2101f53a824f0f757515d106d9472f1a5247d03dc1ffb770d55956c6a80",
+    "joints": 24,
+    "animations": 27,
+    "vertices": 11646,
+    "triangles": 20752,
+    "importedMeshes": 29,
+    "valid": true
+  },
+  {
+    "variant": "tropical",
+    "lod": 1,
+    "bytes": 485680,
+    "sha256": "26c3033785a837829f5dc6b7a70e3d0c00867fd37ae968cd9817373ebde58d96",
+    "joints": 24,
+    "animations": 27,
+    "vertices": 5451,
+    "triangles": 9378,
+    "importedMeshes": 29,
+    "valid": true
+  },
+  {
+    "variant": "temperate_plains",
+    "lod": 0,
+    "bytes": 919224,
+    "sha256": "122c2c35157b5f9bcd3c2e5ffbc09799ec7b90434602b1d97757270129933e42",
+    "joints": 24,
+    "animations": 27,
+    "vertices": 11646,
+    "triangles": 20752,
+    "importedMeshes": 29,
+    "valid": true
+  },
+  {
+    "variant": "temperate_plains",
+    "lod": 1,
+    "bytes": 485268,
+    "sha256": "bcb22d3067baddfc6e8eb2114eab512d3ffb6f2f0a82188a4a32b9ad58c68d09",
+    "joints": 24,
+    "animations": 27,
+    "vertices": 5451,
+    "triangles": 9378,
+    "importedMeshes": 29,
+    "valid": true
+  }
+]

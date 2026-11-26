@@ -1,0 +1,32 @@
+{
+  "id": "rambrel",
+  "name": "Rambrél",
+  "variant": "Common Acacia Browser",
+  "stage": "animated_asset_in_review",
+  "gameplayIntegrated": false,
+  "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py",
+  "model": {
+    "file": "rambrel-savanna-animated-v01.glb",
+    "bytes": 244528,
+    "sha256": "f7038fb39ed7230b50e01aeab6dbb08cbed35fd4e398a0a60a9e03ab0b0f7aa2",
+    "triangles": 7960,
+    "meshNodes": 18,
+    "animations": [
+      "idle",
+      "walk",
+      "trot",
+      "run",
+      "browse",
+      "chew",
+      "alert",
+      "headbutt",
+      "defend",
+      "rest",
+      "death"
+    ],
+    "animationCount": 11,
+    "joints": 18,
+    "rig": "hierarchical-pivot-animations-no-skin-weights"
+  },
+  "note": "Real geometry and exported pivot animation clips; no weighted skinning or AI."
+}

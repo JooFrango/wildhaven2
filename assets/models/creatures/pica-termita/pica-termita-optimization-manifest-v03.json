@@ -1,0 +1,251 @@
+{
+  "species": "pica-termita",
+  "variant": "savanna-edge",
+  "version": "v03",
+  "source": "assets/models/creatures/pica-termita/pica_termita-animated-v02.glb",
+  "sourceStats": {
+    "bytes": 1157024,
+    "sha256": "de34755c9117348badda6613f3a694ecec972cee80cccb96b28533776da024f7",
+    "trianglesMeshDefinitions": 4460,
+    "trianglesDrawnPerInstance": 9384,
+    "meshDefinitions": 81,
+    "meshNodes": 161,
+    "primitives": 81,
+    "estimatedDrawCalls": 161,
+    "materials": 16,
+    "nodes": 178,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "idle",
+      "walk",
+      "hop",
+      "fly",
+      "land",
+      "lookout",
+      "inspect",
+      "peck",
+      "feed",
+      "tongue_out",
+      "tongue_in",
+      "crest_display",
+      "wing_spread",
+      "alert",
+      "flee",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "animationSignature": "7e121e37a6617619b18ea18d94e292d512c09041500984e7f0c87d499e2f614d",
+  "lods": [
+    {
+      "bytes": 1235248,
+      "sha256": "810f0b045c7e421ccea7a56634553f12592cfb3250593283791bd3092e8e23d1",
+      "trianglesMeshDefinitions": 7953,
+      "trianglesDrawnPerInstance": 7953,
+      "meshDefinitions": 52,
+      "meshNodes": 52,
+      "primitives": 52,
+      "estimatedDrawCalls": 52,
+      "materials": 16,
+      "nodes": 230,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "hop",
+        "fly",
+        "land",
+        "lookout",
+        "inspect",
+        "peck",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "crest_display",
+        "wing_spread",
+        "alert",
+        "flee",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 8000,
+      "animationSignature": "7e121e37a6617619b18ea18d94e292d512c09041500984e7f0c87d499e2f614d",
+      "batchedGroups": 52,
+      "sourceMeshNodes": 161
+    },
+    {
+      "bytes": 1146764,
+      "sha256": "c01c23d2a75ccb93b775668363306c670b2d2666baeafc3c4ec2332c1a904c5b",
+      "trianglesMeshDefinitions": 3964,
+      "trianglesDrawnPerInstance": 3964,
+      "meshDefinitions": 52,
+      "meshNodes": 52,
+      "primitives": 52,
+      "estimatedDrawCalls": 52,
+      "materials": 16,
+      "nodes": 230,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "hop",
+        "fly",
+        "land",
+        "lookout",
+        "inspect",
+        "peck",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "crest_display",
+        "wing_spread",
+        "alert",
+        "flee",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 4000,
+      "animationSignature": "7e121e37a6617619b18ea18d94e292d512c09041500984e7f0c87d499e2f614d",
+      "batchedGroups": 52,
+      "sourceMeshNodes": 161
+    },
+    {
+      "bytes": 1095448,
+      "sha256": "d90b69cbd1876c0521ef8e0529fed0271316eecfe2060da15e3a664147cd2a56",
+      "trianglesMeshDefinitions": 1567,
+      "trianglesDrawnPerInstance": 1567,
+      "meshDefinitions": 52,
+      "meshNodes": 52,
+      "primitives": 52,
+      "estimatedDrawCalls": 52,
+      "materials": 16,
+      "nodes": 230,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "hop",
+        "fly",
+        "land",
+        "lookout",
+        "inspect",
+        "peck",
+        "feed",
+        "tongue_out",
+        "tongue_in",
+        "crest_display",
+        "wing_spread",
+        "alert",
+        "flee",
+        "rest",
+        "hurt",
+        "death"
+      ],
+      "targetTriangles": 1600,
+      "animationSignature": "7e121e37a6617619b18ea18d94e292d512c09041500984e7f0c87d499e2f614d",
+      "batchedGroups": 52,
+      "sourceMeshNodes": 161
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 358420,
+      "boundsMin": [
+        -1.0517890453338623,
+        0.08317611366510391,
+        -1.421813726425171
+      ],
+      "boundsMax": [
+        1.0525195598602295,
+        2.335928440093994,
+        1.4128117561340332
+      ]
+    },
+    "front": {
+      "bytes": 347936,
+      "boundsMin": [
+        -1.0517890453338623,
+        0.08317611366510391,
+        -1.421813726425171
+      ],
+      "boundsMax": [
+        1.0525195598602295,
+        2.335928440093994,
+        1.4128117561340332
+      ]
+    },
+    "three-quarter": {
+      "bytes": 90481,
+      "boundsMin": [
+        -1.0517890453338623,
+        0.08317611366510391,
+        -1.421813726425171
+      ],
+      "boundsMax": [
+        1.0525195598602295,
+        2.335928440093994,
+        1.4128117561340332
+      ]
+    },
+    "wireframe": {
+      "bytes": 161027,
+      "boundsMin": [
+        -1.0517890453338623,
+        0.08317611366510391,
+        -1.421813726425171
+      ],
+      "boundsMax": [
+        1.0525195598602295,
+        2.335928440093994,
+        1.4128117561340332
+      ]
+    },
+    "fly": {
+      "bytes": 107219,
+      "boundsMin": [
+        -0.6884716749191284,
+        0.6233642101287842,
+        -1.5303308963775635
+      ],
+      "boundsMax": [
+        0.8638273477554321,
+        2.915280818939209,
+        1.2550926208496094
+      ]
+    },
+    "peck": {
+      "bytes": 91897,
+      "boundsMin": [
+        -1.0481539964675903,
+        0.08317610621452332,
+        -1.421813726425171
+      ],
+      "boundsMax": [
+        1.0487337112426758,
+        2.3524317741394043,
+        1.3253040313720703
+      ]
+    }
+  },
+  "method": [
+    "batch static child meshes by animated parent + material",
+    "bake local transforms before batching",
+    "VTK quadric decimation with volume preservation",
+    "nearest-surface transport of retained vertex attributes",
+    "preserve animation sampler arrays and clip names"
+  ],
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "artisticStatus": "optimized_candidate_pending_user_preview_approval"
+}

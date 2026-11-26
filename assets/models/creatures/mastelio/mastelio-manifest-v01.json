@@ -1,0 +1,130 @@
+{
+  "id": "mastelio",
+  "category": "large-herbivore-frugivore",
+  "status": "model_in_artistic_review",
+  "approvedConcept": true,
+  "approvedModel": false,
+  "version": "v01",
+  "sourceGeometryTriangles": 100438,
+  "sourceGeometrySha256": "a23352d1f6c2dbde06efd81681c77fd001054f395c7e530f9af528707a53d001",
+  "clipCount": 12,
+  "clipNames": [
+    "idle",
+    "walk",
+    "trot",
+    "forage",
+    "pluck_fruit",
+    "curl_trunk",
+    "chew",
+    "drink",
+    "alert",
+    "defend",
+    "rest",
+    "death"
+  ],
+  "skinJoints": 19,
+  "lods": [
+    {
+      "path": "assets/models/creatures/mastelio/mastelio-savanna-animated-v01-LOD0.glb",
+      "bytes": 775604,
+      "sha256": "5b007fc25ed892d84e1beae2ff5c6e72dc905cc639a29364c38c15944317daf4",
+      "triangles": 20048,
+      "originalTriangles": 100438,
+      "reductionPercent": 80.0,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/mastelio/mastelio-sculpted-source-v01.glb",
+      "lod": "LOD0",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "forage",
+        "pluck_fruit",
+        "curl_trunk",
+        "chew",
+        "drink",
+        "alert",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        19
+      ],
+      "meshCount": 19,
+      "remeshedPrimitives": 15,
+      "sourcePath": "sources/mastelio/mastelio-sculpted-source-v01.glb"
+    },
+    {
+      "path": "assets/models/creatures/mastelio/mastelio-savanna-animated-v01-LOD1.glb",
+      "bytes": 438452,
+      "sha256": "ee5ae6eb497736ed122a43500fffc2ab5656527783b652c84fcafbe3ca12ebd3",
+      "triangles": 9076,
+      "originalTriangles": 100438,
+      "reductionPercent": 91.0,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/mastelio/mastelio-sculpted-source-v01.glb",
+      "lod": "LOD1",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "forage",
+        "pluck_fruit",
+        "curl_trunk",
+        "chew",
+        "drink",
+        "alert",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        19
+      ],
+      "meshCount": 19,
+      "remeshedPrimitives": 15,
+      "sourcePath": "sources/mastelio/mastelio-sculpted-source-v01.glb"
+    },
+    {
+      "path": "assets/models/creatures/mastelio/mastelio-savanna-animated-v01-LOD2.glb",
+      "bytes": 289460,
+      "sha256": "1264783bcc2e91a744419aad1feb40281024b0b453a3f7431bcdf33edfcb2216",
+      "triangles": 4296,
+      "originalTriangles": 100438,
+      "reductionPercent": 95.7,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/mastelio/mastelio-sculpted-source-v01.glb",
+      "lod": "LOD2",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "forage",
+        "pluck_fruit",
+        "curl_trunk",
+        "chew",
+        "drink",
+        "alert",
+        "defend",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        19
+      ],
+      "meshCount": 19,
+      "remeshedPrimitives": 15,
+      "sourcePath": "sources/mastelio/mastelio-sculpted-source-v01.glb"
+    }
+  ],
+  "realScreenshots": [
+    "mastelio-real-3d-side-v01.png",
+    "mastelio-real-3d-front-v01.png",
+    "mastelio-real-3d-three_quarter-v01.png"
+  ],
+  "gameplayIntegrated": false,
+  "renderSource": "Final exported LOD0 GLB, via VTK offscreen rasterizer",
+  "limits": [
+    "LOD tests only validate structure; visual review required",
+    "clipped in-place root; no terrain IK",
+    "no gameplay/spawn AI"
+  ]
+}

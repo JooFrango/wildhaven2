@@ -1,0 +1,29 @@
+{
+  "source_sha256": "7d531cc4add70fe5b147b2caf4755df4a3aea2f29ab8a313eb2178adca2300ed",
+  "renderer": "VTK reimport + independent CPU glTF skin evaluator",
+  "clips_reimported": 24,
+  "rendered": {
+    "walk": {
+      "frames": 24,
+      "vertex_displacement_max": 0.6923716574984928
+    },
+    "run": {
+      "frames": 11,
+      "vertex_displacement_max": 0.6942311679514541
+    },
+    "bite_heavy": {
+      "frames": 16,
+      "vertex_displacement_max": 0.6143311290860183
+    },
+    "tail_sweep_left": {
+      "frames": 20,
+      "vertex_displacement_max": 2.627252868589859
+    },
+    "poison_gas": {
+      "frames": 41,
+      "vertex_displacement_max": 0.7926320765647489
+    }
+  },
+  "vfx": "separate 2D stylized particles projected from animated mouth socket",
+  "full_artistic_qa": false
+}

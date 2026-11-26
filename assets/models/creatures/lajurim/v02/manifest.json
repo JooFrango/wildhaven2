@@ -1,0 +1,270 @@
+{
+  "species_id": "lajurim",
+  "name": "Lajurim",
+  "version": "v02",
+  "stage": "skinned_animated_for_artistic_review",
+  "previous_static_glb_preserved": true,
+  "v01_base": {
+    "relative_path": "../v01/lajurim-v01-textured-blockout.glb",
+    "bytes": 3647328,
+    "sha256": "e858c8fdde62ae670abfc988c3607a96b9b7984f5e4332ab3e4e12a340a618f7"
+  },
+  "glb": {
+    "path": "lajurim-v02-animated-LOD0.glb",
+    "bytes": 3935096,
+    "sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c",
+    "triangles": 1588,
+    "triangle_count_method": "mesh primitive triangles indexed after reimport",
+    "vertices": 4764,
+    "uv_texture_px": [
+      2048,
+      2048
+    ],
+    "materials": 1,
+    "skins": 1,
+    "joints": 26,
+    "bone_names": [
+      "root",
+      "pelvis",
+      "spine",
+      "chest",
+      "neck",
+      "head",
+      "jaw",
+      "tail1",
+      "tail2",
+      "tail3",
+      "foreR_upper",
+      "foreR_elbow",
+      "foreR_wrist",
+      "foreR_paw",
+      "foreL_upper",
+      "foreL_elbow",
+      "foreL_wrist",
+      "foreL_paw",
+      "hindR_upper",
+      "hindR_elbow",
+      "hindR_wrist",
+      "hindR_paw",
+      "hindL_upper",
+      "hindL_elbow",
+      "hindL_wrist",
+      "hindL_paw"
+    ],
+    "animation_count": 16
+  },
+  "texture": {
+    "source_v01_embedded_identical": true,
+    "painted_markings_not_polygons": true
+  },
+  "clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.0846,
+      "samples": 73
+    },
+    {
+      "name": "walk",
+      "duration_seconds": 1.65,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.2472,
+      "samples": 41
+    },
+    {
+      "name": "trot",
+      "duration_seconds": 1.12,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.3095,
+      "samples": 28
+    },
+    {
+      "name": "flee",
+      "duration_seconds": 0.74,
+      "loop": true,
+      "channels": 24,
+      "max_angle_rad": 0.42,
+      "samples": 25
+    },
+    {
+      "name": "turn_left",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "channels": 10,
+      "max_angle_rad": 0.18,
+      "samples": 32
+    },
+    {
+      "name": "turn_right",
+      "duration_seconds": 1.3,
+      "loop": false,
+      "channels": 10,
+      "max_angle_rad": 0.18,
+      "samples": 32
+    },
+    {
+      "name": "alert",
+      "duration_seconds": 1.45,
+      "loop": false,
+      "channels": 5,
+      "max_angle_rad": 0.12,
+      "samples": 36
+    },
+    {
+      "name": "sniff",
+      "duration_seconds": 2.3,
+      "loop": true,
+      "channels": 5,
+      "max_angle_rad": 0.12,
+      "samples": 56
+    },
+    {
+      "name": "forage",
+      "duration_seconds": 3.0,
+      "loop": true,
+      "channels": 8,
+      "max_angle_rad": 0.18,
+      "samples": 73
+    },
+    {
+      "name": "feed",
+      "duration_seconds": 2.6,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.1984,
+      "samples": 63
+    },
+    {
+      "name": "drink",
+      "duration_seconds": 2.7,
+      "loop": true,
+      "channels": 6,
+      "max_angle_rad": 0.2496,
+      "samples": 66
+    },
+    {
+      "name": "rest",
+      "duration_seconds": 2.2,
+      "loop": false,
+      "channels": 15,
+      "max_angle_rad": 0.19,
+      "samples": 54
+    },
+    {
+      "name": "hurt",
+      "duration_seconds": 0.95,
+      "loop": false,
+      "channels": 3,
+      "max_angle_rad": 0.1195,
+      "samples": 25
+    },
+    {
+      "name": "death",
+      "duration_seconds": 2.4,
+      "loop": false,
+      "channels": 15,
+      "max_angle_rad": 0.32,
+      "samples": 59
+    },
+    {
+      "name": "wedge_brace",
+      "duration_seconds": 1.5,
+      "loop": false,
+      "channels": 9,
+      "max_angle_rad": 0.12,
+      "samples": 37
+    },
+    {
+      "name": "flatten",
+      "duration_seconds": 1.7,
+      "loop": false,
+      "channels": 4,
+      "max_angle_rad": 0.11,
+      "samples": 42
+    }
+  ],
+  "defense_specials": [
+    "wedge_brace",
+    "flatten"
+  ],
+  "rig": "weighted glTF skin with JOINTS_0, WEIGHTS_0 and inverse-bind-matrices",
+  "limitations": [
+    "in-place, possible foot sliding",
+    "no physics/IK ground adjustment",
+    "no terrain interaction, IA or gameplay",
+    "visual approval pending",
+    "LOD0 only in this stage"
+  ],
+  "approval": {
+    "concepts": "user approved 4 designs",
+    "v01_form": "user requested animations",
+    "animations_v02": "awaiting artistic review"
+  },
+  "publication": "branch_published_pending_artistic_review",
+  "integrated_game": false,
+  "previews": {
+    "lajurim-v02-flatten-real-glb.gif": {
+      "bytes": 1602996,
+      "sha256": "3f37623942d2c5925ed4de8a5af2da24edd4fb5d1a99932c3f3daa9438a7be33",
+      "source_glb_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c"
+    },
+    "lajurim-v02-real-glb-front.png": {
+      "bytes": 269730,
+      "sha256": "e49fb219b7a9e8e3ed3c8c74b99ea9f52581438782d672cf9bcc12bb7f0d43ba",
+      "source_glb_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c"
+    },
+    "lajurim-v02-wedge_brace-real-glb.gif": {
+      "bytes": 1480478,
+      "sha256": "3a0265011d453fac3c8114efc7e9470c48a7e851a64219ee95a4ab148a5ba10e",
+      "source_glb_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c"
+    },
+    "lajurim-v02-walk-real-glb.gif": {
+      "bytes": 1732803,
+      "sha256": "75d0aef143c02e5da749a52ef0c52ee013c83291d380d77efe61205db5d1901f",
+      "source_glb_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c"
+    },
+    "lajurim-v02-real-glb-three-quarter.png": {
+      "bytes": 287578,
+      "sha256": "5edbcb2ea653d1c7245173a2774fd54b7e094e4296f6c95d5d647d800ea53bfe",
+      "source_glb_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c"
+    },
+    "lajurim-v02-real-glb-profile.png": {
+      "bytes": 286753,
+      "sha256": "f48b7a3d0f1767c4515e40c7a736cf656590ebb24d4434573dde9d59c7c98356",
+      "source_glb_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c"
+    },
+    "lajurim-v02-three-real-glb-views.png": {
+      "bytes": 544721,
+      "sha256": "b6e3ba091f0c6b15fb082972c6c6209917329491220d668c43f8cd279386935a",
+      "source_glb_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c"
+    }
+  },
+  "glb_reimport_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c",
+  "animation_playback_validation": {
+    "reimport_sha256": "b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c",
+    "rest_pose_max_error_m": 2.9802322387695312e-08,
+    "per_clip_vertex_movement_m": {
+      "idle": 0.01505,
+      "walk": 0.02685,
+      "trot": 0.04484,
+      "flee": 0.04903,
+      "turn_left": 0.24402,
+      "turn_right": 0.24402,
+      "alert": 0.0259,
+      "sniff": 0.02588,
+      "forage": 0.05106,
+      "feed": 0.05785,
+      "drink": 0.06698,
+      "rest": 0.05019,
+      "hurt": 0.03725,
+      "death": 0.28016,
+      "wedge_brace": 0.05704,
+      "flatten": 0.05084
+    },
+    "method": "CPU linear blend skinning from exported GLB inverse bind matrices, keyframes, JOINTS_0 and WEIGHTS_0"
+  }
+}

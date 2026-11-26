@@ -1,0 +1,130 @@
+{
+  "id": "raizauro",
+  "category": "large-herbivore-digger",
+  "status": "model_in_artistic_review",
+  "approvedConcept": true,
+  "approvedModel": false,
+  "version": "v01",
+  "sourceGeometryTriangles": 80230,
+  "sourceGeometrySha256": "477528a1491017d78bcdae32b41ca6f425f290a6092a44b9614430e647401fc0",
+  "clipCount": 12,
+  "clipNames": [
+    "idle",
+    "walk",
+    "crawl",
+    "dig",
+    "root_pull",
+    "chew",
+    "bask",
+    "tail_sweep",
+    "threat",
+    "alert",
+    "rest",
+    "death"
+  ],
+  "skinJoints": 17,
+  "lods": [
+    {
+      "path": "assets/models/creatures/raizauro/raizauro-savanna-animated-v01-LOD0.glb",
+      "bytes": 796200,
+      "sha256": "5571bce8204b86e14f934260fb5560a5f520131e7cf7562617882d6d2c228f5a",
+      "triangles": 22051,
+      "originalTriangles": 80230,
+      "reductionPercent": 72.5,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/raizauro/raizauro-sculpted-source-v01.glb",
+      "lod": "LOD0",
+      "animationNames": [
+        "idle",
+        "walk",
+        "crawl",
+        "dig",
+        "root_pull",
+        "chew",
+        "bask",
+        "tail_sweep",
+        "threat",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 19,
+      "remeshedPrimitives": 17,
+      "sourcePath": "sources/raizauro/raizauro-sculpted-source-v01.glb"
+    },
+    {
+      "path": "assets/models/creatures/raizauro/raizauro-savanna-animated-v01-LOD1.glb",
+      "bytes": 447760,
+      "sha256": "f6b8693e1249c06da739ad063593504fffd6d8f7cd632a5bff2f0189452d8f21",
+      "triangles": 10188,
+      "originalTriangles": 80230,
+      "reductionPercent": 87.3,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/raizauro/raizauro-sculpted-source-v01.glb",
+      "lod": "LOD1",
+      "animationNames": [
+        "idle",
+        "walk",
+        "crawl",
+        "dig",
+        "root_pull",
+        "chew",
+        "bask",
+        "tail_sweep",
+        "threat",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 19,
+      "remeshedPrimitives": 17,
+      "sourcePath": "sources/raizauro/raizauro-sculpted-source-v01.glb"
+    },
+    {
+      "path": "assets/models/creatures/raizauro/raizauro-savanna-animated-v01-LOD2.glb",
+      "bytes": 292456,
+      "sha256": "9d7a94266ff8366c5244a51e3d76225d205cc4055f05aef34cc756e77089c898",
+      "triangles": 4970,
+      "originalTriangles": 80230,
+      "reductionPercent": 93.8,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v01/sources/raizauro/raizauro-sculpted-source-v01.glb",
+      "lod": "LOD2",
+      "animationNames": [
+        "idle",
+        "walk",
+        "crawl",
+        "dig",
+        "root_pull",
+        "chew",
+        "bask",
+        "tail_sweep",
+        "threat",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 19,
+      "remeshedPrimitives": 17,
+      "sourcePath": "sources/raizauro/raizauro-sculpted-source-v01.glb"
+    }
+  ],
+  "realScreenshots": [
+    "raizauro-real-3d-side-v01.png",
+    "raizauro-real-3d-front-v01.png",
+    "raizauro-real-3d-three_quarter-v01.png"
+  ],
+  "gameplayIntegrated": false,
+  "renderSource": "Final exported LOD0 GLB, via VTK offscreen rasterizer",
+  "limits": [
+    "LOD tests only validate structure; visual review required",
+    "clipped in-place root; no terrain IK",
+    "no gameplay/spawn AI"
+  ]
+}

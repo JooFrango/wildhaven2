@@ -1,0 +1,98 @@
+{
+  "source": "true Three.js/WebGL screenshot of implemented models",
+  "gameIntegrated": false,
+  "geometry": {
+    "frameCount": 13,
+    "creatures": [
+      {
+        "variant": "forest",
+        "meshes": 257,
+        "triangles": 148598,
+        "joints": 33
+      },
+      {
+        "variant": "desert",
+        "meshes": 233,
+        "triangles": 146678,
+        "joints": 33
+      }
+    ]
+  },
+  "screenshots": [
+    {
+      "name": "rocantraz-biped-forest-desert-real-3d-v04.png",
+      "variant": "both",
+      "view": "threeQuarter",
+      "action": "idle",
+      "time": 0.33,
+      "bytes": 185495
+    },
+    {
+      "name": "rocantraz-biped-forest-desert-real-3d-detail-v04.png",
+      "variant": "both",
+      "view": "threeQuarter",
+      "action": "idle",
+      "time": 0.33,
+      "bytes": 175437,
+      "origin": "WebGL framebuffer crop"
+    },
+    {
+      "name": "rocantraz-forest-biped-real-3d-v04.png",
+      "variant": "forest",
+      "view": "threeQuarter",
+      "action": "idle",
+      "time": 0.31,
+      "bytes": 222804
+    },
+    {
+      "name": "rocantraz-forest-biped-real-3d-detail-v04.png",
+      "variant": "forest",
+      "view": "threeQuarter",
+      "action": "idle",
+      "time": 0.31,
+      "bytes": 198244,
+      "origin": "WebGL framebuffer crop"
+    },
+    {
+      "name": "rocantraz-desert-biped-real-3d-v04.png",
+      "variant": "desert",
+      "view": "threeQuarter",
+      "action": "idle",
+      "time": 0.29,
+      "bytes": 213317
+    },
+    {
+      "name": "rocantraz-desert-biped-real-3d-detail-v04.png",
+      "variant": "desert",
+      "view": "threeQuarter",
+      "action": "idle",
+      "time": 0.29,
+      "bytes": 192632,
+      "origin": "WebGL framebuffer crop"
+    },
+    {
+      "name": "rocantraz-forest-biped-profile-v04.png",
+      "variant": "forest",
+      "view": "side",
+      "action": "walk",
+      "time": 0.2,
+      "bytes": 212019
+    },
+    {
+      "name": "rocantraz-forest-biped-roar-v04.png",
+      "variant": "forest",
+      "view": "threeQuarter",
+      "action": "roar",
+      "time": 0.9,
+      "bytes": 226669
+    },
+    {
+      "name": "rocantraz-desert-biped-charge-v04.png",
+      "variant": "desert",
+      "view": "threeQuarter",
+      "action": "charge",
+      "time": 0.18,
+      "bytes": 208838
+    }
+  ]
+}

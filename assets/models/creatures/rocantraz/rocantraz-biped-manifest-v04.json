@@ -1,0 +1,200 @@
+{
+  "revision": "v04",
+  "species": "rocantraz",
+  "locomotion": "strictly_bipedal",
+  "variants": {
+    "forest": {
+      "meshes": 257,
+      "triangles": 148598,
+      "joints": 33,
+      "model": "rocantraz-forest-biped-animated-v04.glb",
+      "byteSize": 5710964,
+      "glbMeshNodes": 257,
+      "glbMeshDefinitions": 257,
+      "sha256": "060d8df90c45464d52694bb16b38de98af8f3b7eed783bbc52360c60295b4963",
+      "clips": [
+        "idle",
+        "walk",
+        "stalk",
+        "run",
+        "charge",
+        "bite",
+        "swipe",
+        "roar",
+        "feed",
+        "defend",
+        "rest",
+        "die"
+      ],
+      "channelsPerClip": [
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99
+      ],
+      "namedJoints": [
+        "Rocantraz04_Body",
+        "Rocantraz04_Breath",
+        "Rocantraz04_BackPlateJoint_0",
+        "Rocantraz04_BackPlateJoint_1",
+        "Rocantraz04_BackPlateJoint_2",
+        "Rocantraz04_BackPlateJoint_3",
+        "Rocantraz04_BackPlateJoint_4",
+        "Rocantraz04_BackPlateJoint_5",
+        "Rocantraz04_BackPlateJoint_6",
+        "Rocantraz04_BackPlateJoint_7",
+        "Rocantraz04_Neck",
+        "Rocantraz04_Head",
+        "Rocantraz04_Jaw",
+        "Rocantraz04_LeftHip",
+        "Rocantraz04_LeftKnee",
+        "Rocantraz04_LeftAnkle",
+        "Rocantraz04_RightHip",
+        "Rocantraz04_RightKnee",
+        "Rocantraz04_RightAnkle",
+        "Rocantraz04_LeftShoulder",
+        "Rocantraz04_LeftElbow",
+        "Rocantraz04_LeftWrist",
+        "Rocantraz04_RightShoulder",
+        "Rocantraz04_RightElbow",
+        "Rocantraz04_RightWrist",
+        "Rocantraz04_Tail0",
+        "Rocantraz04_Tail1",
+        "Rocantraz04_Tail2",
+        "Rocantraz04_Tail3",
+        "Rocantraz04_Tail4",
+        "Rocantraz04_Tail5",
+        "Rocantraz04_Tail6",
+        "Rocantraz04_Tail7"
+      ],
+      "rig": "hierarchical transform pivots; analytic biped foot IK baked into 12 clips; no weighted skinning",
+      "preview": "true WebGL geometry screenshots of same model"
+    },
+    "desert": {
+      "meshes": 233,
+      "triangles": 146678,
+      "joints": 33,
+      "model": "rocantraz-desert-biped-animated-v04.glb",
+      "byteSize": 5507484,
+      "glbMeshNodes": 233,
+      "glbMeshDefinitions": 233,
+      "sha256": "5bfdc03e6647e16368b09ded483e9bf85bdc04e9d6f4fabd20e9a4341d0b34a2",
+      "clips": [
+        "idle",
+        "walk",
+        "stalk",
+        "run",
+        "charge",
+        "bite",
+        "swipe",
+        "roar",
+        "feed",
+        "defend",
+        "rest",
+        "die"
+      ],
+      "channelsPerClip": [
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99,
+        99
+      ],
+      "namedJoints": [
+        "Rocantraz04_Body",
+        "Rocantraz04_Breath",
+        "Rocantraz04_BackPlateJoint_0",
+        "Rocantraz04_BackPlateJoint_1",
+        "Rocantraz04_BackPlateJoint_2",
+        "Rocantraz04_BackPlateJoint_3",
+        "Rocantraz04_BackPlateJoint_4",
+        "Rocantraz04_BackPlateJoint_5",
+        "Rocantraz04_BackPlateJoint_6",
+        "Rocantraz04_BackPlateJoint_7",
+        "Rocantraz04_Neck",
+        "Rocantraz04_Head",
+        "Rocantraz04_Jaw",
+        "Rocantraz04_LeftHip",
+        "Rocantraz04_LeftKnee",
+        "Rocantraz04_LeftAnkle",
+        "Rocantraz04_RightHip",
+        "Rocantraz04_RightKnee",
+        "Rocantraz04_RightAnkle",
+        "Rocantraz04_LeftShoulder",
+        "Rocantraz04_LeftElbow",
+        "Rocantraz04_LeftWrist",
+        "Rocantraz04_RightShoulder",
+        "Rocantraz04_RightElbow",
+        "Rocantraz04_RightWrist",
+        "Rocantraz04_Tail0",
+        "Rocantraz04_Tail1",
+        "Rocantraz04_Tail2",
+        "Rocantraz04_Tail3",
+        "Rocantraz04_Tail4",
+        "Rocantraz04_Tail5",
+        "Rocantraz04_Tail6",
+        "Rocantraz04_Tail7"
+      ],
+      "rig": "hierarchical transform pivots; analytic biped foot IK baked into 12 clips; no weighted skinning",
+      "preview": "true WebGL geometry screenshots of same model"
+    }
+  },
+  "ecology": {
+    "id": "rocantraz",
+    "category": "apex_carnivore",
+    "locomotion": "strictly_bipedal",
+    "rarity": "very_rare",
+    "social": "solitary",
+    "adultLengthMTarget": [
+      8,
+      12
+    ],
+    "adultHeightMTarget": [
+      4,
+      6
+    ],
+    "territoryKm2Target": [
+      50,
+      200
+    ],
+    "variants": {
+      "forest": {
+        "habitats": [
+          "tropical-forest",
+          "temperate-forest",
+          "mountains"
+        ],
+        "strategy": "woodland ambush"
+      },
+      "desert": {
+        "habitats": [
+          "desert",
+          "rocky-desert",
+          "canyons"
+        ],
+        "strategy": "crepuscular rocky pursuit"
+      }
+    },
+    "integration": {
+      "gameplay": false,
+      "spawns": false,
+      "alphaTouched": false
+    }
+  },
+  "gameplayIntegration": false
+}

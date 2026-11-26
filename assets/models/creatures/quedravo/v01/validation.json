@@ -1,0 +1,25 @@
+{
+  "validation": "passed",
+  "glb_bytes": 1685920,
+  "sha256": "288c2ac9bea54e694f32ebc11877b4ce8626dc80177c8409253645ac6633a66b",
+  "glb_meshes": 9,
+  "glb_triangles": 6852,
+  "glb_images": 1,
+  "skins": 0,
+  "clips": 0,
+  "bounds_min": [
+    -2.76,
+    0.02127,
+    -5.51825
+  ],
+  "bounds_max": [
+    1.94,
+    4.17022,
+    5.51825
+  ],
+  "standing_height_m": 4.149,
+  "span_m": 11.036,
+  "uv_texture_embedded": true,
+  "reimport_library": "trimesh",
+  "external_preview_importer": "vtkGLTFImporter"
+}

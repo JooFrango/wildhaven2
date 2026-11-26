@@ -1,0 +1,35 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wildhaven | Rocantraz v04 — Biomecânica 3D</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#435044;color:#f3efdf;font-family:system-ui}
+canvas{display:block;position:fixed;inset:0;width:100%;height:100%;touch-action:none}
+header{position:absolute;top:15px;left:17px;padding:14px 19px;background:#18241fe8;border:1px solid #95ad9880;border-radius:13px;max-width:450px}
+h1{font:31px Georgia,serif;margin:0 0 7px;color:#e7d9b9}p{font-size:13px;color:#d7e0d4;margin:4px 0}
+#controls{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);
+  background:#202c24ed;padding:11px;border:1px solid #94ac8b7d;border-radius:12px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;width:min(950px,96%)}
+label{font-size:13px;color:#dfefda}select,button{font:inherit;color:white;background:#465d46;border:1px solid #9fb594;padding:8px 10px;border-radius:7px}
+#species{display:grid;position:absolute;left:9%;right:9%;bottom:96px;grid-template-columns:1fr 1fr;text-align:center;font-weight:bold;font-size:18px;text-shadow:0 2px 5px #16231c}
+#species small{font-size:12px;font-weight:normal;display:block}
+@media(max-width:620px){h1{font-size:22px}header{right:10px;padding:8px}#species{bottom:138px;font-size:14px}}
+</style></head><body>
+<canvas id="render"></canvas>
+<header><h1>Rocantraz · Predador ápice</h1>
+<p><b>v04 — anatomia muscular e biomecânica de bípede.</b></p>
+<p>Geometria poligonal 3D real · 12 animações incorporadas aos GLBs.</p>
+<p>Oficina de validação independente; não integra a Alpha jogável.</p>
+</header>
+<div id="species"><div>FLORESTAL<small>Verde-musgo · Emboscada</small></div>
+<div>DESÉRTICO<small>Areia ferruginosa · Investida</small></div></div>
+<div id="controls"><label for="variant">Variante</label>
+<select id="variant"><option value="both">Duas variantes</option>
+<option value="forest">Florestal</option><option value="desert">Desértico</option></select>
+<label for="action">Animação</label><select id="action">
+<option>idle</option><option>walk</option><option>stalk</option><option>run</option>
+<option>charge</option><option>bite</option><option>swipe</option><option>roar</option>
+<option>feed</option><option>defend</option><option>rest</option><option>die</option>
+</select><button id="reset">Reiniciar</button><span id="info">Modelo 3D real · Wildhaven</span></div>
+<script type="module" src="./viewer.mjs"></script>
+</body></html>

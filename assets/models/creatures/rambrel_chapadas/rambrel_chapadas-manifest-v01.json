@@ -1,0 +1,32 @@
+{
+  "id": "rambrel_chapadas",
+  "name": "Rambrél-das-Chapadas",
+  "variant": "Giant Acacia Browser",
+  "stage": "animated_asset_in_review",
+  "gameplayIntegrated": false,
+  "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py",
+  "model": {
+    "file": "rambrel_chapadas-savanna-animated-v01.glb",
+    "bytes": 244572,
+    "sha256": "6aeb4b1bead681a68489dcd1ee1e0cc4877a9edbaae7e3bc7273ca7c23f2ed9d",
+    "triangles": 7960,
+    "meshNodes": 18,
+    "animations": [
+      "idle",
+      "walk",
+      "trot",
+      "charge",
+      "browse",
+      "chew",
+      "alert",
+      "headbutt",
+      "defend",
+      "rest",
+      "death"
+    ],
+    "animationCount": 11,
+    "joints": 18,
+    "rig": "hierarchical-pivot-animations-no-skin-weights"
+  },
+  "note": "Real geometry and exported pivot animation clips; no weighted skinning or AI."
+}
