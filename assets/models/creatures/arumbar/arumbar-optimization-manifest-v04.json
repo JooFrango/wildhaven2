@@ -1,0 +1,215 @@
+{
+  "species": "arumbar",
+  "version": "v04-optimization",
+  "artisticStatus": "preserve_v03_design_pending_review_of_lod_fidelity",
+  "source": "arumbar-savanna-anatomy-animated-v03.glb",
+  "sourceStats": {
+    "bytes": 6678460,
+    "sha256": "cdb4ee8121c497348635e2077e9188e6d5808c9a77a780c61ee6628cae1773cf",
+    "trianglesMeshDefinitions": 145516,
+    "trianglesDrawnPerInstance": 145516,
+    "meshDefinitions": 287,
+    "meshNodes": 287,
+    "primitives": 287,
+    "estimatedDrawCalls": 287,
+    "materials": 17,
+    "nodes": 358,
+    "skins": 0,
+    "skinJointCounts": [],
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "graze",
+      "drink",
+      "alert",
+      "charge",
+      "death"
+    ]
+  },
+  "animationSignature": "9901f9bcc6bfae67388d4c587f42219d86f5dc918584f3042c0a88df95281336",
+  "lods": [
+    {
+      "bytes": 3520032,
+      "sha256": "e003c0fb3b95d010c49b22a50259461bbba32b51174ce464131e3c44a9dcadfd",
+      "trianglesMeshDefinitions": 37935,
+      "trianglesDrawnPerInstance": 37935,
+      "meshDefinitions": 100,
+      "meshNodes": 100,
+      "primitives": 100,
+      "estimatedDrawCalls": 100,
+      "materials": 17,
+      "nodes": 458,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "graze",
+        "drink",
+        "alert",
+        "charge",
+        "death"
+      ],
+      "targetTriangles": 38000,
+      "animationSignature": "9901f9bcc6bfae67388d4c587f42219d86f5dc918584f3042c0a88df95281336",
+      "batchedGroups": 100,
+      "sourceMeshNodes": 287
+    },
+    {
+      "bytes": 3087740,
+      "sha256": "9354ae9501e82f53b7ddd533d9db8f050b8c0e5a9ed46ceedcfa072596be1856",
+      "trianglesMeshDefinitions": 15937,
+      "trianglesDrawnPerInstance": 15937,
+      "meshDefinitions": 100,
+      "meshNodes": 100,
+      "primitives": 100,
+      "estimatedDrawCalls": 100,
+      "materials": 17,
+      "nodes": 458,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "graze",
+        "drink",
+        "alert",
+        "charge",
+        "death"
+      ],
+      "targetTriangles": 16000,
+      "animationSignature": "9901f9bcc6bfae67388d4c587f42219d86f5dc918584f3042c0a88df95281336",
+      "batchedGroups": 100,
+      "sourceMeshNodes": 287
+    },
+    {
+      "bytes": 2901440,
+      "sha256": "0a1949911a5f98c0b56d4d1d4dd6c06eefb9d9c0a59c68115f3d7063ed0955f2",
+      "trianglesMeshDefinitions": 6453,
+      "trianglesDrawnPerInstance": 6453,
+      "meshDefinitions": 100,
+      "meshNodes": 100,
+      "primitives": 100,
+      "estimatedDrawCalls": 100,
+      "materials": 17,
+      "nodes": 458,
+      "skins": 0,
+      "skinJointCounts": [],
+      "animations": [
+        "idle",
+        "walk",
+        "run",
+        "graze",
+        "drink",
+        "alert",
+        "charge",
+        "death"
+      ],
+      "targetTriangles": 6500,
+      "animationSignature": "9901f9bcc6bfae67388d4c587f42219d86f5dc918584f3042c0a88df95281336",
+      "batchedGroups": 100,
+      "sourceMeshNodes": 287
+    }
+  ],
+  "previews": {
+    "side": {
+      "bytes": 464124,
+      "boundsMin": [
+        -1.9003615379333496,
+        -0.16602514684200287,
+        -4.641394138336182
+      ],
+      "boundsMax": [
+        1.8997900485992432,
+        3.660245418548584,
+        3.1590049266815186
+      ]
+    },
+    "front": {
+      "bytes": 470853,
+      "boundsMin": [
+        -1.9003615379333496,
+        -0.16602514684200287,
+        -4.641394138336182
+      ],
+      "boundsMax": [
+        1.8997900485992432,
+        3.660245418548584,
+        3.1590049266815186
+      ]
+    },
+    "three-quarter": {
+      "bytes": 145319,
+      "boundsMin": [
+        -1.9003615379333496,
+        -0.16602514684200287,
+        -4.641394138336182
+      ],
+      "boundsMax": [
+        1.8997900485992432,
+        3.660245418548584,
+        3.1590049266815186
+      ]
+    },
+    "wireframe": {
+      "bytes": 225506,
+      "boundsMin": [
+        -1.9003615379333496,
+        -0.16602514684200287,
+        -4.641394138336182
+      ],
+      "boundsMax": [
+        1.8997900485992432,
+        3.660245418548584,
+        3.1590049266815186
+      ]
+    },
+    "charge": {
+      "bytes": 144567,
+      "boundsMin": [
+        -1.9176815748214722,
+        -0.25118425488471985,
+        -4.611998081207275
+      ],
+      "boundsMax": [
+        1.8825421333312988,
+        4.006650924682617,
+        2.9404819011688232
+      ]
+    },
+    "graze": {
+      "bytes": 479056,
+      "boundsMin": [
+        -1.8796066045761108,
+        -0.24098286032676697,
+        -4.677987575531006
+      ],
+      "boundsMax": [
+        1.9193788766860962,
+        3.5407798290252686,
+        3.427489757537842
+      ]
+    }
+  },
+  "method": [
+    "batch static mesh children by animated parent + material",
+    "bake local transforms before batching",
+    "VTK quadric decimation with volume preservation",
+    "nearest-surface transport of retained vertex attributes",
+    "preserve animation sampler data and animated node indices byte-equivalently at accessor-array level"
+  ],
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "world": false,
+    "alpha01Touched": false
+  },
+  "limitations": [
+    "rig remains hierarchical rigid-pivot animation, not weighted skinning",
+    "no browser FPS claimed in CI; benchmark is structural",
+    "artistic approval still required before replacing v03 as recommended asset"
+  ]
+}

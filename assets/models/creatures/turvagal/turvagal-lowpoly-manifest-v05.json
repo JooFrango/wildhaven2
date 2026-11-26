@@ -1,0 +1,115 @@
+{
+  "id": "turvagal",
+  "version": "v03",
+  "status": "artistic_review_pending",
+  "proposedStyle": "organic_midpoly",
+  "source": "tmp-savanna-build/source/turvagal/turvagal-savanna-sculpted-skinned-source-v03.glb",
+  "lods": [
+    {
+      "path": "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD0.glb",
+      "bytes": 835972,
+      "sha256": "2ddd469b8b0ee9f5a2492d1a3f82923c57e280611e3844fa1c680e62c8fd96f3",
+      "triangles": 21909,
+      "originalTriangles": 100162,
+      "reductionPercent": 78.1,
+      "source": "/home/runner/work/wildhaven/wildhaven/tmp-savanna-build/source/turvagal/turvagal-savanna-sculpted-skinned-source-v03.glb",
+      "lod": "LOD0",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "graze",
+        "drink",
+        "wade",
+        "swim",
+        "emerge",
+        "threat",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 67,
+      "remeshedPrimitives": 26
+    },
+    {
+      "path": "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD1.glb",
+      "bytes": 441572,
+      "sha256": "3c483c5980ecf54df91b159bc349985320e34b63b88a22bf5e0f6a0a5abde112",
+      "triangles": 9041,
+      "originalTriangles": 100162,
+      "reductionPercent": 91.0,
+      "source": "/home/runner/work/wildhaven/wildhaven/tmp-savanna-build/source/turvagal/turvagal-savanna-sculpted-skinned-source-v03.glb",
+      "lod": "LOD1",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "graze",
+        "drink",
+        "wade",
+        "swim",
+        "emerge",
+        "threat",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 67,
+      "remeshedPrimitives": 26
+    },
+    {
+      "path": "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD2.glb",
+      "bytes": 319632,
+      "sha256": "737eda3e5773a3f3ea431ea71363acaccf29e7d06aad1f57158df293a427b380",
+      "triangles": 5169,
+      "originalTriangles": 100162,
+      "reductionPercent": 94.8,
+      "source": "/home/runner/work/wildhaven/wildhaven/tmp-savanna-build/source/turvagal/turvagal-savanna-sculpted-skinned-source-v03.glb",
+      "lod": "LOD2",
+      "animationNames": [
+        "idle",
+        "walk",
+        "trot",
+        "graze",
+        "drink",
+        "wade",
+        "swim",
+        "emerge",
+        "threat",
+        "rest",
+        "death"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 67,
+      "remeshedPrimitives": 26
+    }
+  ],
+  "fullSourceRetained": true,
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "graze",
+    "drink",
+    "wade",
+    "swim",
+    "emerge",
+    "threat",
+    "rest",
+    "death"
+  ],
+  "skinnedJoints": 17,
+  "integration": {
+    "gameplay": false,
+    "spawns": false,
+    "ai": false
+  },
+  "method": "quadric surface simplification + normal recompute + joint and color projection; original GLB skin and animation channels preserved",
+  "note": "Counts reflect actual exported GLB polygons. Pixel fidelity requires review. No gameplay changes."
+}
