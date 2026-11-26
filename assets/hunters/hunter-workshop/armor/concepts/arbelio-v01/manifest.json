@@ -1,0 +1,18 @@
+{
+  "id": "arbelio-v01",
+  "name": "Escalador das Acácias",
+  "species": "Arbélio",
+  "biome": "savana",
+  "concept_status": "awaiting_approval",
+  "png_status": "not_uploaded",
+  "documentation_status": "published",
+  "glb_status": "not_started",
+  "alpha_integrated": false,
+  "rarity_proposal": "incomum",
+  "attributes_proposal": [
+    "aderência",
+    "escalada",
+    "mobilidade"
+  ],
+  "reference": "assets/models/creatures/savanna-small-herbivores-v01/README.md"
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "wildhaven/hunter-armor-concept/1.0",
+  "asset_id": "armor-set-mastelio-v01",
+  "name": "Set Mastélio — Armadura do Guardião da Savana",
+  "base_creature": {
+    "id": "mastelio",
+    "source_version": "v03-pilot",
+    "biome": "savana",
+    "diet": "herbivoro-frugivoro",
+    "confirmed_anatomy": [
+      "orelhas-em-leque",
+      "tromba-curta-preensil-voltada-para-cima",
+      "cabeca-larga",
+      "pelagem-escura-e-manchas-creme",
+      "membros-colunares"
+    ],
+    "anatomy_not_assumed": [
+      "presas-de-marfim",
+      "chifres"
+    ],
+    "creature_blockout_status": "revisao-artistica-pendente"
+  },
+  "style": "original-Wildhaven-faceted-monster-hunting-equipment",
+  "hunter_reference": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/",
+  "true_hunter_glb_fit_tested": false,
+  "pieces": [
+    "capacete-mascara-com-abas-em-leque",
+    "peitoral",
+    "ombreiras",
+    "manoplas",
+    "cintura",
+    "protecao-de-coxas",
+    "grevas",
+    "botas"
+  ],
+  "materials_proposed": [
+    "couro",
+    "tecido",
+    "pelagem",
+    "relevos-corneos-de-forma",
+    "ferragens"
+  ],
+  "palette_hex": [
+    "#835338",
+    "#915f40",
+    "#69442f",
+    "#d7ba92",
+    "#503629",
+    "#bd8b68",
+    "#945f43"
+  ],
+  "rarity": {
+    "status": "proposta-nao-oficial",
+    "note": "intermediaria-a-alta"
+  },
+  "attributes": {
+    "status": "proposta-nao-oficial",
+    "note": "defesa/peso; sem numeros ou bonus oficiais"
+  },
+  "image": {
+    "filename": "set_mastelio_conceito_v01.png",
+    "format": "image/png",
+    "kind": "preview-png-de-ilustracao-2d-IA",
+    "width_px": 160,
+    "height_px": 213,
+    "bytes": 9778,
+    "sha256": "e3981b21e3c5f01fcecd103006746a3c79850895be02e0af36a05d00d8d20f4f",
+    "git_blob_sha1": "2805c4cc395e2e318c854fe893245b918985ced5",
+    "full_resolution_dimensions_px": [
+      1088,
+      1446
+    ],
+    "full_resolution_sha256": "1790f87a435411b78aa15ee0fc32cf90eb21a5be188c49a2dbb1f8c8534a4c6f",
+    "full_resolution_on_github": false,
+    "full_resolution_available_in_chat": true,
+    "is_real_glb_render": false
+  },
+  "approval": {
+    "concept": "AGUARDANDO-APROVACAO-DO-DIRETOR",
+    "approved": false,
+    "glb_authorized": false,
+    "uv_approved": false,
+    "animation_approved": false,
+    "quality_filter_approved": false
+  },
+  "validation": {
+    "references_consulted": true,
+    "source_glb_imported": false,
+    "png_remote_verified": true,
+    "readme_remote_verified": true,
+    "manifest_remote_verified": true,
+    "png_remote_base64_exact_match": true
+  },
+  "production": {
+    "armor_glb_created": false,
+    "alpha_modified": false,
+    "auto_merge": false
+  },
+  "sources": [
+    "AGENTS.md",
+    "assets/hunters/hunter-workshop/README.md",
+    "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+    "assets/models/creatures/mastelio-v03-pilot/README.md",
+    "assets/models/creatures/mastelio-v03-pilot/manifest.json",
+    "assets/models/creatures/mastelio-v03-pilot/source/build.py"
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "wildhaven.hunter.armor-concept/1.0",
+  "asset_id": "armor-raizauro-v01",
+  "set_name": "Set Raizauro — Armadura do Escavador",
+  "version": "v01",
+  "type": "original_2d_concept_illustration",
+  "source_creature": {
+    "id": "raizauro",
+    "biome": "savana",
+    "diet": "herbivoro",
+    "behavior": "escavador",
+    "source_version": "v03-pilot",
+    "model_status": "blockout_glb_artistic_review_pending",
+    "features_confirmed": [
+      "placas dorsais sobrepostas integradas",
+      "escudos largos nos ombros",
+      "membros anteriores musculosos",
+      "quatro garras escavadoras por pata",
+      "bico corneo recurvo",
+      "cauda segmentada",
+      "olhos ocre embutidos"
+    ],
+    "prohibited_unverified_anatomy": [
+      "chifres",
+      "presas de predador",
+      "asas",
+      "espinhos flutuantes"
+    ]
+  },
+  "direction": "monster-hunter-inspired-original-wildhaven-low-poly-faceted",
+  "hunter_base": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb",
+  "precision_fit_on_hunter_verified": false,
+  "pieces": [
+    "capacete mascara fechada",
+    "peitoral",
+    "ombreiras",
+    "manoplas",
+    "cintura e bolsas",
+    "protecao de coxas",
+    "grevas",
+    "botas"
+  ],
+  "materials_proposed": [
+    "couro",
+    "placas corneas",
+    "tecidos",
+    "ferragens",
+    "detalhes de garras"
+  ],
+  "color_palette_hex": [
+    "#625f45",
+    "#75694d",
+    "#766c50",
+    "#8b744f",
+    "#a48754",
+    "#91583b",
+    "#c9933b",
+    "#ae9a76",
+    "#4b4436"
+  ],
+  "rarity": {
+    "status": "proposta nao oficial",
+    "value": "intermediaria"
+  },
+  "attributes": {
+    "status": "proposta nao oficial",
+    "description": "defesa e utilidade em terreno acidentado, sem valores"
+  },
+  "image": {
+    "filename": "set_raizauro_conceito_v01.png",
+    "width": 1088,
+    "height": 1446,
+    "media_type": "image/png",
+    "bytes": 770931,
+    "sha256": "c84b11ce82158206c7d882697d44a1748d21cb6366e7327c9fb1b6e92d555f9e",
+    "git_blob_sha1": "0c6b1c79a4ba5c7c6436ae9586e5847678138882",
+    "is_original_full_resolution": false,
+    "generated_with_ai": true,
+    "is_render_of_real_glb": false,
+    "color_mode": "indexed_png_256_colors",
+    "is_full_pixel_dimensions": true,
+    "master_original_rgb_bytes": 2085770,
+    "master_original_rgb_sha256": "e33d68b8f8318d9017feea30b736c4381db01bf2bd04715900a007fb22491df4",
+    "master_original_rgb_on_github": false
+  },
+  "approval": {
+    "concept_status": "aguardando_aprovacao_do_diretor",
+    "approved_by_director": false,
+    "glb_authorized": false,
+    "uv_approved": false,
+    "animation_approved": false,
+    "quality_filter_done": false
+  },
+  "production": {
+    "alpha_modified": false,
+    "armor_glb_created": false,
+    "rig_created": false,
+    "animations_created": false,
+    "auto_merge": false
+  },
+  "sources": [
+    "carioca1111/wildhaven/AGENTS.md",
+    "carioca1111/wildhaven-new/AGENTS.md",
+    "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+    "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_textura.png",
+    "assets/models/creatures/raizauro-v03-pilot/README.md",
+    "assets/models/creatures/raizauro-v03-pilot/manifest.json",
+    "assets/models/creatures/raizauro-v03-pilot/source/build.py",
+    "assets/models/creatures/raizauro-v03-pilot/raizauro-v03-anatomy-blockout.glb",
+    "docs/prompts/referencias/exemplos-criaturas-v03.md"
+  ],
+  "validation": {
+    "local_png_format_and_hash_verified": true,
+    "github_blob_uploaded_and_sha1_matched": true,
+    "github_path_read_back": true,
+    "github_readme_read_back": true,
+    "github_manifest_read_back": true,
+    "source_glb_imported_into_3d_engine": false,
+    "github_png_original_master_read_back": false,
+    "github_png_indexed_version_read_back": true,
+    "github_png_bytes_match_local_base64": true
+  }
+}

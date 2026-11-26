@@ -1,0 +1,96 @@
+{
+  "assetId": "wildhaven.hunter.armor.frutavil.guarda-do-leque-de-ferrugem",
+  "version": "v01",
+  "species": {
+    "id": "frutavil",
+    "name": "Frutavil",
+    "biome": [
+      "wooded_savanna",
+      "seasonal_forest_edge"
+    ]
+  },
+  "setName": "Guarda do Leque de Ferrugem",
+  "artifactType": "ai_concept_art",
+  "approval": {
+    "artwork": "awaiting_user_approval",
+    "creatureConcept": "previously_approved",
+    "hunterRigCompatibility": "not_tested",
+    "glbArmor": "not_started"
+  },
+  "publication": {
+    "repository": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-frutavil-v01-concept",
+    "path": "assets/hunters/hunter-workshop/armor/concepts/frutavil-v01/",
+    "pullRequest": "https://github.com/carioca1111/wildhaven-new/pull/77",
+    "status": "published_and_remote_retrieval_verified",
+    "files": {
+      "readme": "assets/hunters/hunter-workshop/armor/concepts/frutavil-v01/README.md",
+      "manifest": "assets/hunters/hunter-workshop/armor/concepts/frutavil-v01/manifest.json",
+      "image": "assets/hunters/hunter-workshop/armor/concepts/frutavil-v01/set_guarda_leque_ferrugem_conceito_v01.png"
+    }
+  },
+  "image": {
+    "path": "set_guarda_leque_ferrugem_conceito_v01.png",
+    "format": "png",
+    "previewDimensions": [
+      160,
+      240
+    ],
+    "masterDimensions": [
+      1024,
+      1536
+    ],
+    "masterDeliveredInChat": true,
+    "sha256Preview": "b97e8729829e1d78e8d93ac5c51b397edca23a63887bee1af739f54289588d16",
+    "previewBytes": 10914,
+    "note": "Compact preview PNG for GitHub; master concept is shown in the conversation. This is not a GLB render."
+  },
+  "creatureReference": {
+    "speciesFile": "creatures/species/frutavil.json",
+    "modelManifest": "assets/models/creatures/frutavil/frutavil-manifest-v01.json",
+    "modelLod0Triangles": 5724,
+    "modelNodes": 13,
+    "modelMeshNodes": 12,
+    "modelAnimationClips": 11,
+    "rigMethod": "rigid_hierarchical_nodes_no_skin_weights"
+  },
+  "hunterReference": {
+    "model": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb",
+    "manifest": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+    "triangles": 1000,
+    "exportedVertices": 959,
+    "joints": 19,
+    "texture": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_textura.png"
+  },
+  "design": {
+    "materials": [
+      "penas tratadas",
+      "couro",
+      "queratina",
+      "osso",
+      "tecido resistente",
+      "bronze envelhecido"
+    ],
+    "palette": [
+      "ferrugem",
+      "azul-acinzentado",
+      "creme quente",
+      "marrom-couro",
+      "carvão",
+      "âmbar"
+    ],
+    "proposedRarity": "incomum",
+    "proposedAttributes": [
+      "mobilidade em terreno arborizado",
+      "equilíbrio em saltos curtos",
+      "resistência leve a impactos"
+    ]
+  },
+  "production": {
+    "conceptOnly": true,
+    "glbStarted": false,
+    "alphaModified": false,
+    "automaticMerge": false
+  },
+  "createdAt": "2026-11-17"
+}

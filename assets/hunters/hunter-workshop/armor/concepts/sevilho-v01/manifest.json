@@ -1,0 +1,22 @@
+{
+  "species": "sevilho",
+  "set": "Guardião das Sementes",
+  "biome": "savana",
+  "version": "v01",
+  "status": "awaiting_art_approval",
+  "concept_image": {
+    "path": "assets/hunters/hunter-workshop/armor/concepts/sevilho-v01/set_sevilho_conceito_v01.png",
+    "published": false,
+    "reason": "Binary upload not supported by available GitHub connector"
+  },
+  "documentation_published": true,
+  "glb_started": false,
+  "alpha_modified": false,
+  "merge_allowed": false,
+  "rarity_proposal": "incomum",
+  "attribute_proposals": [
+    "coleta",
+    "fôlego",
+    "mobilidade"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0.0",
+  "setId": "sentinela_crista_alta",
+  "version": "v01",
+  "creature": {
+    "id": "rambrel_chapadas",
+    "name": "Rambrél-das-Chapadas",
+    "relation": "giant_subspecies_of_rambrel",
+    "parentSpeciesId": "rambrel",
+    "biome": [
+      "savanna",
+      "chapada_plateau"
+    ],
+    "sourceRepository": "carioca1111/wildhaven-new",
+    "sourceModel": "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-savanna-animated-v03-LOD0.glb",
+    "sourceManifest": "assets/models/creatures/rambrel_chapadas/rambrel_chapadas-lowpoly-manifest-v05.json",
+    "sourcePr": "https://github.com/carioca1111/wildhaven/pull/24",
+    "referenceLod0Triangles": 24627,
+    "referenceJointCount": 17,
+    "referenceAnimationClips": 11
+  },
+  "armor": {
+    "name": "Sentinela da Crista Alta",
+    "style": "original Monster Hunter-inspired Wildhaven low-poly faceted armor",
+    "hunterBase": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb",
+    "hunterBaseManifest": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+    "slots": [
+      "helmet_mask",
+      "chest",
+      "shoulders",
+      "gauntlets",
+      "belt",
+      "thigh_guards",
+      "greaves",
+      "boots"
+    ],
+    "materials": [
+      "brown_leather",
+      "dark_horn_keratin",
+      "mane_fibers",
+      "polished_bone",
+      "woven_cloth",
+      "aged_bronze"
+    ],
+    "palette": [
+      "warm_brown",
+      "rust",
+      "ochre",
+      "bone_cream",
+      "charcoal",
+      "muted_bronze"
+    ],
+    "rarityProposal": "rare",
+    "attributesProposal": [
+      "physical_defense",
+      "impact_resistance",
+      "uneven_terrain_stability"
+    ]
+  },
+  "image": {
+    "path": "assets/hunters/hunter-workshop/armor/concepts/rambrel-chapadas-v01/sentinela_crista_alta_conceito_v01.png",
+    "mediaType": "image/png",
+    "role": "compact_preview_of_individual_concept_art",
+    "resolution": [
+      128,
+      192
+    ],
+    "masterResolution": [
+      1024,
+      1536
+    ],
+    "masterResolutionUploaded": false,
+    "isRealGlbRender": false
+  },
+  "approval": {
+    "status": "awaiting_artistic_approval",
+    "approved": false,
+    "approvedBy": null,
+    "approvedAt": null,
+    "gate": "concept_only"
+  },
+  "pipeline": {
+    "glbStarted": false,
+    "glbAuthorizationRequired": true,
+    "realGlbRendersRequiredAfterModeling": true,
+    "uvTextureRefinementAfterRenderApproval": true,
+    "rigSkinningAnimationAfterModelApproval": true,
+    "qualityFilterAfterAllPreviousGates": true
+  },
+  "safety": {
+    "alphaModified": false,
+    "mapsModified": false,
+    "existingArmorOverwritten": false,
+    "automaticMerge": false
+  },
+  "publication": {
+    "repository": "carioca1111/wildhaven-new",
+    "baseBranch": "main",
+    "branch": "feat/hunter-armor-rambrel-chapadas-v01-concept",
+    "pullRequestDraft": true,
+    "pullRequest": {
+      "number": 78,
+      "url": "https://github.com/carioca1111/wildhaven-new/pull/78",
+      "draft": true
+    }
+  }
+}

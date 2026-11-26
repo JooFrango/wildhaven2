@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "species": "torvalho",
+  "biome": "floresta temperada",
+  "setName": "Guardião das Clareiras",
+  "version": "v01",
+  "status": "AGUARDANDO APROVAÇÃO",
+  "conceptPngPublished": false,
+  "sourceModel": "https://github.com/carioca1111/wildhaven/blob/main/assets/models/creatures/torvalho/torvalho_animated_v01.glb",
+  "glbArmorCreated": false
+}

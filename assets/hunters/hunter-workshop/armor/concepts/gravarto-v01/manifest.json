@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "creature": "gravarto",
+  "biome": "savana",
+  "set_name": "Mandíbula da Savana",
+  "version": "v01",
+  "source_model": "assets/models/creatures/gravarto/v02/gravarto-v02-animated-LOD0.glb",
+  "status": "aguardando_aprovacao_artistica",
+  "concept_generated": true,
+  "concept_png_published": false,
+  "concept_png_expected": "set_gravarto_conceito_v01.png",
+  "readme_published": true,
+  "glb_started": false,
+  "alpha_modified": false,
+  "rarity_proposal": "rara",
+  "attribute_proposals": [
+    "defesa física",
+    "resistência a impactos",
+    "estabilidade contra investidas"
+  ],
+  "official_stats": false,
+  "created_on": "2026-11-16"
+}

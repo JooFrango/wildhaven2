@@ -1,0 +1,18 @@
+{
+  "id": "rambrel-v01",
+  "setName": "Vigia das Acácias",
+  "species": "Rambrél comum",
+  "biome": "savana",
+  "status": "awaiting_art_approval",
+  "conceptImage": {
+    "file": "set_rambrel_conceito_v01.png",
+    "published": false,
+    "reason": "PNG generated in chat; binary upload not completed"
+  },
+  "reference": "assets/models/creatures/savanna-herbivores-lowpoly-v05/README.md",
+  "glbCreated": false,
+  "alphaModified": false,
+  "approved": false,
+  "rarity": "proposta_sem_valor_oficial",
+  "attributes": "mobilidade_e_resistencia_propostas_sem_valores"
+}

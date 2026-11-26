@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "set_id": "velsari-v01",
+  "name": "Corredor Dourado",
+  "species": "Velsari",
+  "biome": "savana",
+  "source": "https://github.com/carioca1111/wildhaven/blob/main/assets/models/creatures/velsari/README.md",
+  "concept_created": "2026-11-16",
+  "art_status": "awaiting_approval",
+  "png_status": "pending_binary_upload",
+  "png_filename": "set_velsari_conceito_v01.png",
+  "readme_status": "published",
+  "glb_status": "not_started",
+  "alpha_modified": false,
+  "auto_merge": false,
+  "rarity_proposal": "comum/incomum",
+  "attributes_proposed": [
+    "mobilidade",
+    "resistencia_ao_esforco",
+    "evasao"
+  ]
+}

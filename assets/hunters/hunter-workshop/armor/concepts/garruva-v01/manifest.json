@@ -1,0 +1,101 @@
+{
+  "schema": "wildhaven/armor-concept/1",
+  "id": "set-garruva-v01",
+  "name": "Set Garruva — Armadura do Necrófago",
+  "version": "v01",
+  "source_creature": {
+    "id": "garruva",
+    "reference_version": "v03-pilot",
+    "animal_type": "reptil-terrestre-necrofago",
+    "biome": "a-confirmar-nas-fontes-de-ecologia",
+    "verified_features": [
+      "cranio-alongado",
+      "mandibula-forte-e-dentes",
+      "olhos-ambar",
+      "garganta-ferrugem",
+      "garras",
+      "escudos-dorsais-baixos",
+      "cauda-pesada"
+    ],
+    "prohibited_inventions": [
+      "asas",
+      "penas",
+      "chifres-naturais"
+    ],
+    "artistic_source_status": "revisao-artistica-pendente-no-manifesto-v03"
+  },
+  "identity": {
+    "style": "monster-hunter-inspired-original-wildhaven-low-poly-faceted",
+    "hunter_base": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/",
+    "hunter_exact_GLb_fit_verified": false,
+    "equipment_parts": [
+      "capacete-mascara",
+      "peitoral",
+      "ombreiras",
+      "manoplas",
+      "cintura",
+      "saiote-protetor",
+      "grevas",
+      "botas"
+    ],
+    "primary_material_concepts": [
+      "couro",
+      "escamas-e-placas-corneas",
+      "dentes-e-garras",
+      "tecido",
+      "pequenas-ferragens"
+    ],
+    "colors": [
+      "oliva",
+      "carvao",
+      "caqui",
+      "osso-envelhecido",
+      "ferrugem"
+    ]
+  },
+  "rarity_proposal": "intermediaria, nao-oficial",
+  "attributes_proposal": "a definir, sem valores oficiais",
+  "source_type": "arte-conceitual-2D-gerada-por-IA",
+  "image": {
+    "filename": "set_garruva_conceito_v01.png",
+    "status": "png-preview-compacta",
+    "width_px": 190,
+    "height_px": 253,
+    "bytes": 10238,
+    "sha256": "8bf99bde2698c29fef699d403e420c2cd462d7bf211a4b76b8f42cbb115982b1",
+    "git_blob_sha1": "660e2ea5247276c2ab9c5ac088b15a93fd3cbe52",
+    "original_image_dimensions_px": [
+      1087,
+      1446
+    ],
+    "original_fullsize_in_github": false,
+    "original_fullsize_in_chat": true,
+    "glb_render": false
+  },
+  "approval": {
+    "concept": "aguardando-aprovacao-do-diretor",
+    "model_3d": false,
+    "mesh": false,
+    "uv": false,
+    "rig": false,
+    "animations": false,
+    "quality_filter": false
+  },
+  "validation": {
+    "source_documents_read": true,
+    "creature_glb_rendered": false,
+    "remote_file_recovered": true,
+    "remote_bytes_compared": true,
+    "remote_blob_sha1_verified": true
+  },
+  "alpha_modified": false,
+  "auto_merge": false,
+  "references": [
+    "AGENTS.md",
+    "assets/hunters/hunter-workshop/README.md",
+    "assets/models/creatures/garruva-v03-pilot/README.md",
+    "assets/models/creatures/garruva-v03-pilot/manifest.json",
+    "assets/models/creatures/garruva-v03-pilot/source/build.py",
+    "docs/prompts/referencias/exemplos-criaturas-v03.md"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "species": "cascarrumo",
+  "biome": "floresta temperada",
+  "set": "Guardião da Serrapilheira",
+  "version": "v01",
+  "status": "AGUARDANDO APROVAÇÃO",
+  "asset_type": "2d_concept",
+  "png_published": false,
+  "png_file": "set_cascarrumo_conceito_v01.png",
+  "source": "carioca1111/wildhaven/assets/models/creatures/detritivoros/README.md",
+  "glb_created": false
+}

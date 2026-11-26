@@ -1,0 +1,34 @@
+{
+  "species": "escarvao",
+  "biome": "Mar de Dunas",
+  "armor_name": "Ferrão de Cobre das Dunas",
+  "version": "v01",
+  "stage": "concept_2d",
+  "approval": "awaiting_user",
+  "source_creature": {
+    "pr": 72,
+    "model_dir": "assets/models/creatures/escarvao/v02/",
+    "geometry_triangles": 3487,
+    "rig_joints": 51,
+    "clips": 18,
+    "artistic_approval": "pending"
+  },
+  "hunter_base": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+  "art_master": {
+    "format": "png",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "d4d2f0eef5c6b242b20f6fc72de7d134bdcb4d4afe25ea7f5906b173643d5585",
+    "published_github": false
+  },
+  "preview": {
+    "format": "png",
+    "width": 128,
+    "height": 192,
+    "bytes": 32923,
+    "sha256": "c6f512a7804aea18d37e5b48750bc217f69ecfc49b8d8d62c365292544e860ea",
+    "published_github": false
+  },
+  "armor_glb_created": false,
+  "alpha_changed": false
+}

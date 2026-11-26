@@ -1,0 +1,83 @@
+{
+  "assetId": "wildhaven.hunter.armor.serracorion-v01.concept",
+  "version": "v01",
+  "title": "Carrasco das Areias Profundas",
+  "species": {
+    "id": "serracorion",
+    "name": "Serracórion",
+    "biome": "Mar de Dunas",
+    "modelReference": "assets/models/creatures/serracorion/v03/serracorion-v03-rig-animado-LOD0.glb",
+    "modelSha256": "b12a9c509b9f7c3f3cf9abedecdf5deb116115df2e018dc2cb34ac9f39690cdc",
+    "modelStatus": "animações da criatura em revisão"
+  },
+  "hunterBase": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb",
+  "style": "original Wildhaven / Monster Hunter-like / low-poly facetado",
+  "illustration": {
+    "type": "AI_generated_concept_not_GLB_render",
+    "compactPng": {
+      "file": "carrasco_das_areias_profundas_conceito_v01.png",
+      "width": 128,
+      "height": 192,
+      "bytes": 6963,
+      "sha256": "d290baeb8383579a7483db97a708be30c568e7acdc3d45ebd63c535ba2907b8d",
+      "gitBlobSha": "cd96f8ba8f8e8598eafcf85a7c4b514f20330699"
+    },
+    "masterPng": {
+      "width": 1024,
+      "height": 1536,
+      "bytes": 1672959,
+      "sha256": "7b52f895cf99e474d6c618d63085be6e8c92885f493b22407b2905f4cb36f339",
+      "publishedToGitHub": false,
+      "note": "arte-mestre entregue no chat, PNG compacto na branch"
+    }
+  },
+  "visualParts": [
+    "capacete integral",
+    "peitoral facetado",
+    "ombreiras quitinosas",
+    "manoplas humanas com relevos de pinças",
+    "cinturão e tassets",
+    "grevas",
+    "botas"
+  ],
+  "materialsProposed": [
+    "carapaça quitinosa",
+    "couro",
+    "queratina",
+    "osso",
+    "tecido de dunas",
+    "ferragens discretas"
+  ],
+  "paletteProposed": [
+    "terracota",
+    "ferrugem",
+    "ocre dourado",
+    "areia",
+    "castanho escuro"
+  ],
+  "rarity": {
+    "proposal": "épica",
+    "official": false
+  },
+  "attributes": {
+    "official": false,
+    "valuesDefined": false,
+    "proposals": [
+      "defesa física",
+      "resistência à abrasão de areia",
+      "estabilidade contra impacto"
+    ]
+  },
+  "status": {
+    "concept": "awaiting_user_approval",
+    "artisticApproval": false,
+    "armorGlb": "not_started",
+    "rig": "not_started",
+    "animations": "not_started",
+    "qualityFilter": "pending_future_gate",
+    "alpha": "not_modified",
+    "merge": "draft_only"
+  },
+  "source": "Serracórion v03 manifest and README plus Hunter base manifest; PRs wildhaven #74-76",
+  "generatedAt": "2026-11-17"
+}

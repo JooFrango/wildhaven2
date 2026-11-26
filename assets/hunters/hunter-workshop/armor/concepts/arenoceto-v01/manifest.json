@@ -1,0 +1,52 @@
+{
+  "assetId": "wildhaven.hunter.armor.arenoceto-v01.concept",
+  "name": "Guardião das Marés de Areia",
+  "species": "arenoceto",
+  "biome": "Mar de Dunas",
+  "reference": "assets/models/creatures/arenoceto/v02/manifest.json",
+  "creatureGlb": "assets/models/creatures/arenoceto/v02/arenoceto-v02-skinned-animated-LOD0.glb",
+  "hunterBase": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/",
+  "art": {
+    "generated": true,
+    "shownInChat": true,
+    "githubPublished": false,
+    "type": "AI concept, not GLB render",
+    "fileExpected": "guardiao_das_mares_de_areia_conceito_v01.png"
+  },
+  "parts": [
+    "capacete integral",
+    "peitoral",
+    "ombreiras em nadadeira",
+    "manoplas",
+    "cinturão e tassets",
+    "grevas",
+    "botas"
+  ],
+  "materialsProposed": [
+    "couro",
+    "osso estilizado",
+    "tecido",
+    "cordame"
+  ],
+  "paletteProposed": [
+    "ardósia azul-escura",
+    "bege areia",
+    "osso",
+    "carvão"
+  ],
+  "rarity": {
+    "proposal": "épica",
+    "official": false
+  },
+  "attributes": {
+    "official": false,
+    "numbers": null
+  },
+  "status": {
+    "approval": "awaiting_user_approval",
+    "armorGlb": "not_started",
+    "alpha": "unchanged",
+    "merge": "not_requested"
+  },
+  "date": "2026-11-17"
+}

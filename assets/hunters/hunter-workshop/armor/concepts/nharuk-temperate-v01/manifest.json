@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "creature": "nharuk",
+  "ecotype": "temperate_plains",
+  "biome": "floresta temperada",
+  "set_name": "Vigia das Clareiras",
+  "version": "v01",
+  "status": "AGUARDANDO APROVAÇÃO",
+  "image_status": "PENDENTE DE PUBLICAÇÃO",
+  "glb_created": false,
+  "reference_model_status": "revisão visual",
+  "sources": [
+    "https://github.com/carioca1111/wildhaven/blob/main/creatures/species/nharuk.md",
+    "https://github.com/carioca1111/wildhaven/tree/main/assets/models/creatures/nharuk/v02"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "set_id": "arumbar-v01",
+  "set_name": "Bastião da Savana",
+  "creature": "Arumbar",
+  "biome": "savana",
+  "source_repo": "carioca1111/wildhaven",
+  "source_path": "assets/models/creatures/arumbar/README.md",
+  "concept_art": {
+    "filename": "set_arumbar_conceito_v01.png",
+    "generated": true,
+    "published_to_github": false,
+    "sha256": null
+  },
+  "approval": {
+    "art": "awaiting_approval",
+    "glb": "not_started",
+    "rig": "not_started"
+  },
+  "rarity_proposal": "epica_nao_oficial",
+  "attributes_proposal": [
+    "resistencia_a_impacto",
+    "estabilidade_contra_investida",
+    "reducao_de_recuo"
+  ],
+  "alpha_modified": false,
+  "auto_merge": false,
+  "created_on": "2026-11-16"
+}

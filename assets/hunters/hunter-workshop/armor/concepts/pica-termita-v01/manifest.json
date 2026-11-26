@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0",
+  "conceptId": "wildhaven.hunter.armor.pica-termita.v01",
+  "setName": "Arauto da Crista Rubra",
+  "version": "v01",
+  "creature": {
+    "id": "pica_termita",
+    "name": "Pica-Termita de Crista",
+    "category": "insectivore_specialist",
+    "habitats": [
+      "grassland",
+      "savanna",
+      "tropical_forest_edge",
+      "temperate_forest_edge"
+    ],
+    "selectedEcotype": "savanna-edge"
+  },
+  "design": {
+    "style": "Monster Hunter-inspired original Wildhaven low-poly faceted equipment",
+    "helmet": "integral dark beak-mask with amber visor and red-orange rigid crest",
+    "chest": "dark segmented leather with ivory central plate",
+    "shoulders": "layered cream/rust/red feather-like plates",
+    "gauntlets": "dark articulated gloves with short feather/keratin plates",
+    "belt": "field pouches and brass buckles",
+    "legs": "dark articulated trousers, ivory knee plates and feather-inspired front tassets",
+    "greaves": "graphite greaves with red-orange accents",
+    "boots": "human-shaped boots with faceted gripping-toe motif"
+  },
+  "materials": [
+    "graphite leather",
+    "dark textile",
+    "treated feather-like plates",
+    "ivory-colored keratin-like plates",
+    "brass hardware"
+  ],
+  "palette": {
+    "graphite": "#292522",
+    "ivory": "#E8DCC0",
+    "cream": "#F1E5C9",
+    "carmine": "#B92824",
+    "orange": "#E56A2D",
+    "brown": "#65412F",
+    "amber": "#D88A24"
+  },
+  "proposals": {
+    "rarity": "incomum (proposta)",
+    "attributes": [
+      "observação/rastreamento",
+      "coleta",
+      "mobilidade em terreno irregular"
+    ],
+    "official": false
+  },
+  "approval": {
+    "status": "pending_art_approval",
+    "approvedBy": null,
+    "approvedAt": null,
+    "glbAuthorized": false
+  },
+  "references": [
+    "carioca1111/wildhaven:creatures/species/pica_termita.json",
+    "carioca1111/wildhaven:assets/models/creatures/pica-termita/README.md",
+    "carioca1111/wildhaven:assets/models/creatures/pica-termita/pica-termita-real-3d.png",
+    "carioca1111/wildhaven-new:assets/models/creatures/pica-termita/pica-termita-optimization-manifest-v03.json",
+    "carioca1111/wildhaven-new:assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+    "carioca1111/wildhaven-new:assets/hunters/hunter-workshop/docs/PIPELINE.md"
+  ],
+  "assets": {
+    "conceptPng": {
+      "path": "assets/hunters/hunter-workshop/armor/concepts/pica-termita-v01/set_arauto_crista_rubra_conceito_v01.png",
+      "width": 256,
+      "height": 384,
+      "bytes": 16426,
+      "sha256": "67f4fa46f72bbf7f964778384ff2364c66ce13a84295669dec5ea6d8fba4f241",
+      "format": "PNG indexed preview"
+    },
+    "chatMaster": {
+      "width": 1024,
+      "height": 1536,
+      "repositoryPublished": false,
+      "description": "master concept shown in chat; not included in compact repository preview"
+    }
+  },
+  "publication": {
+    "repository": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-pica-termita-v01-concept",
+    "remoteVerification": "verified",
+    "pngBlobSha": "888b413f6ba2e46c6f449a96d00cbfd0fc13850c"
+  },
+  "production": {
+    "glbStarted": false,
+    "meshRefined": false,
+    "uvTextureStarted": false,
+    "rigSkinningStarted": false,
+    "animationsStarted": false,
+    "qualityFilterSent": false,
+    "alphaModified": false,
+    "mergePerformed": false
+  }
+}

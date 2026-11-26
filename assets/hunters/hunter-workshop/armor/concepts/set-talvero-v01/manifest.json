@@ -1,0 +1,33 @@
+{
+  "asset_id": "hunter-armor-set-talvero",
+  "name": "Set Talvero",
+  "version": "concept-v01-helmet",
+  "status": "aguardando-aprovacao-do-diretor",
+  "asset_type": "concept-art",
+  "source_creature": "talvero",
+  "biome": "savana",
+  "style": "hunter-faceted-original-armor-monster-hunting",
+  "helmet_or_mask": "capacete-mascara-integral",
+  "approved_by_director": false,
+  "is_real_glb": false,
+  "render_of_real_glb": false,
+  "integrated_in_alpha": false,
+  "gameplay_stats_defined": false,
+  "image": {
+    "path": "set_talvero_capacete_conceito_v01.webp",
+    "format": "image/webp",
+    "dimensions_px": [
+      300,
+      541
+    ],
+    "bytes": 11034,
+    "sha256": "efd448aa6acfcf4c078d800ff045861452a640bdbc50a5f39558c3e16c52fc1f",
+    "git_blob_sha1": "fbb8ed65e4ed35ad87979ad9eaa1c7361df47dc9",
+    "role": "otimizada-preview"
+  },
+  "notes": "Imagem 2D de IA, não é captura de modelo GLB. Ornamentos da máscara não indicam chifres biológicos confirmados.",
+  "reference_paths": [
+    "assets/models/creatures/savanna-herbivores-lowpoly-v05/README.md",
+    "docs/prompts/referencias/estado-verificado.md"
+  ]
+}

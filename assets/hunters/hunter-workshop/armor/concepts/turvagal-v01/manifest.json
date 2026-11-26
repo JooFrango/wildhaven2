@@ -1,0 +1,82 @@
+{
+  "id": "set-turvagal-v01",
+  "name": "Set Turvagal",
+  "type": "hunter-armor-concept-art",
+  "version": "v01",
+  "creature": {
+    "id": "turvagal",
+    "biome": "savana-ribeirinha",
+    "confirmed_features": [
+      "corpo-pesado",
+      "placas-dorsais",
+      "pescoco-baixo",
+      "paleta-oliva-creme"
+    ]
+  },
+  "hunter_reference": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/",
+  "art_direction": "original-wildhaven-low-poly-faceted-monster-hunting-equipment",
+  "armor_parts": [
+    "capacete-mascara",
+    "peitoral",
+    "ombreiras",
+    "manoplas",
+    "cintura",
+    "protecao-das-coxas",
+    "grevas",
+    "botas"
+  ],
+  "palette": [
+    "verde-oliva",
+    "verde-musgo",
+    "creme-areia",
+    "marrom-couro",
+    "metal-fosco"
+  ],
+  "rarity": {
+    "status": "proposta",
+    "description": "a definir; comum/incomum em avaliacao"
+  },
+  "attributes": {
+    "status": "proposta",
+    "description": "defesa/estabilidade em terreno umido; sem numeros oficiais"
+  },
+  "approval": {
+    "concept": "aguardando-aprovacao-do-diretor",
+    "blockout_3d": false,
+    "rig_animation": false,
+    "quality_filter": false,
+    "final": false
+  },
+  "source_type": "ilustracao-IA-2D-nao-render-GLB",
+  "image": {
+    "file": "set_turvagal_conceito_v01.png",
+    "format": "PNG",
+    "width_px": 165,
+    "height_px": 220,
+    "bytes": 8433,
+    "sha256": "00ce0eb181bef70f87477cdcc3cf0114952cc94b4958263328e34278ebf503a9",
+    "git_blob_sha1": "8f4883952dc9e73f429c42191dfab4295b6abb9a",
+    "kind": "preview-compacta",
+    "original_art_dimensions": [
+      1087,
+      1446
+    ],
+    "original_art_available_in_chat": true,
+    "original_art_committed_to_github": false
+  },
+  "sources": [
+    "AGENTS.md",
+    "assets/hunters/hunter-workshop/README.md",
+    "assets/models/creatures/savanna-herbivores-lowpoly-v05/README.md",
+    "assets/models/creatures/savanna-herbivores-lowpoly-v05/source/base_v02.py"
+  ],
+  "technical_validation": {
+    "image_is_real_png": true,
+    "remote_recovery_verified": true,
+    "creature_glb_imported": false,
+    "remote_sha1_blob_verified": true,
+    "remote_base64_exact_match": true
+  },
+  "alpha_modified": false,
+  "no_auto_merge": true
+}

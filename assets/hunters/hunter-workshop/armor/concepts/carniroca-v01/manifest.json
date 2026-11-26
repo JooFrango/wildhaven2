@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0",
+  "assetId": "wildhaven.hunter.armor.carniroca.v01",
+  "version": "v01",
+  "setName": "Manto do Último Voo",
+  "creature": {
+    "id": "carniroca",
+    "name": "Carniroca",
+    "role": "medium_aerial_scavenger",
+    "habitats": [
+      "temperate_forest",
+      "temperate_forest_edge",
+      "temperate_grassland",
+      "cliff"
+    ],
+    "sourceStatus": "in_review"
+  },
+  "biome": "temperate_forest",
+  "status": "awaiting_user_art_approval",
+  "approval": {
+    "concept": "pending",
+    "glb": "not_started"
+  },
+  "concept": {
+    "type": "2d_concept_art",
+    "file": null,
+    "dimensions": [
+      1024,
+      1536
+    ],
+    "isGlbRender": false,
+    "publicationStatus": "png_not_uploaded"
+  },
+  "design": {
+    "helmet": "closed hooked-beak mask, narrow visor, swept-back feather crest",
+    "chest": "layered charcoal feathers, rust collar, warm-ivory under-feather accents",
+    "shoulders": "three overlapping feather rows referencing the three wing sections; no extra limbs",
+    "gauntlets": "dark leather and keratin guards; human hands preserved",
+    "waist": "leather harness, matte buckles, utility pouches",
+    "legs": "long feather-like tassets and articulated human greaves/boots",
+    "materials": [
+      "feathers",
+      "keratin",
+      "dark leather",
+      "cords",
+      "matte metal fittings"
+    ],
+    "palette": [
+      "charcoal",
+      "dark umber",
+      "rust copper",
+      "warm ivory"
+    ]
+  },
+  "proposals": {
+    "rarity": "rare",
+    "attributes": [
+      "mobility on uneven terrain",
+      "situational resistance to contamination effects",
+      "improved carcass-resource gathering if such a system exists"
+    ],
+    "official": false,
+    "numericStats": null
+  },
+  "references": {
+    "creatureSpecies": "creatures/species/carniroca.json",
+    "creatureOptimizationManifest": "assets/models/creatures/carniroca/carniroca-optimization-manifest-v02.json",
+    "creatureLodFiles": [
+      "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD0.glb",
+      "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD1.glb",
+      "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD2.glb"
+    ],
+    "creatureManifestRecordedStats": {
+      "lodTriangles": [
+        12984,
+        6488,
+        2593
+      ],
+      "joints": 18,
+      "animationClips": 25,
+      "sourceTriangles": 16704
+    },
+    "hunterBaseManifest": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+    "hunterBaseRecordedStats": {
+      "triangles": 1000,
+      "verticesExported": 959,
+      "joints": 19,
+      "animationClips": [
+        "Running",
+        "Walking"
+      ]
+    },
+    "hunterPipeline": "assets/hunters/hunter-workshop/docs/PIPELINE.md"
+  },
+  "limitations": [
+    "GLB and texture binaries were not visually rendered in this run",
+    "exact armor fit against the Hunter GLB is not validated",
+    "Carniroca model remains in_review",
+    "concept art is not a GLB render",
+    "PNG not uploaded to repository in this commit"
+  ],
+  "workflow": {
+    "glbCreation": "blocked_until_explicit_user_approval_of_this_specific_concept",
+    "rigging": "after real GLB and approval",
+    "animations": "after rig approval",
+    "qualityFilter": "after model/UV/texture and animation approvals"
+  },
+  "publication": {
+    "branch": "feat/hunter-armor-carniroca-temperate-v01-concept",
+    "pr": 75,
+    "prUrl": "https://github.com/carioca1111/wildhaven-new/pull/75",
+    "pngUploaded": false,
+    "merge": false
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "wildhaven/armor-concept-v1",
+  "id": "set-torvardo-v01",
+  "name": "Set Torvardo — Armadura do Colosso",
+  "creature": {
+    "id": "torvardo",
+    "version": "v03-pilot",
+    "biome": "savana",
+    "diet": "herbivoro",
+    "anatomy_confirmed": [
+      "tórax robusto e elevado",
+      "escudo frontal córneo",
+      "dois chifres curvos para fora",
+      "juba geométrica em camadas",
+      "cascos bipartidos"
+    ],
+    "creature_model_status": "blockout-3d-em-revisao-artistica",
+    "reference_glb": "assets/models/creatures/torvardo-v03-pilot/torvardo-v03-anatomy-blockout.glb"
+  },
+  "concept": {
+    "version": "v01",
+    "visual_style": "Monster Hunter (inspiração), Wildhaven original low-poly facetado",
+    "hunter_base": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/",
+    "precise_glb_fit_verified": false,
+    "parts": [
+      "capacete-mascara-fechada",
+      "peitoral",
+      "ombreiras",
+      "manoplas",
+      "cintura",
+      "protecao-de-coxas",
+      "grevas",
+      "botas"
+    ],
+    "palette_hex": [
+      "#73452d",
+      "#8e5937",
+      "#965e39",
+      "#38251f",
+      "#4e3228",
+      "#b6a080",
+      "#a49a7e",
+      "#413d34"
+    ],
+    "materials_proposed": [
+      "couro e pele",
+      "juba escura",
+      "placas corneas",
+      "chifres",
+      "tecido",
+      "ferragens"
+    ],
+    "rarity_proposal": "intermediaria-ou-alta-sem-aprovacao",
+    "attribute_proposal": "defesa reforcada e mobilidade ponderada, sem valores oficiais"
+  },
+  "approval": {
+    "status": "aguardando-aprovacao-artistica",
+    "concept_approved": false,
+    "model_glb_authorized": false,
+    "quality_filter_completed": false,
+    "merged": false
+  },
+  "art": {
+    "filename": "set_torvardo_conceito_v01.png",
+    "format": "PNG",
+    "type": "ilustracao-conceitual-IA-nao-render-GLB",
+    "github_image_role": "preview-palette-optimized",
+    "width_px": 190,
+    "height_px": 253,
+    "bytes": 11721,
+    "sha256": "284e0e3f326a1835a6ec73d7196207611353ba1650afb41937e0d472076160bf",
+    "git_blob_sha1": "7d7a21baf140dd556d8629acc112b16c196a1a60",
+    "full_png_source": "conversation-only",
+    "full_png_dimensions": [
+      1087,
+      1446
+    ],
+    "full_png_sha256": "90fcefe34e9aaa7e5397d0ed521789a4b1f8348057012261da12dbed14289115",
+    "full_png_on_github": false
+  },
+  "verification": {
+    "github_png_retrieved": true,
+    "github_png_bytes_matched": true,
+    "github_readme_retrieved": true,
+    "github_manifest_retrieved": true,
+    "source_model_glb_binary_imported": false
+  },
+  "production": {
+    "real_armor_glb_created": false,
+    "alpha_modified": false,
+    "rig_done": false,
+    "uv_done": false
+  },
+  "source_refs": [
+    "carioca1111/wildhaven:AGENTS.md",
+    "carioca1111/wildhaven-new:AGENTS.md",
+    "carioca1111/wildhaven-new:assets/hunters/hunter-workshop/README.md",
+    "carioca1111/wildhaven@6775583101b375112cfd9504d3d7a7a3d459bca4:assets/models/creatures/torvardo-v03-pilot/README.md",
+    "carioca1111/wildhaven@6775583101b375112cfd9504d3d7a7a3d459bca4:assets/models/creatures/torvardo-v03-pilot/manifest.json",
+    "carioca1111/wildhaven@6775583101b375112cfd9504d3d7a7a3d459bca4:assets/models/creatures/torvardo-v03-pilot/source/build.py"
+  ]
+}

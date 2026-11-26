@@ -1,0 +1,57 @@
+{
+  "species": "arraia-de-areia",
+  "biome": "Mar de Dunas",
+  "concept_version": "v01",
+  "armor_name": "Manto da Arraia das Dunas",
+  "concept_status": "awaiting_artistic_approval",
+  "art_source": "AI-generated individual full-body concept in ChatGPT on 2026-11-17",
+  "master_png": {
+    "generated": true,
+    "published_to_github": false,
+    "path": null,
+    "sha256": null,
+    "reason": "GitHub connector create_file accepts UTF-8 text only; binary image upload unavailable"
+  },
+  "compact_png": {
+    "published_to_github": false,
+    "path": null
+  },
+  "files": {
+    "readme": "README.md",
+    "manifest": "manifest.json"
+  },
+  "creature_reference": {
+    "repository": "carioca1111/wildhaven",
+    "prs": [
+      65,
+      66,
+      67
+    ],
+    "version": "v03 pending artistic animation approval",
+    "wingspan_m": 18,
+    "length_m_approx": 19.83
+  },
+  "hunter_reference": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+  "materials_suggested": [
+    "couro",
+    "osteodermas estilizadas",
+    "tecido",
+    "placas naturais"
+  ],
+  "palette_suggested": [
+    "areia clara",
+    "ocre ferrugem",
+    "marrom escuro",
+    "marfim"
+  ],
+  "attributes_suggested": [
+    "resistência à areia",
+    "estabilidade"
+  ],
+  "armor_glb_created": false,
+  "rig_created": false,
+  "uv_created": false,
+  "animation_created": false,
+  "alpha_changed": false,
+  "merge_performed": false
+}

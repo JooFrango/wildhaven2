@@ -1,0 +1,51 @@
+{
+  "assetId": "wildhaven.hunter.armor.concept.folhisco-v01",
+  "name": "Set Folhisco — Vigia do Sub-bosque",
+  "creature": "folhisco",
+  "biome": "floresta-temperada",
+  "version": "v01",
+  "stage": "2d_concept",
+  "artStyle": "original monster-hunter-inspired, wildhaven low-poly-faceted, temperate forest distinctly unlike savanna",
+  "approval": {
+    "concept": "aguardando_aprovacao",
+    "glb": "nao_autorizado",
+    "rig": "nao_autorizado",
+    "integratedAlpha": false
+  },
+  "images": {
+    "githubPreview": {
+      "path": "set_folhisco_conceito_v01_preview.png",
+      "format": "PNG",
+      "dimensions": [
+        96,
+        144
+      ],
+      "bytes": 3175,
+      "colors": 16,
+      "sha256": "4182b285238a1f10edddfb7b9cddebee50511f3fe9267f8fc0bf2421ab92e9fb",
+      "gitBlobSha": "ac27a3284975882486bda49da5468a06566bfb23"
+    },
+    "originalChatOnly": {
+      "format": "PNG",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "92b4cb27d1b38ace66ddfe59df423ae0c09a369f977e4c738f8f1062a8d2f026",
+      "githubPublished": false
+    }
+  },
+  "source": [
+    "https://github.com/carioca1111/wildhaven/blob/main/creatures/species/folhisco.md",
+    "https://github.com/carioca1111/wildhaven/blob/main/assets/concepts/creatures/folhisco/README.md",
+    "https://github.com/carioca1111/wildhaven/blob/main/assets/models/creatures/folhisco/folhisco_animated_v01.glb",
+    "https://github.com/carioca1111/wildhaven-new/blob/main/assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb"
+  ],
+  "rarity": "proposta-inicial-intermediaria-nao-oficial",
+  "attributes": [
+    "mobilidade em sub-bosque (proposta)",
+    "agilidade em evasoes (proposta)",
+    "percepcao de ameacas (proposta)"
+  ],
+  "doNotMergeAutomatically": true
+}

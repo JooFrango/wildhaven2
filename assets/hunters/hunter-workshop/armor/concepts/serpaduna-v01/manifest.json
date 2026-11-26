@@ -1,0 +1,38 @@
+{
+  "species": "serpaduna",
+  "biome": "dunas",
+  "version": "v01",
+  "set_name": "Presas do Mar de Dunas",
+  "status": "awaiting_artistic_approval",
+  "concept_image": {
+    "generated_in_chat": true,
+    "published": false,
+    "master_png": null,
+    "remote_sha256": null
+  },
+  "source_refs": [
+    "carioca1111/wildhaven-new PR #14",
+    "#15",
+    "#16"
+  ],
+  "materials_proposed": [
+    "couro",
+    "escamas",
+    "presas estilizadas",
+    "tecido"
+  ],
+  "palette_proposed": [
+    "ocre",
+    "ferrugem",
+    "areia clara",
+    "castanho"
+  ],
+  "rarity_proposed": "rara",
+  "attributes_proposed": [
+    "resistência à areia",
+    "resistência a veneno"
+  ],
+  "armor_glb_created": false,
+  "rig_created": false,
+  "alpha_changed": false
+}

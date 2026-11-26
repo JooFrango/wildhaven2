@@ -1,0 +1,26 @@
+{
+  "species": "clavascarnio",
+  "set_name": "Couraça das Pinças Profundas",
+  "version": "v01",
+  "biome": "Dunas / Mar de Dunas",
+  "source_glb": "assets/models/creatures/clavascarnio/v01/clavascarnio-v01-blockout.glb",
+  "source_branch": "feat/clavascarnio-v01-blockout-revisao",
+  "source_glb_art_approval": "pending",
+  "concept_art_approval": "pending",
+  "concept_png": "clavascarnio-v01-concept-master.png",
+  "concept_png_published": false,
+  "preview_png_published": false,
+  "readme_published": true,
+  "manifest_published": true,
+  "armor_glb_created": false,
+  "rig_created": false,
+  "uv_created": false,
+  "animations_created": false,
+  "alpha_modified": false,
+  "rarity_suggestion": "rara",
+  "attributes_suggestions": [
+    "resistencia a abrasao",
+    "protecao a impacto"
+  ],
+  "date": "2026-11-17"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "set_id": "varrisco-v01",
+  "name": "Caçador das Garras",
+  "species": "Varrisco",
+  "biome": "savana",
+  "species_reference": "assets/models/creatures/varrisco/v02/README.md",
+  "hunter_reference": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+  "concept": {
+    "filename": "set_varrisco_conceito_v01.png",
+    "generated": true,
+    "published": false,
+    "source": "arte conceitual IA nesta conversa",
+    "github_verified": false
+  },
+  "approval": {
+    "concept": "aguardando_aprovacao",
+    "glb": "bloqueado_ate_aprovacao"
+  },
+  "rarity_proposal": "rara",
+  "attributes_proposal": [
+    "mobilidade",
+    "esquiva",
+    "precisao"
+  ],
+  "official_stats": false,
+  "alpha_modified": false,
+  "auto_merge": false
+}

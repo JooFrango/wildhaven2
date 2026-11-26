@@ -1,0 +1,15 @@
+{
+  "id": "silvarano-temperate-v01",
+  "species": "silvarano",
+  "ecotype": "temperate",
+  "biome": "floresta temperada",
+  "set_name": "Coroa do Sub-bosque",
+  "version": "v01",
+  "status": "AGUARDANDO APROVAÇÃO",
+  "concept_generated": true,
+  "concept_png_published": false,
+  "glb_created": false,
+  "source_species": "https://github.com/carioca1111/wildhaven/blob/main/creatures/species/silvarano.md",
+  "source_glb": "https://github.com/carioca1111/wildhaven/blob/main/assets/models/creatures/silvarano/silvarano_temperate_animated_v01.glb",
+  "note": "A arte PNG não foi transferida; nenhuma URL remota de imagem deve ser considerada válida."
+}

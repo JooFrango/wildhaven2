@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0",
+  "assetId": "wildhaven.hunter.armor.cromatil-v01",
+  "name": "Bastião da Espinha Ferrugem",
+  "version": "v01",
+  "sourceCreature": {
+    "id": "cromatil",
+    "name": "Cromátil",
+    "biomes": [
+      "dry_savanna",
+      "rocky_savanna"
+    ],
+    "statusInCatalog": "in_review",
+    "speciesFile": "creatures/species/cromatil.json",
+    "modelManifest": "assets/models/creatures/cromatil/cromatil-manifest-v01.json",
+    "model": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb"
+  },
+  "hunterBase": {
+    "manifest": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+    "model": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb",
+    "triangles": 1000,
+    "exportedVertices": 959,
+    "joints": 19,
+    "texture": "hunter_textura.png",
+    "textureDimensions": [
+      512,
+      512
+    ],
+    "animationClips": [
+      "Running",
+      "Walking"
+    ]
+  },
+  "concept": {
+    "setName": "Bastião da Espinha Ferrugem",
+    "image": "set_bastiao_espinha_ferrugem_conceito_v01.png",
+    "imageFormat": "PNG",
+    "imageDimensions": [
+      160,
+      240
+    ],
+    "imageRole": "optimized concept preview",
+    "masterImageDimensions": [
+      1024,
+      1536
+    ],
+    "masterImageDeliveredInChat": true,
+    "generatedBy": "AI image generation",
+    "sha256": "cad7c4097938a11ef0b8ac50792804b48b9be1650f96d30b26557ad079033154",
+    "githubBlobSha": "06173e23b6a8391eca6a22661a12926825f17277",
+    "approvalStatus": "awaiting_user_art_approval"
+  },
+  "design": {
+    "helmet": "closed full-face angular helmet with narrow amber visor and short layered crest; no natural horns",
+    "armorPieces": [
+      "chestplate",
+      "shoulder guards",
+      "gauntlets",
+      "utility belt",
+      "thigh guards",
+      "greaves",
+      "boots"
+    ],
+    "materials": [
+      "dark leather",
+      "olive keratin-like plates",
+      "rust-colored leather",
+      "aged bronze"
+    ],
+    "palette": [
+      "olive green",
+      "moss green",
+      "rust",
+      "sand",
+      "charcoal",
+      "aged bronze"
+    ]
+  },
+  "proposals": {
+    "rarity": "uncommon (proposal only)",
+    "attributes": [
+      "rocky-terrain stability",
+      "impact resistance",
+      "posture recovery"
+    ],
+    "official": false
+  },
+  "production": {
+    "armorGlbStarted": false,
+    "uvStarted": false,
+    "armorTexturesStarted": false,
+    "rigStarted": false,
+    "skinningStarted": false,
+    "animationsStarted": false,
+    "qualityFilterSubmitted": false,
+    "alphaIntegration": false
+  },
+  "publication": {
+    "repository": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-cromatil-v01-concept",
+    "readmeVerified": true,
+    "manifestVerified": true,
+    "pngUploaded": true,
+    "pngRemoteVerified": true,
+    "pngRemoteBlobSha": "06173e23b6a8391eca6a22661a12926825f17277",
+    "verificationMethod": "GitHub fetch_file returned the same Git blob SHA as the created binary blob"
+  }
+}

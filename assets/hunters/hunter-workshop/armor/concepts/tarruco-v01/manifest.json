@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "tarruco-v01",
+  "name": "Raizeiro do Crepúsculo",
+  "creature": "Tarruco (redesenhado)",
+  "biome": "savana",
+  "phase": "concept",
+  "approval_status": "awaiting_art_approval",
+  "concept_image": "tarruco-armor-v01.png",
+  "concept_image_published": false,
+  "documentation_published": true,
+  "glb_started": false,
+  "alpha_modified": false,
+  "rarity_proposal": "incomum",
+  "attribute_proposals": [
+    "estabilidade em terreno solto",
+    "eficiência de coleta/escavação",
+    "resistência física moderada"
+  ],
+  "source": "https://github.com/carioca1111/wildhaven/blob/main/assets/models/creatures/tarruco/README.md"
+}

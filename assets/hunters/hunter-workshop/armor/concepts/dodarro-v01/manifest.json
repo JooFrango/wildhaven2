@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0",
+  "assetId": "wildhaven.hunter.armor.dodarro.v01",
+  "setName": "Vigia do Leque Rubro",
+  "version": "v01",
+  "creature": {
+    "id": "dodarro",
+    "name": "Dodarro",
+    "biome": [
+      "savanna",
+      "plains"
+    ],
+    "diet": "opportunistic; fruits and carrion",
+    "variantsReferenced": [
+      "selvagem",
+      "montaria"
+    ],
+    "referenceStatus": "Dodarro v02 GLBs are real static blockouts; form remains awaiting artistic approval"
+  },
+  "concept": {
+    "stage": "2d_concept",
+    "source": "AI-generated illustration; not a GLB render",
+    "masterArt": {
+      "resolution": [
+        1024,
+        1536
+      ],
+      "presentedInChat": true,
+      "repositoryPublished": false
+    },
+    "repositoryPreview": {
+      "path": "vigia_leque_rubro_conceito_v01.png",
+      "format": "PNG",
+      "resolution": [
+        128,
+        192
+      ],
+      "bytes": 7086,
+      "sha256": "64b00ecdf90279cd398c17511ef1d651a4f33a3932666474e586b2676a52ea5a",
+      "gitBlobSha": "88e49cb52b0c9f3a4ce863323731ef7eefd0bb86",
+      "verifiedRemote": true
+    }
+  },
+  "hunterBase": {
+    "path": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb",
+    "manifest": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/manifest.json",
+    "triangles": 1000,
+    "verticesExported": 959,
+    "joints": 19,
+    "texture": [
+      512,
+      512
+    ],
+    "fitTested": false
+  },
+  "design": {
+    "helmet": "full-face hooked-beak mask, narrow amber visor, ivory forehead plates, swept-back rust crest",
+    "chest": "layered ivory and cream breastplate, rust central keel, brown leather underlayer",
+    "shoulders": "compact slate-blue feather-coverts with rust tips; no functional wings",
+    "gauntlets": "dark leather and keratin-like segmented plates with restrained feather accents",
+    "belt": "wide brown leather belt, aged-bronze buckle, hunting pouches and feather toggles",
+    "legs": "short fan-shaped feather tassets in rust, cream and slate; segmented thigh protection",
+    "greavesAndBoots": "charcoal shin plates and strapped human boots with split-looking toe guards; preserve human feet",
+    "materials": [
+      "layered feather plates",
+      "dark leather",
+      "keratin",
+      "bone-like ivory plates",
+      "aged bronze"
+    ]
+  },
+  "palette": {
+    "body": "#7D5C52",
+    "bodyDark": "#664C41",
+    "chest": "#EFD5AF",
+    "chestLight": "#F4D9A4",
+    "neck": "#B76E49",
+    "crest": "#BE4F31",
+    "crestTip": "#D86338",
+    "wing": "#697593",
+    "wingLight": "#7C889E",
+    "wingGold": "#C37B36",
+    "tail": "#B76740",
+    "beakBase": "#CE8436",
+    "beakHorn": "#4B434D",
+    "leg": "#715F58",
+    "claw": "#353137",
+    "leather": "#683E27",
+    "leatherLight": "#99683D",
+    "strap": "#7B4C2C",
+    "brass": "#AA864A"
+  },
+  "proposalOnly": {
+    "rarity": "to be decided; no official rarity assigned",
+    "role": "balanced hunting/exploration set",
+    "attributes": {
+      "mobility": "medium-high",
+      "protection": "medium",
+      "utility": "exploration and resource recovery"
+    }
+  },
+  "approval": {
+    "conceptArt": "awaiting_user_approval",
+    "armorGlb": "not_started",
+    "modelingAuthorized": false,
+    "uvAndTextureRefinement": "not_started",
+    "rigAndSkinning": "not_started",
+    "animations": "not_started",
+    "qualityFilter": "not_submitted"
+  },
+  "publication": {
+    "repository": "carioca1111/wildhaven-new",
+    "branch": "feat/hunter-armor-dodarro-v01-concept",
+    "baseBranch": "main",
+    "pullRequest": {
+      "number": 79,
+      "url": "https://github.com/carioca1111/wildhaven-new/pull/79",
+      "draft": true
+    },
+    "draft": true,
+    "alphaModified": false,
+    "automaticMerge": false,
+    "files": [
+      "assets/hunters/hunter-workshop/armor/concepts/dodarro-v01/vigia_leque_rubro_conceito_v01.png",
+      "assets/hunters/hunter-workshop/armor/concepts/dodarro-v01/README.md",
+      "assets/hunters/hunter-workshop/armor/concepts/dodarro-v01/manifest.json"
+    ]
+  }
+}

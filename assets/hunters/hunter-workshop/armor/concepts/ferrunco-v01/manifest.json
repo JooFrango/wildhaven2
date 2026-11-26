@@ -1,0 +1,16 @@
+{
+  "id": "ferrunco-v01",
+  "name": "Sentinela dos Cupinzeiros",
+  "species": "ferrunco",
+  "biome": "temperate_forest",
+  "status": "AGUARDANDO_APROVACAO",
+  "concept_art": {
+    "generated": true,
+    "published": false,
+    "filename": "set_ferrunco_conceito_v01.png"
+  },
+  "glb_created": false,
+  "source_model": "assets/models/creatures/ferrunco/ferrunco-animated-v02.glb",
+  "artistic_approval": false,
+  "alpha_modified": false
+}
