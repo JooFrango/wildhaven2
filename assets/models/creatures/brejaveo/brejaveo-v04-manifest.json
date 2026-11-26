@@ -1,0 +1,209 @@
+{
+  "species": "brejaveo",
+  "version": "v04",
+  "status": "experimental_review",
+  "source_sha256": "b06878ac4c590f20fdea154c52225b9c57c23cf93aa763860f5b55bc1d875603",
+  "sha256": "004007970773a204585520588955276b2894a9c1db7491bc6f8c1e734256fc0b",
+  "texture_sha256": "f57acd1276098ce13da55ce46275009c10f65d03cf34a17bded74ec2057b5c78",
+  "preview_sha256": "97be1d1a880a4cb82f6e3f2e24a8509c77d2c640390d12d58ed3f714607d67b8",
+  "bytes": 786168,
+  "original_triangles": 5164,
+  "triangles": 5188,
+  "vertices": 2921,
+  "meshes": 86,
+  "skins": 1,
+  "joints": 40,
+  "clips": [
+    {
+      "name": "idle",
+      "duration": 3,
+      "channels": 5,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "walk",
+      "duration": 1.35,
+      "channels": 20,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "run",
+      "duration": 0.82,
+      "channels": 20,
+      "frames": 25,
+      "loop": true
+    },
+    {
+      "name": "wade",
+      "duration": 1.7,
+      "channels": 20,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "stalk",
+      "duration": 1.9,
+      "channels": 20,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "takeoff",
+      "duration": 1.7,
+      "channels": 37,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "fly",
+      "duration": 1.35,
+      "channels": 37,
+      "frames": 25,
+      "loop": true
+    },
+    {
+      "name": "glide",
+      "duration": 2.4,
+      "channels": 37,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "landing",
+      "duration": 1.8,
+      "channels": 37,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "tongue_aim",
+      "duration": 1.4,
+      "channels": 6,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "tongue_strike",
+      "duration": 1.45,
+      "channels": 8,
+      "frames": 25,
+      "loop": false
+    },
+    {
+      "name": "tongue_hook_pull",
+      "duration": 1.6,
+      "channels": 8,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "bite_swallow",
+      "duration": 1.6,
+      "channels": 6,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "ambush",
+      "duration": 1.3,
+      "channels": 7,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "feed",
+      "duration": 2.1,
+      "channels": 6,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "hide",
+      "duration": 2,
+      "channels": 18,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "rest",
+      "duration": 3,
+      "channels": 18,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "sleep",
+      "duration": 3.4,
+      "channels": 18,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "alert",
+      "duration": 1.7,
+      "channels": 8,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "threat",
+      "duration": 1.7,
+      "channels": 8,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "hurt",
+      "duration": 1.2,
+      "channels": 7,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "death",
+      "duration": 2.3,
+      "channels": 8,
+      "frames": 21,
+      "loop": false
+    },
+    {
+      "name": "turn_left",
+      "duration": 1.9,
+      "channels": 20,
+      "frames": 21,
+      "loop": true
+    },
+    {
+      "name": "turn_right",
+      "duration": 1.9,
+      "channels": 20,
+      "frames": 21,
+      "loop": true
+    }
+  ],
+  "weight_sum_max_error": 2.9802322387695312e-8,
+  "quaternion_norm_max_error": 3.812750559717415e-8,
+  "validation": "GLB reparsed, all index ranges checked, finite vertices and animation values, normalized weights and rotations, static and sampled fly skin rendered on CPU. No runtime/gameplay/visual approval.",
+  "limitations": [
+    "No independent Blender or WebGL playback",
+    "Flight wing deformation and foot contact need artistic review",
+    "No LODs in original v03"
+  ],
+  "base_path": "assets/models/creatures/brejaveo/v03/brejaveo-v03-anatomia-blockout.glb",
+  "concept_path": "assets/models/creatures/brejaveo/v01/conceito-aprovado.png",
+  "glb": "brejaveo-v04-skinned-animated-LOD0.glb",
+  "texture": "brejaveo-v04-atlas-uv.png",
+  "preview": "brejaveo-v04-previews-real-glb.png",
+  "source": "brejaveo-v04-build.mjs",
+  "artistic_approval": false,
+  "integration": "not_integrated",
+  "triangle_delta_percent": 0.4647560030983655,
+  "preview_order": [
+    "profile",
+    "three_quarter",
+    "front",
+    "fly_sample_25_percent"
+  ]
+}
