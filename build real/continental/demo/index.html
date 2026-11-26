@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Wildhaven — Continente 272 · Inspeção de rotas</title>
+  <style>
+    :root {font-family:system-ui,sans-serif;color:#e4e8df;background:#101b20}
+    *{box-sizing:border-box} body{margin:0;padding:12px}
+    h1{font-size:20px;margin:0 0 4px} p{margin:4px 0 12px;color:#a5bdb1;font-size:13px}
+    .main{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:12px;max-width:1360px;margin:auto}
+    #map{width:100%;height:75vh;min-height:470px;border:1px solid #435651;border-radius:12px;touch-action:none;cursor:grab;background:#243c48}
+    aside{padding:14px;border:1px solid #435651;border-radius:12px;background:#1b2c31}
+    label{display:block;margin-top:14px;font-weight:600;font-size:12px}
+    select,input,button{background:#102126;color:#e8f3e8;border:1px solid #61796c;padding:9px;border-radius:7px;width:100%;margin-top:5px}
+    button{cursor:pointer}button:hover{background:#2e4d42}
+    #result{white-space:pre-wrap;font-size:13px;word-break:break-word;line-height:1.5;color:#d4e2d5;padding-top:14px}
+    .note{color:#dfc88e}strong{color:#f3f6df}
+    @media(max-width:800px){.main{display:block}#map{height:56vh;min-height:350px}aside{margin-top:12px}}
+  </style>
+</head>
+<body>
+<div style="max-width:1360px;margin:auto">
+<h1>WILDHAVEN · Inspeção continental 272 v01</h1>
+<p>Mapa e roteamento reais do manifesto. <strong>Não é gameplay 3D.</strong> Colisões, água, portais e combate ainda aguardam integração e certificação.</p>
+<div class="main">
+<canvas id="map" aria-label="Mapa continental de 272 hexágonos"></canvas>
+<aside>
+  <strong>272 hexágonos</strong>
+  <p>266 terrestres conectados pelo grafo · 6 setores marítimos · 738 conexões · 0 pacotes físicos certificados nesta branch</p>
+  <label>Origem</label><input id="origin" list="hexes" value="HV_01">
+  <label>Destino (clique no mapa para escolher)</label><input id="destination" list="hexes" value="FX_20">
+  <datalist id="hexes"></datalist>
+  <button id="route">Calcular rota estratégica</button>
+  <button id="reset">Centralizar mapa</button>
+  <div id="result" role="status"></div>
+  <p class="note">Rota lógica ≠ passagem física certificada. WG_15–WG_20 exigem navegação marítima/aérea.</p>
+</aside>
+</div>
+</div>
+<script type="module">
+import { createContinent } from "../src/graph.mjs";
+const manifest=await (await fetch("../data/continent-272.manifest.json")).json();
+const world=createContinent(manifest);
+const cvs=document.querySelector("#map"),ctx=cvs.getContext("2d");
+const origin=document.querySelector("#origin"), destination=document.querySelector("#destination");
+const output=document.querySelector("#result");
+document.querySelector("#hexes").innerHTML=manifest.tiles.map(x=>'<option value="'+x.id+'"></option>').join("");
+const xs=manifest.tiles.map(t=>t.x),zs=manifest.tiles.map(t=>t.z);
+const bounds={minX:Math.min(...xs)-2700,maxX:Math.max(...xs)+2700,minZ:Math.min(...zs)-2700,maxZ:Math.max(...zs)+2700};
+let view={cx:(bounds.minX+bounds.maxX)/2,cz:(bounds.minZ+bounds.maxZ)/2,scale:0.01},dpr=1,path=[];
+const palette=t=>{const b=t.biome.toLowerCase();if(t.travelCost===null)return "#4a7f9d";if(/glac|snow|ice/.test(b))return "#dce8ed";if(/desert|duna|sand|erg/.test(b))return "#d7aa69";if(/jungle|selva|tropical|swamp/.test(b))return "#3e7355";if(/mountain|serra|barrier|falesia|rocha/.test(b))return "#8e9c8f";if(/savanna|savana/.test(b))return "#b4a25d";if(/forest|floresta/.test(b))return "#527e5c";if(/coast|praia|arcos/.test(b))return "#bcae82";return "#87a57c"};
+function point(x,z){return {x:(x-view.cx)*view.scale+cvs.clientWidth/2,y:(z-view.cz)*view.scale+cvs.clientHeight/2}}
+function hex(t){const {x,y}=point(t.x,t.z),r=2500*view.scale;ctx.beginPath();for(let i=0;i<6;i++){const a=Math.PI/180*(i*60-90),px=x+r*Math.cos(a),py=y+r*Math.sin(a);i?ctx.lineTo(px,py):ctx.moveTo(px,py)}ctx.closePath()}
+function draw(){
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,cvs.clientWidth,cvs.clientHeight);
+  for(const t of manifest.tiles){hex(t);ctx.fillStyle=palette(t);ctx.fill();ctx.lineWidth=0.7;ctx.strokeStyle="#324940";ctx.stroke()}
+  if(path.length>1){ctx.beginPath();for(let i=0;i<path.length;i++){const t=world.byId.get(path[i]),p=point(t.x,t.z);i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)}
+    ctx.lineWidth=3;ctx.strokeStyle="#ffec8a";ctx.stroke()}
+  for(const id of [origin.value,destination.value]){const t=world.byId.get(id);if(!t)continue;hex(t);ctx.lineWidth=3;ctx.strokeStyle=id===origin.value?"#63cefa":"#ff8e5a";ctx.stroke()}
+  if(view.scale>0.016){ctx.font="10px system-ui";ctx.textAlign="center";ctx.textBaseline="middle";for(const t of manifest.tiles){const p=point(t.x,t.z);ctx.fillStyle="#1d2825";ctx.fillText(t.id,p.x,p.y)}}
+}
+function fit(){view.cx=(bounds.minX+bounds.maxX)/2;view.cz=(bounds.minZ+bounds.maxZ)/2;view.scale=Math.min((cvs.clientWidth-20)/(bounds.maxX-bounds.minX),(cvs.clientHeight-20)/(bounds.maxZ-bounds.minZ));draw()}
+function resize(){dpr=Math.min(devicePixelRatio||1,2);cvs.width=Math.max(1,Math.floor(cvs.clientWidth*dpr));cvs.height=Math.max(1,Math.floor(cvs.clientHeight*dpr));fit()}
+function route(){const r=world.findRoute(origin.value.trim(),destination.value.trim());path=r?.ids??[];
+  output.textContent=r?"Caminho lógico: "+r.ids.length+" hexágonos\nCusto ponderado: "+Math.round(r.metersWeighted).toLocaleString("pt-BR")+"\n"+r.ids.join(" → ")+"\n\nAtenção: essa rota ainda depende de portais e colisão reais.":"Rota indisponível: ID inválido, setores de mar ou desconexão.";
+  draw()}
+document.querySelector("#route").onclick=route;
+document.querySelector("#reset").onclick=fit;
+let last=null,wasDragged=false;
+cvs.addEventListener("pointerdown",e=>{last={x:e.clientX,y:e.clientY};wasDragged=false;cvs.setPointerCapture(e.pointerId)});
+cvs.addEventListener("pointermove",e=>{if(!last)return;const dx=e.clientX-last.x,dy=e.clientY-last.y;if(Math.abs(dx)+Math.abs(dy)>2)wasDragged=true;view.cx-=dx/view.scale;view.cz-=dy/view.scale;last={x:e.clientX,y:e.clientY};draw()});
+cvs.addEventListener("pointerup",e=>{if(!last)return;const moved=wasDragged;last=null;if(moved)return;const r=cvs.getBoundingClientRect();const wx=(e.clientX-r.left-r.width/2)/view.scale+view.cx,wz=(e.clientY-r.top-r.height/2)/view.scale+view.cz;const t=world.locate(wx,wz);if(t){destination.value=t.id;route()}});
+cvs.addEventListener("wheel",e=>{e.preventDefault();view.scale=Math.min(0.09,Math.max(0.001,view.scale*(e.deltaY<0?1.13:1/1.13)));draw()},{passive:false});
+window.addEventListener("resize",resize);resize();route();
+</script>
+</body>
+</html>

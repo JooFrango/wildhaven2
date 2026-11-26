@@ -1,0 +1,15 @@
+{
+  "schema": "wildhaven.tree-rules.v1",
+  "_warning": "EXEMPLO PARA TESTE, NAO APROVADO PARA MAPAS REAIS: medir o raio de colisao no GLB antes de usar.",
+  "byTile": {
+    "SYNTHETIC": {
+      "trees": {
+        "Dossel_1": {
+          "radius": 1,
+          "cuttable": true
+        }
+      },
+      "nodeClasses": {}
+    }
+  }
+}
