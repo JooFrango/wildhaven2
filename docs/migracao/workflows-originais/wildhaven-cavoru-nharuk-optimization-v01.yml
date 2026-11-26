@@ -1,0 +1,53 @@
+name: Wildhaven - Cavoru + Nharuk Optimization
+on:
+  push:
+    branches: [wildhaven-fauna-cavoru-nharuk-optimization-v01]
+    paths:
+      - 'assets/models/creatures/fauna-optimization-v08/source/optimize_pair.py'
+      - '.github/workflows/wildhaven-cavoru-nharuk-optimization-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  optimize:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: true}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Install geometry dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3 trimesh==4.11.1 vtk==9.6.2 pillow==11.2.1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Optimize and validate Cavoru + Nharuk
+        run: xvfb-run -a python3 assets/models/creatures/fauna-optimization-v08/source/optimize_pair.py --root .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-cavoru-nharuk-optimized-real-assets
+          path: |
+            assets/models/creatures/cavoru/*optimized-v02-LOD*.glb
+            assets/models/creatures/cavoru/*optimized-v02-real-3d-*.png
+            assets/models/creatures/cavoru/cavoru-optimization-manifest-v02.json
+            assets/models/creatures/nharuk/v02/*optimized-v03-LOD*.glb
+            assets/models/creatures/nharuk/v02/*optimized-v03-real-3d-*.png
+            assets/models/creatures/nharuk/v02/nharuk-optimization-manifest-v03.json
+            assets/models/creatures/fauna-optimization-v08/*.json
+            assets/models/creatures/fauna-optimization-v08/previews/*.png
+            docs/fauna-3d-inventory-v01.*
+          if-no-files-found: error
+      - name: Commit validated assets
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/cavoru/ assets/models/creatures/nharuk/v02/
+          git add assets/models/creatures/fauna-optimization-v08/ docs/fauna-3d-inventory-v01.*
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(fauna): publish Cavoru v02 + Nharuk v03 LOD chains [skip ci]'
+            git fetch origin wildhaven-fauna-cavoru-nharuk-optimization-v01
+            git rebase origin/wildhaven-fauna-cavoru-nharuk-optimization-v01
+            git push origin HEAD:wildhaven-fauna-cavoru-nharuk-optimization-v01
+          fi

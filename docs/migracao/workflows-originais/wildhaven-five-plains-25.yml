@@ -1,0 +1,80 @@
+name: 'Wildhaven — cinco planicies 5km: 25 GLBs reais'
+on:
+  push:
+    branches: [wildhaven-south-five-plains-25hex-v01]
+    paths:
+      - 'world/plains-south-expansion/**'
+      - '.github/workflows/wildhaven-five-plains-25.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-five-plains-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-five-25:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar bibliotecas de geometria, GLB e VTK
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Exportar cinco GLBs 5km reais conectados a partir dos vizinhos
+        run: |
+          python world/plains-south-expansion/tools/build_five_plains.py \
+            --repo-root . --output-dir world/plains-south-expansion
+      - name: Validar cinco GLBs contra as dez bordas, altitude, cores, inclinação, limites
+        run: |
+          python world/plains-south-expansion/tests/validate_25_glb.py \
+            --repo-root . --output-dir world/plains-south-expansion
+      - name: Renderizar mundo 25 hexágonos, cinco novas planícies e vistas individuais
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/plains-south-expansion/tools/render_25_real.py \
+            --repo-root . --output-dir world/plains-south-expansion
+      - name: Preparar visualizador Three.js sem modificar Alpha01
+        run: python world/plains-south-expansion/tools/build_viewer_25.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar visualizador independente de 25 GLBs
+        working-directory: world/plains-south-expansion/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Arquivo de download completo para auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-25-Hexagonos-5-Planicies-Reais-GLB
+          retention-days: 30
+          path: |
+            world/plains-south-expansion/models/*.glb
+            world/plains-south-expansion/manifest.json
+            world/plains-south-expansion/model_report.json
+            world/plains-south-expansion/preview/*.png
+            world/plains-south-expansion/viewer/dist/
+      - name: Publicar novos GLBs e renders reais somente na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/plains-south-expansion/models \
+            world/plains-south-expansion/manifest.json \
+            world/plains-south-expansion/model_report.json \
+            world/plains-south-expansion/preview \
+            world/plains-south-expansion/viewer/index.html \
+            world/plains-south-expansion/viewer/main.js \
+            world/plains-south-expansion/viewer/package.json \
+            world/plains-south-expansion/viewer/copy-assets.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 25 connected 5km GLB tiles with 5 southern prairies [skip ci]'
+            git push origin HEAD:wildhaven-south-five-plains-25hex-v01
+          fi

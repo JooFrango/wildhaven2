@@ -1,0 +1,80 @@
+name: 'Wildhaven — 5 hexagonos azuis planicie total, 2 vermelhos transicao'
+on:
+  push:
+    branches: [wildhaven-25-pure-plains-v03]
+    paths:
+      - 'world/plains-pure-v03/**'
+      - '.github/workflows/wildhaven-pure-blue-plains-v03.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-five-plains-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-five-25:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar bibliotecas de geometria, GLB e VTK
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Exportar cinco GLBs 5km reais conectados a partir dos vizinhos
+        run: |
+          python world/plains-pure-v03/tools/build_pure_plains.py \
+            --repo-root . --output-dir world/plains-pure-v03
+      - name: Validar cinco GLBs contra as dez bordas, altitude, cores, inclinação, limites
+        run: |
+          python world/plains-pure-v03/tests/validate_pure_plains_25.py \
+            --repo-root . --output-dir world/plains-pure-v03
+      - name: Renderizar mundo 25 hexágonos, cinco novas planícies e vistas individuais
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/plains-pure-v03/tools/render_pure_plains_25.py \
+            --repo-root . --output-dir world/plains-pure-v03
+      - name: Preparar visualizador Three.js sem modificar Alpha01
+        run: python world/plains-pure-v03/tools/build_viewer_pure_plains.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar visualizador independente de 25 GLBs
+        working-directory: world/plains-pure-v03/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Arquivo de download completo para auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-25-GLBs-5-Pure-Blue-Plains-v03
+          retention-days: 30
+          path: |
+            world/plains-pure-v03/models/*.glb
+            world/plains-pure-v03/manifest.json
+            world/plains-pure-v03/model_report.json
+            world/plains-pure-v03/preview/*.png
+            world/plains-pure-v03/viewer/dist/
+      - name: Publicar novos GLBs e renders reais somente na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/plains-pure-v03/models \
+            world/plains-pure-v03/manifest.json \
+            world/plains-pure-v03/model_report.json \
+            world/plains-pure-v03/preview \
+            world/plains-pure-v03/viewer/index.html \
+            world/plains-pure-v03/viewer/main.js \
+            world/plains-pure-v03/viewer/package.json \
+            world/plains-pure-v03/viewer/copy-assets.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 25 real GLBs: five all-prairie blue tiles, two unchanged forest/plain transitions [skip ci]'
+            git push origin HEAD:wildhaven-25-pure-plains-v03
+          fi

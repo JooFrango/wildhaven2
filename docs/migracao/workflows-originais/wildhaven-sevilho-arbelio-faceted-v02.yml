@@ -1,0 +1,70 @@
+name: Wildhaven Sevilho + Arbelio v02 faceted GLBs
+on:
+  push:
+    branches:
+      - wildhaven-sevilho-arbelio-faceted-v02
+    paths:
+      - '.github/workflows/wildhaven-sevilho-arbelio-faceted-v02.yml'
+      - 'assets/models/creatures/savanna-small-herbivores-v02/source/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  create-and-verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install geometry and GLB import dependencies
+        run: |
+          python -m pip install --no-cache-dir 'numpy==2.3.5' 'vtk==9.6.2' 'Pillow==11.3.0'
+          sudo apt-get update -qq
+          sudo apt-get install -y xvfb
+      - name: Export true GLB with legacy animation contract
+        run: python assets/models/creatures/savanna-small-herbivores-v02/source/refine_pair.py
+      - name: Capture GLB reimported at 3 views
+        run: xvfb-run -a python assets/models/creatures/savanna-small-herbivores-v02/source/capture_real.py
+      - name: Validate 6 binary models and checksum against manifests
+        run: |
+          python - <<'PY'
+          import json,hashlib,struct,pathlib
+          root=pathlib.Path('assets/models/creatures')
+          for name in ('sevilho','arbelio'):
+            manifest=json.loads((root/name/f'{name}-manifest-v02.json').read_text())
+            assert len(manifest['lods'])==3
+            tr=[]
+            for entry in manifest['lods']:
+              p=root/name/entry['path']; raw=p.read_bytes()
+              assert len(raw)==entry['bytes']
+              assert hashlib.sha256(raw).hexdigest()==entry['sha256']
+              n=struct.unpack_from('<I',raw,12)[0]
+              js=json.loads(raw[20:20+n]); assert len(js['animations'])==11
+              assert len(js.get('skins',[]))==0
+              tr.append(entry['triangleCount'])
+            assert tr[0]>tr[1]>tr[2],(name,tr)
+          folder=root/'savanna-small-herbivores-v02'/'previews'
+          assert len(list(folder.glob('*-real-GLB-*.png')))==6
+          assert (folder/'Wildhaven_Sevilho_Arbelio_Real_GLBS_v02.png').stat().st_size>50000
+          print('PASS: 6 GLBs / 22 clip contracts / reimported screenshots')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-sevilho-arbelio-v02-real-assets
+          path: |
+            assets/models/creatures/sevilho/*v02*glb
+            assets/models/creatures/arbelio/*v02*glb
+            assets/models/creatures/{sevilho,arbelio}/*manifest-v02.json
+            assets/models/creatures/savanna-small-herbivores-v02/previews/*.png
+          if-no-files-found: error
+      - name: Publish GLB binaries and preview PNGs to branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/{sevilho,arbelio}/*v02* assets/models/creatures/savanna-small-herbivores-v02/previews/
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets: publish genuine Sevilho and Arbelio GLBs v02 [skip ci]'
+            git push origin HEAD:wildhaven-sevilho-arbelio-faceted-v02
+          fi

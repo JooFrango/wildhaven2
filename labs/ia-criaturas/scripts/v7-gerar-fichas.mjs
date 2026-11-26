@@ -162,7 +162,7 @@ const FICHAS = [
       necessidades: { fomePorDia: 60, sedePorDia: 30, comerPorSeg: 1, fomeProcurar: 35 },
       dieta: { vegetacao: [], presas: [], carnica: false, cupins: { porSeg: 3, alcanceM: 1.2, abre: false } },
       teme: ['varrisco', 'rocantraz', 'boscaranha', 'proto-cacador-camuflado'],
-      social: { tipo: 'solitario', tamanho: [1, 1], territorial: true },
+      social: { tipo: 'solitario', tamanho: [1, 1], territorial: true, raioTerritorioM: 80 },
       combate: { ataques: [{ nome: 'bicada', alcance: 0.5, dano: 2, preparoSeg: 0.2, recargaSeg: 1, regioes: ['cabeca', 'pernas'], clipe: 'peck' }] },
       saude: { max: 20 },
       voo: {
@@ -190,13 +190,67 @@ const FICHAS = [
       necessidades: { fomePorDia: 45, sedePorDia: 30, comerPorSeg: 1, fomeProcurar: 35 },
       dieta: { vegetacao: [], presas: [], carnica: false, cupins: { porSeg: 12, alcanceM: 1.8, abre: true } },
       teme: ['rocantraz'],
-      social: { tipo: 'solitario', tamanho: [1, 1], territorial: true },
+      social: { tipo: 'solitario', tamanho: [1, 1], territorial: true, raioTerritorioM: 180 },
       combate: { forca: 0.7, defesa: 0.6, ataques: [{ nome: 'patada', alcance: 1.2, dano: 14, preparoSeg: 0.5, recargaSeg: 1.8, regioes: ['tronco', 'cabeca', 'pernas'], clipe: 'defend' }] },
       saude: { max: 320 },
       modelo: {
         glb: 'assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD0.glb', frente: '+Z',
         clipes: { parado: 'idle', andar: 'walk', trote: 'trot', corrida: 'trot', comer: 'feed', beber: 'feed', alerta: 'alert', ameaca: 'defend', recuo: 'flee', descansar: 'rest', ferido: 'hurt', morte: 'death', farejar: 'sniff', inspecionar: 'inspect', cavar: 'dig' },
         limitacoes: ['animação por pivôs'],
+      },
+    },
+  },
+  {
+    base: 'varrisco.json', id: 'serpaduna', nome: 'Serpáduna',
+    d: {
+      ficha: 'assets/models/creatures/serpaduna/v03/manifest.json', atividade: 'noturno',
+      _fonteFicha: 'GLB real v03 (PR #16): 15,56 m de extensão, 14,13 m de coluna, 70 juntas de corpo + 2 faciais, 8.198 triângulos, 13 clipes. Não existe ficha de espécie em creatures/species: massa, sentidos, dieta e combate são experimentais do laboratório.',
+      experimental: { v7: true, capacidades: ['serpente', 'veneno', 'termorrecepcao', 'taticasDeEmboscada', 'engolirInteira'], nota: 'Criatura real do catálogo (GLB v03). Todos os números de simulação são experimentais; nenhum GLB foi alterado.' },
+      corpo: { massaKg: [700, 1100], comprimentoM: 14.13, alturaM: 0.9, raio: 0.45, ectotermico: true },
+      // A cabeça de uma cobra de 15 m não corre: ela avança por ondulação. O arranque do bote é curto e caro.
+      // giroGrausSeg é o da CABEÇA, que vira rápido; a trajetória do corpo continua presa ao raio mínimo de
+      // curvatura (o giro efetivo em marcha é v/raioCurvaturaMinM, bem menor que isto).
+      movimento: { andar: 0.8, trote: 1.8, corrida: 4.5, aceleracao: 3.5, giroGrausSeg: 120, fatorCurvaFechada: 0.5, resistenciaSeg: 6, inclinacaoMaxGraus: 30, nadar: false, profundidadeMaxM: 0.6 },
+      // raioCurvaturaMinM = comprimento / π: é o menor raio em que uma meia-volta não faz o corpo encostar
+      // em si mesmo. Abaixo disso a serpente teria de dobrar sobre o próprio tronco para virar.
+      serpente: { comprimentoM: 14.13, segmentos: 70, ondaM: 0.75, comprimentoOndaM: 7, tracaoAreia: 0.8, raioCurvaturaMinM: 4.5, enrolarRaioM: 1.4, segundosEnrolar: 4, capsulaM: 2.6 },
+      percepcao: {
+        visao: { alcance: 18, anguloGraus: 160, alcanceProximo: 3, tempoReconhecimentoSeg: 1.2 }, audicao: { alcance: 8, erroRelativo: 0.4 }, olfato: { alcance: 45 }, memoriaSeg: 90,
+        termorrecepcao: { alcance: 22, anguloGraus: 150, sensibilidadeC: 2, contrasteRefC: 12, erroRelativo: 0.15, tempoReconhecimentoSeg: 0.8 },
+        vibracao: { alcance: 30, limiar: 0.02, erroRelativo: 0.25 },
+      },
+      furtividade: { camuflagem: 0.45, fatorParado: 0.3, ruidoPassos: 0.4 },
+      necessidades: { custoBasePorSeg: 0.02, custoCorridaPorSeg: 5, recuperacaoPorSeg: 1.2, fomePorDia: 8, sedePorDia: 10, comerPorSeg: 0.6, fomeCacar: 35, fomeDesesperada: 75, sedeProcurar: 50 },
+      dieta: { vegetacao: [], presas: ['velsari', 'cromatil', 'tarruco', 'folhisco'], carnica: true, microfauna: false },
+      teme: ['rocantraz'], competidores: [],
+      social: { tipo: 'solitario', tamanho: [1, 1], probabilidadePar: 0, cacaCooperativa: false, territorial: true, raioTerritorioM: 300, marcacao: false },
+      combate: {
+        // Não segura a presa: morde, solta e deixa o veneno agir. Segurar faria o combate virar luta corpo a corpo.
+        protecao: { cabeca: 0.2, pescoco: 0.15, tronco: 0.25, flanco: 0.25, pernas: 0, cauda: 0.2 }, resistenciaDor: 0.7, equilibrio: 0.9, forcaMordida: 1.1, agarrar: false,
+        forca: 0.8, defesa: 0.5, esquiva: 0.2,
+        ataques: [
+          // A arma é o veneno, não o trauma: a presa tem de sobreviver à mordida e ser derrubada pela paralisia.
+          { nome: 'bote', alcance: 4.5, dano: 4, preparoSeg: 0.5, recargaSeg: 4, regioes: ['pescoco', 'tronco', 'pernas', 'flanco'], clipe: 'ambush_strike', exigeSurpresa: true },
+          { nome: 'mordida', alcance: 2.6, dano: 3, preparoSeg: 0.35, recargaSeg: 2.5, regioes: ['pescoco', 'tronco', 'pernas', 'flanco'], clipe: 'venom_bite' },
+        ],
+        exibicao: 'coil_defend',
+      },
+      // Paralisante: reusa o veneno neurotóxico da V7. Dose grande, mas a morte vem da paralisia, não da mordida.
+      veneno: { tipo: 'neurotoxico', potencia: 1, doseMg: 90, reservaMg: 260, recargaMgPorSeg: 0.03, ataques: ['bote', 'mordida'], meiaVidaSeg: 220, latenciaSeg: 12, esperaSeg: 150, custoEnergiaPorMg: 0.03 },
+      resistenciaVeneno: 0.9,
+      taticasDeEmboscada: { raioBuscaM: 40, esperaMaxSeg: 240, distanciaDisparoM: 4.5 },
+      // Engolir inteira: limite anatômico pela massa e pela altura do corpo da presa, não pela vontade.
+      engolirInteira: { massaMaxFracao: 0.08, alturaMaxM: 0.7, segundos: 7, saciaPorKg: 2.2, digestaoSeg: 600 },
+      saude: { max: 420, resistencia: 1.2, sangramentoBase: 0.5, regenPorDia: 6, suscetibilidadeDoenca: 0.2 },
+      vida: { expectativaAnos: 40, maturidadeAnos: 6, gestacaoDias: 120, ovos: true, ninhada: [4, 12], estacaoReprodutiva: 'chuvosa', desmameDias: 1, crescimentoAnos: 8 },
+      modelo: {
+        glb: 'assets/models/creatures/serpaduna/v03/serpaduna_v03_uncoiled_rigged.glb', frente: '-X', medidaReferencia: 'comprimento',
+        clipes: { parado: 'idle', andar: 'slither', trote: 'slither', corrida: 'fast_slither', espreita: 'slither', alerta: 'alert', farejar: 'tongue_flick',
+          bote: 'ambush_strike', mordida: 'venom_bite', comer: 'swallow_whole', engolir: 'swallow_whole', beber: 'tongue_flick', exibicao: 'coil_defend',
+          descansar: 'rest', enrolar: 'coil_enter', enrolada: 'coil_defend', desenrolar: 'coil_exit', ferido: 'alert', morte: 'death' },
+        limitacoes: ['clipes no lugar: o avanço vem do controlador de serpente, não do root motion',
+          'coil_enter/coil_exit descem a −9,3 m no clipe; o laboratório usa a espiral do controlador e ignora essa translação',
+          'sem IK de solo por junta'],
       },
     },
   },
@@ -210,7 +264,7 @@ for (const f of FICHAS) {
   console.log('ficha', f.id, '←', f.base);
 }
 // Presas do laboratório passam a reconhecer os predadores novos (só acrescenta; cenários antigos não os contêm).
-const TEMORES = { cromatil: ['boscaranha', 'proto-serpente-termica', 'proto-cacador-camuflado'], velsari: ['proto-cacador-camuflado'], tarruco: ['proto-cacador-camuflado'] };
+const TEMORES = { cromatil: ['boscaranha', 'proto-serpente-termica', 'proto-cacador-camuflado', 'serpaduna'], velsari: ['proto-cacador-camuflado', 'serpaduna'], tarruco: ['proto-cacador-camuflado', 'serpaduna'], folhisco: ['serpaduna'] };
 for (const [id, novos] of Object.entries(TEMORES)) {
   const arq = join(dir, `${id}.json`);
   const txt = await readFile(arq, 'utf8');

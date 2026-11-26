@@ -1,0 +1,26 @@
+name: Fulgaronte v05 - validar rig e renderizar GIFs reais
+on:
+  push:
+    branches: [feat/fulgaronte-v05-rig-animacao-cpu]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  glb-audit:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout actual v04 and v05 GLB
+        uses: actions/checkout@v4
+      - name: Validate original binary, skinning, bone matrices and animation loops
+        run: python3 assets/models/creatures/fulgaronte/v05/source/validate_rig_v05.py
+      - name: Install software-render-only dependencies
+        run: python3 -m pip install --disable-pip-version-check numpy pillow
+      - name: Bake GIFs from real skinned GLB vertex positions
+        run: python3 assets/models/creatures/fulgaronte/v05/source/preview_cpu.py
+      - name: Publish validation and real previews without Actions artifact storage
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/fulgaronte/v05/validation.json assets/models/creatures/fulgaronte/v05/previews
+          git diff --cached --quiet || (git commit -m "test(fulgaronte): GLB v05 validation and real animated previews [skip ci]" && git push)

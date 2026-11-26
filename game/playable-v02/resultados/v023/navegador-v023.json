@@ -1,0 +1,5072 @@
+{
+ "data": "2026-11-22T02:01:55.114Z",
+ "erros": [],
+ "falhas": [],
+ "amostras": [
+  {
+   "t": 50.05,
+   "regioes": [
+    "R1:arvo+brena+caio+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     338,
+     2779,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     450,
+     2792,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     344,
+     2793,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 98.6,
+   "regioes": [
+    "R1:arvo+brena+caio+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     257,
+     2646,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     527,
+     2671,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     264,
+     2667,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 147.15,
+   "regioes": [
+    "R1:arvo+brena+caio+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     178,
+     2513,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     600,
+     2550,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     188,
+     2541,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 195.55,
+   "regioes": [
+    "R1:arvo+brena+caio+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     100,
+     2379,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     672,
+     2427,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     113,
+     2413,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 244.05,
+   "regioes": [
+    "R1:arvo+caio",
+    "R2:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     22,
+     2244,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     744,
+     2304,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     39,
+     2285,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 292.45,
+   "regioes": [
+    "R1:arvo",
+    "R2:brena+dara",
+    "R4:caio"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -56,
+     2108,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     815,
+     2180,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -35,
+     2156,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 341,
+   "regioes": [
+    "R1:arvo",
+    "R2:brena+dara",
+    "R4:caio"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -135,
+     1972,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     887,
+     2055,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -110,
+     2026,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 389.5,
+   "regioes": [
+    "R1:arvo",
+    "R2:brena+dara",
+    "R4:caio"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -213,
+     1836,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     959,
+     1932,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -184,
+     1897,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 437.95,
+   "regioes": [
+    "R1:arvo",
+    "R2:brena+dara",
+    "R4:caio"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -292,
+     1701,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     1030,
+     1808,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -259,
+     1768,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 485.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -369,
+     1568,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     1099,
+     1688,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -332,
+     1641,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 533.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -446,
+     1434,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     1169,
+     1568,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -405,
+     1513,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 582.2,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -525,
+     1298,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     1239,
+     1446,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -480,
+     1384,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 630.85,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -603,
+     1161,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     1311,
+     1321,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -554,
+     1254,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 679.55,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -682,
+     1025,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "caio",
+     1383,
+     1196,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -629,
+     1124,
+     "detalhado",
+     "HV_01"
+    ]
+   ]
+  },
+  {
+   "t": 727.25,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -759,
+     891,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     1454,
+     1074,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "dara",
+     -702,
+     996,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 775.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -837,
+     756,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     1528,
+     951,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -777,
+     867,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 824.35,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -916,
+     619,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     1604,
+     828,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -851,
+     737,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 960.05,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1136,
+     239,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     1800,
+     475,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1060,
+     375,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1008.6,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1215,
+     102,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     1872,
+     350,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1135,
+     245,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1057.55,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1294,
+     -35,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     1945,
+     225,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1210,
+     114,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1106.2,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1373,
+     -172,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2017,
+     100,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1285,
+     -16,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1154.75,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1452,
+     -308,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2088,
+     -24,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1360,
+     -146,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1202.2,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1529,
+     -441,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2159,
+     -146,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1433,
+     -273,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1250.6,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1607,
+     -577,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2227,
+     -272,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1507,
+     -402,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1299.25,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1686,
+     -713,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2301,
+     -396,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1582,
+     -533,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1347.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2374,
+     -520,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1657,
+     -662,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1396.05,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2446,
+     -644,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1745,
+     -781,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1442.2,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2515,
+     -763,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -1878,
+     -826,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1490.75,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -2027,
+     -841,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1539.15,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -2175,
+     -847,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1587.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena+dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -2324,
+     -849,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1636.2,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -2472,
+     -850,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1682.6,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -2613,
+     -841,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1731.15,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -2760,
+     -844,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1779.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -2906,
+     -848,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1828.05,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -3053,
+     -849,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1876.85,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -3200,
+     -850,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1923.8,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -3341,
+     -850,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 1972.35,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -3487,
+     -850,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 2020.85,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -3633,
+     -850,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 2069.55,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -3780,
+     -850,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 2118.05,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -3925,
+     -850,
+     "detalhado",
+     "FX_20"
+    ]
+   ]
+  },
+  {
+   "t": 2164.2,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -4064,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2212.6,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -4210,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2261.15,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -4356,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2309.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -4502,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2357.8,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -4648,
+     -852,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2404.05,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -4788,
+     -851,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2452.75,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -4935,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2501.25,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -5083,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2549.95,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -5231,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2598.35,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -5379,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2644.6,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -5520,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2693.15,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -5669,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2741.55,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -5817,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2790.05,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -5966,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2838.35,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -6115,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2886.75,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -6264,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2935.4,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -6414,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 2983.95,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -6563,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3032.6,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -6713,
+     -850,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3079.15,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -6857,
+     -854,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3127.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -7006,
+     -851,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3176.05,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -7155,
+     -846,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3224.6,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -7304,
+     -849,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3273,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -7453,
+     -847,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3318.45,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -7591,
+     -854,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3367.15,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -7740,
+     -857,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3416.05,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -7889,
+     -852,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3464.6,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -8037,
+     -853,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3513,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena",
+    "R6:dara"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -8185,
+     -851,
+     "detalhado",
+     "FX_19"
+    ]
+   ]
+  },
+  {
+   "t": 3559.65,
+   "regioes": [
+    "R1:arvo",
+    "R4:caio",
+    "R5:brena"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "HV_01"
+    ],
+    [
+     "brena",
+     -1763,
+     -846,
+     "detalhado",
+     "FX_20"
+    ],
+    [
+     "caio",
+     2563,
+     -847,
+     "detalhado",
+     "ER_18"
+    ],
+    [
+     "dara",
+     -8278,
+     -850,
+     "estrategico",
+     "FX_18"
+    ]
+   ]
+  }
+ ],
+ "observacoes": [
+  {
+   "id": "brena",
+   "t": 50.05,
+   "modo": "detalhado",
+   "x": 338.2324082331945,
+   "y": 2779.2063393435774,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.034461734769122065,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -61.74,
+     37.93,
+     1229.25
+    ],
+    "jogo": {
+     "x": 338.26,
+     "y": 2779.25
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.0516484125090144,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 98.6,
+   "modo": "detalhado",
+   "x": 527.0478680464034,
+   "y": 2671.012518932911,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.063732005373769,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     127,
+     37.27,
+     1121.1
+    ],
+    "jogo": {
+     "x": 527,
+     "y": 2671.1
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.09972104575010504,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 147.15,
+   "modo": "detalhado",
+   "x": 188.2171750512344,
+   "y": 2541.3209631038567,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.009804295957365539,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -211.71,
+     40.38,
+     991.45
+    ],
+    "jogo": {
+     "x": 188.29,
+     "y": 2541.45
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.14816880146969622,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 195.55,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 244.05,
+   "modo": "detalhado",
+   "x": 22.05495298204835,
+   "y": 2243.6693537333927,
+   "hex": "HV_01",
+   "regiao": "R2",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.17760425999205898,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -377.92,
+     41.1,
+     693.71
+    ],
+    "jogo": {
+     "x": 22.08,
+     "y": 2243.71
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.04774381737344275,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 292.45,
+   "modo": "detalhado",
+   "x": 814.9163037011272,
+   "y": 2180.490342870037,
+   "hex": "HV_01",
+   "regiao": "R4",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.19461572564700091,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     414.89,
+     47.62,
+     630.53
+    ],
+    "jogo": {
+     "x": 814.89,
+     "y": 2180.53
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.047587526200918336,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 341,
+   "modo": "detalhado",
+   "x": -109.92512133326363,
+   "y": 2026.0241458658977,
+   "hex": "HV_01",
+   "regiao": "R2",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.02287746763422993,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -509.87,
+     27.72,
+     476.11
+    ],
+    "jogo": {
+     "x": -109.87,
+     "y": 2026.11
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.10202594632345781,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 389.4,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 437.95,
+   "modo": "detalhado",
+   "x": -291.7100149344732,
+   "y": 1700.6407050130272,
+   "hex": "HV_01",
+   "regiao": "R2",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.32196146774796985,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -691.63,
+     16.2,
+     150.77
+    ],
+    "jogo": {
+     "x": -291.63,
+     "y": 1700.77
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.15205125252705656,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 485.65,
+   "modo": "detalhado",
+   "x": 1099.4572453344285,
+   "y": 1687.9286221182028,
+   "hex": "HV_01",
+   "regiao": "R4",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.3255231047754338,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     699.44,
+     41.12,
+     137.96
+    ],
+    "jogo": {
+     "x": 1099.44,
+     "y": 1687.96
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.03580465089383021,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 533.55,
+   "modo": "detalhado",
+   "x": -404.8263949269648,
+   "y": 1513.6206255863146,
+   "hex": "HV_01",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.03520355372377071,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -804.75,
+     16.66,
+     -36.25
+    ],
+    "jogo": {
+     "x": -404.75,
+     "y": 1513.75
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.1502462105425076,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 582.2,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 630.85,
+   "modo": "detalhado",
+   "x": -603.285765727924,
+   "y": 1161.2357203164556,
+   "hex": "HV_01",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.46534399831559325,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -1003.26,
+     9.34,
+     -388.73
+    ],
+    "jogo": {
+     "x": -603.26,
+     "y": 1161.27
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.04288320696207714,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 679.55,
+   "modo": "detalhado",
+   "x": 1383.320701464138,
+   "y": 1196.3822541231957,
+   "hex": "HV_01",
+   "regiao": "R4",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.4561493077516984,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     983.25,
+     52.35,
+     -353.5
+    ],
+    "jogo": {
+     "x": 1383.25,
+     "y": 1196.5
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.1373418673808759,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 727.25,
+   "modo": "detalhado",
+   "x": -702.4897439064907,
+   "y": 996.3702924355082,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.047013162837916234,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -1102.47,
+     9.23,
+     -553.59
+    ],
+    "jogo": {
+     "x": -702.47,
+     "y": 996.41
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.04434537767775024,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 775.65,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 824.35,
+   "modo": "detalhado",
+   "x": -916.2920651169951,
+   "y": 619.3495273700273,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.6093859602897107,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -1316.22,
+     10.98,
+     -930.52
+    ],
+    "jogo": {
+     "x": -916.22,
+     "y": 619.48
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.1490519649635906,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 960.05,
+   "modo": "detalhado",
+   "x": 1800.3204480483892,
+   "y": 475.09545104279766,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.6478816501599466,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     1400.3,
+     48.8,
+     -1074.88
+    ],
+    "jogo": {
+     "x": 1800.3,
+     "y": 475.12
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.031949553715966084,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 1008.6,
+   "modo": "detalhado",
+   "x": -1135.028737445034,
+   "y": 244.74784989076386,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.06299364022152631,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -1534.99,
+     7.87,
+     -1305.18
+    ],
+    "jogo": {
+     "x": -1134.99,
+     "y": 244.82
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.08189156190078765,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 1057.4,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 1106.2,
+   "modo": "detalhado",
+   "x": -1373.18578728071,
+   "y": -171.63698103021642,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.8196428808578404,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -1773.14,
+     1.21,
+     -1721.56
+    ],
+    "jogo": {
+     "x": -1373.14,
+     "y": -171.56
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.08956871154586034,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 1154.75,
+   "modo": "detalhado",
+   "x": 2088.3435922524195,
+   "y": -24.45257414777865,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.7805816974955808,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     1688.28,
+     53.85,
+     -1574.34
+    ],
+    "jogo": {
+     "x": 2088.28,
+     "y": -24.34
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.12929390285643969,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 1202.05,
+   "modo": "detalhado",
+   "x": -1432.7482245655979,
+   "y": -272.6002248707291,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.07314741415126824,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -1832.73,
+     -0.52,
+     -1822.57
+    ],
+    "jogo": {
+     "x": -1432.73,
+     "y": -272.57
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.03529415818264995,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 1250.45,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 1299.25,
+   "modo": "detalhado",
+   "x": -1686.1300671449724,
+   "y": -713.414303682503,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.963656003141001,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -2086.12,
+     -6.21,
+     -2263.39
+    ],
+    "jogo": {
+     "x": -1686.12,
+     "y": -713.39
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.02630620442226155,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 1347.55,
+   "modo": "detalhado",
+   "x": 2373.5925941416826,
+   "y": -519.6267284753832,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.9120903443823741,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     1973.53,
+     56.83,
+     -2069.51
+    ],
+    "jogo": {
+     "x": 2373.53,
+     "y": -519.51
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.13245211790773204,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 1396.05,
+   "modo": "detalhado",
+   "x": -1745.0550610427022,
+   "y": -780.5953604199026,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.083324642893011,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -2145.04,
+     -6.72,
+     -2330.58
+    ],
+    "jogo": {
+     "x": -1745.04,
+     "y": -780.58
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.02151226410353255,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 1442.2,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 1490.75,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 1539.15,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 1587.65,
+   "modo": "detalhado",
+   "x": -2323.6769487789916,
+   "y": -848.8577603716458,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.10895929754408784,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -2723.64,
+     -2.12,
+     -2398.86
+    ],
+    "jogo": {
+     "x": -2323.64,
+     "y": -848.86
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.037016593632350735,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 1636.2,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 1682.6,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 1731,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 1779.55,
+   "modo": "detalhado",
+   "x": -2906.17472058543,
+   "y": -847.8489938221596,
+   "hex": "FX_20",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.1353402443734787,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -3306.05,
+     15.25,
+     -2397.85
+    ],
+    "jogo": {
+     "x": -2906.05,
+     "y": -847.85
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.12472464401142612,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 1828.05,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 1876.85,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 1923.8,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 1972.35,
+   "modo": "detalhado",
+   "x": -3487.354261245653,
+   "y": -849.9591821058951,
+   "hex": "FX_20",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.16159883455415913,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -3887.22,
+     42.02,
+     -2399.96
+    ],
+    "jogo": {
+     "x": -3487.22,
+     "y": -849.96
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.13426373685826057,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 2020.85,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 2069.55,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 2117.95,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 2164.05,
+   "modo": "detalhado",
+   "x": -4063.5585167400795,
+   "y": -849.999198471754,
+   "hex": "FX_19",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.18761534991217943,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -4463.53,
+     71.82,
+     -2400
+    ],
+    "jogo": {
+     "x": -4063.53,
+     "y": -850
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.028528002248349033,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 2212.6,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 2261.15,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 2309.65,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 2357.8,
+   "modo": "detalhado",
+   "x": -4647.618087290512,
+   "y": -851.89595172442,
+   "hex": "FX_19",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.21392709875760774,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -5047.54,
+     98.67,
+     -2401.9
+    ],
+    "jogo": {
+     "x": -4647.54,
+     "y": -851.9
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.07819215737369503,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 2404.05,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 2452.75,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 2501.25,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 2549.95,
+   "modo": "detalhado",
+   "x": -5230.967769951896,
+   "y": -850.0354421025288,
+   "hex": "FX_19",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.24020019516720437,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -5630.84,
+     117.42,
+     -2400.04
+    ],
+    "jogo": {
+     "x": -5230.84,
+     "y": -850.04
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.12785122227361095,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 2598.35,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 2644.6,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 2693.15,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 2741.55,
+   "modo": "detalhado",
+   "x": -5817.310952723435,
+   "y": -850.0006484609629,
+   "hex": "FX_19",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.266539379758051,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -6217.18,
+     127.03,
+     -2400
+    ],
+    "jogo": {
+     "x": -5817.18,
+     "y": -850
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.130954328971948,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 2790.05,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 2837.25,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 2886.75,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 2935.4,
+   "modo": "detalhado",
+   "x": -6413.867303651167,
+   "y": -850.000011045149,
+   "hex": "FX_19",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.2932797134604136,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -6813.8,
+     130.17,
+     -2400
+    ],
+    "jogo": {
+     "x": -6413.8,
+     "y": -850
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.0673036520733997,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 2983.95,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 3032.6,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 3079.15,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 3127.65,
+   "modo": "detalhado",
+   "x": -7006.063247333409,
+   "y": -851.4139273011415,
+   "hex": "FX_19",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.3197440730251533,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -7406.04,
+     131.9,
+     -2401.41
+    ],
+    "jogo": {
+     "x": -7006.04,
+     "y": -851.41
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.023576730156791598,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 3176.05,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 3224.6,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 3272.85,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 3318.35,
+   "modo": "detalhado",
+   "x": -7591.052322615744,
+   "y": -853.5114262276502,
+   "hex": "FX_19",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.345806891475932,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -7990.94,
+     137.21,
+     -2403.5
+    ],
+    "jogo": {
+     "x": -7590.94,
+     "y": -853.5
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.11290229708000028,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 3367,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  },
+  {
+   "id": "brena",
+   "t": 3416.05,
+   "modo": "detalhado",
+   "x": -1762.804680614202,
+   "y": -846.1616994224923,
+   "hex": "FX_20",
+   "regiao": "R5",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     -2162.8,
+     -6.94,
+     -2396.16
+    ],
+    "jogo": {
+     "x": -1762.8,
+     "y": -846.16
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.004979576901275606,
+   "hexDesenhado": true
+  },
+  {
+   "id": "caio",
+   "t": 3464.6,
+   "modo": "detalhado",
+   "x": 2563.311556320875,
+   "y": -846.9200259483406,
+   "hex": "ER_18",
+   "regiao": "R4",
+   "tarefa": null,
+   "vista": {
+    "cena": [
+     2163.31,
+     54.52,
+     -2396.92
+    ],
+    "jogo": {
+     "x": 2563.31,
+     "y": -846.92
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0.0015565371765629446,
+   "hexDesenhado": true
+  },
+  {
+   "id": "dara",
+   "t": 3513,
+   "modo": "detalhado",
+   "x": -8184.9422328869705,
+   "y": -850.6685371106813,
+   "hex": "FX_19",
+   "regiao": "R6",
+   "tarefa": {
+    "tipo": "ir",
+    "i": null,
+    "progresso": 0.37224657662459004,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     -8584.88,
+     148.63,
+     -2400.67
+    ],
+    "jogo": {
+     "x": -8184.88,
+     "y": -850.67
+    },
+    "clip": "pve2_a_sword_jog",
+    "visivel": true
+   },
+   "difVista": 0.062250078440323556,
+   "hexDesenhado": true
+  },
+  {
+   "id": "arvo",
+   "t": 3559.65,
+   "modo": "detalhado",
+   "x": 402,
+   "y": 2910,
+   "hex": "HV_01",
+   "regiao": "R1",
+   "tarefa": {
+    "tipo": "vila",
+    "i": null,
+    "progresso": 1,
+    "inicio": 1.25,
+    "estado": "em andamento"
+   },
+   "vista": {
+    "cena": [
+     2,
+     44.46,
+     1360
+    ],
+    "jogo": {
+     "x": 402,
+     "y": 2910
+    },
+    "clip": "pve2_b_sword_guard",
+    "visivel": true
+   },
+   "difVista": 0,
+   "hexDesenhado": true
+  }
+ ],
+ "desempenho": {
+  "viagem8x": {
+   "qualidade": "baixa",
+   "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+   "fpsMedio": 60,
+   "msP95": 16.9,
+   "drawCalls": 48,
+   "triangulos": 1040880,
+   "geometrias": 69,
+   "texturas": 13,
+   "heapMB": 238,
+   "hexes": 9,
+   "passosCedidos": 0,
+   "falhaTile": null
+  },
+  "estavel1x": {
+   "qualidade": "baixa",
+   "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+   "fpsMedio": 60,
+   "msP95": 16.9,
+   "drawCalls": 45,
+   "triangulos": 1156856,
+   "geometrias": 47,
+   "texturas": 6,
+   "heapMB": 253,
+   "hexes": 8,
+   "passosCedidos": 0,
+   "falhaTile": null
+  },
+  "estavel8x": {
+   "qualidade": "baixa",
+   "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+   "fpsMedio": 59.5,
+   "msP95": 16.9,
+   "drawCalls": 45,
+   "triangulos": 1156856,
+   "geometrias": 47,
+   "texturas": 6,
+   "heapMB": 232,
+   "hexes": 8,
+   "passosCedidos": 0,
+   "falhaTile": null
+  }
+ },
+ "ordens": [
+  [
+   "arvo",
+   "vila",
+   null
+  ],
+  [
+   "brena",
+   "ir",
+   "FX_20"
+  ],
+  [
+   "caio",
+   "ir",
+   "ER_18"
+  ],
+  [
+   "dara",
+   "ir",
+   "X3"
+  ]
+ ],
+ "final": {
+  "t": 3559.65,
+  "regioes": [
+   "R1:arvo",
+   "R4:caio",
+   "R5:brena"
+  ],
+  "hunters": [
+   [
+    "arvo",
+    402,
+    2910,
+    "detalhado",
+    "HV_01"
+   ],
+   [
+    "brena",
+    -1763,
+    -846,
+    "detalhado",
+    "FX_20"
+   ],
+   [
+    "caio",
+    2563,
+    -847,
+    "detalhado",
+    "ER_18"
+   ],
+   [
+    "dara",
+    -8278,
+    -850,
+    "estrategico",
+    "FX_18"
+   ]
+  ]
+ },
+ "salvarRestaurar": {
+  "antes": {
+   "t": 3782.05,
+   "regioes": [
+    "R1",
+    "R4",
+    "R5"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "R1"
+    ],
+    [
+     "brena",
+     -1762.804680614202,
+     -846.1616994224923,
+     "detalhado",
+     "R5"
+    ],
+    [
+     "caio",
+     2563.311556320875,
+     -846.9200259483406,
+     "detalhado",
+     "R4"
+    ],
+    [
+     "dara",
+     -8594.892406137085,
+     -850.0709245776499,
+     "estrategico",
+     null
+    ]
+   ]
+  },
+  "depois": {
+   "t": 3782.05,
+   "regioes": [
+    "R1",
+    "R4",
+    "R5"
+   ],
+   "hunters": [
+    [
+     "arvo",
+     402,
+     2910,
+     "detalhado",
+     "R1"
+    ],
+    [
+     "brena",
+     -1762.804680614202,
+     -846.1616994224923,
+     "detalhado",
+     "R5"
+    ],
+    [
+     "caio",
+     2563.311556320875,
+     -846.9200259483406,
+     "detalhado",
+     "R4"
+    ],
+    [
+     "dara",
+     -8594.892406137085,
+     -850.0709245776499,
+     "estrategico",
+     null
+    ]
+   ]
+  }
+ },
+ "provedor": {
+  "hex": [
+   8.899999856948853,
+   28.800000190734863,
+   32.200000047683716
+  ],
+  "grade": [
+   475.59999990463257,
+   308.60000014305115,
+   382.59999990463257
+  ],
+  "erro": null
+ },
+ "ok": true
+}

@@ -1,0 +1,101 @@
+name: Wildhaven | Gravarto v02 | Real weighted animation GLB and previews
+on:
+  push:
+    branches:
+      - wildhaven-gravarto-skinned-animated-v02
+    paths:
+      - 'assets/models/creatures/gravarto/v02/bootstrap/**'
+      - '.github/workflows/gravarto-v02-skinned-animation.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-animated-gravarto:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install real GLB and offscreen rendering dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri libxrender1 libsm6
+          python -m pip install --no-cache-dir numpy==2.3.5 trimesh==4.11.1 scipy pillow==12.3.0 vtk==9.6.2
+      - name: Unpack versioned animation source (v01 stays untouched)
+        run: |
+          set -euo pipefail
+          DEST="assets/models/creatures/gravarto/v02"
+          base64 -d "$DEST/bootstrap/gravarto-v02-source.tar.xz.b64" > /tmp/gravarto-v02-source.tar.xz
+          mkdir -p "$DEST"
+          tar -xJf /tmp/gravarto-v02-source.tar.xz -C "$DEST"
+          test -s "$DEST/source/build_animated.py"
+          test -s "$DEST/source/render_stills.py"
+          test -s "$DEST/source/render_animated.py"
+          test -s "$DEST/source/validate.py"
+          test -s "assets/models/creatures/gravarto/v01/gravarto-v01-anatomy-blockout.glb"
+      - name: Build weighted skinned textured GLB with 17 clips
+        run: |
+          python assets/models/creatures/gravarto/v02/source/build_animated.py
+          python assets/models/creatures/gravarto/v02/source/validate.py
+      - name: Capture authentic profile, front and three-quarter of imported GLB
+        run: |
+          xvfb-run -a python assets/models/creatures/gravarto/v02/source/render_stills.py
+      - name: Render genuine moving GLB poses as four animated GIFs
+        run: |
+          xvfb-run -a python assets/models/creatures/gravarto/v02/source/render_animated.py
+      - name: Verify rig, 17 clips, texture preservation and real preview files
+        run: |
+          python assets/models/creatures/gravarto/v02/source/validate.py
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          root=Path("assets/models/creatures/gravarto/v02")
+          m=json.loads((root/"manifest.json").read_text())
+          glb=root/"gravarto-v02-animated-LOD0.glb"
+          b=glb.read_bytes()
+          assert len(b)==m["bytes"] and hashlib.sha256(b).hexdigest()==m["sha256"]
+          assert m["geometry"]["triangles"]==4888
+          assert m["geometry"]["joint_count"]==27 and m["geometry"]["clip_count"]==17
+          assert m["paint"]["painted_stripes_no_extra_color_geometry"]
+          assert m["rendered_glb_sha256"]==m["sha256"]
+          assert m["animation_playback_validation"]["reimported_glb_sha256"]==m["sha256"]
+          for name in ("walk","short_sprint","bite","tail_sweep"):
+              p=root/f"previews/gravarto-v02-{name}-real-skinned-glb.gif"
+              assert p.is_file() and p.stat().st_size>50000
+          for view in ("profile","front","three-quarter"):
+              p=root/f"previews/gravarto-v02-real-glb-{view}.png"
+              assert p.is_file() and p.stat().st_size>50000
+          for filename,record in m["previews"].items():
+              p=root/"previews"/filename
+              assert p.is_file() and p.stat().st_size==record["bytes"]
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==record["sha256"]
+          m["publication"]="branch_published_pending_artistic_review"
+          (root/"manifest.json").write_text(json.dumps(m,ensure_ascii=False,indent=2)+"\n")
+          print("PASS Gravarto v02",len(b),"bytes",m["sha256"],"17 clips, 27 joints")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gravarto-v02-real-skinned-glb-animated-previews
+          path: |
+            assets/models/creatures/gravarto/v02/*.glb
+            assets/models/creatures/gravarto/v02/manifest.json
+            assets/models/creatures/gravarto/v02/previews/*.png
+            assets/models/creatures/gravarto/v02/previews/*.gif
+          if-no-files-found: error
+      - name: Commit GLB, actual source, manifest and real playback evidence
+        run: |
+          set -euo pipefail
+          root="assets/models/creatures/gravarto/v02"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "$root/source/" "$root/README.md" "$root/gravarto-v02-animated-LOD0.glb" "$root/manifest.json" "$root/previews/" "$root/bootstrap/"
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(gravarto): publish verified weighted animation GLB and real GIFs [skip ci]"
+            git push origin HEAD:wildhaven-gravarto-skinned-animated-v02
+          fi
+          git fetch origin +refs/heads/wildhaven-gravarto-skinned-animated-v02:refs/remotes/origin/wildhaven-gravarto-skinned-animated-v02
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/wildhaven-gravarto-skinned-animated-v02)"
+          echo "Verified remote branch at $(git rev-parse HEAD)"

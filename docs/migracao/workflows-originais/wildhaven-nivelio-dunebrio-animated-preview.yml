@@ -1,0 +1,50 @@
+name: Wildhaven - Nivelio + Dunebrio Animated GLB Preview
+on:
+  push:
+    branches: [wildhaven-fauna-nivelio-dunebrio-optimization-v01]
+    paths:
+      - 'assets/models/creatures/fauna-optimization-v06/source/make_animated_preview.py'
+      - '.github/workflows/wildhaven-nivelio-dunebrio-animated-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  animated-preview:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install preview dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check             numpy==2.2.6 scipy==1.15.3 trimesh==4.11.1 vtk==9.6.2 pillow==11.2.1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1
+      - name: Build real animated GLB preview
+        run: |
+          xvfb-run -a python3 assets/models/creatures/fauna-optimization-v06/source/make_animated_preview.py
+      - name: Upload animated preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-nivelio-dunebrio-animated-real-glb-preview
+          path: |
+            assets/models/creatures/fauna-optimization-v06/previews/Wildhaven_Nivelio_Dunebrio_Animated_GLBS.gif
+            assets/models/creatures/fauna-optimization-v06/previews/Wildhaven_Nivelio_Dunebrio_Animated_GLBS_Poster.png
+          if-no-files-found: error
+      - name: Commit animated preview
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/fauna-optimization-v06/previews/Wildhaven_Nivelio_Dunebrio_Animated_GLBS.gif
+          git add assets/models/creatures/fauna-optimization-v06/previews/Wildhaven_Nivelio_Dunebrio_Animated_GLBS_Poster.png
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(fauna): add animated real-GLB preview for Nivelio + Dunebrio [skip ci]'
+            git fetch origin wildhaven-fauna-nivelio-dunebrio-optimization-v01
+            git rebase origin/wildhaven-fauna-nivelio-dunebrio-optimization-v01
+            git push origin HEAD:wildhaven-fauna-nivelio-dunebrio-optimization-v01
+          fi

@@ -12,6 +12,7 @@ import { intensidadeVeneno, sintomasVeneno } from './veneno.js';
 import { decidirVoo } from './cerebro-voo.js';
 import { pedeAbrigo } from './clima.js';
 import { acessoCupins } from './cupins.js';
+import { incapacitadoParaEngolir, podeEngolir } from './engolir.js';
 
 const dist = (a, b) => Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 const maisProximo = (lista, a) => lista.reduce((m, k) => (!m || dist(k, a) < dist(m, a) ? k : m), null);
@@ -454,12 +455,19 @@ function decidirCarnivoro(a, mundo) {
     abandonarCaca(a, mundo, 'ferido');
     return { estado: 'descansando', codigo: 'ferido', motivo: `ferido (vida ${Math.round((100 * a.saude.hp) / a.saude.hpMax)}%); repousa`, alvo: null, destino: null, ritmo: 'parado' };
   }
+  // Digestão: depois de engolir uma presa inteira, fica muito tempo sem caçar (`digestaoSeg` da ficha).
+  if (a.mente.digerindoAte > t) return { estado: 'digerindo', codigo: 'digestao', motivo: `digerindo (${f1(a.mente.digerindoAte - t)} s)`, alvo: null, destino: null, ritmo: 'parado', postura: 'enrolada' };
+  // Presa já rendida pelo veneno e ao alcance: engole inteira em vez de continuar golpeando.
+  const eng = engolirPresa(a, mundo);
+  if (eng) return eng;
   const env = repousoEnvenenado(a, mundo);
   if (env) { abandonarCaca(a, mundo, 'envenenado'); return env; }
   // Predador sem caça em curso e sem fome extrema também se abriga; em caça, a tempestade é cobertura.
   if (!a.mente.caca && a.fome < n.fomeDesesperada) { const abr = abrigoDoClima(a, mundo); if (abr) return abr; }
   // Fonte de calor sem identificação (termorrecepção): orienta a cabeça, estima o porte e decide.
-  const calor = a.mente.caca ? null : a.contatos.filter((k) => k.via === 'termico').sort((x, y) => y.sinal - x.sinal || (x.id < y.id ? -1 : 1))[0];
+  // Quem está emboscado não sai do lugar pelo calor: a espera é a tática, e sair alternava de estado a cada
+  // passo com a presa se aproximando (medido: 20 trocas em 2 s).
+  const calor = a.mente.caca || a.mente.emboscada ? null : a.contatos.filter((k) => k.via === 'termico').sort((x, y) => y.sinal - x.sinal || (x.id < y.id ? -1 : 1))[0];
   if (calor) {
     const olharPara = { x: calor.x, y: calor.y }, alvo = { tipo: 'calor', id: null, x: calor.x, y: calor.y };
     // O porte é julgado uma vez por fonte (a leitura varia a cada passo; a decisão não pode oscilar com ela).
@@ -505,6 +513,37 @@ function decidirCarnivoro(a, mundo) {
     return { estado: 'descansando', codigo: inativo ? 'periodo_inativo' : 'cansado', motivo: inativo ? 'fora do horário de atividade' : `energia ${f1(a.energia)}`, alvo: null, destino: null, ritmo: 'parado' };
   }
   return patrulhar(a, mundo);
+}
+
+// Engolir inteira (só quem declara `engolirInteira`): a presa precisa estar incapacitada e caber.
+function engolirPresa(a, mundo) {
+  if (!a.especie.engolirInteira) return null;
+  const t = mundo.t;
+  const atual = a.mente.engolindo ? (mundo.porId.get(a.mente.engolindo) ?? mundo.mortos.get(a.mente.engolindo)) : null;
+  if (atual) {
+    if (dist(a, atual) > 3) { a.mente.engolindo = null; a.mente.engolirProgresso = 0; } // escapou ou foi levada
+    else return { estado: 'engolindo', codigo: 'engolir', motivo: `engolindo ${atual.id} (${atual.massa.toFixed(0)} kg)`, alvo: { tipo: 'criatura', id: atual.id, x: atual.x, y: atual.y }, destino: null, ritmo: 'parado', acao: 'engolir', olharPara: { x: atual.x, y: atual.y } };
+  }
+  // O alvo é lembrado pela própria mordida: a serpente sabe quem envenenou, e essa memória sobrevive à morte
+  // da presa (aí ela engole o corpo em vez de comer a carcaça como necrófaga) e a um contato que pisca entre
+  // um passo e outro enquanto ela espera o veneno fazer efeito.
+  const mordido = a.mente.inoculou && (mundo.porId.get(a.mente.inoculou.id) ?? mundo.mortos.get(a.mente.inoculou.id));
+  const porPerto = mordido && dist(a, mordido) < 30 && (mordido.vivo || mundo.carcacas.some((c) => c.animal === mordido.id)) ? mordido : null;
+  const k = porPerto ? null : a.contatos.filter((c) => (c.via === 'visao' && a.especie.dieta.presas.includes(c.especie))
+    || (c.via === 'termico' && a.especie.percepcao.termorrecepcao && a.mente.caca?.id === c.id)).sort((x, y) => x.distancia - y.distancia)[0];
+  const p = porPerto ?? (k && mundo.porId.get(k.id));
+  if (!p || !incapacitadoParaEngolir(p, t)) return null;
+  const cabe = podeEngolir(a, p);
+  if (!cabe.ok) {
+    if (a.mente.recusouEngolir !== p.id) { a.mente.recusouEngolir = p.id; mundo.evento('engolir_recusado', a.id, { presa: p.id, motivo: cabe.motivo, massaKg: +p.massa.toFixed(1) }); }
+    return null;
+  }
+  const d = dist(a, p);
+  const alvo = { tipo: 'criatura', id: p.id, x: p.x, y: p.y };
+  if (d > 2.5) return { estado: 'indo_engolir', codigo: p.vivo ? 'presa_rendida' : 'presa_abatida', motivo: `${p.id} ${p.vivo ? 'rendido' : 'abatido'} a ${f1(d)} m; aproxima-se para engolir`, alvo, destino: { x: p.x, y: p.y }, ritmo: 'trote' };
+  a.mente.engolindo = p.id; a.mente.engolirProgresso = 0;
+  mundo.evento('engolir_inicio', a.id, { presa: p.id, massaKg: +p.massa.toFixed(1), fracaoDaPropria: +(p.massa / a.massa).toFixed(3), jaMorta: !p.vivo });
+  return { estado: 'engolindo', codigo: 'engolir', motivo: `engolindo ${p.id} (${p.massa.toFixed(0)} kg)`, alvo, destino: null, ritmo: 'parado', acao: 'engolir', olharPara: { x: p.x, y: p.y } };
 }
 
 // Envenenado com sintomas: para e procura cobertura próxima. Ameaça à vista já foi tratada antes.
@@ -582,12 +621,30 @@ function emboscar(a, mundo) {
     mundo.evento('emboscada_armada', a.id, { x: +a.x.toFixed(1), y: +a.y.toFixed(1) });
   }
   const presas = a.contatos.filter((k) => k.via !== 'som' && (e.dieta.presas.includes(k.especie) || k.especie == null)).sort((x, y) => x.distancia - y.distancia || (x.id < y.id ? -1 : 1));
-  const vista = presas.find((k) => k.via === 'visao' && k.especie);
+  // Dispara pelo que o animal de fato percebe: a visão, ou — para quem tem o sentido declarado — o calor,
+  // que dá posição sem dar identidade. Uma serpente de fosseta não precisa enxergar para dar o bote.
+  const vista = presas.find((k) => k.via === 'visao' && k.especie) ?? (e.percepcao.termorrecepcao ? presas.find((k) => k.via === 'termico') : null);
   // Presa parada e distraída (comendo, descansando) vale a saída da cobertura até ~2x a distância de disparo.
-  if (vista && vista.distancia <= cfg.distanciaDisparoM * (vista.comportamento !== 'fugindo' && (vista.velocidade ?? 1) < 0.5 ? 2.2 : 1)) {
-    mundo.evento('emboscada_disparou', a.id, { presa: vista.id, distancia: +vista.distancia.toFixed(1), esperou: +(t - em.desde).toFixed(1) });
+  // Quem embosca de tocaia (não persegue) espera o alvo entrar no alcance REAL do golpe, em vez de sair da
+  // cobertura a uma distância fixa: disparar cedo gasta a emboscada e a presa passa ilesa. Para quem persegue,
+  // vale a distância da ficha — ele corre atrás.
+  const tocaia = !!a.especie.serpente;
+  const alvoReal = vista && mundo.porId.get(vista.id);
+  const atq = vista && alvoReal && !a.golpe ? escolherAtaque(a, alvoReal, vista.distancia, !alvoReal.memoria.criaturas.has(a.id)) : null;
+  const noAlcance = tocaia ? !!atq : vista && vista.distancia <= cfg.distanciaDisparoM * (vista.comportamento !== 'fugindo' && (vista.velocidade ?? 1) < 0.5 ? 2.2 : 1);
+  if (vista && noAlcance) {
+    mundo.evento('emboscada_disparou', a.id, { presa: vista.id ?? null, via: vista.via, distancia: +vista.distancia.toFixed(1), esperou: +(t - em.desde).toFixed(1) });
     a.mente.emboscada = null; a.mente.semEmboscadaAte = t + 20;
-    return null; // daqui em diante é a caça normal: ataque de surpresa se a presa não o percebeu
+    // O bote sai de onde ele está: quem embosca não começa uma perseguição.
+    if (alvoReal) {
+      a.mente.caca = { id: vista.id, inicio: t, semFolegoDesde: null };
+      mundo.evento('caca_inicio', a.id, { presa: vista.id, distancia: +vista.distancia.toFixed(1), ferida: false, juvenil: !!alvoReal.juvenil });
+      if (atq) {
+        iniciarAtaque(a, alvoReal, atq, mundo);
+        return { estado: 'atacando', codigo: atq.nome, motivo: `${atq.nome} da emboscada em ${vista.id} a ${f1(vista.distancia)} m`, alvo: { tipo: 'criatura', id: vista.id, x: alvoReal.x, y: alvoReal.y }, destino: null, ritmo: 'parado', acao: atq.nome, olharPara: { x: alvoReal.x, y: alvoReal.y } };
+      }
+    }
+    return null;
   }
   if (t - em.desde > cfg.esperaMaxSeg) {
     mundo.evento('emboscada_desistiu', a.id, { esperou: +(t - em.desde).toFixed(1) });
@@ -605,7 +662,10 @@ function abandonarCaca(a, mundo, motivo) {
 
 function cacar(a, mundo) {
   const e = a.especie, n = e.necessidades, t = mundo.t;
-  const presasVistas = a.contatos.filter((k) => e.dieta.presas.includes(k.especie) && k.via !== 'som');
+  // Quem tem fosseta térmica não perde a presa de vista ao escurecer ou atrás do mato: a pista de calor dá
+  // posição (nunca espécie), e por isso só vale para o alvo que ele já escolheu — foi assim que o bote saiu.
+  const presasVistas = a.contatos.filter((k) => (e.dieta.presas.includes(k.especie) && k.via !== 'som')
+    || (k.via === 'termico' && e.percepcao.termorrecepcao && a.mente.caca?.id === k.id));
   const podeIniciar = a.fome >= n.fomeCacar && (a.energia > 55 || (a.fome > n.fomeDesesperada && a.energia > 20)) && a.folego > e.movimento.resistenciaSeg * 0.4;
   // Cansaço durante a caça.
   if (a.mente.caca && (a.energia < 12 || (a.folego <= 0 && a.estado === 'perseguindo' && a.mente.caca.semFolegoDesde && t - a.mente.caca.semFolegoDesde > 2))) {
@@ -642,7 +702,7 @@ function cacar(a, mundo) {
       const longe = d > 8;
       return { estado: 'acompanhando_presa', codigo: 'aguarda_veneno', motivo: `inoculou ${alvoK.id} há ${f1(t - inoc.t)} s; acompanha a ${f1(d)} m`, alvo, destino: longe ? alvoK : null, ritmo: longe ? 'trote' : 'parado', olharPara: { x: alvoK.x, y: alvoK.y } };
     }
-    if (presa && alvoK.via === 'visao') {
+    if (presa && (alvoK.via === 'visao' || alvoK.via === 'termico')) {
       const atq = !a.golpe && escolherAtaque(a, presa, d, !percebido);
       // Durante o golpe acompanha a presa na velocidade dela (+1,5 m/s): o membro chega ao corpo sem passar direto.
       const velMax = presa.velocidade + 1.5;

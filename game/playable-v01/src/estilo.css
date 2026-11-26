@@ -1,0 +1,45 @@
+:root { --fundo: #12241d; --painel: #12241de6; --texto: #f2ede0; --suave: #b9c4b5; --vida: #c8473d; --vigor: #d9a441; --inimigo: #a3342c; --ouro: #e3c27a; --borda: #ffffff22; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--fundo); color: var(--texto); font: 15px/1.4 system-ui, "Segoe UI", sans-serif; overflow: hidden; }
+#palco, #palco canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+kbd { background: #ffffff1c; border: 1px solid var(--borda); border-radius: 4px; padding: 0 5px; font: 12px ui-monospace, monospace; }
+small { color: var(--suave); }
+#hud { position: fixed; inset: 0; pointer-events: none; }
+#hud section { position: absolute; background: var(--painel); border: 1px solid var(--borda); border-radius: 8px; padding: 10px 14px; }
+#status { left: 16px; bottom: 16px; width: 300px; }
+#objetivo { left: 50%; top: 14px; transform: translateX(-50%); text-align: center; min-width: 280px; }
+#objetivo small { display: block; text-transform: uppercase; letter-spacing: .12em; font-size: 11px; }
+#objetivo b { color: var(--ouro); }
+#bussola { display: block; font-size: 13px; color: var(--suave); }
+#monstro { left: 50%; top: 86px; transform: translateX(-50%); width: 420px; }
+.nome { font-weight: 600; margin-bottom: 6px; }
+.barra { position: relative; height: 12px; background: #0008; border-radius: 6px; overflow: hidden; margin: 5px 0; }
+.barra i { position: absolute; inset: 0 auto 0 0; width: 100%; transition: width .15s; }
+.vida i { background: var(--vida); } .vigor i { background: var(--vigor); } .inimigo i { background: var(--inimigo); }
+.barra span { position: absolute; right: 6px; top: -2px; font-size: 11px; }
+#mini { position: absolute; right: 16px; bottom: 16px; width: 200px; height: 200px; border-radius: 8px; border: 1px solid var(--borda); background: var(--painel); }
+#dica { position: absolute; right: 16px; top: 14px; font-size: 13px; color: var(--suave); background: var(--painel); padding: 6px 10px; border-radius: 6px; }
+#perf { position: absolute; right: 16px; top: 48px; font: 12px ui-monospace, monospace; color: var(--suave); white-space: pre; text-align: right; }
+#avisos { position: absolute; left: 50%; top: 40%; transform: translateX(-50%); text-align: center; }
+#avisos div { font-size: 20px; font-weight: 700; text-shadow: 0 2px 6px #000; animation: sobe 1.6s forwards; }
+#avisos .ruim { color: #ff8f7f; } #avisos .bom { color: var(--ouro); }
+@keyframes sobe { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-40px); } }
+#dano { position: fixed; inset: 0; pointer-events: none; box-shadow: inset 0 0 160px #c00; opacity: 0; transition: opacity .4s; }
+.tela { position: fixed; inset: 0; display: grid; place-items: center; background: #0b1611d9; z-index: 5; }
+.tela[hidden] { display: none; }
+.painel { background: var(--fundo); border: 1px solid var(--borda); border-radius: 10px; padding: 24px 28px; max-width: min(760px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; }
+.painel.largo { max-width: min(960px, calc(100vw - 32px)); }
+.painel canvas { width: 100%; height: auto; background: #0b1611; border-radius: 6px; }
+h1 { margin: 0; font-size: 40px; letter-spacing: .04em; color: var(--ouro); } h2 { margin: 0 0 12px; color: var(--ouro); } h3 { margin: 6px 0; font-size: 15px; }
+.sub { color: var(--suave); margin-top: 4px; }
+.nota { color: var(--suave); font-size: 13px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; } @media (max-width: 700px) { .cols { grid-template-columns: 1fr; } }
+.teclas td { padding: 3px 8px 3px 0; vertical-align: top; }
+label { display: block; margin: 8px 0; } label select, label input[type=range] { display: block; width: 100%; margin-top: 3px; }
+label.linha input { margin-right: 6px; }
+select, button { font: inherit; }
+button { background: var(--ouro); color: #1a160c; border: 0; border-radius: 6px; padding: 9px 18px; font-weight: 600; cursor: pointer; margin-right: 8px; }
+button.sec { background: #ffffff1c; color: var(--texto); }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--ouro); outline-offset: 2px; }
+.botoes { margin-top: 16px; }
+.jog { color: #e3c27a; } .vis { color: #7fb0d6; }

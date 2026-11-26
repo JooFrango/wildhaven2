@@ -1,0 +1,98 @@
+name: 'Wildhaven - 16 hexagonos 3D: 2 florestas + cor F_E2'
+on:
+  push:
+    branches: [wildhaven-forest-red-pair-palette-v01]
+    paths:
+      - 'world/forest-red-expansion/**'
+      - '.github/workflows/wildhaven-forest-red-pair.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-red-forest-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencias geometricas e renderizador
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Expandir geradores Python editaveis
+        run: python world/forest-red-expansion/tools/unpack_source.py
+      - name: Gerar 2 GLBs de 5000m com 6 bordas reais, corrigir paleta F_E2
+        run: |
+          python world/forest-red-expansion/tools/build_with_seam_slope_fix.py \
+             --existing-forest-dir world/biome-continuity/models \
+             --f-e2-glb world/forest-east-expansion/models/19_mata_das_colinas_verdes_5km.glb \
+             --source-manifest world/forest-east-expansion/manifest.json \
+             --output-dir world/forest-red-expansion
+      - name: Validar GLBs exportados, bordas e inclinacoes do mundo de 16 tiles
+        run: |
+          python world/forest-red-expansion/tests/validate_forest_expansion.py \
+            --output-dir world/forest-red-expansion \
+            --old-forest-dir world/biome-continuity/models \
+            --original-f-e2 world/forest-east-expansion/models/19_mata_das_colinas_verdes_5km.glb
+      - name: Renderizar duas florestas e F_E2 (malhas reais)
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/forest-red-expansion/tools/render_forest_pair.py \
+            --output-dir world/forest-red-expansion --mode new
+      - name: Renderizar todos os 16 hexagonos (malhas reais)
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/forest-red-expansion/tools/render_forest_pair.py \
+            --output-dir world/forest-red-expansion --mode all
+      - name: Preparar viewer Three.js de 16 GLBs
+        run: python world/forest-red-expansion/tools/build_viewer.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar viewer 16 GLBs
+        working-directory: world/forest-red-expansion/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Publicar artefato verificavel para inspecao
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-2-Florestas-16-Hexagonos-3D-Real
+          retention-days: 30
+          path: |
+            world/forest-red-expansion/models/*.glb
+            world/forest-red-expansion/preview/*.png
+            world/forest-red-expansion/manifest.json
+            world/forest-red-expansion/model_report.json
+            world/forest-red-expansion/palette_report.json
+            world/forest-red-expansion/viewer/dist
+      - name: Commit GLBs renderizados e codigo-fonte somente na branch de revisao
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/forest-red-expansion/README.md \
+            world/forest-red-expansion/tools/*.py \
+            world/forest-red-expansion/tests/*.py \
+            world/forest-red-expansion/models/*.glb \
+            world/forest-red-expansion/preview/*.png \
+            world/forest-red-expansion/manifest.json \
+            world/forest-red-expansion/model_report.json \
+            world/forest-red-expansion/palette_report.json \
+            world/forest-red-expansion/viewer/index.html \
+            world/forest-red-expansion/viewer/main.js \
+            world/forest-red-expansion/viewer/copy-assets.mjs \
+            world/forest-red-expansion/viewer/package.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): F_NE F_SE real GLBs, F_E2 palette, 16 active tiles [skip ci]'
+            git push origin HEAD:wildhaven-forest-red-pair-palette-v01
+          fi

@@ -1,0 +1,99 @@
+name: 'Wildhaven — rio como fronteira de bioma planicie-savana v06'
+on:
+  push:
+    branches: [wildhaven-river-biome-boundary-v06]
+    paths:
+      - 'world/savanna-ten-concept-rebuild/**'
+      - '.github/workflows/wildhaven-savanna-ten-concept-rebuild.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-savanna-ten-concept-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-ten-savanna-concept:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar bibliotecas de geometria, GLB e VTK
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Restaurar GLBs já exportados com o mesmo gerador
+        uses: actions/cache/restore@v4
+        id: save-geometry
+        with:
+          key: savanna-ten-meshes-${{ hashFiles('world/savanna-ten-concept-rebuild/tools/build_ten_concept.py') }}
+          path: |
+            world/savanna-ten-concept-rebuild/models
+            world/savanna-ten-concept-rebuild/manifest.json
+            world/savanna-ten-concept-rebuild/model_report.json
+      - name: Recriar dez GLBs 5km com relevo, rio e savana dourada
+        if: steps.save-geometry.outputs.cache-hit != 'true'
+        run: |
+          python world/savanna-ten-concept-rebuild/tools/build_ten_concept.py \
+            --repo-root . --output-dir world/savanna-ten-concept-rebuild
+      - name: Guardar GLBs exportados mesmo se os testes revelarem um problema
+        if: steps.save-geometry.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          key: savanna-ten-meshes-${{ hashFiles('world/savanna-ten-concept-rebuild/tools/build_ten_concept.py') }}
+          path: |
+            world/savanna-ten-concept-rebuild/models
+            world/savanna-ten-concept-rebuild/manifest.json
+            world/savanna-ten-concept-rebuild/model_report.json
+      - name: Auditar dez GLBs, 25 conexoes, agua e zero trilhas/cupinzeiros
+        run: |
+          python world/savanna-ten-concept-rebuild/tests/validate_ten_concept.py \
+            --repo-root . --output-dir world/savanna-ten-concept-rebuild
+      - name: Renderizar os 40 GLBs reais e 10 savanas refeitas
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/savanna-ten-concept-rebuild/tools/render_ten_actual.py \
+            --repo-root . --output-dir world/savanna-ten-concept-rebuild
+      - name: Preparar visualizador Three.js sem modificar Alpha01
+        run: python world/savanna-ten-concept-rebuild/tools/build_viewer_ten.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar visualizador independente de 40 GLBs
+        working-directory: world/savanna-ten-concept-rebuild/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Arquivo de download completo para auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-v06-Rio-Fronteira-Planicie-Savana
+          retention-days: 30
+          path: |
+            world/savanna-ten-concept-rebuild/models/*.glb
+            world/savanna-ten-concept-rebuild/manifest.json
+            world/savanna-ten-concept-rebuild/model_report.json
+            world/savanna-ten-concept-rebuild/preview/*.png
+            world/savanna-ten-concept-rebuild/viewer/dist/
+      - name: Publicar novos GLBs e renders reais somente na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/savanna-ten-concept-rebuild/models \
+            world/savanna-ten-concept-rebuild/manifest.json \
+            world/savanna-ten-concept-rebuild/model_report.json \
+            world/savanna-ten-concept-rebuild/preview \
+            world/savanna-ten-concept-rebuild/viewer/index.html \
+            world/savanna-ten-concept-rebuild/viewer/main.js \
+            world/savanna-ten-concept-rebuild/viewer/package.json \
+            world/savanna-ten-concept-rebuild/viewer/copy-assets.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): v06 real GLBs, prairie north of river, v05 savanna south [skip ci]'
+            git push origin HEAD:wildhaven-river-biome-boundary-v06
+          fi

@@ -1,0 +1,93 @@
+name: Wildhaven · Velsari + Tarruco · 3D Models Animations Real Previews
+on:
+  push:
+    branches: [wildhaven-savanna-small-herbivores-v01]
+    paths:
+      - 'assets/models/creatures/savanna-small-herbivores/source/**'
+      - '.github/workflows/wildhaven-savanna-small-herbivores-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  actual-3d-assets:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: assets/models/creatures/savanna-small-herbivores/source
+    steps:
+      - name: Checkout Wildhaven code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Three.js and renderer
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Check both authentic 3D models, 20 clips and savanna ecology
+        run: npm run test
+      - name: Build Vite 3D studio
+        run: npm run build
+      - name: Export two true polygonal GLB 2.0 models and 10 clips each
+        run: npm run export
+      - name: Revalidate exported glTF animation files
+        run: npm run test
+      - name: Install Playwright Chromium / SwiftShader WebGL
+        run: npx playwright install --with-deps chromium
+      - name: Capture real 3D screenshots of both animals and action poses
+        run: npm run capture
+      - name: Verify two GLBs and seven genuine WebGL PNGs
+        run: |
+          python3 - <<'PY'
+          import pathlib,struct,json
+          folder=pathlib.Path("dist")
+          manifest=json.loads((folder/"savanna-small-herbivores-manifest-v01.json").read_text())
+          assert set(manifest["species"])=={"velsari","tarruco"}
+          for k in ["velsari","tarruco"]:
+              p=folder/(k+"-savanna-animated-v01.glb")
+              b=p.read_bytes()
+              assert b[:4]==b"glTF" and struct.unpack_from("<I",b,8)[0]==len(b)
+              n=struct.unpack_from("<I",b,12)[0]
+              obj=json.loads(b[20:20+n])
+              assert len(obj["animations"])==10
+              assert set(a["name"] for a in obj["animations"])==set(manifest["species"][k]["clipNames"])
+              assert len(obj["nodes"])>=30
+              print("REAL GLB",k,len(b),"bytes",len(obj["animations"]),"clips")
+          images=sorted(folder.glob("*-real-3d-*-v01.png"))
+          combined=folder/"savanna-small-herbivores-real-3d-v01.png"
+          assert combined.is_file()
+          pics=list(folder.glob("*.png"))
+          assert len(pics)==7,len(pics)
+          for image in pics:
+              raw=image.read_bytes()
+              assert len(raw)>42000 and raw[:8]==bytes.fromhex("89504e470d0a1a0a"),image
+              print("REAL WEBGL",image.name,len(raw))
+          PY
+      - name: Upload GLBs, 20 animations and 7 PNG previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-velsari-tarruco-real-3d-v01
+          path: assets/models/creatures/savanna-small-herbivores/source/dist/*
+          if-no-files-found: error
+      - name: Publish both 3D models and genuine screenshots in canonical species folders
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE"
+          BASE=assets/models/creatures
+          OUT="$BASE/savanna-small-herbivores/source/dist"
+          cp "$OUT/velsari-savanna-animated-v01.glb" "$BASE/velsari/"
+          cp "$OUT/tarruco-savanna-animated-v01.glb" "$BASE/tarruco/"
+          cp "$OUT"/velsari-real-3d-*.png "$BASE/velsari/"
+          cp "$OUT"/tarruco-real-3d-*.png "$BASE/tarruco/"
+          cp "$OUT/savanna-small-herbivores-real-3d-v01.png" "$BASE/savanna-small-herbivores/"
+          cp "$OUT"/savanna-small-herbivores-*v01.json "$BASE/savanna-small-herbivores/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin wildhaven-savanna-small-herbivores-v01
+          git reset --mixed origin/wildhaven-savanna-small-herbivores-v01
+          git add "$BASE/velsari/" "$BASE/tarruco/" "$BASE/savanna-small-herbivores/"*.png "$BASE/savanna-small-herbivores/"*.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(wildhaven): save real Velsari and redesigned Tarruco GLBs, 20 clips and 7 WebGL previews [skip ci]'
+            git push origin HEAD:wildhaven-savanna-small-herbivores-v01
+          fi

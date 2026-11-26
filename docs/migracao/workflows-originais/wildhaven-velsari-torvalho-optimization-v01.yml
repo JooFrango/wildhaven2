@@ -1,0 +1,61 @@
+name: Wildhaven - Velsari + Torvalho Optimization
+on:
+  push:
+    branches: [wildhaven-fauna-velsari-torvalho-optimization-v01]
+    paths:
+      - 'assets/models/creatures/fauna-optimization-v05/source/**'
+      - '.github/workflows/wildhaven-velsari-torvalho-optimization-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  optimize-two-species:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install geometry dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check             numpy==2.2.6 scipy==1.15.3 trimesh==4.11.1             vtk==9.6.2 pillow==11.2.1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1
+      - name: Optimize Velsari and Torvalho
+        run: |
+          xvfb-run -a python3 assets/models/creatures/fauna-optimization-v05/source/optimize_pair.py --root .
+      - name: Upload real GLBs, manifests and previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-velsari-torvalho-real-optimized-assets
+          path: |
+            assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD*.glb
+            assets/models/creatures/velsari/velsari-savanna-optimized-v02-real-3d-*.png
+            assets/models/creatures/velsari/velsari-optimization-manifest-v02.json
+            assets/models/creatures/velsari/velsari-structural-benchmark-v02.json
+            assets/models/creatures/torvalho/torvalho-optimized-v02-LOD*.glb
+            assets/models/creatures/torvalho/torvalho-optimized-v02-real-3d-*.png
+            assets/models/creatures/torvalho/torvalho-optimization-manifest-v02.json
+            assets/models/creatures/torvalho/torvalho-structural-benchmark-v02.json
+            assets/models/creatures/fauna-optimization-v05/previews/*.png
+            docs/fauna-3d-inventory-v01.json
+            docs/fauna-3d-inventory-v01.md
+          if-no-files-found: error
+      - name: Commit validated results
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/velsari/
+          git add assets/models/creatures/torvalho/
+          git add assets/models/creatures/fauna-optimization-v05/previews/
+          git add docs/fauna-3d-inventory-v01.json docs/fauna-3d-inventory-v01.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(fauna): publish Velsari v02 and Torvalho v02 LODs + real previews [skip ci]'
+            git fetch origin wildhaven-fauna-velsari-torvalho-optimization-v01
+            git rebase origin/wildhaven-fauna-velsari-torvalho-optimization-v01
+            git push origin HEAD:wildhaven-fauna-velsari-torvalho-optimization-v01
+          fi

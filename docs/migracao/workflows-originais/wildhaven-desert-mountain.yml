@@ -1,0 +1,70 @@
+name: Wildhaven - Five 5km biome-transition hexes
+on:
+  push:
+    branches: [wildhaven-desert-mountain-transition]
+    paths:
+      - 'world/desert-mountain-transition/tools/**'
+      - 'world/desert-mountain-transition/viewer/**'
+      - '.github/workflows/wildhaven-desert-mountain.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-desert-mountain-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-transition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install procedural mesh dependencies
+        run: python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'trimesh>=4.0,<5' 'scipy>=1.11,<2'
+      - name: Generate five real 3D transition meshes and validate all seventeen seams
+        run: python world/desert-mountain-transition/tools/generate_transition.py
+      - name: Confirm 12 tiles and 17 seams
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('world/desert-mountain-transition')
+          m=json.loads((p/'manifest.json').read_text())
+          assert len(m['tiles'])==12
+          assert len(m['seams'])==17
+          assert m['all_seams_valid']
+          assert max(s['max_height_m'] for s in m['seams'])<.03
+          assert len(list((p/'models').glob('*.glb')))==5
+          for f in (p/'models').glob('*.glb'):
+              with f.open('rb') as ff: assert ff.read(4)==b'glTF'
+          print('PASS 12 hexes, 17 shared borders, five new GLBs')
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build combined Three.js viewer (original 7 plus 5 new tiles)
+        working-directory: world/desert-mountain-transition/viewer
+        run: |
+          npm install
+          npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-Deserto-Montanhas-12-GLB
+          path: |
+            world/desert-ring/models/*.glb
+            world/desert-mountain-transition/models/*.glb
+            world/desert-mountain-transition/manifest.json
+          retention-days: 30
+      - name: Commit five generated GLBs and validated seam manifest to feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/desert-mountain-transition/models/*.glb world/desert-mountain-transition/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): publish five linked desert-to-mountain 3D tiles [skip ci]'
+            git push origin HEAD:wildhaven-desert-mountain-transition
+          fi

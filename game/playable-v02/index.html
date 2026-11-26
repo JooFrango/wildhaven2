@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven — Build V02</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="src/estilo.css">
+</head>
+<body>
+<div id="palco" aria-label="Auralis — vista estratégica"></div>
+
+<header id="topo" hidden>
+  <b class="marca">Wildhaven</b>
+  <span id="relogio">—</span>
+  <div class="grupo" role="group" aria-label="Velocidade do tempo">
+    <button data-vel="0" title="Pausa (barra de espaço)">❚❚</button><button data-vel="1">1×</button><button data-vel="2">2×</button><button data-vel="4">4×</button><button data-vel="8">8×</button>
+  </div>
+  <button id="btnMapa" class="sec">Mapa (M)</button>
+  <button id="btnSalvar" class="sec">Salvar</button>
+  <select id="qualidade" aria-label="Qualidade gráfica"><option value="baixa">Gráficos: baixa</option><option value="media">Gráficos: média</option><option value="alta">Gráficos: alta</option></select>
+  <button id="btnReiniciar" class="sec perigo">Reiniciar demonstração</button>
+  <span id="salvoEm"></span>
+  <span id="perf"></span>
+</header>
+
+<aside id="painel" hidden aria-label="Hunter selecionado">
+  <div id="detalhe"></div>
+  <button id="btnObservar" class="sec">Observar (acompanhar)</button>
+  <section id="ia" aria-label="Inteligência do Hunter">
+    <h3>Inteligência</h3>
+    <label class="perfil">Perfil de IA <select id="perfil"></select></label>
+    <p id="perfilDesc" class="nota"></p>
+    <p id="regraAtiva"></p>
+    <details><summary>Regras condicionais (avançado)</summary><table id="regras" class="regras"></table>
+      <p class="nota">A regra verdadeira de maior prioridade vence; avaliação a cada 0,5 s, troca mínima de 2 s. A defesa não pode ser desligada.</p></details>
+    <h3>Decisões recentes</h3><ol id="decisoes" class="decisoes"></ol>
+  </section>
+  <section id="ordens" aria-label="Ordens">
+    <h3>Ordens <small id="alvoOrdem"></small></h3>
+    <div class="botoes-ordem">
+      <button data-ordem="ir-ponto">Ir até um ponto</button>
+      <button data-ordem="ir-hex">Ir até hexágono</button>
+      <button data-ordem="explorar">Explorar hexágono</button>
+      <button data-ordem="patrulhar">Patrulhar aqui</button>
+      <button data-ordem="cacar">Caçar</button><select id="especie" aria-label="Espécie a caçar"></select>
+      <button data-ordem="voltar">Voltar à vila</button>
+      <button data-ordem="descansar">Descansar</button>
+      <button data-ordem="vila">Permanecer na vila</button>
+    </div>
+    <label class="linha"><input id="naFila" type="checkbox"> adicionar à fila (ou segure Shift)</label>
+    <p id="dicaOrdem" class="nota" aria-live="polite"></p>
+  </section>
+</aside>
+
+<aside id="registro" hidden aria-label="Registros e avisos">
+  <h3>Registros</h3>
+  <div class="filtros" role="group" aria-label="Filtro de registros">
+    <button data-f="todos" class="ativo">Todos</button><button data-f="exploracao">Exploração</button><button data-f="decisao">Decisões</button><button data-f="combate">Combate</button><button data-f="perigo">Perigo e morte</button>
+  </div>
+  <ol id="eventos"></ol>
+</aside>
+
+<nav id="esquadrao" hidden aria-label="Esquadrão de Hunters"></nav>
+<div id="avisos" aria-live="assertive"></div>
+
+<div id="tela" class="tela">
+  <div class="painel">
+    <h1>Wildhaven</h1>
+    <p class="sub">Build V02 · simulador idle de Hunters autônomos · região HV_01 · FX_20 · ER_18</p>
+    <p id="carga" aria-live="polite">Carregando…</p>
+    <div class="botoes"><button id="continuarSave" hidden>Continuar sessão salva</button><button id="novaDemo" hidden>Nova demonstração</button></div>
+    <p class="nota">Os Hunters decidem sozinhos. Você escolhe tarefas; não controla movimentos nem golpes.<br>
+    Experimental: rig v13 do Hunter aguarda aprovação artística.</p>
+  </div>
+</div>
+
+<div id="mapa" class="tela" hidden>
+  <div class="painel largo">
+    <h2 id="mapaTitulo">Auralis — 272 hexágonos</h2>
+    <canvas id="mapaCanvas" width="1000" height="680" aria-label="Mapa continental: clique num hexágono"></canvas>
+    <p class="nota"><b class="jog">■</b> GLB de terreno disponível: a região detalhada acompanha o Hunter (terreno real, colisão, combate) · tracejado: só viagem simplificada · ✕ intransponível · pontos: Hunters. <span id="mapaHex"></span></p>
+    <div class="botoes"><button id="fecharMapa" class="sec">Fechar (M)</button></div>
+  </div>
+</div>
+
+<script type="importmap">{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }</script>
+<script>window.WILDHAVEN_MODELOS = '/repo/';</script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

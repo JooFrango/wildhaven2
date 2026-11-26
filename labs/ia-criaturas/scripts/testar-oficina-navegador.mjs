@@ -64,8 +64,56 @@ try {
   assert.equal(r.perfil.simulacao, 'proxy_superficie');
   assert.ok(r.glb.clipes >= 20);
   await page.screenshot({ path: '/tmp/wildhaven-oficina-smoke.png', fullPage: true });
+
+  // ---- IA Base V1: o cenário integrado no navegador real, não só a Oficina.
+  // Mede o que só o navegador prova: GLB carregado por espécie, animação e movimento acontecendo,
+  // combate/voo/carcaça exercitados e reinício de cenário sem erro no console.
+  const erroConsole = [];
+  page.on('console', (m) => { if (m.type() === 'error') erroConsole.push(m.text().slice(0, 180)); });
+  await page.goto('http://127.0.0.1:' + porta + '/ecossistema.html?cenario=ia-base-v1-integracao&semente=1', { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await page.waitForFunction(() => window.ecoDemo?.mundo?.vivos?.length > 0, { timeout: 60000 });
+  await page.waitForFunction(() => window.ecoDemo.modelosCarregados().length >= 11, { timeout: 120000 });
+  const base = await page.evaluate(() => {
+    const d = window.ecoDemo, m = d.mundo;
+    const antes = m.vivos.map((a) => [a.id, a.x, a.y]);
+    d.avancar(200);
+    const depois = new Map(m.vivos.map((a) => [a.id, [a.x, a.y]]));
+    const mexeu = antes.filter(([id, x, y]) => { const p = depois.get(id); return p && (Math.abs(p[0] - x) > 1 || Math.abs(p[1] - y) > 1); }).length;
+    const naN = m.animais.filter((a) => !Number.isFinite(a.x) || !Number.isFinite(a.y) || !Number.isFinite(a.z) || !Number.isFinite(a.saude.hp)).map((a) => a.id);
+    return {
+      especies: [...new Set(m.vivos.map((a) => a.especie.id))].length,
+      glbs: d.modelosCarregados().filter((g) => g.clipes > 0).length,
+      mexeu, naN, falhas: m.metricas.falhas.length,
+      ev: m.metricas.eventos, animacao: typeof d.quadros === 'function',
+    };
+  });
+  assert.ok(base.especies >= 11, 'o cenário integrado não subiu com as 11 espécies: ' + base.especies);
+  assert.ok(base.glbs >= 11, 'nem todo GLB do cenário carregou com clipes: ' + base.glbs);
+  assert.ok(base.mexeu >= 5, 'quase ninguém se moveu em 200 s: ' + base.mexeu);
+  assert.deepEqual(base.naN, [], 'coordenada ou HP inválido no navegador');
+  assert.equal(base.falhas, 0, 'o mundo registrou reação sem percepção');
+  assert.ok((base.ev.decolagem ?? 0) > 0 && (base.ev.pouso ?? 0) > 0, 'voadores não decolaram/pousaram');
+  assert.ok((base.ev.ataque_inicio ?? 0) > 0, 'nenhum ataque no cenário integrado');
+  // Reinício de cenário: troca para as dunas e confere que o mundo novo sobe inteiro.
+  const dunas = await page.evaluate(async () => {
+    await window.ecoDemo.reiniciar('ia-base-v1-integracao-dunas', 4);
+    await new Promise((r) => setTimeout(r, 4000));
+    const d = window.ecoDemo, m = d.mundo;
+    d.avancar(260);
+    return { cenario: m.cenarioId, vivos: m.vivos.length, glbs: d.modelosCarregados().filter((g) => g.clipes > 0).length,
+      mergulhos: m.metricas.eventos.mergulho_inicio ?? 0, engoliu: m.metricas.eventos.engolir_fim ?? 0, falhas: m.metricas.falhas.length };
+  });
+  assert.equal(dunas.cenario, 'ia-base-v1-integracao-dunas');
+  assert.ok(dunas.vivos > 0 && dunas.glbs >= 6, 'o cenário das dunas não subiu inteiro');
+  assert.ok(dunas.mergulhos > 0, 'ninguém mergulhou na areia');
+  assert.equal(dunas.falhas, 0);
+  // Só a viewport: a cena das dunas (600 x 600 m) com renderização por software estoura os 30 s padrão
+  // do Playwright se a captura for de página inteira.
+  await page.screenshot({ path: '/tmp/wildhaven-ia-base-v1-smoke.png', timeout: 60000 });
+  assert.deepEqual(erroConsole, [], 'Erros no console durante o cenário integrado: ' + JSON.stringify(erroConsole.slice(0, 3)));
+
   assert.deepEqual(erros, [], 'Erros JavaScript na interface: ' + JSON.stringify(erros));
-  console.log(JSON.stringify({ aprovado: true, ...r, capturas: '/tmp/wildhaven-oficina-smoke.png' }, null, 2));
+  console.log(JSON.stringify({ aprovado: true, ...r, iaBaseV1: base, dunas, capturas: ['/tmp/wildhaven-oficina-smoke.png', '/tmp/wildhaven-ia-base-v1-smoke.png'] }, null, 2));
 } finally {
   await navegador?.close();
   srv.kill('SIGTERM');

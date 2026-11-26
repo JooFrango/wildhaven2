@@ -12,7 +12,10 @@ const cfg = await carregarConfigEcoNode();
 const ids = arg('cenarios', Object.keys(cfg.cenarios).filter((c) => c.startsWith('v7-')).join(',')).split(',').filter(Boolean);
 const EVENTOS = ['inoculacao', 'mordida_seca', 'veneno_expirou', 'camuflagem_ligou', 'camuflagem_quebrou', 'calor_detectado', 'caca_inicio', 'ferimento', 'golpe_errou',
   'decolagem', 'pouso', 'queda', 'bando_dispersou', 'bando_reagrupou', 'emboscada_armada', 'emboscada_disparou', 'emboscada_desistiu', 'cupinzeiro_achado', 'cupinzeiro_esgotado',
-  'clima_inicio', 'clima_fim', 'busca_abrigo', 'carcaca_estagio', 'ossos_reciclados'];
+  'clima_inicio', 'clima_fim', 'busca_abrigo', 'carcaca_estagio', 'ossos_reciclados',
+  // IA Base V1: o resto do núcleo que o cenário integrado exercita.
+  'agarrao', 'tentativa_fuga', 'fuga_efetiva', 'morte', 'preso', 'mergulho_inicio', 'emergencia_inicio', 'investigacao_vibracao',
+  'engolir_inicio', 'engolir_fim', 'serpente_enrolou', 'cumprimento', 'limpeza_mutua', 'sentinela', 'acasalamento', 'necrofagos_chegaram'];
 const saida = {};
 for (const id of ids) {
   const cen = cfg.cenarios[id];
@@ -28,9 +31,11 @@ for (const id of ids) {
     tempos.sort((a, b) => a - b);
     const q = (p) => +tempos[Math.min(tempos.length - 1, Math.floor(tempos.length * p))].toFixed(3);
     const ev = Object.fromEntries(EVENTOS.map((e) => [e, m.metricas.eventos[e] ?? 0]).filter(([, n]) => n));
+    const rssMB = +(process.memoryUsage().rss / 1048576).toFixed(1);
     linhas.push({ semente: s, hash: hashMundo(m), mortes: { ...m.metricas.mortes }, eventos: ev, vivos: m.vivos.length, cpuMs: { p50: q(0.5), p95: q(0.95), p99: q(0.99), pior: q(1) },
+      buscasCaminho: m.metricas.buscasCaminho, falhas: m.metricas.falhas.length, rssMB, passos: tempos.length,
       estados: Object.fromEntries(Object.entries(estados).map(([k, v]) => [k, [...v]])) });
-    console.log(`${id} s${s} hash ${hashMundo(m)} | mortes ${JSON.stringify(m.metricas.mortes)} | ${JSON.stringify(ev)} | p95 ${q(0.95)} ms, pior ${q(1)} ms`);
+    console.log(`${id} s${s} hash ${hashMundo(m)} | mortes ${JSON.stringify(m.metricas.mortes)} | ${JSON.stringify(ev)} | p50 ${q(0.5)} p95 ${q(0.95)} p99 ${q(0.99)} pior ${q(1)} ms | buscas ${m.metricas.buscasCaminho} | falhas ${m.metricas.falhas.length} | rss ${rssMB} MB`);
   }
   saida[id] = linhas;
 }

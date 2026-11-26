@@ -1,0 +1,98 @@
+name: Wildhaven | Desert herbivorous reptiles v02 | Lot A weighted animations
+on:
+  push:
+    branches: [wildhaven-desert-caudraco-lajurim-animated-v02]
+    paths:
+      - 'assets/models/creatures/desert-reptiles-animation-v02/lot-a/bootstrap/**'
+      - '.github/workflows/wildhaven-desert-herbivores-lot-a-v02.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  create-animated-GLBs:
+    runs-on: ubuntu-24.04
+    env:
+      WILDHAVEN_CREATURE_ROOT: /tmp/wildhaven-reptiles-static-v01
+      WILDHAVEN_V02_ROOT: assets/models/creatures
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python GLB, rig, playback and renderer dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri libxrender1 libsm6
+          python -m pip install --no-cache-dir numpy==2.3.5 trimesh==4.11.1 scipy==1.17.0 pillow==12.3.0 vtk==9.6.2
+      - name: Unpack versioned source and preserve original two v01 models
+        run: |
+          set -euo pipefail
+          dest="assets/models/creatures/desert-reptiles-animation-v02/lot-a"
+          base64 -d "$dest/bootstrap/source-v02.tar.xz.b64" > /tmp/desert-reptiles-source-a.tar.xz
+          tar -xJf /tmp/desert-reptiles-source-a.tar.xz -C "$dest"
+          for sp in caudraco lajurim; do
+            mkdir -p "$WILDHAVEN_CREATURE_ROOT/$sp"
+            cp -a "assets/models/creatures/$sp/v01/." "$WILDHAVEN_CREATURE_ROOT/$sp/"
+            test -s "$WILDHAVEN_CREATURE_ROOT/$sp/$sp-v01-textured-blockout.glb"
+          done
+          test -s "$dest/source/build.py"
+          test -s "$dest/source/render.py"
+          test -s "$dest/source/validate.py"
+      - name: Create v02 weighted-skinned UV-preserving real GLBs with sixteen animation clips
+        run: |
+          python -u "assets/models/creatures/desert-reptiles-animation-v02/lot-a/source/build.py" --species caudraco lajurim
+          python -u "assets/models/creatures/desert-reptiles-animation-v02/lot-a/source/validate.py" --species caudraco lajurim
+      - name: Play actual exported GLB skinning and capture three views + three GIFs per species
+        run: |
+          xvfb-run -a python -u "assets/models/creatures/desert-reptiles-animation-v02/lot-a/source/render.py" --species caudraco lajurim
+      - name: Reimport and audit original v01 shape and texture; compare local reference SHA-256
+        run: |
+          python -u "assets/models/creatures/desert-reptiles-animation-v02/lot-a/source/validate.py" --species caudraco lajurim --require-previews
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          expects={"caudraco":"e02a08437e2f56a722caa74c101a1f5fcc5258894a2af5cf00cea95c8624c78d","lajurim":"b56167958d8fc6c2b40030365d637b1c48beffe5fa3dcefe4230d7b906495f5c"}
+          for name,expected in expects.items():
+              root=Path("assets/models/creatures")/name/"v02"
+              m=json.loads((root/"manifest.json").read_text())
+              b=(root/m["glb"]["path"]).read_bytes()
+              assert hashlib.sha256(b).hexdigest()==expected==m["glb"]["sha256"],name
+              assert m["glb"]["joints"]==26 and m["glb"]["animation_count"]==16
+              assert m["glb_reimport_sha256"]==expected
+              assert m["texture"]["source_v01_embedded_identical"]
+              m["publication"]="branch_published_pending_artistic_review"
+              (root/"manifest.json").write_text(json.dumps(m,indent=2,ensure_ascii=False)+"\n")
+              print("VERIFIED",name,len(b),expected)
+          PY
+      - name: Upload deliverables as actual CI artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-desert-animated-v02-a
+          if-no-files-found: error
+          path: |
+            assets/models/creatures/caudraco/v02/*.glb
+            assets/models/creatures/caudraco/v02/manifest.json
+            assets/models/creatures/caudraco/v02/previews/*.png
+            assets/models/creatures/caudraco/v02/previews/*.gif
+            assets/models/creatures/lajurim/v02/*.glb
+            assets/models/creatures/lajurim/v02/manifest.json
+            assets/models/creatures/lajurim/v02/previews/*.png
+            assets/models/creatures/lajurim/v02/previews/*.gif
+      - name: Commit real GLBs, real GIFs, source and manifests without changing original v01
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "assets/models/creatures/desert-reptiles-animation-v02/lot-a/source/" "assets/models/creatures/desert-reptiles-animation-v02/lot-a/README.md"
+          for sp in caudraco lajurim; do
+            git add -f "assets/models/creatures/$sp/v02/"
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(desert-herbivores): publish real skinned v02 GLBs and reimported animated evidence lot A [skip ci]'
+            git push origin HEAD:wildhaven-desert-caudraco-lajurim-animated-v02
+          fi
+          git fetch origin +refs/heads/wildhaven-desert-caudraco-lajurim-animated-v02:refs/remotes/origin/wildhaven-desert-caudraco-lajurim-animated-v02
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/wildhaven-desert-caudraco-lajurim-animated-v02)"
+          echo "Remote published SHA $(git rev-parse HEAD)"

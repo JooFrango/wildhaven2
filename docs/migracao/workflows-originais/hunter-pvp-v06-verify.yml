@@ -1,0 +1,25 @@
+name: Hunter PvP v06 — remote asset SHA audit
+on:
+  push:
+    branches: ['feat/hunter-pvp-kenshi-animacoes-v06-review']
+    paths:
+      - '.github/workflows/hunter-pvp-v06-verify.yml'
+permissions:
+  contents: read
+jobs:
+  audit-remote:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            labs/hunters
+          sparse-checkout-cone-mode: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify asset bytes, GLB structure, and SHA-256 after fresh remote checkout
+        run: |
+          node labs/hunters/scripts/validate-hunter-pvp-v06.mjs
+          node labs/hunters/scripts/audit-remote-hunter-pvp-v06.mjs

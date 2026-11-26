@@ -1,0 +1,87 @@
+name: Wildhaven v03 - eastern mountain-foot biomes (RGB only)
+on:
+  push:
+    branches: [wildhaven-reconstrucao-geologica-41hex-v03]
+    paths:
+      - '.github/workflows/wildhaven-v03-east-base-biomes.yml'
+      - 'world/megadunes-massif-v03/biome-east/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-v03-east-base-biomes
+  cancel-in-progress: false
+jobs:
+  repair-validate-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout current draft PR branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install GLB validator and actual VTK renderer
+        run: |
+          python -m pip install 'numpy<3' scipy 'trimesh==4.7.4' pillow vtk fast-simplification
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri libgl1 libegl1 libosmesa6
+      - name: Validate patch script syntax
+        run: python -m py_compile world/megadunes-massif-v03/biome-east/repair_east_base_v03.py
+      - name: Correct only actual eastern mountain-foot terrain vertex RGB
+        run: python world/megadunes-massif-v03/biome-east/repair_east_base_v03.py
+      - name: Independently validate 123 GLBs, 118 seams and real collider
+        run: python world/megadunes-massif-v03/tests/validate_v03.py
+      - name: Render the changed mountain GLBs and connected groups for visual review
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          VTK_DEFAULT_OPENGL_WINDOW: vtkOSOpenGLRenderWindow
+        run: |
+          python world/megadunes-massif-v03/tools/render_v03.py --repo-root . --only MW_01,MW_02,MW_03,MW_04,MW_05,MW_06,MW_07,MW_08,MW_04_lateral,MW_04_cliff_detail,mountains_16_connected,reconstructed_41_connected,complete_99_connected
+      - name: Confirm previews use current real GLB hashes
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('world/megadunes-massif-v03')
+          m = json.loads((root/'preview/render_manifest.json').read_text())
+          assert m['complete_required_views'], 'Missing or stale GLB-derived required previews'
+          audit = json.loads((root/'audit/east_base_biome_rgb_v03.json').read_text())
+          assert len(audit['changed_models']) == 24
+          assert all(a['byte_changes_only_in_COLOR_0'] for a in audit['changed_models'])
+          print('Verified 24 GLBs and current full map preview; artistic review still pending')
+          PY
+      - name: Commit and publish 24 actual changed GLBs with evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/megadunes-massif-v03
+          git diff --cached --stat
+          git diff --cached --quiet || git commit -m 'assets(world): match east mountain-foot ground to adjacent biomes [skip ci]'
+          git push origin HEAD:wildhaven-reconstrucao-geologica-41hex-v03
+      - name: Fetch published branch in clean checkout
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-reconstrucao-geologica-41hex-v03
+          path: recovered
+          fetch-depth: 1
+      - name: Recover and verify every remote published GLB SHA-256 and byte count
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python recovered/world/megadunes-massif-v03/tests/verify_remote_v03.py --repo-root recovered --commit "$(git -C recovered rev-parse HEAD)"
+          cp recovered/world/megadunes-massif-v03/audit/remote_binary_recovery_v03.json world/megadunes-massif-v03/audit/
+          git add world/megadunes-massif-v03/audit/remote_binary_recovery_v03.json
+          git diff --cached --quiet || git commit -m 'audit(world): recover RGB-corrected v03 GLBs by remote URL [skip ci]'
+          git push origin HEAD:wildhaven-reconstrucao-geologica-41hex-v03
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: east-mountain-base-real-glbs-and-previews
+          path: |
+            world/megadunes-massif-v03/
+            !world/megadunes-massif-v03/**/__pycache__/
+          retention-days: 14

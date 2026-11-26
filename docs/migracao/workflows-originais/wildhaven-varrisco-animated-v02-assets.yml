@@ -1,0 +1,75 @@
+name: Wildhaven Varrisco v02 - animated weighted-skin GLB and real previews
+on:
+  push:
+    branches: [wildhaven-varrisco-v02-animated-4110tris]
+    paths:
+      - 'assets/models/creatures/varrisco/source-package-v02.tar.gz.b64'
+      - '.github/workflows/wildhaven-varrisco-animated-v02-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install rendering dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libegl1 libopengl0
+          python -m pip install --disable-pip-version-check numpy trimesh scipy vtk pillow
+      - name: Extract versioned source into canonical creature directory
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/varrisco
+          base64 -d "$ROOT/source-package-v02.tar.gz.b64" | tar -xz -C "$ROOT"
+          test -s "$ROOT/v01/source/build.py"
+          test -s "$ROOT/v02/source/build_animated.py"
+          test -s "$ROOT/v02/source/validate_animated.py"
+      - name: Rebuild and validate original unmodified Varrisco v01 blockout
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/varrisco/v01
+          python "$ROOT/source/build.py"
+          xvfb-run -a python "$ROOT/source/render.py"
+          python "$ROOT/source/validate.py"
+      - name: Build genuine Varrisco v02 weighted rig with 17 embedded animation clips
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/varrisco/v02
+          python "$ROOT/source/build_animated.py"
+          xvfb-run -a python "$ROOT/source/render_animated.py"
+          python "$ROOT/source/validate_animated.py"
+      - name: Assert exported binary geometry and print SHA-256
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,struct,json
+          root=Path('assets/models/creatures/varrisco')
+          for path in [root/'v01/varrisco-v01-anatomy-blockout.glb', root/'v02/varrisco-animated-v02-LOD0.glb']:
+           data=path.read_bytes()
+           assert data[:4]==b'glTF' and struct.unpack_from('<I',data,8)[0]==len(data)
+           print(path,len(data),hashlib.sha256(data).hexdigest())
+          m=json.loads((root/'v02/manifest.json').read_text())
+          assert m['files'][0]['triangleCount']==4110
+          assert m['files'][0]['jointCount']==24
+          assert len(m['clips'])==17
+          PY
+      - name: Publish real GLBs sources validation and authentic GLB previews
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/varrisco
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$ROOT"
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(wildhaven): publish real Varrisco v01 + animated skinned v02 GLBs and verified previews [skip ci]"
+            git push origin HEAD:wildhaven-varrisco-v02-animated-4110tris
+          fi

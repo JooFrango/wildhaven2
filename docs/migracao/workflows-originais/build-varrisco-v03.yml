@@ -1,0 +1,34 @@
+name: Varrisco v03 - GLB real
+on:
+  push:
+    branches:
+      - feat/varrisco-v03-animacao-3camadas
+    paths:
+      - assets/models/creatures/varrisco/v03/source/build_v03.py
+      - .github/workflows/build-varrisco-v03.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Gerar GLB v03 e manifesto a partir do v02
+        run: python assets/models/creatures/varrisco/v03/source/build_v03.py
+      - name: Validar GLB e clipes em teste automatizado
+        run: node --test labs/ia-criaturas/test/varrisco-v03-asset.test.mjs
+      - name: Publicar bytes reais no mesmo branch (nao altera Alpha/main)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/varrisco/v03/varrisco-animated-v03-LOD0.glb assets/models/creatures/varrisco/v03/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "build(varrisco): publicar GLB v03 real e manifesto validado"
+            git push
+          fi

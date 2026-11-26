@@ -1,0 +1,87 @@
+name: Wildhaven Dodarro v02 — GLB real UV rebuilt and three-view renders
+on:
+  push:
+    branches:
+      - wildhaven-dodarro-full-rebuild-v02
+    paths:
+      - 'assets/models/creatures/dodarro/source/**'
+      - '.github/workflows/wildhaven-dodarro-rebuild-v02.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Checkout V02 reconstruction branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Python for deterministic GLB production
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install actual geometry and image exporters
+        run: |
+          python -m pip install --no-cache-dir numpy==2.3.5 pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libegl1 > /dev/null
+      - name: Rebuild both GLBs and embedded UV atlas
+        run: python assets/models/creatures/dodarro/source/build_dodarro_v02.py
+      - name: Reimport and verify geometry, UV and SHA-256
+        run: |
+          python - <<'PY'
+          import hashlib,json,struct
+          from pathlib import Path
+          import trimesh
+          from PIL import Image
+          root=Path("assets/models/creatures/dodarro")
+          im=Image.open(root/"textures/dodarro_uv_atlas_v02.png")
+          assert im.size==(3072,2560),im.size
+          expected={'selvagem':3955,'montaria':4315}
+          for variant,n_tri in expected.items():
+              path=root/f"dodarro_{variant}_v02_blockout.glb"
+              raw=path.read_bytes()
+              assert raw[:4]==b'glTF' and struct.unpack_from('<I',raw,8)[0]==len(raw)
+              glen=struct.unpack_from('<I',raw,12)[0]
+              gltf=json.loads(raw[20:20+glen])
+              assert len(gltf['materials'])==len(gltf['textures'])==len(gltf['images'])==1
+              assert not gltf.get('skins') and not gltf.get('animations')
+              assert all('TEXCOORD_0' in a['attributes'] for m in gltf['meshes'] for a in m['primitives'])
+              reloaded=trimesh.load(str(path),force='scene')
+              tri=sum(len(mesh.faces) for mesh in reloaded.geometry.values())
+              assert tri==n_tri and tri<=5000,(variant,tri)
+              manifest=json.loads((root/f"manifest_{variant}_v02.json").read_text())
+              assert tri==manifest['triangles'] and len(raw)==manifest['bytes']
+              assert hashlib.sha256(raw).hexdigest()==manifest['sha256']
+              print('VERIFIED REAL GLB',variant,'triangles',tri,'bytes',len(raw),'SHA',manifest['sha256'])
+          PY
+      - name: Render eight genuine 3D views from reimported exported GLBs
+        run: xvfb-run -a python assets/models/creatures/dodarro/source/render_dodarro_v02.py
+      - name: Verify PNG outputs from real GLBs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('assets/models/creatures/dodarro/previews')
+          for variant in ('selvagem','montaria'):
+              for v in ('perfil','frente','tres_quartos','traseira'):
+                  f=p/f'dodarro_{variant}_v02_REAL_{v}.png'
+                  b=f.read_bytes()
+                  assert b[:8]==bytes.fromhex('89504e470d0a1a0a') and len(b)>50000,(f,len(b))
+              assert (p/f'dodarro_{variant}_v02_PRANCHA_REAL.png').is_file()
+          print('ALL TEN 3D PREVIEWS VERIFIED')
+          PY
+      - name: Commit only real V02 binaries, atlas, manifest and previews
+        run: |
+          set -euo pipefail
+          D=assets/models/creatures/dodarro
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$D/"*_v02_blockout.glb "$D/"manifest*v02.json "$D/textures/" "$D/previews/"
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(dodarro): publish V02 UV GLBs and ten real 3D previews [skip ci]'
+            git fetch origin wildhaven-dodarro-full-rebuild-v02
+            git rebase origin/wildhaven-dodarro-full-rebuild-v02
+            git push origin HEAD:wildhaven-dodarro-full-rebuild-v02
+          fi

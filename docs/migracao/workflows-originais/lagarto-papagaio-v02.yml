@@ -1,0 +1,58 @@
+name: Lagarto Papagaio iterative review v02
+on:
+  push:
+    branches: [feat/lagarto-papagaio-revisao-v02]
+    paths: ['.github/workflows/lagarto-papagaio-v02.yml', 'assets/models/creatures/lagarto-papagaio/v02/source/source.tar.xz.b64']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install render and topology dependencies
+        run: |
+          python -m pip install numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2 scipy==1.17.0
+          sudo apt-get update -qq
+          sudo apt-get install -y libegl1 libosmesa6 libgl1-mesa-dri xvfb
+      - name: Reconstruct original unchanged v01
+        run: |
+          cd assets/models/creatures/lagarto-papagaio/v01
+          base64 -d source/source.tar.xz.b64 | tar -xJ
+          python source/build.py
+          xvfb-run -a python source/render.py
+      - name: Reconstruct four real GLB reviews and capture renders
+        run: |
+          cd assets/models/creatures/lagarto-papagaio/v02
+          base64 -d source/source.tar.xz.b64 | tar -xJ
+          xvfb-run -a python source/revisar.py
+          cp iterations/04/{lagarto-papagaio-v02.glb,papagaio_uv_v02.png,manifest.json,render_report.json} .
+          cp -r iterations/04/previews .
+      - name: Verify exact final GLB and all stages
+        run: |
+          cd assets/models/creatures/lagarto-papagaio
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json
+          for p in [Path('v01'), *sorted(Path('v02/iterations').glob('*')),Path('v02')]:
+              m=json.loads((p/'manifest.json').read_text())
+              f=next(p.glob('*.glb'))
+              assert hashlib.sha256(f.read_bytes()).hexdigest()==m['sha256']
+              assert m['triangles']<=5000
+              assert m['shells_nonclosed_or_negative']==0
+              assert (p/'previews/3-vistas.png').is_file()
+          assert json.loads(Path('v01/manifest.json').read_text())['sha256']=='5a9cbd36c2c562dca045eed2b19cedef1b05e4c2d71f4aef0dad761544378370'
+          assert json.loads(Path('v02/manifest.json').read_text())['sha256']=='ea07f8dd992a1955a12ba6b538d5e380d0cb6cf16701a374ed91cc237c8e35a6'
+          PY
+      - name: Publish real binaries and render evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/lagarto-papagaio
+          git commit -m "feat(papagaio): publish original and four real GLB revisions with renders"
+          git push origin HEAD:feat/lagarto-papagaio-revisao-v02

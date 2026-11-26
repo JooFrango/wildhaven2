@@ -1,0 +1,45 @@
+name: Wildhaven - importar Auralis, Hex Factory, Alpha 0.1 e Godot
+on:
+  push:
+    branches: [migration/wildhaven-unification]
+    paths:
+      - '.github/workflows/wildhaven-import.yml'
+      - 'tools/migration/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-import-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Copiar apenas o Wildhaven do repositório histórico (preservando binários)
+        run: python tools/migration/import_legacy.py
+      - name: Verificar Auralis, Alpha e sete GLBs
+        run: python tools/migration/verify_migration.py
+      - name: Commitar cópia auditada nesta branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- world/auralis/ game/alpha01/ tools/godot-hex-studio/ docs/MIGRACAO-LEGADO-2026-11.json
+          git diff --cached --quiet && { echo "Nenhum arquivo importado"; exit 1; }
+          git commit -m "chore(wildhaven): import complete Auralis assets, Hex Factory, playable Alpha 0.1 and Godot [skip ci]"
+          git push origin HEAD:migration/wildhaven-unification
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar e testar Alpha 0.1
+        working-directory: game/alpha01
+        run: npm ci && npm run build && npm test
+      - name: Compilar e testar Hex Factory
+        working-directory: world/auralis/hex-workshop
+        run: npm install && npm run build

@@ -1,0 +1,113 @@
+name: Wildhaven · Cupins + 3 Especialistas · Modelos 3D
+on:
+  push:
+    branches: [wildhaven-termite-specialists-3d-v01, wildhaven-termite-specialists-polish-v02]
+    paths:
+      - "assets/models/creatures/termite-specialists/source/**"
+      - ".github/workflows/wildhaven-termite-specialists-assets.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: assets/models/creatures/termite-specialists/source
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install 3D exporter and renderer
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Validate all four real 3D models and animation poses
+        run: node verify.mjs
+      - name: Build real Three.js workshop
+        run: npm run build
+      - name: Export actual 3D meshes and keyframed animations into 4 GLBs
+        run: npm run export
+      - name: Validate resulting GLBs and finite-colony food logic
+        run: node verify.mjs
+      - name: Save exported GLBs in canonical species and environment folders
+        run: |
+          set -euo pipefail
+          cp dist-creatures/ferrunco-animated-v02.glb ../../ferrunco/
+          cp dist-creatures/dunlingua-animated-v02.glb ../../dunlingua/
+          cp dist-creatures/pica_termita-animated-v02.glb ../../pica-termita/
+          mkdir -p ../../../environment/cupinzeiro
+          cp dist-creatures/cupinzeiro-animated-v02.glb ../../../environment/cupinzeiro/
+          cp dist-creatures/manifest.json ../termite-specialists-manifest.json
+      - name: Install supported Chromium for authentic 3D PNG previews
+        run: npx playwright install --with-deps chromium
+      - name: Capture real WebGL images of 3 specialists and the mound
+        run: node capture.mjs
+      - name: Capture genuine 3D biome interaction scenes and test food consumption
+        run: node capture-interactions.mjs
+      - name: Verify model files and actual preview images
+        run: |
+          python3 - <<'PY'
+          import pathlib,struct,json
+          base=pathlib.Path("../..")
+          names={
+            "ferrunco":base/"ferrunco/ferrunco-animated-v02.glb",
+            "dunlingua":base/"dunlingua/dunlingua-animated-v02.glb",
+            "pica_termita":base/"pica-termita/pica_termita-animated-v02.glb",
+            "cupinzeiro":base/"../environment/cupinzeiro/cupinzeiro-animated-v02.glb"}
+          expected={"ferrunco":16,"dunlingua":16,"pica_termita":18,"cupinzeiro":6}
+          for k,file in names.items():
+              raw=file.read_bytes()
+              assert raw[:4]==b"glTF" and struct.unpack_from("<I",raw,8)[0]==len(raw),file
+              jslen=struct.unpack_from("<I",raw,12)[0]
+              data=json.loads(raw[20:20+jslen])
+              assert len(data.get("animations",[]))==expected[k]
+              print(k,":",len(raw),"bytes",len(data["animations"]),"animated clips")
+          previews=[
+            base/"termite-specialists/termite-specialists-real-3d-v02.png",
+            base/"ferrunco/ferrunco-real-3d-v02.png",
+            base/"dunlingua/dunlingua-real-3d-v02.png",
+            base/"pica-termita/pica-termita-real-3d-v02.png",
+            base/"../environment/cupinzeiro/cupinzeiro-real-3d-v02.png",
+            base/"termite-specialists/feeding-scenes-real-3d-v02.png",
+            base/"termite-specialists/feeding-scenes-detail-real-3d-v02.png",
+            base/"termite-specialists/forest-feeding-real-3d-v02.png",
+            base/"termite-specialists/desert-feeding-real-3d-v02.png",
+            base/"termite-specialists/grassland-feeding-real-3d-v02.png"]
+          for p in previews:
+              assert p.stat().st_size > 45000,p
+              assert p.read_bytes()[:8]==bytes.fromhex("89504e470d0a1a0a"),p
+              print("render OK",p)
+          PY
+      - name: Upload finished game-ready 3D models and real previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-termite-specialists-3d-polish-v02
+          path: |
+            assets/models/creatures/ferrunco/*.glb
+            assets/models/creatures/ferrunco/*.png
+            assets/models/creatures/dunlingua/*.glb
+            assets/models/creatures/dunlingua/*.png
+            assets/models/creatures/pica-termita/*.glb
+            assets/models/creatures/pica-termita/*.png
+            assets/models/environment/cupinzeiro/*.glb
+            assets/models/environment/cupinzeiro/*.png
+            assets/models/creatures/termite-specialists/*.png
+            assets/models/creatures/termite-specialists/*manifest.json
+            assets/models/creatures/termite-specialists/feeding-scene-validation-v02.json
+          if-no-files-found: error
+      - name: Commit validated models, animations and preview images to Wildhaven asset branch
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          # The remote may have received another validated asset commit. Reconcile
+          # the branch before staging only generated files, avoiding binary rebase conflicts.
+          git fetch origin "$GITHUB_REF_NAME"
+          git reset --mixed "origin/$GITHUB_REF_NAME"
+          git add assets/models/creatures/ferrunco assets/models/creatures/dunlingua assets/models/creatures/pica-termita assets/models/environment/cupinzeiro assets/models/creatures/termite-specialists/*.png assets/models/creatures/termite-specialists/*manifest.json assets/models/creatures/termite-specialists/feeding-scene-validation-v02.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(wildhaven): publish v02 refined animated GLBs and real biome test renders [skip ci]'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi

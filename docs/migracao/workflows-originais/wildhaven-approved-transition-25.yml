@@ -1,0 +1,80 @@
+name: 'Wildhaven — transicao floresta pradaria aprovada: 25 GLBs reais'
+on:
+  push:
+    branches: [wildhaven-25-plains-approved-transition-v02]
+    paths:
+      - 'world/plains-south-approved-fix/**'
+      - '.github/workflows/wildhaven-approved-transition-25.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-five-plains-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-five-25:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar bibliotecas de geometria, GLB e VTK
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Exportar cinco GLBs 5km reais conectados a partir dos vizinhos
+        run: |
+          python world/plains-south-approved-fix/tools/build_approved_transition.py \
+            --repo-root . --output-dir world/plains-south-approved-fix
+      - name: Validar cinco GLBs contra as dez bordas, altitude, cores, inclinação, limites
+        run: |
+          python world/plains-south-approved-fix/tests/validate_approved_25.py \
+            --repo-root . --output-dir world/plains-south-approved-fix
+      - name: Renderizar mundo 25 hexágonos, cinco novas planícies e vistas individuais
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/plains-south-approved-fix/tools/render_approved_25.py \
+            --repo-root . --output-dir world/plains-south-approved-fix
+      - name: Preparar visualizador Three.js sem modificar Alpha01
+        run: python world/plains-south-approved-fix/tools/build_viewer_approved.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar visualizador independente de 25 GLBs
+        working-directory: world/plains-south-approved-fix/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Arquivo de download completo para auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-25-GLBs-Transicao-Floresta-Pradaria-Aprovada-v02
+          retention-days: 30
+          path: |
+            world/plains-south-approved-fix/models/*.glb
+            world/plains-south-approved-fix/manifest.json
+            world/plains-south-approved-fix/model_report.json
+            world/plains-south-approved-fix/preview/*.png
+            world/plains-south-approved-fix/viewer/dist/
+      - name: Publicar novos GLBs e renders reais somente na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/plains-south-approved-fix/models \
+            world/plains-south-approved-fix/manifest.json \
+            world/plains-south-approved-fix/model_report.json \
+            world/plains-south-approved-fix/preview \
+            world/plains-south-approved-fix/viewer/index.html \
+            world/plains-south-approved-fix/viewer/main.js \
+            world/plains-south-approved-fix/viewer/package.json \
+            world/plains-south-approved-fix/viewer/copy-assets.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 25 connected 5km GLBs: approved meadow transition v02 [skip ci]'
+            git push origin HEAD:wildhaven-25-plains-approved-transition-v02
+          fi

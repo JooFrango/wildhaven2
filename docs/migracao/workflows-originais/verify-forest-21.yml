@@ -1,0 +1,44 @@
+name: Verify forest expansion GLBs
+on:
+  pull_request:
+    branches: [wildhaven-reconstrucao-geologica-41hex-v03]
+    paths: ['world/forest-extension-21-v01/**', 'world/forest-continuity-v02/**', 'world/massif-foothill-biomes-v01/**']
+  push:
+    branches: [wildhaven-expansao-florestal-21hex-v01]
+    paths:
+      - 'world/forest-extension-21-v01/**'
+      - 'world/forest-continuity-v02/**'
+      - 'world/massif-foothill-biomes-v01/**'
+      - '.github/workflows/verify-forest-21.yml'
+permissions:
+  contents: read
+jobs:
+  recover:
+    if: github.event_name == 'push' || github.head_ref == 'wildhaven-expansao-florestal-21hex-v01'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          sparse-checkout: |
+            world/forest-extension-21-v01/tools
+            world/forest-continuity-v02/tools
+            world/massif-foothill-biomes-v01/tools
+          sparse-checkout-cone-mode: true
+          persist-credentials: false
+      - name: Recover 21 forest, 8 legacy forest and 24 foothill GLBs and check bytes and SHA-256
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FOREST_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python3 world/forest-extension-21-v01/tools/verify_remote.py remote-recovery.json
+          python3 world/forest-extension-21-v01/tools/verify_remote.py legacy-recovery.json world/forest-continuity-v02/manifest.json 8
+          python3 world/forest-extension-21-v01/tools/verify_remote.py foothill-recovery.json world/massif-foothill-biomes-v01/manifest.json 24
+      - uses: actions/upload-artifact@v4
+        with:
+          name: forest-21-remote-recovery
+          path: |
+            remote-recovery.json
+            legacy-recovery.json
+            foothill-recovery.json

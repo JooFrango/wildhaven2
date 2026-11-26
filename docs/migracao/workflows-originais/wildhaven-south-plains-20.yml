@@ -1,0 +1,80 @@
+name: 'Wildhaven 20 hexagonos: dois novos campos ao sul, F_N2 excluido'
+on:
+  push:
+    branches: [wildhaven-south-plains-20hex-v01]
+    paths:
+      - 'world/south-plains-expansion/**'
+      - '.github/workflows/wildhaven-south-plains-20.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-south-plains-20-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-real-20:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencias para GLB e renders reais
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Gerar F_P_E e F_P_S conectados com GLBs atuais
+        run: |
+          python world/south-plains-expansion/tools/build_south_plains.py \
+            --repo-root . --output-dir world/south-plains-expansion
+      - name: Validar 20 ativos, quatro costuras, declives, cores e F_N2 excluido
+        run: |
+          python world/south-plains-expansion/tests/validate_20_glb.py \
+            --repo-root . --output-dir world/south-plains-expansion
+      - name: Renderizar mundo completo a partir de 20 GLBs reais
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/south-plains-expansion/tools/render_20_real.py \
+            --repo-root . --output-dir world/south-plains-expansion
+      - name: Construir viewer independente para 20 GLBs
+        run: python world/south-plains-expansion/tools/build_viewer_20.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar Three.js viewer com 20 GLBs reais
+        working-directory: world/south-plains-expansion/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Publicar artifact ZIP de backup dos resultados
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-20-Hexagonos-Duas-Transicoes-Futuras-Planicies-GLB
+          retention-days: 30
+          path: |
+            world/south-plains-expansion/models/*.glb
+            world/south-plains-expansion/manifest.json
+            world/south-plains-expansion/model_report.json
+            world/south-plains-expansion/preview/*.png
+            world/south-plains-expansion/viewer/dist/
+      - name: Publicar modelos GLBs e renders na branch somente apos testes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/south-plains-expansion/models \
+            world/south-plains-expansion/manifest.json \
+            world/south-plains-expansion/model_report.json \
+            world/south-plains-expansion/preview \
+            world/south-plains-expansion/viewer/index.html \
+            world/south-plains-expansion/viewer/main.js \
+            world/south-plains-expansion/viewer/package.json \
+            world/south-plains-expansion/viewer/copy-assets.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 20 GLBs F_N2 excluded and two southern plains transitions [skip ci]'
+            git push origin HEAD:wildhaven-south-plains-20hex-v01
+          fi

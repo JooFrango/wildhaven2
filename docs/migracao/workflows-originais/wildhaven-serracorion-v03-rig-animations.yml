@@ -1,0 +1,111 @@
+name: Wildhaven - Serracorion v03 weighted rig and 20 genuine GLB animations
+on:
+  push:
+    branches: [wildhaven-serracorion-v03-rig-20-animacoes]
+    paths:
+      - 'assets/models/creatures/serracorion/v03/source/payload-part*.b64'
+      - '.github/workflows/wildhaven-serracorion-v03-rig-animations.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-validate-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout v02 geometry and v03 source
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-serracorion-v03-rig-20-animacoes
+          persist-credentials: true
+      - name: Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install pinned 3D and genuine preview pipeline
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Restore exact original rig builder independent validator and README
+        run: |
+          python - <<'PY'
+          import hashlib,base64,lzma,tarfile,io,pathlib
+          root=pathlib.Path('assets/models/creatures/serracorion/v03')
+          chunks=[(root/'source'/('payload-part%02d.b64'%i)).read_bytes() for i in range(1,7)]
+          assert list(map(len,chunks))==[3000,3000,3000,3000,3000,1236]
+          packed=b''.join(chunks)
+          assert hashlib.sha256(packed).hexdigest()=='573469dd490d05641a5c041f3d326dae044cdeca4f7cd5b75ac3aca4e1016e98'
+          with tarfile.open(fileobj=io.BytesIO(lzma.decompress(base64.b64decode(packed)))) as archive:
+              names=sorted(archive.getnames())
+              assert names==['README.md','source/build_rig.py','source/validate_and_preview.py']
+              for item in archive:
+                  assert item.isfile() and not item.name.startswith('/') and '..' not in item.name
+                  dest=root/item.name;dest.parent.mkdir(parents=True,exist_ok=True)
+                  dest.write_bytes(archive.extractfile(item).read())
+          print('Verified sources extracted:',names)
+          PY
+      - name: Generate v03 GLB from approved v02 without changing its geometry UV or paint
+        run: |
+          python assets/models/creatures/serracorion/v03/source/build_rig.py
+      - name: Independently reimport exported GLB and render 20 real animations
+        run: |
+          xvfb-run -a python assets/models/creatures/serracorion/v03/source/validate_and_preview.py
+      - name: Verify exact local GLB SHA and 20 animations, 43 joints and screenshot evidence
+        run: |
+          python - <<'PY'
+          import json,hashlib,struct,pathlib
+          root=pathlib.Path('assets/models/creatures/serracorion/v03')
+          glb=root/'serracorion-v03-rig-animado-LOD0.glb'
+          data=glb.read_bytes()
+          hash=hashlib.sha256(data).hexdigest()
+          expected='b12a9c509b9f7c3f3cf9abedecdf5deb116115df2e018dc2cb34ac9f39690cdc'
+          assert hash==expected,(hash,expected)
+          assert len(data)==3571696 and data[:4]==b'glTF' and struct.unpack_from('<I',data,8)[0]==len(data)
+          length=struct.unpack_from('<I',data,12)[0];j=json.loads(data[20:20+length])
+          m=json.loads((root/'manifest.json').read_text())
+          v=json.loads((root/'animation-validation.json').read_text())
+          assert m['sha256']==expected and v['glb_sha256']==expected
+          assert m['triangles']==4815 and m['materials']==1 and m['joint_count']==43
+          assert len(j['meshes'])==len(j['materials'])==len(j['images'])==len(j['skins'])==1
+          assert len(j['skins'][0]['joints'])==43 and len(j['animations'])==20
+          assert len({c['name'] for c in j['animations']})==20
+          attrs=j['meshes'][0]['primitives'][0]['attributes']
+          assert all(k in attrs for k in ('POSITION','TEXCOORD_0','JOINTS_0','WEIGHTS_0'))
+          assert v['original_painted_texture_bytes_identical'] and v['original_positions_uv_and_indices_identical']
+          assert v['bind_pose_inverse_matrices_valid'] and v['weighted_skin_deformation_valid']
+          assert v['all_20_clips_passed'] and v['loop_seams_valid']
+          previews=root/'previews'
+          pngs=list(previews.glob('*.png'));gifs=list(previews.glob('*.gif'))
+          assert len(pngs)==5 and len(gifs)==6,(len(pngs),len(gifs))
+          for p in pngs:
+              assert p.read_bytes()[:8]==bytes.fromhex('89504e470d0a1a0a') and p.stat().st_size>20000
+          for p in gifs:
+              assert p.read_bytes()[:6] in (b'GIF89a',b'GIF87a') and p.stat().st_size>20000
+          print('VERIFIED: real weighted GLB, SHA',hash,'43 joints, 20 clips, 5 PNG and 6 GIF')
+          PY
+      - name: Archive all validated real assets and evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-serracorion-v03-43-joints-20-animations-real-glb
+          path: |
+            assets/models/creatures/serracorion/v03/*.glb
+            assets/models/creatures/serracorion/v03/*.json
+            assets/models/creatures/serracorion/v03/README.md
+            assets/models/creatures/serracorion/v03/source/*.py
+            assets/models/creatures/serracorion/v03/previews/*.png
+            assets/models/creatures/serracorion/v03/previews/*.gif
+          if-no-files-found: error
+      - name: Commit actual GLB, rig sources, screenshots, GIFs and validation without overwriting v01/v02
+        run: |
+          set -euo pipefail
+          root=assets/models/creatures/serracorion/v03
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$root"/README.md "$root"/source/*.py "$root"/*.glb "$root"/*.json "$root"/previews/*.png "$root"/previews/*.gif
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(serracorion): publish real 43-joint rig, 20 clips and verified animated previews [skip ci]'
+            git fetch origin wildhaven-serracorion-v03-rig-20-animacoes
+            git rebase origin/wildhaven-serracorion-v03-rig-20-animacoes
+            git push origin HEAD:wildhaven-serracorion-v03-rig-20-animacoes
+          fi

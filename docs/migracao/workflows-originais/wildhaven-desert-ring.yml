@@ -1,0 +1,64 @@
+name: Wildhaven · Sete hexágonos desérticos 3D
+on:
+  push:
+    branches: [wildhaven-desert-ring-3d]
+    paths:
+      - 'world/desert-ring/tools/**'
+      - 'world/desert-ring/viewer/**'
+      - 'world/desert-ring/README.md'
+      - '.github/workflows/wildhaven-desert-ring.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: desert-ring-3d-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-models:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install geometry dependencies
+        run: python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4.0,<5'
+      - name: Generate original central GLB from preserved source
+        working-directory: world/desert-ring
+        env:
+          WILDHAVEN_SKIP_PREVIEW: '1'
+        run: |
+          python tools/build_desert_center.py
+          mkdir -p models
+          cp tools/Wildhaven_Deserto_Hex_5km.glb models/00_deserto_central.glb
+      - name: Generate six 3D neighbors and validate twelve shared borders
+        working-directory: world/desert-ring
+        run: python tools/generate_desert_ring.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build Three.js viewer
+        working-directory: world/desert-ring/viewer
+        run: |
+          npm install
+          npm run build
+      - name: Upload GLBs as build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-7-Hex-Desert-GLB
+          path: |
+            world/desert-ring/models/*.glb
+            world/desert-ring/manifest.json
+          retention-days: 30
+      - name: Publish actual generated models in this branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/desert-ring/models/*.glb world/desert-ring/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(desert-ring): publish seven connected 5km GLB models [skip ci]'
+            git push origin HEAD:wildhaven-desert-ring-3d
+          fi

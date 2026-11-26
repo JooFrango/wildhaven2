@@ -178,11 +178,6 @@ export class Animal3D {
     if (a.estado === 'espreitando' && mapa.espreita && a.velocidade > 0.1) return [mapa.espreita, true];
     // Giro no lugar (núcleo marca girandoNoLugar): rumo crescente = virar à direita vista de cima (+X → +Z).
     if (a.girandoNoLugar && mapa.girarDir && mapa.girarEsq) { const n = a.velAngular > 0 ? mapa.girarDir : mapa.girarEsq; if (this.clipes.has(n)) return [n, false]; }
-    // Clipes opcionais de recuo apenas quando a especie os possui (Varrisco v03 experimental).
-    // A escolha continua vindo do cerebro; o animador nunca altera posicao, IA ou dano.
-    if (a.estado === 'recuando' && mapa.recuar && this.clipes.has(mapa.recuar)) {
-      return [mapa.recuar, true];
-    }
     if (a.velocidade > 0.15) {
       // Andadura cuja velocidade natural está mais próxima da real (com histerese simples).
       let melhor = null, dm = Infinity;

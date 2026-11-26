@@ -1,0 +1,58 @@
+name: Wildhaven - Terrain-only Geometry Nodes Forest
+on:
+  push:
+    branches: [wildhaven-gn-terrain-only-forest-v01]
+    paths:
+      - '.github/workflows/wildhaven-gn-terrain-only.yml'
+      - 'world/desert-forest-transition/gn-terrain-only/*.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-gn-terrain-only-v01
+  cancel-in-progress: false
+jobs:
+  terrain-gn-forest:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exactly original GLB and GN demo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            world/desert-forest-transition/models
+            world/desert-forest-transition/gn-terrain-only
+      - name: Install Blender 4 and Numpy
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y blender python3-numpy xvfb libgl1-mesa-dri
+          blender --version | head -n 3
+      - name: Run actual Terrain-only Geometry Nodes on original GLB
+        run: |
+          LIBGL_ALWAYS_SOFTWARE=1 timeout -s TERM 240s xvfb-run -a blender -b -t 2 \
+            --python-exit-code 23 \
+            --python world/desert-forest-transition/gn-terrain-only/terrain_only_gn.py -- \
+            world/desert-forest-transition/models/18_bosque_temperado_5km.glb \
+            world/desert-forest-transition/gn-terrain-only/output
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install independent GLB verifier
+        run: python -m pip install 'numpy>=1.26,<3' 'trimesh>=4,<5' 'scipy>=1.11,<2' 'Pillow>=10,<13'
+      - name: Verify terrain only / non-terrain geometries / SHA and real renders
+        run: |
+          python world/desert-forest-transition/gn-terrain-only/verify_terrain_only.py \
+            world/desert-forest-transition/models/18_bosque_temperado_5km.glb \
+            world/desert-forest-transition/gn-terrain-only/output
+      - name: Publish GLB, Blender file, preview renders and report to experimental branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/desert-forest-transition/gn-terrain-only/output/
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): publish real terrain-only GN GLB, blend, validations and previews [skip ci]'
+            git push origin HEAD:wildhaven-gn-terrain-only-forest-v01
+          fi

@@ -1,0 +1,34 @@
+name: Gravarto x Rocantraz — browser real 3D
+on:
+  push:
+    branches: ['feat/lab-duelo-gravarto-rocantraz-v01']
+    paths:
+      - 'labs/ia-criaturas/**'
+      - '.github/workflows/duelo-gravarto-browser.yml'
+jobs:
+  renderizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: labs/ia-criaturas
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar navegador de verificação
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Renderizar duelo real e conferir animações + ataques
+        run: node scripts/testar-duelo-gravarto-rocantraz-navegador.mjs
+      - name: Publicar captura do GLB real
+        if: always()
+        continue-on-error: true # Cota do GitHub Actions para artefatos pode estar esgotada; não invalida o teste 3D.
+        uses: actions/upload-artifact@v4
+        with:
+          name: duelo-3d-gravarto-rocantraz
+          path: /tmp/wildhaven-gravarto-rocantraz-duelo-real.png
+          if-no-files-found: ignore
+          retention-days: 30

@@ -1,0 +1,55 @@
+name: Stage missing fauna originals
+on:
+  push:
+    branches: [transfer/missing-fauna-glb-20261126]
+    paths: ['.github/workflows/stage-missing-fauna.yml', '.asset-transfer/missing-fauna-request.json']
+  pull_request:
+    paths: ['.github/workflows/stage-missing-fauna.yml']
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: transfer/missing-fauna-glb-20261126
+          sparse-checkout: |
+            .asset-transfer
+          fetch-depth: 1
+          persist-credentials: true
+      - name: Read exact Git blobs and stage verified chunks
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, json, pathlib, struct, subprocess
+          request = json.loads(pathlib.Path('.asset-transfer/missing-fauna-request.json').read_text())
+          root = pathlib.Path('.asset-transfer/missing-fauna')
+          root.mkdir(parents=True, exist_ok=True)
+          fetched = set()
+          report = []
+          for item in request:
+              ref, path, sha = item['ref'], item['path'], item['sha']
+              if ref not in fetched:
+                  subprocess.run(['git','fetch','--no-tags','--depth=1','--filter=blob:none','origin',ref],check=True)
+                  fetched.add(ref)
+              data = subprocess.check_output(['git','show',ref+':'+path])
+              assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\x00'+data).hexdigest() == sha, path
+              assert struct.unpack_from('<4sII',data) == (b'glTF',2,len(data)), path
+              dest = root / path.split('/')[3]
+              dest.mkdir(parents=True,exist_ok=True)
+              parts = []
+              for i, offset in enumerate(range(0,len(data),540000)):
+                  p=dest / f'part-{i:03d}.b64'
+                  p.write_bytes(base64.b64encode(data[offset:offset+540000]))
+                  parts.append(str(p))
+              entry=dict(item,size=len(data),sha256=hashlib.sha256(data).hexdigest(),parts=parts)
+              (dest/'index.json').write_text(json.dumps(entry,indent=2)+'\n')
+              report.append(entry)
+          (root/'index.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse .asset-transfer/missing-fauna
+          git commit -m 'Stage verified missing fauna GLB chunks'
+          git push origin HEAD:refs/heads/transfer/missing-fauna-glb-20261126

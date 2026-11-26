@@ -1,0 +1,85 @@
+name: Wildhaven · Arumbar High-Poly v02 · GLB + Real 3D Preview
+on:
+  push:
+    branches: [wildhaven-arumbar-highpoly-v02]
+    paths:
+      - 'assets/models/creatures/arumbar/source/**'
+      - '.github/workflows/wildhaven-arumbar-highpoly-v02-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-highpoly-arumbar:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: assets/models/creatures/arumbar/source
+    steps:
+      - name: Fetch Wildhaven source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Three.js asset workshop
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Validate geometry upgrade and eight v02 animations
+        run: npm run test:v02
+      - name: Build both legacy and high-poly preview studios
+        run: npm run build
+      - name: Export actual high-resolution GLB and eight animation clips
+        run: npm run export:v02
+      - name: Validate saved GLB plus anatomical and ecological constraints
+        run: npm run test:v02
+      - name: Install headless Chromium for WebGL render checks
+        run: npx playwright install --with-deps chromium
+      - name: Capture five authentic 3D screenshots of v02 model and animations
+        run: npm run capture:v02
+      - name: Independently validate binary glTF and nonempty authentic PNGs
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,struct
+          directory=pathlib.Path('dist-v02')
+          file=directory/'arumbar-savanna-highpoly-animated-v02.glb'
+          b=file.read_bytes()
+          assert b[:4]==b'glTF' and struct.unpack_from('<I',b,8)[0]==len(b)
+          n=struct.unpack_from('<I',b,12)[0]
+          gltf=json.loads(b[20:20+n])
+          clips={x['name'] for x in gltf['animations']}
+          assert clips=={'idle','walk','run','graze','drink','alert','charge','death'}
+          assert len(gltf['meshes'])>30
+          manifest=json.loads((directory/'arumbar-manifest-v02.json').read_text())
+          assert manifest['geometry']['triangles']>55000
+          assert manifest['geometry']['triangles']>manifest.get('v01Triangles',0)
+          previews=sorted(directory.glob('arumbar-real-3d-*-v02.png'))
+          assert len(previews)==5,len(previews)
+          for picture in previews:
+              data=picture.read_bytes()
+              assert data[:8]==bytes.fromhex('89504e470d0a1a0a')
+              assert len(data)>65000,picture
+              print('AUTHENTIC WEBGL PREVIEW',picture.name,len(data))
+          print('HIGH-POLY MODEL',len(b),'bytes',manifest['geometry']['triangles'],
+            'triangles; clips:',sorted(clips))
+          PY
+      - name: Upload source-validated real models, animations and screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-arumbar-highpoly-v02-eight-animations-real-preview
+          path: assets/models/creatures/arumbar/source/dist-v02/*
+          if-no-files-found: error
+      - name: Commit only generated Arumbar v02 assets, preserving v01 binaries
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE"
+          ROOT=assets/models/creatures/arumbar
+          cp "$ROOT/source/dist-v02/"* "$ROOT/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin wildhaven-arumbar-highpoly-v02
+          git reset --mixed origin/wildhaven-arumbar-highpoly-v02
+          git add "$ROOT/"*-v02.glb "$ROOT/"*-v02.png "$ROOT/"*-v02.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(wildhaven): publish genuinely sculpted Arumbar high-poly v02 + 8 animations and WebGL renders [skip ci]'
+            git push origin HEAD:wildhaven-arumbar-highpoly-v02
+          fi

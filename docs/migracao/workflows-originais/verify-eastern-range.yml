@@ -1,0 +1,52 @@
+name: Verify Serra Oriental
+on:
+  pull_request:
+    branches: [wildhaven-expansao-florestal-21hex-v01]
+    paths: ['world/playable-eastern-range-v01/**', 'game/alpha01/**', '.github/workflows/verify-eastern-range.yml']
+permissions:
+  contents: read
+jobs:
+  playable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          sparse-checkout: |
+            game/alpha01
+            world/playable-eastern-range-v01
+            world/forest-extension-21-v01/models
+            world/forest-extension-21-v01/tools
+            world/forest-continuity-v02/models
+            world/plains-east-gap-30/models
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Recover 29 binary GLBs and check SHA-256
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FOREST_COMMIT: ${{ github.event.pull_request.head.sha }}
+        run: python3 world/forest-extension-21-v01/tools/verify_remote.py remote-recovery.json world/playable-eastern-range-v01/manifest.json 29
+      - name: Replay routes and check cliffs on the actual controller
+        run: node world/playable-eastern-range-v01/tests/walk.mjs
+      - name: Install Alpha dependencies
+        working-directory: game/alpha01
+        run: npm ci
+      - name: Alpha tests and production build
+        working-directory: game/alpha01
+        run: |
+          npm test
+          npm run build
+      - name: Test the built playable region with Chromium
+        working-directory: game/alpha01
+        run: |
+          npx playwright install --with-deps chromium
+          npm run preview -- --port 4173 > /tmp/wildhaven-range-vite.log 2>&1 &
+          for n in {1..30}; do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 1; done
+          node ../../world/playable-eastern-range-v01/tests/browser.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: serra-oriental-remote-recovery
+          path: remote-recovery.json

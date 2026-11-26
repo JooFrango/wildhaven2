@@ -1,0 +1,201 @@
+{
+ "data": "2026-11-21T23:08:57.221Z",
+ "erros": [],
+ "falhas": [],
+ "etapas": {
+  "perfis": {
+   "arvo": "agressivo",
+   "brena": "equilibrado",
+   "caio": "cauteloso",
+   "dara": "equilibrado"
+  },
+  "tarefas": [
+   [
+    "arvo",
+    "patrulhar",
+    {
+     "x": 465.74844294154525,
+     "y": 2940.6427564602127
+    }
+   ],
+   [
+    "brena",
+    "descansar",
+    null
+   ],
+   [
+    "caio",
+    "patrulhar",
+    {
+     "x": 430.9448858416913,
+     "y": 2482.1831585014293
+    }
+   ],
+   [
+    "dara",
+    "vila",
+    null
+   ]
+  ],
+  "cauteloso": [
+   {
+    "t": 185,
+    "regra": "evitar",
+    "motivo": "Patrulha interrompida: ameaça superior (varrisco a 44 m, risco 0.95 > tolerância 0.50, sozinho)"
+   },
+   {
+    "t": 195,
+    "regra": "retomar",
+    "motivo": "Missão retomada: ameaça fora de percepção há 10 s"
+   }
+  ],
+  "combate": {
+   "varrisco": {
+    "hp": -6.724422989258347,
+    "hpMax": 389.4318205503279,
+    "vivo": false,
+    "x": 378.8043627549583,
+    "y": 2474.9024045152837
+   },
+   "arvo": [
+    {
+     "t": 359,
+     "regra": "enfrentar",
+     "motivo": "Enfrentando varrisco a 44 m: risco 0.81 ≤ tolerância 3.60 (perfil agressivo)"
+    },
+    {
+     "t": 367.05,
+     "regra": "concluida",
+     "motivo": "Missão concluída: caçar varrisco"
+    }
+   ],
+   "brena": [
+    {
+     "t": 1.7,
+     "regra": "concluida",
+     "motivo": "Missão concluída: descansar e recuperar-se"
+    },
+    {
+     "t": 333,
+     "regra": "enfrentar",
+     "motivo": "Enfrentando varrisco a 45 m: risco 0.90 ≤ tolerância 2.00 (perfil equilibrado)"
+    },
+    {
+     "t": 364,
+     "regra": "defesa",
+     "motivo": "Defendendo-se: atacado por Varrisco"
+    }
+   ],
+   "caio": [
+    {
+     "t": 185,
+     "regra": "evitar",
+     "motivo": "Patrulha interrompida: ameaça superior (varrisco a 44 m, risco 0.95 > tolerância 0.50, sozinho)"
+    },
+    {
+     "t": 195,
+     "regra": "retomar",
+     "motivo": "Missão retomada: ameaça fora de percepção há 10 s"
+    },
+    {
+     "t": 199.95,
+     "regra": "perfil",
+     "motivo": "Perfil alterado: Cauteloso → Agressivo"
+    },
+    {
+     "t": 236,
+     "regra": "enfrentar",
+     "motivo": "Enfrentando varrisco a 45 m: risco 0.95 ≤ tolerância 1.80 (perfil agressivo)"
+    },
+    {
+     "t": 240.5,
+     "regra": "defesa",
+     "motivo": "Defendendo-se: atacado por Varrisco"
+    }
+   ]
+  },
+  "salvarRestaurar": {
+   "salvo": {
+    "arvo": {
+     "perfil": "agressivo",
+     "regra": null,
+     "n": 2,
+     "tarefa": null
+    },
+    "brena": {
+     "perfil": "equilibrado",
+     "regra": null,
+     "n": 4,
+     "tarefa": null
+    },
+    "caio": {
+     "perfil": "agressivo",
+     "regra": null,
+     "n": 6,
+     "tarefa": "voltar"
+    },
+    "dara": {
+     "perfil": "equilibrado",
+     "regra": null,
+     "n": 0,
+     "tarefa": "vila"
+    }
+   },
+   "rest": {
+    "arvo": {
+     "perfil": "agressivo",
+     "regra": null,
+     "n": 2,
+     "tarefa": null
+    },
+    "brena": {
+     "perfil": "equilibrado",
+     "regra": null,
+     "n": 4,
+     "tarefa": null
+    },
+    "caio": {
+     "perfil": "agressivo",
+     "regra": null,
+     "n": 6,
+     "tarefa": "voltar"
+    },
+    "dara": {
+     "perfil": "equilibrado",
+     "regra": null,
+     "n": 0,
+     "tarefa": "vila"
+    }
+   }
+  }
+ },
+ "desempenho1x": {
+  "qualidade": "baixa",
+  "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "fpsMedio": 46.8,
+  "msP95": 47.3,
+  "drawCalls": 61,
+  "triangulos": 1020189,
+  "geometrias": 48,
+  "texturas": 12,
+  "heapMB": 132,
+  "hexes": 7,
+  "passosCedidos": 0,
+  "falhaTile": null
+ },
+ "desempenho8x": {
+  "qualidade": "baixa",
+  "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "fpsMedio": 33.6,
+  "msP95": 100,
+  "drawCalls": 61,
+  "triangulos": 1020189,
+  "geometrias": 48,
+  "texturas": 12,
+  "heapMB": 125,
+  "hexes": 7,
+  "passosCedidos": 0,
+  "falhaTile": null
+ },
+ "ok": true
+}

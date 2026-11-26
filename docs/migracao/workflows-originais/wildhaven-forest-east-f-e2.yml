@@ -1,0 +1,77 @@
+name: Wildhaven - F_E2 floresta temperada oriental GLB 5km
+on:
+  push:
+    branches: [wildhaven-forest-east-f-e2-v01]
+    paths:
+      - 'world/forest-east-expansion/**'
+      - '.github/workflows/wildhaven-forest-east-f-e2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-f-e2-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-f-e2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependencias 3D
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Recuperar gerador Python de fonte comprimida
+        run: python world/forest-east-expansion/tools/unpack_source.py
+      - name: Gerar GLB real ligado a borda original de F_E
+        run: |
+          python world/forest-east-expansion/tools/build_eastern_forest.py \
+            --parent-glb world/biome-continuity/models/17_lago_floresta_temperada_5km.glb \
+            --output world/forest-east-expansion/models/19_mata_das_colinas_verdes_5km.glb \
+            --metadata world/forest-east-expansion/metadata.json
+      - name: Testar malha 5km, borda numerica, objetos e GLB
+        run: python world/forest-east-expansion/tests/validate_glb.py
+      - name: Compor o mundo ativo com 14 hexagonos sem X1
+        run: python world/forest-east-expansion/tools/compose_manifest.py
+      - name: Renderizar GLBs reais (F_E + F_E2 e mundo completo)
+        run: xvfb-run -a python world/forest-east-expansion/tools/render_connected.py
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar viewer independente de 14 GLBs
+        working-directory: world/forest-east-expansion/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Arquivar GLB, manifest, modelos renderizados e viewer
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-F_E2-FLORESTA-ORIENTAL-14-HEX-GLB
+          retention-days: 30
+          path: |
+            world/forest-east-expansion/models/*.glb
+            world/forest-east-expansion/manifest.json
+            world/forest-east-expansion/metadata.json
+            world/forest-east-expansion/preview/*.png
+            world/forest-east-expansion/tools/build_eastern_forest.py
+            world/forest-east-expansion/viewer/dist/
+      - name: Publicar GLB e previews reais SOMENTE nesta branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/forest-east-expansion/tools/build_eastern_forest.py
+          git add -f world/forest-east-expansion/models/19_mata_das_colinas_verdes_5km.glb
+          git add -f world/forest-east-expansion/manifest.json world/forest-east-expansion/metadata.json
+          git add -f world/forest-east-expansion/preview/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 14 real GLBs, F_E2 snapped to original F_E [skip ci]'
+            git push origin HEAD:wildhaven-forest-east-f-e2-v01
+          fi

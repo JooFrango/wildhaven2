@@ -1,0 +1,72 @@
+name: Wildhaven - 4 Savanna lowpoly species and animated LODs v05
+on:
+  push:
+    branches: [wildhaven-savanna-4-creatures-lowpoly-lods-v05]
+    paths:
+      - 'assets/models/creatures/savanna-herbivores-lowpoly-v05/source/**'
+      - '.github/workflows/wildhaven-four-savanna-lowpoly-v05.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  validate-and-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned sculpture, remesh and actual raster dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check \
+            numpy==2.2.6 scipy==1.15.3 scikit-image==0.25.2 \
+            trimesh==4.11.1 vtk==9.6.2 pillow==11.2.1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Build 12 animated GLBs with three LODs each, plus 12 true previews
+        run: |
+          xvfb-run -a python3 assets/models/creatures/savanna-herbivores-lowpoly-v05/source/build_all.py --root .
+      - name: Validate actual exported geometry, skinning, clips, hashes and screenshots
+        run: |
+          python3 assets/models/creatures/savanna-herbivores-lowpoly-v05/source/validate.py --root . > fauna-lowpoly-validation-v05.json
+          tail -30 fauna-lowpoly-validation-v05.json
+      - name: Create combined preview only from genuine 3D screenshots
+        run: |
+          python3 assets/models/creatures/savanna-herbivores-lowpoly-v05/source/make_previews.py --root .
+      - name: Attach all real GLBs, renders, and signed manifest checksums
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-four-savanna-lowpoly-12-animated-GLBs-v05
+          path: |
+            assets/models/creatures/talvero/*-LOD*.glb
+            assets/models/creatures/talvero/*lowpoly-v05.png
+            assets/models/creatures/talvero/*manifest-v05.json
+            assets/models/creatures/rambrel/*-LOD*.glb
+            assets/models/creatures/rambrel/*lowpoly-v05.png
+            assets/models/creatures/rambrel/*manifest-v05.json
+            assets/models/creatures/rambrel_chapadas/*-LOD*.glb
+            assets/models/creatures/rambrel_chapadas/*lowpoly-v05.png
+            assets/models/creatures/rambrel_chapadas/*manifest-v05.json
+            assets/models/creatures/turvagal/*-LOD*.glb
+            assets/models/creatures/turvagal/*lowpoly-v05.png
+            assets/models/creatures/turvagal/*manifest-v05.json
+            assets/models/creatures/savanna-herbivores-lowpoly-v05/previews/*.png
+            fauna-lowpoly-validation-v05.json
+          if-no-files-found: error
+      - name: Commit real GLBs and true 3D captures to branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/talvero/ \
+                  assets/models/creatures/rambrel/ \
+                  assets/models/creatures/rambrel_chapadas/ \
+                  assets/models/creatures/turvagal/ \
+                  assets/models/creatures/savanna-herbivores-lowpoly-v05/previews/
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(savanna): publish 12 lowpoly animated LOD GLBs and real previews [skip ci]'
+            git fetch origin wildhaven-savanna-4-creatures-lowpoly-lods-v05
+            git rebase origin/wildhaven-savanna-4-creatures-lowpoly-lods-v05
+            git push origin HEAD:wildhaven-savanna-4-creatures-lowpoly-lods-v05
+          fi

@@ -7,9 +7,15 @@ import { linhaDeVisao } from './terreno.js';
 import { feridoVisivel } from './saude.js';
 import { fatorVisualCamuflagem } from './camuflagem.js';
 import { perceberCalor } from './termo.js';
+import { vizinhos as vizinhosDaGrade } from './grade.js';
+import { corpoObservavel, sinalCombate } from './tatica.js';
+
+// Reaproveitado entre chamadas de `perceber`: um array por passo, não um por animal.
+const perto = [];
 
 // Estados que outros animais conseguem reconhecer visualmente.
 const COMPORTAMENTO_VISIVEL = {
+  avaliando:'encarando',ameacando:'exibindo',aproximando:'confrontando',circulando:'confrontando',procurando_abertura:'confrontando',preparando_ataque:'atacando',recuperando:'recuperando',pressionando:'correndo',defendendo:'exibindo',
   fugindo: 'fugindo', fugindo_voo: 'fugindo', perseguindo: 'correndo', atacando: 'atacando', comendo_carcaca: 'comendo_carcaca',
   intimidando: 'exibindo', confrontando: 'confrontando', combatendo: 'lutando', recuando: 'recuando',
   pastando: 'comendo', bebendo: 'bebendo', descansando: 'parado', vigiando: 'vigiando', espreitando: 'agachado', emboscado: 'agachado',
@@ -76,7 +82,15 @@ export function perceber(a, mundo, vizinhos, dt) {
   a.ocultos = [];
   const termo = a.especie.percepcao.termorrecepcao;
   const maxR = Math.max(al.visao * 2.5, al.audicao * 1.3, al.olfato, (termo?.alcance ?? 0) * 2.4);
-  for (const o of vizinhos) {
+  // Grade espacial: só os que podem estar ao alcance de algum sentido. Quem fica de fora teria caído no
+  // `decair` do laço antigo — e ele é reposto logo abaixo, para a atenção decair igual.
+  const g = mundo.gradeAtivos?.lista === vizinhos ? mundo.gradeAtivos : null;
+  const cand = g ? vizinhosDaGrade(g, a.x, a.y, maxR, perto) : null;
+  const nCand = cand ? cand.length : vizinhos.length;
+  const vistos = g && a.atencao.size ? new Set() : null;
+  for (let c = 0; c < nCand; c++) {
+    const o = cand ? vizinhos[cand[c]] : vizinhos[c];
+    if (vistos) vistos.add(o.id);
     if (o === a || !o.vivo || o.nivel === 3) continue;
     // Quem está sob a areia não é visto, ouvido nem farejado: o corpo está enterrado.
     if (o.subsolo && (o.subsolo.fase === 'submerso' || o.subsolo.fase === 'mergulhando')) { decair(a, o.id, al.tRec, dt); continue; }
@@ -119,6 +133,9 @@ export function perceber(a, mundo, vizinhos, dt) {
     // Olfato: rastro de animais vivos só de perto (sem modelar vento nesta etapa).
     if (d <= al.olfato * 0.35) contatos.push(contatoImpreciso(a, o, d, 'olfato', d * 0.35));
   }
+  // Com a grade, quem está longe nem foi visitado. O laço antigo chamava `decair` para cada um deles, e
+  // `decair` só faz algo em quem está na atenção — então basta percorrer a atenção, que é curta.
+  if (vistos) for (const id of [...a.atencao.keys()]) if (!vistos.has(id) && mundo.idsAtivos?.has(id)) decair(a, id, al.tRec, dt);
   // Sons emitidos no passo anterior (alarmes, rugidos, chamados): só a posição de quem emitiu.
   for (const s of mundo.sonsAnteriores) {
     if (s.fonte === a.id) continue;
@@ -135,6 +152,7 @@ function contato(a, o, d, via, mundo) {
     comportamento: COMPORTAMENTO_VISIVEL[o.estado] ?? 'movendo',
     juvenil: !!o.juvenil, grupo: o.grupoId,
   };
+  if(via==='visao') { c.body=corpoObservavel(o); c.signal=sinalCombate(o,mundo.t); }
   if (d < 25) {
     c.ferido = feridoVisivel(o);
     // Porte estimado com erro (± até 15%), estável por par observador/alvo dentro do mesmo segundo.
@@ -145,7 +163,7 @@ function contato(a, o, d, via, mundo) {
   if (o.voo) { c.alt = o.voo.alt; c.noAr = o.voo.fase !== 'solo'; }
   // Para onde o outro está olhando (orientação da cabeça é visível): base para perceber distração.
   if (via === 'visao') c.foco = o.foco ?? o.alvo?.id ?? null;
-  if (o.alvo?.tipo === 'criatura' && o.estado === 'perseguindo') c.perseguindo = o.alvo.id;
+  if (o.alvo?.tipo === 'criatura' && (o.estado === 'perseguindo'||o.tatica?.context==='hunt')) c.perseguindo = o.alvo.id;
   return c;
 }
 

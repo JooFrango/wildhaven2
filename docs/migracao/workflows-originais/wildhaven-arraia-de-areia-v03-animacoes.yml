@@ -1,0 +1,109 @@
+name: Wildhaven - Arraia-de-Areia v03 real weighted rig and 22 glTF animations
+on:
+  push:
+    branches: [wildhaven-arraia-de-areia-rig-animacoes-v03]
+    paths:
+      - 'assets/models/creatures/arraia-de-areia/v03/source/part*.b64'
+      - '.github/workflows/wildhaven-arraia-de-areia-v03-animacoes.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  validate-and-publish-real-animated-ray:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout v02 refinement and v03 work branch
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-arraia-de-areia-rig-animacoes-v03
+          persist-credentials: true
+      - name: Setup pinned Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install modelling, GLB and genuine-render dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Restore exact rig source, independent validator and README
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,lzma,tarfile,base64,io
+          root=pathlib.Path('assets/models/creatures/arraia-de-areia/v03')
+          chunks=[(root/'source'/('part%02d.b64'%i)).read_bytes() for i in range(1,7)]
+          assert list(map(len,chunks))==[2600]*5+[2480]
+          raw=b''.join(chunks)
+          assert hashlib.sha256(raw).hexdigest()=='660005df7326e746c965c6b379dad3622c0eb9c785337bbe1357c87af2b12685'
+          unpack=lzma.decompress(base64.b64decode(raw))
+          with tarfile.open(fileobj=io.BytesIO(unpack)) as tar:
+              assert sorted(tar.getnames())==['README.md','source/build_rig.py','source/validate_and_preview.py']
+              for item in tar:
+                  assert item.isfile() and '..' not in item.name and not item.name.startswith('/')
+                  path=root/item.name
+                  path.parent.mkdir(parents=True,exist_ok=True)
+                  path.write_bytes(tar.extractfile(item).read())
+          print('RESTORED EXACT SOURCE FROM VERSIONED GITHUB PARTS')
+          PY
+      - name: Build ray from approved v02 GLB without altering UV or topology
+        run: python assets/models/creatures/arraia-de-areia/v03/source/build_rig.py
+      - name: Validate 23-joint weighted skin, 22 exported clips, loops and visuals
+        run: xvfb-run -a python assets/models/creatures/arraia-de-areia/v03/source/validate_and_preview.py
+      - name: Independently assert GLB byte hash, image evidence and no decorative meshes
+        run: |
+          python - <<'PY'
+          import json,hashlib,pathlib,struct
+          root=pathlib.Path('assets/models/creatures/arraia-de-areia/v03')
+          p=root/'arraia-de-areia-v03-rig-animated-LOD0.glb'
+          b=p.read_bytes()
+          h=hashlib.sha256(b).hexdigest()
+          expected='c6d20ba62d51632db0a660974e9febb3ba65a09e6e56ab1ccf59269b0da4f672'
+          assert h==expected,(h,expected)
+          assert b[:4]==b'glTF' and struct.unpack_from('<I',b,8)[0]==len(b)
+          n=struct.unpack_from('<I',b,12)[0];g=json.loads(b[20:20+n])
+          m=json.loads((root/'manifest.json').read_text())
+          val=json.loads((root/'animation-validation.json').read_text())
+          assert m['sha256']==h and val['glb_sha256']==h
+          assert m['triangles']==6576 and m['materials']==1 and m['color_patches_extra_meshes']==0
+          assert len(g['meshes'])==1 and len(g['skins'])==1 and len(g['skins'][0]['joints'])==23
+          assert len(g['animations'])==22 and len(set(a['name'] for a in g['animations']))==22
+          assert len(g['materials'])==len(g['images'])==1
+          assert 'JOINTS_0' in g['meshes'][0]['primitives'][0]['attributes']
+          assert 'WEIGHTS_0' in g['meshes'][0]['primitives'][0]['attributes']
+          assert 'TEXCOORD_0' in g['meshes'][0]['primitives'][0]['attributes']
+          assert val['original_painted_texture_bytes_identical'] and val['all_22_clips_passed']
+          previews=root/'previews'
+          assert len(list(previews.glob('*.png')))==5
+          assert len(list(previews.glob('*.gif')))==6
+          for png in previews.glob('*.png'):
+              assert png.read_bytes()[:8]==bytes.fromhex('89504e470d0a1a0a') and png.stat().st_size>20000
+          for gif in previews.glob('*.gif'):
+              assert gif.read_bytes()[:6] in (b'GIF89a',b'GIF87a') and gif.stat().st_size>30000
+          print('REAL GLB v03 VERIFIED',len(b),'bytes, sha',h,'joints',len(g['skins'][0]['joints']),'clips',len(g['animations']))
+          PY
+      - name: Publish actual asset archive for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-arraia-de-areia-v03-rig-22-animations-real-glb
+          path: |
+            assets/models/creatures/arraia-de-areia/v03/*.glb
+            assets/models/creatures/arraia-de-areia/v03/*.json
+            assets/models/creatures/arraia-de-areia/v03/README.md
+            assets/models/creatures/arraia-de-areia/v03/source/*.py
+            assets/models/creatures/arraia-de-areia/v03/previews/*.png
+            assets/models/creatures/arraia-de-areia/v03/previews/*.gif
+          if-no-files-found: error
+      - name: Commit real GLB GIFs PNGs tests sources and manifest without modifying older versions
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/arraia-de-areia/v03
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$ROOT"/README.md "$ROOT"/source/*.py "$ROOT"/*.glb "$ROOT"/*.json "$ROOT"/previews/*.png "$ROOT"/previews/*.gif
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(arraia): publish 23-joint weighted v03 with 22 real animations and previews [skip ci]'
+            git fetch origin wildhaven-arraia-de-areia-rig-animacoes-v03
+            git rebase origin/wildhaven-arraia-de-areia-rig-animacoes-v03
+            git push origin HEAD:wildhaven-arraia-de-areia-rig-animacoes-v03
+          fi

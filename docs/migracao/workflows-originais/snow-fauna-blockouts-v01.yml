@@ -1,0 +1,77 @@
+name: Wildhaven snow fauna — five real GLB blockouts v01
+on:
+  push:
+    branches:
+      - feat/fauna-neve-cinco-blockouts-v01
+    paths:
+      - '.github/workflows/snow-fauna-blockouts-v01.yml'
+      - 'assets/models/creatures/snow-fauna-v01/source/source-tools.tar.xz.b64'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  gerar-cinco-glbs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Instalar dependencias
+        run: |
+          python -m pip install numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Recuperar fontes originais
+        run: |
+          cd assets/models/creatures/snow-fauna-v01
+          base64 -d source/source-tools.tar.xz.b64 | tar -xJ
+          test -s source/build_snow_fauna.py
+          test -s source/render_snow_fauna.py
+      - name: Gerar GLB reais e verificar budget de cada especie
+        run: |
+          python assets/models/creatures/snow-fauna-v01/source/build_snow_fauna.py
+          python - <<'PY'
+          from pathlib import Path
+          import json, hashlib, trimesh
+          root=Path('assets/models/creatures/snow-fauna-v01')
+          rows=json.loads((root/'manifest.json').read_text())
+          assert len(rows)==5, 'Expected 5 creatures'
+          for a in rows:
+             f=root/'assets'/a['id']/a['file']
+             data=f.read_bytes()
+             assert len(data)>30000 and data[:4]==b'glTF'
+             assert hashlib.sha256(data).hexdigest()==a['sha256']
+             glb=trimesh.load(f,force='scene',process=False)
+             count=sum(len(m.faces) for m in glb.geometry.values())
+             assert 0<count<=2000 and count==a['triangles'],(a['id'],count)
+             assert len(glb.geometry)==1
+             assert any(getattr(m.visual,'uv',None) is not None for m in glb.geometry.values())
+             print(a['id'],count,a['sha256'])
+          PY
+      - name: Preparar renderizacao de software no runner
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y libegl1 libosmesa6 libgl1-mesa-dri xvfb
+      - name: Renderizar 3 vistas dos GLBs reimportados
+        run: |
+          xvfb-run -a python assets/models/creatures/snow-fauna-v01/source/render_snow_fauna.py
+      - name: Organizar assets nos caminhos oficiais
+        run: |
+          set -euo pipefail
+          BASE=assets/models/creatures/snow-fauna-v01
+          for ID in casquim gelfaro tufrino branquelope nevisco; do
+            DEST=assets/models/creatures/$ID/v01
+            mkdir -p "$DEST/previews"
+            cp "$BASE/assets/$ID/"* "$DEST/"
+            cp "$BASE/previews/${ID}_"*.png "$DEST/previews/"
+          done
+          cp "$BASE/previews/render_report.json" "$BASE/render_report.json"
+          rm -rf "$BASE/assets" "$BASE/previews"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$BASE/source/" "$BASE/manifest.json" "$BASE/render_report.json"
+          git add assets/models/creatures/{casquim,gelfaro,tufrino,branquelope,nevisco}/v01/
+          git commit -m "feat(snow-fauna): publish 5 real textured GLBs under 2k tris with 15 imported renders"
+          git push origin HEAD:feat/fauna-neve-cinco-blockouts-v01

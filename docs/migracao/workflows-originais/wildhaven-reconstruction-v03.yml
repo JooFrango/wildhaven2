@@ -1,0 +1,72 @@
+name: Wildhaven geological reconstruction v03
+on:
+  push:
+    branches: [wildhaven-reconstrucao-geologica-41hex-v03]
+    paths:
+      - '.github/workflows/wildhaven-reconstruction-v03.yml'
+      - 'world/megadunes-massif-v03/tools/**'
+      - 'world/megadunes-massif-v03/tests/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-geology-v03
+  cancel-in-progress: true
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install numpy scipy 'trimesh==4.7.4' pillow vtk fast-simplification
+      - name: Install actual headless OpenGL renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri libgl1 libegl1 libosmesa6
+      - name: Read original GLBs and freeze evidence
+        run: python world/megadunes-massif-v03/tools/snapshot_base.py
+      - name: Export 41 terrains and 82 actual LOD variants
+        id: build
+        run: python world/megadunes-massif-v03/tools/build_v03.py
+      - name: Validate reimported GLBs and continuous collision
+        run: python world/megadunes-massif-v03/tests/validate_v03.py
+      - name: Render all required views from actual exported GLBs
+        if: ${{ always() && steps.build.outcome == 'success' }}
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          VTK_DEFAULT_OPENGL_WINDOW: vtkOSOpenGLRenderWindow
+        run: python world/megadunes-massif-v03/tools/render_v03.py --repo-root .
+      - name: Publish actual GLBs and evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/megadunes-massif-v03
+          git diff --cached --quiet || git commit -m 'assets(world): real geological reconstruction of 41 hexes, 82 LODs and real GLB previews [skip ci]'
+          git push origin HEAD:wildhaven-reconstrucao-geologica-41hex-v03
+      - uses: actions/checkout@v4
+        with:
+          ref: wildhaven-reconstrucao-geologica-41hex-v03
+          path: recovered
+          fetch-depth: 1
+      - name: Recover each GLB by its GitHub URL and compare with fresh checkout
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python recovered/world/megadunes-massif-v03/tests/verify_remote_v03.py --repo-root recovered --commit "$(git rev-parse HEAD)"
+          cp recovered/world/megadunes-massif-v03/audit/remote_binary_recovery_v03.json world/megadunes-massif-v03/audit/
+          git add world/megadunes-massif-v03/audit/remote_binary_recovery_v03.json
+          git diff --cached --quiet || git commit -m 'audit(world): recover all 124 published GLBs by URL and verify SHA256 [skip ci]'
+          git push origin HEAD:wildhaven-reconstrucao-geologica-41hex-v03
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: real-v03-glbs-previews-and-audits
+          path: |
+            world/megadunes-massif-v03/
+            !world/megadunes-massif-v03/**/__pycache__/
+          retention-days: 14

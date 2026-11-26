@@ -1,0 +1,104 @@
+name: Wildhaven - Arraia-de-Areia v01 real UV painted GLB
+on:
+  push:
+    branches: [wildhaven-arraia-de-areia-textured-blockout-v01]
+    paths:
+      - 'assets/models/creatures/arraia-de-areia/v01/source/source-payload-part*.b64'
+      - '.github/workflows/wildhaven-arraia-de-areia-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-arraia-de-areia-textured-blockout-v01
+          persist-credentials: true
+      - name: Python for 3D GLB
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install reproducible geometry and rendering dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Restore exact authored sculpt painter and renderer source
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,base64,io,lzma,tarfile
+          root=pathlib.Path('assets/models/creatures/arraia-de-areia/v01')
+          parts=[(root/'source'/('source-payload-part%02d.b64'%i)).read_bytes() for i in range(1,5)]
+          assert [len(x) for x in parts]==[3603]*4
+          b=b''.join(parts)
+          assert hashlib.sha256(b).hexdigest()=='bbfc1d5b3943de649950b3ca1c96aab762955be45b2438b09d73b10da5dd2916'
+          raw=lzma.decompress(base64.b64decode(b))
+          with tarfile.open(fileobj=io.BytesIO(raw)) as tar:
+              names=sorted(tar.getnames())
+              assert names==['README.md','source/build.py','source/render.py'],names
+              for entry in tar:
+                  assert entry.isfile() and '..' not in entry.name
+                  f=root/entry.name
+                  f.parent.mkdir(parents=True,exist_ok=True)
+                  f.write_bytes(tar.extractfile(entry).read())
+          print('Authored source files restored:',names)
+          PY
+      - name: Generate single material UV raster paint and actual GLB
+        run: python assets/models/creatures/arraia-de-areia/v01/source/build.py
+      - name: Render 3 plus overhead from the EXPORTED GLB reimported by VTK
+        run: xvfb-run -a python assets/models/creatures/arraia-de-areia/v01/source/render.py
+      - name: Independently validate binary bytes hash geometry UV and authentic PNGs
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,json,struct
+          root=pathlib.Path('assets/models/creatures/arraia-de-areia/v01')
+          f=root/'arraia-de-areia-v01-blockout-texturizado.glb';blob=f.read_bytes()
+          manifest=json.loads((root/'manifest.json').read_text())
+          expected='4bdd0d072ed62585fa16399cd97fe49d93b52918d50d2cfcdc45b493e1b21d67'
+          assert hashlib.sha256(blob).hexdigest()==expected,(hashlib.sha256(blob).hexdigest(),expected)
+          assert manifest['sha256_glb']==expected and manifest['bytes_glb']==len(blob)
+          assert blob[:4]==b'glTF' and struct.unpack_from('<I',blob,8)[0]==len(blob)
+          n=struct.unpack_from('<I',blob,12)[0];meta=json.loads(blob[20:20+n])
+          assert manifest['triangles']==6296 and len(meta['meshes'])==1
+          assert len(meta['materials'])==1 and len(meta['textures'])==1 and len(meta['images'])==1
+          assert meta['images'][0]['mimeType']=='image/png'
+          assert 'TEXCOORD_0' in meta['meshes'][0]['primitives'][0]['attributes']
+          assert not meta.get('animations') and not meta.get('skins')
+          from PIL import Image
+          tex=root/'textures/arraia-de-areia-v01-albedo-pintado-uv.png'
+          assert Image.open(tex).size==(2048,2048)
+          assert hashlib.sha256(tex.read_bytes()).hexdigest()==manifest['sha256_texture']
+          for key in ('perfil','frente','tres-quartos','superior','3-vistas'):
+              img=root/'previews'/('arraia-de-areia-v01-GLB-real-'+key+'.png')
+              data=img.read_bytes()
+              assert data.startswith(bytes.fromhex('89504e470d0a1a0a')) and len(data)>30000,(key,len(data))
+          print('VALIDATED REAL GLB:',len(blob),'bytes; triangles 6296; 1 material; 2048px embedded PNG; five real evidence PNGs')
+          PY
+      - name: Upload GLB and all verified evidence artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-arraia-de-areia-v01-blockout-glb-uv-and-real-previews
+          path: |
+            assets/models/creatures/arraia-de-areia/v01/*.glb
+            assets/models/creatures/arraia-de-areia/v01/*.json
+            assets/models/creatures/arraia-de-areia/v01/README.md
+            assets/models/creatures/arraia-de-areia/v01/source/*.py
+            assets/models/creatures/arraia-de-areia/v01/textures/*.png
+            assets/models/creatures/arraia-de-areia/v01/previews/*.png
+          if-no-files-found: error
+      - name: Commit GLB bytes original texture source manifest and previews
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          ROOT=assets/models/creatures/arraia-de-areia/v01
+          git add "$ROOT/README.md" "$ROOT"/source/*.py "$ROOT"/*.glb "$ROOT"/*.json "$ROOT"/textures/*.png "$ROOT"/previews/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(arraia): publish UV painted static GLB and three genuine render views [skip ci]'
+            git fetch origin wildhaven-arraia-de-areia-textured-blockout-v01
+            git rebase origin/wildhaven-arraia-de-areia-textured-blockout-v01
+            git push origin HEAD:wildhaven-arraia-de-areia-textured-blockout-v01
+          fi

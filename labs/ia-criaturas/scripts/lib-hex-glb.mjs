@@ -17,7 +17,13 @@ export const CATEGORIAS_MUNDO = {
   broadleaf_canopy: 'copa', conifers: 'copa', palm_fronds: 'copa', biome_blend_conifers: 'copa', ecotone_broadleaf_canopy: 'copa',
 };
 
-export const categoriasVazias = () => ({ terreno: [], agua: [], rocha: [], tronco: [], arbusto: [], copa: [] });
+export const categoriasVazias = () => ({ terreno: [], agua: [], rocha: [], tronco: [], arbusto: [], copa: [], areiaSuperficie: [] });
+
+// Substrato arenoso pela cor de vértice do próprio GLB oficial (COLOR_0, sRGB 0–255): ocre quente com R > G > B.
+// Rocha exposta e leito escuro saem fora da faixa. É classificação derivada do modelo, não um dado publicado nele.
+export function corEhAreia(r, g, b) {
+  return r >= 130 && r > g && g > b && r - b >= 45 && r - b <= 170;
+}
 
 export function lerGlb(b) {
   const lj = b.readUInt32LE(12);
@@ -67,12 +73,19 @@ export function coletarTriangulos(g, { categorias = CATEGORIAS_MUNDO, desloc = {
       const pos = acessor(g, p.attributes.POSITION);
       const idx = p.indices !== undefined ? acessor(g, p.indices) : null;
       const v = (i) => { const q = aplicar(mundo, [pos[i * 3], pos[i * 3 + 1], pos[i * 3 + 2]]); q[0] += desloc.x; q[2] += desloc.z; return q; };
+      // Cor de vértice do terreno: usada só para classificar o substrato (areia × rocha exposta).
+      const cor = cat === 'terreno' && p.attributes.COLOR_0 !== undefined ? acessor(g, p.attributes.COLOR_0) : null;
+      const corComp = cor ? { VEC3: 3, VEC4: 4 }[g.json.accessors[p.attributes.COLOR_0].type] : 0;
+      const escala = cor && g.json.accessors[p.attributes.COLOR_0].componentType === 5121 ? 1 : 255;
+      const areiaNoVertice = (i) => corEhAreia(cor[i * corComp] * escala, cor[i * corComp + 1] * escala, cor[i * corComp + 2] * escala);
       const n = idx ? idx.length : pos.length / 3;
       for (let i = 0; i < n; i += 3) {
         const a = v(idx ? idx[i] : i), b = v(idx ? idx[i + 1] : i + 1), c = v(idx ? idx[i + 2] : i + 2);
         if (limites && (Math.max(a[0], b[0], c[0]) < limites.x0 || Math.min(a[0], b[0], c[0]) > limites.x1
           || Math.max(a[2], b[2], c[2]) < limites.z0 || Math.min(a[2], b[2], c[2]) > limites.z1)) continue;
         tris[cat].push([a, b, c]);
+        if (cor && tris.areiaSuperficie && areiaNoVertice(idx ? idx[i] : i) && areiaNoVertice(idx ? idx[i + 1] : i + 1) && areiaNoVertice(idx ? idx[i + 2] : i + 2))
+          tris.areiaSuperficie.push([a, b, c]);
       }
     }
   });
@@ -108,7 +121,9 @@ export function rasterizar(lista, x0, z0, nx, nz, res) {
 // Grades por categoria → terreno do ecossistema. Altura relativa ao ponto mais baixo da janela.
 // Mesmas regras do recorte de um hexágono: rocha bloqueia quando sobe > 1,2 m do chão; tronco sempre bloqueia;
 // arbusto dá 65 de cobertura e copa 15; capim 75 sob arbusto, 55 no aberto, 0 em água e em bloqueio.
-export function montarTerreno(tris, { x0, z0, largura, profundidade, res }) {
+// `bloquearSemTerreno`: célula sem triângulo de terreno é fora do polígono do hexágono, não chão plano.
+// Fica desligado por padrão porque os corredores costuram peças e usam o vazio como emenda.
+export function montarTerreno(tris, { x0, z0, largura, profundidade, res, bloquearSemTerreno = false }) {
   const nx = Math.round(largura / res), nz = Math.round(profundidade / res);
   const altura = rasterizar(tris.terreno, x0, z0, nx, nz, res);
   const aguaS = rasterizar(tris.agua, x0, z0, nx, nz, res);
@@ -116,20 +131,26 @@ export function montarTerreno(tris, { x0, z0, largura, profundidade, res }) {
   const tronco = rasterizar(tris.tronco, x0, z0, nx, nz, res);
   const arbusto = rasterizar(tris.arbusto, x0, z0, nx, nz, res);
   const copa = rasterizar(tris.copa, x0, z0, nx, nz, res);
+  const areiaS = tris.areiaSuperficie?.length ? rasterizar(tris.areiaSuperficie, x0, z0, nx, nz, res) : null;
   let base = Infinity;
   for (const v of altura) if (Number.isFinite(v)) base = Math.min(base, v);
   const n = nx * nz;
   // Arrays montados antes do terreno: criarTerreno calcula a inclinação a partir das alturas que recebe.
   const g = { alturas: new Float32Array(n), agua: new Float32Array(n).fill(-1e9), cobertura: new Uint8Array(n), bloqueio: new Uint8Array(n), vegetacao: new Float32Array(n), vegetacaoMax: new Float32Array(n) };
-  const cont = { semAltura: 0, agua: 0, rocha: 0, tronco: 0, arbusto: 0, copa: 0 };
+  if (areiaS) g.areia = new Uint8Array(n);
+  const cont = { semAltura: 0, agua: 0, rocha: 0, tronco: 0, arbusto: 0, copa: 0, areia: 0 };
   for (let k = 0; k < n; k++) {
-    const h = Number.isFinite(altura[k]) ? altura[k] - base : (cont.semAltura++, 0);
+    const temTerreno = Number.isFinite(altura[k]);
+    const h = temTerreno ? altura[k] - base : (cont.semAltura++, 0);
     g.alturas[k] = h;
+    if (!temTerreno && bloquearSemTerreno) g.bloqueio[k] = 1;
     if (Number.isFinite(aguaS[k]) && aguaS[k] - base > h + 0.02) { g.agua[k] = aguaS[k] - base; cont.agua++; }
     if (Number.isFinite(rocha[k]) && rocha[k] - base > h + 1.2) { g.bloqueio[k] = 1; g.alturas[k] = Math.max(h, rocha[k] - base); cont.rocha++; }
     if (Number.isFinite(tronco[k])) { g.bloqueio[k] = 1; cont.tronco++; }
     if (Number.isFinite(arbusto[k])) { g.cobertura[k] = 65; cont.arbusto++; }
     else if (Number.isFinite(copa[k])) { g.cobertura[k] = Math.max(g.cobertura[k], 15); cont.copa++; }
+    // Areia só onde a superfície visível É o triângulo arenoso (a mesma altura que ficou na grade).
+    if (areiaS && Number.isFinite(areiaS[k]) && Number.isFinite(altura[k]) && Math.abs(areiaS[k] - altura[k]) < 1e-3 && !g.bloqueio[k]) { g.areia[k] = 100; cont.areia++; }
     const veg = g.agua[k] > -1e8 || g.bloqueio[k] ? 0 : g.cobertura[k] >= 60 ? 75 : 55;
     g.vegetacao[k] = veg; g.vegetacaoMax[k] = veg;
   }

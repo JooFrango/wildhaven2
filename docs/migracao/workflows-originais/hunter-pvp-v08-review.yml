@@ -1,0 +1,60 @@
+name: Hunter PvP v08 — shoulder elbow wrist refinement (one real sword slash)
+on:
+  push:
+    branches: ['feat/hunter-pvp-v08-braco-espada-review']
+    paths:
+      - '.github/workflows/hunter-pvp-v08-review.yml'
+      - 'labs/hunters/scripts/animate-hunter-pvp-v08.mjs'
+      - 'labs/hunters/scripts/validate-hunter-pvp-v08.mjs'
+      - 'labs/hunters/scripts/capture-hunter-pvp-v08.mjs'
+      - 'labs/hunters/viewer/pvp-preview-v08.html'
+      - 'labs/hunters/viewer/gif89a.mjs'
+permissions:
+  contents: write
+concurrency:
+  group: hunter-pvp-v08-review
+  cancel-in-progress: false
+jobs:
+  render-real-v08:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          sparse-checkout: |
+            labs/hunters
+            labs/hunters-codex
+            labs/ia-criaturas
+          sparse-checkout-cone-mode: true
+          lfs: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --prefix labs/hunters-codex
+      - name: Bake one PvP v08 skeletal swing and integrated sword mesh
+        run: node labs/hunters/scripts/animate-hunter-pvp-v08.mjs
+      - name: Validate GLB structure
+        run: node labs/hunters/scripts/validate-hunter-pvp-v08.mjs
+      - name: Install Chromium
+        run: |
+          cd labs/hunters-codex
+          npx playwright-core install --with-deps chromium
+      - name: Serve Hunters lab on localhost
+        run: |
+          cd labs/hunters
+          npm run dev >/tmp/wildhaven-v08-server.log 2>&1 &
+          sleep 3
+          cat /tmp/wildhaven-v08-server.log
+      - name: Capture real v08 GLB animated GIF and eight key poses
+        run: node labs/hunters/scripts/capture-hunter-pvp-v08.mjs
+      - name: Publish unapproved review files on this branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add labs/hunters/assets/hunter-pvp-v08/ labs/hunters/resultados/pvp-v08/
+          git diff --cached --stat
+          git commit -m 'review: Hunter PvP v08 real GLB and two angle GIFs (unapproved)'
+          git fetch origin feat/hunter-pvp-v08-braco-espada-review
+          git merge --no-edit -X ours origin/feat/hunter-pvp-v08-braco-espada-review
+          git push origin HEAD:feat/hunter-pvp-v08-braco-espada-review

@@ -1,0 +1,59 @@
+name: Wildhaven - Pilotos GLB Reais Montanha e Duna v03
+
+on:
+  push:
+    branches: [wildhaven-hex-montanha-duna-artistico-v03]
+    paths:
+      - .github/workflows/wildhaven-mountain-dune-2pilots-v03.yml
+      - world/hex-art-pilots-v03/tools/build_two_art_pilots.py
+      - world/hex-art-pilots-v03/tools/render_two_real_glbs.py
+      - world/hex-art-pilots-v03/tests/validate_two_real_glbs.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wildhaven-two-real-art-pilots-v03
+  cancel-in-progress: false
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencies for real 3D models and offline VTK render
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy<3" "scipy>=1.11" "trimesh>=4.7" "pillow>=10" "vtk>=9.3"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri libgl1
+      - name: Syntax validation
+        run: |
+          python -m py_compile world/hex-art-pilots-v03/tools/build_two_art_pilots.py
+          python -m py_compile world/hex-art-pilots-v03/tools/render_two_real_glbs.py
+          python -m py_compile world/hex-art-pilots-v03/tests/validate_two_real_glbs.py
+      - name: Sculpt two real GLB art pilots from existing neighbor-safe source meshes
+        run: python world/hex-art-pilots-v03/tools/build_two_art_pilots.py
+      - name: Independently reimport, verify 11 seams, art geometry and hashes
+        run: python world/hex-art-pilots-v03/tests/validate_two_real_glbs.py
+      - name: Real GLB screenshot renders and before/after previews
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+          VTK_DEFAULT_OPENGL_WINDOW: vtkXOpenGLRenderWindow
+        run: xvfb-run -a python world/hex-art-pilots-v03/tools/render_two_real_glbs.py --tile all
+      - name: Publish real binary GLBs, source, seams and screenshots
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/hex-art-pilots-v03
+          git diff --cached --stat
+          git commit -m "assets(world): publish 2 real sculpted and detailed GLBs v03 [skip ci]"
+          git push origin HEAD:wildhaven-hex-montanha-duna-artistico-v03

@@ -7,16 +7,40 @@ import { fatorMobilidade, feridoVisivel, ferir, incapacitado } from './saude.js'
 import { pontosMaisProximos } from './locomocao.js';
 import { registrarRivalidade } from './relacoes.js';
 import { separadosNaVertical } from './subsolo.js';
+import { linhaDeVisao } from './terreno.js';
 import { inocular } from './veneno.js';
+import { planejarTatica } from './tatica.js';
 
 export const FASES = ['observacao', 'intimidacao', 'confronto', 'combate'];
 const DURACAO_FASE = { observacao: 2.0, intimidacao: 5.0, confronto: 4.0, combate: 14.0 };
+
+export function adaptarIntencaoTatica(a,i,mundo){
+  if(a.hunter||a.subsolo||a.voo||a.serpente||!i)return i;
+  // Escape, ecology and physiological priorities remain owned by the species brain.
+  if(!['perseguindo','atacando','combatendo','confrontando','intimidando','observando_rival','verificando_intruso'].includes(i.estado))return i;
+  const id=i.alvo?.id??a.conflito?.rival,visible=a.contatos.find(c=>c.id===id&&c.via==='visao'),memory=a.memoria.criaturas.get(id),c=visible??(memory?.via==='visao'&&mundo.t-memory.t<.8?memory:null);
+  if(!c||c.distancia>12)return i;
+  const surprise=c.signal!=='fuga'&&Math.abs(normalizarAngulo((c.direcao??0)-atan2(a.y-c.y,a.x-c.x)))>2;
+  const chaseLunge=c.signal==='fuga'&&c.distancia>3&&a.energia>35;
+  const attacks=a.especie.combate.ataques.filter(x=>!x.exigeSurpresa||surprise||chaseLunge),usable=attacks.map(x=>{const p=perfilGolpe(a,x);return{x,p,workReach:p.alcance+(x.nome==='bote'&&c.distancia>3?a.especie.movimento.corrida*.55*p.preparo:0)};});
+  const longest=usable.sort((u,v)=>v.workReach-u.workReach)[0];if(!longest)return i;
+  const s=a.tatica??={};s.enabled=true;
+  const profile={reach:longest.workReach,windup:longest.p.preparo,energy:3,lunge:longest.workReach>longest.p.alcance};
+  const context=a.conflito||i.estado==='verificando_intruso'?'territory':'hunt';
+  const plan=planejarTatica(a,c,mundo,profile,{context});
+  const dispute=a.conflito&&mundo.conflitos.find(x=>x.id===a.conflito.id);
+  const mayEscalate=context!=='territory'||dispute?.fase==='combate'||c.signal==='preparo';
+  if(plan.attack&&visible&&mayEscalate){const rival=mundo.porId.get(c.id);a.tAtual=mundo.t;const x=rival&&escolherAtaque(a,rival,c.distancia,surprise||chaseLunge);if(x){iniciarAtaque(a,rival,x,mundo);if(dispute)dispute.golpes++;plan.intent.estado='preparando_ataque';plan.intent.destino=null;plan.intent.ritmo='parado';}}
+  return plan.intent;
+}
 
 // ---------- Anatomia (V3) ----------
 // Corpo no plano = cápsula ao longo do rumo (comprimento e raio da ficha; centro deslocado conforme o GLB).
 export function capsula(a, x = a.x, y = a.y, dir = a.direcao) {
   const r = a.especie.corpo.raio * a.escala;
-  const comp = a.especie.corpo.comprimentoM * a.escala;
+  // Corpo longo: a posição do animal é a CABEÇA (o resto do corpo vive no rastro, em serpente.js). A cápsula
+  // de contato é a cabeça e o pescoço —  —, não os 14 m, que ficariam metade à frente dela.
+  const comp = (a.especie.serpente?.capsulaM ?? a.especie.corpo.comprimentoM) * a.escala;
   const esc = (a.especie.escalaModelo ?? 1) * a.escala;
   const c = a.especie.anatomia ? a.especie.anatomia.centro * esc : 0;
   const meio = Math.max(0, comp / 2 - r);
@@ -75,6 +99,8 @@ const PENETRA = { garra_foice: 0.5, golpe: 0.45, mordida: 0.35, bote: 0.3, coice
 // Só inicia um golpe se, no instante de impacto previsto (movimento visível do alvo + o próprio), o membro que
 // golpeia alcança o corpo do alvo. Golpes para trás (coice, cauda) exigem o alvo atrás.
 export function escolherAtaque(a, alvo, d, surpresa) {
+  if(a.tatica?.deferAttack)return null;
+  if(a.tatica?.enabled&&a.tatica.action?.end>(a.tAtual??0))return null;
   if (a.saude.caidoAte > (a.tAtual ?? 0) || a.agarrando) return null;
   // Sem golpe através de areia sólida: corpos separados na vertical não se alcançam.
   if (separadosNaVertical(a, alvo)) return null;
@@ -95,15 +121,21 @@ export function escolherAtaque(a, alvo, d, surpresa) {
     // Membro mais curto que a frente do próprio corpo (ex.: braços do Varrisco sob o peito): ao encostar, o corpo
     // empurra o alvo antes que o membro chegue. Só serve contra alvo que não será empurrado: preso na própria
     // mordida, caído, ou parado e pesado.
-    if (pg.alcance >= 0) {
+    // Corpo longo: quem avança no bote é a cabeça, não o tronco — o corpo fica onde está. A regra do membro
+    // curto existe para quadrúpedes cujo peito empurra o alvo antes do membro chegar, e não se aplica aqui.
+    if (pg.alcance >= 0 && !a.especie.serpente) {
       const kA = capsulaContra(a, alvo);
       const frenteA = (kA.cx - a.x) * cos(a.direcao) + (kA.cy - a.y) * sen(a.direcao) + kA.meio + kA.r * 0.9;
-      const imovel = alvo.agarradoPor === a.id || alvo.saude.caidoAte > (a.tAtual ?? 0) || (alvo.velocidade < 0.5 && alvo.massa > a.massa * 0.5);
+      const seen=a.tatica?.enabled?a.contatos.find(c=>c.id===alvo.id&&c.via==='visao'):null;
+      const mass=a.tatica?.enabled?(seen?.massaEstimada??massaMedia(alvo.especie)):alvo.massa;
+      const imovel = alvo.agarradoPor === a.id || alvo.saude.caidoAte > (a.tAtual ?? 0) || (alvo.velocidade < 0.5 && mass > a.massa * 0.5);
       if (pg.alcance < frenteA && !imovel) continue;
     }
     // Ao golpear, o atacante iguala a velocidade do alvo (+1,5 m/s): não passa direto por ele durante o preparo.
     const vAtq = Math.min(a.velocidade, alvo.velocidade + 1.5);
-    const avanco = x.nome === 'bote' ? a.especie.movimento.corrida * 0.55 * tp : vAtq * tp;
+    // Corpo longo: no bote quem vai à frente é a cabeça, e esse alcance já é o do ataque. O tronco de 14 m
+    // não é lançado, então somar o avanço do corpo faria o golpe passar metros além do alvo.
+    const avanco = a.especie.serpente ? 0 : (x.nome === 'bote' ? a.especie.movimento.corrida * 0.55 * tp : vAtq * tp);
     // Alvo em movimento ACELERA durante o preparo (uma presa em fuga ganha velocidade). Projetar com
     // velocidade constante deixava o golpe curto: folga real média de 1,17 m contra −0,17 m prevista,
     // em 35 erros medidos no bebedouro, todos com o alvo fugindo. Agora a projeção usa a velocidade média
@@ -133,14 +165,17 @@ export function escolherAtaque(a, alvo, d, surpresa) {
     // O alvo só reage depois de perceber o golpe (~0,25 s); até lá segue o rumo atual.
     const tReacao = Math.max(0, tp - 0.25);
     const giroAlvo = Math.min(Math.PI / 2, ((alvo.especie.movimento.giroGrausSeg * Math.PI) / 180) * tReacao);
-    const lateral = alvo.velocidade * tReacao * sen(giroAlvo) * (alvo.especie.combate.esquiva ?? 0.3) * fatorMobilidade(alvo)
+    const mobilidadeVista=a.tatica?.enabled?(a.contatos.find(c=>c.id===alvo.id)?.ferido?.65:1):fatorMobilidade(alvo);
+    const lateral = alvo.velocidade * tReacao * sen(giroAlvo) * (alvo.especie.combate.esquiva ?? 0.3) * mobilidadeVista
       + 0.5 * Math.min(omega, 6) * alvo.velocidade * tp * tp
       // frear ao longo do rumo (acelerar já entrou na projeção acima; só a frenagem resta como incerteza)
       + 0.25 * alvo.especie.movimento.aceleracao * tp * tp * (alvo.velocidade < alvo.especie.movimento.corrida * 0.9 ? 1 : 0.3);
     const cautela = Math.min(0.6, (a.mente.errosSeguidos ?? 0) * 0.15);
     // Sem fôlego ou desesperado de fome: arrisca golpes que normalmente não tentaria (última chance da perseguição).
     const desespero = a.folego < 3 || a.fome > (a.especie.necessidades.fomeDesesperada ?? 80) ? 0.5 : 1;
-    const incerteza = (lateral + Math.max(0, a.velocidade - vAtq) * 0.25 * tp * 0.5) * desespero + cautela;
+    const incerteza = a.tatica?.enabled
+      ? Math.min(.18, .035 + lateral*.2 + Math.max(0,a.velocidade-vAtq)*.04*tp)
+      : (lateral + Math.max(0, a.velocidade - vAtq) * 0.25 * tp * 0.5) * desespero + cautela;
     // Diagnóstico: guarda a folga prevista do escolhido para comparar com a real no impacto.
     if (r.d + incerteza <= TOLERANCIA_GOLPE + 0.1) opcoes.push(x), (a.mente.previsaoGolpe ??= {})[x.nome] = { d: r.d, incerteza, av, vAtq };
   }
@@ -153,14 +188,26 @@ export function iniciarAtaque(a, alvo, ataque, mundo, { contra = false } = {}) {
   const pg = perfilGolpe(a, ataque);
   const preparo = pg.preparo * (contra ? 0.75 : 1);
   a.golpe = { nome: ataque.nome, alvo: alvo.id, inicio: mundo.t, impacto: mundo.t + preparo, ataque, surpresa: !alvo.memoria.criaturas.has(a.id), clipeImpacto: pg.preparo, contra, previsao: a.mente.previsaoGolpe?.[ataque.nome] ?? null, deOnde: { x: a.x, y: a.y, v: a.velocidade } };
+  if(mundo.opcoes.tatica){
+    const s=a.tatica??={};s.enabled=true;s.lastAttack=mundo.t;
+    const recovery=Math.max(.25,Math.min(ataque.recargaSeg*.65,(pg.clipeDuracao??preparo+.65)-preparo+.12));
+    s.action={name:ataque.nome,start:mundo.t,impact:mundo.t+preparo,end:mundo.t+preparo+recovery,reach:pg.alcance,heading:a.direcao};
+    const observed=a.contatos.find(c=>c.id===alvo.id&&c.via==='visao');
+    a.golpe.surpresa=!!observed&&observed.signal!=='fuga'&&Math.abs(normalizarAngulo((observed.direcao??0)-atan2(a.y-observed.y,a.x-observed.x)))>2;
+  }
   // Exausto: recupera mais devagar entre golpes.
   const cansaco = a.energia < 20 ? 1 + (20 - a.energia) / 20 : 1;
   a.recargas[ataque.nome] = ataque.recargaSeg * cansaco + preparo;
   a.energia = Math.max(0, a.energia - 1.5 * (a.especie.combate.forca + 0.3));
   // Bote: salto real — o corpo é lançado à frente durante o preparo (o clipe pounce é no lugar).
-  if (ataque.nome === 'bote' || ataque.nome === 'investida') {
+  if ((ataque.nome === 'bote' || ataque.nome === 'investida') && !a.especie.serpente) {
     const v = a.especie.movimento.corrida * 0.55;
     a.impulso = { vx: cos(a.direcao) * v, vy: sen(a.direcao) * v, ate: a.golpe.impacto, tipo: 'investida' };
+  }
+  else if(mundo.opcoes.tatica&&!a.hunter&&!a.especie.serpente&&/mordida|garra/.test(ataque.nome)){
+    // A short committed anatomical step carries the torso into the bite; no homing or range bonus.
+    const step=Math.min(.65,a.especie.corpo.comprimentoM*.22),v=step/Math.max(.15,preparo);
+    a.impulso={vx:cos(a.direcao)*v,vy:sen(a.direcao)*v,ate:a.golpe.impacto,tipo:'passo_ataque'};
   }
   mundo.evento('ataque_inicio', a.id, { alvo: alvo.id, ataque: ataque.nome, preparo: +preparo.toFixed(2), contra });
 }
@@ -170,6 +217,10 @@ export function resolverGolpe(a, mundo) {
   const g = a.golpe;
   if (!g || mundo.t < g.impacto) return;
   a.golpe = null;
+  if(a.tatica?.enabled)a.tatica.lastHit=false;
+  if(mundo.opcoes.tatica&&(a.saude.caidoAte>mundo.t||a.saude.atordoadoAte>mundo.t)){
+    mundo.evento('golpe_interrompido',a.id,{alvo:g.alvo,ataque:g.nome,motivo:'estado_fisico'});return;
+  }
   const alvo = mundo.porId.get(g.alvo);
   if (!alvo || !alvo.vivo) return;
   // O volume de areia entre os corpos impede o contato — sem habilidade declarada, não há dano.
@@ -182,6 +233,13 @@ export function resolverGolpe(a, mundo) {
   if (geo.d > TOLERANCIA_GOLPE) {
     a.mente.errosSeguidos = (a.mente.errosSeguidos ?? 0) + 1;
     mundo.evento('golpe_errou', a.id, { alvo: alvo.id, ataque: g.nome, distancia: +d.toFixed(2), folga: +geo.d.toFixed(2), vAlvo: +alvo.velocidade.toFixed(1), vA: +a.velocidade.toFixed(1), alvoEstado: alvo.estado, angulo: +((normalizarAngulo(atan2(alvo.y - a.y, alvo.x - a.x) - a.direcao)) * 57.3).toFixed(0), motivo: 'membro_nao_alcanca', previstoD: g.previsao ? +g.previsao.d.toFixed(2) : null, previstoAvanco: g.previsao ? +g.previsao.av.toFixed(2) : null, avancoReal: g.deOnde ? +hipot(a.x - g.deOnde.x, a.y - g.deOnde.y).toFixed(2) : null });
+    return;
+  }
+  // Obstáculo sólido entre os corpos: numa luta a dois metros, uma rocha no caminho impede o golpe. É opção
+  // do cenário porque ligá-la por padrão mudaria resultados do ecossistema já medidos.
+  if(mundo.linhaGolpePrecisa&&!mundo.linhaGolpePrecisa(a,alvo,pg.altura)){mundo.evento('golpe_errou',a.id,{alvo:alvo.id,ataque:g.nome,motivo:'geometria_solida'});return;}
+  if (mundo.opcoes.bloqueioGolpePorTerreno && !linhaDeVisao(mundo.terreno, a, alvo, pg.altura, pg.altura).livre) {
+    mundo.evento('golpe_errou', a.id, { alvo: alvo.id, ataque: g.nome, distancia: +d.toFixed(2), motivo: 'obstaculo_solido' });
     return;
   }
   a.mente.errosSeguidos = 0;
@@ -209,10 +267,18 @@ export function resolverGolpe(a, mundo) {
   // que esse ataque alcança (ficha).
   const altAlvo = alvo.especie.corpo.alturaM * alvo.escala;
   let regiaoGeo;
-  if (geo.s > 0.55) regiaoGeo = pg.altura > altAlvo * 0.8 ? 'cabeca' : 'pescoco';
+  // Bípede: o corpo é uma coluna, então a região vem da ALTURA do golpe e não da posição ao longo do corpo —
+  // num humano a cabeça fica acima do quadril, não meio metro à frente dele. Só fichas que declaram
+  // `anatomiaHumana` passam por aqui; para as criaturas nada muda.
+  if (alvo.especie.anatomiaHumana) {
+    const h = pg.altura / Math.max(0.1, altAlvo);
+    regiaoGeo = h > 0.86 ? 'cabeca' : h > 0.78 ? 'pescoco' : h > 0.5 ? (geo.lado > 0.6 ? 'bracos' : 'torax') : h > 0.38 ? 'abdomen' : 'pernas';
+  } else if (geo.s > 0.55) regiaoGeo = pg.altura > altAlvo * 0.8 ? 'cabeca' : 'pescoco';
   else if (geo.s < -0.6) regiaoGeo = pg.altura < altAlvo * 0.5 ? 'pernas' : 'cauda';
   else regiaoGeo = pg.altura < altAlvo * 0.35 ? 'pernas' : geo.lado > 0.6 ? 'flanco' : 'tronco';
-  const VIZ = { cabeca: ['pescoco'], pescoco: ['cabeca', 'tronco'], tronco: ['flanco', 'pescoco'], flanco: ['tronco', 'pernas'], pernas: ['flanco', 'cauda'], cauda: ['pernas', 'flanco'] };
+  // Vizinhas humanas no fim de cada lista: `find` só chega nelas se o ataque não alcançar nenhuma vizinha
+  // animal, o que nunca acontece com uma criatura (nenhuma ficha de criatura cita torax/abdomen/bracos).
+  const VIZ = { cabeca: ['pescoco'], pescoco: ['cabeca', 'tronco', 'torax'], tronco: ['flanco', 'pescoco'], flanco: ['tronco', 'pernas'], pernas: ['flanco', 'cauda', 'abdomen'], cauda: ['pernas', 'flanco'], torax: ['abdomen', 'pescoco', 'bracos'], abdomen: ['torax', 'pernas'], bracos: ['torax', 'abdomen'] };
   const regs = g.ataque.regioes;
   const regiao = regs.includes(regiaoGeo) ? regiaoGeo : (VIZ[regiaoGeo].find((r) => regs.includes(r)) ?? regs[Math.floor(a.rngCombate.proximo() * regs.length) % regs.length]);
   const porte = Math.sqrt(a.massa / massaMedia(a.especie));
@@ -222,6 +288,7 @@ export function resolverGolpe(a, mundo) {
   const dano = (g.ataque.dano * porte * a.atributos.forca * fatorForca(a) * mordida * a.rngCombate.entre(0.8, 1.2) * (g.surpresa ? 1.35 : 1) * (a.energia < 15 ? 0.7 : 1)) / resistencia;
   const idEvento = `fer:${mundo.contadorEventos + 1}`;
   const fer = ferir(alvo, { dano, regiao, origem: a.id, tipo: g.nome, t, idEvento, penetracao: PENETRA[g.nome] ?? 0.3 });
+  if(a.tatica?.enabled)a.tatica.lastHit=true;
   alvo.mente.atingidoPor = { id: a.id, t };
   inocular(a, alvo, g.nome, fer, mundo);
   // Presa com memória de perigo (ficha) guarda ONDE foi atacada e passa a evitar a área.
@@ -364,7 +431,7 @@ export function decidirNoConflito(a, mundo) {
   if (!c || !rival || !rival.vivo || c.resultado) return encerrarParticipacao(a, mundo, c, rival ? 'rival_ausente' : 'rival_morto');
   const contato = a.contatos.find((k) => k.id === rival.id && k.via === 'visao') ?? a.memoria.criaturas.get(rival.id);
   if (!contato || mundo.t - (contato.t ?? mundo.t) > 4) return encerrar(mundo, c, a, 'perdeu_contato');
-  const contexto = { valor: valorRecurso(a, c, mundo), territorioProprio: dentroTerritorio(a, rival) };
+  const contexto = { valor: valorRecurso(a, c, mundo), territorioProprio: dentroTerritorio(a, mundo.opcoes.tatica?contato:rival) };
   const av = avaliarRival(a, contato, rival.especie, contexto);
   a.mente.ultimaAvaliacao = { t: mundo.t, ...av };
   const d = Math.sqrt((rival.x - a.x) * (rival.x - a.x) + (rival.y - a.y) * (rival.y - a.y));
@@ -387,7 +454,7 @@ export function decidirNoConflito(a, mundo) {
   }
   if (c.fase === 'intimidacao') a.energia = Math.max(0, a.energia - 0.4 * mundo.dt);
   if (idx === 3 && tempoFase > DURACAO_FASE.combate) return encerrar(mundo, c, a, 'abandono_mutuo');
-  const alvoPos = { x: rival.x, y: rival.y };
+  const alvoPos = mundo.opcoes.tatica?{x:contato.x,y:contato.y}:{ x: rival.x, y: rival.y };
   switch (c.fase) {
     case 'observacao':
       return { estado: 'observando_rival', codigo: 'observacao', motivo: `avaliando ${rival.id} (vantagem estimada ${av.vantagem.toFixed(2)})`, alvo: { tipo: 'criatura', id: rival.id, ...alvoPos }, destino: null, ritmo: 'parado', olharPara: alvoPos };
@@ -487,7 +554,7 @@ export function gatilhoDisputa(a, k, rival, mundo) {
     const cc = mundo.carcacas.find((c) => c.dono === rival.id && c.carne > 0);
     if (cc) return { motivo: 'carcaca', recurso: { tipo: 'carcaca', id: cc.id } };
   }
-  if (a.alvo?.tipo === 'criatura' && k.perseguindo && k.perseguindo === a.alvo.id && ['perseguindo', 'espreitando'].includes(a.estado)) return { motivo: 'presa', recurso: { tipo: 'presa', id: a.alvo.id } };
+  if (a.alvo?.tipo === 'criatura' && k.perseguindo && k.perseguindo === a.alvo.id && (['perseguindo', 'espreitando'].includes(a.estado)||a.tatica?.context==='hunt')) return { motivo: 'presa', recurso: { tipo: 'presa', id: a.alvo.id } };
   if (a.especie.social.territorial && dentroTerritorio(a, rival) && !feridoVisivel(a)) {
     // Intrusão só vira disputa se o intruso permanece: exige ter visto o mesmo rival no território antes.
     const visto = a.mente.intrusos?.[rival.id];

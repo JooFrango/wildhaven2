@@ -1,0 +1,80 @@
+name: Wildhaven · Arumbar Savanna v01 · GLB + Real Preview
+on:
+  push:
+    branches: [wildhaven-arumbar-savanna-v01]
+    paths:
+      - 'assets/models/creatures/arumbar/source/**'
+      - '.github/workflows/wildhaven-arumbar-v01-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  make-real-assets:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: assets/models/creatures/arumbar/source
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned Three.js dependencies
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Verify real anatomy, habitat and eight actions
+        run: npm test
+      - name: Build standalone 3D Arumbar studio
+        run: npm run build
+      - name: Generate GLB 2.0 with eight real animation clips
+        run: npm run export
+      - name: Validate exported GLB
+        run: npm test
+      - name: Install Chromium / SwiftShader for authentic screenshots
+        run: npx playwright install --with-deps chromium
+      - name: Render genuine front, side, 3/4 and action previews
+        run: node capture.mjs
+      - name: Verify binary files and preview PNG signatures
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,struct
+          folder=pathlib.Path('dist')
+          glb=folder/'arumbar-savanna-animated-v01.glb'
+          data=glb.read_bytes()
+          assert data[:4]==b'glTF' and struct.unpack_from('<I',data,8)[0]==len(data)
+          length=struct.unpack_from('<I',data,12)[0]
+          obj=json.loads(data[20:20+length])
+          expected={'idle','walk','run','graze','drink','alert','charge','death'}
+          assert set(x['name'] for x in obj['animations'])==expected
+          assert len(obj['nodes'])>150
+          for f in sorted(folder.glob('arumbar-real-3d-*.png')):
+              b=f.read_bytes()
+              assert len(b)>65000 and b[:8]==bytes.fromhex('89504e470d0a1a0a'),f
+              print('preview OK',f,len(b))
+          assert len(list(folder.glob('arumbar-real-3d-*.png')))==5
+          print('GLB OK:',len(data),'bytes','8 animation clips')
+          PY
+      - name: Publish generated Arumbar v01 GLB and true 3D screenshots as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-arumbar-rare-solitary-savanna-v01
+          path: assets/models/creatures/arumbar/source/dist/*
+          if-no-files-found: error
+      - name: Commit only real validated assets to the dedicated Wildhaven branch
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          mkdir -p assets/models/creatures/arumbar
+          cp assets/models/creatures/arumbar/source/dist/arumbar-savanna-animated-v01.glb assets/models/creatures/arumbar/
+          cp assets/models/creatures/arumbar/source/dist/*.png assets/models/creatures/arumbar/
+          cp assets/models/creatures/arumbar/source/dist/arumbar-manifest-v01.json assets/models/creatures/arumbar/
+          cp assets/models/creatures/arumbar/source/dist/arumbar-render-report-v01.json assets/models/creatures/arumbar/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin wildhaven-arumbar-savanna-v01
+          git reset --mixed origin/wildhaven-arumbar-savanna-v01
+          git add assets/models/creatures/arumbar/*.glb assets/models/creatures/arumbar/*.png assets/models/creatures/arumbar/*.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(wildhaven): publish real Arumbar v01 GLB, eight clips and WebGL previews [skip ci]'
+            git push origin HEAD:wildhaven-arumbar-savanna-v01
+          fi

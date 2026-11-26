@@ -1,0 +1,37 @@
+name: Wildhaven Continental Physics Compiler
+on:
+  pull_request:
+    paths:
+      - 'build real/continental/**'
+      - '.github/workflows/wildhaven-continental-compiler.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-compiler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit original 272-hex manifest (topology only)
+        run: node 'build real/continental/tools/validate.mjs'
+      - name: Run standalone compiler, dynamic trees and streaming tests
+        run: |
+          node --test 'build real/continental/test/continental.test.mjs' 'build real/continental/test/compiler.test.mjs'
+      - name: Checkout actual tropical terrain GLB from the V02.3 source branch
+        uses: actions/checkout@v4
+        with:
+          ref: feat/regioes-moveis-v023
+          path: .terrain-smoke-v023
+          sparse-checkout: |
+            world/tropical-south-v01/models/JS_+0_11.glb
+          sparse-checkout-cone-mode: false
+          persist-credentials: false
+      - name: Compile actual tropical terrain GLB (QA not certified)
+        run: node 'build real/continental/compiler/cli.mjs' --tile 'JS_+0_11' --glb '.terrain-smoke-v023/world/tropical-south-v01/models/JS_+0_11.glb' --out '${{ runner.temp }}/wildhaven-physics-smoke' --res 4 --chunk 256
+      - name: Assert real GLB generated physical chunks without certifying gameplay
+        run: |
+          node --input-type=module -e 'import {readFileSync} from "node:fs"; const f=process.argv[1]; const x=JSON.parse(readFileSync(f,"utf8")); if(x.certified!==false||!x.chunks?.length||x.report?.groundCells<=0)process.exit(1); console.log("REAL GLB CHECK",x.tileId,"chunks",x.chunks.length,"groundCells",x.report.groundCells,"certified",x.certified)' '${{ runner.temp }}/wildhaven-physics-smoke/JS_+0_11-physics-v01/index.json'

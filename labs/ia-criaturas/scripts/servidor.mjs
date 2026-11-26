@@ -102,6 +102,7 @@ async function receberResultado(req, res) {
 }
 
 servidor.listen(porta, '127.0.0.1', () => {
-  console.log(`Laboratório de IA em http://localhost:${porta}/  (servindo ${raiz})`);
-  console.log(`Exemplo: http://localhost:${porta}/?cenario=obstaculo&semente=7`);
+  const portaAtiva=servidor.address().port;
+  console.log(`Laboratório de IA em http://localhost:${portaAtiva}/  (servindo ${raiz})`);
+  console.log(`Exemplo: http://localhost:${portaAtiva}/?cenario=obstaculo&semente=7`);
 });

@@ -1,0 +1,33 @@
+name: Wildhaven - Megadunas Massif v02 Remote Binary Verification
+
+on:
+  push:
+    branches: [wildhaven-megadunas-macico-continuo-99hex-v02]
+    paths:
+      - .github/workflows/wildhaven-megadunes-massif-remote-v02.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remote-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fresh checkout SHA-256 and 99 GLB paths
+        run: python world/megadunes-massif-v02/tests/verify_remote_v02.py
+      - name: Publish independent remote audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/megadunes-massif-v02/audit/remote_sha256_published_v02.json
+          git commit -m "audit(world): 42 remote GLB binaries verified by SHA256 [skip ci]"
+          git push origin HEAD:wildhaven-megadunas-macico-continuo-99hex-v02

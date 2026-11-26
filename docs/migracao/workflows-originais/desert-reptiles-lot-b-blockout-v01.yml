@@ -1,0 +1,87 @@
+name: Wildhaven | Desert Herbivore Reptiles | Lot B real GLB
+on:
+  push:
+    branches: [wildhaven-desert-cornevio-fossario-blockout-v01]
+    paths:
+      - 'assets/models/creatures/desert-reptiles-v01/bootstrap/lot-b-source.tar.xz.b64'
+      - '.github/workflows/desert-reptiles-lot-b-blockout-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-real-faceted-blockouts:
+    runs-on: ubuntu-24.04
+    env:
+      WILDHAVEN_MODELS_ROOT: ${{ github.workspace }}/assets/models/creatures
+      SOURCE: assets/models/creatures/desert-reptiles-v01/source
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install modeling and real GLB rendering dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri libxrender1 libsm6
+          python -m pip install --no-cache-dir numpy==2.3.5 pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Extract versioned source to project workshop
+        run: |
+          set -euo pipefail
+          base=assets/models/creatures/desert-reptiles-v01
+          base64 -d "$base/bootstrap/lot-b-source.tar.xz.b64" > "/tmp/desert-herbivores-lot-b.tar.xz"
+          tar -xJf "/tmp/desert-herbivores-lot-b.tar.xz" -C "$base"
+          test -s "$base/source/build.py"
+          test -s "$base/source/render.py"
+          test -s "$base/source/validate.py"
+      - name: Build separate static UV-textured GLBs
+        run: |
+          python "$SOURCE/build.py" --species cornevio fossario
+          for sp in cornevio fossario; do
+            cp "assets/models/creatures/desert-reptiles-v01/readmes/$sp.md" "assets/models/creatures/$sp/v01/README.md"
+          done
+      - name: Reimport GLBs and render profile front three-quarter
+        run: |
+          xvfb-run -a python "$SOURCE/render.py" --species cornevio fossario
+      - name: Validate real bin, painted UV, zero skins and render provenance
+        run: |
+          python "$SOURCE/validate.py" --species cornevio fossario
+          python - <<'PY'
+          import hashlib,json,pathlib,struct
+          for sp in "cornevio fossario".split():
+              root=pathlib.Path('assets/models/creatures')/sp/'v01'
+              path=root/f'{sp}-v01-textured-blockout.glb'
+              buf=path.read_bytes()
+              m=json.loads((root/'manifest.json').read_text())
+              assert buf[:4]==b'glTF' and struct.unpack_from('<I',buf,8)[0]==len(buf)
+              assert m['sha256']==hashlib.sha256(buf).hexdigest()
+              assert m['triangle_count']>=1000 and m['painted_markings_not_extra_polygons']
+              assert len(m['previews'])==4 and m['skins']==m['animations']==0
+              m['publication']='branch_published_pending_artistic_review'
+              m['git_blob_sha1']=hashlib.sha1(f'blob {len(buf)}\0'.encode()+buf).hexdigest()
+              (root/'manifest.json').write_text(json.dumps(m,indent=2,ensure_ascii=False)+'\n')
+              print(sp,len(buf),m['sha256'],m['git_blob_sha1'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-desert-lot-b-real-glbs-and-previews
+          path: |
+            assets/models/creatures/cornevio/v01/**
+            assets/models/creatures/fossario/v01/**
+          if-no-files-found: error
+      - name: Commit binary GLBs, UV textures, source and previews to branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "assets/models/creatures/desert-reptiles-v01/source/" "assets/models/creatures/desert-reptiles-v01/readmes/"
+          git add -f "assets/models/creatures/cornevio/v01/"
+          git add -f "assets/models/creatures/fossario/v01/"
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(wildhaven): publish real UV-textured desert reptile blockouts lot b [skip ci]"
+            git push origin HEAD:wildhaven-desert-cornevio-fossario-blockout-v01
+          fi
+          git fetch origin +refs/heads/wildhaven-desert-cornevio-fossario-blockout-v01:refs/remotes/origin/wildhaven-desert-cornevio-fossario-blockout-v01
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/wildhaven-desert-cornevio-fossario-blockout-v01)"
+          echo "Published binary models at $(git rev-parse HEAD)"

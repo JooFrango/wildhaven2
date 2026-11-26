@@ -8,16 +8,19 @@ import { atualizarCamuflagem, estadoCamuflagem } from './camuflagem.js';
 import { estadoVoo, moverVoo } from './voo.js';
 import { atualizarClimaAdverso, custoClimatico, encerrarClima, iniciarClima } from './clima.js';
 import { abrirCupinzeiro, atualizarCupinzeiros, comerCupins, instalarCupinzeiros, perceberCupinzeiros } from './cupins.js';
-import { atualizarCarcacasV7 } from './carcaca.js';
+import { atualizarCarcacasV7, materiaLocalKg } from './carcaca.js';
+import { estadoSerpente, moverSerpente } from './serpente.js';
+import { avancarEngolir } from './engolir.js';
 import { alcances, perceber, perceberCarcacas, atualizarMemoria } from './percepcao.js';
 import { avaliarFugasDisputa, decidir } from './cerebro.js';
 import { mover, resolverSobreposicoes } from './locomocao.js';
-import { atualizarAgarroes, resolverGolpe } from './combate.js';
+import { atualizarAgarroes, resolverGolpe, adaptarIntencaoTatica } from './combate.js';
 import { criarGrupo, atualizarPapeis } from './social.js';
 import { atualizarRelacoes, registrarVinculos, vincularFamilia, vincularParceiros } from './relacoes.js';
 import { processarDia, iniciarGestacao } from './vida.js';
 import { gerarTerrenoProcedural, desserializarTerreno, indice, centro, altura, marcarDisco } from './terreno.js';
 import { atribuirNiveis, passoNivel2, passoNivel3, integrarNecessidades } from './niveis.js';
+import { construirGrade, vizinhos } from './grade.js';
 import { estadoInicial as estadoSubsolo, moverSubsolo, naSuperficie, separadosNaVertical, submerso } from './subsolo.js';
 import { consolidar, emitirDoMovimento, instalarVibracoes, perceberVibracoes } from './vibracoes.js';
 import { volumeAreia } from './areia.js';
@@ -39,7 +42,7 @@ export function criarMundoEco(config, cenario, semente, opcoes = {}) {
     eventos: [], ledger: new Set(), perseguicoes: [], perseguicoesAtivas: new Map(),
     contadorEventos: 0, contadorConflitos: 0, contadorGrupos: 0, contadorAnimais: 0, contadorCarcacas: 0,
     hash: 2166136261, decisoes: opcoes.guardarDecisoes ? [] : null,
-    opcoes: { eventosDetalhados: opcoes.eventosDetalhados ?? true, observacao: cenario.observacao ?? null, ...opcoes },
+    opcoes: { eventosDetalhados: opcoes.eventosDetalhados ?? true, observacao: cenario.observacao ?? null, tatica: true, ...opcoes },
     rng: rngMundo, doencas: Object.fromEntries((config.doencas ?? []).map((d) => [d.id, d])),
     metricas: novasMetricas(), acumNivel2: 0, ultimaHoraN3: null, custo: { n1: 0, n2: 0, n3: 0, passosN1: 0, passosN2: 0, passosN3: 0 },
   };
@@ -174,6 +177,7 @@ function criarAnimal(mundo, especie, o) {
   // V7: capacidades declaradas na ficha; quem não declara não ganha estado nenhum.
   estadoVeneno(a); estadoCamuflagem(a);
   if (especie.voo) estadoVoo(a, mundo, o.altitudeInicialM ?? 0);
+  if (especie.serpente) estadoSerpente(a, mundo);
   if (o.resistenciaVeneno != null) a.resistenciaVeneno = o.resistenciaVeneno;
   if (o.ferimentos) for (const f of o.ferimentos) a.saude.ferimentos.push({ id: `ini:${id}:${f.regiao}`, infeccao: 0, desde: 0, sangramento: 0, fratura: false, ...f });
   if (o.hpFracao) a.saude.hp = a.saude.hpMax * o.hpFracao;
@@ -219,6 +223,22 @@ export function passoEco(mundo) {
   mundo.vibracoesAnteriores = mundo.vibracoes; mundo.vibracoes = [];
   const n1 = mundo.vivos.filter((a) => a.nivel === 1);
   const ativos = mundo.vivos.filter((a) => a.nivel !== 3);
+  // Grades espaciais do passo: percepção varre `ativos`, separação e sobreposição varrem `n1`. Devolvem
+  // índices em ordem crescente, então o resultado é o mesmo da varredura completa (ver grade.js).
+  mundo.gradeAtivos = construirGrade(ativos);
+  mundo.gradeN1 = construirGrade(n1);
+  mundo.idsAtivos = new Set(ativos.map((a) => a.id));
+  // Maiores corpos vivos: o raio de consulta precisa caber o maior vizinho possível, não a média.
+  let maxR = 0, maxC = 0, maxV = 0;
+  for (const a of n1) {
+    const r = a.especie.corpo.raio * a.escala, c = a.especie.corpo.comprimentoM * a.escala;
+    if (r > maxR) maxR = r; if (c > maxC) maxC = c;
+    if (a.especie.movimento.corrida > maxV) maxV = a.especie.movimento.corrida;
+  }
+  mundo.maxRaioCorpo = maxR; mundo.maxComprimentoCorpo = maxC;
+  // A grade é montada antes do movimento e consultada durante/depois dele: a margem cobre quem andou no
+  // passo. Sem ela, um vizinho que se aproximou ficaria de fora da consulta e o resultado mudaria.
+  mundo.margemPasso = maxV * dt * 2;
   const t0 = typeof performance !== 'undefined' ? performance.now() : 0;
   // 1. Percepção (estado do início do passo).
   for (const a of n1) {
@@ -249,7 +269,10 @@ export function passoEco(mundo) {
     // comandoTeste: só a bancada de testes (laboratorio-varrisco) usa; devolve uma intenção ou null (= IA normal).
     // Estados físicos (caído, agarrado, atordoado) sempre vêm do núcleo, nunca do comando.
     const fisico = a.agarradoPor || a.saude.caidoAte > mundo.t || a.saude.atordoadoAte > mundo.t;
-    const i = fogo ? { estado: 'fugindo_fogo', codigo: 'fogo', motivo: `fogo a ${fogo.d.toFixed(0)} m`, alvo: null, destino: { x: a.x + (a.x - fogo.x) * 2, y: a.y + (a.y - fogo.y) * 2 }, ritmo: 'corrida' } : ((!fisico && a.comandoTeste?.(a, mundo)) || decidir(a, mundo));
+    if(mundo.opcoes.tatica&&!a.hunter&&!a.subsolo&&!a.voo&&!a.serpente&&(a.especie.papel==='carnivoro'||a.conflito)){(a.tatica??={}).deferAttack=true;}
+    let i = fogo ? { estado: 'fugindo_fogo', codigo: 'fogo', motivo: `fogo a ${fogo.d.toFixed(0)} m`, alvo: null, destino: { x: a.x + (a.x - fogo.x) * 2, y: a.y + (a.y - fogo.y) * 2 }, ritmo: 'corrida' } : ((!fisico && a.comandoTeste?.(a, mundo)) || decidir(a, mundo));
+    if(a.tatica)a.tatica.deferAttack=false;
+    if(mundo.opcoes.tatica&&!fisico&&!fogo&&!a.comandoTeste)i=adaptarIntencaoTatica(a,i,mundo);
     registrarDecisao(mundo, a, normalizar(i));
   }
   avaliarFugasDisputa(mundo);
@@ -262,6 +285,8 @@ export function passoEco(mundo) {
     if (a.subsolo && !naSuperficie(a)) moverSubsolo(a, a.intencao, mundo, dt);
     // Ar: controlador próprio. No chão, sem ordem de decolar, devolve false e vale a locomoção terrestre.
     else if (a.voo && moverVoo(a, a.intencao, mundo, dt)) { /* movimento resolvido no ar */ }
+    // Corpo longo: a cabeça anda pelo controlador terrestre e o corpo segue o rastro dela.
+    else if (a.serpente) moverSerpente(a, a.intencao, mundo, dt);
     else { mover(a, a.intencao, mundo, dt); if (a.subsolo) moverSubsolo(a, a.intencao, mundo, dt); }
     emitirDoMovimento(mundo, a, dt);
     for (const k of Object.keys(a.recargas)) a.recargas[k] = Math.max(0, a.recargas[k] - dt);
@@ -275,6 +300,8 @@ export function passoEco(mundo) {
     if (a.saude.hp <= 0 && a.vivo) mundo.matar(a, causaFerimento(a), a.mente.atingidoPor?.id ?? null);
   }
   atualizarAgarroes(mundo, dt);
+  // Todo mundo já andou: a grade do início do passo está velha para a fase de contato.
+  mundo.gradeN1 = construirGrade(n1);
   resolverSobreposicoes(mundo, n1);
   medirSobreposicao(mundo, n1, dt);
   // Disputa durante perseguição: marca para a métrica de fugas durante disputas.
@@ -304,10 +331,19 @@ export function passoEco(mundo) {
 
 // Corpos sobrepostos (centros a menos de 60% da soma dos raios) — métrica, não correção.
 function medirSobreposicao(mundo, lista, dt) {
+  const g = mundo.gradeN1?.lista === lista ? mundo.gradeN1 : null;
+  const perto = [];
   for (let i = 0; i < lista.length; i++) {
     const a = lista[i];
     if (!a.vivo) continue;
-    for (let j = i + 1; j < lista.length; j++) {
+    // Raio de consulta: o maior par possível de raios de corpo. Os índices vêm em ordem crescente, então
+    // a sequência de pares é a mesma do laço i<j completo.
+    const alcance = (a.especie.corpo.raio * a.escala + mundo.maxRaioCorpo) * 0.6 + (mundo.margemPasso ?? 0);
+    const cand = g ? vizinhos(g, a.x, a.y, alcance, perto) : null;
+    const n = cand ? cand.length : lista.length;
+    for (let c = 0; c < n; c++) {
+      const j = cand ? cand[c] : c;
+      if (j <= i) continue;
       const b = lista[j];
       if (!b.vivo) continue;
       if (separadosNaVertical(a, b)) continue;
@@ -319,7 +355,7 @@ function medirSobreposicao(mundo, lista, dt) {
 }
 
 function normalizar(i) {
-  return { estado: i.estado, codigo: i.codigo ?? i.estado, motivo: i.motivo ?? '', alvo: i.alvo ?? null, destino: i.destino ?? null, ritmo: i.ritmo ?? 'parado', acao: i.acao ?? null, olharPara: i.olharPara ?? null, velMax: i.velMax ?? null, subsolo: i.subsolo ?? null, profundidade: i.profundidade ?? null, voar: i.voar ?? false, pousar: i.pousar ?? false, altitude: i.altitude ?? null };
+  return { estado: i.estado, codigo: i.codigo ?? i.estado, motivo: i.motivo ?? '', alvo: i.alvo ?? null, destino: i.destino ?? null, ritmo: i.ritmo ?? 'parado', acao: i.acao ?? null, olharPara: i.olharPara ?? null, velMax: i.velMax ?? null, orientacaoCombate:i.orientacaoCombate??false, subsolo: i.subsolo ?? null, profundidade: i.profundidade ?? null, voar: i.voar ?? false, pousar: i.pousar ?? false, altitude: i.altitude ?? null, postura: i.postura ?? null };
 }
 
 function registrarDecisao(mundo, a, i) {
@@ -357,6 +393,8 @@ function agir(mundo, a, dt) {
       t.vegetacao[k] -= q; a.fome = Math.max(0, a.fome - q * 1.2);
       mundo.metricas.vegetacaoConsumida += q;
     }
+  } else if (i.acao === 'engolir') {
+    avancarEngolir(mundo, a, dt);
   } else if (i.acao === 'comer_cupins' || i.acao === 'abrir_cupinzeiro') {
     const c = mundo.cupinzeiros.find((x) => x.id === i.alvo?.id);
     // Só come quem está de fato ao alcance do monte.
@@ -384,8 +422,9 @@ function atualizarCarcacas(mundo, dt) {
     if (c.dono && !mundo.porId.get(c.dono)) c.dono = null;
     if (c.decomposicao >= 1 || c.carne <= 0.05) {
       c.fim = true;
-      // Decompositores: nutrientes enriquecem a vegetação local.
-      marcarDisco(t, c.x, c.y, 3, (k) => { t.vegetacaoMax[k] = Math.min(150, t.vegetacaoMax[k] + 2 * Math.sqrt(c.carneInicial)); });
+      // Decompositores: nutrientes enriquecem a vegetação local, só com a matéria que ficou aqui.
+      const local = materiaLocalKg(c);
+      marcarDisco(t, c.x, c.y, 3, (k) => { t.vegetacaoMax[k] = Math.min(150, t.vegetacaoMax[k] + 2 * Math.sqrt(local)); });
       mundo.evento('carcaca_reciclada', null, { carcaca: c.id, consumidaKg: +(c.carneInicial - c.carne).toFixed(1) });
     }
   }

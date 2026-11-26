@@ -1,0 +1,90 @@
+name: Wildhaven · Rocantraz Biped v03 · Real Animated GLBs and Previews
+on:
+  push:
+    branches: [wildhaven-rocantraz-biped-v03]
+    paths:
+      - 'assets/models/creatures/rocantraz-v03/source/**'
+      - '.github/workflows/wildhaven-rocantraz-biped-v03-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  biped-predator-assets:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: assets/models/creatures/rocantraz-v03/source
+    steps:
+      - name: Check out Wildhaven
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Three.js and headless render dependencies
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Verify genuine biped mesh, ecology and all 24 animation clips
+        run: npm run test
+      - name: Build live standalone 3D animation inspector
+        run: npm run build
+      - name: Export two truly modeled glTF binaries with 12 clips each
+        run: npm run export
+      - name: Revalidate the exported GLBs
+        run: npm run test
+      - name: Install Chromium and software WebGL
+        run: npx playwright install --with-deps chromium
+      - name: Render nine genuine WebGL creature screenshots including authentic close-ups
+        run: npm run capture
+      - name: Independently validate GLB headers and actual screenshot PNG signatures
+        run: |
+          python3 - <<'PY'
+          import json,struct,pathlib
+          folder=pathlib.Path("dist")
+          expected={"idle","walk","stalk","run","charge","bite","swipe","roar","feed","defend","rest","die"}
+          m=json.loads((folder/"rocantraz-biped-manifest-v03.json").read_text())
+          assert m["locomotion"]=="strictly_bipedal"
+          for variant in ("forest","desert"):
+              b=(folder/f"rocantraz-{variant}-biped-animated-v03.glb").read_bytes()
+              assert b[:4]==b"glTF" and struct.unpack_from("<I",b,8)[0]==len(b)
+              n=struct.unpack_from("<I",b,12)[0]
+              gltf=json.loads(b[20:20+n])
+              assert {c["name"] for c in gltf["animations"]}==expected
+              assert m["variants"][variant]["joints"]>=20
+              assert m["variants"][variant]["triangles"]>35000
+              print("REAL 3D BIPED",variant,len(b),"bytes","12 clips",
+                    m["variants"][variant]["triangles"],"triangles")
+          images=list(folder.glob("*-real-3d-v03.png"))
+          # Profile, roar and charge have extra words before v03.
+          images=list(folder.glob("*.png"))
+          assert len(images)==9,len(images)
+          for pic in images:
+              data=pic.read_bytes()
+              assert len(data)>55000 and data[:8]==bytes.fromhex("89504e470d0a1a0a"),pic
+              print("AUTHENTIC WEBGL",pic.name,len(data),"bytes")
+          PY
+      - name: Upload original animated GLBs and verified authentic screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-rocantraz-biped-v03-glbs-real-preview
+          path: assets/models/creatures/rocantraz-v03/source/dist/*
+          if-no-files-found: error
+      - name: Publish model and preview assets in canonical Rocantraz folder
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE"
+          ROOT=assets/models/creatures/rocantraz
+          SOURCE=assets/models/creatures/rocantraz-v03/source/dist
+          cp "$SOURCE/"*.glb "$ROOT/"
+          cp "$SOURCE/"*.png "$ROOT/"
+          cp "$SOURCE/"*.json "$ROOT/"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin wildhaven-rocantraz-biped-v03
+          git reset --mixed origin/wildhaven-rocantraz-biped-v03
+          git add "$ROOT/"*v03.glb "$ROOT/"*v03.png "$ROOT/"*v03.json
+          if ! git diff --cached --quiet; then
+              git commit -m 'assets(wildhaven): publish bipedal Rocantraz v03 animated GLBs and genuine WebGL previews [skip ci]'
+              git push origin HEAD:wildhaven-rocantraz-biped-v03
+          fi

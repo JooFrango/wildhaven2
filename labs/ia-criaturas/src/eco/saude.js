@@ -10,6 +10,11 @@ export const REGIOES = {
   flanco: { dano: 0.9, sangra: 1.2, muscular: 0.6 },
   pernas: { dano: 0.8, sangra: 0.7, mobilidade: true, muscular: 1.0 },
   cauda: { dano: 0.5, sangra: 0.5, equilibrio: true },
+  // Regiões de corpo humano (fichas com `anatomiaHumana`). Nenhuma criatura as declara, então os valores
+  // acima e os resultados já medidos do ecossistema ficam exatamente como estavam.
+  torax: { dano: 1.0, sangra: 1.0, muscular: 0.4 },
+  abdomen: { dano: 1.1, sangra: 1.3, muscular: 0.4 },
+  bracos: { dano: 0.7, sangra: 0.8, muscular: 1.0, braco: true },
 };
 
 export function criarSaude(especie, massa, fracaoCrescimento = 1) {
@@ -31,7 +36,7 @@ export function ferir(agente, { dano, regiao, origem, tipo, t, idEvento, penetra
     id: idEvento, regiao, gravidade: +gravidade.toFixed(4), origem, tipo, efetivo,
     sangramento: +(gravidade * agente.especie.saude.sangramentoBase * r.sangra * 6 * (r.arterial && gravidade > 0.2 ? 1.5 : 1)).toFixed(4), // hp/s
     infeccao: 0, desde: t,
-    fratura: !!r.mobilidade && gravidade > 0.28,
+    fratura: !!(r.mobilidade || r.braco) && gravidade > 0.28,
     muscular: garra && r.muscular ? +Math.min(0.8, gravidade * r.muscular * 2).toFixed(4) : 0,
   };
   s.ferimentos.push(fer);

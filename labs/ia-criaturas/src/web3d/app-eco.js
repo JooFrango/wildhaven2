@@ -8,12 +8,14 @@ import { criarExperimento, criarFichaExperimental } from '../eco/oficina.js';
 import { diagnosticarAnimacoes } from '../eco/diagnostico-animacoes.js';
 import { criarOficina } from './oficina-ui.js';
 import { criarMundoEco, passoEco, hashMundo, retrato } from '../eco/mundo.js';
+import { gerarPopulacoes } from '../eco/populacao.js';
 import { altura } from '../eco/terreno.js';
 import { fatorMobilidade } from '../eco/saude.js';
 import { Animal3D } from './animador.js';
 import { Camadas, criarTerreno3D, TapeteDeSombra } from './cena.js';
 import { EfeitosDeAreia, InspecaoSubsolo, reagirAreia } from './areia3d.js';
 import { espessuraAreia, volumeAreia } from '../eco/areia.js';
+import { CenaV7, fichaV7, instalarControlesV7, painelMundoV7 } from './v7-3d.js';
 
 const $ = (id) => document.getElementById(id);
 const aviso = (txt, erro = false) => { $('aviso').textContent = txt; $('aviso').className = erro ? 'erro' : ''; };
@@ -50,9 +52,10 @@ addEventListener('resize', redimensionar); redimensionar();
 const carregarModelos = (especies) => carregarModelosGlb(THREE, especies, aviso, perfis);
 
 // ---------- Estado ----------
-const est = { mundo: null, animais: new Map(), terreno3d: null, rodando: false, vel: 1, acum: 0, ultimo: performance.now(), sel: null, eventosVistos: 0 };
+const est = { mundo: null, animais: new Map(), terreno3d: null, rodando: false, vel: 1, acum: 0, ultimo: performance.now(), sel: null, eventosVistos: 0, populacao: null };
 // Efeitos de areia e marcadores de diagnóstico: criados uma vez e reciclados (nada alocado por quadro).
 const efeitosAreia = new EfeitosDeAreia(THREE);
+const cenaV7 = new CenaV7(THREE, cena, carregarModelosGlb, gltfs);
 cena.add(efeitosAreia.malha);
 const inspecao = new InspecaoSubsolo(THREE);
 cena.add(inspecao.grupo);
@@ -105,7 +108,14 @@ async function reiniciar() {
   const experimento = oficina.getSelecao().length
     ? criarExperimento(cfg, original, oficina.getSelecao(), oficina.getCatalogo())
     : { config: cfg, cenario: original };
-  const cen = experimento.cenario;
+  let cen = experimento.cenario;
+  // ?populacao=N monta o nível de população do benchmark com a MESMA mistura e a mesma distribuição do
+  // scripts/bench-populacao.mjs (src/eco/populacao.js), para o teste do navegador medir o mesmo mundo.
+  const nPop = parseInt(q.get('populacao') ?? est.populacao ?? '', 10);
+  if (nPop > 0) {
+    const base = criarMundoEco(experimento.config, { ...cen, populacoes: [] }, parseInt($('semente').value, 10) || 0);
+    cen = { ...cen, populacoes: gerarPopulacoes(experimento.config, base.terreno, nPop, { semente: parseInt($('semente').value, 10) || 0, modo: q.get('modo') ?? 'ecologico' }) };
+  }
   const especies = [...new Set(cen.populacoes.map((p) => p.especie))].map((id) => experimento.config.especies[id]);
   for (const e of especies) if (e.balanceamento?.origem === 'oficina-laboratorio' && perfis[e.id]) perfis[e.id].frente = e.modelo.frente;
   try { await carregarModelos(especies); } catch (e) { aviso(e.message, true); throw e; }
@@ -143,6 +153,7 @@ async function reiniciar() {
   if (est.hexes && !sol.target.parent) cena.add(sol.target);
   if (!est.cameraPosta) { camera.position.set(0, Math.max(W, D) * 0.55, D * 0.75); orbit.target.set(0, 0, 0); est.cameraPosta = true; }
   for (const a of est.mundo.vivos) adicionarAnimal(a);
+  await cenaV7.reiniciar(est.mundo, alturaEm);
   // Peça sob o primeiro animal antes do primeiro quadro; as vizinhas entram por proximidade no laço.
   if (est.hexes) {
     const a = est.mundo.vivos[0];
@@ -165,6 +176,18 @@ function adicionarAnimal(a) {
 // Nível de detalhe: IK das patas só perto da câmera (longe, o deslize do pé não é visível e o custo é alto).
 const IK_DIST = 45;
 const lodIK = (v) => { v.ikLigado = est.ik && v.raiz.position.distanceToSquared(camera.position) < IK_DIST * IK_DIST && (est.ikForcado ?? true); };
+// Visibilidade por quadro: quem está fora do tronco de visão recebe só posição e rumo (quadroSimples).
+// A esfera usa o comprimento do corpo, para um animal longo na borda da tela não sumir.
+const _frustum = new THREE.Frustum(), _mvp = new THREE.Matrix4(), _esfera = new THREE.Sphere();
+function atualizarFrustum() { camera.updateMatrixWorld(); _mvp.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse); _frustum.setFromProjectionMatrix(_mvp); }
+function animarAnimal(v, a, m, dt, posAlvoFn) {
+  lodIK(v);
+  _esfera.center.copy(v.raiz.position);
+  _esfera.radius = Math.max(2, a.especie.corpo.comprimentoM * (a.escala ?? 1));
+  if (est.lodAnimacao !== false && !_frustum.intersectsSphere(_esfera)) { v.quadroSimples(est.alfaQuadro ?? 1, dt, a, m.terreno, alturaEm); return false; }
+  v.quadro(est.alfaQuadro ?? 1, dt, a, m.terreno, alturaEm, posAlvoFn);
+  return true;
+}
 const posAlvo = (id) => { const o = est.mundo.porId.get(id) ?? est.mundo.mortos.get(id), v = est.animais.get(id); return o && v ? v.raiz.position.clone().add(new THREE.Vector3(0, o.especie.corpo.alturaM * o.escala * 0.6, 0)) : null; };
 const alturaEm = (x, y) => { const t = est.mundo.terreno; return altura(t, Math.min(t.largura - 0.01, Math.max(0, x)), Math.min(t.profundidade - 0.01, Math.max(0, y))); };
 
@@ -216,6 +239,7 @@ function atualizarPaineis() {
   const conflitos = m.metricas.eventos.conflito_inicio ?? 0;
   const hx = est.hexes ? `<br>peças carregadas: ${est.hexes.carregadas.join(', ') || 'nenhuma'}${est.hexes.pendentes.length ? ` · faltam ${est.hexes.pendentes.join(', ')}` : ''}` : '';
   $('pop').innerHTML = `${Object.entries(rt.populacao).map(([k, v]) => `${escaparHtml(m.config.especies[k]?.nome ?? k)} ${v}`).join(' · ')}<br>mortes: ${mortes} · disputas: ${conflitos} · fugas na disputa: ${m.metricas.escapesDuranteDisputa}<br>carcaças ${rt.carcacas} · grupos ${rt.grupos} (média ${rt.tamanhoMedioGrupo}) · fome média ${rt.fomeMedia} · sede média ${rt.sedeMedia}${hx}`;
+  $('pop').insertAdjacentHTML('beforeend', painelMundoV7(m, cenaV7));
   const a = est.sel && (m.porId.get(est.sel) ?? m.mortos.get(est.sel));
   if (!a) return;
   const s = a.saude, v = est.animais.get(a.id);
@@ -237,6 +261,7 @@ function atualizarPaineis() {
       <dt>Alvo</dt><dd>${a.alvo ? `${a.alvo.tipo} ${a.alvo.id ?? ''}` : '—'}</dd>
       ${est.hexes ? `<dt>Peça</dt><dd>${est.hexes.pecaEm(a.x, a.y)?.id ?? '—'} · divisa ${est.hexes.distanciaDaDivisa(a.x, a.y)?.toFixed(1) ?? '—'} m</dd>` : ''}
       ${a.subsolo ? fichaSubsolo(a, m) : ''}
+      ${fichaV7(a, m)}
       <dt>Velocidade</dt><dd>${a.velocidade.toFixed(2)} m/s · mobilidade ${(fatorMobilidade(a) * 100).toFixed(0)}%</dd>
       <dt>Clipe</dt><dd>${v?.nomeAtual ?? '—'} ×${v?.atual?.timeScale?.toFixed(2) ?? '1'} · desliza ${v?.deslize?.toFixed(2) ?? 0} m/s</dd>
       <dt>Percebe</dt><dd>${a.contatos.filter((k) => k.via !== 'som').map((k) => `${k.id} (${k.via})`).join(', ') || 'nada'}</dd>
@@ -317,7 +342,8 @@ function quadro(agora) {
   if (m) {
     const alfa = est.rodando ? Math.min(1, est.acum / m.dt) : 1;
     const dtAnim = est.rodando ? dtReal * est.vel : 0;
-    for (const a of m.animais) { const v = est.animais.get(a.id); if (v) { lodIK(v); v.quadro(alfa, dtAnim, a, m.terreno, alturaEm, posAlvo); if (a.subsolo) reagirAreia(efeitosAreia, v, a, dtAnim, alturaEm); } }
+    atualizarFrustum(); est.alfaQuadro = alfa; est.animados = 0; for (const a of m.animais) { const v = est.animais.get(a.id); if (v) { if (animarAnimal(v, a, m, dtAnim, posAlvo)) est.animados++; if (a.subsolo) reagirAreia(efeitosAreia, v, a, dtAnim, alturaEm); } }
+    cenaV7.quadro(m, est, dtReal, camera, alturaEm);
     efeitosAreia.atualizar(dtReal, camera);
     inspecao.grupo.visible = !!$('ver-subsolo')?.checked;
     transparenciaDiagnostica(inspecao.grupo.visible);
@@ -342,6 +368,8 @@ function quadro(agora) {
   orbit.update();
   renderer.render(cena, camera);
 }
+
+instalarControlesV7([$('ficha'), $('pop')], est);
 
 // API para testes no navegador e automação.
 window.ecoDemo = {
@@ -396,7 +424,8 @@ window.ecoDemo = {
       est.acum += dtq;
       while (est.acum >= m.dt) { passoSim(); est.acum -= m.dt; }
       const alfa = Math.min(1, est.acum / m.dt);
-      for (const a of m.animais) { const v = est.animais.get(a.id); if (v) { lodIK(v); v.quadro(alfa, dtq, a, m.terreno, alturaEm, posAlvo); if (a.subsolo) reagirAreia(efeitosAreia, v, a, dtq, alturaEm); } }
+      atualizarFrustum(); est.alfaQuadro = alfa; est.animados = 0; for (const a of m.animais) { const v = est.animais.get(a.id); if (v) { if (animarAnimal(v, a, m, dtq, posAlvo)) est.animados++; if (a.subsolo) reagirAreia(efeitosAreia, v, a, dtq, alturaEm); } }
+      cenaV7.quadro(m, est, dtq, camera, alturaEm);
       efeitosAreia.atualizar(dtq, camera);
       // Mesmo diagnóstico do laço normal: a captura mostra o que a tela mostra.
       inspecao.grupo.visible = !!$('ver-subsolo')?.checked;
@@ -429,23 +458,43 @@ window.ecoDemo = {
   medirDesempenho(quadros = 300, fps = 60) {
     const w0 = renderer.domElement.width, h0 = renderer.domElement.height, pr = renderer.getPixelRatio();
     renderer.setPixelRatio(1); renderer.setSize(1280, 720, false); camera.aspect = 1280 / 720; camera.updateProjectionMatrix();
-    const m = est.mundo, dtq = 1 / fps, partes = { sim: 0, anim: 0, render: 0 };
+    const m = est.mundo, dtq = 1 / fps, partes = { sim: 0, anim: 0, render: 0, lista: [] };
     for (let q = 0; q < quadros; q++) {
-      let t0 = performance.now();
+      const tq0 = performance.now();
+      let t0 = tq0;
       est.acum += dtq;
       while (est.acum >= m.dt) { passoSim(); est.acum -= m.dt; }
       let t1 = performance.now(); partes.sim += t1 - t0;
       const alfa = Math.min(1, est.acum / m.dt);
-      for (const a of m.animais) { const v = est.animais.get(a.id); if (v) { lodIK(v); v.quadro(alfa, dtq, a, m.terreno, alturaEm, posAlvo); } }
+      atualizarFrustum(); est.alfaQuadro = alfa; est.animados = 0; for (const a of m.animais) { const v = est.animais.get(a.id); if (v) { if (animarAnimal(v, a, m, dtq, posAlvo)) est.animados++; } }
       t0 = performance.now(); partes.anim += t0 - t1;
       renderer.render(cena, camera); renderer.getContext().finish?.();
       partes.render += performance.now() - t0;
+      partes.lista.push(performance.now() - tq0);
     }
     renderer.setPixelRatio(pr); renderer.setSize(w0 / pr, h0 / pr, false); redimensionar();
     const r = (v) => +(v / quadros).toFixed(2);
-    return { animais: m.vivos.length, quadros, msSim: r(partes.sim), msAnimacaoIK: r(partes.anim), msRender: r(partes.render), msTotal: r(partes.sim + partes.anim + partes.render), fpsEstimado: +(1000 / ((partes.sim + partes.anim + partes.render) / quadros)).toFixed(1) };
+    // Custo do último quadro medido, direto do renderizador: é o que diz se o gargalo é desenho ou IA.
+    const info = renderer.info;
+    let malhas = 0, comSkin = 0;
+    cena.traverse((o) => { if (o.isMesh || o.isSkinnedMesh) { malhas++; if (o.isSkinnedMesh) comSkin++; } });
+    const tempos = [...partes.lista].sort((a, b) => a - b);
+    const q = (p) => +tempos[Math.min(tempos.length - 1, Math.floor(tempos.length * p))].toFixed(2);
+    return {
+      animais: m.vivos.length, visiveis: est.animais.size, animadosNoQuadro: est.animados ?? null, quadros,
+      msSim: r(partes.sim), msAnimacaoIK: r(partes.anim), msRender: r(partes.render), msTotal: r(partes.sim + partes.anim + partes.render),
+      fpsEstimado: +(1000 / ((partes.sim + partes.anim + partes.render) / quadros)).toFixed(1),
+      msQuadro: { p50: q(0.5), p95: q(0.95), p99: q(0.99), pior: q(1) },
+      // 1% low: a média dos 1% piores quadros, que é o que se sente como travada.
+      fps1pctLow: +(1000 / (tempos.slice(Math.floor(tempos.length * 0.99)).reduce((s, v) => s + v, 0) / Math.max(1, tempos.length - Math.floor(tempos.length * 0.99)))).toFixed(1),
+      drawCalls: info.render.calls, triangulos: info.render.triangles, geometrias: info.memory.geometries, texturas: info.memory.textures,
+      malhas, malhasComSkin: comSkin,
+      memoriaMB: performance.memory ? +(performance.memory.usedJSHeapSize / 1048576).toFixed(1) : null,
+    };
   },
   selecionar(id) { est.sel = id; atualizarPaineis(); },
+  // Liga/desliga o LOD de animação (esqueleto parado fora do campo de visão), para medir antes e depois.
+  lodAnimacao(v) { est.lodAnimacao = v !== false; return est.lodAnimacao; },
   // Auditoria da divisa: dispara raios de cima sobre a malha REAL das peças, de um lado ao outro da emenda,
   // e compara com a altura que a IA consulta. Acusa fresta (raio sem acerto), salto de altura entre peças
   // e desencontro entre o chão visível e a grade de navegação.

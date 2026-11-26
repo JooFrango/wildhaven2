@@ -1,0 +1,60 @@
+name: Wildhaven Wyvern Montanha v01 - real UV GLB blockouts
+on:
+  push:
+    branches: [wildhaven-wyvern-montanha-blockout-uv-v01]
+    paths:
+      - 'assets/models/creatures/wyvern-montanha/source/**'
+      - '.github/workflows/wildhaven-wyvern-montanha-blockout-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish-four-wyverns:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout original revision branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Dependencies for GLB export, UV atlas and authentic GLTF rendering
+        run: |
+          python -m pip install --no-cache-dir numpy==2.3.5 pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libegl1 >/dev/null
+      - name: Export male and female, wild and saddled original GLBs
+        run: python assets/models/creatures/wyvern-montanha/source/build_wyvern_v01.py
+      - name: Render three real viewpoints per imported GLB in isolated processes
+        run: |
+          set -euo pipefail
+          R=assets/models/creatures/wyvern-montanha/source/render_wyvern_v01.py
+          for SEX in macho femea; do
+            for TYPE in selvagem montaria; do
+              for VIEW in perfil frente tres_quartos; do
+                xvfb-run -a python "$R" --render "$SEX" "$TYPE" "$VIEW"
+              done
+              python "$R" --board "$SEX" "$TYPE"
+            done
+          done
+      - name: Validate exported GLBs, UV, texture, hashes and all screenshots
+        run: python assets/models/creatures/wyvern-montanha/source/validate_wyvern_v01.py
+      - name: Commit binary models, textured maps, manifest and real screenshots
+        run: |
+          set -euo pipefail
+          BASE=assets/models/creatures/wyvern-montanha
+          test "$(find "$BASE" -maxdepth 1 -name '*_blockout.glb' | wc -l)" -eq 4
+          test "$(find "$BASE/previews" -name '*_REAL_*.png' | wc -l)" -eq 12
+          test "$(find "$BASE/previews" -name '*_PRANCHA_GLBS_REAIS.png' | wc -l)" -eq 4
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$BASE/"*.glb "$BASE/"*_manifest.json "$BASE/textures/" "$BASE/previews/"
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(wyvern): publish four real UV blockout GLBs and twelve true renders [skip ci]"
+            git fetch origin wildhaven-wyvern-montanha-blockout-uv-v01
+            git rebase origin/wildhaven-wyvern-montanha-blockout-uv-v01
+            git push origin HEAD:wildhaven-wyvern-montanha-blockout-uv-v01
+          fi

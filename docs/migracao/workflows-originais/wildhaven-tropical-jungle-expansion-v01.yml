@@ -1,0 +1,71 @@
+name: 'Wildhaven — transição tropical + selva 58 hex v01'
+on:
+  push:
+    branches: [wildhaven-tropical-jungle-expansion-v01]
+    paths:
+      - 'world/tropical-jungle-expansion/**'
+      - '.github/workflows/wildhaven-tropical-jungle-expansion-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-tropical-jungle-expansion-v01-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-tropical-world:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar geometria e render
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Gerar quatro transições e cinco selvas
+        run: |
+          python world/tropical-jungle-expansion/tools/build_tropical_jungle.py \
+            --repo-root . \
+            --source-dir world/savanna-south-expansion-v02 \
+            --output-dir world/tropical-jungle-expansion
+      - name: Validar 58 hexágonos e 137 conexões
+        run: |
+          python world/tropical-jungle-expansion/tests/validate_tropical_jungle.py \
+            --repo-root . \
+            --source-dir world/savanna-south-expansion-v02 \
+            --output-dir world/tropical-jungle-expansion
+      - name: Renderizar modelos reais
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/tropical-jungle-expansion/tools/render_tropical_jungle.py \
+            --repo-root . \
+            --source-dir world/savanna-south-expansion-v02 \
+            --output-dir world/tropical-jungle-expansion
+      - name: Artefato de auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-58-Hex-Tropical-Jungle-v01
+          retention-days: 30
+          path: |
+            world/tropical-jungle-expansion/models/*.glb
+            world/tropical-jungle-expansion/manifest.json
+            world/tropical-jungle-expansion/model_report.json
+            world/tropical-jungle-expansion/preview/*.png
+      - name: Publicar somente na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/tropical-jungle-expansion/models \
+            world/tropical-jungle-expansion/manifest.json \
+            world/tropical-jungle-expansion/model_report.json \
+            world/tropical-jungle-expansion/preview
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 58 real hexes with tropical transition and jungle [skip ci]'
+            git push origin HEAD:wildhaven-tropical-jungle-expansion-v01
+          fi

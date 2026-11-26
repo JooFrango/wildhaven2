@@ -1,0 +1,37 @@
+{
+  "cycles": 21,
+  "observedAnimationFrames": 253,
+  "durationMs": 15291.099999952316,
+  "meanFPS": 59.90412723759942,
+  "p95FrameMs": 16.80000000000109,
+  "maxPool": 3,
+  "stationaryFrames": 43,
+  "impacts": 86,
+  "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.0.0 Safari/537.36 Edg/158.0.0.0",
+  "limbs": {
+    "hunterHandSweepPx": [
+      18,
+      18
+    ],
+    "varriscoRangePx": {
+      "footL": 20,
+      "footR": 20,
+      "handL": 8,
+      "handR": 8,
+      "tailD": 8
+    },
+    "contactFrames": {
+      "footL": 0,
+      "footR": 6
+    }
+  },
+  "checks": [
+    "pausa da carga com animação ativa",
+    "reiniciar",
+    "velocidades 2× e 4×",
+    "100% no simulador",
+    "progresso externo e etapa indeterminada",
+    "375 px sem overflow"
+  ],
+  "errors": []
+}

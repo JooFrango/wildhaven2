@@ -1,0 +1,93 @@
+name: Wildhaven - four large savanna fauna 3D animated LODs v01
+on:
+  push:
+    branches: [wildhaven-savanna-megafauna-4-animated-v01]
+    paths:
+      - 'assets/models/creatures/savanna-megafauna-v01/source/**'
+      - 'creatures/species/torvardo.json'
+      - 'creatures/species/raizauro.json'
+      - 'creatures/species/mastelio.json'
+      - 'creatures/species/garruva.json'
+      - '.github/workflows/wildhaven-savanna-megafauna-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  real-animated-models:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned mesh sculpting, GLB and offscreen screenshot dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check \
+            numpy==2.3.5 scipy==1.16.2 scikit-image==0.26.0 \
+            trimesh==4.11.1 vtk==9.6.2 pillow==11.3.0
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Generate 4 continuous skinned bodies, 12 animated GLBs and real VTK screenshots
+        run: |
+          xvfb-run -a python3 assets/models/creatures/savanna-megafauna-v01/source/build_all.py
+      - name: Validate real GLB triangle indices, 49 clips, weights, joints, SHA256 and previews
+        run: |
+          python3 assets/models/creatures/savanna-megafauna-v01/source/validate.py
+      - name: Compose visual sheet from true model screenshots
+        run: |
+          python3 assets/models/creatures/savanna-megafauna-v01/source/make_sheet.py
+      - name: Copy real files to canonical per-creature directory
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          root=Path('assets/models/creatures')
+          work=root/'savanna-megafauna-v01'
+          for sid in ('torvardo','raizauro','mastelio','garruva'):
+              destination=root/sid
+              destination.mkdir(parents=True,exist_ok=True)
+              for f in (work/'models'/sid).glob('*.glb'):
+                  shutil.copy2(f,destination/f.name)
+              shutil.copy2(work/'models'/sid/f'{sid}-manifest-v01.json',destination)
+              for f in (work/'previews').glob(f'{sid}-real-3d-*-v01.png'):
+                  shutil.copy2(f,destination/f.name)
+          PY
+      - name: Preserve generated GLBs, 3 LODs per creature, screenshots and full validation
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-four-large-savanna-creatures-animated-LOD-v01
+          path: |
+            assets/models/creatures/torvardo/*-LOD*.glb
+            assets/models/creatures/torvardo/*-v01.png
+            assets/models/creatures/torvardo/*manifest-v01.json
+            assets/models/creatures/raizauro/*-LOD*.glb
+            assets/models/creatures/raizauro/*-v01.png
+            assets/models/creatures/raizauro/*manifest-v01.json
+            assets/models/creatures/mastelio/*-LOD*.glb
+            assets/models/creatures/mastelio/*-v01.png
+            assets/models/creatures/mastelio/*manifest-v01.json
+            assets/models/creatures/garruva/*-LOD*.glb
+            assets/models/creatures/garruva/*-v01.png
+            assets/models/creatures/garruva/*manifest-v01.json
+            assets/models/creatures/savanna-megafauna-v01/previews/Wildhaven_Megafauna_4_Modelos_Reais_v01.png
+            assets/models/creatures/savanna-megafauna-v01/validation-report.json
+          if-no-files-found: error
+      - name: Commit real versioned GLBs and images, preserving all previous assets
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/torvardo/ \
+                  assets/models/creatures/raizauro/ \
+                  assets/models/creatures/mastelio/ \
+                  assets/models/creatures/garruva/ \
+                  assets/models/creatures/savanna-megafauna-v01/previews/Wildhaven_Megafauna_4_Modelos_Reais_v01.png \
+                  assets/models/creatures/savanna-megafauna-v01/validation-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(megafauna): four real 3D skinned savanna creatures with 12 animated LOD GLBs [skip ci]'
+            git fetch origin wildhaven-savanna-megafauna-4-animated-v01
+            git rebase origin/wildhaven-savanna-megafauna-4-animated-v01
+            git push origin HEAD:wildhaven-savanna-megafauna-4-animated-v01
+          fi

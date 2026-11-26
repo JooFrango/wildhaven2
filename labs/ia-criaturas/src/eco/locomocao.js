@@ -10,6 +10,10 @@ import { limitar, normalizarAngulo } from '../core/geometria.js';
 import { altura, buscarCaminho, celulaPassavelProxima, centro, folga, indice, perfilMobilidade, segmentoLivre } from './terreno.js';
 import { fatorMobilidade } from './saude.js';
 import { capsulaContra } from './combate.js';
+import { vizinhos } from './grade.js';
+
+// Reaproveitado entre chamadas de `separacao`: evita alocar um array por animal por passo.
+const perto = [];
 import { aplicarAltura, naSuperficie, separadosNaVertical } from './subsolo.js';
 
 export const raioCorpo = (a) => a.especie.corpo.raio * a.escala;
@@ -87,7 +91,12 @@ function separacao(a, mundo, raio) {
   let sx = 0, sy = 0;
   const lista = mundo.listaN1 ?? mundo.vivos;
   const alvoId = a.alvo?.tipo === 'criatura' && ['perseguindo', 'atacando', 'combatendo'].includes(a.estado) ? a.alvo.id : null;
-  for (const b of lista) {
+  // Raio de consulta: o maior `lim` possível deste animal contra qualquer vizinho (ver o cálculo abaixo).
+  const g = mundo.gradeN1?.lista === lista ? mundo.gradeN1 : null;
+  const cand = g ? vizinhos(g, a.x, a.y, raio + (mundo.maxRaioCorpo ?? 0) + 0.6 + 0.15 * a.velocidade + (mundo.margemPasso ?? 0), perto) : null;
+  const n = cand ? cand.length : lista.length;
+  for (let c = 0; c < n; c++) {
+    const b = cand ? lista[cand[c]] : lista[c];
     if (b === a || !b.vivo || b.id === alvoId) continue;
     const dx = a.x - b.x, dy = a.y - b.y;
     const rb = raioCorpo(b);
@@ -103,6 +112,7 @@ function separacao(a, mundo, raio) {
 }
 
 export function mover(a, intencao, mundo, dt) {
+  if(intencao.orientacaoCombate&&a.hunter)return moverHumanoCombate(a,intencao,mundo,dt);
   const m = a.especie.movimento;
   const t = mundo.terreno;
   const perfil = perfilMobilidade(t, m);
@@ -189,13 +199,19 @@ export function mover(a, intencao, mundo, dt) {
     // Giro: taxa máxima cai com a velocidade (animal em sprint faz curva aberta).
     const fracV = limitar(a.velocidade / m.corrida, 0, 1);
     const antes = a.direcao;
-    girar(a, desejado, m.giroGrausSeg * (1 - 0.45 * fracV), dt);
+    // Corpo longo: a curva tem raio mínimo, então quem está devagar gira pouco e parado não gira no lugar —
+    // sem isso o rastro ganha uma quina que o corpo de 15 m não consegue acompanhar.
+    const rMin = a.serpente?.enrolando ? null : a.especie.serpente?.raioCurvaturaMinM;
+    const taxa = rMin ? Math.min(m.giroGrausSeg, (a.velocidade / rMin) * (180 / Math.PI)) : m.giroGrausSeg * (1 - 0.45 * fracV);
+    girar(a, desejado, taxa, dt);
     a.velAngular = normalizarAngulo(a.direcao - antes) / dt;
     erro = Math.abs(normalizarAngulo(desejado - a.direcao));
   } else a.velAngular = 0;
 
   if (alvoVel > 0) {
-    if (erro > 1.75) alvoVel = a.velocidade < m.andar * 1.2 ? 0 : alvoVel * (m.fatorCurvaFechada ?? 0.6); // vira no lugar quando lento
+    // Corpo longo: nunca para para virar — parada ela não gira (o giro é v/raio), e ficaria travada de costas
+    // para o destino. Faz a meia-volta andando devagar, como uma serpente de verdade.
+    if (erro > 1.75) alvoVel = a.especie.serpente ? Math.max(alvoVel * (m.fatorCurvaFechada ?? 0.6), m.andar * 0.6) : (a.velocidade < m.andar * 1.2 ? 0 : alvoVel * (m.fatorCurvaFechada ?? 0.6));
     else if (erro > Math.PI / 2) alvoVel *= m.fatorCurvaFechada ?? 0.6;
     else alvoVel *= Math.max(0.35, cos(erro));
     alvoVel = Math.min(alvoVel, freio);
@@ -271,10 +287,18 @@ function gastarEnergia(a, dt) {
 // ninguém para célula intransponível. Ordem determinística (lista do mundo).
 export function resolverSobreposicoes(mundo, lista) {
   const t = mundo.terreno;
+  const g = mundo.gradeN1?.lista === lista ? mundo.gradeN1 : null;
+  const perto2 = [];
   for (let i = 0; i < lista.length; i++) {
     const a = lista[i];
     if (!a.vivo) continue;
-    for (let j = i + 1; j < lista.length; j++) {
+    // Raio: a rejeição barata abaixo usa (compA + compB)/2 + 1; o maior corpo vivo dá o limite superior.
+    const alcanceBusca = (a.especie.corpo.comprimentoM * a.escala + (mundo.maxComprimentoCorpo ?? 0)) / 2 + 1 + (mundo.margemPasso ?? 0);
+    const cand = g ? vizinhos(g, a.x, a.y, alcanceBusca, perto2) : null;
+    const nCand = cand ? cand.length : lista.length;
+    for (let c = 0; c < nCand; c++) {
+      const j = cand ? cand[c] : c;
+      if (j <= i) continue;
       const b = lista[j];
       if (!b.vivo || a.agarrando === b.id || b.agarrando === a.id) continue;
       // Meios diferentes na vertical: não há contato nem empurrão (areia sólida entre os corpos).
@@ -284,7 +308,8 @@ export function resolverSobreposicoes(mundo, lista) {
       if ((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y) > lim0 * lim0) continue;
       // Corpos como cápsulas ao longo do rumo (comprimento real): um animal longo ocupa o espaço da cabeça à cauda.
       const ka = capsulaContra(a, b), kb = capsulaContra(b, a);
-      const lim = (ka.r + kb.r) * 0.9;
+      const engaged=mundo.opcoes.tatica&&(a.golpe||b.golpe||mundo.t-(a.tatica?.lastSeen??-99)<8||mundo.t-(b.tatica?.lastSeen??-99)<8);
+      const lim = (ka.r + kb.r) * (engaged?1.015:0.9);
       const alcance = ka.meio + kb.meio + lim;
       if ((ka.cx - kb.cx) * (ka.cx - kb.cx) + (ka.cy - kb.cy) * (ka.cy - kb.cy) >= alcance * alcance) continue;
       const pp = pontosMaisProximos(ka, kb);
@@ -296,12 +321,12 @@ export function resolverSobreposicoes(mundo, lista) {
       const pen = lim - d;
       const wa = b.massa / (a.massa + b.massa), wb = 1 - wa;
       const pa = perfilMobilidade(t, a.especie.movimento).passavel, pb = perfilMobilidade(t, b.especie.movimento).passavel;
-      const ok = (p, x, y) => { const k = indice(t, x, y); return k >= 0 && p[k] === 1; };
+      const ok = (p, x, y, actor) => { const k = indice(t, x, y); return k >= 0 && p[k] === 1 && (!mundo.opcoes.tatica||!mundo.sondagemTatica||mundo.sondagemTatica(actor,{x,y})); };
       const ax = a.x - ux * pen * wa, ay = a.y - uy * pen * wa, bx = b.x + ux * pen * wb, by = b.y + uy * pen * wb;
-      const okA = ok(pa, ax, ay), okB = ok(pb, bx, by);
+      const okA = ok(pa, ax, ay,a), okB = ok(pb, bx, by,b);
       if (okA && okB) { a.x = ax; a.y = ay; b.x = bx; b.y = by; }
-      else if (okA && ok(pa, a.x - ux * pen, a.y - uy * pen)) { a.x -= ux * pen; a.y -= uy * pen; }
-      else if (okB && ok(pb, b.x + ux * pen, b.y + uy * pen)) { b.x += ux * pen; b.y += uy * pen; }
+      else if (okA && ok(pa, a.x - ux * pen, a.y - uy * pen,a)) { a.x -= ux * pen; a.y -= uy * pen; }
+      else if (okB && ok(pb, b.x + ux * pen, b.y + uy * pen,b)) { b.x += ux * pen; b.y += uy * pen; }
       else continue;
       if (naSuperficie(a)) a.z = altura(t, a.x, a.y); else aplicarAltura(a, mundo);
       if (naSuperficie(b)) b.z = altura(t, b.x, b.y); else aplicarAltura(b, mundo);
@@ -354,4 +379,24 @@ function girar(a, ang, graus, dt) {
   const max = ((graus * Math.PI) / 180) * dt * (a.juvenil ? 1.2 : 1);
   const d = normalizarAngulo(ang - a.direcao);
   a.direcao = normalizarAngulo(a.direcao + limitar(d, -max, max));
+}
+
+// Human combat steps separate facing from travel. Animals continue through their anatomical turning path.
+function moverHumanoCombate(a,i,mundo,dt){
+ const m=a.especie.movimento,t=mundo.terreno,profile=perfilMobilidade(t,m),p=i.destino;
+ if(a.saude.caidoAte>mundo.t||a.agarradoPor){a.velocidade=0;a.vxCombate=0;a.vyCombate=0;aplicarImpulso(a,mundo,dt,profile);gastarEnergia(a,dt);return;}
+ const facing=i.olharPara?atan2(i.olharPara.y-a.y,i.olharPara.x-a.x):a.direcao,before=a.direcao;
+ girar(a,facing,m.giroGrausSeg,dt);a.velAngular=normalizarAngulo(a.direcao-before)/dt;
+ const dx=p?p.x-a.x:0,dy=p?p.y-a.y:0,d=Math.sqrt(dx*dx+dy*dy),n=d||1;
+ let speed=p?Math.min(velocidadeMaxima(a,i.ritmo),i.velMax??m.andar,Math.sqrt(2*m.aceleracao*Math.max(0,d-.10))):0;
+ const alignment=Math.abs(normalizarAngulo(atan2(dy,dx)-a.direcao));
+ if(alignment>.8)speed=Math.min(speed,m.andar*(alignment>2.2?.42:.55));
+ if(a.saude.desequilibradoAte>mundo.t)speed*=.35;
+ let vx=a.vxCombate??0,vy=a.vyCombate??0,tx=dx/n*speed,ty=dy/n*speed;
+ const dvx=tx-vx,dvy=ty-vy,dv=Math.sqrt(dvx*dvx+dvy*dvy),change=m.aceleracao*dt*fatorMobilidade(a),fraction=dv>change?change/dv:1;
+ vx+=dvx*fraction;vy+=dvy*fraction;
+ const target={x:a.x+vx*dt,y:a.y+vy*dt};
+ if(segmentoLivre(t,profile,a,target,raioCorpo(a),.02)&&(!mundo.sondagemTatica||mundo.sondagemTatica(a,target))){a.x=target.x;a.y=target.y;}else{vx=0;vy=0;a.colisoes++;mundo.metricas.contatosObstaculo++;}
+ a.vxCombate=vx;a.vyCombate=vy;a.velocidade=Math.sqrt(vx*vx+vy*vy);if(a.velocidade>.01)a.direcaoMovimento=atan2(vy,vx);
+ aplicarImpulso(a,mundo,dt,profile);a.z=altura(t,a.x,a.y);gastarEnergia(a,dt);
 }

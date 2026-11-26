@@ -1,0 +1,16 @@
+{
+  "name": "wildhaven-playable-v02",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Wildhaven — Playable Build V02: simulador idle de Hunters autônomos (ordens, esquadrão, câmera estratégica).",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node ../playable-v01/tools/servir.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:navegador": "node tools/navegador.mjs",
+    "derivar": "node tools/derivar-grafo.mjs"
+  },
+  "dependencies": { "three": "0.170.0" },
+  "devDependencies": { "playwright-core": "1.56.1" }
+}

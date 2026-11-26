@@ -1,0 +1,55 @@
+name: Wildhaven - Mastelio faceted anatomy pilot v03
+on:
+  push:
+    branches: [wildhaven-mastelio-faceted-blockout-v03]
+    paths:
+      - 'assets/models/creatures/mastelio-v03-pilot/source/**'
+      - '.github/workflows/wildhaven-mastelio-faceted-v03.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  genuine-blockout:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned real mesh and offline render dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check numpy==2.3.5 trimesh==4.11.1 vtk==9.6.2 pillow==11.3.0
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Generate the authentic angular Mastelio anatomy glTF 2.0
+        run: python3 assets/models/creatures/mastelio-v03-pilot/source/build.py
+      - name: Render three actual GLB screenshots in VTK
+        run: xvfb-run -a python3 assets/models/creatures/mastelio-v03-pilot/source/render.py
+      - name: Validate exported flat shaded GLB, 3570 triangles and real PNGs
+        run: python3 assets/models/creatures/mastelio-v03-pilot/source/validate.py
+      - name: Compare real v02 and v03 exported model screenshots
+        run: python3 assets/models/creatures/mastelio-v03-pilot/source/compare.py
+      - name: Publish blockout GLB and honest renders as GitHub artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-mastelio-v03-faceted-blockout-real-GLB-and-renders
+          path: |
+            assets/models/creatures/mastelio-v03-pilot/*.glb
+            assets/models/creatures/mastelio-v03-pilot/manifest.json
+            assets/models/creatures/mastelio-v03-pilot/previews/*.png
+          if-no-files-found: error
+      - name: Commit real GLB, manifest and PNG captures to review branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/mastelio-v03-pilot/*.glb \
+                  assets/models/creatures/mastelio-v03-pilot/manifest.json \
+                  assets/models/creatures/mastelio-v03-pilot/previews/
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(mastelio): publish actual v03 faceted blockout GLB and VTK captures [skip ci]'
+            git fetch origin wildhaven-mastelio-faceted-blockout-v03
+            git rebase origin/wildhaven-mastelio-faceted-blockout-v03
+            git push origin HEAD:wildhaven-mastelio-faceted-blockout-v03
+          fi

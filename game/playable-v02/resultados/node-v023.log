@@ -1,0 +1,81 @@
+{
+  golpesHunters: 21,
+  golpesVarrisco: 6,
+  varriscoHp: -3,
+  regioes: 3,
+  caio: 0,
+  maxDaraVila: 8.6,
+  situacoes: {
+    arvo: [ 'caçando', 'em perigo', 'em combate', 'aguardando' ],
+    brena: [ 'caçando', 'em perigo', 'em combate', 'aguardando' ],
+    caio: [ 'explorando' ],
+    dara: [ 'na vila' ]
+  }
+}
+save 0.06 MB regiões 2
+✔ grafo: 272 hexágonos; vizinhança igual às shared_edges da composição 195 e aos contacts do litoral (22.7546ms)
+✔ quatro Hunters com tarefas independentes, sem controle manual: caçada, exploração e vila (37268.6423ms)
+✔ viagem simplificada só no trecho sem GLB, e volta ao terreno detalhado, sem saltos de posição (38428.2563ms)
+✔ salvar e restaurar: várias regiões, Hunter em viagem, Varrisco com IA de monstro; a simulação continua (13282.7605ms)
+cauteloso: [
+  '185 Patrulha interrompida: ameaça superior (varrisco a 45 m, risco 0.95 > tolerância 0.50, sozinho)',
+  '195 Missão retomada: ameaça fora de percepção há 10 s',
+  '235.5 Patrulha interrompida: ameaça superior (varrisco a 44 m, risco 0.95 > tolerância 0.50, sozinho)',
+  '245.5 Missão retomada: ameaça fora de percepção há 10 s'
+]
+agressivo: [
+  '0 Perfil alterado: Cauteloso → Agressivo',
+  '185 Enfrentando varrisco a 45 m: risco 0.95 ≤ tolerância 1.80 (perfil agressivo)',
+  '192 Defendendo-se: atacado por Varrisco'
+]
+{
+  arvo: [ '144 enfrentar', '170.55 concluida' ],
+  brena: [ '141.5 enfrentar', '146 defesa', '176.5 concluida' ],
+  caio: [],
+  dara: []
+}
+✔ perfis: três perfis, desvio sobre a personalidade individual, atributos físicos intactos (18.3821ms)
+✔ cauteloso × agressivo na mesma situação (semente 1): interrompe e retoma × enfrenta e combate (2957.2958ms)
+✔ reprodutível: mesma semente, mesmas decisões nos mesmos instantes (2138.7891ms)
+✔ 3. ferido: equilibrado recua e suspende a missão; agressivo segue; a missão retoma de onde parou (475.3573ms)
+✔ 7. mudar o perfil no meio da missão não perde tarefa, fila nem interrupção (864.5543ms)
+✔ 9. salvar e restaurar mantém perfis, regra ativa, interrupção, decisões e ordens (2870.0562ms)
+✔ 11. sem conflito de prioridades: regras desligáveis, defesa fixa, nenhuma oscilação abaixo de 2 s (32293.2974ms)
+brena: [
+  '223 nova região detalhada R2 (HV_01)',
+  '349 região detalhada recentrada (FX_20, ER_18, HV_01)',
+  '475 região detalhada recentrada (FX_20, HV_01)',
+  '601 região detalhada recentrada (FX_20, HV_01)',
+  '678.5 entrou em FX_20 (temperate forest)',
+  '726 região detalhada recentrada (FX_20, HV_01)',
+  '851 região detalhada recentrada (FX_20, HV_01)',
+  '976 região detalhada recentrada (FX_20, HV_01)',
+  '1101 região detalhada recentrada (FX_20, ER_21, HV_01)',
+  '1226 região detalhada recentrada (FX_20)',
+  '1345.6 ir até FX_20: concluída',
+  '1345.6 Missão concluída: ir até FX_20'
+]
+{
+  t: 3528.5,
+  regioes: 4,
+  reg: { arvo: 'R1', brena: 'R5', caio: 'R4', dara: 'viagem simplificada' },
+  situacao: {
+    arvo: 'na vila',
+    brena: 'aguardando',
+    caio: 'aguardando',
+    dara: 'viajando'
+  },
+  maxPasso: { brena: 0.16204741724073807, caio: 0.14873358976389744 }
+}
+✔ grade da região = grade da V01 nas mesmas coordenadas (mesmos GLBs, mesmas regras) (2649.7896ms)
+✔ Brena atravessa HV_01 → FX_20 andando: região recentrada, sempre detalhada, sem saltos (12852.4229ms)
+✔ quatro destinos: Arvo na vila, Brena floresta (FX_20), Caio montanha (ER_18), Dara deserto (X3, sem GLB validado) (34952.1218ms)
+✔ determinismo e save no meio da viagem: a cópia restaurada segue idêntica à original (7199.8045ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 90433.7352

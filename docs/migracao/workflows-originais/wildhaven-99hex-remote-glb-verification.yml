@@ -1,0 +1,36 @@
+name: Wildhaven - 99 Hex Auditoria Binarios Publicados v01
+
+on:
+  push:
+    branches: [wildhaven-cordilheira-dupla-mar-dunas-99hex-v01]
+    paths:
+      - .github/workflows/wildhaven-99hex-remote-glb-verification.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-remote-publication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Confirm all published 33 mountain/dune GLBs, collider and 99 tile paths
+        run: python world/dune-sea-second-ridge-v01/tests/verify_published_99hex_v01.py
+
+      - name: Store remote SHA256 evidence in this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add world/dune-sea-second-ridge-v01/audit/remote_sha256_verification_v01.json
+          git commit -m "audit(world): independently verify 34 published GLB binaries and 99 paths [skip ci]"
+          git push origin HEAD:wildhaven-cordilheira-dupla-mar-dunas-99hex-v01

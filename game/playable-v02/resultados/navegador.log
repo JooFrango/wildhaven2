@@ -1,0 +1,145 @@
+Wildhaven Playable V01: http://127.0.0.1:5212/game/playable-v01/  (raiz C:\Users\jfran\wildhaven-build-v01)
+{
+ "camera": {
+  "alvo": [
+   2,
+   44.5,
+   1360
+  ],
+  "pos": [
+   47,
+   99.5,
+   1405
+  ],
+  "polar": 0.858
+ },
+ "semControleManual": true,
+ "ordens": [
+  [
+   "arvo",
+   "cacar",
+   "caçando"
+  ],
+  [
+   "brena",
+   "cacar",
+   "caçando"
+  ],
+  [
+   "caio",
+   "explorar",
+   "explorando"
+  ],
+  [
+   "dara",
+   "vila",
+   "na vila"
+  ]
+ ],
+ "trocaDeCamera": {
+  "seguido": "caio",
+  "metrosAndadosDepoisDaTroca": [
+   151.4,
+   155.5,
+   39.9
+  ]
+ },
+ "combate": {
+  "desfecho": true,
+  "varrisco": {
+   "hp": -0.04324011043988085,
+   "hpMax": 389.4318205503279,
+   "vivo": false,
+   "x": 432.6068961378151,
+   "y": 2442.6895570303045
+  },
+  "acertosHunters": 19,
+  "golpesVarrisco": 4,
+  "esquivas": 3,
+  "ultimos": [
+   {
+    "id": "brena",
+    "t": 168.1,
+    "tipo": "combate",
+    "texto": "acertou varrisco-real (pescoco)"
+   },
+   {
+    "id": "arvo",
+    "t": 168.4,
+    "tipo": "combate",
+    "texto": "acertou varrisco-real (tronco)"
+   },
+   {
+    "id": "brena",
+    "t": 168.9,
+    "tipo": "combate",
+    "texto": "acertou varrisco-real (pescoco)"
+   },
+   {
+    "id": "arvo",
+    "t": 169.3,
+    "tipo": "combate",
+    "texto": "acertou varrisco-real (tronco)"
+   },
+   {
+    "id": "brena",
+    "t": 170.6,
+    "tipo": "combate",
+    "texto": "acertou varrisco-real (pescoco)"
+   },
+   {
+    "id": "arvo",
+    "t": 171.5,
+    "tipo": "combate",
+    "texto": "acertou varrisco-real (flanco)"
+   },
+   {
+    "id": "arvo",
+    "t": 172.4,
+    "tipo": "combate",
+    "texto": "varrisco abatido"
+   },
+   {
+    "id": "brena",
+    "t": 172.4,
+    "tipo": "combate",
+    "texto": "varrisco abatido"
+   }
+  ]
+ },
+ "trocaDeTarefa": {
+  "caio": "voltar",
+  "brena": "ir"
+ },
+ "salvarRestaurar": {
+  "tSalvo": 489.55,
+  "tRest": 489.55,
+  "hunters": [
+   [
+    "arvo",
+    "detalhado",
+    null,
+    105.7
+   ],
+   [
+    "brena",
+    "detalhado",
+    null,
+    100.5
+   ],
+   [
+    "caio",
+    "detalhado",
+    null,
+    98
+   ],
+   [
+    "dara",
+    "estrategico",
+    "ir",
+    102.6
+   ]
+  ]
+ }
+}
+V02 no navegador: OK

@@ -1,0 +1,32 @@
+name: Wildhaven - Auditoria Remota Cordilheira Oeste v01
+
+on:
+  push:
+    branches: [wildhaven-cordilheira-oeste-bloqueio-v01]
+    paths:
+      - .github/workflows/wildhaven-cordilheira-oeste-remoto-v01.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remote-binary-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify new mountain and collider SHA256 on fresh GitHub checkout
+        run: python world/west-mountain-barrier-v01/tests/verify_remote_glbs_v01.py
+      - name: Commit independent remote verification report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/west-mountain-barrier-v01/audit/remote_sha256_verification_v01.json
+          git commit -m "audit(world): verify nine actual mountain and collision GLB binaries [skip ci]"
+          git push origin HEAD:wildhaven-cordilheira-oeste-bloqueio-v01

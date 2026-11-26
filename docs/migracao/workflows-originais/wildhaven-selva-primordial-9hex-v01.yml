@@ -1,0 +1,78 @@
+name: Wildhaven - Selva Primordial 9 Hex GLBs v01
+
+on:
+  push:
+    branches:
+      - wildhaven-selva-primordial-ruinas-9hex-v01
+    paths:
+      - .github/workflows/wildhaven-selva-primordial-9hex-v01.yml
+      - world/tropical-skull-ruins-v01/tools/build_v01.py.xz.b64
+      - world/tropical-skull-ruins-v01/tools/render_v01.py
+      - world/tropical-skull-ruins-v01/tests/validate_v01.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wildhaven-selva-primordial-9hex-v01
+  cancel-in-progress: false
+
+jobs:
+  generate-nine-hexes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Prepare Python, VTK and software OpenGL
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy<3" "scipy>=1.11" "trimesh>=4.7" "pillow>=10" "vtk>=9.3"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri libgl1
+
+      - name: Restore readable, tested generator source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64,lzma
+          p=Path('world/tropical-skull-ruins-v01/tools/build_v01.py.xz.b64')
+          raw=lzma.decompress(base64.b64decode(p.read_text().strip()))
+          target=p.with_name('build_v01.py')
+          target.write_bytes(raw)
+          print('Restored',target,len(raw),'bytes')
+          PY
+          python -m py_compile world/tropical-skull-ruins-v01/tools/build_v01.py
+
+      - name: Rebuild all nine real jungle and transition GLBs
+        run: python world/tropical-skull-ruins-v01/tools/build_v01.py
+
+      - name: Independent reimport, SHA-256, and seams
+        run: python world/tropical-skull-ruins-v01/tests/validate_v01.py
+
+      - name: Render each exported GLB using software VTK
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+          VTK_DEFAULT_OPENGL_WINDOW: vtkXOpenGLRenderWindow
+        run: |
+          for id in TR_W TR_CW TR_CE TR_E J_W J_CW J_C J_CE J_E; do
+            xvfb-run -a python world/tropical-skull-ruins-v01/tools/render_v01.py --one "$id"
+          done
+          python world/tropical-skull-ruins-v01/tools/render_v01.py --montage
+
+      - name: Publish actual binary models, source, hashes, tests and previews
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/tropical-skull-ruins-v01
+          git diff --cached --stat
+          git commit -m "assets(world): publish 9 skull-style jungle and transition GLBs [skip ci]"
+          git push origin HEAD:wildhaven-selva-primordial-ruinas-9hex-v01

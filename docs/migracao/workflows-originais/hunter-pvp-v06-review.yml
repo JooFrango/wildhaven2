@@ -1,0 +1,59 @@
+name: Hunter PvP v06 — real GLB and GIF preview (review)
+on:
+  push:
+    branches: ['feat/hunter-pvp-kenshi-animacoes-v06-review']
+    paths:
+      - '.github/workflows/hunter-pvp-v06-review.yml'
+      - 'labs/hunters/scripts/animate-hunter-pvp-v06.mjs'
+      - 'labs/hunters/scripts/validate-hunter-pvp-v06.mjs'
+      - 'labs/hunters/scripts/capture-hunter-pvp-v06.mjs'
+      - 'labs/hunters/viewer/gif89a.mjs'
+      - 'labs/hunters/viewer/pvp-preview-v06.html'
+permissions:
+  contents: write
+concurrency:
+  group: hunter-pvp-v06-review
+  cancel-in-progress: false
+jobs:
+  render-real-glb:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          sparse-checkout: |
+            labs/hunters
+            labs/hunters-codex
+            labs/ia-criaturas
+          sparse-checkout-cone-mode: true
+          lfs: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Three.js and Playwright-core in isolated Codex lab
+        run: npm ci --prefix labs/hunters-codex
+      - name: Generate versioned PvP v06 GLB from v05 (no Alpha edits)
+        run: node labs/hunters/scripts/animate-hunter-pvp-v06.mjs
+      - name: Validate GLB and new animation channels
+        run: node labs/hunters/scripts/validate-hunter-pvp-v06.mjs
+      - name: Install Chromium
+        run: |
+          cd labs/hunters-codex
+          npx playwright-core install --with-deps chromium
+      - name: Serve existing Hunters laboratory
+        run: |
+          cd labs/hunters
+          npm run dev > /tmp/hunter-pvp-server.log 2>&1 &
+          sleep 3
+          cat /tmp/hunter-pvp-server.log
+      - name: Render and capture 10 real animated GIFs in Chromium
+        run: node labs/hunters/scripts/capture-hunter-pvp-v06.mjs
+      - name: Publish review artifacts to this draft branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add labs/hunters/assets/hunter-pvp-v06/ labs/hunters/resultados/pvp-v06/
+          git diff --cached --stat
+          git commit -m 'review: real Hunter PvP v06 GLB and ten GIFs (unapproved)'
+          git push origin HEAD:feat/hunter-pvp-kenshi-animacoes-v06-review

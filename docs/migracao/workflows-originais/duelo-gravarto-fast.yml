@@ -1,0 +1,23 @@
+name: Gravarto x Rocantraz — diagnóstico rápido
+on:
+  push:
+    branches: ['feat/lab-duelo-gravarto-rocantraz-v01']
+    paths:
+      - 'labs/ia-criaturas/**'
+      - '.github/workflows/duelo-gravarto-fast.yml'
+jobs:
+  diagnosticar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    defaults:
+      run:
+        working-directory: labs/ia-criaturas
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar GLB Varrisco para os imports e testes
+        run: python ../../assets/models/creatures/varrisco/v04/source/build_v04.py
+      - name: Testar Gravarto x Rocantraz no núcleo determinístico
+        run: node --test test/duelo-gravarto-rocantraz.test.mjs

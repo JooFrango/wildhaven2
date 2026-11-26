@@ -1,0 +1,36 @@
+name: Fulgaronte - fidelity check Blender renders (v04 vs v06)
+on:
+  push:
+    branches: [fix/fulgaronte-v06-blender-fidelity-review]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render-fidelity:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Blender CPU and Pillow
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq blender
+          python3 -m pip install --disable-pip-version-check --break-system-packages pillow
+          blender --background --python-expr 'import sys; print("BLENDER_PY=" + str(sys.version_info.major) + "." + str(sys.version_info.minor))'
+          BVER="$(blender --background --python-expr 'import sys; print("BLENDER_PY=" + str(sys.version_info.major) + "." + str(sys.version_info.minor))' | awk -F= '/BLENDER_PY=/{print $2;exit}')"
+          echo "Installing NumPy compiled for Blender Python $BVER"
+          python3 -m pip install --disable-pip-version-check --break-system-packages --target /tmp/wh-bpy-numpy --only-binary=:all: --no-deps --python-version "$BVER" --implementation cp --abi "cp${BVER/./}" "numpy<3"
+          test -f /tmp/wh-bpy-numpy/numpy/__init__.py
+      - name: Render original v04 and v06 with real GLB textures and Blender skinning
+        run: |
+          blender --background --threads 2 --python assets/models/creatures/fulgaronte/v06/preview-fidelity/source/blender_preview_v06.py
+          test -f assets/models/creatures/fulgaronte/v06/preview-fidelity/render_manifest.json
+      - name: Assemble GIFs from actual Blender renders
+        run: python3 assets/models/creatures/fulgaronte/v06/preview-fidelity/source/gifs_from_blender.py
+      - name: Publish real images and gifs directly without artifact quota
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/fulgaronte/v06/preview-fidelity
+          git diff --cached --quiet || (git commit -m "test(fulgaronte): real Blender PBR animation frames and fidelity comparison [skip ci]" && git push)

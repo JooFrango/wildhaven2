@@ -1,0 +1,59 @@
+name: 'Wildhaven — Savana de Vale aprovada v02'
+on:
+  push:
+    branches: [wildhaven-savanna-valley-approved-v02]
+    paths:
+      - 'world/savanna-valley-pair/**'
+      - '.github/workflows/wildhaven-savanna-valley-pair-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-savanna-valley-approved-v02-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-valley-pair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar geometria e render
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Gerar dois GLBs de Savana de Vale
+        run: |
+          python world/savanna-valley-pair/tools/build_valley_pair.py --repo-root . --output-dir world/savanna-valley-pair
+      - name: Validar bloco e preservação dos 42 GLBs
+        run: |
+          python world/savanna-valley-pair/tests/validate_valley_pair.py --repo-root . --output-dir world/savanna-valley-pair
+      - name: Renderizar modelos reais
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/savanna-valley-pair/tools/render_valley_pair.py --repo-root . --output-dir world/savanna-valley-pair
+      - name: Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-Valley-Savanna-Approved-v02
+          retention-days: 30
+          path: |
+            world/savanna-valley-pair/models/*.glb
+            world/savanna-valley-pair/manifest.json
+            world/savanna-valley-pair/model_report.json
+            world/savanna-valley-pair/preview/*.png
+      - name: Publicar na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/savanna-valley-pair/models world/savanna-valley-pair/manifest.json world/savanna-valley-pair/model_report.json world/savanna-valley-pair/preview
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): approved 20m rocky-rim Valley Savanna GLBs [skip ci]'
+            git push origin HEAD:wildhaven-savanna-valley-approved-v02
+          fi

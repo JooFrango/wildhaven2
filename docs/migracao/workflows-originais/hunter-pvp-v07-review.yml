@@ -1,0 +1,59 @@
+name: Hunter PvP v07 — one corrected real 3D swing
+on:
+  push:
+    branches: ['feat/hunter-pvp-kenshi-v07-single-swing-review']
+    paths:
+      - '.github/workflows/hunter-pvp-v07-review.yml'
+      - 'labs/hunters/scripts/animate-hunter-pvp-v07.mjs'
+      - 'labs/hunters/scripts/capture-hunter-pvp-v07.mjs'
+      - 'labs/hunters/viewer/pvp-preview-v07.html'
+      - 'labs/hunters/viewer/gif89a.mjs'
+permissions:
+  contents: write
+concurrency:
+  group: hunter-pvp-v07-review
+  cancel-in-progress: false
+jobs:
+  render-real-v07:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          sparse-checkout: |
+            labs/hunters
+            labs/hunters-codex
+            labs/ia-criaturas
+          sparse-checkout-cone-mode: true
+          lfs: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --prefix labs/hunters-codex
+      - name: Bake one PvP v07 skeletal swing and integrated sword mesh
+        run: node labs/hunters/scripts/animate-hunter-pvp-v07.mjs
+      - name: Validate GLB structure
+        run: node labs/hunters/scripts/validate-hunter-pvp-v07.mjs
+      - name: Install Chromium
+        run: |
+          cd labs/hunters-codex
+          npx playwright-core install --with-deps chromium
+      - name: Serve Hunters lab on localhost
+        run: |
+          cd labs/hunters
+          npm run dev >/tmp/wildhaven-v07-server.log 2>&1 &
+          sleep 3
+          cat /tmp/wildhaven-v07-server.log
+      - name: Capture real v07 GLB animated GIF and eight key poses
+        run: node labs/hunters/scripts/capture-hunter-pvp-v07.mjs
+      - name: Publish unapproved review files on this branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add labs/hunters/assets/hunter-pvp-v07/ labs/hunters/resultados/pvp-v07/
+          git diff --cached --stat
+          git commit -m 'review: Hunter PvP v07 real GLB and single swing GIF (unapproved)'
+          git fetch origin feat/hunter-pvp-kenshi-v07-single-swing-review
+          git merge --no-edit -X ours origin/feat/hunter-pvp-kenshi-v07-single-swing-review
+          git push origin HEAD:feat/hunter-pvp-kenshi-v07-single-swing-review

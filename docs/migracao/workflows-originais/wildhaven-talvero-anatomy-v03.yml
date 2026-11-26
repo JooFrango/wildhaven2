@@ -1,0 +1,83 @@
+name: Wildhaven - Talvero sculpted skinned v03 assets
+on:
+  push:
+    branches: [wildhaven-talvero-anatomy-v03]
+    paths:
+      - 'assets/models/creatures/talvero-v03/source/**'
+      - '.github/workflows/wildhaven-talvero-anatomy-v03.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  generate-talvero-v03:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install reproducible sculpt and offscreen render environment
+        run: |
+          python3 -m pip install --disable-pip-version-check 'numpy==2.2.6' 'scikit-image==0.25.2' 'vtk==9.4.2'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1
+      - name: Generate real Talvero v03 skinned GLB, 10 clips and 3 VTK previews
+        run: |
+          xvfb-run -a python3 assets/models/creatures/talvero-v03/source/generate.py
+      - name: Publish actual binary and verify glTF 2.0 clips and references
+        run: |
+          set -euo pipefail
+          SRC=assets/models/creatures/talvero-v03/output/talvero
+          DEST=assets/models/creatures/talvero
+          mkdir -p "$DEST"
+          cp "$SRC"/talvero-*v03.glb "$DEST"/
+          cp "$SRC"/talvero-*v03.png "$DEST"/
+          cp "$SRC"/talvero-manifest-v03.json "$DEST"/
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,hashlib,struct
+          root=Path('assets/models/creatures/talvero')
+          path=root/'talvero-savanna-anatomy-skinned-v03.glb'
+          raw=path.read_bytes()
+          assert raw[:4]==b'glTF' and struct.unpack_from('<II',raw,4)==(2,len(raw))
+          size,typ=struct.unpack_from('<I4s',raw,12)
+          assert typ==b'JSON'
+          model=json.loads(raw[20:20+size])
+          clips=[a['name'] for a in model['animations']]
+          assert clips==['idle','walk','trot','gallop','graze','alert','flee','kick','rest','death'],clips
+          assert model['skins'] and len(model['skins'][0]['joints'])>=15
+          assert len(model['meshes'])>10
+          for animation in model['animations']:
+              assert len(animation['channels'])>=15 and len(animation['samplers'])>=15
+          manifest=json.loads((root/'talvero-manifest-v03.json').read_text())
+          assert manifest['model']['sha256']==hashlib.sha256(raw).hexdigest()
+          assert manifest['model']['bytes']==len(raw)
+          assert manifest['model']['animationCount']==10
+          for angle in ('side','front','three_quarter'):
+              img=root/f'talvero-real-3d-{angle}-v03.png'
+              assert img.read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
+              assert img.stat().st_size>10000
+          print('PASS actual skinned GLB:',len(raw),'bytes',clips,len(model['skins'][0]['joints']),'rig joints')
+          PY
+      - name: Attach genuine model and previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-talvero-v03-real-model-and-renders
+          path: |
+            assets/models/creatures/talvero/*v03.glb
+            assets/models/creatures/talvero/*v03.png
+            assets/models/creatures/talvero/*manifest-v03.json
+          if-no-files-found: error
+      - name: Commit binary model, manifest and real 3D screenshots to the same branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/talvero/*v03.glb assets/models/creatures/talvero/*v03.png assets/models/creatures/talvero/*manifest-v03.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(talvero): publish genuine sculpted v03 GLB and VTK renders [skip ci]'
+            git fetch origin wildhaven-talvero-anatomy-v03
+            git rebase origin/wildhaven-talvero-anatomy-v03
+            git push origin HEAD:wildhaven-talvero-anatomy-v03
+          fi

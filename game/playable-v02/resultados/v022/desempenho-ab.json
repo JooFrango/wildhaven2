@@ -1,0 +1,137 @@
+{
+ "data": "2026-11-21T23:06:03.997Z",
+ "pastas": [
+  "game/_ab_v02",
+  "game/playable-v02"
+ ],
+ "res": [
+  {
+   "pasta": "game/_ab_v02",
+   "rodada": 1,
+   "x1": {
+    "qualidade": "baixa",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "fpsMedio": 48,
+    "msP95": 34.6,
+    "drawCalls": 62,
+    "triangulos": 1023233,
+    "geometrias": 52,
+    "texturas": 13,
+    "heapMB": 127,
+    "hexes": 7,
+    "passosCedidos": 0,
+    "falhaTile": null
+   },
+   "x8": {
+    "qualidade": "baixa",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "fpsMedio": 57.9,
+    "msP95": 17.9,
+    "drawCalls": 49,
+    "triangulos": 995234,
+    "geometrias": 52,
+    "texturas": 13,
+    "heapMB": 135,
+    "hexes": 7,
+    "passosCedidos": 0,
+    "falhaTile": null
+   }
+  },
+  {
+   "pasta": "game/playable-v02",
+   "rodada": 1,
+   "x1": {
+    "qualidade": "baixa",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "fpsMedio": 55.7,
+    "msP95": 32.7,
+    "drawCalls": 62,
+    "triangulos": 1023233,
+    "geometrias": 52,
+    "texturas": 13,
+    "heapMB": 141,
+    "hexes": 7,
+    "passosCedidos": 0,
+    "falhaTile": null
+   },
+   "x8": {
+    "qualidade": "baixa",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "fpsMedio": 57.7,
+    "msP95": 18.3,
+    "drawCalls": 49,
+    "triangulos": 995234,
+    "geometrias": 52,
+    "texturas": 13,
+    "heapMB": 103,
+    "hexes": 7,
+    "passosCedidos": 0,
+    "falhaTile": null
+   }
+  },
+  {
+   "pasta": "game/_ab_v02",
+   "rodada": 2,
+   "x1": {
+    "qualidade": "baixa",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "fpsMedio": 42.7,
+    "msP95": 49.8,
+    "drawCalls": 62,
+    "triangulos": 1023233,
+    "geometrias": 52,
+    "texturas": 13,
+    "heapMB": 112,
+    "hexes": 7,
+    "passosCedidos": 0,
+    "falhaTile": null
+   },
+   "x8": {
+    "qualidade": "baixa",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "fpsMedio": 53.5,
+    "msP95": 33.2,
+    "drawCalls": 49,
+    "triangulos": 995234,
+    "geometrias": 52,
+    "texturas": 13,
+    "heapMB": 116,
+    "hexes": 7,
+    "passosCedidos": 0,
+    "falhaTile": null
+   }
+  },
+  {
+   "pasta": "game/playable-v02",
+   "rodada": 2,
+   "x1": {
+    "qualidade": "baixa",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "fpsMedio": 43,
+    "msP95": 50,
+    "drawCalls": 62,
+    "triangulos": 1023233,
+    "geometrias": 52,
+    "texturas": 13,
+    "heapMB": 148,
+    "hexes": 7,
+    "passosCedidos": 0,
+    "falhaTile": null
+   },
+   "x8": {
+    "qualidade": "baixa",
+    "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "fpsMedio": 48.5,
+    "msP95": 34.4,
+    "drawCalls": 49,
+    "triangulos": 995234,
+    "geometrias": 52,
+    "texturas": 13,
+    "heapMB": 132,
+    "hexes": 7,
+    "passosCedidos": 0,
+    "falhaTile": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+name: Hunter PvE - dez cacadas taticas (auditoria isolada)
+on:
+  push:
+    branches:
+      - audit/hunter-pve-cacada-tatica-10-20261119
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cacadas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout da versao PvE v01 de IA
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dez execucoes independentes do cenario Caçada tática — espada leve
+        run: |
+          node labs/hunters/scripts/medir-pve1.mjs --sementes 7,17,23,31,41,53,67,79,97,101 --segundos 120 --saida hunt10.json
+      - name: Resumo e checagem dos dez resultados
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const a=JSON.parse(fs.readFileSync('hunt10.json','utf8'));
+          const rows=Object.entries(a.sementes).map(([seed,v])=>{
+            const g=v.golpes??[];
+            const count=name=>g.filter(x=>x.clip===name).length;
+            const result=v.resultado?.motivo??'sem desfecho ate 120s';
+            const contatos=g.filter(x=>x.contato);
+            const correto=contatos.filter(x=>x.contato.naJanelaAtiva).length;
+            return {semente:Number(seed),tempoSeg:v.t,desfecho:result,golpes:g.length,leves:count('pve1_c_sword_light'),pesados:count('pve1_c_sword_heavy'),acertos:v.acertos,erros:v.erros,erroMotivos:v.motivosErro,contatos:contatos.length,contatosNaJanela:correto,aparos:v.aparos,esquivas:v.esquivas?.length??0,bloqueios:v.guardas,feridasHunter:v.feridasHunter,vidaHunter:v.hpHunter,violacoes:v.violacoes};
+          });
+          if(rows.length!==10)throw Error('Esperados 10 cenarios, encontrados '+rows.length);
+          const sum=k=>rows.reduce((n,r)=>n+(r[k]??0),0);
+          const tempos=rows.map(r=>r.tempoSeg);
+          const medias={tempoSeg:sum('tempoSeg')/10,golpes:sum('golpes')/10,acertos:sum('acertos')/10,erros:sum('erros')/10,aparos:sum('aparos')/10,esquivas:sum('esquivas')/10,vidaHunter:sum('vidaHunter')/10};
+          const summary={base:{commit:process.env.GITHUB_SHA,cenario:'jogador-espada',pve1:true,maxSegundos:120,sementes:rows.map(r=>r.semente)},execucoes:rows,medias,totais:{golpes:sum('golpes'),leves:sum('leves'),pesados:sum('pesados'),acertos:sum('acertos'),erros:sum('erros'),aparos:sum('aparos'),esquivas:sum('esquivas'),bloqueios:sum('bloqueios'),feridasHunter:sum('feridasHunter'),violacoes:sum('violacoes'),contatos:sum('contatos'),contatosNaJanela:sum('contatosNaJanela')}};
+          fs.writeFileSync('hunt10-summary.json',JSON.stringify(summary,null,2));
+          console.log('BEGIN_HUNT10_SUMMARY');
+          console.log(JSON.stringify(summary,null,2));
+          console.log('END_HUNT10_SUMMARY');
+          if(sum('violacoes')>0)process.exitCode=1;
+          NODE
+      - name: Artefato da auditoria (dados reais)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunter-pve-caçada-tatica-10-sementes
+          path: |
+            hunt10.json
+            hunt10-summary.json
+          if-no-files-found: warn

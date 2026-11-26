@@ -1,0 +1,82 @@
+name: Wildhaven - Talvero v04 sculpt and skin
+on:
+  push:
+    branches: [wildhaven-talvero-anatomy-v04]
+    paths:
+      - 'assets/models/creatures/talvero-v04/source/**'
+      - '.github/workflows/wildhaven-talvero-anatomy-v04.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install sculpture, glTF, and real offline renderer
+        run: |
+          python3 -m pip install --disable-pip-version-check 'numpy==2.2.6' 'scikit-image==0.25.2' 'trimesh==4.11.1' 'vtk==9.4.2'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1
+      - name: Build Talvero v04 and capture genuine 3D views
+        run: xvfb-run -a python3 assets/models/creatures/talvero-v04/source/generate.py
+      - name: Publish versioned GLB, manifest and three authentic PNG captures
+        run: |
+          set -euo pipefail
+          SRC=assets/models/creatures/talvero-v04/output/talvero
+          DST=assets/models/creatures/talvero
+          cp "$SRC"/talvero-savanna-anatomy-skinned-v04.glb "$DST"/
+          cp "$SRC"/talvero-manifest-v04.json "$DST"/
+          cp "$SRC"/talvero-real-3d-*-v04.png "$DST"/
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib,json,struct
+          folder=Path('assets/models/creatures/talvero')
+          p=folder/'talvero-savanna-anatomy-skinned-v04.glb'
+          raw=p.read_bytes()
+          assert len(raw)>1024 and raw[:4]==b'glTF'
+          assert struct.unpack_from('<II',raw,4)==(2,len(raw))
+          size,kind=struct.unpack_from('<I4s',raw,12)
+          assert kind==b'JSON'
+          doc=json.loads(raw[20:20+size])
+          clips=[a['name'] for a in doc['animations']]
+          expect=['idle','walk','trot','gallop','graze','alert','flee','kick','rest','death']
+          assert clips==expect
+          assert doc['skins'] and len(doc['skins'][0]['joints'])>=17
+          assert 20<=len(doc['meshes'])<120, len(doc['meshes'])
+          assert len(doc['materials'])>1
+          assert any(a['channels'] for a in doc['animations'])
+          manifest=json.loads((folder/'talvero-manifest-v04.json').read_text())
+          info=manifest['model']
+          assert info['sha256']==hashlib.sha256(raw).hexdigest()
+          assert info['bytes']==len(raw) and info['animationCount']==10
+          for view in ('side','front','three_quarter'):
+             img=folder/f'talvero-real-3d-{view}-v04.png'
+             assert img.stat().st_size>20000 and img.read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
+          print('VALIDATED REAL TALVERO V04 GLB',len(raw),'bytes',len(doc['meshes']),'meshes',len(doc['skins'][0]['joints']),'joints',len(clips),'clips')
+          PY
+      - name: Publish machine-checkable assets as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: talvero-v04-real-model-and-captures
+          path: |
+            assets/models/creatures/talvero/talvero-savanna-anatomy-skinned-v04.glb
+            assets/models/creatures/talvero/talvero-real-3d-*-v04.png
+            assets/models/creatures/talvero/talvero-manifest-v04.json
+          if-no-files-found: error
+      - name: Commit 3D assets to v04 branch without overwriting older versions
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/talvero/*v04.glb assets/models/creatures/talvero/*v04.png assets/models/creatures/talvero/*manifest-v04.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(talvero): publish actual v04 skinned GLB and screenshots [skip ci]'
+            git fetch origin wildhaven-talvero-anatomy-v04
+            git rebase origin/wildhaven-talvero-anatomy-v04
+            git push origin HEAD:wildhaven-talvero-anatomy-v04
+          fi

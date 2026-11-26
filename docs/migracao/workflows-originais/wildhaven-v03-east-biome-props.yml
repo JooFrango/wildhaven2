@@ -1,0 +1,98 @@
+name: Wildhaven v03 - Physical east-foot biome props
+on:
+  push:
+    branches: [wildhaven-reconstrucao-geologica-41hex-v03]
+    paths:
+      - '.github/workflows/wildhaven-v03-east-biome-props.yml'
+      - 'world/megadunes-massif-v03/biome-props/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-v03-physical-east-biome-props
+  cancel-in-progress: false
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dependencies for real 3D geometry and VTK rendering
+        run: |
+          python -m pip install 'numpy<3' 'scipy>=1.11' 'trimesh==4.7.4' pillow vtk fast-simplification
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri libgl1 libegl1 libosmesa6
+      - name: Compile new builder, existing validator and renderer
+        run: |
+          python -m py_compile world/megadunes-massif-v03/biome-props/build_east_biome_props.py
+          python -m py_compile world/megadunes-massif-v03/tests/validate_v03.py
+          python -m py_compile world/megadunes-massif-v03/tools/render_v03.py
+      - name: Append real LOD0/1/2 props while preserving every geological GLB byte
+        id: build
+        run: python world/megadunes-massif-v03/biome-props/build_east_biome_props.py
+      - name: Reimport and independently validate 123 GLBs, all 118 seams, 58 historic and collider
+        run: python world/megadunes-massif-v03/tests/validate_v03.py
+      - name: Render actual revised GLBs, eight individual MW tiles and connected 16/41/99 views
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+          VTK_DEFAULT_OPENGL_WINDOW: vtkOSOpenGLRenderWindow
+        run: |
+          python world/megadunes-massif-v03/tools/render_v03.py --repo-root . --only MW_01,MW_02,MW_03,MW_04,MW_05,MW_06,MW_07,MW_08,MW_04_lateral,MW_04_cliff_detail,mountains_16_connected,reconstructed_41_connected,complete_99_connected
+      - name: Verify real foliage, props, LOD and preview authenticity
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          r=Path('world/megadunes-massif-v03')
+          m=json.loads((r/'manifest.json').read_text())
+          a=json.loads((r/'audit/east_biome_props_v03.json').read_text())
+          v=json.loads((r/'audit/validation_v03.json').read_text())
+          p=json.loads((r/'preview/render_manifest.json').read_text())
+          assert a['revision']=='east-foot-biome-props-v03-01'
+          assert len(a['glbs'])==24 and a['source_files_still_present']==123
+          assert all(g['old_buffer_bytes_identical_prefix'] and g['terrain_vertices_unchanged'] for g in a['glbs'])
+          assert all(g['objects'].get('tree',0)>0 and g['objects'].get('grass',0)>0 for g in a['glbs'])
+          assert v['technical_status']=='passed' and all(v['checks'].values())
+          assert p['complete_required_views'] and p['render_count']>=49
+          for name in ('MW_01_isometric','MW_08_isometric','mountains_16_connected','reconstructed_41_connected','complete_99_connected'):
+              match=[x for x in p['renders'] if x['name']==name]
+              assert len(match)==1 and match[0]['source_inputs_match_current_files'],name
+          assert m['east_biome_props']['art_approval']=='awaiting_user_review'
+          print('Checked 24 real LOD GLBs and all requested previews; approval remains with user')
+          PY
+      - name: Publish all 24 actual biome GLBs, manifests and real render PNGs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/megadunes-massif-v03
+          git diff --cached --stat
+          git diff --cached --quiet || git commit -m 'assets(world): publish physical biome flora and rocks on eight east foothill hexes [skip ci]'
+          git push origin HEAD:wildhaven-reconstrucao-geologica-41hex-v03
+      - uses: actions/checkout@v4
+        with:
+          ref: wildhaven-reconstrucao-geologica-41hex-v03
+          path: recovered
+          fetch-depth: 1
+      - name: Recover all 124 published binary files by GitHub URL and verify SHA256
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python recovered/world/megadunes-massif-v03/tests/verify_remote_v03.py --repo-root recovered --commit "$(git -C recovered rev-parse HEAD)"
+          cp recovered/world/megadunes-massif-v03/audit/remote_binary_recovery_v03.json world/megadunes-massif-v03/audit/
+          git add world/megadunes-massif-v03/audit/remote_binary_recovery_v03.json
+          git diff --cached --quiet || git commit -m 'audit(world): verify remote SHA256 of physical biome GLBs [skip ci]'
+          git push origin HEAD:wildhaven-reconstrucao-geologica-41hex-v03
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wildhaven-v03-physical-east-biome-glbs-and-renders
+          path: |
+            world/megadunes-massif-v03/
+            !world/megadunes-massif-v03/**/__pycache__/
+          retention-days: 14

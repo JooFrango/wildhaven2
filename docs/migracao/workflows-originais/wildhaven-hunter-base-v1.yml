@@ -1,0 +1,53 @@
+name: Wildhaven — Hunter Male Base v1 GLBs
+
+on:
+  push:
+    branches: [wildhaven-hunter-male-base-v1-prototype]
+    paths:
+      - '.github/workflows/wildhaven-hunter-base-v1.yml'
+      - 'tools/hunter_male_base_v1_generator.py.gz.b64'
+      - 'tools/hunter_male_base_v1_render.py.gz.b64'
+      - 'assets/models/hunters/hunter-male-base-v1/build_hunter_base_v1.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-verify-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Generate actual GLB geometry, skin and animation clips
+        run: |
+          python3 assets/models/hunters/hunter-male-base-v1/build_hunter_base_v1.py
+      - name: Validate import and SHA-256, then render mesh preview
+        run: |
+          python3 -m pip install --quiet trimesh matplotlib
+          python3 assets/models/hunters/hunter-male-base-v1/render_preview.py
+          python3 - <<'PY'
+          import hashlib, json
+          import trimesh
+          from pathlib import Path
+          base=Path('assets/models/hunters/hunter-male-base-v1/output')
+          manifest=json.loads((base/'manifest.json').read_text())
+          assert len(manifest['assets'])==2
+          for asset in manifest['assets']:
+             p=base/Path(asset['file']).name
+             assert p.is_file() and p.stat().st_size==asset['bytes']
+             assert hashlib.sha256(p.read_bytes()).hexdigest()==asset['sha256']
+             scene=trimesh.load(str(p),force='scene')
+             assert len(scene.geometry)>0
+             print(p,'triangles',asset['triangles'],'bones',asset['bones'],'animations',len(asset['clips']))
+          assert (base/'hunter_male_base_v1_real_preview.png').is_file()
+          PY
+      - name: Commit real GLBs, source, manifest and exact mesh render
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/hunters/hunter-male-base-v1/
+          git commit -m "assets(hunters): publish real male base v1 GLBs and 8 rigged clips"
+          git push origin HEAD:${GITHUB_REF_NAME}

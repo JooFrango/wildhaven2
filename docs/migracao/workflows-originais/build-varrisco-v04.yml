@@ -1,0 +1,40 @@
+name: Varrisco v04 — 41 clipes GLB
+on:
+  push:
+    branches:
+      - feat/varrisco-v04-41-clipes
+    paths:
+      - assets/models/creatures/varrisco/v04/source/build_v04.py
+      - .github/workflows/build-varrisco-v04.yml
+      - labs/ia-criaturas/test/varrisco-v04-41-clips.test.mjs
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  gerar-e-validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Criar GLB v04 preservando os 29 clipes originais
+        run: python assets/models/creatures/varrisco/v04/source/build_v04.py
+      - name: Testar 41 clipes, hash e canais de ossos reais
+        run: node --test labs/ia-criaturas/test/varrisco-v04-41-clips.test.mjs
+      - name: Testar regressao da v03
+        run: node --test labs/ia-criaturas/test/varrisco-v03-asset.test.mjs
+      - name: Publicar GLB real e manifesto versionado nesta branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/varrisco/v04/varrisco-animated-v04-LOD0.glb assets/models/creatures/varrisco/v04/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "build(varrisco): publicar v04 real com 41 clipes e manifesto"
+            git push
+          fi

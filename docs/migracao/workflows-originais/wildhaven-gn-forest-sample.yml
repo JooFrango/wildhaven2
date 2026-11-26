@@ -1,0 +1,62 @@
+name: Wildhaven - Geometry Nodes Forest Example
+on:
+  push:
+    branches: [wildhaven-gn-forest-sample-v01]
+    paths:
+      - 'world/desert-forest-transition/geometry-nodes-demo/forest_gn_demo.py'
+      - '.github/workflows/wildhaven-gn-forest-sample.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-forest-gn-demo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Checkout source forest tile and demo code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            world/desert-forest-transition/models
+            world/desert-forest-transition/geometry-nodes-demo
+          persist-credentials: true
+      - name: Install Blender and headless renderer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y blender xvfb libgl1-mesa-dri python3-numpy
+          blender --version | head -n 3
+      - name: Apply real Geometry Nodes to the actual GLB
+        run: |
+          LIBGL_ALWAYS_SOFTWARE=1 timeout -s TERM 210s xvfb-run -a blender -b -t 2 --python-exit-code 23 --python \
+            world/desert-forest-transition/geometry-nodes-demo/forest_gn_demo.py -- \
+            world/desert-forest-transition/models/18_bosque_temperado_5km.glb \
+            world/desert-forest-transition/geometry-nodes-demo/output
+      - name: Check real files, meshes, and hashes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json, hashlib
+          root=Path('world/desert-forest-transition/geometry-nodes-demo/output')
+          data=json.loads((root/'manifest-gn-demo-v01.json').read_text())
+          for key,hashkey in (('glb','glb_sha256'),('blend','blend_sha256')):
+              p=root/data[key]
+              assert p.is_file() and p.stat().st_size>10000, str(p)
+              assert hashlib.sha256(p.read_bytes()).hexdigest()==data[hashkey]
+              print(p,p.stat().st_size,'bytes',data[hashkey])
+          assert len(data['geometry_nodes'])==4
+          assert data['exported_meshes']>=data['original_meshes']+4
+          for p in data['previews']:
+              assert (root/p).stat().st_size>10000,p
+          print('PASS: GLB + editable Blender + 3 real Blender previews')
+          PY
+      - name: Publish generated real files to this isolated branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/desert-forest-transition/geometry-nodes-demo/output/
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): publish real forest GN demo GLB, blend, renders [skip ci]'
+            git push origin HEAD:wildhaven-gn-forest-sample-v01
+          fi

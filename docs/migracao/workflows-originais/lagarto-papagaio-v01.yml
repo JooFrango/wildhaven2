@@ -1,0 +1,48 @@
+name: Lagarto Papagaio v01 - real GLB blockout
+on:
+  push:
+    branches: [feat/lagarto-papagaio-blockout-v01]
+    paths: ['.github/workflows/lagarto-papagaio-v01.yml', 'assets/models/creatures/lagarto-papagaio/v01/source/source.tar.xz.b64']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependencies
+        run: |
+          python -m pip install numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+          sudo apt-get update -qq
+          sudo apt-get install -y libegl1 libosmesa6 libgl1-mesa-dri xvfb
+      - name: Reconstruct and validate exported GLB
+        run: |
+          cd assets/models/creatures/lagarto-papagaio/v01
+          base64 -d source/source.tar.xz.b64 | tar -xJ
+          python source/build.py
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          m=json.loads(Path('manifest.json').read_text())
+          p=Path('lagarto-papagaio-v01.glb')
+          assert m['triangles']==4342
+          assert m['sha256']==hashlib.sha256(p.read_bytes()).hexdigest()
+          assert m['shells_nonclosed_or_negative']==0
+          print(m)
+          PY
+      - name: Reimport actual GLB and render three views
+        run: |
+          cd assets/models/creatures/lagarto-papagaio/v01
+          xvfb-run -a python source/render.py
+      - name: Publish real binary and evidence
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/lagarto-papagaio/v01
+          git commit -m "feat(lagarto-papagaio): publish real v01 GLB, UV atlas and three renders"
+          git push origin HEAD:feat/lagarto-papagaio-blockout-v01

@@ -1,0 +1,58 @@
+name: Wildhaven - Megadunas e Macico Continuo 99 Hex v02
+
+on:
+  push:
+    branches: [wildhaven-megadunas-macico-continuo-99hex-v02]
+    paths:
+      - .github/workflows/wildhaven-megadunes-massif-99hex-v02.yml
+      - world/megadunes-massif-v02/tools/**
+      - world/megadunes-massif-v02/tests/**
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wildhaven-megadunes-massif-v02
+  cancel-in-progress: false
+
+jobs:
+  sculpt-validate-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install 3D/mesh/VTK dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "numpy<3" "scipy>=1.11" "trimesh>=4.7" "pillow>=10" "vtk>=9.3"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri libgl1
+      - name: Check source and tests
+        run: |
+          python -m py_compile world/megadunes-massif-v02/tools/build_megadunes_massif_v02.py
+          python -m py_compile world/megadunes-massif-v02/tools/render_megadunes_massif_v02.py
+          python -m py_compile world/megadunes-massif-v02/tests/validate_megadunes_massif_v02.py
+      - name: Sculpt 41 REAL 5-km GLBs and unified collision mesh
+        run: python world/megadunes-massif-v02/tools/build_megadunes_massif_v02.py
+      - name: Independently verify 118 GLB seams and closed massif
+        run: python world/megadunes-massif-v02/tests/validate_megadunes_massif_v02.py
+      - name: Render exported GLBs, 99 hex world and massif detail
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+          VTK_DEFAULT_OPENGL_WINDOW: vtkXOpenGLRenderWindow
+        run: xvfb-run -a python world/megadunes-massif-v02/tools/render_megadunes_massif_v02.py --repo-root .
+      - name: Commit real 41 GLBs, reports, navigation, previews and source
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add world/megadunes-massif-v02
+          git diff --cached --stat
+          git commit -m "assets(world): 25 sculpted megadunes and 16 continuous massif GLBs [skip ci]"
+          git push origin HEAD:wildhaven-megadunas-macico-continuo-99hex-v02

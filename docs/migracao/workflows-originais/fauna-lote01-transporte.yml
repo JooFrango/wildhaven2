@@ -1,0 +1,47 @@
+name: Fauna - transporte temporario de GLBs para auditoria
+on:
+  push:
+    branches: [feat/fauna-retrabalho-lote01-transporte]
+    paths: ['.github/workflows/fauna-lote01-transporte.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Extract pinned source binaries and validate headers
+        run: |
+          mkdir -p .tmp-fauna-lote01
+          git show b9b37fd858618bbe371c6ea36486d1ed357a6fbe:assets/models/creatures/sirocauro/v04/sirocauro-v04.glb > /tmp/sirocauro.glb
+          git show a714cf486bca928bcfda073be47a84e58d3313c1:assets/models/creatures/varrisco/v06/varrisco-animated-v06-LOD0.glb > /tmp/varrisco.glb
+          python - <<'PY'
+          import base64, hashlib, json, pathlib, struct
+          out = pathlib.Path('.tmp-fauna-lote01')
+          report = {}
+          for species in ('sirocauro','varrisco'):
+              data = pathlib.Path('/tmp/'+species+'.glb').read_bytes()
+              assert struct.unpack_from('<4sII',data)==(b'glTF',2,len(data))
+              if species=='varrisco':
+                  assert hashlib.sha256(data).hexdigest()=='7ecfc5f3c71ce9617c561de65151da771b1c0a945170291d8080266ba2b45d57'
+              jlen, = struct.unpack_from('<I',data,12)
+              doc = json.loads(data[20:20+jlen])
+              chunks = []
+              for i,start in enumerate(range(0,len(data),240000)):
+                  name = f'{species}.{i:02}.b64'
+                  (out/name).write_text(base64.b64encode(data[start:start+240000]).decode('ascii'))
+                  chunks.append(name)
+              report[species] = {'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest(),'animations':len(doc.get('animations',[])),'chunks':chunks}
+          (out/'manifest.json').write_text(json.dumps(report,indent=2)+'\n')
+          PY
+      - name: Publish temporary transport only to isolated branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .tmp-fauna-lote01
+          git commit -m "chore(fauna): temporary pinned GLB transport for technical audit"
+          git push origin HEAD:feat/fauna-retrabalho-lote01-transporte

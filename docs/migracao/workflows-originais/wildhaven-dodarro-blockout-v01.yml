@@ -1,0 +1,75 @@
+name: Wildhaven Dodarro - Real UV GLBs and real GLB renders
+on:
+  push:
+    branches:
+      - wildhaven-dodarro-montaria-blockout-v01
+    paths:
+      - 'assets/models/creatures/dodarro/source/**'
+      - '.github/workflows/wildhaven-dodarro-blockout-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-real-dodarro:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout scoped branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install GLB exporter, textures and VTK renderer
+        run: |
+          python -m pip install --no-cache-dir numpy==2.3.5 pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libegl1 > /dev/null
+      - name: Generate real textured Dodarro wild and mount GLBs
+        run: python assets/models/creatures/dodarro/source/build_dodarro.py
+      - name: Validate exported GLB UV materials textures and no animations
+        run: |
+          python - <<'PY'
+          import hashlib, json, struct
+          from pathlib import Path
+          import trimesh
+          d=Path("assets/models/creatures/dodarro")
+          for variant in ("selvagem","montaria"):
+              file=d/f"dodarro_{variant}_v01_blockout.glb"
+              buf=file.read_bytes()
+              assert buf[:4]==b"glTF"
+              assert struct.unpack_from("<I",buf,8)[0]==len(buf)
+              n=struct.unpack_from("<I",buf,12)[0]
+              j=json.loads(buf[20:20+n])
+              assert j["meshes"] and j["materials"] and j["textures"] and j["images"]
+              assert not j.get("animations") and not j.get("skins")
+              assert all("TEXCOORD_0" in p["attributes"] for m in j["meshes"] for p in m["primitives"])
+              scene=trimesh.load(str(file),force="scene")
+              tri=sum(len(g.faces) for g in scene.geometry.values())
+              manifest=json.loads((d/f"manifest_{variant}_v01.json").read_text())
+              assert tri==manifest["triangles"]
+              assert len(buf)==manifest["bytes"]
+              assert hashlib.sha256(buf).hexdigest()==manifest["sha256"]
+              assert 1000<=tri<=5000
+              print("VALID UV GLB",file,tri,len(buf),manifest["sha256"])
+          PY
+      - name: Reimport exported GLBs and render three authentic viewpoints each
+        run: xvfb-run -a python assets/models/creatures/dodarro/source/render_glb.py
+      - name: Publish verified source-linked binary assets to revision branch
+        run: |
+          set -euo pipefail
+          D=assets/models/creatures/dodarro
+          test -f "$D/dodarro_selvagem_v01_blockout.glb"
+          test -f "$D/dodarro_montaria_v01_blockout.glb"
+          test "$(find "$D/previews" -name '*_REAL_*.png' | wc -l)" -eq 6
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$D/"*.glb "$D/"*.json "$D/textures/" "$D/previews/"
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(dodarro): publish real UV wild and saddled GLBs with authentic renders [skip ci]"
+            git fetch origin wildhaven-dodarro-montaria-blockout-v01
+            git rebase origin/wildhaven-dodarro-montaria-blockout-v01
+            git push origin HEAD:wildhaven-dodarro-montaria-blockout-v01
+          fi

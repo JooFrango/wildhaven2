@@ -1,0 +1,62 @@
+name: Publicar base limpa do Wildhaven
+on:
+  push:
+    branches: [preparar-claude-20261111]
+    paths: ['.github/workflows/publicar-base-claude.yml']
+permissions:
+  contents: write
+jobs:
+  publicar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Criar commit raiz da seleção
+        id: root
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sha=$(gh api "repos/$GITHUB_REPOSITORY/git/commits" -f tree=ab89d9675a3577fdc617986fbe83d7db42ef527b -f message='Reunir Alpha, mapa ativo, fauna e Hunter para desenvolvimento' --jq .sha)
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.root.outputs.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar arquivos recuperados e referências do mapa
+        run: |
+          sha256sum -c <<'HASHES'
+          8269b64e4090542632e15de4a88bb8fd347712b5d76585cae6f29882d7050896  assets/models/creatures/brotarro/v02/brotarro-v02-skinned-animated-LOD0.glb
+          fae6a33d81cb0a9f410927900323b266619850103c19a66873e64583b5d3430d  assets/models/creatures/cipria/v02/cipria-v02-skinned-animated-LOD0.glb
+          b5a4764fa2489a14905dd3627a23a666597f161bfb1e79eea62b39aa3ee41bea  assets/models/creatures/tumbira/v02/tumbira-v02-skinned-animated-LOD0.glb
+          804814206b4146578d1f9b40bc301fb21894c1cec5808b7045815fe8ab1a1921  assets/models/creatures/velufim/v02/velufim-v02-skinned-animated-LOD0.glb
+          90f7cf659aa4243e07f6bef0ff28e0d616815f344095ad57e81dca817cbc5cf8  assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb
+          053700541b5917975346888e7b67b12997e3d28fa5da9b6b6403cef05d348914  assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_textura.png
+          HASHES
+          python - <<'PY'
+          import json, pathlib, struct
+          tiles = json.loads(pathlib.Path('world/playable-eastern-range-v01/composicao_149_hex.json').read_text())['tiles']
+          assert len({tile['id'] for tile in tiles}) == len(tiles) == 149
+          for tile in tiles:
+              for item in [tile, *tile.get('lods', [])]:
+                  assert pathlib.Path(item['model_path']).is_file(), item['model_path']
+          for p in pathlib.Path('.').rglob('*.glb'):
+              with p.open('rb') as f:
+                  magic, version, size = struct.unpack('<4sII', f.read(12))
+                  assert (magic, version, size) == (b'glTF', 2, p.stat().st_size), p
+          PY
+          node world/playable-eastern-range-v01/tests/walk.mjs
+      - name: Compilar Alpha e testar movimento no Chromium
+        working-directory: game/alpha01
+        run: |
+          npm ci
+          npm run build
+          npm run preview -- --port 4173 >/tmp/vite.log 2>&1 &
+          for i in {1..30}; do curl -fsS http://127.0.0.1:4173/ >/dev/null && break; sleep 1; done
+          BROWSER_EXE=$(command -v google-chrome) node ../../world/playable-eastern-range-v01/tests/browser.mjs
+      - name: Publicar branch independente
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CLEAN_SHA: ${{ steps.root.outputs.sha }}
+        run: gh api "repos/$GITHUB_REPOSITORY/git/refs" -f ref=refs/heads/claude-atual -f sha="$CLEAN_SHA"

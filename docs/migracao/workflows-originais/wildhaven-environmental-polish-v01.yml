@@ -1,0 +1,104 @@
+name: 'Wildhaven — aperfeiçoamento ambiental 14 savanas v01'
+on:
+  push:
+    branches: [wildhaven-environmental-polish-v01]
+    paths:
+      - 'world/savanna-ten-concept-rebuild/tools/build_ten_concept.py'
+      - 'world/savanna-south-expansion/tools/build_south_expansion.py'
+      - 'world/savanna-south-expansion/tests/validate_south_expansion.py'
+      - 'world/savanna-south-expansion/tools/render_south_expansion.py'
+      - 'world/environmental-polish/**'
+      - '.github/workflows/wildhaven-environmental-polish-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-environmental-polish-v01-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-environmental-world:
+    runs-on: ubuntu-latest
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar bibliotecas 3D e render
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Restaurar geometria ambiental já gerada
+        uses: actions/cache/restore@v4
+        id: env-geometry
+        with:
+          key: wildhaven-env-v01-${{ hashFiles('world/savanna-ten-concept-rebuild/tools/build_ten_concept.py', 'world/savanna-south-expansion/tools/build_south_expansion.py') }}
+          path: |
+            world/environmental-polish/base10
+            world/environmental-polish/final
+      - name: Regenerar dez savanas com microhabitats
+        if: steps.env-geometry.outputs.cache-hit != 'true'
+        run: |
+          python world/savanna-ten-concept-rebuild/tools/build_ten_concept.py \
+            --repo-root . --output-dir world/environmental-polish/base10
+      - name: Regenerar quatro savanas da expansão sobre a nova base
+        if: steps.env-geometry.outputs.cache-hit != 'true'
+        run: |
+          python world/savanna-south-expansion/tools/build_south_expansion.py \
+            --repo-root . \
+            --source-savanna-dir world/environmental-polish/base10 \
+            --output-dir world/environmental-polish/final
+      - name: Guardar geometria antes dos testes
+        if: steps.env-geometry.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          key: wildhaven-env-v01-${{ hashFiles('world/savanna-ten-concept-rebuild/tools/build_ten_concept.py', 'world/savanna-south-expansion/tools/build_south_expansion.py') }}
+          path: |
+            world/environmental-polish/base10
+            world/environmental-polish/final
+      - name: Validar expansão e onze costuras novas
+        run: |
+          python world/savanna-south-expansion/tests/validate_south_expansion.py \
+            --repo-root . \
+            --source-savanna-dir world/environmental-polish/base10 \
+            --output-dir world/environmental-polish/final
+      - name: Auditar estrutura ambiental dos quatorze hexágonos
+        run: |
+          python world/environmental-polish/tests/validate_environmental.py \
+            --repo-root . \
+            --base10-dir world/environmental-polish/base10 \
+            --final-dir world/environmental-polish/final
+      - name: Renderizar mapa real aperfeiçoado
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/savanna-south-expansion/tools/render_south_expansion.py \
+            --repo-root . \
+            --source-savanna-dir world/environmental-polish/base10 \
+            --output-dir world/environmental-polish/final
+      - name: Artefato para auditoria visual
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-Environmental-Polish-44-Hex-v01
+          retention-days: 30
+          path: |
+            world/environmental-polish/base10/models/*.glb
+            world/environmental-polish/base10/manifest.json
+            world/environmental-polish/base10/model_report.json
+            world/environmental-polish/final/models/*.glb
+            world/environmental-polish/final/manifest.json
+            world/environmental-polish/final/model_report.json
+            world/environmental-polish/final/preview/*.png
+      - name: Publicar somente na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/environmental-polish/base10 \
+            world/environmental-polish/final
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): environmental polish for 14 savanna cells [skip ci]'
+            git push origin HEAD:wildhaven-environmental-polish-v01
+          fi

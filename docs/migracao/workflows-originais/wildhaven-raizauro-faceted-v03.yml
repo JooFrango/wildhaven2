@@ -1,0 +1,55 @@
+name: Wildhaven - Raizauro faceted anatomy pilot v03
+on:
+  push:
+    branches: [wildhaven-raizauro-faceted-blockout-v03]
+    paths:
+      - 'assets/models/creatures/raizauro-v03-pilot/source/**'
+      - '.github/workflows/wildhaven-raizauro-faceted-v03.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  real-blockout:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned real-mesh and VTK rendering dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check numpy==2.3.5 trimesh==4.11.1 vtk==9.6.2 pillow==11.3.0
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Build real angular Raizauro body geometry as glTF 2.0 GLB
+        run: python3 assets/models/creatures/raizauro-v03-pilot/source/build.py
+      - name: Capture actual GLB imported into VTK in three views
+        run: xvfb-run -a python3 assets/models/creatures/raizauro-v03-pilot/source/render.py
+      - name: Audit genuine mesh, flat face colors, 4822 triangles and SHA256
+        run: python3 assets/models/creatures/raizauro-v03-pilot/source/validate.py
+      - name: Compose front, profile and three-quarter screenshots
+        run: python3 assets/models/creatures/raizauro-v03-pilot/source/sheets.py
+      - name: Attach original GLB, checksum, renders and montage
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-raizauro-v03-faceted-blockout-real-GLB-previews
+          path: |
+            assets/models/creatures/raizauro-v03-pilot/*.glb
+            assets/models/creatures/raizauro-v03-pilot/manifest.json
+            assets/models/creatures/raizauro-v03-pilot/previews/*.png
+          if-no-files-found: error
+      - name: Commit real mesh, manifest and screenshots without touching existing assets
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/raizauro-v03-pilot/*.glb \
+                  assets/models/creatures/raizauro-v03-pilot/manifest.json \
+                  assets/models/creatures/raizauro-v03-pilot/previews/
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(raizauro): export 4822-triangle faceted v03 blockout and genuine 3D screenshots [skip ci]'
+            git fetch origin wildhaven-raizauro-faceted-blockout-v03
+            git rebase origin/wildhaven-raizauro-faceted-blockout-v03
+            git push origin HEAD:wildhaven-raizauro-faceted-blockout-v03
+          fi

@@ -158,7 +158,8 @@ export class Camadas {
       if (!lider) continue;
       for (const m of ms) if (m !== lider) this.g.add(new T.Line(new T.BufferGeometry().setFromPoints([P(lider.x, lider.y, 0.6), P(m.x, m.y, 0.6)]), this.mat.grupo));
     }
-    for (const c of mundo.carcacas) {
+    // Com o ciclo V7 ligado a carcaça é o próprio corpo (e depois os ossos): o marcador esférico esconderia os dois.
+    for (const c of mundo.cenario.decomposicao ? [] : mundo.carcacas) {
       const s = 0.25 + Math.sqrt(c.carne) * 0.12;
       const m = new T.Mesh(new T.SphereGeometry(s, 8, 6), this.mat.carcaca);
       m.position.copy(P(c.x, c.y, s * 0.5)); this.g.add(m);

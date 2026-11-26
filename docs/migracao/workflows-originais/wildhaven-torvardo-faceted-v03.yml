@@ -1,0 +1,57 @@
+name: Wildhaven - Torvardo faceted anatomy pilot v03
+on:
+  push:
+    branches: [wildhaven-torvardo-faceted-blockout-v03]
+    paths:
+      - 'assets/models/creatures/torvardo-v03-pilot/source/**'
+      - '.github/workflows/wildhaven-torvardo-faceted-v03.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  genuine-model:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned polygon-mesh and true 3D screenshot tools
+        run: |
+          python3 -m pip install --disable-pip-version-check \
+            numpy==2.3.5 trimesh==4.11.1 vtk==9.6.2 pillow==11.3.0
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1
+      - name: Construct Torvardo angular anatomy directly as real GLB
+        run: |
+          python3 assets/models/creatures/torvardo-v03-pilot/source/build.py
+      - name: Render screenshots of exported GLB in 3 true 3D views
+        run: |
+          xvfb-run -a python3 assets/models/creatures/torvardo-v03-pilot/source/render.py
+      - name: Verify one mesh, facet colors, 3910 triangles and checksum
+        run: |
+          python3 assets/models/creatures/torvardo-v03-pilot/source/validate.py
+      - name: Upload model, source-linked manifest and real renders
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-torvardo-v03-blockout-real-3D-glb-and-prints
+          path: |
+            assets/models/creatures/torvardo-v03-pilot/*.glb
+            assets/models/creatures/torvardo-v03-pilot/manifest.json
+            assets/models/creatures/torvardo-v03-pilot/previews/*.png
+          if-no-files-found: error
+      - name: Publish generated binary and actual renders to review branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/torvardo-v03-pilot/*.glb \
+                  assets/models/creatures/torvardo-v03-pilot/manifest.json \
+                  assets/models/creatures/torvardo-v03-pilot/previews/
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(torvardo): publish real faceted v03 model and orthographic prints [skip ci]'
+            git fetch origin wildhaven-torvardo-faceted-blockout-v03
+            git rebase origin/wildhaven-torvardo-faceted-blockout-v03
+            git push origin HEAD:wildhaven-torvardo-faceted-blockout-v03
+          fi

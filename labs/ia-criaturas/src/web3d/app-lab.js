@@ -5,7 +5,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { carregarConfigEco } from '../eco/config.js';
 import { criarMundoEco, passoEco, hashMundo } from '../eco/mundo.js';
 import { altura } from '../eco/terreno.js';
-import { capsula, contatoGolpe, iniciarAtaque, perfilGolpe, abrirConflito } from '../eco/combate.js';
+import { capsula, contatoGolpe, iniciarAtaque, perfilGolpe } from '../eco/combate.js';
 import { ferir } from '../eco/saude.js';
 import { Animal3D } from './animador.js';
 import { criarTerreno3D } from './cena.js';
@@ -15,32 +15,6 @@ const $ = (id) => document.getElementById(id);
 const lerJson = async (rel) => { const r = await fetch(rel, { cache: 'no-store' }); if (!r.ok) throw new Error(`HTTP ${r.status} em ${rel}`); return r.json(); };
 const cfg = await carregarConfigEco(lerJson);
 const perfis = (await lerJson('config/eco/modelos.json')).perfis;
-// A/B/C visual: v02 (17 clipes), v03 (29 clipes) ou v04 (41 clipes).
-// Nenhuma selecao modifica a ficha oficial nem a IA da simulacao.
-const solicitado = new URLSearchParams(location.search).get('modelo');
-const varianteVarrisco = ['v02','v03','v04'].includes(solicitado) ? solicitado : 'v02';
-if (varianteVarrisco !== 'v02') {
-  const e = cfg.especies.varrisco;
-  e.modelo.glb = `assets/models/creatures/varrisco/${varianteVarrisco}/varrisco-animated-${varianteVarrisco}-LOD0.glb`;
-  // Fuga/recuo sao escolhas do nucleo, nao golpes novos da IA.
-  e.modelo.clipes = { ...e.modelo.clipes, fuga: 'sprint', recuar: 'backstep' };
-  // A politica de combate v05 só entra na experiencia v04; v02/v03 continuam
-  // como grupo de controle, e outras especies usam seu cerebro original.
-  if(varianteVarrisco==='v04') {
-    e.combate.iaAvancada=true;
-    Object.assign(e.modelo.clipes, {
-      finta:'feint', esquivaEsq:'dodge_left', esquivaDir:'dodge_right',
-      agarrar:'grab_start', segurar:'grab_hold', soltar:'grab_release',
-      feridoCabeca:'hurt_head', feridoPerna:'hurt_leg', cair:'fall',
-      levantar:'get_up', exausto:'exhausted', protegerCarcaca:'guard_carcass'
-    });
-  }
-  const manifest = await lerJson(`/repo/assets/models/creatures/varrisco/${varianteVarrisco}/manifest.json`);
-  perfis.varrisco.glb = e.modelo.glb;
-  perfis.varrisco.sha256 = manifest.glb.sha256;
-  perfis.varrisco.bytes = manifest.glb.bytes;
-}
-
 await carregarModelos(THREE, [cfg.especies.varrisco, cfg.especies.velsari], (t) => { $('estado').textContent = t; }, perfis);
 
 // ---------- cena ----------
@@ -220,11 +194,6 @@ const TESTES = {
     { rotulo: 'mordida 2', cmdF: () => golpear('mordida', 'alvo'), max: 8 },
   ] },
   'caca-real': { nome: 'Caça real: Varrisco × Velsaris (IA livre)', livre: 70, pop: [ind('varrisco', 'v', 30, 30, { fome: 95, energia: 100, sexo: 'M', direcaoGraus: 20 }), { especie: 'velsari', grupos: [{ x: 58, y: 50, raio: 4, adultos: 4, filhotes: 1, fome: 40, sede: 10 }] }] },
-  'ia-v05-duelo': { nome: 'IA V05 — 6 comportamentos em duelo (41 clipes)', livre: 60, duelo: true,
-    pop: [ind('varrisco','v',51,50,{fome:80,energia:100,sexo:'M',direcaoGraus:0,
-        temperamento:{agressividade:.96,coragem:.96,medo:.03}}),
-      ind('varrisco','rival',53.2,50,{fome:78,energia:100,sexo:'M',direcaoGraus:180,
-        temperamento:{agressividade:.94,coragem:.95,medo:.04}})] },
   'disputa': { nome: 'Dois Varriscos e uma carcaça (IA livre)', livre: 70, carcaca: { x: 60, y: 50 }, pop: [ind('varrisco', 'v', 58, 50, { fome: 70, energia: 90, sexo: 'M', direcaoGraus: 0, territorio: { x: 60, y: 50, raio: 60 } }), ind('varrisco', 'rival', 92, 60, { fome: 92, energia: 100, sexo: 'M', direcaoGraus: 180, territorio: { x: 95, y: 60, raio: 60 } })] },
   'dano-descanso': { nome: 'Ferimento na perna, recuo e descanso', pop: [ind('varrisco', 'v', 24, 40, { fome: 10, energia: 100, sexo: 'M', direcaoGraus: 0 })], passos: [
     { rotulo: 'trote saudável', cmd: irPara(44, 40, 'trote'), fim: (a) => dist(a, { x: 44, y: 40 }) < 1.6, max: 15 },
@@ -241,15 +210,6 @@ function iniciarTeste(id) {
   montar(T.pop, 7);
   const m = est.mundo, a = m.porId.get('v');
   est.ator = 'v';
-  if (T.duelo) {
-    // Bancada controlada: força a entrada na fase de combate, mas ataques,
-    // ferimentos, esquivas, agarrões, contato e IA são todos do kernel real.
-    const rival = m.porId.get('rival');
-    const confronto=abrirConflito(m,a,rival,'territorio',null);
-    confronto.fase='combate';confronto.desde=m.t;
-    confronto.fasesVistas.push('combate');
-    est.cam='duelo';
-  }
   for (const b of document.querySelectorAll('#lista button')) b.classList.toggle('ativo', b.dataset.id === id);
   if (T.carcaca) m.carcacas.push({ id: 'carc-lab', especie: 'velsari', animal: 'x', x: T.carcaca.x, y: T.carcaca.y, carneInicial: 12, carne: 12, decomposicao: 0, dono: 'v', donoDesde: 0, morteT: 0, consumo: {} });
   if (T.manequim) { const d = m.porId.get(T.manequim); d.comandoTeste = parar(); }
@@ -298,8 +258,7 @@ function iniciarTeste(id) {
         velocidadeMax: +r.vMax.toFixed(2), quadrosGiroNoLugar: r.giroNoLugar, clipes: [...r.clipes].filter(Boolean),
         colisoes: (ag?.colisoes ?? 0) - r.colisoes0, contatosObstaculo: m.metricas.contatosObstaculo - r.contatos0,
         pernas: pern, eventos: r.eventos, registro: est.log.slice(-20),
-        iaAvancada: Object.fromEntries(Object.entries(r.eventos).filter(([tipo]) => tipo.startsWith('tatico_')||tipo==='aprendizado_combate')),
-        golpes: m.eventos.filter((e) => ['tatico_finta','tatico_finta_funcionou','tatico_esquiva','tatico_esquiva_real','tatico_combo_abertura','tatico_combo_executado','tatico_disputa_agarrao','tatico_protege_ferida','tatico_reagiu_ferimento','ataque_inicio', 'ferimento', 'golpe_errou', 'esquiva', 'queda', 'desequilibrio', 'empurrao', 'agarrao', 'soltou', 'escapou_agarrao', 'contra_ataque', 'conflito_fase', 'conflito_fim', 'perseguicao_inicio', 'perseguicao_fim', 'morte'].includes(e.tipo)).slice(0, 40).map((e) => ({ t: e.t, tipo: e.tipo, id: e.id, ataque: e.ataque, regiao: e.regiao, motivo: e.motivo, fase: e.fase, folga: e.folga })),
+        golpes: m.eventos.filter((e) => ['ataque_inicio', 'ferimento', 'golpe_errou', 'esquiva', 'queda', 'desequilibrio', 'empurrao', 'agarrao', 'soltou', 'escapou_agarrao', 'contra_ataque', 'conflito_fase', 'conflito_fim', 'perseguicao_inicio', 'perseguicao_fim', 'morte'].includes(e.tipo)).slice(0, 40).map((e) => ({ t: e.t, tipo: e.tipo, id: e.id, ataque: e.ataque, regiao: e.regiao, motivo: e.motivo, fase: e.fase, folga: e.folga })),
       };
       mostrarResultado(r.resultado);
     },
@@ -366,9 +325,7 @@ function painelVivo() {
   $('vivo').innerHTML = `<dt>Teste</dt><dd>${est.teste?.T.nome ?? '—'}</dd><dt>Estado</dt><dd>${a.estado} · ${a.motivo}</dd><dt>Clipe</dt><dd>${v.nomeAtual} ×${(v.atual?.timeScale ?? 1).toFixed(2)}</dd>
     <dt>Velocidade</dt><dd>${a.velocidade.toFixed(2)} m/s · giro ${((a.velAngular ?? 0) * 57.3).toFixed(0)}°/s</dd><dt>Frente × rumo</dt><dd>${v.desvioFrente().toFixed(1)}°</dd>
     <dt>Patas (apoio)</dt><dd>${p ? `deslize ${p.deslizeApoioFK_ms}→${p.deslizeApoioIK_ms} m/s · altura ${p.erroAlturaFK_m}→${p.erroAlturaIK_m} m` : '—'}</dd>
-    <dt>Vida</dt><dd>${a.saude.hp.toFixed(0)}/${a.saude.hpMax.toFixed(0)} · energia ${a.energia.toFixed(0)} · fôlego ${a.folego.toFixed(1)} s</dd>
-    <dt>IA v05</dt><dd>${a.taticaAvancada?.acao?.tipo ?? 'tática padrão'} · ${a.taticaAvancada?.combo?.proximo ?? 'sem combo'}</dd>
-    <dt>Aprendizado</dt><dd>${Object.entries(a.taticaAvancada?.padroes??{}).map(([id,p])=>id+': '+p.preparos+' preparos / '+p.esquivou+' esquivas / '+p.acertamos+' acertos').join(' · ')||'—'}</dd>`;
+    <dt>Vida</dt><dd>${a.saude.hp.toFixed(0)}/${a.saude.hpMax.toFixed(0)} · energia ${a.energia.toFixed(0)} · fôlego ${a.folego.toFixed(1)} s</dd>`;
   $('estado').textContent = `t ${est.mundo.t.toFixed(1)} s · hash ${hashMundo(est.mundo)} · ${est.teste?.fim ? 'concluído' : 'em andamento'}`;
 }
 

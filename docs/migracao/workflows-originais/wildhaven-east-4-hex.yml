@@ -1,0 +1,56 @@
+name: Wildhaven - quatro hexagonos orientais de transicao 3D
+on:
+  push:
+    branches: [wildhaven-east-4-hex-transitions]
+    paths:
+      - 'world/desert-east-transition/tools/**'
+      - 'world/desert-east-transition/tests/**'
+      - 'world/desert-east-transition/viewer/**'
+      - 'world/desert-east-transition/README.md'
+      - '.github/workflows/wildhaven-east-4-hex.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-east-four-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build-models:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependencias de geometria
+        run: python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'trimesh>=4,<5' 'scipy>=1.11,<2'
+      - name: Gerar quatro terrenos 3D, preservando os sete GLBs originais
+        run: python world/desert-east-transition/tools/build_four_transitions.py
+      - name: Validar 5 km, GLBs reais, hashes originais e as 21 fronteiras
+        run: python world/desert-east-transition/tests/validate_assets.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar visualizador de 11 terrenos
+        working-directory: world/desert-east-transition/viewer
+        run: npm install && npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-11-Hex-Deserto-4-Transicoes-GLB
+          path: |
+            world/desert-ring/models/*.glb
+            world/desert-east-transition/models/*.glb
+            world/desert-east-transition/manifest.json
+          retention-days: 30
+      - name: Registrar os quatro GLBs gerados e o manifesto verificado na branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/desert-east-transition/models/*.glb world/desert-east-transition/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): publish four east transition 5km GLBs [skip ci]'
+            git push origin HEAD:wildhaven-east-4-hex-transitions
+          fi

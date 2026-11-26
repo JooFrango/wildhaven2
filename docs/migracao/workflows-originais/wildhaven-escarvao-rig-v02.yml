@@ -1,0 +1,98 @@
+name: Wildhaven - Escarvao v02 weighted rig and 18 real glTF animations
+on:
+  push:
+    branches: [wildhaven-escarvao-rig-anim-v02]
+    paths:
+      - '.github/workflows/wildhaven-escarvao-rig-v02.yml'
+      - 'assets/models/creatures/escarvao/v02/source/payload-*.b64'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  produce-validate-publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout v02 branch with preserved v01 sources
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-escarvao-rig-anim-v02
+          persist-credentials: true
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install reproducible GLB and rendering tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Restore authored and audited v02 source from sha-checked payload
+        run: |
+          python - <<'PY'
+          import pathlib,base64,hashlib,io,lzma,tarfile
+          root=pathlib.Path('assets/models/creatures/escarvao/v02')
+          parts=[(root/'source'/('payload-%02d.b64'%i)).read_bytes() for i in range(1,6)]
+          assert [len(x) for x in parts]==[3400,3400,3400,3400,3256],[len(x) for x in parts]
+          joined=b''.join(parts)
+          checksum=hashlib.sha256(joined).hexdigest()
+          assert checksum=='27883499d8bc171f67bb515214489e489fbf35943223b3ac2906e81d9404467c',checksum
+          raw=lzma.decompress(base64.b64decode(joined))
+          with tarfile.open(fileobj=io.BytesIO(raw)) as arc:
+            names=sorted(arc.getnames())
+            expected=['README.md','source/build_rig.py','source/preview_animation.py','source/validate_rig.py']
+            assert names==expected,names
+            for member in arc:
+              assert member.isfile() and '..' not in member.name and not member.name.startswith('/')
+              dst=root/member.name;dst.parent.mkdir(exist_ok=True,parents=True)
+              dst.write_bytes(arc.extractfile(member).read())
+          print('Validated original rig and render source:',names)
+          PY
+      - name: Export real glTF skin and 18 clips in all three UV-preserved GLBs
+        run: python assets/models/creatures/escarvao/v02/source/build_rig.py
+      - name: Independently reimport three GLBs and test skinning and all 18 clips
+        run: python assets/models/creatures/escarvao/v02/source/validate_rig.py
+      - name: Render three camera angles, nine poses, two animated GIFs from reimported GLBs
+        run: xvfb-run -a python assets/models/creatures/escarvao/v02/source/preview_animation.py all
+      - name: Verify local binaries match previously tested SHA256 and exact bytes
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,json
+          root=pathlib.Path('assets/models/creatures/escarvao/v02')
+          m=json.loads((root/'manifest_v02.json').read_text())
+          expected={'cobre':'cef2ac4d2ba20cfc2c91ad197ddc7b01779375893d044cb06f68ee5cbf41506f',
+                    'rubro':'482d0ea3457d80e479d060f53e20eb67a6d329734a2df8c151310e38e2b1c66a',
+                    'oliva':'442073b5e584e5828af87d81c6c33444450de8e88becc75079960d251ade8eb3'}
+          for item in m['variants']:
+            p=root/item['path'];digest=hashlib.sha256(p.read_bytes()).hexdigest()
+            assert digest==expected[item['variant']] and digest==item['sha256'],(item['variant'],digest)
+            assert p.stat().st_size==item['bytes']
+            print('VERIFIED:',item['variant'],p.stat().st_size,digest)
+          files=list((root/'previews').glob('*'))
+          assert len(files)==6,files
+          assert len(list(root.glob('*.glb')))==3
+          assert json.loads((root/'validation_v02.json').read_text())['validated_reimported_glbs'] is True
+          PY
+      - name: Retain binary deliverables and animations in workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-escarvao-v02-three-rigged-animated-glbs
+          path: |
+            assets/models/creatures/escarvao/v02/*.glb
+            assets/models/creatures/escarvao/v02/*.json
+            assets/models/creatures/escarvao/v02/README.md
+            assets/models/creatures/escarvao/v02/source/*.py
+            assets/models/creatures/escarvao/v02/previews/*
+          if-no-files-found: error
+      - name: Commit real validated GLBs, source, manifest, UV previews and GIFs
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          ROOT=assets/models/creatures/escarvao/v02
+          git add "$ROOT/README.md" "$ROOT"/source/*.py "$ROOT"/*.glb "$ROOT"/*.json "$ROOT"/previews/*
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(escarvao): publish 51-joint rigged GLBs and 18 glTF clips [skip ci]'
+            git fetch origin wildhaven-escarvao-rig-anim-v02
+            git rebase origin/wildhaven-escarvao-rig-anim-v02
+            git push origin HEAD:wildhaven-escarvao-rig-anim-v02
+          fi

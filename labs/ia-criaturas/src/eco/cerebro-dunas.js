@@ -171,6 +171,12 @@ function presaNoAlcance(a, mundo, pista) {
     if (d > alcance + 1) continue;
     if (!melhor || d < dist(a, melhor)) melhor = o;
   }
+  // Resolver um corpo pela vibração a distância de contato É percepção, e precisa entrar na memória com a
+  // via 'vibracao' (a identificação em vibracoes.js já espera essa marca). Sem isso, a decisão seguinte
+  // aponta para uma criatura que a memória não conhece e o mundo a registra como "reagiu sem perceber".
+  if (melhor) a.memoria.criaturas.set(melhor.id, {
+    id: melhor.id, especie: melhor.especie.id, x: melhor.x, y: melhor.y, t: mundo.t, via: 'vibracao', distancia: dist(a, melhor),
+  });
   return melhor;
 }
 

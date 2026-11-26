@@ -1,0 +1,98 @@
+name: Wildhaven | Desert herbivorous reptiles v02 | Lot B weighted animations
+on:
+  push:
+    branches: [wildhaven-desert-cornevio-fossario-animated-v02]
+    paths:
+      - 'assets/models/creatures/desert-reptiles-animation-v02/lot-b/bootstrap/**'
+      - '.github/workflows/wildhaven-desert-herbivores-lot-b-v02.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  create-animated-GLBs:
+    runs-on: ubuntu-24.04
+    env:
+      WILDHAVEN_CREATURE_ROOT: /tmp/wildhaven-reptiles-static-v01
+      WILDHAVEN_V02_ROOT: assets/models/creatures
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python GLB, rig, playback and renderer dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri libxrender1 libsm6
+          python -m pip install --no-cache-dir numpy==2.3.5 trimesh==4.11.1 scipy==1.17.0 pillow==12.3.0 vtk==9.6.2
+      - name: Unpack versioned source and preserve original two v01 models
+        run: |
+          set -euo pipefail
+          dest="assets/models/creatures/desert-reptiles-animation-v02/lot-b"
+          base64 -d "$dest/bootstrap/source-v02.tar.xz.b64" > /tmp/desert-reptiles-source-b.tar.xz
+          tar -xJf /tmp/desert-reptiles-source-b.tar.xz -C "$dest"
+          for sp in cornevio fossario; do
+            mkdir -p "$WILDHAVEN_CREATURE_ROOT/$sp"
+            cp -a "assets/models/creatures/$sp/v01/." "$WILDHAVEN_CREATURE_ROOT/$sp/"
+            test -s "$WILDHAVEN_CREATURE_ROOT/$sp/$sp-v01-textured-blockout.glb"
+          done
+          test -s "$dest/source/build.py"
+          test -s "$dest/source/render.py"
+          test -s "$dest/source/validate.py"
+      - name: Create v02 weighted-skinned UV-preserving real GLBs with sixteen animation clips
+        run: |
+          python -u "assets/models/creatures/desert-reptiles-animation-v02/lot-b/source/build.py" --species cornevio fossario
+          python -u "assets/models/creatures/desert-reptiles-animation-v02/lot-b/source/validate.py" --species cornevio fossario
+      - name: Play actual exported GLB skinning and capture three views + three GIFs per species
+        run: |
+          xvfb-run -a python -u "assets/models/creatures/desert-reptiles-animation-v02/lot-b/source/render.py" --species cornevio fossario
+      - name: Reimport and audit original v01 shape and texture; compare local reference SHA-256
+        run: |
+          python -u "assets/models/creatures/desert-reptiles-animation-v02/lot-b/source/validate.py" --species cornevio fossario --require-previews
+          python - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          expects={"cornevio":"445cc59b3deda4235296c50b19b9fbb9a24d9e2cb256fc60c5108680e6a1fbd4","fossario":"930a9ab72e1b486ba393d26703553227ab356982ff1faec5f765ffa09330dbad"}
+          for name,expected in expects.items():
+              root=Path("assets/models/creatures")/name/"v02"
+              m=json.loads((root/"manifest.json").read_text())
+              b=(root/m["glb"]["path"]).read_bytes()
+              assert hashlib.sha256(b).hexdigest()==expected==m["glb"]["sha256"],name
+              assert m["glb"]["joints"]==26 and m["glb"]["animation_count"]==16
+              assert m["glb_reimport_sha256"]==expected
+              assert m["texture"]["source_v01_embedded_identical"]
+              m["publication"]="branch_published_pending_artistic_review"
+              (root/"manifest.json").write_text(json.dumps(m,indent=2,ensure_ascii=False)+"\n")
+              print("VERIFIED",name,len(b),expected)
+          PY
+      - name: Upload deliverables as actual CI artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-desert-animated-v02-b
+          if-no-files-found: error
+          path: |
+            assets/models/creatures/cornevio/v02/*.glb
+            assets/models/creatures/cornevio/v02/manifest.json
+            assets/models/creatures/cornevio/v02/previews/*.png
+            assets/models/creatures/cornevio/v02/previews/*.gif
+            assets/models/creatures/fossario/v02/*.glb
+            assets/models/creatures/fossario/v02/manifest.json
+            assets/models/creatures/fossario/v02/previews/*.png
+            assets/models/creatures/fossario/v02/previews/*.gif
+      - name: Commit real GLBs, real GIFs, source and manifests without changing original v01
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f "assets/models/creatures/desert-reptiles-animation-v02/lot-b/source/" "assets/models/creatures/desert-reptiles-animation-v02/lot-b/README.md"
+          for sp in cornevio fossario; do
+            git add -f "assets/models/creatures/$sp/v02/"
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(desert-herbivores): publish real skinned v02 GLBs and reimported animated evidence lot B [skip ci]'
+            git push origin HEAD:wildhaven-desert-cornevio-fossario-animated-v02
+          fi
+          git fetch origin +refs/heads/wildhaven-desert-cornevio-fossario-animated-v02:refs/remotes/origin/wildhaven-desert-cornevio-fossario-animated-v02
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/wildhaven-desert-cornevio-fossario-animated-v02)"
+          echo "Remote published SHA $(git rev-parse HEAD)"

@@ -20,7 +20,16 @@ export function integrarNecessidades(mundo, a, ate) {
 // Nível por distância ao foco de observação (câmera/região de interesse). Sem foco: tudo em nível 1.
 export function atribuirNiveis(mundo) {
   const obs = mundo.opcoes.observacao;
+  const combatentes=new Set();
+  if(mundo.opcoes.tatica){
+    for(const c of mundo.conflitos)if(!c.resultado){combatentes.add(c.a);combatentes.add(c.b);}
+    for(const [id,p]of mundo.perseguicoesAtivas){combatentes.add(id);combatentes.add(p.presa);}
+    for(const a of mundo.vivos)if(a.tatica?.enabled&&(a.golpe||a.tatica.action?.end>mundo.t||mundo.t-(a.tatica.lastSeen??-99)<8)){combatentes.add(a.id);if(a.tatica.target)combatentes.add(a.tatica.target);}
+  }
   for (const a of mundo.vivos) {
+    if(combatentes.has(a.id)){if(a.nivel!==1){integrarNecessidades(mundo,a,mundo.t);a.nivel=1;}continue;}
+    // Agente preso ao nível 1 (Hunter acompanhado): trocar de câmera nunca pode rebaixá-lo e encerrar a luta.
+    if (a.nivelFixo) continue;
     let n = 1;
     if (obs) {
       const d = Math.sqrt((a.x - obs.x) * (a.x - obs.x) + (a.y - obs.y) * (a.y - obs.y));

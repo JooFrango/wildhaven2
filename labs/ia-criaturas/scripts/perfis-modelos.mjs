@@ -29,6 +29,9 @@ for (const e of Object.values(cfg.especies)) {
     // V3: anatomia de combate medida no rig (osso que golpeia, instante de impacto, alcance real do membro).
     anatomia: await anatomiaGlb(arq, a.frente, e.combate.ataques.filter((x) => x.clipe)),
   };
+  // Corpo longo: o alcance é medido do CENTRO do modelo, e num corpo de 15 m isso devolve metade da
+  // serpente como "alcance do bote". A origem real do golpe é a cabeça, que se move — vale a ficha.
+  if (e.serpente) perfis[e.id].anatomia = null;
   // Rig por pivôs sem osso nomeado: o instante e o alcance do golpe não são mensuráveis — vale a ficha.
   if (Object.values(perfis[e.id].anatomia?.ataques ?? {}).some((x) => !x.osso)) perfis[e.id].anatomia = null;
   console.log(e.id, a.frente, Object.keys(perfis[e.id].clipes).length, 'clipes');

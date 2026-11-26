@@ -1,0 +1,102 @@
+name: Wildhaven - Arraia-de-Areia anatomical refinement v02 real GLB
+on:
+  push:
+    branches: [wildhaven-arraia-de-areia-refinamento-v02]
+    paths:
+      - 'assets/models/creatures/arraia-de-areia/v02/source/source-part*.b64'
+      - '.github/workflows/wildhaven-arraia-de-areia-refinamento-v02.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  export-refined-arraia:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout source branch preserving v01
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-arraia-de-areia-refinamento-v02
+          persist-credentials: true
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install pinned modelling, UV paint, glTF and real-render dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Recover and publish original readable source scripts
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,base64,lzma,io,tarfile
+          root=pathlib.Path('assets/models/creatures/arraia-de-areia/v02')
+          parts=[(root/'source'/('source-part%02d.b64'%i)).read_bytes() for i in range(1,5)]
+          assert [len(x) for x in parts]==[2800,2800,2800,1336]
+          b=b''.join(parts)
+          assert hashlib.sha256(b).hexdigest()=='f6ce28d3fbcf66d5e4575336be37d7506ee957c061d49ac5249b92b484697de3'
+          with tarfile.open(fileobj=io.BytesIO(lzma.decompress(base64.b64decode(b)))) as tar:
+              assert sorted(tar.getnames())==['README.md','source/build_refined.py','source/render.py']
+              for m in tar:
+                  assert m.isfile() and not m.name.startswith('/') and '..' not in m.name
+                  dest=root/m.name
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  dest.write_bytes(tar.extractfile(m).read())
+          print('Verified source restored and readable')
+          PY
+      - name: Build refined original mesh and paint on approved UV atlas
+        run: python assets/models/creatures/arraia-de-areia/v02/source/build_refined.py
+      - name: Reimport the exported REAL GLB and render 3 views plus overhead
+        run: xvfb-run -a python assets/models/creatures/arraia-de-areia/v02/source/render.py
+      - name: Independently validate actual generated mesh, texture, and screenshots
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,struct,json
+          from PIL import Image
+          root=pathlib.Path('assets/models/creatures/arraia-de-areia/v02')
+          m=json.loads((root/'manifest.json').read_text())
+          glb=root/'arraia-de-areia-v02-anatomia-refinada.glb'
+          data=glb.read_bytes()
+          h=hashlib.sha256(data).hexdigest()
+          assert h=='456478469e0b7396ef09dc5a1cfafc45ba4a9123ccd978b971635fa53038b995', h
+          assert h==m['sha256_glb'] and len(data)==m['bytes_glb']==4710600
+          assert data[:4]==b'glTF' and struct.unpack_from('<I',data,8)[0]==len(data)
+          n=struct.unpack_from('<I',data,12)[0];j=json.loads(data[20:20+n])
+          assert len(j['meshes'])==len(j['materials'])==len(j['images'])==len(j['textures'])==1
+          assert j['images'][0]['mimeType']=='image/png'
+          assert 'TEXCOORD_0' in j['meshes'][0]['primitives'][0]['attributes']
+          assert not j.get('skins') and not j.get('animations')
+          assert m['triangles']==6576 and m['color_patches_extra_meshes']==0
+          tex=root/'textures'/'arraia-de-areia-v02-pintura-uv-refinada.png'
+          assert Image.open(tex).size==(2048,2048)
+          assert hashlib.sha256(tex.read_bytes()).hexdigest()==m['sha256_texture']
+          for name in ['perfil','frente','tres-quartos','superior','3-vistas']:
+              p=root/'previews'/('arraia-de-areia-v02-GLB-real-'+name+'.png')
+              assert p.exists() and p.stat().st_size>30000 and p.read_bytes().startswith(bytes.fromhex('89504e470d0a1a0a'))
+          print('VALIDATED GLB v02: 6576 triangles, 1 mesh/material, 2048px painted texture, 5 real PNGs, zero rigs/clips')
+          PY
+      - name: Upload verified files to GitHub Actions artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-arraia-v02-refined-GLB-real-renders
+          path: |
+            assets/models/creatures/arraia-de-areia/v02/*.glb
+            assets/models/creatures/arraia-de-areia/v02/*.json
+            assets/models/creatures/arraia-de-areia/v02/README.md
+            assets/models/creatures/arraia-de-areia/v02/source/*.py
+            assets/models/creatures/arraia-de-areia/v02/textures/*.png
+            assets/models/creatures/arraia-de-areia/v02/previews/*.png
+          if-no-files-found: error
+      - name: Commit verified real binaries and sources without overwriting v01
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/arraia-de-areia/v02
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$ROOT"/README.md "$ROOT"/source/*.py "$ROOT"/*.glb "$ROOT"/*.json "$ROOT"/textures/*.png "$ROOT"/previews/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(arraia): publish UV painted v02 refinement, real GLB and reimported renders [skip ci]'
+            git fetch origin wildhaven-arraia-de-areia-refinamento-v02
+            git rebase origin/wildhaven-arraia-de-areia-refinamento-v02
+            git push origin HEAD:wildhaven-arraia-de-areia-refinamento-v02
+          fi

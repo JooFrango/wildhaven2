@@ -1,0 +1,33 @@
+name: Wildhaven - Pilotos Artísticos v03 Auditoria Remota de GLBs
+
+on:
+  push:
+    branches: [wildhaven-hex-montanha-duna-artistico-v03]
+    paths:
+      - .github/workflows/wildhaven-two-pilots-v03-remote-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify the two published binary GLBs and four REAL screenshots
+        run: python world/hex-art-pilots-v03/tests/verify_published_binary_pilots.py
+      - name: Save remote verification report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/hex-art-pilots-v03/audit/remote_binary_verification_v03.json
+          git commit -m "audit(world): independently verify two real sculpted GLBs and screenshots [skip ci]"
+          git push origin HEAD:wildhaven-hex-montanha-duna-artistico-v03

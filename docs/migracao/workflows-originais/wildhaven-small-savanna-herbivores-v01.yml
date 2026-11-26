@@ -1,0 +1,94 @@
+name: Wildhaven - four small savanna herbivores animated GLBs v01
+on:
+  push:
+    branches: [wildhaven-small-savanna-herbivores-animated-v01]
+    paths:
+      - 'assets/models/creatures/savanna-small-herbivores-v01/source/**'
+      - 'creatures/species/sevilho.json'
+      - 'creatures/species/arbelio.json'
+      - 'creatures/species/frutavil.json'
+      - 'creatures/species/cromatil.json'
+      - '.github/workflows/wildhaven-small-savanna-herbivores-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-and-check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned geometry and offline render dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check numpy==2.3.5 vtk==9.6.2 pillow==11.2.1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Generate twelve independent animated GLBs with 3 LODs per creature
+        run: |
+          python3 assets/models/creatures/savanna-small-herbivores-v01/source/generate.py
+      - name: Render twelve genuine screenshots from the exported binary GLBs
+        run: |
+          xvfb-run -a python3 assets/models/creatures/savanna-small-herbivores-v01/source/render_exported.py
+      - name: Create comparison image from true GLB captures
+        run: |
+          python3 assets/models/creatures/savanna-small-herbivores-v01/source/make_sheet.py
+      - name: Verify glTF binary data, 44 embedded animations, LODs and SHA256
+        run: |
+          python3 assets/models/creatures/savanna-small-herbivores-v01/source/validate.py
+      - name: Place assets in the canonical per-creature directories
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import shutil
+          from pathlib import Path
+          root=Path('assets/models/creatures')
+          workshop=root/'savanna-small-herbivores-v01'
+          for species in ('sevilho','arbelio','frutavil','cromatil'):
+              dst=root/species
+              dst.mkdir(parents=True,exist_ok=True)
+              for file in (workshop/'models'/species).glob('*.glb'):
+                  shutil.copy2(file,dst/file.name)
+              shutil.copy2(workshop/'models'/species/f'{species}-manifest-v01.json',dst)
+              for file in (workshop/'previews').glob(f'{species}-real-3d-*-v01.png'):
+                  shutil.copy2(file,dst/file.name)
+          PY
+      - name: Upload genuine binary models and previews as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-small-savanna-four-animated-creatures-v01
+          path: |
+            assets/models/creatures/sevilho/*-LOD*.glb
+            assets/models/creatures/sevilho/*v01.png
+            assets/models/creatures/sevilho/*manifest-v01.json
+            assets/models/creatures/arbelio/*-LOD*.glb
+            assets/models/creatures/arbelio/*v01.png
+            assets/models/creatures/arbelio/*manifest-v01.json
+            assets/models/creatures/frutavil/*-LOD*.glb
+            assets/models/creatures/frutavil/*v01.png
+            assets/models/creatures/frutavil/*manifest-v01.json
+            assets/models/creatures/cromatil/*-LOD*.glb
+            assets/models/creatures/cromatil/*v01.png
+            assets/models/creatures/cromatil/*manifest-v01.json
+            assets/models/creatures/savanna-small-herbivores-v01/previews/Wildhaven_4_Pequenos_Previews_Reais_v01.png
+            assets/models/creatures/savanna-small-herbivores-v01/validation-report.json
+          if-no-files-found: error
+      - name: Commit binary GLBs and real renders in the dedicated review branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/sevilho/ \
+                  assets/models/creatures/arbelio/ \
+                  assets/models/creatures/frutavil/ \
+                  assets/models/creatures/cromatil/ \
+                  assets/models/creatures/savanna-small-herbivores-v01/previews/Wildhaven_4_Pequenos_Previews_Reais_v01.png \
+                  assets/models/creatures/savanna-small-herbivores-v01/validation-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(wildhaven): add 4 small savanna herbivores, 12 animated GLBs and real renders [skip ci]'
+            git fetch origin wildhaven-small-savanna-herbivores-animated-v01
+            git rebase origin/wildhaven-small-savanna-herbivores-animated-v01
+            git push origin HEAD:wildhaven-small-savanna-herbivores-animated-v01
+          fi

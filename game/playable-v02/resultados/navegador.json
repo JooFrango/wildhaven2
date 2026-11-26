@@ -1,0 +1,205 @@
+{
+ "data": "2026-11-21T22:26:49.605Z",
+ "erros": [],
+ "falhas": [],
+ "etapas": {
+  "camera": {
+   "alvo": [
+    2,
+    44.5,
+    1360
+   ],
+   "pos": [
+    47,
+    99.5,
+    1405
+   ],
+   "polar": 0.858
+  },
+  "semControleManual": true,
+  "ordens": [
+   [
+    "arvo",
+    "cacar",
+    "caçando"
+   ],
+   [
+    "brena",
+    "cacar",
+    "caçando"
+   ],
+   [
+    "caio",
+    "explorar",
+    "explorando"
+   ],
+   [
+    "dara",
+    "vila",
+    "na vila"
+   ]
+  ],
+  "trocaDeCamera": {
+   "seguido": "caio",
+   "metrosAndadosDepoisDaTroca": [
+    151.4,
+    155.5,
+    39.9
+   ]
+  },
+  "combate": {
+   "desfecho": true,
+   "varrisco": {
+    "hp": -0.04324011043988085,
+    "hpMax": 389.4318205503279,
+    "vivo": false,
+    "x": 432.6068961378151,
+    "y": 2442.6895570303045
+   },
+   "acertosHunters": 19,
+   "golpesVarrisco": 4,
+   "esquivas": 3,
+   "ultimos": [
+    {
+     "id": "brena",
+     "t": 168.1,
+     "tipo": "combate",
+     "texto": "acertou varrisco-real (pescoco)"
+    },
+    {
+     "id": "arvo",
+     "t": 168.4,
+     "tipo": "combate",
+     "texto": "acertou varrisco-real (tronco)"
+    },
+    {
+     "id": "brena",
+     "t": 168.9,
+     "tipo": "combate",
+     "texto": "acertou varrisco-real (pescoco)"
+    },
+    {
+     "id": "arvo",
+     "t": 169.3,
+     "tipo": "combate",
+     "texto": "acertou varrisco-real (tronco)"
+    },
+    {
+     "id": "brena",
+     "t": 170.6,
+     "tipo": "combate",
+     "texto": "acertou varrisco-real (pescoco)"
+    },
+    {
+     "id": "arvo",
+     "t": 171.5,
+     "tipo": "combate",
+     "texto": "acertou varrisco-real (flanco)"
+    },
+    {
+     "id": "arvo",
+     "t": 172.4,
+     "tipo": "combate",
+     "texto": "varrisco abatido"
+    },
+    {
+     "id": "brena",
+     "t": 172.4,
+     "tipo": "combate",
+     "texto": "varrisco abatido"
+    }
+   ]
+  },
+  "trocaDeTarefa": {
+   "caio": "voltar",
+   "brena": "ir"
+  },
+  "salvarRestaurar": {
+   "tSalvo": 489.55,
+   "tRest": 489.55,
+   "hunters": [
+    [
+     "arvo",
+     "detalhado",
+     null,
+     105.7
+    ],
+    [
+     "brena",
+     "detalhado",
+     null,
+     100.5
+    ],
+    [
+     "caio",
+     "detalhado",
+     null,
+     98
+    ],
+    [
+     "dara",
+     "estrategico",
+     "ir",
+     102.6
+    ]
+   ]
+  }
+ },
+ "desempenho1x": {
+  "qualidade": "baixa",
+  "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "fpsMedio": 58.9,
+  "msP95": 17.1,
+  "drawCalls": 49,
+  "triangulos": 995234,
+  "geometrias": 50,
+  "texturas": 13,
+  "heapMB": 145,
+  "hexes": 7,
+  "passosCedidos": 0,
+  "falhaTile": null
+ },
+ "desempenho8x": {
+  "qualidade": "baixa",
+  "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "fpsMedio": 45.1,
+  "msP95": 66.8,
+  "drawCalls": 45,
+  "triangulos": 831774,
+  "geometrias": 50,
+  "texturas": 13,
+  "heapMB": 140,
+  "hexes": 7,
+  "passosCedidos": 0,
+  "falhaTile": null
+ },
+ "desempenhoViagem8x": {
+  "qualidade": "baixa",
+  "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "fpsMedio": 21.9,
+  "msP95": 100,
+  "drawCalls": 43,
+  "triangulos": 989584,
+  "geometrias": 51,
+  "texturas": 11,
+  "heapMB": 141,
+  "hexes": 7,
+  "passosCedidos": 0,
+  "falhaTile": null
+ },
+ "desempenho": {
+  "qualidade": "baixa",
+  "gpu": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "fpsMedio": 50,
+  "msP95": 33.4,
+  "drawCalls": 56,
+  "triangulos": 1017583,
+  "geometrias": 47,
+  "texturas": 11,
+  "heapMB": 135,
+  "hexes": 7,
+  "passosCedidos": 0,
+  "falhaTile": null
+ },
+ "ok": true
+}

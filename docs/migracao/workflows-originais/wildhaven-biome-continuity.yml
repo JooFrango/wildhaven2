@@ -1,0 +1,61 @@
+name: 'Wildhaven - correcao de 13 hexagonos: transicao suave'
+on:
+  push:
+    branches: [wildhaven-biome-continuity-v02]
+    paths:
+      - 'world/biome-continuity/**'
+      - '.github/workflows/wildhaven-biome-continuity.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-biome-continuity-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar bibliotecas para malhas 3D
+        run: python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5'
+      - name: Regerar terrenos, corrigir transicoes e remover X1 da cena
+        run: python world/biome-continuity/tools/repair_world.py
+      - name: Verificar 26 bordas, 13 GLBs, cores e lago unico
+        run: python world/biome-continuity/tests/validate.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar viewer Three.js com modelos corrigidos
+        working-directory: world/biome-continuity/viewer
+        run: |
+          npm install
+          npm run build
+      - name: Arquivar GLBs para inspeção
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-13-hexagonos-transicao-corrigida
+          path: |
+            world/biome-continuity/models/*.glb
+            world/biome-continuity/manifest.json
+          retention-days: 30
+      - name: Publicar seis GLBs corrigidos sem modificar fontes históricas
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/biome-continuity/manifest.json \
+            world/biome-continuity/models/13_arch_transicao_5km.glb \
+            world/biome-continuity/models/14_mountain_transicao_5km.glb \
+            world/biome-continuity/models/15_oasis_transicao_5km.glb \
+            world/biome-continuity/models/16_contrafortes_floresta_5km.glb \
+            world/biome-continuity/models/17_lago_floresta_temperada_5km.glb \
+            world/biome-continuity/models/18_bosque_temperado_5km.glb
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): six corrected real GLBs, 13-tile manifest excluding X1 [skip ci]'
+            git push origin HEAD:wildhaven-biome-continuity-v02
+          fi

@@ -1,0 +1,59 @@
+name: Wildhaven - Three Temperate Forest 5km Hexes
+on:
+  push:
+    branches: [wildhaven-forest-trio-5km]
+    paths:
+      - 'world/desert-forest-transition/tools/**'
+      - 'world/desert-forest-transition/viewer/**'
+      - 'world/desert-forest-transition/tests/**'
+      - '.github/workflows/wildhaven-forest-trio.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-forest-trio-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  generate-test-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install 3D mesh dependencies
+        run: python -m pip install 'numpy>=1.26,<3' 'trimesh>=4,<5' 'scipy>=1.11,<2'
+      - name: Generate THREE true 3D forest tiles and 14-hex manifest
+        run: python world/desert-forest-transition/tools/build_forest_trio.py
+      - name: Verify original SHA, shared seams, a single lake and no forest rivers
+        run: python world/desert-forest-transition/tests/validate_assets.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compile 14-hex Three.js viewer
+        working-directory: world/desert-forest-transition/viewer
+        run: |
+          npm install
+          npm run build
+      - name: Upload GLB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-14-Hexagons-Desert-Mountain-Forest-5km
+          path: |
+            world/desert-ring/models/*.glb
+            world/desert-east-transition/models/*.glb
+            world/desert-forest-transition/models/*.glb
+            world/desert-forest-transition/manifest.json
+          retention-days: 30
+      - name: Commit the three GLBs and deterministic manifest to feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add world/desert-forest-transition/models/*.glb world/desert-forest-transition/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): publish three linked 5km temperate forest GLBs [skip ci]'
+            git push origin HEAD:wildhaven-forest-trio-5km
+          fi

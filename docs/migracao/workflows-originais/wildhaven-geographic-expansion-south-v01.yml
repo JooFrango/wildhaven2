@@ -1,0 +1,66 @@
+name: 'Wildhaven — expansão geográfica sul 44 hex v01'
+on:
+  push:
+    branches: [wildhaven-geographic-expansion-south-v01]
+    paths:
+      - 'world/savanna-south-expansion/**'
+      - 'world/savanna-ten-concept-rebuild/tools/build_ten_concept.py'
+      - '.github/workflows/wildhaven-geographic-expansion-south-v01.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-geographic-expansion-south-v01-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-south-expansion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar geometria e render
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Gerar quatro novos GLBs ao sul
+        run: |
+          python world/savanna-south-expansion/tools/build_south_expansion.py \
+            --repo-root . --output-dir world/savanna-south-expansion
+      - name: Validar 44 hexágonos e 102 conexões
+        run: |
+          python world/savanna-south-expansion/tests/validate_south_expansion.py \
+            --repo-root . --output-dir world/savanna-south-expansion
+      - name: Renderizar composição real de 44 hexágonos
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/savanna-south-expansion/tools/render_south_expansion.py \
+            --repo-root . --output-dir world/savanna-south-expansion
+      - name: Arquivo de auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-44-Hex-Geographic-Expansion-South-v01
+          retention-days: 30
+          path: |
+            world/savanna-south-expansion/models/*.glb
+            world/savanna-south-expansion/manifest.json
+            world/savanna-south-expansion/model_report.json
+            world/savanna-south-expansion/preview/*.png
+      - name: Publicar somente na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/savanna-south-expansion/models \
+            world/savanna-south-expansion/manifest.json \
+            world/savanna-south-expansion/model_report.json \
+            world/savanna-south-expansion/preview
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 44 real hexes with four-tile south expansion [skip ci]'
+            git push origin HEAD:wildhaven-geographic-expansion-south-v01
+          fi

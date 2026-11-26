@@ -1,0 +1,73 @@
+name: Wildhaven Varrisco v01 - real GLB blockout and renders
+on:
+  push:
+    branches: [wildhaven-varrisco-faceted-blockout-v01]
+    paths:
+      - 'assets/models/creatures/varrisco/source-package-v01.tar.xz.b64'
+      - '.github/workflows/wildhaven-varrisco-blockout-v01-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Unpack original editable generator, renderer and validator
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/varrisco
+          mkdir -p "$ROOT"
+          base64 --decode "$ROOT/source-package-v01.tar.xz.b64" | tar -xJ -C "$ROOT"
+      - name: Install 3D rendering/validation dependencies
+        run: python -m pip install --disable-pip-version-check "numpy>=2.1" "trimesh>=4.4" "vtk>=9.4" "pillow>=11"
+      - name: Build original model from source
+        run: python assets/models/creatures/varrisco/source/build.py
+      - name: Render GLB after reimporting through VTK
+        run: python assets/models/creatures/varrisco/source/render.py
+      - name: Make real three-angle review sheet
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image, ImageDraw
+          p=Path('assets/models/creatures/varrisco/previews')
+          labels=[('profile','PERFIL'),('front','FRENTE'),('three-quarter','TRÊS-QUARTOS')]
+          out=Image.new('RGB',(2400,690),(238,238,236))
+          d=ImageDraw.Draw(out)
+          for i,(name,label) in enumerate(labels):
+            im=Image.open(p/f'varrisco-v01-real-glb-{name}.png').convert('RGB')
+            im.thumbnail((800,640))
+            out.paste(im,(i*800+(800-im.width)//2,0))
+            d.text((i*800+20,654),label,fill=(30,32,35))
+          out.save(p/'Varrisco_v01_Preview_GLB_Real_3_Angulos.png')
+          PY
+      - name: Update manifesto to record CI production stage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('assets/models/creatures/varrisco/manifest.json')
+          d=json.loads(p.read_text())
+          d['publication']='built_and_committed_on_review_branch_by_actions'
+          d['source_archive']='source-package-v01.tar.xz.b64'
+          p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Validate reimported GLB plus three rendered image hashes
+        run: python assets/models/creatures/varrisco/source/validate.py
+      - name: Publish generated real binaries + sources (not only textual files)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/varrisco/
+          if ! git diff --cached --quiet; then
+            git commit -m "assets(wildhaven): publish Varrisco v01 GLB and reimported three-angle renders [skip ci]"
+            git push origin HEAD:wildhaven-varrisco-faceted-blockout-v01
+          fi

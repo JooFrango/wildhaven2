@@ -1,0 +1,64 @@
+name: Wildhaven Asset Bridge smoke test
+on:
+  pull_request:
+    paths:
+      - 'tools/asset-bridge/**'
+      - '.github/workflows/wildhaven-asset-bridge.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: tools/asset-bridge
+          fetch-depth: 1
+      - uses: actions/checkout@v4
+        with:
+          ref: 162e096c73be0733579e7d203c5e77336e3b2ac4
+          path: original
+          persist-credentials: true
+          sparse-checkout: assets/models/creatures/arenoceto/v02
+          fetch-depth: 1
+      - name: Verify original Arenoceto V02 GLB from Git checkout
+        run: |
+          mkdir -p transfer
+          python3 - <<'PY'
+          import hashlib, importlib.util, json, pathlib, shutil
+          spec = importlib.util.spec_from_file_location("bridge", "tools/asset-bridge/download.py")
+          bridge = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(bridge)
+          base = pathlib.Path("original/assets/models/creatures/arenoceto/v02")
+          p = base / "arenoceto-v02-skinned-animated-LOD0.glb"
+          manifest = json.loads((base / "manifest.json").read_text())
+          report = bridge.verify(p.read_bytes(), {"size": 1588096, "sha": "9112818e1e00dcb156b9896835786d61d6a8bd5d"}, p.name, manifest["sha256"])
+          shutil.copyfile(p, "transfer/arenoceto.glb")
+          pathlib.Path("transfer/report.json").write_text(json.dumps(report, indent=2))
+          print(json.dumps(report, indent=2))
+          PY
+      - name: Stage verified binary in private Git transfer branch
+        run: |
+          python3 - <<'PY'
+          import base64, pathlib, json
+          data = pathlib.Path("transfer/arenoceto.glb").read_bytes()
+          target = pathlib.Path("original/.asset-transfer/arenoceto-v02")
+          target.mkdir(parents=True, exist_ok=True)
+          names = []
+          for i, offset in enumerate(range(0, len(data), 540000)):
+              name = f"part-{i:03d}.b64"
+              (target / name).write_bytes(base64.b64encode(data[offset:offset+540000]))
+              names.append(name)
+          report = json.loads(pathlib.Path("transfer/report.json").read_text())
+          report["parts"] = names
+          (target / "index.json").write_text(json.dumps(report, indent=2) + "\n")
+          PY
+          cd original
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --sparse .asset-transfer/arenoceto-v02
+          git commit -m "Stage verified Arenoceto bytes for direct Git transfer"
+          git push origin HEAD:refs/heads/transfer/arenoceto-v02-verified-20261126

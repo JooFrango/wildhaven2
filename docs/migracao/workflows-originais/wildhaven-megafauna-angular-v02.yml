@@ -1,0 +1,89 @@
+name: Wildhaven - 4 megafauna angular low-poly animated GLBs V02
+on:
+  push:
+    branches: [wildhaven-megafauna-angular-lowpoly-v02]
+    paths:
+      - 'assets/models/creatures/savanna-megafauna-v02/source/**'
+      - '.github/workflows/wildhaven-megafauna-angular-v02.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned geometry/render dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check \
+            numpy==2.3.5 scipy==1.16.2 scikit-image==0.26.0 \
+            trimesh==4.11.1 vtk==9.6.2 pillow==11.3.0
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Generate 4 faceted original creatures / 3 LODs / 49 animation clips
+        run: |
+          xvfb-run -a python3 assets/models/creatures/savanna-megafauna-v02/source/build_all.py
+      - name: Validate exported binary GLBs, skins, joints, clip sampler and SHA256
+        run: |
+          python3 assets/models/creatures/savanna-megafauna-v02/source/validate.py
+      - name: Build authentic side/front/three-quarter preview sheet
+        run: |
+          python3 assets/models/creatures/savanna-megafauna-v02/source/make_sheet.py
+      - name: Publish only new v02 assets in canonical model folders
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          base=Path('assets/models/creatures')
+          workspace=base/'savanna-megafauna-v02'
+          for sid in ('torvardo','raizauro','mastelio','garruva'):
+              dest=base/sid
+              dest.mkdir(parents=True,exist_ok=True)
+              for file in (workspace/'models'/sid).glob('*v02*.glb'):
+                  shutil.copy2(file,dest/file.name)
+              shutil.copy2(workspace/'models'/sid/f'{sid}-manifest-v02.json',dest)
+              for file in (workspace/'previews').glob(f'{sid}-real-3d-*-v02.png'):
+                  shutil.copy2(file,dest/file.name)
+          PY
+      - name: Preserve real models/animations and screenshots as a downloadable artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-megafauna-v02-angular-four-animated-12-GLBs
+          path: |
+            assets/models/creatures/torvardo/*v02*.glb
+            assets/models/creatures/torvardo/*v02.png
+            assets/models/creatures/torvardo/*manifest-v02.json
+            assets/models/creatures/raizauro/*v02*.glb
+            assets/models/creatures/raizauro/*v02.png
+            assets/models/creatures/raizauro/*manifest-v02.json
+            assets/models/creatures/mastelio/*v02*.glb
+            assets/models/creatures/mastelio/*v02.png
+            assets/models/creatures/mastelio/*manifest-v02.json
+            assets/models/creatures/garruva/*v02*.glb
+            assets/models/creatures/garruva/*v02.png
+            assets/models/creatures/garruva/*manifest-v02.json
+            assets/models/creatures/savanna-megafauna-v02/previews/Wildhaven_Megafauna_4_Modelos_Reais_v02.png
+            assets/models/creatures/savanna-megafauna-v02/validation-report.json
+          if-no-files-found: error
+      - name: Commit new model binaries without replacing v01 or main
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/torvardo/ \
+                  assets/models/creatures/raizauro/ \
+                  assets/models/creatures/mastelio/ \
+                  assets/models/creatures/garruva/ \
+                  assets/models/creatures/savanna-megafauna-v02/previews/Wildhaven_Megafauna_4_Modelos_Reais_v02.png \
+                  assets/models/creatures/savanna-megafauna-v02/validation-report.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(megafauna): genuine angular v02 low-poly GLBs, rigs and renders [skip ci]'
+            git fetch origin wildhaven-megafauna-angular-lowpoly-v02
+            git rebase origin/wildhaven-megafauna-angular-lowpoly-v02
+            git push origin HEAD:wildhaven-megafauna-angular-lowpoly-v02
+          fi

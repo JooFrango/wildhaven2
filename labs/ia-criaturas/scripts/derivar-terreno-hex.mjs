@@ -50,13 +50,13 @@ if (args.procurar) {
 
 const res = Number(args.res ?? 1), largura = Number(args.largura ?? 240), prof = Number(args.profundidade ?? 200);
 const x0 = Number(args.x0), z0 = Number(args.z0);
-const { t, cont, base } = montarTerreno(tris, { x0, z0, largura, profundidade: prof, res });
+const { t, cont, base } = montarTerreno(tris, { x0, z0, largura, profundidade: prof, res, bloquearSemTerreno: !!args.bloquearSemTerreno });
 const saida = args.saida ?? `config/eco/terrenos/recorte.json`;
 const dados = {
   ...serializarTerreno(t),
   origem: {
     glb: relative(resolve(RAIZ_LAB, '../..'), resolve(arq)).replace(/\\/g, '/'), sha256, nota: 'Derivado (somente leitura). Coordenadas: x = X − x0, y = Z − z0 (metros do hexágono); altura relativa ao ponto mais baixo do recorte.',
-    x0, z0, alturaBase: +base.toFixed(3), contagens: cont, geradoEm: new Date().toISOString(),
+    x0, z0, alturaBase: +base.toFixed(3), contagens: cont, bloquearSemTerreno: !!args.bloquearSemTerreno, geradoEm: new Date().toISOString(),
   },
 };
 await mkdir(dirname(join(RAIZ_LAB, saida)), { recursive: true });

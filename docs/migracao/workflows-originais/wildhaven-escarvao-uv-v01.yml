@@ -1,0 +1,80 @@
+name: Wildhaven - Escarvao v01 UV real GLB and reimport previews
+on:
+  push:
+    branches: [wildhaven-escarvao-uv-blockout-v01]
+    paths:
+      - '.github/workflows/wildhaven-escarvao-uv-v01.yml'
+      - 'assets/models/creatures/escarvao/v01/source/payload-*.b64'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout isolated art-review branch
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-escarvao-uv-blockout-v01
+          persist-credentials: true
+      - name: Set up Python 3D toolkit
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install exact local dependencies and headless GL rendering
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Recover original authored source with integrity check
+        run: |
+          python - <<'PY'
+          import pathlib,hashlib,base64,lzma,io,tarfile
+          root=pathlib.Path('assets/models/creatures/escarvao/v01')
+          files=[root/'source'/('payload-%02d.b64'%i) for i in range(1,5)]
+          pieces=[p.read_bytes() for p in files]
+          assert len(pieces)==4 and all(len(p)==3562 for p in pieces),[len(p) for p in pieces]
+          b=b''.join(pieces)
+          digest=hashlib.sha256(b).hexdigest()
+          assert digest=='d49ca7e4a03bf4111001b743721c22a95f4e18645cce1fbc5267f731e8b14a8f',digest
+          tarbytes=lzma.decompress(base64.b64decode(b))
+          with tarfile.open(fileobj=io.BytesIO(tarbytes)) as tar:
+              names=sorted(tar.getnames())
+              assert names==['README.md','source/build.py','source/render.py','source/validate.py'],names
+              for entry in tar:
+                  assert entry.isfile() and '..' not in entry.name and not entry.name.startswith('/')
+                  out=root/entry.name;out.parent.mkdir(parents=True,exist_ok=True)
+                  out.write_bytes(tar.extractfile(entry).read())
+          print('Original editable source recovered:',names)
+          PY
+      - name: Export three real textured GLB models
+        run: python assets/models/creatures/escarvao/v01/source/build.py
+      - name: Render nine actual viewpoints by reimporting GLB
+        run: xvfb-run -a python assets/models/creatures/escarvao/v01/source/render.py
+      - name: Independently verify files, embedded UV materials and geometry
+        run: python assets/models/creatures/escarvao/v01/source/validate.py
+      - name: Preserve full art-review deliverables in action artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-escarvao-v01-three-real-glbs-three-atlases-nine-renders
+          path: |
+            assets/models/creatures/escarvao/v01/*.glb
+            assets/models/creatures/escarvao/v01/*.json
+            assets/models/creatures/escarvao/v01/README.md
+            assets/models/creatures/escarvao/v01/source/*.py
+            assets/models/creatures/escarvao/v01/textures/*.png
+            assets/models/creatures/escarvao/v01/previews/*.png
+          if-no-files-found: error
+      - name: Commit and push verified GLB binaries, UV atlases and real previews
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          ROOT=assets/models/creatures/escarvao/v01
+          git add "$ROOT/README.md" "$ROOT"/source/*.py "$ROOT"/*.glb "$ROOT"/*.json "$ROOT"/textures/*.png "$ROOT"/previews/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(escarvao): real UV textured GLBs and reimported previews [skip ci]'
+            git fetch origin wildhaven-escarvao-uv-blockout-v01
+            git rebase origin/wildhaven-escarvao-uv-blockout-v01
+            git push origin HEAD:wildhaven-escarvao-uv-blockout-v01
+          fi

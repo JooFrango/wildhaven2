@@ -1,0 +1,55 @@
+name: Varrisco v07 - candidate GLB and real visual QA
+on:
+  push:
+    branches: [feat/varrisco-v07-retrabalho-fauna]
+    paths: ['.github/workflows/varrisco-v07-retrabalho.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build and validate real candidate
+        run: |
+          python -m pip install numpy pillow
+          python assets/models/creatures/varrisco/v07/source/build_v07.py
+      - name: Publish validated candidate before rendering
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/varrisco/v07
+          git diff --cached --quiet || git commit -m "asset(varrisco): validated v07 candidate and atlas"
+          git push origin HEAD:feat/varrisco-v07-retrabalho-fauna
+      - name: Install Blender and reimport both real GLBs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y blender python3-numpy
+          D=assets/models/creatures/varrisco
+          blender -b -t 4 --python-exit-code 1 --python "$D/v07/source/render_v07.py" -- "$D/v06/varrisco-animated-v06-LOD0.glb" "$D/v07/previews" v06
+          blender -b -t 4 --python-exit-code 1 --python "$D/v07/source/render_v07.py" -- "$D/v07/varrisco-v07-candidate.glb" "$D/v07/previews" v07
+          python - <<'PY'
+          from PIL import Image,ImageDraw
+          from pathlib import Path
+          p=Path('assets/models/creatures/varrisco/v07/previews')
+          canvas=Image.new('RGB',(1920,940),(24,27,32))
+          d=ImageDraw.Draw(canvas)
+          for row,ver in enumerate(('v06','v07')):
+              d.text((16,row*470+7),ver+' - real GLB',fill='white')
+              for col,view in enumerate(('perfil','frente','tres-quartos')):
+                  image=Image.open(p/f'{ver}-{view}.png').convert('RGB')
+                  canvas.paste(image,(col*640,row*470+30))
+          canvas.save(p/'comparacao-real.png')
+          PY
+      - name: Commit candidate and evidence to isolated branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/varrisco/v07
+          git diff --cached --quiet || git commit -m "preview(varrisco): real before and after renders"
+          git push origin HEAD:feat/varrisco-v07-retrabalho-fauna

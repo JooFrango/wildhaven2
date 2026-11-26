@@ -1,0 +1,102 @@
+name: Wildhaven - Serracorion v02 spines integrated in real GLB
+on:
+  push:
+    branches: [wildhaven-serracorion-v02-espinhos-integrados]
+    paths:
+      - 'assets/models/creatures/serracorion/v02/source/**'
+      - '.github/workflows/wildhaven-serracorion-v02-espinhos-integrados.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-validate-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout approved v01 and new v02 correction
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-serracorion-v02-espinhos-integrados
+          persist-credentials: true
+      - name: Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install deterministic geometry and VTK render pipeline
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Rebuild GLB with all eight spine bases intersecting axial shell
+        run: |
+          mkdir -p assets/models/creatures/serracorion/v02/textures assets/models/creatures/serracorion/v02/previews
+          python assets/models/creatures/serracorion/v02/source/build.py
+      - name: Reimport actual GLB and capture 3 views and closeup from exported asset
+        run: xvfb-run -a python assets/models/creatures/serracorion/v02/source/render.py
+      - name: Validate exact binary and anatomy and original painted UV
+        run: |
+          python - <<'PY'
+          import pathlib,json,hashlib,struct,io
+          from PIL import Image,ImageDraw
+          root=pathlib.Path('assets/models/creatures/serracorion/v02')
+          old=pathlib.Path('assets/models/creatures/serracorion/v01')
+          b=(root/'serracorion-v02-espinhos-integrados.glb').read_bytes()
+          actual=hashlib.sha256(b).hexdigest()
+          expected='f1c4fc7828252a11a196963da2c05fa415f2bc976c0674ff729d809e9a7544d5'
+          assert actual==expected,(actual,expected)
+          assert b[:4]==b'glTF' and struct.unpack_from('<I',b,8)[0]==len(b)
+          jsonlen=struct.unpack_from('<I',b,12)[0]
+          meta=json.loads(b[20:20+jsonlen])
+          m=json.loads((root/'manifest.json').read_text())
+          assert m['sha256']==expected and m['triangles']==4815
+          assert len(meta['meshes'])==len(meta['materials'])==len(meta['images'])==len(meta['textures'])==1
+          assert 'TEXCOORD_0' in meta['meshes'][0]['primitives'][0]['attributes']
+          assert not meta.get('skins') and not meta.get('animations')
+          assert len(m['dorsal_spine_base_evidence'])==8
+          assert all(abs(row['buried_base_min_m']-.2)<.001 for row in m['dorsal_spine_base_evidence'])
+          atlas=root/'textures'/'serracorion-v02-painted-uv.png'
+          oldatlas=old/'textures'/'serracorion-v01-painted-uv.png'
+          assert Image.open(atlas).size==(2048,2048)
+          assert hashlib.sha256(atlas.read_bytes()).hexdigest()==hashlib.sha256(oldatlas.read_bytes()).hexdigest()
+          im=meta['images'][0];view=meta['bufferViews'][im['bufferView']]
+          embedded=b[20+jsonlen+8+view.get('byteOffset',0):20+jsonlen+8+view.get('byteOffset',0)+view['byteLength']]
+          assert Image.open(io.BytesIO(embedded)).tobytes()==Image.open(atlas).tobytes()
+          for view in ['perfil','frente','tres-quartos','superior','dorso-detalhe']:
+              p=root/'previews'/('serracorion-v02-GLB-real-'+view+'.png')
+              assert p.read_bytes().startswith(bytes.fromhex('89504e470d0a1a0a')) and p.stat().st_size>20000
+          before=Image.open(old/'previews'/'serracorion-v01-GLB-real-perfil.png').convert('RGB')
+          after=Image.open(root/'previews'/'serracorion-v02-GLB-real-perfil.png').convert('RGB')
+          compare=Image.new('RGB',(2080,750),'#f7efe1')
+          compare.paste(before,(0,44));compare.paste(after,(1040,44))
+          draw=ImageDraw.Draw(compare)
+          draw.text((20,15),'ANTES / V01 — ESPINHOS SEM CONTATO COM A ARMADURA',fill='#533a28')
+          draw.text((1060,15),'DEPOIS / V02 — PLACAS E ESPINHOS ENRAIZADOS NO DORSO',fill='#533a28')
+          compare.save(root/'previews'/'serracorion-v01-v02-comparacao-real.jpg',quality=90)
+          print('VERIFIED actual GLB, painted atlas, 8 integrated roots, 4815 triangles, 5 real PNGs')
+          PY
+      - name: Upload real GLB, UV raster and all authentic reimport screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-serracorion-v02-glb-with-attached-spines
+          path: |
+            assets/models/creatures/serracorion/v02/*.glb
+            assets/models/creatures/serracorion/v02/*.json
+            assets/models/creatures/serracorion/v02/README.md
+            assets/models/creatures/serracorion/v02/source/*.py
+            assets/models/creatures/serracorion/v02/textures/*.png
+            assets/models/creatures/serracorion/v02/previews/*.png
+            assets/models/creatures/serracorion/v02/previews/*.jpg
+          if-no-files-found: error
+      - name: Commit published real GLB and previews without overwriting v01
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          root=assets/models/creatures/serracorion/v02
+          git add "$root"/*.glb "$root"/*.json "$root"/textures/*.png "$root"/previews/*.png "$root"/previews/*.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(serracorion): publish corrected v02 real UV GLB with rooted dorsal spines [skip ci]'
+            git fetch origin wildhaven-serracorion-v02-espinhos-integrados
+            git rebase origin/wildhaven-serracorion-v02-espinhos-integrados
+            git push origin HEAD:wildhaven-serracorion-v02-espinhos-integrados
+          fi

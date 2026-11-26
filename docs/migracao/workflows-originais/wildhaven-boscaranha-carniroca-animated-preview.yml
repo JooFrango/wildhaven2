@@ -1,0 +1,51 @@
+name: Wildhaven - Boscaranha + Carniroca Animated WebGL Preview
+on:
+  push:
+    branches: [wildhaven-fauna-boscaranha-carniroca-optimization-v01]
+    paths:
+      - 'assets/models/creatures/fauna-optimization-v09/animated-preview/**'
+      - '.github/workflows/wildhaven-boscaranha-carniroca-animated-preview.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  preview:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: true}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Install browser preview dependencies
+        working-directory: assets/models/creatures/fauna-optimization-v09/animated-preview
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          python3 -m pip install --disable-pip-version-check pillow==11.2.1
+      - name: Capture actual skinned GLB animation frames in Three.js
+        working-directory: assets/models/creatures/fauna-optimization-v09/animated-preview
+        run: |
+          node capture.mjs
+          python3 assemble_gif.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-boscaranha-carniroca-animated-real-glb-preview
+          path: |
+            assets/models/creatures/fauna-optimization-v09/previews/Wildhaven_Boscaranha_Carniroca_Animated_GLBS.gif
+            assets/models/creatures/fauna-optimization-v09/previews/Wildhaven_Boscaranha_Carniroca_Animated_GLBS_Poster.png
+          if-no-files-found: error
+      - name: Commit animated preview
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/fauna-optimization-v09/previews/Wildhaven_Boscaranha_Carniroca_Animated_GLBS.*
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(fauna): add WebGL animated preview for Boscaranha + Carniroca [skip ci]'
+            git fetch origin wildhaven-fauna-boscaranha-carniroca-optimization-v01
+            git rebase origin/wildhaven-fauna-boscaranha-carniroca-optimization-v01
+            git push origin HEAD:wildhaven-fauna-boscaranha-carniroca-optimization-v01
+          fi

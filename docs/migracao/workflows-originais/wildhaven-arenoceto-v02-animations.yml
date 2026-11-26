@@ -1,0 +1,94 @@
+name: Wildhaven - Arenoceto v02 skinning and 20 genuine glTF animations
+on:
+  push:
+    branches: [wildhaven-arenoceto-v02-skinned-20-animations]
+    paths:
+      - 'assets/models/creatures/arenoceto/v02/source/payload-part*.b64'
+      - '.github/workflows/wildhaven-arenoceto-v02-animations.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-arenoceto-v02:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Wildhaven versioned branch
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-arenoceto-v02-skinned-20-animations
+          persist-credentials: true
+      - name: Install Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install dependency versions for genuine GLB skin and VTK renders
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri libgl1
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Restore and permanently publish editable Python sources
+        run: |
+          python - <<'PY'
+          import base64,lzma,hashlib,io,tarfile,pathlib
+          root=pathlib.Path('assets/models/creatures/arenoceto/v02/source')
+          parts=[(root/('payload-part%02d.b64'%i)).read_bytes() for i in range(1,6)]
+          content=b''.join(parts)
+          assert [len(p) for p in parts]==[3600,3600,3600,3600,236]
+          assert hashlib.sha256(content).hexdigest()=='dc4b9f13660092b2ee05d13144cca1480d66184079fb2f6d6bbe95ac4d55ff43', 'Source payload checksum mismatch'
+          raw=lzma.decompress(base64.b64decode(content))
+          with tarfile.open(fileobj=io.BytesIO(raw)) as archive:
+              names=sorted(archive.getnames())
+              assert names==['build_rig.py','validate_and_preview.py'],names
+              for m in archive.getmembers():
+                  assert m.isfile() and '/' not in m.name
+                  (root/m.name).write_bytes(archive.extractfile(m).read())
+          print('SOURCE SCRIPTS RESTORED',names)
+          PY
+      - name: Rebuild real weighted-skin animated GLB preserving v01 UV texture
+        run: python assets/models/creatures/arenoceto/v02/source/build_rig.py
+      - name: Independently validate skin, 20 clips, UV and real frame animation
+        run: xvfb-run -a python assets/models/creatures/arenoceto/v02/source/validate_and_preview.py
+      - name: Verify expected local GLB SHA-256 and previews
+        run: |
+          python - <<'PY'
+          import hashlib,pathlib,json,struct
+          r=pathlib.Path('assets/models/creatures/arenoceto/v02')
+          f=r/'arenoceto-v02-skinned-animated-LOD0.glb'
+          data=f.read_bytes()
+          expected='2c70d4c14c7fa6148c4f3d76a292f8bb57a5b8fe6a4cee0d96d27d413fa92bfd'
+          assert hashlib.sha256(data).hexdigest()==expected
+          assert struct.unpack_from('<I',data,8)[0]==len(data)
+          manifest=json.loads((r/'manifest.json').read_text())
+          assert manifest['sha256']==expected and manifest['animation_count']==20
+          for name in ['side','front','three_quarter']:
+              p=r/'previews'/('arenoceto-v02-real-animated-'+name+'.png')
+              assert p.read_bytes()[:8]==bytes.fromhex('89504e470d0a1a0a')
+          for name in ['swim_sand','filter_feed','breach','tail_slam','dive','threat_display']:
+              p=r/'previews'/('arenoceto-v02-'+name+'-real-glb.gif')
+              assert p.read_bytes()[:6] in (b'GIF89a',b'GIF87a')
+          print('EXPECTED GLB HASH, all six genuine exported GLB animated GIFs and three PNGs verified')
+          PY
+      - name: Upload original assets and reproducible sources for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-arenoceto-v02-20-genuine-skinned-animations
+          path: |
+            assets/models/creatures/arenoceto/v02/*.glb
+            assets/models/creatures/arenoceto/v02/*.json
+            assets/models/creatures/arenoceto/v02/previews/*.gif
+            assets/models/creatures/arenoceto/v02/previews/*.png
+            assets/models/creatures/arenoceto/v02/source/*.py
+          if-no-files-found: error
+      - name: Commit actual GLB, 20 clips, 9 previews, validation and editable source
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/arenoceto/v02
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$ROOT"/*.glb "$ROOT"/*.json "$ROOT"/previews/*.png "$ROOT"/previews/*.gif "$ROOT"/source/*.py
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(arenoceto): publish 16-joint weighted rig, 20 glTF clips and real GIFs [skip ci]'
+            git fetch origin wildhaven-arenoceto-v02-skinned-20-animations
+            git rebase origin/wildhaven-arenoceto-v02-skinned-20-animations
+            git push origin HEAD:wildhaven-arenoceto-v02-skinned-20-animations
+          fi

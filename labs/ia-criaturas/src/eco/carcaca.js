@@ -7,6 +7,11 @@ import { temperaturaAmbiente } from './clima.js';
 
 export const ESTAGIOS = Object.freeze(['fresca', 'consumida', 'decomposicao', 'restos', 'ossos', 'reciclada']);
 
+// Matéria que ficou no local até a reciclagem: o que apodreceu, o que os insetos comeram ali e os ossos.
+// É a massa inicial menos o que os animais carregaram no corpo para outro lugar.
+export const materiaLocalKg = (c) =>
+  Math.max(0, c.carneInicial - Object.values(c.consumo ?? {}).reduce((s, v) => s + v, 0));
+
 export function estagioCarcaca(c) {
   if (c.reciclada) return 'reciclada';
   if (c.carne <= 0.05) return 'ossos';
@@ -69,8 +74,10 @@ export function atualizarCarcacasV7(mundo, dt) {
     for (const c of velhas.slice(0, mundo.carcacas.length - max)) { c.reciclada = true; c.porLimite = true; }
   }
   for (const c of mundo.carcacas) if (c.reciclada) {
-    // Reciclagem: os nutrientes voltam ao solo (mesma regra do laboratório antigo).
-    marcarDisco(t, c.x, c.y, 3, (k) => { t.vegetacaoMax[k] = Math.min(150, t.vegetacaoMax[k] + 2 * Math.sqrt(c.carneInicial)); });
+    // Reciclagem: volta ao solo só a matéria que ficou no local. A carne que os animais levaram no corpo
+    // não enriquece este ponto; contá-la aqui criaria nutriente a partir de nada.
+    const local = materiaLocalKg(c);
+    marcarDisco(t, c.x, c.y, 3, (k) => { t.vegetacaoMax[k] = Math.min(150, t.vegetacaoMax[k] + 2 * Math.sqrt(local)); });
     mundo.evento('ossos_reciclados', null, { carcaca: c.id, porLimite: !!c.porLimite, animaisKg: +Object.values(c.consumo).reduce((s, v) => s + v, 0).toFixed(2), insetosKg: +c.consumoInsetos.toFixed(2), apodreceuKg: +c.perdaDecomposicao.toFixed(2) });
   }
   mundo.carcacas = mundo.carcacas.filter((c) => !c.reciclada);

@@ -1,0 +1,116 @@
+name: Wildhaven - Serracorion v01 real painted UV GLB blockout
+on:
+  push:
+    branches: [wildhaven-serracorion-v01-uv-blockout]
+    paths:
+      - 'assets/models/creatures/serracorion/v01/source/source-part*.b64'
+      - '.github/workflows/wildhaven-serracorion-v01-uv-blockout.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-verify-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 24
+    steps:
+      - name: Checkout versioned Wildhaven branch
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-serracorion-v01-uv-blockout
+          persist-credentials: true
+      - name: Use Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install exact model and renderer versions
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libgl1-mesa-dri
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Restore original verified procedural sculpt, UV painter, renderer and README
+        run: |
+          python - <<'PY'
+          import pathlib,base64,lzma,tarfile,io,hashlib
+          root=pathlib.Path('assets/models/creatures/serracorion/v01')
+          pieces=[(root/'source'/('source-part%02d.b64'%i)).read_bytes() for i in range(1,5)]
+          assert list(map(len,pieces))==[3600,3600,3600,2976]
+          packed=b''.join(pieces)
+          assert hashlib.sha256(packed).hexdigest()=='9bd8d57f334f00392545d4858622f7b04e0af9fbb846592c477086ec4664dad3'
+          with tarfile.open(fileobj=io.BytesIO(lzma.decompress(base64.b64decode(packed)))) as archive:
+              assert sorted(archive.getnames())==['README.md','source/build.py','source/render.py']
+              for item in archive:
+                  assert item.isfile() and not item.name.startswith('/') and '..' not in item.name
+                  output=root/item.name
+                  output.parent.mkdir(parents=True,exist_ok=True)
+                  output.write_bytes(archive.extractfile(item).read())
+          print('ALL ORIGINAL SOURCE FILES RESTORED AND HASH VERIFIED')
+          PY
+      - name: Generate the real, UV painted GLB directly from original source
+        run: |
+          mkdir -p assets/models/creatures/serracorion/v01/textures assets/models/creatures/serracorion/v01/previews
+          python assets/models/creatures/serracorion/v01/source/build.py
+      - name: Reimport actual GLB and render side front three-quarter plus overhead
+        run: xvfb-run -a python assets/models/creatures/serracorion/v01/source/render.py
+      - name: Independently validate real geometry texture and screenshots
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          import json,hashlib,struct,io
+          root=Path('assets/models/creatures/serracorion/v01')
+          b=(root/'serracorion-v01-anatomical-blockout.glb').read_bytes()
+          h=hashlib.sha256(b).hexdigest()
+          expected='d11a309ad92cb4a85781857a05a773b8a240ac3c8d89a4ce6343288162323b74'
+          assert h==expected,(h,expected)
+          assert b[:4]==b'glTF' and struct.unpack_from('<I',b,8)[0]==len(b)
+          length=struct.unpack_from('<I',b,12)[0]
+          meta=json.loads(b[20:20+length])
+          m=json.loads((root/'manifest.json').read_text())
+          assert m['sha256']==h and m['size_bytes']==len(b)
+          assert m['triangles']==4575 and m['mesh_count']==m['materials']==1
+          assert len(meta.get('meshes',[]))==1 and len(meta.get('materials',[]))==1
+          assert len(meta.get('images',[]))==1 and len(meta.get('textures',[]))==1
+          assert meta['images'][0]['mimeType']=='image/png'
+          assert 'TEXCOORD_0' in meta['meshes'][0]['primitives'][0]['attributes']
+          assert not meta.get('skins') and not meta.get('animations')
+          src=root/'textures/serracorion-v01-painted-uv.png'
+          assert Image.open(src).size==(2048,2048)
+          assert m['texture_sha256']==hashlib.sha256(src.read_bytes()).hexdigest()
+          im=meta['images'][0];v=meta['bufferViews'][im['bufferView']]
+          off=20+length+8+v.get('byteOffset',0)
+          actual=Image.open(io.BytesIO(b[off:off+v['byteLength']]))
+          assert actual.size==(2048,2048)
+          assert actual.tobytes()==Image.open(src).tobytes(), 'embedded GLB texture differs from external atlas'
+          for view in ['perfil','frente','tres-quartos','superior']:
+              f=root/'previews'/('serracorion-v01-GLB-real-'+view+'.png')
+              assert f.read_bytes().startswith(bytes.fromhex('89504e470d0a1a0a')) and f.stat().st_size>20000
+          sheet=root/'previews/serracorion-v01-3-vistas-GLB-real.jpg'
+          assert sheet.exists() and sheet.stat().st_size>20000
+          print('VALIDATED REAL GLB, UV atlas, 4575 triangles and 4 reimported PNG renders: SHA',h)
+          PY
+      - name: Archive actual assets and evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-serracorion-v01-real-glb-handpaint-uv-and-render-evidence
+          path: |
+            assets/models/creatures/serracorion/v01/*.glb
+            assets/models/creatures/serracorion/v01/*.json
+            assets/models/creatures/serracorion/v01/README.md
+            assets/models/creatures/serracorion/v01/source/*.py
+            assets/models/creatures/serracorion/v01/textures/*.png
+            assets/models/creatures/serracorion/v01/previews/*.png
+            assets/models/creatures/serracorion/v01/previews/*.jpg
+          if-no-files-found: error
+      - name: Commit and publish real GLB and reimported evidence without touching other assets
+        run: |
+          set -euo pipefail
+          ROOT=assets/models/creatures/serracorion/v01
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$ROOT"/README.md "$ROOT"/source/*.py "$ROOT"/*.glb "$ROOT"/*.json "$ROOT"/textures/*.png "$ROOT"/previews/*.png "$ROOT"/previews/*.jpg
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(serracorion): publish verified static GLB, original UV atlas, sources and renders [skip ci]'
+            git fetch origin wildhaven-serracorion-v01-uv-blockout
+            git rebase origin/wildhaven-serracorion-v01-uv-blockout
+            git push origin HEAD:wildhaven-serracorion-v01-uv-blockout
+          fi

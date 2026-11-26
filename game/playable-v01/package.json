@@ -1,0 +1,24 @@
+{
+  "name": "wildhaven-playable-v01",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Wildhaven — Playable Build V01: caçada do Varrisco na região real HV_01 · FX_20 · ER_18.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "derivar": "node tools/derivar-regiao.mjs",
+    "dev": "node tools/servir.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:navegador": "node tools/navegador.mjs",
+    "build": "node tools/empacotar.mjs",
+    "preview": "node tools/servir.mjs --dir dist"
+  },
+  "dependencies": {
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.56.1"
+  }
+}

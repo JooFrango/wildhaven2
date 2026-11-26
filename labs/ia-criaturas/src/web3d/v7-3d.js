@@ -7,6 +7,7 @@ import { temperaturaCorporal } from '../eco/termo.js';
 import { acessoCupins } from '../eco/cupins.js';
 import { fatorAsas } from '../eco/voo.js';
 import { EfeitosDeAreia } from './areia3d.js';
+import { dobrarSerpente } from './serpente3d.js';
 
 const chip = (txt, cls = '') => `<span class="chip ${cls}">${txt}</span>`;
 const linha = (dt, dd) => `<dt>${dt}</dt><dd>${dd}</dd>`;
@@ -197,6 +198,8 @@ export class CenaV7 {
       const v = est.animais.get(a.id);
       if (!v) continue;
       if (a.camuflagem) v.camuflar(a.camuflagem.intensidade, Math.min(1, a.velocidade / a.especie.movimento.corrida), m.t);
+      // Corpo longo: a coluna do GLB é dobrada ao longo do corpo simulado, depois do clipe.
+      if (a.serpente) dobrarSerpente(T, v, a, W, D);
       if (!a.vivo && m.cenario.decomposicao) {
         const c = m.carcacas.find((x) => x.animal === a.id);
         v.decompor(c ? c.decomposicao : 1, !c || c.estagio === 'ossos');

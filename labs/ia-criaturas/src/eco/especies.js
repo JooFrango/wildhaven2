@@ -14,6 +14,10 @@ export function validarEspecies(especies) {
     for (const p of e.dieta?.presas ?? []) if (!ids.has(p)) erros.push(`${e.id}: presa inexistente "${p}"`);
     for (const p of [...(e.teme ?? []), ...(e.competidores ?? [])]) if (!ids.has(p)) erros.push(`${e.id}: espécie citada inexistente "${p}"`);
     if (!['+X', '-X', '+Z', '-Z'].includes(e.modelo?.frente)) erros.push(`${e.id}: modelo.frente inválido`);
+    // Capacidade declarada sem o número que ela exige: o território virava { raio: undefined } e só aparecia
+    // como círculo NaN no renderizador, nunca como erro.
+    if (e.social?.territorial && !(typeof e.social.raioTerritorioM === 'number' && e.social.raioTerritorioM > 0))
+      erros.push(`${e.id}: social.territorial exige social.raioTerritorioM numérico e maior que zero`);
   }
   return erros;
 }

@@ -1,0 +1,80 @@
+name: Wildhaven · Fauna migrated 3D GLBs
+on:
+  push:
+    branches: [migration/rocantraz-detritivoros-20261107]
+    paths:
+      - 'assets/models/creatures/wildhaven-threejs-source/**'
+      - '.github/workflows/wildhaven-fauna-migration.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build_models:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned Three.js exporter dependencies
+        working-directory: assets/models/creatures/wildhaven-threejs-source
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Build both standalone Three.js previews
+        working-directory: assets/models/creatures/wildhaven-threejs-source
+        run: npm run build
+      - name: Export two Rocantraz GLBs with twelve animations each
+        working-directory: assets/models/creatures/wildhaven-threejs-source
+        run: npm run export:rocantraz
+      - name: Export three detritivore GLBs with seven animations each
+        working-directory: assets/models/creatures/wildhaven-threejs-source
+        run: npm run export:detritivores
+      - name: Copy real glTF files into canonical species folders
+        run: |
+          set -eu
+          SRC=assets/models/creatures/wildhaven-threejs-source/dist-creatures
+          DST=assets/models/creatures
+          cp "$SRC/rocantraz-forest-animated.glb" "$DST/rocantraz/"
+          cp "$SRC/rocantraz-desert-animated.glb" "$DST/rocantraz/"
+          cp "$SRC/cascarrumo-animated.glb" "$DST/detritivoros/"
+          cp "$SRC/dunebrio-animated.glb" "$DST/detritivoros/"
+          cp "$SRC/nivelio-animated.glb" "$DST/detritivoros/"
+          python3 - <<'PY'
+          import pathlib, struct, json
+          folders = [pathlib.Path("assets/models/creatures/rocantraz"),
+                     pathlib.Path("assets/models/creatures/detritivoros")]
+          for folder in folders:
+              for p in sorted(folder.glob("*.glb")):
+                  data = p.read_bytes()
+                  assert data[:4] == b'glTF', p
+                  assert struct.unpack_from("<I", data, 8)[0] == len(data), p
+                  n = struct.unpack_from("<I", data, 12)[0]
+                  obj = json.loads(data[20:20+n])
+                  expected = 12 if folder.name == 'rocantraz' else 7
+                  assert len(obj.get('animations', [])) == expected, p
+                  assert len(obj.get('meshes', [])) >= 1, p
+                  print(p, len(data), "bytes", expected, "animations")
+          PY
+      - name: Install Chromium for authentic detritivore previews
+        working-directory: assets/models/creatures/wildhaven-threejs-source
+        run: npx playwright install --with-deps chromium
+      - name: Render authentic Three.js preview of three detritivores
+        working-directory: assets/models/creatures/wildhaven-threejs-source
+        run: node tools/capture-detritivores.mjs
+      - name: Upload all models
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-migrated-five-animated-creatures
+          path: |
+            assets/models/creatures/rocantraz/*.glb
+            assets/models/creatures/detritivoros/*.glb
+            assets/models/creatures/detritivoros/*.png
+          if-no-files-found: error
+      - name: Commit generated models to Wildhaven assets branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/rocantraz/*.glb assets/models/creatures/detritivoros/*.glb assets/models/creatures/detritivoros/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(wildhaven): save five migrated animated GLB models [skip ci]'
+            git push origin HEAD:migration/rocantraz-detritivoros-20261107
+          fi

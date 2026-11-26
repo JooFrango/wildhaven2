@@ -1,0 +1,55 @@
+name: Wildhaven - Garruva faceted anatomy pilot v03
+on:
+  push:
+    branches: [wildhaven-garruva-faceted-blockout-v03]
+    paths:
+      - 'assets/models/creatures/garruva-v03-pilot/source/**'
+      - '.github/workflows/wildhaven-garruva-faceted-v03.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  genuine-blockout:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned geometry and authentic GLB render dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check numpy==2.3.5 trimesh==4.11.1 vtk==9.6.2 pillow==11.3.0
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Build original Garruva terrestrial scavenger GLB
+        run: python3 assets/models/creatures/garruva-v03-pilot/source/build.py
+      - name: Render authentic exported GLB in three VTK camera views
+        run: xvfb-run -a python3 assets/models/creatures/garruva-v03-pilot/source/render.py
+      - name: Validate binary glTF v2, 4252 facets, checksum and 3 real previews
+        run: python3 assets/models/creatures/garruva-v03-pilot/source/validate.py
+      - name: Compare original v02 and new v03 model renders
+        run: python3 assets/models/creatures/garruva-v03-pilot/source/compare.py
+      - name: Archive genuine blockout model and VTK captures
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-garruva-v03-faceted-blockout-GLB-and-previews
+          path: |
+            assets/models/creatures/garruva-v03-pilot/*.glb
+            assets/models/creatures/garruva-v03-pilot/manifest.json
+            assets/models/creatures/garruva-v03-pilot/previews/*.png
+          if-no-files-found: error
+      - name: Commit real exported geometry and captures to dedicated review branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/garruva-v03-pilot/*.glb \
+                  assets/models/creatures/garruva-v03-pilot/manifest.json \
+                  assets/models/creatures/garruva-v03-pilot/previews/
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(garruva): publish v03 real faceted anatomy blockout and VTK screens [skip ci]'
+            git fetch origin wildhaven-garruva-faceted-blockout-v03
+            git rebase origin/wildhaven-garruva-faceted-blockout-v03
+            git push origin HEAD:wildhaven-garruva-faceted-blockout-v03
+          fi

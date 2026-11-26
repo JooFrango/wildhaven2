@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildhaven — Playable Build V01</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="src/estilo.css">
+</head>
+<body>
+<div id="palco" aria-label="Wildhaven — caçada em Auralis"></div>
+
+<div id="hud" hidden>
+  <section id="status" aria-label="Estado do Hunter">
+    <div class="nome">Arvo <small>Hunter · espada leve</small></div>
+    <div class="barra vida" role="meter" aria-label="Vida" aria-valuemin="0" aria-valuemax="100"><i id="vida"></i><span id="vidaTxt"></span></div>
+    <div class="barra vigor" role="meter" aria-label="Resistência" aria-valuemin="0" aria-valuemax="100"><i id="vigor"></i></div>
+  </section>
+  <section id="objetivo" aria-live="polite"><small>Objetivo</small><b id="objetivoTxt">—</b><span id="bussola"></span></section>
+  <section id="monstro" hidden aria-label="Varrisco">
+    <div class="nome">Varrisco</div>
+    <div class="barra inimigo" role="meter" aria-label="Vida do Varrisco"><i id="vidaMonstro"></i></div>
+  </section>
+  <div id="avisos" aria-live="assertive"></div>
+  <canvas id="mini" width="200" height="200" aria-label="Mapa da região de caça"></canvas>
+  <div id="dica">Clique para controlar a câmera · <kbd>Esc</kbd> pausa · <kbd>M</kbd> mapa de Auralis</div>
+  <div id="perf"></div>
+</div>
+<div id="dano" aria-hidden="true"></div>
+
+<div id="tela" class="tela">
+  <div class="painel">
+    <h1>Wildhaven</h1>
+    <p class="sub">Playable Build V01 · Auralis · região de caça HV_01 · FX_20 · ER_18</p>
+    <p id="carga" aria-live="polite">Carregando…</p>
+    <button id="entrar" hidden>Entrar no mundo</button>
+    <p class="nota">Build experimental. O rig v13 do Hunter e suas animações aguardam aprovação artística.</p>
+  </div>
+</div>
+
+<div id="pausa" class="tela" hidden>
+  <div class="painel">
+    <h2>Pausa</h2>
+    <div class="cols">
+      <div>
+        <h3>Controles</h3>
+        <table class="teclas">
+          <tr><td><kbd>W A S D</kbd></td><td>andar (relativo à câmera; em combate, ao alvo)</td></tr>
+          <tr><td><kbd>Shift</kbd></td><td>correr (gasta resistência)</td></tr>
+          <tr><td><kbd>J</kbd></td><td>golpe e combo 1 → 2 → 3 · com Shift correndo: salto descendente</td></tr>
+          <tr><td><kbd>H</kbd></td><td>carregar e liberar golpe pesado</td></tr>
+          <tr><td><kbd>Espaço</kbd></td><td>rolamento (A/D escolhem o lado)</td></tr>
+          <tr><td><kbd>K</kbd></td><td>guarda</td></tr>
+          <tr><td>Mouse / roda</td><td>câmera / distância</td></tr>
+          <tr><td><kbd>M</kbd></td><td>mapa continental</td></tr>
+        </table>
+        <p class="nota">J, H e Espaço agem com o Varrisco à vista (controle manual do Hunter Lab).</p>
+      </div>
+      <div>
+        <h3>Configurações</h3>
+        <label>Qualidade gráfica <select id="qualidade"><option value="baixa">Baixa (GPU integrada)</option><option value="media">Média</option><option value="alta">Alta</option></select></label>
+        <label>Vida do Varrisco <select id="dificuldade"><option value="0.5">Demonstração (50%)</option><option value="1">Laboratório (100%)</option></select></label>
+        <label>Sensibilidade do mouse <input id="sensibilidade" type="range" min="0.5" max="2" step="0.1" value="1"></label>
+        <label class="linha"><input id="sons" type="checkbox"> Sons de combate</label>
+        <p class="nota">Vida do Varrisco vale a partir da próxima sessão.</p>
+      </div>
+    </div>
+    <div class="botoes"><button id="continuar">Continuar</button><button id="reiniciarPausa" class="sec">Reiniciar sessão</button></div>
+  </div>
+</div>
+
+<div id="fim" class="tela" hidden>
+  <div class="painel">
+    <h2 id="fimTitulo"></h2>
+    <p id="fimTexto"></p>
+    <table id="registro" class="teclas"></table>
+    <div class="botoes"><button id="novaSessao">Nova caçada</button></div>
+  </div>
+</div>
+
+<div id="mapa" class="tela" hidden>
+  <div class="painel largo">
+    <h2>Auralis — 272 hexágonos</h2>
+    <canvas id="mapaCanvas" width="900" height="620" aria-label="Mapa continental de Auralis"></canvas>
+    <p class="nota"><b class="jog">■</b> jogável (simulação e colisão) · <b class="vis">■</b> desenhado em 3D por proximidade · demais: mapa geral 2D (sem travessia). <kbd>M</kbd> fecha.</p>
+  </div>
+</div>
+
+<script type="importmap">{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }</script>
+<script>window.WILDHAVEN_MODELOS = '/repo/';</script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>

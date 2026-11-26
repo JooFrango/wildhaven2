@@ -1,0 +1,25 @@
+name: Hunter PvP v08 — independent remote artifact audit
+on:
+  push:
+    branches: ['feat/hunter-pvp-v08-braco-espada-review']
+    paths:
+      - '.github/workflows/hunter-pvp-v08-audit.yml'
+permissions:
+  contents: read
+jobs:
+  verify-committed-assets:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            labs/hunters
+          sparse-checkout-cone-mode: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Audit committed GLB and two real GIFs from fresh checkout
+        run: |
+          node labs/hunters/scripts/validate-hunter-pvp-v08.mjs
+          node labs/hunters/scripts/audit-hunter-pvp-v08-remote.mjs

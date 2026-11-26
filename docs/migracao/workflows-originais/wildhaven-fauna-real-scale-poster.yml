@@ -1,0 +1,44 @@
+name: Wildhaven | Real GLB Fauna Scale Poster
+on:
+  push:
+    branches:
+      - wildhaven-fauna-real-scale-poster-v01
+    paths:
+      - 'tools/fauna-real-scale-poster/index.html'
+      - 'tools/fauna-real-scale-poster/render.mjs'
+      - '.github/workflows/wildhaven-fauna-real-scale-poster.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render-real-models:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install renderer using authentic Three.js GLTFLoader
+        run: npm install --no-save --no-package-lock --no-audit --no-fund three@0.180.0 playwright@1.56.1
+      - name: Install headless Chromium for authentic mesh rendering
+        run: npx playwright install --with-deps chromium
+      - name: Validate all 16 source GLBs, render scale poster and report
+        run: node tools/fauna-real-scale-poster/render.mjs
+      - name: Upload genuine GLB-sourced WebGL PNG and audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-real-glb-16-species-size-comparison
+          path: tools/fauna-real-scale-poster/output/*
+          if-no-files-found: error
+      - name: Commit and publish original screenshot and GLB audit report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tools/fauna-real-scale-poster/output/wildhaven-fauna-scale-real-glb-v01.png tools/fauna-real-scale-poster/output/wildhaven-fauna-scale-real-glb-v01.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(wildhaven): publish authentic GLB 16-species profile scale chart [skip ci]'
+            git push origin HEAD:wildhaven-fauna-real-scale-poster-v01
+          fi

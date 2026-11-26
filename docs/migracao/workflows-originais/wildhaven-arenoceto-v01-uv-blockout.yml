@@ -1,0 +1,81 @@
+name: Wildhaven - Arenoceto v01 actual UV GLB and three renders
+on:
+  push:
+    branches: [wildhaven-arenoceto-v01-uv-blockout]
+    paths:
+      - 'assets/models/creatures/arenoceto/v01/source/**'
+      - '.github/workflows/wildhaven-arenoceto-v01-uv-blockout.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  export-real-arenoceto:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout original branch
+        uses: actions/checkout@v4
+        with:
+          ref: wildhaven-arenoceto-v01-uv-blockout
+          persist-credentials: true
+      - name: Python 3.13 for deterministic asset pipeline
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install geometry, texture-painting and actual GLB render pipeline
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1-mesa-dri libgl1
+          python -m pip install --disable-pip-version-check numpy==2.3.5 Pillow==12.3.0 trimesh==4.11.1 vtk==9.6.2
+      - name: Generate painted atlas and GLB real
+        run: |
+          python assets/models/creatures/arenoceto/v01/source/build.py
+      - name: Reimport exported GLB and render 3 real views
+        run: |
+          xvfb-run -a python assets/models/creatures/arenoceto/v01/source/render.py
+      - name: Independently verify embedded texture, geometry, status and screenshots
+        run: |
+          python - <<'PY'
+          import struct,json,pathlib,hashlib
+          root=pathlib.Path('assets/models/creatures/arenoceto/v01')
+          binary=root/'arenoceto-v01-textured-blockout.glb'
+          dat=binary.read_bytes()
+          assert dat[:4]==b'glTF' and struct.unpack_from('<I',dat,8)[0]==len(dat)
+          n=struct.unpack_from('<I',dat,12)[0]
+          meta=json.loads(dat[20:20+n])
+          assert len(meta.get('meshes',[]))==1
+          assert 'TEXCOORD_0' in meta['meshes'][0]['primitives'][0]['attributes']
+          assert len(meta.get('images',[]))==1 and meta['images'][0]['mimeType']=='image/png'
+          assert not meta.get('animations') and not meta.get('skins')
+          m=json.loads((root/'manifest.json').read_text())
+          assert m['triangles']==2052 and m['mesh_groups']==1
+          assert m['bytes']==len(dat) and m['sha256']==hashlib.sha256(dat).hexdigest()
+          texture=root/'textures/arenoceto-v01-handpaint-atlas.png'
+          assert texture.read_bytes()[:8]==bytes.fromhex('89504e470d0a1a0a')
+          assert m['texture_sha256']==hashlib.sha256(texture.read_bytes()).hexdigest()
+          for view in ['side','front','three_quarter']:
+              p=root/'previews'/('arenoceto-v01-real-glb-'+view+'.png')
+              data=p.read_bytes()
+              assert data[:8]==bytes.fromhex('89504e470d0a1a0a') and len(data)>20000, p
+          print('VALIDATED real textured GLB:',len(dat),'bytes,',m['triangles'],'triangles, three real screenshots')
+          PY
+      - name: Save real binary artifact for review
+        uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-arenoceto-v01-uv-textured-glb-real-and-renders
+          path: |
+            assets/models/creatures/arenoceto/v01/*.glb
+            assets/models/creatures/arenoceto/v01/*.json
+            assets/models/creatures/arenoceto/v01/textures/*.png
+            assets/models/creatures/arenoceto/v01/previews/*.png
+          if-no-files-found: error
+      - name: Commit real GLB, raster texture, manifest and reimported PNGs to branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          ROOT=assets/models/creatures/arenoceto/v01
+          git add "$ROOT"/*.glb "$ROOT"/manifest.json "$ROOT"/textures/*.png "$ROOT"/previews/*.png
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(arenoceto): publish real UV-painted static GLB and three imported previews [skip ci]'
+            git push origin HEAD:wildhaven-arenoceto-v01-uv-blockout
+          fi

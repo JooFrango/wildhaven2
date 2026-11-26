@@ -1,0 +1,28 @@
+name: Fulgaronte v06 - oito movimentos orgânicos GLB real
+on:
+  push:
+    branches: [feat/fulgaronte-v06-organic-motion]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-review:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout preserved v04 v05 and new v06
+        uses: actions/checkout@v4
+      - name: Generate v06 from existing 29-bone GLB with new choreography
+        run: python3 assets/models/creatures/fulgaronte/v06/source/build_motion_v06.py
+      - name: Reimport and validate skin joints source geometry and animation cycles
+        run: python3 assets/models/creatures/fulgaronte/v06/source/validate_motion_v06.py
+      - name: CPU-only rasterizer dependency setup
+        run: python3 -m pip install --disable-pip-version-check numpy pillow
+      - name: Render real animated GLB deformed vertices from eight clips
+        run: python3 assets/models/creatures/fulgaronte/v06/source/preview_cpu.py
+      - name: Publish GLB real and preview GIFs to versioned branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/fulgaronte/v06
+          git diff --cached --quiet || (git commit -m "build(fulgaronte): publish v06 real GLB and CPU animated previews [skip ci]" && git push)

@@ -1,0 +1,80 @@
+name: 'Wildhaven — reconstruir 10 savanas 5km da arte aprovada (sem caminhos/cupins)'
+on:
+  push:
+    branches: [wildhaven-savanna-concept-ten-rebuild-v02]
+    paths:
+      - 'world/savanna-ten-concept/**'
+      - '.github/workflows/wildhaven-savanna-ten-concept.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-savanna-ten-concept-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-ten-savanna:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar bibliotecas de geometria, GLB e VTK
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Exportar dez GLBs 5km de savana da imagem aprovada
+        run: |
+          python world/savanna-ten-concept/tools/rebuild_ten_savannas.py \
+            --repo-root . --output-dir world/savanna-ten-concept
+      - name: Validar 25 bordas de terreno, 4 do rio, 10 GLBs, sem caminhos e cupinzeiros
+        run: |
+          python world/savanna-ten-concept/tests/validate_10_glbs.py \
+            --repo-root . --output-dir world/savanna-ten-concept
+      - name: Renderizar mundo 40, as 10 savanas reconstruidas e 10 vistas reais
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/savanna-ten-concept/tools/render_ten_real.py \
+            --repo-root . --output-dir world/savanna-ten-concept
+      - name: Preparar visualizador Three.js sem modificar Alpha01
+        run: python world/savanna-ten-concept/tools/build_viewer_ten.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar visualizador independente de 40 GLBs
+        working-directory: world/savanna-ten-concept/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Arquivo de download completo para auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-40-10-Savanas-Reconstruidas-GLBs-Concept-v02
+          retention-days: 30
+          path: |
+            world/savanna-ten-concept/models/*.glb
+            world/savanna-ten-concept/manifest.json
+            world/savanna-ten-concept/model_report.json
+            world/savanna-ten-concept/preview/*.png
+            world/savanna-ten-concept/viewer/dist/
+      - name: Publicar novos GLBs e renders reais somente na branch de aprovação
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/savanna-ten-concept/models \
+            world/savanna-ten-concept/manifest.json \
+            world/savanna-ten-concept/model_report.json \
+            world/savanna-ten-concept/preview \
+            world/savanna-ten-concept/viewer/index.html \
+            world/savanna-ten-concept/viewer/main.js \
+            world/savanna-ten-concept/viewer/package.json \
+            world/savanna-ten-concept/viewer/copy-assets.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 10 fully reconstructed GLB savannas matching approved art, no paths and no termites [skip ci]'
+            git push origin HEAD:wildhaven-savanna-concept-ten-rebuild-v02
+          fi

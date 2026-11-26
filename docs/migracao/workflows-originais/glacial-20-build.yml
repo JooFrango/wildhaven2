@@ -1,0 +1,63 @@
+name: Construir GLBs glaciais isolados v08
+on:
+  push:
+    branches:
+      - feat/glacial-20-montanhas-standalone-v08
+    paths:
+      - '.github/workflows/glacial-20-build.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencias para GLBs e render
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy<2.3' 'scipy<2' pillow trimesh vtk
+      - name: Reconstruir exatamente o terreno v07 em pasta separada
+        working-directory: assets/models/environment/glacial-20-standalone-v08
+        run: |
+          python source/build_glacial_v07.py
+      - name: Integrar 8 montanhas Claude em 20 GLBs reais (sem mudar terreno)
+        working-directory: assets/models/environment/glacial-20-standalone-v08
+        run: |
+          python source/build_glacial_v08.py
+      - name: Capturas REAIS do GLB reimportado
+        working-directory: assets/models/environment/glacial-20-standalone-v08
+        run: |
+          if ! command -v xvfb-run; then sudo apt-get update -qq && sudo apt-get install -y xvfb; fi
+          LIBGL_ALWAYS_SOFTWARE=1 xvfb-run -a python source/render_glacial_v08.py
+      - name: Verificar e publicar os arquivos reais em branch isolada
+        run: |
+          set -e
+          base=assets/models/environment/glacial-20-standalone-v08
+          test "$(find "$base/models/integrated_v08" -type f -name '*.glb' | wc -l)" -eq 21
+          test "$(find "$base/preview" -type f -name '*.png' | wc -l)" -eq 5
+          test -s "$base/manifest-v08.json"
+          python - <<'PY'
+          import json,pathlib,hashlib
+          p=pathlib.Path('assets/models/environment/glacial-20-standalone-v08')
+          m=json.loads((p/'manifest-v08.json').read_text())
+          assert m['hex_count']==20 and m['seams_evaluated']==43 and m['max_seam_vertical_error_m']<=.03
+          assert m['max_terrain_vertex_change_m']<=.003
+          assert len(m['mountain_prefabs'])==8
+          for i in m['individual_tiles']+[m['combined']]:
+              f=p/i['file']
+              assert f.stat().st_size==i['bytes']
+              assert hashlib.sha256(f.read_bytes()).hexdigest()==i['sha256']
+          print('VALIDATED',len(m['individual_tiles']),'TILES',len(m['mountain_prefabs']),'MG','SEAMS',m['seams_evaluated'])
+          PY
+          git config user.name "wildhaven-glacial-ci"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f "$base/models/integrated_v08" "$base/manifest-v08.json" "$base/preview"
+          git commit -m "assets: v08 glacial independente com 20 GLBs e 8 montanhas MG" || true
+          git push origin HEAD:feat/glacial-20-montanhas-standalone-v08

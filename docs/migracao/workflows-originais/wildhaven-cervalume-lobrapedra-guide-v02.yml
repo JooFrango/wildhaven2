@@ -1,0 +1,50 @@
+name: Wildhaven - Cervalume + Lobrapedra Guide v02
+on:
+  push:
+    branches: [wildhaven-fauna-cervalume-lobrapedra-guide-v02]
+    paths:
+      - 'assets/models/creatures/fauna-optimization-v12/source/**'
+      - '.github/workflows/wildhaven-cervalume-lobrapedra-guide-v02.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: true}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Install geometry dependencies
+        run: |
+          python3 -m pip install --disable-pip-version-check numpy==2.2.6 scipy==1.15.3 trimesh==4.11.1 vtk==9.6.2 pillow==11.2.1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 fonts-dejavu-core
+      - name: Generate guide-compliant v02 source GLBs
+        run: python3 assets/models/creatures/fauna-optimization-v12/source/generate_pair_v02.py
+      - name: Build LODs, validate animation signatures and render real GLBs
+        run: xvfb-run -a python3 assets/models/creatures/fauna-optimization-v12/source/build_pair_v02.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wildhaven-cervalume-lobrapedra-guide-v02
+          path: |
+            assets/models/creatures/cervalume/v02/**
+            assets/models/creatures/lobrapedra/v02/**
+            assets/models/creatures/fauna-optimization-v12/previews/*.png
+            docs/fauna-3d-inventory-v01.*
+          if-no-files-found: error
+      - name: Commit validated v02 candidates
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/models/creatures/cervalume/v02/ assets/models/creatures/lobrapedra/v02/
+          git add assets/models/creatures/fauna-optimization-v12/previews/ docs/fauna-3d-inventory-v01.*
+          if ! git diff --cached --quiet; then
+            git commit -m 'assets(fauna): rebuild Cervalume + Lobrapedra v02 to official visual guide [skip ci]'
+            git fetch origin wildhaven-fauna-cervalume-lobrapedra-guide-v02
+            git rebase origin/wildhaven-fauna-cervalume-lobrapedra-guide-v02
+            git push origin HEAD:wildhaven-fauna-cervalume-lobrapedra-guide-v02
+          fi

@@ -1,0 +1,46 @@
+name: Fulgaronte v07 - cinematic on Claude 36 bone rig
+on:
+  push:
+    branches: [feat/fulgaronte-v07-cinematic-claude-rig]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render-and-validate:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout correct original Claude GLB and new generator
+        uses: actions/checkout@v4
+      - name: Generate 15 cinematic animations from 36-bone GLB
+        run: python3 assets/models/creatures/fulgaronte/v07/source/build_cinematic_from_claude.py
+      - name: Independent GLB skin preservation and animation validation
+        run: python3 assets/models/creatures/fulgaronte/v07/source/validate_cinematic.py
+      - name: Install Blender and NumPy matching Blender's Python interpreter
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq blender
+          python3 -m pip install --disable-pip-version-check --break-system-packages pillow
+          BVER="$(blender --background --python-expr 'import sys;print("BLENDER_PY="+str(sys.version_info.major)+"."+str(sys.version_info.minor))' | awk -F= '/BLENDER_PY=/{print $2;exit}')"
+          BABI="$(echo "$BVER" | tr -d '.')"
+          echo "Installing NumPy wheel for Blender Python $BVER"
+          python3 -m pip install --disable-pip-version-check --break-system-packages --target /tmp/wh-bpy-numpy --only-binary=:all: --no-deps --python-version "$BVER" --implementation cp --abi "cp$BABI" "numpy<3"
+      - name: Reimport and render seven cinematic clips with real Blender materials
+        run: blender --background --threads 2 --python assets/models/creatures/fulgaronte/v07/source/render_cinematic_blender.py
+      - name: Create GIFs strictly from actual Blender frames
+        run: python3 assets/models/creatures/fulgaronte/v07/source/make_gifs.py
+      - name: Commit binary GLB and Blender GIFs to versioned branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/models/creatures/fulgaronte/v07
+          git diff --cached --quiet || (git commit -m "build(fulgaronte): publish Claude-rig cinematic GLB and real Blender renders [skip ci]" && git push)
+          git fetch origin "$GITHUB_REF_NAME"
+          GLB="assets/models/creatures/fulgaronte/v07/fulgaronte_v07_cinematic_claude36.glb"
+          test -f "$GLB"
+          LOCAL="$(sha256sum "$GLB" | cut -d' ' -f1)"
+          REMOTE="$(git show "origin/$GITHUB_REF_NAME:$GLB" | sha256sum | cut -d' ' -f1)"
+          echo "VERIFIED_PUBLISHED_LOCAL_SHA256=$LOCAL"
+          echo "VERIFIED_GITHUB_REMOTE_SHA256=$REMOTE"
+          test "$LOCAL" = "$REMOTE"

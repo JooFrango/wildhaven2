@@ -1,0 +1,80 @@
+name: 'Wildhaven - 19 hexagonos: transicao florestas-planicies real'
+on:
+  push:
+    branches: [wildhaven-forest-plains-19hex-v01]
+    paths:
+      - 'world/forest-nse-expansion/**'
+      - '.github/workflows/wildhaven-forest-plains-19.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wildhaven-forest-plains-19-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencias de geometria e render GLB
+        run: |
+          python -m pip install --disable-pip-version-check 'numpy>=1.26,<3' 'scipy>=1.11,<2' 'trimesh>=4,<5' 'vtk>=9,<10'
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb libgl1 libglu1-mesa
+      - name: Construir 3 GLBs reais de 5km a partir dos vizinhos do mapa ativo
+        run: |
+          python world/forest-nse-expansion/tools/build_forest_plains.py \
+            --repo-root . --output-dir world/forest-nse-expansion
+      - name: Verificar 19 GLBs, 5 bordas, C1, limites, cores, X1 e geometria
+        run: |
+          python world/forest-nse-expansion/tests/validate_19_glb.py \
+            --repo-root . --output-dir world/forest-nse-expansion
+      - name: Renderizar os 19 GLBs conectados e closes da transicao (NAO IA)
+        env:
+          LIBGL_ALWAYS_SOFTWARE: '1'
+        run: |
+          xvfb-run -a python world/forest-nse-expansion/tools/render_19_real.py \
+            --repo-root . --output-dir world/forest-nse-expansion
+      - name: Preparar visualizador independente Three.js
+        run: python world/forest-nse-expansion/tools/build_viewer_19.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Compilar viewer GLB com 19 hexagonos
+        working-directory: world/forest-nse-expansion/viewer
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Arquivar resultados para download e auditoria
+        uses: actions/upload-artifact@v4
+        with:
+          name: Wildhaven-19-Hexagonos-GLB-3-Transicoes-Floresta-Planicie
+          retention-days: 30
+          path: |
+            world/forest-nse-expansion/models/*.glb
+            world/forest-nse-expansion/manifest.json
+            world/forest-nse-expansion/model_report.json
+            world/forest-nse-expansion/preview/*.png
+            world/forest-nse-expansion/viewer/dist/
+      - name: Commit de GLBs, previews reais, manifesto e viewer na branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f world/forest-nse-expansion/models/*.glb \
+            world/forest-nse-expansion/manifest.json \
+            world/forest-nse-expansion/model_report.json \
+            world/forest-nse-expansion/preview/*.png \
+            world/forest-nse-expansion/viewer/index.html \
+            world/forest-nse-expansion/viewer/main.js \
+            world/forest-nse-expansion/viewer/package.json \
+            world/forest-nse-expansion/viewer/copy-assets.mjs
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(world): 19 real hex GLBs, forest-to-plains north south east [skip ci]'
+            git push origin HEAD:wildhaven-forest-plains-19hex-v01
+          fi

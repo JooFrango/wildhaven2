@@ -1,0 +1,36 @@
+name: IA das criaturas — testes do laboratório
+on:
+  push:
+    branches:
+      - feat/laboratorio-ia-criaturas
+    paths:
+      - 'labs/ia-criaturas/**'
+      - '.github/workflows/ia-lab.yml'
+  pull_request:
+    paths:
+      - 'labs/ia-criaturas/**'
+      - '.github/workflows/ia-lab.yml'
+jobs:
+  validar-laboratorio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: labs/ia-criaturas
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Testes de todos os cenários e da Oficina
+        run: npm test
+      - name: Build estático
+        run: npm run build
+      - name: Empacotamento da versão hospedada
+        run: npm run demo-hospedada
+      - name: Preparar navegador de teste
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Smoke test da Oficina com GLB real
+        run: node scripts/testar-oficina-navegador.mjs
