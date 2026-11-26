@@ -8,8 +8,8 @@
   "fonteInventario": "docs/migracao/inventario-criaturas.json",
   "estadoLoteInicial": "GLBs validados tecnicamente e encaminhados para revisão artística",
   "proximoLote": [
-    "frutavil",
-    "cromatil"
+    "arbelio",
+    "sevilho"
   ],
   "filaDeLotes": [
     [
@@ -746,36 +746,50 @@
         "dry_savanna",
         "rocky_savanna"
       ],
-      "revisaoMaisRecenteLocalizada": "v03",
-      "triangulosMaiorVarianteMedida": 1467,
+      "revisaoMaisRecenteLocalizada": "v04",
+      "triangulosMaiorVarianteMedida": 1492,
       "publicacao": [
-        "feat/frutavil-cromatil-v02-review"
+        "feat/fauna-frutavil-v04-cromatil-v04"
       ],
-      "modelagem": "GLB localizado",
-      "texturas": "Textura localizada",
-      "animacoes": "Clipes localizados",
-      "conceitos": [],
-      "propostaDeConceito": false,
+      "modelagem": "LOD0 V04 reconstruído e validado",
+      "texturas": "Atlas fosco 512 × 512 incorporado",
+      "animacoes": "15 clipes reproduzidos em Three.js",
+      "conceitos": [
+        "assets/models/creatures/cromatil/cromatil-v04-conceito-proposto.jpg"
+      ],
+      "propostaDeConceito": true,
       "verificacaoTecnica": {
-        "branch": "feat/frutavil-cromatil-v02-review",
-        "clipesReproduzidos": 11,
-        "menorAlturaIdleM": -0.00597,
-        "menorAlturaWalkM": -0.06081,
-        "interpretacao": "Mínimo geométrico nas poses amostradas. Comparar com o plano real dos pés antes de ajustar o offset e a animação."
+        "branch": "feat/fauna-frutavil-v04-cromatil-v04",
+        "reabertoDoGitHub": true,
+        "clipesReproduzidos": 15,
+        "apoioDaCaminhada": {
+          "previousMinYM": -0.06081,
+          "currentMinYM": 0.0015,
+          "currentMinimumRangeM": [
+            0.0015,
+            0.0015
+          ],
+          "scope": "Mínimo geométrico em coordenadas do GLB. A diferença descreve o apoio no plano Y=0. Não mede o deslizamento no motor do jogo."
+        },
+        "relatorio": "https://github.com/JooFrango/wildhaven2/blob/d06e9bfcc511121f71a82f31c7eece433d985af8/assets/models/creatures/cromatil/cromatil-v04-validation.json"
       },
       "variantes": [
         {
-          "arquivo": "assets/models/creatures/cromatil/cromatil-savanna-animated-v03-LOD0.glb",
-          "branch": "feat/frutavil-cromatil-v02-review",
-          "triangulos": 1467,
+          "arquivo": "assets/models/creatures/cromatil/cromatil-v04-LOD0.glb",
+          "branch": "feat/fauna-frutavil-v04-cromatil-v04",
+          "commit": "d06e9bfcc511121f71a82f31c7eece433d985af8",
+          "triangulos": 1492,
           "texturas": 1,
-          "clipes": 11
+          "clipes": 15,
+          "bytes": 514188,
+          "sha256": "dc9f46439b68ade65b439952cbdc23a18b8e03b62a4c3fc95e6dbc37ac874691"
         }
       ],
       "pendencias": [
-        "V03 atende a 1.500 triângulos no GLB do PR #4. Os 11 clipes foram reproduzidos em Three.js. Conferir assentamento das patas e origem vertical antes da aprovação.",
-        "Localizar arte conceitual original."
-      ]
+        "Aprovação artística da revisão e da proposta de conceito. Arquivo do conceito original aprovado indisponível.",
+        "Testes de terreno irregular e desempenho no jogo."
+      ],
+      "pullRequest": "https://github.com/JooFrango/wildhaven2/pull/7"
     },
     "desert-reptiles-animation-v02": {
       "nome": "desert-reptiles-animation-v02",
@@ -1380,36 +1394,50 @@
         "wooded_savanna",
         "seasonal_forest_edge"
       ],
-      "revisaoMaisRecenteLocalizada": "v03",
-      "triangulosMaiorVarianteMedida": 1443,
+      "revisaoMaisRecenteLocalizada": "v04",
+      "triangulosMaiorVarianteMedida": 1394,
       "publicacao": [
-        "feat/frutavil-cromatil-v02-review"
+        "feat/fauna-frutavil-v04-cromatil-v04"
       ],
-      "modelagem": "GLB localizado",
-      "texturas": "Textura localizada",
-      "animacoes": "Clipes localizados",
-      "conceitos": [],
-      "propostaDeConceito": false,
+      "modelagem": "LOD0 V04 reconstruído e validado",
+      "texturas": "Atlas fosco 512 × 512 incorporado",
+      "animacoes": "16 clipes reproduzidos em Three.js",
+      "conceitos": [
+        "assets/models/creatures/frutavil/frutavil-v04-conceito-proposto.jpg"
+      ],
+      "propostaDeConceito": true,
       "verificacaoTecnica": {
-        "branch": "feat/frutavil-cromatil-v02-review",
-        "clipesReproduzidos": 11,
-        "menorAlturaIdleM": -0.09197,
-        "menorAlturaWalkM": -0.13267,
-        "interpretacao": "Mínimo geométrico nas poses amostradas. Comparar com o plano real dos pés antes de ajustar o offset e a animação."
+        "branch": "feat/fauna-frutavil-v04-cromatil-v04",
+        "reabertoDoGitHub": true,
+        "clipesReproduzidos": 16,
+        "apoioDaCaminhada": {
+          "previousMinYM": -0.13267,
+          "currentMinYM": 0.00186,
+          "currentMinimumRangeM": [
+            0.00186,
+            0.00277
+          ],
+          "scope": "Mínimo geométrico em coordenadas do GLB. A diferença descreve o apoio no plano Y=0. Não mede o deslizamento no motor do jogo."
+        },
+        "relatorio": "https://github.com/JooFrango/wildhaven2/blob/d06e9bfcc511121f71a82f31c7eece433d985af8/assets/models/creatures/frutavil/frutavil-v04-validation.json"
       },
       "variantes": [
         {
-          "arquivo": "assets/models/creatures/frutavil/frutavil-savanna-animated-v03-LOD0.glb",
-          "branch": "feat/frutavil-cromatil-v02-review",
-          "triangulos": 1443,
+          "arquivo": "assets/models/creatures/frutavil/frutavil-v04-LOD0.glb",
+          "branch": "feat/fauna-frutavil-v04-cromatil-v04",
+          "commit": "d06e9bfcc511121f71a82f31c7eece433d985af8",
+          "triangulos": 1394,
           "texturas": 1,
-          "clipes": 11
+          "clipes": 16,
+          "bytes": 568276,
+          "sha256": "0764de9e58cd9286cd49f8aa29ce181d2dcceb3a339eac30c241ebf214fadd2e"
         }
       ],
       "pendencias": [
-        "V03 atende a 1.500 triângulos no GLB do PR #4. Os 11 clipes foram reproduzidos em Three.js. Conferir assentamento das patas e origem vertical antes da aprovação.",
-        "Localizar arte conceitual original."
-      ]
+        "Aprovação artística da revisão e da proposta de conceito. Arquivo do conceito original aprovado indisponível.",
+        "Testes de terreno irregular e desempenho no jogo."
+      ],
+      "pullRequest": "https://github.com/JooFrango/wildhaven2/pull/7"
     },
     "fulgaronte": {
       "nome": "fulgaronte",
@@ -3120,6 +3148,27 @@
         "altura": 1536
       },
       "observacao": "Faixas com bordas contrastadas e detalhes do atlas que reforçam o volume. A cauda e a cabeça acompanham a passada com fases próprias."
+    }
+  ],
+  "lotesPublicados": [
+    {
+      "lote": 1,
+      "criaturas": [
+        "talvero",
+        "rambrel"
+      ],
+      "pullRequest": "https://github.com/JooFrango/wildhaven2/pull/6",
+      "estado": "Em revisão artística"
+    },
+    {
+      "lote": 2,
+      "criaturas": [
+        "frutavil",
+        "cromatil"
+      ],
+      "pullRequest": "https://github.com/JooFrango/wildhaven2/pull/7",
+      "commit": "d06e9bfcc511121f71a82f31c7eece433d985af8",
+      "estado": "Em revisão artística"
     }
   ]
 }
