@@ -1,0 +1,361 @@
+{
+  "triangles": 3510,
+  "vertices": 10530,
+  "closedShells": 83,
+  "allShellEdgesTwoFaces": true,
+  "bounds": [
+    [
+      -5.880000114440918,
+      -2.184522867202759,
+      -0.010520257987082005
+    ],
+    [
+      8.664331436157227,
+      2.184522867202759,
+      7.10169792175293
+    ]
+  ],
+  "bytes": 623000,
+  "uvAtlas": "512x512 indexed",
+  "rig": 0,
+  "clips": 0,
+  "qa": "shape approval pending",
+  "shells": [
+    {
+      "name": "continuous_neck_trunk_tail",
+      "triangles": 360
+    },
+    {
+      "name": "angular_upper_skull",
+      "triangles": 140
+    },
+    {
+      "name": "lower_jaw",
+      "triangles": 120
+    },
+    {
+      "name": "cheek_-1",
+      "triangles": 48
+    },
+    {
+      "name": "brow_-1",
+      "triangles": 36
+    },
+    {
+      "name": "eye_-1",
+      "triangles": 48
+    },
+    {
+      "name": "hindleg_-1",
+      "triangles": 160
+    },
+    {
+      "name": "foot_-1",
+      "triangles": 48
+    },
+    {
+      "name": "toe_-1_0",
+      "triangles": 36
+    },
+    {
+      "name": "claw_-1_0",
+      "triangles": 30
+    },
+    {
+      "name": "toe_-1_1",
+      "triangles": 36
+    },
+    {
+      "name": "claw_-1_1",
+      "triangles": 30
+    },
+    {
+      "name": "toe_-1_2",
+      "triangles": 36
+    },
+    {
+      "name": "claw_-1_2",
+      "triangles": 30
+    },
+    {
+      "name": "forelimb_-1",
+      "triangles": 80
+    },
+    {
+      "name": "finger_-1_0",
+      "triangles": 20
+    },
+    {
+      "name": "hook_-1_0",
+      "triangles": 30
+    },
+    {
+      "name": "finger_-1_1",
+      "triangles": 20
+    },
+    {
+      "name": "hook_-1_1",
+      "triangles": 30
+    },
+    {
+      "name": "finger_-1_2",
+      "triangles": 20
+    },
+    {
+      "name": "hook_-1_2",
+      "triangles": 30
+    },
+    {
+      "name": "jaw_armor_-1_0",
+      "triangles": 36
+    },
+    {
+      "name": "jaw_armor_-1_1",
+      "triangles": 36
+    },
+    {
+      "name": "jaw_armor_-1_2",
+      "triangles": 36
+    },
+    {
+      "name": "jaw_armor_-1_3",
+      "triangles": 36
+    },
+    {
+      "name": "upper_tooth_-1_0",
+      "triangles": 20
+    },
+    {
+      "name": "lower_tooth_-1_0",
+      "triangles": 20
+    },
+    {
+      "name": "upper_tooth_-1_1",
+      "triangles": 20
+    },
+    {
+      "name": "lower_tooth_-1_1",
+      "triangles": 20
+    },
+    {
+      "name": "upper_tooth_-1_2",
+      "triangles": 20
+    },
+    {
+      "name": "lower_tooth_-1_2",
+      "triangles": 20
+    },
+    {
+      "name": "upper_tooth_-1_3",
+      "triangles": 20
+    },
+    {
+      "name": "lower_tooth_-1_3",
+      "triangles": 20
+    },
+    {
+      "name": "upper_tooth_-1_4",
+      "triangles": 20
+    },
+    {
+      "name": "cheek_1",
+      "triangles": 48
+    },
+    {
+      "name": "brow_1",
+      "triangles": 36
+    },
+    {
+      "name": "eye_1",
+      "triangles": 48
+    },
+    {
+      "name": "hindleg_1",
+      "triangles": 160
+    },
+    {
+      "name": "foot_1",
+      "triangles": 48
+    },
+    {
+      "name": "toe_1_0",
+      "triangles": 36
+    },
+    {
+      "name": "claw_1_0",
+      "triangles": 30
+    },
+    {
+      "name": "toe_1_1",
+      "triangles": 36
+    },
+    {
+      "name": "claw_1_1",
+      "triangles": 30
+    },
+    {
+      "name": "toe_1_2",
+      "triangles": 36
+    },
+    {
+      "name": "claw_1_2",
+      "triangles": 30
+    },
+    {
+      "name": "forelimb_1",
+      "triangles": 80
+    },
+    {
+      "name": "finger_1_0",
+      "triangles": 20
+    },
+    {
+      "name": "hook_1_0",
+      "triangles": 30
+    },
+    {
+      "name": "finger_1_1",
+      "triangles": 20
+    },
+    {
+      "name": "hook_1_1",
+      "triangles": 30
+    },
+    {
+      "name": "finger_1_2",
+      "triangles": 20
+    },
+    {
+      "name": "hook_1_2",
+      "triangles": 30
+    },
+    {
+      "name": "jaw_armor_1_0",
+      "triangles": 36
+    },
+    {
+      "name": "jaw_armor_1_1",
+      "triangles": 36
+    },
+    {
+      "name": "jaw_armor_1_2",
+      "triangles": 36
+    },
+    {
+      "name": "jaw_armor_1_3",
+      "triangles": 36
+    },
+    {
+      "name": "upper_tooth_1_0",
+      "triangles": 20
+    },
+    {
+      "name": "lower_tooth_1_0",
+      "triangles": 20
+    },
+    {
+      "name": "upper_tooth_1_1",
+      "triangles": 20
+    },
+    {
+      "name": "lower_tooth_1_1",
+      "triangles": 20
+    },
+    {
+      "name": "upper_tooth_1_2",
+      "triangles": 20
+    },
+    {
+      "name": "lower_tooth_1_2",
+      "triangles": 20
+    },
+    {
+      "name": "upper_tooth_1_3",
+      "triangles": 20
+    },
+    {
+      "name": "lower_tooth_1_3",
+      "triangles": 20
+    },
+    {
+      "name": "upper_tooth_1_4",
+      "triangles": 20
+    },
+    {
+      "name": "dorsal_0",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_1",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_2",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_3",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_4",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_5",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_6",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_7",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_8",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_9",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_10",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_11",
+      "triangles": 40
+    },
+    {
+      "name": "dorsal_12",
+      "triangles": 40
+    },
+    {
+      "name": "tail_horn_-1",
+      "triangles": 48
+    },
+    {
+      "name": "tail_horn_1",
+      "triangles": 48
+    },
+    {
+      "name": "head_crest_0",
+      "triangles": 30
+    },
+    {
+      "name": "head_crest_1",
+      "triangles": 30
+    },
+    {
+      "name": "head_crest_2",
+      "triangles": 30
+    }
+  ],
+  "sha256": "c10f4bdf92760574c94d6252b631ab691ba55f309ad5b63e6acce9ef408e5837",
+  "gitBlob": "0fcbc729fc155530f293cc123f6c429ccdc49a26",
+  "rebuildGeometryMaxDelta": 7.231842366297496e-16,
+  "rebuildExactBytes": false
+}

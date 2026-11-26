@@ -1,0 +1,136 @@
+{
+  "species": "fulgaronte",
+  "version": "v07-cinematic",
+  "source": "v04/fulgaronte_v04_animado.glb",
+  "source_sha256": "59a9eb8d456fcfd2ea031c3ec8aae0409e64445638ef2b62849c3371eb6274b1",
+  "glb": "fulgaronte_v07_cinematic_claude36.glb",
+  "glb_sha256": "5f656db93e848f8e7b68232ada2649592dc2d4b5004818ed5f72d4b06505e668",
+  "bytes": 2672112,
+  "triangles": 2688,
+  "joints": 36,
+  "original_clips": [
+    "alert",
+    "death",
+    "electric_charge",
+    "feed",
+    "hit_react",
+    "idle",
+    "rest",
+    "swim",
+    "walk"
+  ],
+  "new_clips": [
+    {
+      "clip": "cin_breathing_look",
+      "seconds": 5.6,
+      "frames": 169,
+      "channels": 19,
+      "loop": true
+    },
+    {
+      "clip": "cin_heavy_walk",
+      "seconds": 3.3,
+      "frames": 100,
+      "channels": 28,
+      "loop": true
+    },
+    {
+      "clip": "cin_stalk_ambush",
+      "seconds": 4.2,
+      "frames": 127,
+      "channels": 29,
+      "loop": true
+    },
+    {
+      "clip": "cin_charging_stride",
+      "seconds": 2.1,
+      "frames": 64,
+      "channels": 31,
+      "loop": true
+    },
+    {
+      "clip": "cin_bite_lunge",
+      "seconds": 2.9,
+      "frames": 88,
+      "channels": 22,
+      "loop": false
+    },
+    {
+      "clip": "cin_tail_whip",
+      "seconds": 3.2,
+      "frames": 97,
+      "channels": 20,
+      "loop": false
+    },
+    {
+      "clip": "cin_territorial_roar",
+      "seconds": 4.4,
+      "frames": 133,
+      "channels": 19,
+      "loop": false
+    },
+    {
+      "clip": "cin_predatory_swim",
+      "seconds": 3.6,
+      "frames": 109,
+      "channels": 27,
+      "loop": true
+    },
+    {
+      "clip": "cin_electric_warning",
+      "seconds": 5.4,
+      "frames": 163,
+      "channels": 23,
+      "loop": false
+    },
+    {
+      "clip": "cin_electric_burst",
+      "seconds": 2.7,
+      "frames": 82,
+      "channels": 27,
+      "loop": false
+    },
+    {
+      "clip": "cin_overload_exhausted",
+      "seconds": 4.4,
+      "frames": 133,
+      "channels": 21,
+      "loop": false
+    },
+    {
+      "clip": "cin_hit_recoil",
+      "seconds": 2.8,
+      "frames": 85,
+      "channels": 15,
+      "loop": false
+    },
+    {
+      "clip": "cin_death_collapse",
+      "seconds": 5.0,
+      "frames": 151,
+      "channels": 22,
+      "loop": false
+    },
+    {
+      "clip": "cin_feed_carcass",
+      "seconds": 4.1,
+      "frames": 124,
+      "channels": 12,
+      "loop": false
+    },
+    {
+      "clip": "cin_track_target",
+      "seconds": 3.7,
+      "frames": 112,
+      "channels": 14,
+      "loop": false
+    }
+  ],
+  "total_animations": 24,
+  "geometry_skin_uv_material_preserved": true,
+  "original_clips_preserved": true,
+  "electric_vfx_implemented": false,
+  "true_ik_implemented": false,
+  "alpha_modified": false,
+  "quality_status": "director_review_required"
+}

@@ -1,0 +1,103 @@
+{
+  "source_sha256": "59a9eb8d456fcfd2ea031c3ec8aae0409e64445638ef2b62849c3371eb6274b1",
+  "glb_sha256": "5f656db93e848f8e7b68232ada2649592dc2d4b5004818ed5f72d4b06505e668",
+  "bytes": 2672112,
+  "original_clips": 9,
+  "cinematic_clips": 15,
+  "total_animations": 24,
+  "bones": 36,
+  "original_mesh_uv_texture_skin_bin_preserved": true,
+  "new_clips": [
+    {
+      "name": "cin_breathing_look",
+      "channels": 19,
+      "frames": 169,
+      "seconds": 5.6
+    },
+    {
+      "name": "cin_heavy_walk",
+      "channels": 28,
+      "frames": 100,
+      "seconds": 3.3
+    },
+    {
+      "name": "cin_stalk_ambush",
+      "channels": 29,
+      "frames": 127,
+      "seconds": 4.2
+    },
+    {
+      "name": "cin_charging_stride",
+      "channels": 31,
+      "frames": 64,
+      "seconds": 2.1
+    },
+    {
+      "name": "cin_bite_lunge",
+      "channels": 22,
+      "frames": 88,
+      "seconds": 2.9
+    },
+    {
+      "name": "cin_tail_whip",
+      "channels": 20,
+      "frames": 97,
+      "seconds": 3.2
+    },
+    {
+      "name": "cin_territorial_roar",
+      "channels": 19,
+      "frames": 133,
+      "seconds": 4.4
+    },
+    {
+      "name": "cin_predatory_swim",
+      "channels": 27,
+      "frames": 109,
+      "seconds": 3.6
+    },
+    {
+      "name": "cin_electric_warning",
+      "channels": 23,
+      "frames": 163,
+      "seconds": 5.4
+    },
+    {
+      "name": "cin_electric_burst",
+      "channels": 27,
+      "frames": 82,
+      "seconds": 2.7
+    },
+    {
+      "name": "cin_overload_exhausted",
+      "channels": 21,
+      "frames": 133,
+      "seconds": 4.4
+    },
+    {
+      "name": "cin_hit_recoil",
+      "channels": 15,
+      "frames": 85,
+      "seconds": 2.8
+    },
+    {
+      "name": "cin_death_collapse",
+      "channels": 22,
+      "frames": 151,
+      "seconds": 5.0
+    },
+    {
+      "name": "cin_feed_carcass",
+      "channels": 12,
+      "frames": 124,
+      "seconds": 4.1
+    },
+    {
+      "name": "cin_track_target",
+      "channels": 14,
+      "frames": 112,
+      "seconds": 3.7
+    }
+  ],
+  "review_status": "awaiting_director_qa"
+}

@@ -1,0 +1,3 @@
+# Sirocauro v05 — novo blockout
+
+v04 reprovada pelo diretor por baixa fidelidade e excesso de polígonos. Nova forma estática com 3.510 triângulos (teto adotado 4.000), atlas UV 512×512, 83 cascas fechadas orientadas, uma malha exportada. O tronco, pescoço e cauda formam uma única casca contínua; membros e acessórios ainda são componentes independentes. Silhueta reconstruída com cabeça angular, mandíbula com placas ósseas, coxas e patas digitígradas, placas dorsais varridas para trás. Sem rig e animações nesta etapa. Não reutilizar animação da v04 sem nova aprovação e skinning. Preservar v01–v04 e Alpha. O orçamento e a qualidade visual são gates separados; aprovação artística ainda pendente.

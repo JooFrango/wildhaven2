@@ -1,0 +1,143 @@
+{
+  "species": "lagarto-papagaio",
+  "version": "v03",
+  "base_sha256": "ea07f8dd992a1955a12ba6b538d5e380d0cb6cf16701a374ed91cc237c8e35a6",
+  "sha256": "7d531cc4add70fe5b147b2caf4755df4a3aea2f29ab8a313eb2178adca2300ed",
+  "bytes": 3548520,
+  "triangles": 4946,
+  "joints": 24,
+  "skins": 1,
+  "clips": [
+    {
+      "name": "idle",
+      "duration": 3.6,
+      "loop": true
+    },
+    {
+      "name": "walk",
+      "duration": 2.0,
+      "loop": true
+    },
+    {
+      "name": "run",
+      "duration": 0.95,
+      "loop": true
+    },
+    {
+      "name": "stalk",
+      "duration": 2.6,
+      "loop": true
+    },
+    {
+      "name": "backstep",
+      "duration": 1.8,
+      "loop": true
+    },
+    {
+      "name": "turn_left",
+      "duration": 1.7,
+      "loop": true
+    },
+    {
+      "name": "turn_right",
+      "duration": 1.7,
+      "loop": true
+    },
+    {
+      "name": "alert",
+      "duration": 1.7,
+      "loop": false
+    },
+    {
+      "name": "roar",
+      "duration": 2.1,
+      "loop": false
+    },
+    {
+      "name": "threaten",
+      "duration": 2.3,
+      "loop": false
+    },
+    {
+      "name": "bite",
+      "duration": 0.88,
+      "loop": false
+    },
+    {
+      "name": "bite_heavy",
+      "duration": 1.35,
+      "loop": false
+    },
+    {
+      "name": "claw_left",
+      "duration": 1.15,
+      "loop": false
+    },
+    {
+      "name": "claw_right",
+      "duration": 1.15,
+      "loop": false
+    },
+    {
+      "name": "tail_sweep_left",
+      "duration": 1.65,
+      "loop": false
+    },
+    {
+      "name": "tail_sweep_right",
+      "duration": 1.65,
+      "loop": false
+    },
+    {
+      "name": "poison_gas",
+      "duration": 3.4,
+      "loop": false
+    },
+    {
+      "name": "feed",
+      "duration": 2.2,
+      "loop": true
+    },
+    {
+      "name": "drink",
+      "duration": 2.4,
+      "loop": true
+    },
+    {
+      "name": "hurt",
+      "duration": 0.65,
+      "loop": false
+    },
+    {
+      "name": "stagger",
+      "duration": 1.05,
+      "loop": false
+    },
+    {
+      "name": "rest",
+      "duration": 2.8,
+      "loop": true
+    },
+    {
+      "name": "rise",
+      "duration": 1.8,
+      "loop": false
+    },
+    {
+      "name": "death",
+      "duration": 2.6,
+      "loop": false
+    }
+  ],
+  "socket": "poison_mouth_socket",
+  "gas_events_seconds": [
+    1.12,
+    2.48
+  ],
+  "geometry_uv_texture_binary_preserved": true,
+  "alpha_changed": false,
+  "artistic_qa": "pending",
+  "runtime_terrain_ik": "not integrated",
+  "runtime_poison_damage": "not implemented",
+  "notes": "85 overlapping closed shells retained; visual articulation review required."
+}

@@ -1,0 +1,25 @@
+{
+  "species": "varrisco",
+  "stage": "geometry_texture_and_skin_candidate_awaiting_form_review",
+  "base_sha256": "7ecfc5f3c71ce9617c561de65151da771b1c0a945170291d8080266ba2b45d57",
+  "sha256": "80db631d7c5084501954999f729a9828d4450aed5d40c961abefd2b9909f1bd6",
+  "bytes": 2324528,
+  "triangles_before": 2754,
+  "triangles_after": 2658,
+  "triangle_change_percent": -3.49,
+  "vertices": 7974,
+  "joints": 22,
+  "animations_preserved_bitwise": 49,
+  "animation_revision": "not started; requires visual review of new form",
+  "pigment_faces_removed": 376,
+  "structural_centroid_splits": 134,
+  "sickle_faces_added": 12,
+  "texture": "2048x2048 embedded PNG, no COLOR_0",
+  "concept_image": "not retrieved; original approved species description and v01 source used; direct concept comparison pending",
+  "limitations": [
+    "separate anatomical shells retained",
+    "no terrain IK change",
+    "visual review pending",
+    "no alpha integration"
+  ]
+}
