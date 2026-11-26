@@ -57,16 +57,17 @@ PostgreSQL 16 é opcional.
 
 ## Modo leve — Vila (HV_01) + 6 vizinhos (pouco disco)
 
-Medido num clone limpo nesta sessão: `.git` 57 MB, GLBs 104 MB, pacotes WHP1 88 MB,
-`node_modules` 95 MB, `target/` do Rust 247 MB (≈ 0,6 GB no total, **sem contar** a instalação
-do Node e do Rust). Mesmo resultado do modo completo: 2 travessias HV_01 ↔ ER_18, 0 ticks sem chão.
+Medido num clone limpo do GitHub (commit `abb16b5`): `.git` 70 MB, `.generated/` 191 MB (GLBs + pacotes
+WHP1), `node_modules` 95 MB, `target/` do Rust 254 MB, assets/fichas 16 MB (≈ 0,63 GB no total, **sem
+contar** a instalação do Node e do Rust). Tempos nesta máquina: fetch + compilação ~20 s, `npm ci` 2 s,
+`cargo build --release` 46 s. O servidor libera só os 7 hexes com pacote; a caçada completa roda neles.
 
 ```bash
 git clone --filter=blob:none --sparse --branch feat/build-real-jogavel-v01 https://github.com/JooFrango/wildhaven2.git
 ```
 
 ```bash
-cd wildhaven2 && git sparse-checkout set "build real/continental" "build real/integracao" game/build-real-v01 assets/hunters/hunter-workshop/base
+cd wildhaven2 && git sparse-checkout set "build real/continental" "build real/integracao" game/build-real-v01 assets/hunters/hunter-workshop/base assets/models/creatures/folhisco assets/models/creatures/lobrapedra assets/models/creatures/dodarro creatures/species
 ```
 
 ```bash
