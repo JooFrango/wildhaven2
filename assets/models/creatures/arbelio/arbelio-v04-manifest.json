@@ -1,0 +1,85 @@
+{
+  "id": "arbelio",
+  "version": "v04",
+  "status": "experimental_lowpoly_candidate",
+  "base_sha256": "79d12c6abddc1ec4ca8ca419b11c9aeb69766aebd961d263dbcb95dee2b314a7",
+  "base": "lab V4 GLB; 24 animation names",
+  "lods": [
+    {
+      "lod": 0,
+      "original_triangles": 4998,
+      "triangle_cap": 1500,
+      "triangles": 1420,
+      "sha256": "4d33dc48edd145b7d1c6b8109ab5136d97a663159b2a2d64300b675fb2bfe03d",
+      "path": "arbelio-savanna-skinned-v04-LOD0.glb"
+    },
+    {
+      "lod": 1,
+      "original_triangles": 3554,
+      "triangle_cap": 900,
+      "triangles": 892,
+      "sha256": "82ad11e7066f84ab122a098b2b965d14431728dd93045a5fd460be6a3e425868",
+      "path": "arbelio-savanna-skinned-v04-LOD1.glb"
+    },
+    {
+      "lod": 2,
+      "original_triangles": 2754,
+      "triangle_cap": 650,
+      "triangles": 604,
+      "sha256": "2460d0400e8bbf991a4b672c28c5aecc598471bbf89c818582bb71644f90b5c0",
+      "path": "arbelio-savanna-skinned-v04-LOD2.glb"
+    }
+  ],
+  "skins": 1,
+  "joints": 20,
+  "clips": [
+    "idle",
+    "walk",
+    "climb",
+    "leap",
+    "grip",
+    "forage",
+    "balance",
+    "alert",
+    "flee",
+    "rest",
+    "death",
+    "defensive_idle_v4",
+    "dodge_left_v4",
+    "dodge_right_v4",
+    "backstep_v4",
+    "tail_defense_v4",
+    "hit_front_v4",
+    "hit_left_v4",
+    "hit_right_v4",
+    "stagger_v4",
+    "limp_walk_v4",
+    "injured_idle_v4",
+    "social_sniff_v4",
+    "social_greet_v4"
+  ],
+  "texture_sha256": "a2b21e4625b0a405853711aad33604efbeac1b406cd49a08a9fb76aaf6361b6d",
+  "preview_sha256": "add6bf7ad012c2cd707f9c3be2cb29dd1e3be2a75f73b68effb4c30ffeb2384e",
+  "concept_image_available": false,
+  "validation": "GLB reparsed: indices, finite values, normalized weights and quaternions; CPU previews. Full playback and art review pending.",
+  "limitations": [
+    "Original approved concept image absent",
+    "Reduced facial and paw geometry, particularly distant LODs",
+    "24 clips and UV atlas preserved; no runtime IK or integration",
+    "Full animation playback not yet tested"
+  ],
+  "base_path": "labs/ia-criaturas/animacoes/v4/arbelio/arbelio-savanna-faceted-v02-LOD0-anim-v4.glb",
+  "description_path": "creatures/species/arbelio.json",
+  "reference_model_render": "assets/models/creatures/savanna-small-herbivores-v02/previews/arbelio-v02-real-GLB-three_quarter.png",
+  "texture": "arbelio-v04-atlas-uv.png",
+  "preview": "arbelio-v04-previews-real-glb.png",
+  "source": "arbelio-v04-build.mjs",
+  "artistic_approval": false,
+  "integration": "not_integrated",
+  "preview_order": [
+    "profile",
+    "three_quarter",
+    "front",
+    "leap 50%"
+  ]
+}

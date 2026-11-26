@@ -1,0 +1,85 @@
+{
+  "id": "sevilho",
+  "version": "v04",
+  "status": "experimental_lowpoly_candidate",
+  "base_sha256": "b76399871da7aa75df69eb7a23f120981c1f26510317f8425f314de7b6ed98f7",
+  "base": "lab V4 GLB; 24 animation names",
+  "lods": [
+    {
+      "lod": 0,
+      "original_triangles": 4970,
+      "triangle_cap": 1500,
+      "triangles": 1464,
+      "sha256": "f54deb4e9b07612a036739412456d683c5b65588cc4a7ae22c2c2366ad079aaa",
+      "path": "sevilho-savanna-skinned-v04-LOD0.glb"
+    },
+    {
+      "lod": 1,
+      "original_triangles": 3512,
+      "triangle_cap": 900,
+      "triangles": 870,
+      "sha256": "5dcad7650953084d8e618c33d0e11defca2af4164d1ff211f83c50437e175c14",
+      "path": "sevilho-savanna-skinned-v04-LOD1.glb"
+    },
+    {
+      "lod": 2,
+      "original_triangles": 2472,
+      "triangle_cap": 650,
+      "triangles": 628,
+      "sha256": "40554341c4e4fdf2cb0db4393558e22cb26a2a418033e4ceac724e1ea95faade",
+      "path": "sevilho-savanna-skinned-v04-LOD2.glb"
+    }
+  ],
+  "skins": 1,
+  "joints": 22,
+  "clips": [
+    "idle",
+    "walk",
+    "scurry",
+    "hop",
+    "forage",
+    "store_seed",
+    "sniff",
+    "alert",
+    "flee",
+    "rest",
+    "death",
+    "defensive_idle_v4",
+    "dodge_left_v4",
+    "dodge_right_v4",
+    "backstep_v4",
+    "tail_defense_v4",
+    "hit_front_v4",
+    "hit_left_v4",
+    "hit_right_v4",
+    "stagger_v4",
+    "limp_walk_v4",
+    "injured_idle_v4",
+    "social_sniff_v4",
+    "social_greet_v4"
+  ],
+  "texture_sha256": "a6f3bfc4cfb4fb941ed064158d138702f4da342ebfe5324f77413c8fad52d6be",
+  "preview_sha256": "2f026598b2d11e324a3b85c5d2ccb22c22ca4829d763a7ff55d692f829eb364d",
+  "concept_image_available": false,
+  "validation": "GLB reparsed: indices, finite values, normalized weights and quaternions; CPU previews. Full playback and art review pending.",
+  "limitations": [
+    "Original approved concept image absent",
+    "Reduced facial and paw geometry, particularly distant LODs",
+    "24 clips and UV atlas preserved; no runtime IK or integration",
+    "Full animation playback not yet tested"
+  ],
+  "base_path": "labs/ia-criaturas/animacoes/v4/sevilho/sevilho-savanna-faceted-v02-LOD0-anim-v4.glb",
+  "description_path": "creatures/species/sevilho.json",
+  "reference_model_render": "assets/models/creatures/savanna-small-herbivores-v02/previews/sevilho-v02-real-GLB-three_quarter.png",
+  "texture": "sevilho-v04-atlas-uv.png",
+  "preview": "sevilho-v04-previews-real-glb.png",
+  "source": "sevilho-v04-build.mjs",
+  "artistic_approval": false,
+  "integration": "not_integrated",
+  "preview_order": [
+    "profile",
+    "three_quarter",
+    "front",
+    "hop 50%"
+  ]
+}
