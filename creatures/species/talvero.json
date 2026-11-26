@@ -47,7 +47,15 @@
     "model": "assets/models/creatures/talvero/talvero-savanna-animated-v01.glb",
     "preview": "assets/models/creatures/talvero/talvero-real-3d-three_quarter-v01.png",
     "manifest": "assets/models/creatures/talvero/talvero-manifest-v01.json",
-    "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py"
+    "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py",
+    "reviewCandidate": {
+      "version": "v07",
+      "model": "assets/models/creatures/talvero/talvero-v07-LOD0.glb",
+      "manifest": "assets/models/creatures/talvero/talvero-v07-manifest.json",
+      "conceptProposal": "assets/models/creatures/talvero/talvero-v07-conceito-proposto.jpg",
+      "preview": "assets/models/creatures/talvero/talvero-v07-three-quarter.png",
+      "status": "art_review"
+    }
   },
   "integration": {
     "gameplay": false,

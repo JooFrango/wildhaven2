@@ -50,7 +50,15 @@
     "model": "assets/models/creatures/rambrel/rambrel-savanna-animated-v01.glb",
     "preview": "assets/models/creatures/rambrel/rambrel-real-3d-three_quarter-v01.png",
     "manifest": "assets/models/creatures/rambrel/rambrel-manifest-v01.json",
-    "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py"
+    "source": "assets/models/creatures/savanna-medium-herbivores-v01/source/generate.py",
+    "reviewCandidate": {
+      "version": "v05",
+      "model": "assets/models/creatures/rambrel/rambrel-v05-LOD0.glb",
+      "manifest": "assets/models/creatures/rambrel/rambrel-v05-manifest.json",
+      "conceptProposal": "assets/models/creatures/rambrel/rambrel-v05-conceito-proposto.jpg",
+      "preview": "assets/models/creatures/rambrel/rambrel-v05-three-quarter.png",
+      "status": "art_review"
+    }
   },
   "integration": {
     "gameplay": false,

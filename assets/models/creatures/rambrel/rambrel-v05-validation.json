@@ -1,0 +1,328 @@
+{
+  "asset": "assets/models/creatures/rambrel/rambrel-v05-LOD0.glb",
+  "sha256": "44b0865c1e24771ddfd8feb0f2ac5fc7a459020c172485e1bf539ffc9feae45d",
+  "bytes": 803092,
+  "previousSHA256": "b7011f03922d91cf7ad696bf56df404f283835ce91cc093be638cfb8f30463b0",
+  "triangles": {
+    "limit": 2000,
+    "rendered": 1822,
+    "unique": 1822,
+    "previousRendered": 22426,
+    "method": "Conta índices (ou vértices não indexados) por modo de primitiva na cena padrão e soma cada nó de malha renderizado, com multiplicador de EXT_mesh_gpu_instancing."
+  },
+  "structure": {
+    "validator": "2.0.0-dev.3.10",
+    "result": {
+      "errors": 0,
+      "warnings": 0,
+      "infos": 0
+    },
+    "vertices": 2163,
+    "meshCount": 1,
+    "primitiveCount": 1,
+    "materials": 1,
+    "skins": 1,
+    "joints": 21,
+    "textures": [
+      {
+        "name": "rambrel | pigment atlas",
+        "width": 512,
+        "height": 512,
+        "mimeType": "image/jpeg",
+        "embedded": true
+      }
+    ]
+  },
+  "importInBlender": {
+    "version": "5.3.0",
+    "renders": {
+      "front": "assets/models/creatures/rambrel/rambrel-v05-front.png",
+      "side": "assets/models/creatures/rambrel/rambrel-v05-side.png",
+      "back": "assets/models/creatures/rambrel/rambrel-v05-back.png",
+      "three-quarter": "assets/models/creatures/rambrel/rambrel-v05-three-quarter.png"
+    },
+    "method": "Importação do GLB exportado em cena vazia. Renders de estúdio com Cycles."
+  },
+  "threeJS": {
+    "threeRevision": "187",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "skinnedMeshes": 1,
+    "hasTexture": true,
+    "clips": [
+      {
+        "name": "idle",
+        "durationS": 3.7,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.05564,
+        "minHeightM": 0.009,
+        "minGroundHeightRangeM": [
+          0.009,
+          0.009
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "walk",
+        "durationS": 1.53333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.28701,
+        "minHeightM": 0.00122,
+        "minGroundHeightRangeM": [
+          0.00122,
+          0.00893
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "trot",
+        "durationS": 0.93333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.34563,
+        "minHeightM": 0.00781,
+        "minGroundHeightRangeM": [
+          0.00781,
+          0.03748
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "run",
+        "durationS": 0.83333,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.38636,
+        "minHeightM": 0.00595,
+        "minGroundHeightRangeM": [
+          0.00595,
+          0.03731
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "browse",
+        "durationS": 4.3,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.66988,
+        "minHeightM": 0.00897,
+        "minGroundHeightRangeM": [
+          0.00897,
+          0.03248
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "chew",
+        "durationS": 2.4,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.05741,
+        "minHeightM": 0.009,
+        "minGroundHeightRangeM": [
+          0.009,
+          0.009
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "alert",
+        "durationS": 2.66667,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.45931,
+        "minHeightM": 0.009,
+        "minGroundHeightRangeM": [
+          0.009,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "headbutt",
+        "durationS": 1.6,
+        "trackCount": 63,
+        "maxVertexMotionM": 1.37109,
+        "minHeightM": -0.00105,
+        "minGroundHeightRangeM": [
+          -0.00105,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "defend",
+        "durationS": 2,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.94127,
+        "minHeightM": 0.00744,
+        "minGroundHeightRangeM": [
+          0.00744,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "rest",
+        "durationS": 3.6,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.06055,
+        "minHeightM": 0.009,
+        "minGroundHeightRangeM": [
+          0.009,
+          0.009
+        ],
+        "loopErrorM": 0
+      },
+      {
+        "name": "death",
+        "durationS": 2.6,
+        "trackCount": 63,
+        "maxVertexMotionM": 2.40175,
+        "minHeightM": 0.0077,
+        "minGroundHeightRangeM": [
+          0.0077,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "flee",
+        "durationS": 1.7,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.32561,
+        "minHeightM": 0.00759,
+        "minGroundHeightRangeM": [
+          0.00759,
+          0.03607
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "drink",
+        "durationS": 4.5,
+        "trackCount": 63,
+        "maxVertexMotionM": 1.59616,
+        "minHeightM": 0.00884,
+        "minGroundHeightRangeM": [
+          0.00884,
+          0.009
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "start",
+        "durationS": 1.4,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.25976,
+        "minHeightM": 0.00768,
+        "minGroundHeightRangeM": [
+          0.00768,
+          0.03911
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "brake",
+        "durationS": 1.46667,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.37097,
+        "minHeightM": 0.00628,
+        "minGroundHeightRangeM": [
+          0.00628,
+          0.03747
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "turn",
+        "durationS": 1.6,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.5183,
+        "minHeightM": 0.00368,
+        "minGroundHeightRangeM": [
+          0.00368,
+          0.02057
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "hit_react",
+        "durationS": 1,
+        "trackCount": 63,
+        "maxVertexMotionM": 0.44708,
+        "minHeightM": 0.00585,
+        "minGroundHeightRangeM": [
+          0.00585,
+          0.012
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "lie_down",
+        "durationS": 3,
+        "trackCount": 63,
+        "maxVertexMotionM": 1.39147,
+        "minHeightM": 0.00863,
+        "minGroundHeightRangeM": [
+          0.00863,
+          0.00902
+        ],
+        "loopErrorM": null
+      },
+      {
+        "name": "get_up",
+        "durationS": 2.86667,
+        "trackCount": 63,
+        "maxVertexMotionM": 1.40556,
+        "minHeightM": 0.00873,
+        "minGroundHeightRangeM": [
+          0.00873,
+          0.00902
+        ],
+        "loopErrorM": null
+      }
+    ],
+    "method": "WebGL em Chrome headless. 21 poses por clipe, com vértices avaliados após skinning. Os GIFs foram renderizados com o GLB importado pelo GLTFLoader.",
+    "playbackPreviews": [
+      "assets/models/creatures/rambrel/rambrel-v05-walk.gif",
+      "assets/models/creatures/rambrel/rambrel-v05-run.gif",
+      "assets/models/creatures/rambrel/rambrel-v05-browse.gif",
+      "assets/models/creatures/rambrel/rambrel-v05-headbutt.gif"
+    ],
+    "limitations": "Os testes amostram poses e comparam as pontas dos loops. Colisões, deslizamento em terreno do jogo, transições e desempenho do jogo não foram medidos."
+  },
+  "comparacaoComReferencias": [
+    {
+      "nome": "Rubrágoro",
+      "versao": "v07",
+      "arquivo": "rubragoro_rig_animated_v07.glb",
+      "origem": "GLB local fornecido pelo responsável do Wildhaven",
+      "sha256": "609bae9067c1610a6bda931e117a86b627518f3669966bbf62b8bfde04afba67",
+      "triangulos": 3760,
+      "clipesReproduzidos": 24,
+      "atlas": {
+        "largura": 1536,
+        "altura": 1536
+      },
+      "observacao": "Áreas de pelagem com contraste amplo e face facetada. A preparação e a recuperação ficam legíveis no deslocamento do tronco e na progressão do gesto."
+    },
+    {
+      "nome": "Lagarto-Papagaio",
+      "versao": "v03",
+      "arquivo": "assets/models/creatures/lagarto-papagaio/v03/lagarto-papagaio-v03-animado.glb",
+      "origem": "JooFrango/wildhaven2",
+      "sha256": "7d531cc4add70fe5b147b2caf4755df4a3aea2f29ab8a313eb2178adca2300ed",
+      "triangulos": 4946,
+      "clipesReproduzidos": 24,
+      "atlas": {
+        "largura": 1536,
+        "altura": 1536
+      },
+      "observacao": "Faixas com bordas contrastadas e detalhes do atlas que reforçam o volume. A cauda e a cabeça acompanham a passada com fases próprias."
+    }
+  ],
+  "remoteReadback": {
+    "repository": "JooFrango/wildhaven2",
+    "commit": "639b7c538f9bfee8f9505b628cf3126b97469543",
+    "bytes": 803092,
+    "sha256": "44b0865c1e24771ddfd8feb0f2ac5fc7a459020c172485e1bf539ffc9feae45d",
+    "importedInBlender": true,
+    "importedClips": 19
+  }
+}
