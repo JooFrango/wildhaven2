@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "0.1",
+  "id": "lobrapedra",
+  "name": "Lobrapedra",
+  "category": "predator",
+  "habitats": [
+    "temperate_forest",
+    "rocky_forest_edge"
+  ],
+  "diet": [
+    "small_mammals",
+    "cervalume"
+  ],
+  "social": {
+    "type": "pack",
+    "notes": "Grupos pequenos; cooperação condicionada por fome, risco e proximidade."
+  },
+  "behaviors": [
+    "patrol",
+    "track",
+    "stalk",
+    "chase",
+    "attack",
+    "retreat",
+    "rest",
+    "drink"
+  ],
+  "ecologicalRelationships": {
+    "prey": [
+      "cervalume"
+    ],
+    "scavengersAfterKill": [
+      "carniroca"
+    ]
+  },
+  "artDirection": "Quadrúpede predador original com silhueta robusta e adaptação a terreno rochoso.",
+  "status": "proposal",
+  "assets": {
+    "concept": null,
+    "model": null,
+    "riggedModel": null,
+    "animations": []
+  },
+  "notes": "Rascunho de design. Comportamentos, nomes e artes aguardam aprovação antes da integração."
+}

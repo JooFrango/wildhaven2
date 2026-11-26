@@ -1,0 +1,25 @@
+{
+  "name": "wildhaven-arumbar",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "node verify.mjs",
+    "build": "vite build",
+    "export": "node export.mjs",
+    "preview": "vite --host 0.0.0.0",
+    "test:v02": "node verify-v02.mjs",
+    "export:v02": "node export-v02.mjs",
+    "capture:v02": "node capture-v02.mjs",
+    "test:v03": "node verify-v03.mjs",
+    "export:v03": "node export-v03.mjs",
+    "capture:v03": "node capture-v03.mjs"
+  },
+  "dependencies": {
+    "three": "0.181.0"
+  },
+  "devDependencies": {
+    "vite": "7.2.2",
+    "@playwright/test": "1.56.1"
+  }
+}

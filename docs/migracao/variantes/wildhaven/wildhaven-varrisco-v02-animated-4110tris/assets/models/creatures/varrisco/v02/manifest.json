@@ -1,0 +1,223 @@
+{
+  "species": "varrisco",
+  "version": "v02",
+  "stage": "animated_weighted_skin",
+  "status": "awaiting_user_visual_playback_approval",
+  "sourceConcept": "2026-11-09 approved Varrisco v01",
+  "baseModel": "v01 geometry preserved unmodified",
+  "habitats": [
+    "savanna",
+    "desert"
+  ],
+  "variants": 1,
+  "units": "metres",
+  "axis": "X forward Y up Z lateral",
+  "anatomicalNotes": "biped with toe sickles, counterweight tail, articulated jaw; facet normals unchanged",
+  "rigMethod": "glTF skin with JOINTS_0/WEIGHTS_0 and inverseBindMatrices, no pivot-only claim",
+  "source": "source/build_animated.py",
+  "sourceGeometry": "../v01/source/build.py",
+  "files": [
+    {
+      "file": "varrisco-animated-v02-LOD0.glb",
+      "bytes": 797924,
+      "sha256": "c5569242da23814eac968fc6bdcd04e928b307ac90bc775998a8f311024aad14",
+      "triangleCount": 4110,
+      "meshDefinitions": 1,
+      "nodeCount": 25,
+      "skinCount": 1,
+      "jointCount": 24,
+      "animations": [
+        {
+          "name": "idle",
+          "durationSec": 2.4,
+          "loop": true,
+          "channels": 8,
+          "maxJointRotationRad": 0.0899
+        },
+        {
+          "name": "walk",
+          "durationSec": 1.15,
+          "loop": true,
+          "channels": 20,
+          "maxJointRotationRad": 0.41
+        },
+        {
+          "name": "run",
+          "durationSec": 0.72,
+          "loop": true,
+          "channels": 20,
+          "maxJointRotationRad": 0.6671
+        },
+        {
+          "name": "stalk",
+          "durationSec": 1.85,
+          "loop": true,
+          "channels": 20,
+          "maxJointRotationRad": 0.3475
+        },
+        {
+          "name": "alert",
+          "durationSec": 1.25,
+          "loop": false,
+          "channels": 5,
+          "maxJointRotationRad": 0.23
+        },
+        {
+          "name": "sniff",
+          "durationSec": 2.1,
+          "loop": true,
+          "channels": 4,
+          "maxJointRotationRad": 0.25
+        },
+        {
+          "name": "bite",
+          "durationSec": 0.85,
+          "loop": false,
+          "channels": 6,
+          "maxJointRotationRad": 0.4044
+        },
+        {
+          "name": "claw_swipe",
+          "durationSec": 1.05,
+          "loop": false,
+          "channels": 9,
+          "maxJointRotationRad": 0.4675
+        },
+        {
+          "name": "pounce",
+          "durationSec": 1.2,
+          "loop": false,
+          "channels": 12,
+          "maxJointRotationRad": 0.425
+        },
+        {
+          "name": "feed",
+          "durationSec": 1.9,
+          "loop": true,
+          "channels": 6,
+          "maxJointRotationRad": 0.33
+        },
+        {
+          "name": "drink",
+          "durationSec": 2.35,
+          "loop": true,
+          "channels": 4,
+          "maxJointRotationRad": 0.43
+        },
+        {
+          "name": "rest",
+          "durationSec": 2.75,
+          "loop": false,
+          "channels": 10,
+          "maxJointRotationRad": 0.8
+        },
+        {
+          "name": "sleep",
+          "durationSec": 3,
+          "loop": false,
+          "channels": 10,
+          "maxJointRotationRad": 0.8
+        },
+        {
+          "name": "hurt",
+          "durationSec": 0.9,
+          "loop": false,
+          "channels": 7,
+          "maxJointRotationRad": 0.34
+        },
+        {
+          "name": "death",
+          "durationSec": 1.8,
+          "loop": false,
+          "channels": 15,
+          "maxJointRotationRad": 0.58
+        },
+        {
+          "name": "threat",
+          "durationSec": 1.7,
+          "loop": false,
+          "channels": 7,
+          "maxJointRotationRad": 0.33
+        },
+        {
+          "name": "turn",
+          "durationSec": 1.5,
+          "loop": false,
+          "channels": 8,
+          "maxJointRotationRad": 0.24
+        }
+      ],
+      "materialCount": 1,
+      "triangleMeasure": "GLB mesh index accessor count / 3, one scene instance"
+    }
+  ],
+  "clips": [
+    "idle",
+    "walk",
+    "run",
+    "stalk",
+    "alert",
+    "sniff",
+    "bite",
+    "claw_swipe",
+    "pounce",
+    "feed",
+    "drink",
+    "rest",
+    "sleep",
+    "hurt",
+    "death",
+    "threat",
+    "turn"
+  ],
+  "LOD0": "varrisco-animated-v02-LOD0.glb",
+  "lodsAdditional": "not generated at this stage; 4,110-triangle LOD0 is the original optimized pilot geometry",
+  "integration": "not integrated with Alpha/gameplay; no physics/terrain IK; in-place motion may slide feet",
+  "approval": {
+    "concept": "approved",
+    "v01_blockout": "superseded by user instruction to animate",
+    "v02_animation": "in_review"
+  },
+  "publication": "published_on_draft_pr_branch; remote_binary_verified; gameplay_not_integrated",
+  "realGltfPreviews": {
+    "Varrisco_v02_Three_Real_GLB_Views.png": {
+      "bytes": 646063,
+      "sha256": "99ab0da75fff6bf7ed9cd041010759a2dd565858c868f2c0f373bddb93a4f409"
+    },
+    "varrisco-v02-bite-real-glb.gif": {
+      "bytes": 1509489,
+      "sha256": "dc039f16a0749e164bdc01e3aef7d346cb17412ea40b53018d28bc3495dee7c3"
+    },
+    "varrisco-v02-pounce-real-glb.gif": {
+      "bytes": 1010472,
+      "sha256": "be87a669274f26f5f4d0868f3a9e343d56cef435621dd0ad2da625e3135a36e9"
+    },
+    "varrisco-v02-real-glb-front.png": {
+      "bytes": 434331,
+      "sha256": "0e22d6f87f075614db00a096d866a958c8f7c79d2730774c1699086e834dcd6c"
+    },
+    "varrisco-v02-real-glb-profile.png": {
+      "bytes": 436487,
+      "sha256": "4b708dadd166148888b9c3c8d7d5fb3ad3517cf3ffdfdb502287a79b8b274665"
+    },
+    "varrisco-v02-real-glb-three-quarter.png": {
+      "bytes": 277141,
+      "sha256": "9ab03b4c7a78531225128dfddd908d166ce9834337b5d9d671333284174bcbf0"
+    },
+    "varrisco-v02-run-real-glb.gif": {
+      "bytes": 1007903,
+      "sha256": "5fb0504e5c01b55643e6c1a22c2f3b869b465afd9bcc16fc40a8c6d8984fbc0b"
+    }
+  },
+  "renderedGlbSha256": "c5569242da23814eac968fc6bdcd04e928b307ac90bc775998a8f311024aad14",
+  "previewMethod": "Stills vtkGLTFImporter, dynamic frames CPU linear-blend skinning of reimported GLB glTF animation/accessors and VTK rendering",
+  "publicationEvidence": {
+    "branch": "wildhaven-varrisco-v02-animated-4110tris",
+    "ciRun": "https://github.com/carioca1111/wildhaven/actions/runs/42660757685",
+    "ciStatus": "success",
+    "remoteGitBlobSHA": "f9be8a824ff4306442e99cc1a26f75dd7a94560e",
+    "remoteSHA256": "c5569242da23814eac968fc6bdcd04e928b307ac90bc775998a8f311024aad14",
+    "remoteBytes": 797924,
+    "verifiedAt": "2026-11-09"
+  }
+}

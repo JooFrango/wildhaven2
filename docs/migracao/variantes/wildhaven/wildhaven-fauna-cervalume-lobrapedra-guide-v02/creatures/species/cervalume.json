@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "0.1",
+  "id": "cervalume",
+  "name": "Cervalume",
+  "category": "herbivore",
+  "habitats": [
+    "temperate_forest",
+    "grassland_transition"
+  ],
+  "diet": [
+    "grasses",
+    "leaves",
+    "young_shoots"
+  ],
+  "social": {
+    "type": "herd",
+    "notes": "Manadas com adultos e filhotes, reação coletiva a ameaças."
+  },
+  "behaviors": [
+    "graze",
+    "drink",
+    "rest",
+    "flee",
+    "follow_herd",
+    "protect_young"
+  ],
+  "ecologicalRelationships": {
+    "predators": [
+      "lobrapedra"
+    ],
+    "scavengersAfterDeath": [
+      "carniroca"
+    ]
+  },
+  "artDirection": "Cervídeo original de anatomia naturalista, porte robusto porém plausível, chifres compactos e manchas claras discretas; fantasia mínima e sem efeitos mágicos.",
+  "status": "modeled_candidate",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/cervalume/cervalume-animated-v01.glb",
+    "riggedModel": "assets/models/creatures/cervalume/cervalume-optimized-v01-LOD0.glb",
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "idle",
+      "breathing",
+      "drink",
+      "rest",
+      "sleep",
+      "hurt",
+      "death",
+      "turn_left",
+      "turn_right",
+      "graze",
+      "alert",
+      "flee",
+      "defend",
+      "antler_push",
+      "follow_herd"
+    ]
+  },
+  "notes": "Modelo 3D real v01, rig, animações e LOD0/1/2 publicados em branch de revisão. Aguardando aprovação visual antes de integração ao jogo."
+}

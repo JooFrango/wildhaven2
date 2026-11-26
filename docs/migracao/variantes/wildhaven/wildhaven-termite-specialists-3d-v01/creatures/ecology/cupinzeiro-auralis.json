@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "0.1",
+  "id": "cupinzeiro_auralis",
+  "type": "persistent_food_resource",
+  "status": "asset_in_review",
+  "worldAssetOnly": true,
+  "hasModeledInterior": false,
+  "maxPopulation": 20000,
+  "spawnPopulation": [
+    12000,
+    20000
+  ],
+  "livingPopulationThreshold": 1,
+  "extinctionIrreversible": true,
+  "regrowth": {
+    "mode": "logistic",
+    "dailyRateIllustrative": 0.09,
+    "requiresPopulationGreaterThanZero": true,
+    "ceiling": 20000
+  },
+  "consumptionPerVisitIllustrative": {
+    "ferrunco": 340,
+    "dunlingua": 210,
+    "pica_termita": 60
+  },
+  "integrityDamagePerVisitIllustrative": {
+    "ferrunco": 0.15,
+    "dunlingua": 0.08,
+    "pica_termita": 0.01
+  },
+  "decay": {
+    "startsAtPopulationZero": true,
+    "irreversible": true,
+    "dryApproxDays": 110,
+    "wetApproxDays": 36
+  },
+  "visibleStates": [
+    "active",
+    "feeding",
+    "damaged",
+    "abandoned",
+    "crumbling",
+    "disappearing"
+  ],
+  "assets": {
+    "model": "assets/models/environment/cupinzeiro/cupinzeiro-animated-v01.glb",
+    "preview": "assets/models/environment/cupinzeiro/cupinzeiro-real-3d.png",
+    "proceduralSource": "assets/models/creatures/termite-specialists/source/fauna.mjs",
+    "ecologySource": "assets/models/creatures/termite-specialists/source/ecology.mjs"
+  },
+  "notes": "Somente estrutura externa; não simular milhares de cupins. O total de cupins é um contador de recurso persistente. Parâmetros sujeitos a balanceamento. Não integrado à Alpha."
+}

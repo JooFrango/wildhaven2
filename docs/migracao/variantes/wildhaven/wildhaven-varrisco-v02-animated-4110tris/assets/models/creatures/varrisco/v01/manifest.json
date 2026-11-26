@@ -1,0 +1,67 @@
+{
+  "species": "varrisco",
+  "version": "v01",
+  "stage": "anatomy_blockout",
+  "status": "awaiting_user_blockout_approval",
+  "concept_status": "approved_in_chat_2026-11-09",
+  "art_direction": "Torvardo v03 principal; Mastelio v03 and Garruva v03 complementary",
+  "habitats": [
+    "savanna",
+    "desert"
+  ],
+  "variant_count": 1,
+  "diet": "medium_carnivore",
+  "scale_units": "metres",
+  "coordinate_system": "X forward, Y up, Z lateral",
+  "glb": "varrisco-v01-anatomy-blockout.glb",
+  "bytes": 395764,
+  "sha256": "2a9bdb517e2c52405dc14dccb281c3865bc589a4ce0bffcc56f77018b5a8c358",
+  "triangles_exported_reimported": 4110,
+  "triangle_measure_method": "sum of triangles in trimesh-loaded GLB mesh geometries; one instance",
+  "authoring_parts": 115,
+  "mesh_definitions": 1,
+  "skins": 0,
+  "joints": 0,
+  "animations": [],
+  "lods": [
+    "blockout"
+  ],
+  "bounding_box_m": {
+    "min": [
+      -1.763,
+      0.0093,
+      -0.4731
+    ],
+    "max": [
+      1.3202,
+      1.435,
+      0.4731
+    ]
+  },
+  "previews": {
+    "profile": "previews/varrisco-v01-real-glb-profile.png",
+    "front": "previews/varrisco-v01-real-glb-front.png",
+    "three_quarter": "previews/varrisco-v01-real-glb-three-quarter.png"
+  },
+  "source": "source/build.py",
+  "render_source": "source/render.py",
+  "publication": "published_on_draft_pr_branch; remote_binary_verified; gameplay_not_integrated",
+  "integration": "not_integrated",
+  "notes": "Static blockout. No rig, skin, animation, LOD1/LOD2 or runtime implementation; concept approval distinct from form approval.",
+  "renderer": "vtkGLTFImporter of exported binary GLB + VTK offscreen 1500x1100 neutral studio lighting/floor",
+  "previews_sha256": {
+    "varrisco-v01-real-glb-profile.png": "7c062774dae9d3d4f1eb15bc986961eeb45ff7000009bb5d9f94981dfd5480d7",
+    "varrisco-v01-real-glb-front.png": "48de3bc3e0f3240921f30f8f7612e28615392f576f30d7fba3823bfb65618319",
+    "varrisco-v01-real-glb-three-quarter.png": "5dd611df0735eef1a3c8e40bbcdd3533adc5b76fa130b4207115b36ab0d483ac"
+  },
+  "rendered_glb_sha256": "2a9bdb517e2c52405dc14dccb281c3865bc589a4ce0bffcc56f77018b5a8c358",
+  "publicationEvidence": {
+    "branch": "wildhaven-varrisco-v02-animated-4110tris",
+    "ciRun": "https://github.com/carioca1111/wildhaven/actions/runs/42660757685",
+    "ciStatus": "success",
+    "remoteGitBlobSHA": "79ae324c8facf1d997bb38e477d3acfdca5424b9",
+    "remoteSHA256": "2a9bdb517e2c52405dc14dccb281c3865bc589a4ce0bffcc56f77018b5a8c358",
+    "remoteBytes": 395764,
+    "verifiedAt": "2026-11-09"
+  }
+}

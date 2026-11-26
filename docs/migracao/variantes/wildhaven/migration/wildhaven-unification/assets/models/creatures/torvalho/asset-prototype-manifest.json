@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0",
+  "speciesId": "torvalho",
+  "version": "0.1.0",
+  "status": "prototype_generated_not_committed_as_binary",
+  "userApproval": "pending_visual_review",
+  "producedOn": "2026-11-06",
+  "gltfVersion": "2.0",
+  "models": [
+    {
+      "lod": 0,
+      "file": "torvalho_animated_v01.glb",
+      "bytes": 1413784,
+      "sha256": "2fb8e8363d3f9cf2ae419668ebc2c11288165cff71a45b367a08c79aea09021e",
+      "vertices": 18771,
+      "triangles": 33186
+    },
+    {
+      "lod": 1,
+      "file": "torvalho_LOD1_animated_v01.glb",
+      "bytes": 607004,
+      "sha256": "980a1138b9de1fda13c3af6c5298a6e719c02a658e291813b9f84186fa869786",
+      "vertices": 7160,
+      "triangles": 12438
+    }
+  ],
+  "rigJointCount": 23,
+  "materialCount": 33,
+  "animations": [
+    "walk",
+    "trot",
+    "run",
+    "calf_follow",
+    "idle",
+    "graze",
+    "chew",
+    "ruminate",
+    "sniff_air",
+    "watch",
+    "alert",
+    "alarm_bellow",
+    "herd_guard",
+    "stomp",
+    "charge_windup",
+    "charge",
+    "horn_sweep",
+    "head_toss",
+    "drink",
+    "rest",
+    "sleep",
+    "dust_bath",
+    "tail_swish",
+    "turn_left",
+    "turn_right",
+    "hurt",
+    "death"
+  ],
+  "generatedFiles": [
+    "generate_torvalho.py",
+    "index.html",
+    "validate_glb.py",
+    "torvalho_preview_v01.png",
+    "torvalho_actions_contact_sheet.png",
+    "torvalho_animations_preview.gif",
+    "torvalho_preview_celular.mp4",
+    "torvalho_validation.json"
+  ],
+  "validation": {
+    "gltfHeader": true,
+    "skin": true,
+    "weights": true,
+    "allAnimationCurves": true,
+    "trimeshImport": true,
+    "renderedFrames": true
+  },
+  "notes": "All binary models and source code exist in the generated ZIP delivered in ChatGPT. These paths are not yet present in GitHub and must not be used as remote URLs until verified. LODs retain 27 animation clips but are not automatically switched by the game."
+}
