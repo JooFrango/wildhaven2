@@ -1,0 +1,101 @@
+{
+  "id": "frutavil",
+  "version": "v03",
+  "status": "technical_budget_pass_art_review_pending",
+  "triangleCap": 1500,
+  "lodCaps": [
+    1500,
+    850,
+    450
+  ],
+  "reference": "V02 GLB, original concept comparison pending",
+  "rig": "Existing rigid pivots; preserved",
+  "method": "Weld coincident vertices and topology-constrained edge collapses per connected component; no components deleted for these six outputs; retain embedded texture and copy animation buffers.",
+  "validation": "Remote branch readback, SHA-256, index bounds, mesh counts, 11 animation clips, 37 finite monotonic keys per channel; no full independent playback.",
+  "source": "assets/models/creatures/frutavil/optimize-pair-v03.mjs",
+  "gameplayIntegrated": false,
+  "LODs": [
+    {
+      "path": "assets/models/creatures/frutavil/frutavil-savanna-animated-v03-LOD0.glb",
+      "base": "assets/models/creatures/frutavil/frutavil-savanna-animated-v02-LOD0.glb",
+      "bytes": 206840,
+      "triangles": 1443,
+      "sha256": "05fb9afa14816af6b0998d30f918b55fd1f01192ffe546875b8a2b1d9d7e2a24",
+      "gitBlob": "67e4b004ab923f3dd6f6cccf433b48242aa7f2d9",
+      "nodes": 13,
+      "skins": 0,
+      "animations": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    },
+    {
+      "path": "assets/models/creatures/frutavil/frutavil-savanna-animated-v03-LOD1.glb",
+      "base": "assets/models/creatures/frutavil/frutavil-savanna-animated-v02-LOD1.glb",
+      "bytes": 185236,
+      "triangles": 815,
+      "sha256": "f688043621f82f7db484ff706ef7c7e343d7ff947f1d008fbbb5ec0a95db9d5c",
+      "gitBlob": "a4c2ca41292d636708292428c25c3ae901b59882",
+      "nodes": 13,
+      "skins": 0,
+      "animations": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    },
+    {
+      "path": "assets/models/creatures/frutavil/frutavil-savanna-animated-v03-LOD2.glb",
+      "base": "assets/models/creatures/frutavil/frutavil-savanna-animated-v02-LOD2.glb",
+      "bytes": 170744,
+      "triangles": 430,
+      "sha256": "4c132a6ba9ee3876e9ffb4289b2a28b21bb3bab4b035c619cb2cc51fbf7c36b3",
+      "gitBlob": "52cd5004cc2d5e44020abb4033d191588bb5173c",
+      "nodes": 13,
+      "skins": 0,
+      "animations": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    }
+  ],
+  "preview": {
+    "path": "assets/models/creatures/frutavil/frutavil-v03-real-glb-3views.png",
+    "sha256OfModel": "05fb9afa14816af6b0998d30f918b55fd1f01192ffe546875b8a2b1d9d7e2a24",
+    "views": [
+      "profile",
+      "front",
+      "three_quarters"
+    ],
+    "renderer": "software rasterizer; approximate texture lighting"
+  }
+}

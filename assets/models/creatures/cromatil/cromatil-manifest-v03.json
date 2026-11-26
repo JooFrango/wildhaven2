@@ -1,0 +1,101 @@
+{
+  "id": "cromatil",
+  "version": "v03",
+  "status": "technical_budget_pass_art_review_pending",
+  "triangleCap": 1500,
+  "lodCaps": [
+    1500,
+    850,
+    450
+  ],
+  "reference": "V02 GLB, original concept comparison pending",
+  "rig": "Existing rigid pivots; preserved",
+  "method": "Weld coincident vertices and topology-constrained edge collapses per connected component; no components deleted for these six outputs; retain embedded texture and copy animation buffers.",
+  "validation": "Remote branch readback, SHA-256, index bounds, mesh counts, 11 animation clips, 37 finite monotonic keys per channel; no full independent playback.",
+  "source": "assets/models/creatures/frutavil/optimize-pair-v03.mjs",
+  "gameplayIntegrated": false,
+  "LODs": [
+    {
+      "path": "assets/models/creatures/cromatil/cromatil-savanna-animated-v03-LOD0.glb",
+      "base": "assets/models/creatures/cromatil/cromatil-savanna-animated-v02-LOD0.glb",
+      "bytes": 270588,
+      "triangles": 1467,
+      "sha256": "069341465436f6bb9a894713082d6843f1b4460e10ddce2db4a5e38b5bfc8611",
+      "gitBlob": "3025f1989485580234e59d3893bb2005d578301d",
+      "nodes": 19,
+      "skins": 0,
+      "animations": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    },
+    {
+      "path": "assets/models/creatures/cromatil/cromatil-savanna-animated-v03-LOD1.glb",
+      "base": "assets/models/creatures/cromatil/cromatil-savanna-animated-v02-LOD1.glb",
+      "bytes": 250276,
+      "triangles": 820,
+      "sha256": "fdac1334a1eb7272f4fde4858f9f080f2bd67e2baa7d1a886e2572f5cab51e19",
+      "gitBlob": "63a18d1e075f1afec1f009e3079e9151142048fe",
+      "nodes": 19,
+      "skins": 0,
+      "animations": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    },
+    {
+      "path": "assets/models/creatures/cromatil/cromatil-savanna-animated-v03-LOD2.glb",
+      "base": "assets/models/creatures/cromatil/cromatil-savanna-animated-v02-LOD2.glb",
+      "bytes": 234664,
+      "triangles": 434,
+      "sha256": "5cd8135a66935c80064f78b0175cf15b063d8802af830bf83232b040a61ba5fc",
+      "gitBlob": "a3b6d041e1e174e75b1f92795ddae57132876f2b",
+      "nodes": 19,
+      "skins": 0,
+      "animations": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "textureImages": 1
+    }
+  ],
+  "preview": {
+    "path": "assets/models/creatures/cromatil/cromatil-v03-real-glb-3views.png",
+    "sha256OfModel": "069341465436f6bb9a894713082d6843f1b4460e10ddce2db4a5e38b5bfc8611",
+    "views": [
+      "profile",
+      "front",
+      "three_quarters"
+    ],
+    "renderer": "software rasterizer; approximate texture lighting"
+  }
+}
