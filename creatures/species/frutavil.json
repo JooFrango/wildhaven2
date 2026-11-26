@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "0.1",
+  "id": "frutavil",
+  "name": "Frutavil",
+  "status": "in_review",
+  "category": "small_herbivore_bird",
+  "habitats": [
+    "wooded_savanna",
+    "seasonal_forest_edge"
+  ],
+  "diet": [
+    "fruit",
+    "soft_seeds",
+    "buds"
+  ],
+  "social": {
+    "type": "small_flock",
+    "notes": "Grupos de 3–7; pousa em galhos, voos curtos"
+  },
+  "behaviors": [
+    "perch",
+    "peck",
+    "eat_fruit",
+    "wing_flap",
+    "short_flight",
+    "alert"
+  ],
+  "artDirection": "Ave frugívora de peito arredondado, bico curvado, crista ferrugem longa, asas com penas azul-acinzentadas e grande cauda em leque.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD0.glb",
+    "riggedModel": "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD0.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "hop",
+      "perch",
+      "peck",
+      "eat_fruit",
+      "wing_flap",
+      "short_flight",
+      "alert",
+      "rest",
+      "death"
+    ]
+  },
+  "body": {
+    "massMinKg": 2,
+    "massMaxKg": 3.5
+  },
+  "notes": "A arte conceitual desta espécie foi aprovada pelo usuário. Asset low-poly 3D v01 em revisão visual; 3 LODs, 11 clipes GLB, rig por pivôs hierárquicos sem pesos de skinning. Sem gameplay/spawn/IA; não confundir aprovação conceitual com aprovação do modelo."
+}

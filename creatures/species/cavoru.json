@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.1",
+  "id": "cavoru",
+  "name": "Cavoru",
+  "status": "in_review",
+  "category": "herbivore",
+  "habitats": [
+    "temperate_forest",
+    "temperate_forest_edge",
+    "temperate_grassland",
+    "grassland_shrubland",
+    "riparian_meadow"
+  ],
+  "diet": [
+    "grass",
+    "young_shoots",
+    "tubers",
+    "bulbs",
+    "roots",
+    "fallen_fruit",
+    "herbs"
+  ],
+  "social": {
+    "type": "small_family_group",
+    "notes": "Grupos de 4–9 indivíduos, com um ou dois adultos vigilantes durante a alimentação. Jovens aprendem rotas de água e áreas seguras; nunca compartilham informação telepaticamente."
+  },
+  "behaviors": [
+    "idle",
+    "graze",
+    "sniff_ground",
+    "dig_shallow",
+    "pull_tuber",
+    "chew",
+    "drink",
+    "walk",
+    "trot",
+    "short_sprint",
+    "lookout",
+    "freeze",
+    "warning_bark",
+    "group_regroup",
+    "flee_to_cover",
+    "push_defense",
+    "dust_roll",
+    "groom",
+    "rest",
+    "sleep",
+    "juvenile_follow",
+    "courtship",
+    "care_young"
+  ],
+  "ecologicalRelationships": {
+    "role": "medium_herbivore_soil_disturber_and_seed_disperser",
+    "forests": "Consome raízes, brotos e frutos caídos; fuça húmus úmido nas bordas de trilhas e em clareiras, sem destruir árvores maduras.",
+    "plains": "Pasta capim e ervas, desenterra bulbos em áreas já abertas; evita solo excessivamente compactado e terrenos alagados.",
+    "predators": [
+      "nharuk_temperate_plains",
+      "other_medium_large_predators"
+    ],
+    "predatorRelations": {
+      "nharuk": "Indivíduos jovens, isolados ou debilitados podem ser presas. Um adulto saudável pode fugir em grupo ou reagir com empurrões, mas não é invulnerável.",
+      "boscaranha": "Cavorus adultos são grandes demais para caça habitual; filhotes pequenos podem ser vulneráveis sem proteção.",
+      "torvalho": "Divide pastagens, mas o Torvalho come mais capim alto enquanto o Cavoru aproveita raízes e brotos."
+    },
+    "habitatEffects": [
+      "creates_shallow_soil_disturbances",
+      "seed_dispersal_by_faeces",
+      "small_trails",
+      "exposes_bulbs_for_other_animals"
+    ],
+    "populationNotes": "Consumo e recuperação de vegetação, disponibilidade de água, doenças e predação limitam a população. As alterações de solo devem ser pequenas e reversíveis na escala das chunks."
+  },
+  "body": {
+    "heightMinM": 0.67,
+    "heightMaxM": 0.9,
+    "massMinKg": 58,
+    "massMaxKg": 108
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 285,
+      "rearBlindSpotDeg": 75,
+      "detectMovingTargetM": 33,
+      "detectStillTargetM": 13,
+      "notes": "Olhos laterais. Em campo aberto percebe movimento de longe; floresta, sombra e obstáculos reduzem a detecção. Não enxerga através de vegetação densa."
+    },
+    "hearing": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 40,
+      "notes": "Orelhas grandes e dobráveis distinguem chamados e passos. Vento, água e ruído da manada reduzem precisão."
+    },
+    "smell": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 38,
+      "notes": "Fareja raízes, água, trilhas e predadores a favor do vento. O cheiro não fornece coordenadas exatas nem ignora obstruções."
+    }
+  },
+  "locomotion": {
+    "walkMps": 1.05,
+    "sprintMps": 7.4,
+    "maxSprintSeconds": 6,
+    "flight": false,
+    "jumpHeightM": 0.42,
+    "notes": "Trote 2,6 m/s, baixo centro de gravidade, curvas rápidas em bosque e menor velocidade sustentada em campo aberto do que herbívoros de pernas longas. Pode vencer degraus baixos, não escala paredões."
+  },
+  "threatResponse": {
+    "strategy": "freeze_warn_regroup_and_dash_for_cover",
+    "states": [
+      "forage",
+      "sniff",
+      "watch",
+      "freeze",
+      "warn",
+      "regroup",
+      "dash",
+      "hide",
+      "push_defense",
+      "injured"
+    ],
+    "alarmCall": true,
+    "notes": "Em mata, congela e corre para arbustos/raízes; nas planícies, alerta o grupo e foge em mudanças curtas de direção. Adulto encurralado pode empurrar com os ombros e usar as garras dianteiras para afastar o predador. Sem agressão gratuita."
+  },
+  "artDirection": "Herbívoro médio original de Auralis, inspirado livremente em fossadores e pastadores (vombate, capivara e anta) mas sem copiar um animal real. Corpo baixo e profundo em formato de gota, dorso arredondado e musculoso, ombros largos e pescoço curto; cabeça em cunha com focinho espatulado e sensível, uma faixa rígida de queratina formando uma pequena pá no lábio superior para apartar a terra; duas orelhas foliformes grandes e móveis, olhos âmbar laterais. Quatro membros fortes, anteriores ligeiramente mais compridos, quatro dedos com garras curtas robustas para escavar superficialmente, sem cascos ou chifres. Dorso com tufos discretos e pequenas cristas de pelo grosso, não placas de armadura. Cauda curta terminada em escova de pelos. Paleta bosque: marrom-musgo e bege, listras irregulares claras nos flancos; planície: dourado seco, ferrugem e creme, menos contraste. Design mid-poly 3D original, amigável à distância mas plausível, sem aparência de boi, cervo ou réptil.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/cavoru/cavoru_forest_animated_v01.glb",
+    "riggedModel": "assets/models/creatures/cavoru/cavoru_forest_animated_v01.glb",
+    "animations": [
+      "idle",
+      "breathing",
+      "walk",
+      "trot",
+      "short_sprint",
+      "turn_left",
+      "turn_right",
+      "graze",
+      "sniff_ground",
+      "dig_shallow",
+      "pull_tuber",
+      "chew",
+      "drink",
+      "lookout",
+      "freeze",
+      "warning_call",
+      "regroup",
+      "flee_start",
+      "dodge",
+      "push_defense",
+      "dust_roll",
+      "groom",
+      "rest",
+      "sleep",
+      "hurt",
+      "death",
+      "juvenile_follow"
+    ]
+  },
+  "notes": "Criatura 006, herbívoro de porte médio. Modelos animados v0.1 para as variantes floresta temperada e planícies publicados e verificados no GitHub: 4 GLBs (LOD0/LOD1 por variante), 24 ossos e 27 clipes em cada. Consulte assets/models/creatures/cavoru/cavoru_manifest.json para ambos os caminhos e hashes. Arte conceitual disponível na conversa, PNG não enviado ao repositório. Modelo procedural em revisão visual, ainda sem IA, colisões, animação física do solo ou integração à Alpha jogável."
+}

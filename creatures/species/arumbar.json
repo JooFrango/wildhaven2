@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "0.1",
+  "id": "arumbar",
+  "name": "Arumbar",
+  "nickname": "Titã das Savanas",
+  "status": "asset_v03_organic_anatomy_in_review",
+  "category": "large_herbivore",
+  "rarity": "rare",
+  "habitats": [
+    "savanna"
+  ],
+  "climate": [
+    "tropical_savanna",
+    "seasonal_dry_savanna"
+  ],
+  "ecologicalNiche": "rare large grazer and browser; high-biomass herbivore",
+  "diet": [
+    "savanna_grasses",
+    "shrubs",
+    "low_leaves"
+  ],
+  "social": {
+    "type": "predominantly_solitary",
+    "solitaryProbabilityTarget": 0.85,
+    "exceptions": [
+      "mother_with_offspring",
+      "temporary_breeding_pairs",
+      "rare_local_food_aggregation"
+    ],
+    "typicalGroupSize": [
+      1,
+      1
+    ],
+    "maxTemporaryGroupSizeTarget": 3,
+    "notes": "Não formar manadas constantes; animal raro, não é encontro comum."
+  },
+  "abundance": {
+    "status": "provisional_design_values_not_implemented",
+    "suitableHexOccupancyFraction": [
+      0.15,
+      0.25
+    ],
+    "referenceSuitableHexWidthKm": 5,
+    "adultCountPerOccupiedReferenceHex": [
+      1,
+      2
+    ],
+    "breedingRate": "low",
+    "notes": "Valores exemplificativos revisáveis depois da capacidade de suporte da savana; não somar automaticamente estes valores ao sistema de spawn."
+  },
+  "body": {
+    "bodyLengthTargetM": 5.2,
+    "shoulderHeightTargetM": 2.8,
+    "adultMassTargetKg": 3500,
+    "anatomy": "massive armored bison-like quadruped, horn arches, muscular hump, layered osteoderms, curved horns, thick hoofed legs, tufted tail"
+  },
+  "behavior": {
+    "temperament": "avoidant unless threatened",
+    "territorial": "loose solitary ranges",
+    "predatorResponse": [
+      "observe",
+      "alert",
+      "avoid",
+      "charge_if_cornered"
+    ],
+    "foodSearch": "wide seasonal grazing and browsing"
+  },
+  "animationClips": [
+    "idle",
+    "walk",
+    "run",
+    "graze",
+    "drink",
+    "alert",
+    "charge",
+    "death"
+  ],
+  "assets": {
+    "model": "assets/models/creatures/arumbar/arumbar-savanna-anatomy-animated-v03.glb",
+    "preview": "assets/models/creatures/arumbar/arumbar-real-3d-three-quarter-v03.png",
+    "dossier": "assets/models/creatures/arumbar/README-V03.md",
+    "source": "assets/models/creatures/arumbar/source/arumbar-anatomy-v03.mjs",
+    "lodReference": "assets/models/creatures/arumbar/arumbar-savanna-animated-v01.glb",
+    "animationManifest": "assets/models/creatures/arumbar/arumbar-manifest-v03.json",
+    "previousHighPoly": "assets/models/creatures/arumbar/arumbar-savanna-highpoly-animated-v02.glb"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false,
+    "terrain": false
+  },
+  "notes": "Arumbar v03: modelo poligonal real e oito animações GLB (não imagem gerada), anatomia de bisão blindado retrabalhada, corcova, chifres, ombros, cascos, crina e placas de armadura encaixadas; locomotion com inércia. Somente savana, raro, população pequena, majoritariamente solitário. Sem integração à Alpha jogável."
+}

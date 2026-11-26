@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "0.1",
+  "id": "carniroca",
+  "name": "Carniroca",
+  "category": "scavenger",
+  "habitats": [
+    "temperate_forest",
+    "temperate_forest_edge",
+    "temperate_grassland",
+    "cliff"
+  ],
+  "diet": [
+    "carrion",
+    "small_opportunistic_prey"
+  ],
+  "social": {
+    "type": "opportunistic_group",
+    "notes": "Solitária durante a busca; vários indivíduos podem convergir sobre uma carcaça ao observar uma descida ou vocalização, nunca por telepatia."
+  },
+  "behaviors": [
+    "idle",
+    "walk",
+    "takeoff",
+    "fly",
+    "glide",
+    "bank",
+    "land",
+    "scan",
+    "search_carrion",
+    "approach_carcass",
+    "peck_carrion",
+    "tear_meat",
+    "swallow",
+    "avoid_predator",
+    "threaten",
+    "call",
+    "preen",
+    "rest",
+    "sleep"
+  ],
+  "ecologicalRelationships": {
+    "role": "medium_aerial_scavenger",
+    "carrionSources": [
+      "nharuk_kills",
+      "boscaranha_kills",
+      "folhisco_deaths",
+      "silvarano_deaths",
+      "cavoru_deaths",
+      "torvalho_deaths",
+      "tufrilo_deaths"
+    ],
+    "feedsOn": "carrion_after_predators_or_natural_death",
+    "competition": "other_scavengers_and_opportunistic_predators",
+    "notes": "Scavenging depends on sight, odor and local cues; modeled clips only; actual ecological AI is not yet implemented."
+  },
+  "artDirection": "Original mid-poly carrion bird with broad three-segment wings, hooked beak, partially featherless neck, clawed feet, dark charcoal and rust feathers, long feathered tail. Real skinned GLB animations; not a copy of real vultures or other games.",
+  "status": "in_review",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/carniroca/carniroca_animated_v01.glb",
+    "riggedModel": "assets/models/creatures/carniroca/carniroca_animated_v01.glb",
+    "animations": [
+      "idle",
+      "breathing",
+      "walk",
+      "hop",
+      "takeoff",
+      "fly",
+      "glide",
+      "flap_hard",
+      "bank_left",
+      "bank_right",
+      "land",
+      "wing_fold",
+      "perch",
+      "scan",
+      "approach_carcass",
+      "peck_carrion",
+      "tear_meat",
+      "swallow",
+      "threaten",
+      "call",
+      "preen",
+      "rest",
+      "sleep",
+      "hurt",
+      "death"
+    ]
+  },
+  "notes": "Protótipo 3D procedural real v0.1, 2 GLBs LOD0/LOD1 verificados, 18 ossos e 25 clipes. Fonte e viewer em assets/models/creatures/temperate-wildlife-pair-v01. Ação de localizar carcaças ainda não implementada, sem IK nem integração à Alpha."
+}

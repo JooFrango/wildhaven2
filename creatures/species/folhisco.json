@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "0.1",
+  "id": "folhisco",
+  "name": "Folhisco",
+  "status": "proposal",
+  "category": "herbivore",
+  "habitats": [
+    "temperate_forest",
+    "temperate_forest_edge",
+    "low_shrubland"
+  ],
+  "diet": [
+    "seeds",
+    "sprouts",
+    "young_leaves",
+    "berries",
+    "fallen_fruit"
+  ],
+  "social": {
+    "type": "small_flock",
+    "notes": "4–9 indivíduos, com contato visual e vocal; membros isolados procuram o grupo. Hierarquia leve sem cooperação em ataque."
+  },
+  "behaviors": [
+    "scratch_for_seeds",
+    "forage",
+    "drink",
+    "rest",
+    "preen",
+    "lookout",
+    "freeze",
+    "scan",
+    "alarm_call",
+    "flee_to_cover",
+    "rejoin_flock",
+    "nest",
+    "care_for_chicks"
+  ],
+  "ecologicalRelationships": {
+    "preyFor": [
+      "small_predators"
+    ],
+    "seedDispersal": true,
+    "seedConsumption": true,
+    "habitatResourcePressure": "low_to_moderate"
+  },
+  "body": {
+    "heightMinM": 0.35,
+    "heightMaxM": 0.45,
+    "massMinKg": 2,
+    "massMaxKg": 3
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 300,
+      "rearBlindSpotDeg": 60,
+      "detectMovingTargetM": 30,
+      "detectStillTargetM": 12,
+      "notes": "Olhos laterais: visão periférica excepcional. Detecção depende de linha de visão, luz, velocidade do alvo, movimento da cabeça e obstrução por folhagem. Valores iniciais para testes, não garantidos."
+    },
+    "hearing": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 20,
+      "notes": "Reage a passos e vocalizações em uma banda de distâncias modulada por vegetação, vento e ruído de água."
+    },
+    "smell": {
+      "relativeAcuity": "low",
+      "detectionRangeM": 4,
+      "notes": "Não deve detectar predadores através de paredes ou a grande distância; olfato auxiliar para comida próxima."
+    }
+  },
+  "locomotion": {
+    "walkMps": 1.1,
+    "sprintMps": 5,
+    "maxSprintSeconds": 6,
+    "flight": false,
+    "jumpHeightM": 0.5,
+    "notes": "Corre em zigue-zague até cobertura próxima, executa saltos curtos. Não atravessa rios profundos nem sobe escarpas sem navegação válida."
+  },
+  "threatResponse": {
+    "strategy": "freeze_scan_warn_scatter",
+    "states": [
+      "foraging",
+      "alert",
+      "freeze",
+      "scan",
+      "alarm",
+      "flee",
+      "hide",
+      "regroup"
+    ],
+    "alarmCall": true,
+    "notes": "Ameaça incerta => congela e examina; ameaça confirmada => chama e dispara; depois tenta recompor o bando. Não enfrenta grandes predadores."
+  },
+  "artDirection": "Ave fantástica original de floresta temperada, lembrando galináceos silvestres. Corpo compacto, patas fortes com três dedos, crista de penas angulares ferrugem, peito creme, plumagem castanho-avermelhada com manchas claras, cauda curta em leque, olhos laterais âmbar, bico robusto cinza-escuro. Mid-poly 3D naturalista estilizado, silhueta legível, nada antropomórfico.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/folhisco/folhisco_animated_v01.glb",
+    "riggedModel": "assets/models/creatures/folhisco/folhisco_animated_v01.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "peck",
+      "scratch",
+      "scan_head",
+      "alert",
+      "alarm_call",
+      "jump_flap",
+      "hide",
+      "hurt",
+      "death",
+      "drink",
+      "preen",
+      "sleep"
+    ]
+  },
+  "notes": "Modelo Folhisco v0.1 e 15 animações aprovados visualmente pelo usuário em 2026-11-06. GLB original publicado no GitHub com hash verificado. Conceito PNG permanece apenas na conversa. IA, colisões e integração ao jogo não implementados."
+}

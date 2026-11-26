@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "0.1",
+  "id": "nharuk",
+  "name": "Nharuk",
+  "status": "in_review",
+  "category": "predator",
+  "habitats": [
+    "tropical_rainforest",
+    "tropical_rainforest_understory",
+    "temperate_forest",
+    "temperate_forest_edge",
+    "temperate_grassland",
+    "riparian_meadow"
+  ],
+  "diet": [
+    "small_herbivores",
+    "ground_birds",
+    "folhisco",
+    "juvenile_silvarano_opportunistic",
+    "unprotected_torvalho_calf_rare",
+    "small_reptiles",
+    "fresh_carrion"
+  ],
+  "social": {
+    "type": "solitary",
+    "notes": "Territórios individuais, encontros reprodutivos; fêmea cuida de 1–3 filhotes. Ecótipos tropical e temperado/planície pertencem à mesma espécie, cruzamento possível em zonas de contato."
+  },
+  "behaviors": [
+    "rest",
+    "patrol",
+    "inspect_scent",
+    "listen",
+    "select_prey",
+    "stalk",
+    "ambush",
+    "pounce",
+    "attack",
+    "short_chase",
+    "retreat",
+    "feed",
+    "drink",
+    "groom",
+    "mark_territory",
+    "guard_cubs",
+    "sleep",
+    "injured"
+  ],
+  "ecologicalRelationships": {
+    "role": "solitary_mid_to_large_ambush_predator",
+    "ecotypes": {
+      "tropical": {
+        "name": "Nharuk-da-Sombra",
+        "habitats": [
+          "tropical_rainforest",
+          "tropical_rainforest_understory"
+        ],
+        "shoulderHeightM": [
+          0.62,
+          0.76
+        ],
+        "bodyLengthM": [
+          1.05,
+          1.35
+        ],
+        "massKg": [
+          35,
+          58
+        ],
+        "pelage": "dark_olive_rust_charcoal",
+        "strategy": "short_hidden_ambush",
+        "prey": [
+          "small_herbivores",
+          "ground_birds",
+          "juvenile_silvarano_opportunistic"
+        ]
+      },
+      "temperate_plains": {
+        "name": "Nharuk-dos-Campos",
+        "habitats": [
+          "temperate_forest",
+          "temperate_forest_edge",
+          "temperate_grassland",
+          "riparian_meadow"
+        ],
+        "shoulderHeightM": [
+          0.83,
+          1.02
+        ],
+        "bodyLengthM": [
+          1.45,
+          1.82
+        ],
+        "massKg": [
+          75,
+          125
+        ],
+        "pelage": "ochre_copper_earth",
+        "strategy": "cover_approach_short_chase",
+        "prey": [
+          "folhisco",
+          "medium_herbivores",
+          "unprotected_torvalho_calf_rare"
+        ]
+      }
+    },
+    "interactions": {
+      "folhisco": "prey_in_temperate_habitat_with_alarm_and_escape_opportunity",
+      "silvarano": "juveniles_vulnerable_adults_dangerous",
+      "torvalho": "adults_in_herds_not_solo_prey; calf_only_rare_and_unprotected",
+      "boscaranha": "competitor_for_small_prey; avoid_risky_confrontation",
+      "carniroca": "scavenges_carcass_remains"
+    },
+    "notes": "Predation probability must consider hunger, target vulnerability, cover, terrain, fatigue, prey alarm, and counterattack. No guaranteed kills, instant detection or endless pursuit."
+  },
+  "body": {
+    "heightMinM": 0.62,
+    "heightMaxM": 1.02,
+    "massMinKg": 35,
+    "massMaxKg": 125
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 205,
+      "rearBlindSpotDeg": 155,
+      "detectMovingTargetM": 48,
+      "detectStillTargetM": 21,
+      "notes": "Upper reference for temperate/plains; tropical 30 m moving/12 m still. Only with line of sight; blocked by trees and terrain."
+    },
+    "hearing": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 42,
+      "notes": "Tropical 35 m; attenuation by wind, rain, vegetation and distance."
+    },
+    "smell": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 55,
+      "notes": "Tropical 38 m; direction-dependent odor trails fade with weather/time."
+    }
+  },
+  "locomotion": {
+    "walkMps": 1.25,
+    "sprintMps": 12.5,
+    "maxSprintSeconds": 7,
+    "flight": false,
+    "jumpHeightM": 1.2,
+    "notes": "Temperate/plains reference. Tropical 1.1 m/s walk, 11.5 m/s sprint for ~6s. Terrain/obstacles and stamina matter; prototype tuning only."
+  },
+  "threatResponse": {
+    "strategy": "avoid_large_threat_mark_territory_ambush_only_if_advantageous",
+    "states": [
+      "patrol",
+      "alert",
+      "intimidate",
+      "stalk",
+      "pounce",
+      "short_chase",
+      "retreat",
+      "guard_cubs",
+      "injured"
+    ],
+    "alarmCall": false,
+    "notes": "Threat display and low growl; prioritizes retreat from adult Torvalho and dangerous groups. No supernatural sense or aggression without need."
+  },
+  "artDirection": "Original Auralis quadruped predator inspired by the jaguar's ecological role, not a jaguar reproduction. Elongated body, wedge-like head, angular brow, small keratin cheek plates, short bristled nape/shoulder crest, four padded clawed paws, powerful forequarters, long tail with flattened tuft. Fur pattern consists of discontinuous angular stripes, never jaguar rosettes. Tropical compact olive/rust/charcoal; temperate and plains larger ochre/copper/earth, stronger shoulders. Real 3D mid-poly mesh, credible skeletal rig, distinct proportions and physically readable animation.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/nharuk/v02/nharuk_tropical_animated_v02.glb",
+    "riggedModel": "assets/models/creatures/nharuk/v02/nharuk_tropical_animated_v02.glb",
+    "animations": [
+      "idle",
+      "breathing",
+      "walk",
+      "trot",
+      "run",
+      "turn_left",
+      "turn_right",
+      "stalk",
+      "crouch",
+      "ambush",
+      "pounce",
+      "bite",
+      "claw_sweep",
+      "drag_prey",
+      "feed",
+      "drink",
+      "sniff",
+      "listen",
+      "alert",
+      "growl",
+      "threat_display",
+      "groom",
+      "rest",
+      "sleep",
+      "hurt",
+      "death",
+      "cub_follow"
+    ]
+  },
+  "notes": "Criatura 005, ecótipos tropical menor e temperado/planície maior. Revisão anatômica v0.2 publicada no GitHub em quatro GLBs (2 ecótipos × LOD0/LOD1), 24 ossos e 27 clipes cada, com tronco em loft contínuo, patas anguladas, focinho encurtado, crista/cauda e marcas projetadas. Versão anterior v0.1 preservada no diretório superior. Ver assets/models/creatures/nharuk/v02/README.md e nharuk_manifest_v02.json para os dois caminhos e hashes. Aprovacão visual pendente; skining ainda rígido por segmentos, sem IK, IA de caça, navegação ou integração no jogo."
+}

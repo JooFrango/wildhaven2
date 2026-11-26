@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "0.1",
+  "id": "dunlingua",
+  "name": "Dunlíngua",
+  "status": "in_review",
+  "category": "insectivore_specialist",
+  "habitats": [
+    "desert",
+    "rocky_desert",
+    "canyons"
+  ],
+  "diet": [
+    "termites"
+  ],
+  "social": {
+    "type": "solitary",
+    "notes": "Projeto de espécie territorial, sem comportamento implementado na Alpha jogável."
+  },
+  "behaviors": [
+    "idle",
+    "walk",
+    "run",
+    "scent",
+    "inspect",
+    "dig",
+    "feed",
+    "tongue_out",
+    "tongue_in",
+    "sun_bask",
+    "alert",
+    "defend",
+    "flee",
+    "rest",
+    "hurt",
+    "death"
+  ],
+  "ecologicalRelationships": {
+    "trophicRole": "termite_colony_predator",
+    "foodSource": "persistent_termite_colonies",
+    "colonyPopulationConsumedPerVisit": 210,
+    "visibleMoundDamagePerVisit": 0.08,
+    "specialism": "A retirada de indivíduos diminui a população do cupinzeiro. Se chegar a zero, a colônia se extingue para sempre.",
+    "competition": [
+      "ferrunco",
+      "pica_termita"
+    ]
+  },
+  "artDirection": "Reptil fantástico de 2,9 m, carapaça acobreada, crista dorsal alta e pontiaguda, cauda longa, garras escavadoras e língua fina; focinho longo afilado para captar cupins.",
+  "body": {
+    "heightMinM": 0.7,
+    "heightMaxM": 1.2,
+    "massMinKg": 65,
+    "massMaxKg": 135
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 265,
+      "rearBlindSpotDeg": 95,
+      "notes": "Visão conceitual, depende de obstáculos e vegetação."
+    },
+    "smell": {
+      "relativeAcuity": "high",
+      "notes": "A detecção olfativa sofre interferência de vento, relevo e umidade."
+    }
+  },
+  "locomotion": {
+    "walkMps": 2,
+    "sprintMps": 6,
+    "flight": false,
+    "notes": "Valores provisórios para testes ecológicos; a movimentação não está implementada no game."
+  },
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/dunlingua/dunlingua-animated-v02.glb",
+    "riggedModel": "assets/models/creatures/dunlingua/dunlingua-animated-v02.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "run",
+      "scent",
+      "inspect",
+      "dig",
+      "feed",
+      "tongue_out",
+      "tongue_in",
+      "sun_bask",
+      "alert",
+      "defend",
+      "flee",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "notes": "GLB com geometrias mid-poly reais e rig hierárquico com animações por pivôs; não usa SkinnedMesh/skin weights. Criado e versionado em wildhaven-termite-specialists-3d-v01. Asset independente da Alpha."
+}

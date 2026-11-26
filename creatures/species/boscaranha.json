@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "0.1",
+  "id": "boscaranha",
+  "name": "Boscaranha",
+  "status": "in_review",
+  "category": "predator",
+  "habitats": [
+    "temperate_forest",
+    "temperate_forest_understory",
+    "fallen_trunk",
+    "mossy_root_system"
+  ],
+  "diet": [
+    "folhisco",
+    "small_vertebrates",
+    "large_invertebrates"
+  ],
+  "social": {
+    "type": "solitary",
+    "notes": "Indivíduos em territórios de emboscada; interação social predominante na reprodução. Não caça em bando."
+  },
+  "behaviors": [
+    "idle",
+    "walk",
+    "scuttle",
+    "sprint",
+    "stalk",
+    "ambush",
+    "sense_vibrations",
+    "vigilance",
+    "pounce",
+    "bite",
+    "silk_wrap",
+    "feed",
+    "climb",
+    "threat_display",
+    "retreat",
+    "turn_left",
+    "turn_right",
+    "groom",
+    "nest",
+    "rest",
+    "hurt",
+    "death"
+  ],
+  "ecologicalRelationships": {
+    "role": "ambush_predator_of_small_forest_herbivores",
+    "primaryPrey": [
+      "folhisco"
+    ],
+    "alternativePrey": [
+      "small_vertebrates",
+      "large_invertebrates"
+    ],
+    "preyDetection": "ground_and_tripline_vibrations_then_short_range_vision",
+    "predationStrategy": "stalk_or_wait_then_short_pounce_and_fang_strike",
+    "huntingGroupSize": 1,
+    "notes": "A presa só é considerada detectada após estimulação de sensores com alcance e obstáculos válidos. O sucesso da caça depende de proximidade, percepção do Folhisco, terreno, fadiga e furtividade."
+  },
+  "body": {
+    "heightMinM": 0.38,
+    "heightMaxM": 0.6,
+    "massMinKg": 12,
+    "massMaxKg": 26
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 260,
+      "rearBlindSpotDeg": 100,
+      "detectMovingTargetM": 15,
+      "detectStillTargetM": 6,
+      "notes": "Oito olhos simples (não olhos compostos); detecção visual curta por linha de visão e luz; sem visão através de árvores."
+    },
+    "hearing": {
+      "relativeAcuity": "low",
+      "detectionRangeM": 4,
+      "notes": "Baixo papel de audição aérea; eventos mecânicos do terreno são modelados pelo sensor de vibrações."
+    },
+    "smell": {
+      "relativeAcuity": "medium",
+      "detectionRangeM": 8,
+      "notes": "Quimiorrecepção próxima para rastros, carcaças e possíveis parceiros; vento e obstáculos importam."
+    },
+    "vibration": {
+      "relativeAcuity": "exceptional",
+      "detectGroundMovementM": 14,
+      "detectSilkMovementM": 25,
+      "notes": "Percepção principal. Propagação apenas por solo/troncos conectados e eventuais fios de alarme; não detectar movimento pelo ar ou através de vales isolados."
+    }
+  },
+  "locomotion": {
+    "walkMps": 0.75,
+    "sprintMps": 4.7,
+    "maxSprintSeconds": 2,
+    "flight": false,
+    "jumpHeightM": 0.35,
+    "notes": "Locomoção com oito pernas e padrão tetrapodal alternado, arranque curto e recuo; pode escalar superfície validada. Clipes in-place e navegação ainda não implementada."
+  },
+  "threatResponse": {
+    "strategy": "ambush_retreat_or_display",
+    "states": [
+      "hidden",
+      "sensing",
+      "stalking",
+      "pouncing",
+      "biting",
+      "wrapping",
+      "feeding",
+      "threat_display",
+      "retreating"
+    ],
+    "alarmCall": false,
+    "notes": "Espera camuflada; dá bote apenas com oportunidade; ameaça grande pode gerar intimidação com pernas dianteiras ou recuo em direção ao abrigo."
+  },
+  "artDirection": "Aranha predadora florestal do porte de um cão médio, com oito olhos simples, pedipalpos, quelíceras articuladas, fiandeiras e oito pernas longas de três segmentos animáveis. Cefalotórax marrom-terra, abdômen alto com escudos geométricos de casca, manchas cobre e tufos reais de musgo, garras pálidas nas pontas das patas. Não antropomórfica. Malha 3D mid-poly com geometria real; concept ilustrado anteriormente na conversa.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/boscaranha/boscaranha_animated_v01.glb",
+    "riggedModel": "assets/models/creatures/boscaranha/boscaranha_animated_v01.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "scuttle",
+      "sprint",
+      "stalk",
+      "ambush",
+      "sense_vibrations",
+      "vigilance",
+      "pounce",
+      "bite",
+      "silk_wrap",
+      "feed",
+      "climb",
+      "threat_display",
+      "retreat",
+      "turn_left",
+      "turn_right",
+      "groom",
+      "nest",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "notes": "Modelos originais LOD0 e LOD1 publicados e verificados no GitHub, 22 animações cada. Visual em revisão. Arte conceitual PNG ainda não publicada. IA de caça, vibrações, teias físicas e colisões não implementadas."
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "0.1",
+  "id": "cromatil",
+  "name": "Cromátil",
+  "status": "in_review",
+  "category": "small_herbivore_reptile",
+  "habitats": [
+    "dry_savanna",
+    "rocky_savanna"
+  ],
+  "diet": [
+    "leaves",
+    "flowers",
+    "buds",
+    "succulent_vegetation"
+  ],
+  "social": {
+    "type": "solitary",
+    "notes": "Animal ectotérmico que busca insolação e refugia-se entre rochas"
+  },
+  "behaviors": [
+    "bask",
+    "forage",
+    "tail_whip",
+    "threat",
+    "retreat",
+    "hide"
+  ],
+  "artDirection": "Réptil robusto de pele verde-oliva, garganta ferrugem, dorso com placas achatadas sobrepostas, cabeça triangular e cauda serrilhada defensiva.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb",
+    "riggedModel": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "scurry",
+      "bask",
+      "forage",
+      "head_tilt",
+      "tail_whip",
+      "threat",
+      "retreat",
+      "rest",
+      "death"
+    ]
+  },
+  "body": {
+    "massMinKg": 2.5,
+    "massMaxKg": 5
+  },
+  "notes": "A arte conceitual desta espécie foi aprovada pelo usuário. Asset low-poly 3D v01 em revisão visual; 3 LODs, 11 clipes GLB, rig por pivôs hierárquicos sem pesos de skinning. Sem gameplay/spawn/IA; não confundir aprovação conceitual com aprovação do modelo."
+}
