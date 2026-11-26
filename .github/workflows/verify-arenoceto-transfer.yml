@@ -1,0 +1,29 @@
+name: Verify imported Arenoceto GLB
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verify-arenoceto-transfer.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: assets/models/creatures/arenoceto/v02
+      - name: Verify remote binary without artifacts
+        run: |
+          python3 - <<'PY'
+          import hashlib, pathlib, struct, json
+          p = pathlib.Path("assets/models/creatures/arenoceto/v02/arenoceto-v02-skinned-animated-LOD0.glb")
+          data = p.read_bytes()
+          assert len(data) == 1588096
+          assert struct.unpack_from("<4sII", data) == (b"glTF", 2, len(data))
+          sha = hashlib.sha256(data).hexdigest()
+          assert sha == "2c70d4c14c7fa6148c4f3d76a292f8bb57a5b8fe6a4cee0d96d27d413fa92bfd"
+          assert hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest() == "9112818e1e00dcb156b9896835786d61d6a8bd5d"
+          print(json.dumps({"bytes": len(data), "sha256": sha, "glb_version": 2}))
+          PY
