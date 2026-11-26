@@ -1,0 +1,22 @@
+{
+  "species": "lagarto-papagaio",
+  "version": "v02",
+  "stage": "blockout statico — aprovacao da forma pendente",
+  "triangles": 4946,
+  "meshes": 1,
+  "skins": 0,
+  "animations": 0,
+  "bytes": 1848904,
+  "sha256": "0ddbec57a98f84aafe381b8aff9c7326edb66d76e28de3c87b9df81c5c34ef91",
+  "bounds_m": [
+    5.829999923706055,
+    1.6271649599075317,
+    2.489502191543579
+  ],
+  "closed_authored_parts": 85,
+  "reimported_shells": 85,
+  "shells_nonclosed_or_negative": 0,
+  "uv": true,
+  "texture": "papagaio_uv_v02.png",
+  "notes": "Cascas sobrepostas independentes, nao soldadas entre si; rig posterior exige revisao. Nome provisório. Comprimento de design ~5,7 m."
+}

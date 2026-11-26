@@ -1,0 +1,492 @@
+{
+  "id": "gravarto",
+  "name": "Gravarto",
+  "version": "v01",
+  "stage": "anatomical_static_uv_textured_blockout",
+  "approval": {
+    "concept": "approved_by_user",
+    "blockout": "pending_user_review",
+    "refinement": "not_started",
+    "rig": "not_started",
+    "animations": "not_started"
+  },
+  "habitat": [
+    "savanna"
+  ],
+  "diet": "large_carnivore",
+  "model_path": "assets/models/creatures/gravarto/v01/gravarto-v01-anatomy-blockout.glb",
+  "source_path": "assets/models/creatures/gravarto/v01/source/build.py",
+  "texture_path": "assets/models/creatures/gravarto/v01/texture/gravarto-v01-albedo.png",
+  "concept_reference": "approved concept in conversation 2026-11-09; concept image not republished in this branch",
+  "geometry": {
+    "triangles_drawn": 4888,
+    "meshes": 1,
+    "materials": 1,
+    "vertex_instances": 14664,
+    "parts": 105,
+    "skin_count": 0,
+    "joint_count": 0,
+    "clips": [],
+    "axis": "X-forward,Y-up,Z-lateral",
+    "unit": "meter"
+  },
+  "paint": {
+    "uv_unwrap": "custom procedural atlas; painted marks on body, head, tail and limbs",
+    "base_color_texture_pixels": [
+      2048,
+      2048
+    ],
+    "textured_albedo": true,
+    "markings_via_extra_polygons": false,
+    "geometry_extra_polygons": "only structural anatomy, teeth, claws, dorsal scutes, brow and eyes"
+  },
+  "glb": {
+    "bytes": 4860156,
+    "sha256": "0e1272635a8b5911eebaa0b7a112164602d6e97b53fe4955f876a8863fe823a7"
+  },
+  "parts": [
+    {
+      "name": "01_massive_torso",
+      "triangles": 348
+    },
+    {
+      "name": "02_heavy_neck",
+      "triangles": 116
+    },
+    {
+      "name": "03_angular_skull",
+      "triangles": 164
+    },
+    {
+      "name": "04_lower_jaw",
+      "triangles": 96
+    },
+    {
+      "name": "05_tail_counterbalance",
+      "triangles": 212
+    },
+    {
+      "name": "06_fore_leg_right",
+      "triangles": 140
+    },
+    {
+      "name": "07_fore_right_toe_0",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_right_claw_0",
+      "triangles": 16
+    },
+    {
+      "name": "07_fore_right_toe_1",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_right_claw_1",
+      "triangles": 16
+    },
+    {
+      "name": "07_fore_right_toe_2",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_right_claw_2",
+      "triangles": 16
+    },
+    {
+      "name": "07_fore_right_toe_3",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_right_claw_3",
+      "triangles": 16
+    },
+    {
+      "name": "07_fore_right_toe_4",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_right_claw_4",
+      "triangles": 16
+    },
+    {
+      "name": "06_hind_leg_right",
+      "triangles": 140
+    },
+    {
+      "name": "07_hind_right_toe_0",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_right_claw_0",
+      "triangles": 16
+    },
+    {
+      "name": "07_hind_right_toe_1",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_right_claw_1",
+      "triangles": 16
+    },
+    {
+      "name": "07_hind_right_toe_2",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_right_claw_2",
+      "triangles": 16
+    },
+    {
+      "name": "07_hind_right_toe_3",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_right_claw_3",
+      "triangles": 16
+    },
+    {
+      "name": "07_hind_right_toe_4",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_right_claw_4",
+      "triangles": 16
+    },
+    {
+      "name": "06_fore_leg_left",
+      "triangles": 140
+    },
+    {
+      "name": "07_fore_left_toe_0",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_left_claw_0",
+      "triangles": 16
+    },
+    {
+      "name": "07_fore_left_toe_1",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_left_claw_1",
+      "triangles": 16
+    },
+    {
+      "name": "07_fore_left_toe_2",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_left_claw_2",
+      "triangles": 16
+    },
+    {
+      "name": "07_fore_left_toe_3",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_left_claw_3",
+      "triangles": 16
+    },
+    {
+      "name": "07_fore_left_toe_4",
+      "triangles": 52
+    },
+    {
+      "name": "08_fore_left_claw_4",
+      "triangles": 16
+    },
+    {
+      "name": "06_hind_leg_left",
+      "triangles": 140
+    },
+    {
+      "name": "07_hind_left_toe_0",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_left_claw_0",
+      "triangles": 16
+    },
+    {
+      "name": "07_hind_left_toe_1",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_left_claw_1",
+      "triangles": 16
+    },
+    {
+      "name": "07_hind_left_toe_2",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_left_claw_2",
+      "triangles": 16
+    },
+    {
+      "name": "07_hind_left_toe_3",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_left_claw_3",
+      "triangles": 16
+    },
+    {
+      "name": "07_hind_left_toe_4",
+      "triangles": 52
+    },
+    {
+      "name": "08_hind_left_claw_4",
+      "triangles": 16
+    },
+    {
+      "name": "09_dorsal_scute_00",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_01",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_02",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_03",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_04",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_05",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_06",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_07",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_08",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_09",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_10",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_11",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_12",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_13",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_14",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_15",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_16",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_17",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_18",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_19",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_20",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_21",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_22",
+      "triangles": 6
+    },
+    {
+      "name": "09_dorsal_scute_23",
+      "triangles": 6
+    },
+    {
+      "name": "10_brow_R",
+      "triangles": 12
+    },
+    {
+      "name": "11_eye_socket_R",
+      "triangles": 320
+    },
+    {
+      "name": "12_iris_R",
+      "triangles": 320
+    },
+    {
+      "name": "13_pupil_R",
+      "triangles": 80
+    },
+    {
+      "name": "14_nostril_R",
+      "triangles": 80
+    },
+    {
+      "name": "15_angular_cheek_R",
+      "triangles": 12
+    },
+    {
+      "name": "10_brow_L",
+      "triangles": 12
+    },
+    {
+      "name": "11_eye_socket_L",
+      "triangles": 320
+    },
+    {
+      "name": "12_iris_L",
+      "triangles": 320
+    },
+    {
+      "name": "13_pupil_L",
+      "triangles": 80
+    },
+    {
+      "name": "14_nostril_L",
+      "triangles": 80
+    },
+    {
+      "name": "15_angular_cheek_L",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_0",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_1",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_2",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_3",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_4",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_5",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_6",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_7",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_8",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_-1_9",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_0",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_1",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_2",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_3",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_4",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_5",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_6",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_7",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_8",
+      "triangles": 12
+    },
+    {
+      "name": "16_tooth_1_9",
+      "triangles": 12
+    }
+  ],
+  "preview_status": "reimported_exported_binary_vtkGLTFImporter",
+  "integration": "not_integrated_in_game",
+  "publication": "branch_only_pending_user_artistic_review",
+  "rendered_glb_sha256": "0e1272635a8b5911eebaa0b7a112164602d6e97b53fe4955f876a8863fe823a7",
+  "previews": {
+    "gravarto-v01-real-glb-profile.png": {
+      "bytes": 761464,
+      "sha256": "c89923a99623018898dbcaab6a907a12cfba6626922983aa4837a96745ff5c63"
+    },
+    "Gravarto_v01_GLb_Real_3_Angulos.png": {
+      "bytes": 608404,
+      "sha256": "c62824e5f3cf944a06620383bf3dc39a669b2e25cdb19ceb5dcde11bfa3da131"
+    },
+    "gravarto-v01-real-glb-front.png": {
+      "bytes": 641415,
+      "sha256": "f1135dbf187f9709d8734a163eb97c3bda93f216333cf4de0b11298a27191fa8"
+    },
+    "gravarto-v01-real-glb-three-quarter.png": {
+      "bytes": 647956,
+      "sha256": "bb872a5d7875134819eb5de6e6ee63b68b23a851e218ad958348d7290be6d6a1"
+    }
+  },
+  "renderer": "VTK vtkGLTFImporter and VTK offscreen rendering of exported binary. Neutral floor and studio lights are additions to presentation, not the GLB."
+}

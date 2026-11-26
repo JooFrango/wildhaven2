@@ -1,0 +1,26 @@
+{
+  "species": "fulgaronte",
+  "version": "v06",
+  "stage": "animation_quality_review",
+  "source": "v05",
+  "bytes": 1364640,
+  "sha256": "1df6d86bccb06435d15ac67e9774a91e6120eb6cbccd66efe60de9a9fbca8d8e",
+  "triangles": 2476,
+  "bones": 29,
+  "clips_total": 22,
+  "clips_improved": [
+    "heavy_walk",
+    "charge",
+    "swim",
+    "bite_heavy",
+    "tail_sweep",
+    "overload_warning",
+    "overload_burst",
+    "overload_recovery"
+  ],
+  "skins_preserved": true,
+  "original_buffer_prefix_preserved": true,
+  "procedural_ik_implemented": false,
+  "electric_vfx_implemented": false,
+  "alpha_modified": false
+}

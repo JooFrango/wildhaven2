@@ -1,0 +1,10 @@
+{
+  "source_sha256": "9ba7f84d66ae3aaa6bd523c7544916cf624ba1fc9d70d2de19275629778d142a",
+  "renderer": "VTK vtkGLTFImporter",
+  "views": [
+    "perfil",
+    "frente",
+    "tres_quartos"
+  ],
+  "actors": 1
+}

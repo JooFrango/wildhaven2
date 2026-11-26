@@ -1,0 +1,62 @@
+{
+  "version": "v01",
+  "species": "fulgaronte",
+  "state": "contract_only_not_runtime_implementation",
+  "skeletal": {
+    "file": "fulgaronte_v05_rig_animated.glb",
+    "locomotion": [
+      "heavy_walk",
+      "charge",
+      "swim",
+      "swim_fast",
+      "turn_left",
+      "turn_right",
+      "dive",
+      "surface"
+    ],
+    "combat": [
+      "bite_heavy",
+      "tail_sweep",
+      "body_slam",
+      "shock_bite",
+      "overload_warning",
+      "overload_burst",
+      "overload_recovery"
+    ],
+    "others": [
+      "idle",
+      "alert",
+      "roar",
+      "injured",
+      "death",
+      "rest",
+      "feed"
+    ]
+  },
+  "procedural": {
+    "required": [
+      "four_limb_foot_lock_IK",
+      "terrain_height_alignment",
+      "swim_body_buoyancy",
+      "tail_collision_avoidance",
+      "head_target_lookat"
+    ],
+    "status": "not_implemented"
+  },
+  "tactical": {
+    "attack_sequence": [
+      "telegraph",
+      "windup",
+      "strike",
+      "contact_validation",
+      "recovery"
+    ],
+    "overload_sequence": [
+      "warning",
+      "burst",
+      "recovery"
+    ],
+    "status": "not_implemented",
+    "notes": "Animation is only poses, physics/electricity/knockback remain authored by combat layer."
+  }
+}

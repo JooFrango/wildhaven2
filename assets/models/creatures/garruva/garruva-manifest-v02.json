@@ -1,0 +1,134 @@
+{
+  "id": "garruva",
+  "category": "large-terrestrial-scavenger-reptile",
+  "status": "rebuild_v02_in_artistic_review",
+  "approvedConcept": true,
+  "approvedModel": false,
+  "version": "v02",
+  "sourceGeometryTriangles": 2167,
+  "sourceGeometrySha256": "40ab21c85cb73fdb963ee53d1e962505a519e5f4fec3943173e53d6f73a82417",
+  "clipCount": 13,
+  "clipNames": [
+    "idle",
+    "walk",
+    "prowl",
+    "run",
+    "sniff",
+    "carcass_feed",
+    "tear_flesh",
+    "jaw_snap",
+    "threat",
+    "tail_sweep",
+    "rest",
+    "death",
+    "alert"
+  ],
+  "skinJoints": 17,
+  "lods": [
+    {
+      "path": "assets/models/creatures/garruva/garruva-savanna-animated-v02-LOD0.glb",
+      "bytes": 209172,
+      "sha256": "927c38b8b723ff68394746bb0e6acaeda956f2b0b8d799ddce514dd54655689e",
+      "triangles": 2167,
+      "originalTriangles": 2167,
+      "reductionPercent": 0.0,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v02/sources/garruva/garruva-angular-source-v02.glb",
+      "lod": "LOD0",
+      "animationNames": [
+        "idle",
+        "walk",
+        "prowl",
+        "run",
+        "sniff",
+        "carcass_feed",
+        "tear_flesh",
+        "jaw_snap",
+        "threat",
+        "tail_sweep",
+        "rest",
+        "death",
+        "alert"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 22,
+      "remeshedPrimitives": 0,
+      "sourcePath": "sources/garruva/garruva-angular-source-v02.glb"
+    },
+    {
+      "path": "assets/models/creatures/garruva/garruva-savanna-animated-v02-LOD1.glb",
+      "bytes": 186688,
+      "sha256": "5067c42811b3a9773faa9919081e3cc00be76315eeefe4e82efcf37d4de6429e",
+      "triangles": 1475,
+      "originalTriangles": 2167,
+      "reductionPercent": 31.9,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v02/sources/garruva/garruva-angular-source-v02.glb",
+      "lod": "LOD1",
+      "animationNames": [
+        "idle",
+        "walk",
+        "prowl",
+        "run",
+        "sniff",
+        "carcass_feed",
+        "tear_flesh",
+        "jaw_snap",
+        "threat",
+        "tail_sweep",
+        "rest",
+        "death",
+        "alert"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 22,
+      "remeshedPrimitives": 22,
+      "sourcePath": "sources/garruva/garruva-angular-source-v02.glb"
+    },
+    {
+      "path": "assets/models/creatures/garruva/garruva-savanna-animated-v02-LOD2.glb",
+      "bytes": 178384,
+      "sha256": "70bfc1438be08a231d0b1443668fa4f59938932101c100795a43d8264aa2b11b",
+      "triangles": 847,
+      "originalTriangles": 2167,
+      "reductionPercent": 60.9,
+      "source": "/home/runner/work/wildhaven/wildhaven/assets/models/creatures/savanna-megafauna-v02/sources/garruva/garruva-angular-source-v02.glb",
+      "lod": "LOD2",
+      "animationNames": [
+        "idle",
+        "walk",
+        "prowl",
+        "run",
+        "sniff",
+        "carcass_feed",
+        "tear_flesh",
+        "jaw_snap",
+        "threat",
+        "tail_sweep",
+        "rest",
+        "death",
+        "alert"
+      ],
+      "skinJointCounts": [
+        17
+      ],
+      "meshCount": 22,
+      "remeshedPrimitives": 21,
+      "sourcePath": "sources/garruva/garruva-angular-source-v02.glb"
+    }
+  ],
+  "realScreenshots": [
+    "garruva-real-3d-side-v02.png",
+    "garruva-real-3d-front-v02.png",
+    "garruva-real-3d-three_quarter-v02.png"
+  ],
+  "gameplayIntegrated": false,
+  "renderSource": "Final exported LOD0 GLB, via VTK offscreen rasterizer",
+  "limits": [
+    "LOD tests only validate structure; visual review required",
+    "clipped in-place root; no terrain IK",
+    "no gameplay/spawn AI"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "v04": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/fulgaronte/v04/fulgaronte_v04_blockout_fiel.glb",
+  "v06": "/home/runner/work/wildhaven-new/wildhaven-new/assets/models/creatures/fulgaronte/v06/fulgaronte_v06_motion_review.glb",
+  "renders": [
+    "fulgaronte_v04_blender_original.png",
+    "fulgaronte_v06_bind_pose_blender.png"
+  ],
+  "clips": {
+    "heavy_walk": {
+      "action": "heavy_walk",
+      "frames": [
+        "heavy_walk_00.png",
+        "heavy_walk_01.png",
+        "heavy_walk_02.png",
+        "heavy_walk_03.png",
+        "heavy_walk_04.png",
+        "heavy_walk_05.png",
+        "heavy_walk_06.png",
+        "heavy_walk_07.png"
+      ],
+      "range": [
+        0.0,
+        86.39999389648438
+      ]
+    },
+    "bite_heavy": {
+      "action": "bite_heavy",
+      "frames": [
+        "bite_heavy_00.png",
+        "bite_heavy_01.png",
+        "bite_heavy_02.png",
+        "bite_heavy_03.png",
+        "bite_heavy_04.png",
+        "bite_heavy_05.png",
+        "bite_heavy_06.png",
+        "bite_heavy_07.png"
+      ],
+      "range": [
+        0.0,
+        54.0
+      ]
+    },
+    "overload_burst": {
+      "action": "overload_burst",
+      "frames": [
+        "overload_burst_00.png",
+        "overload_burst_01.png",
+        "overload_burst_02.png",
+        "overload_burst_03.png",
+        "overload_burst_04.png",
+        "overload_burst_05.png",
+        "overload_burst_06.png",
+        "overload_burst_07.png"
+      ],
+      "range": [
+        0.0,
+        61.19999694824219
+      ]
+    }
+  },
+  "action_names": [
+    "alert",
+    "bite_heavy",
+    "body_slam",
+    "charge",
+    "death",
+    "dive",
+    "feed",
+    "heavy_walk",
+    "idle",
+    "injured",
+    "overload_burst",
+    "overload_recovery",
+    "overload_warning",
+    "rest",
+    "roar",
+    "shock_bite",
+    "surface",
+    "swim",
+    "swim_fast",
+    "tail_sweep",
+    "turn_left",
+    "turn_right"
+  ]
+}

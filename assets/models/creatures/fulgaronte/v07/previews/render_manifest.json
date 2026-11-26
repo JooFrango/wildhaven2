@@ -1,0 +1,63 @@
+{
+  "base_glb": "v04 Claude rigged",
+  "animated_glb": "v07 36 bones",
+  "renderer": "Blender Cycles glTF UV materials",
+  "clips": {
+    "cin_bite_lunge": {
+      "range": [
+        0,
+        69.60000610351562
+      ],
+      "frames_rendered": 10,
+      "representative_still": "cin_bite_lunge_05.png"
+    },
+    "cin_tail_whip": {
+      "range": [
+        0,
+        76.80000305175781
+      ],
+      "frames_rendered": 10,
+      "representative_still": "cin_tail_whip_05.png"
+    },
+    "cin_territorial_roar": {
+      "range": [
+        0,
+        105.60000610351562
+      ],
+      "frames_rendered": 10,
+      "representative_still": "cin_territorial_roar_05.png"
+    },
+    "cin_electric_warning": {
+      "range": [
+        0,
+        129.60000610351562
+      ],
+      "frames_rendered": 10,
+      "representative_still": "cin_electric_warning_05.png"
+    },
+    "cin_electric_burst": {
+      "range": [
+        0,
+        64.80000305175781
+      ],
+      "frames_rendered": 10,
+      "representative_still": "cin_electric_burst_05.png"
+    },
+    "cin_heavy_walk": {
+      "range": [
+        0,
+        79.19999694824219
+      ],
+      "frames_rendered": 10,
+      "representative_still": "cin_heavy_walk_05.png"
+    },
+    "cin_predatory_swim": {
+      "range": [
+        0,
+        86.39999389648438
+      ],
+      "frames_rendered": 10,
+      "representative_still": "cin_predatory_swim_05.png"
+    }
+  }
+}

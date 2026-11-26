@@ -1,0 +1,98 @@
+{
+  "glb_sha256": "1df6d86bccb06435d15ac67e9774a91e6120eb6cbccd66efe60de9a9fbca8d8e",
+  "bytes": 1364640,
+  "triangles": 2476,
+  "vertices": 6184,
+  "bones": 29,
+  "clips": {
+    "idle": {
+      "duration_s": 4.800000190734863,
+      "channels": 12
+    },
+    "heavy_walk": {
+      "duration_s": 3.5999999046325684,
+      "channels": 28
+    },
+    "charge": {
+      "duration_s": 1.649999976158142,
+      "channels": 28
+    },
+    "turn_left": {
+      "duration_s": 2.4000000953674316,
+      "channels": 10
+    },
+    "turn_right": {
+      "duration_s": 2.4000000953674316,
+      "channels": 10
+    },
+    "swim": {
+      "duration_s": 3.5999999046325684,
+      "channels": 28
+    },
+    "swim_fast": {
+      "duration_s": 2.0999999046325684,
+      "channels": 24
+    },
+    "dive": {
+      "duration_s": 2.5999999046325684,
+      "channels": 10
+    },
+    "surface": {
+      "duration_s": 2.700000047683716,
+      "channels": 10
+    },
+    "alert": {
+      "duration_s": 2.200000047683716,
+      "channels": 9
+    },
+    "roar": {
+      "duration_s": 2.799999952316284,
+      "channels": 3
+    },
+    "bite_heavy": {
+      "duration_s": 2.25,
+      "channels": 9
+    },
+    "tail_sweep": {
+      "duration_s": 2.5999999046325684,
+      "channels": 16
+    },
+    "body_slam": {
+      "duration_s": 2.4000000953674316,
+      "channels": 3
+    },
+    "shock_bite": {
+      "duration_s": 2.200000047683716,
+      "channels": 4
+    },
+    "overload_warning": {
+      "duration_s": 5.0,
+      "channels": 19
+    },
+    "overload_burst": {
+      "duration_s": 2.549999952316284,
+      "channels": 23
+    },
+    "overload_recovery": {
+      "duration_s": 4.199999809265137,
+      "channels": 13
+    },
+    "injured": {
+      "duration_s": 2.5999999046325684,
+      "channels": 3
+    },
+    "death": {
+      "duration_s": 4.400000095367432,
+      "channels": 4
+    },
+    "rest": {
+      "duration_s": 6.0,
+      "channels": 12
+    },
+    "feed": {
+      "duration_s": 3.0,
+      "channels": 3
+    }
+  },
+  "original_binary_compared": true
+}
