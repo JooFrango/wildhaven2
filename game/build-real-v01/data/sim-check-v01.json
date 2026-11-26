@@ -1,65 +1,104 @@
 {
   "hunter": {
+    "activity": "patrulhando",
+    "alive": true,
+    "arma": "espada",
+    "busy_until_s": 0.0,
+    "carried_by": null,
     "clip": "Walking",
+    "cooldown_s": 0.0,
     "crossings": [
       {
         "from": "HV_01",
-        "sim_time_s": 137.4,
-        "step_m": 0.2346600000012332,
-        "tick": 687,
-        "to": "ER_18",
-        "x": 29232.660076713,
-        "z": -5622.660076712995
-      },
-      {
-        "from": "ER_18",
-        "sim_time_s": 207.0,
-        "step_m": 0.23466000000007625,
-        "tick": 1035,
-        "to": "HV_01",
-        "x": 29227.0,
-        "z": -5625.603444122645
+        "sim_time_s": 3789.8,
+        "step_m": 0.23700660000100757,
+        "tick": 18949,
+        "to": "ER_24",
+        "x": 27064.213928620233,
+        "z": -1874.2139286202364
       }
     ],
-    "distance_walked_m": 1377.1601494820682,
+    "crouched": false,
+    "distance_walked_m": 7089.299877043324,
+    "downed_since_s": null,
+    "expedition": null,
+    "forca": 8.0,
     "goal": {
-      "tile": "ER_24",
-      "x": 27047.430330008472,
-      "z": -1849.5190473587822
+      "tile": "F_E3",
+      "x": 23785.7,
+      "z": -1.0
     },
-    "heading": -0.7853981633962548,
+    "heading": -1.5707963267948966,
+    "hp": 100.0,
+    "hp_max": 100.0,
     "id": "hunter-001",
-    "name": "Hunter do Workshop",
+    "inventory": [],
+    "last_action": "",
+    "name": "Hunter 01",
+    "no_attack_until_s": 0.0,
     "plan_failures": 0,
-    "rest_until_s": 242.54076680960134,
-    "rng_state": 2239412456,
+    "rest_until_s": 3825.7423265851103,
+    "rng_state": 2190219543,
+    "role": "hunter",
+    "skills": {
+      "armadilhas": {
+        "level": 2,
+        "xp": 0.0
+      },
+      "desvio": {
+        "level": 1,
+        "xp": 0.0
+      },
+      "espada": {
+        "level": 4,
+        "xp": 0.0
+      },
+      "furtividade": {
+        "level": 5,
+        "xp": 0.0
+      },
+      "rastreamento": {
+        "level": 6,
+        "xp": 0.0
+      },
+      "rodeio": {
+        "level": 3,
+        "xp": 0.0
+      },
+      "velocidade": {
+        "level": 2,
+        "xp": 0.0
+      }
+    },
     "speed_mps": 1.1733,
     "state": "caminhando",
-    "tile_id": "HV_01",
-    "x": 28701.977066800453,
-    "y": 915.1023563232421,
-    "z": -4691.977066800457
+    "target_creature": null,
+    "tile_id": "ER_24",
+    "wagon": null,
+    "x": 24968.817276142137,
+    "y": 922.5323489990234,
+    "z": -667.0
   },
-  "maxAllowedStepMeters": 0.234660001,
-  "maxStepMeters": 0.2346600000012332,
+  "maxAllowedStepMeters": 0.237006601,
+  "maxStepMeters": 0.23700660000132912,
+  "mode": "travessia",
   "residencyConsistent": true,
-  "schema": "wildhaven.sim-check.v1",
-  "simSeconds": 1200.0,
+  "schema": "wildhaven.sim-check.v2",
+  "simSeconds": 6000.0,
   "stepSeconds": 0.2,
   "streaming": {
     "cap_bytes": 268435456,
     "evictions": 0,
-    "hits": 328909,
+    "hits": 37411579,
     "load_errors": 0,
-    "misses": 42,
-    "pinned_chunks": 15,
-    "resident_bytes": 6881280,
-    "resident_chunks": 42
+    "misses": 408,
+    "pinned_chunks": 32,
+    "resident_bytes": 66846720,
+    "resident_chunks": 408
   },
-  "ticks": 6000,
+  "ticks": 30000,
   "ticksWithoutCompiledGround": 0,
-  "ticksWithoutCompiledGroundSamples": [],
-  "tileByPositionNow": "HV_01",
-  "walkSpeedMps": 1.1733,
-  "wallSeconds": 0.119050948
+  "tileByPositionNow": "ER_24",
+  "walkSpeedMps": 1.185033,
+  "wallSeconds": 8.552000921
 }

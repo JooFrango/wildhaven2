@@ -21,16 +21,17 @@ Legenda: ✅ sim (com evidência) · ⚠️ parcial (ver nota) · ❌ não · �
 | Migrations PostgreSQL | ✅ | — | ✅ | — | ✅ | ✅ (opcional) | ✅ PostgreSQL 16 local: aplicar, salvar, recarregar | ver diário |
 | Hunter do workshop (GLB 1.000 tri, 19 ossos) | ✅ | — | — | ⚠️ "base de referência" enviada pelo responsável; aprovação para jogo não registrada | ✅ `main` | ✅ | ✅ headless | `manifesto-integracao.json` |
 | Velocidade de locomoção extraída dos clipes | ✅ | — | ✅ | — | ✅ | ✅ Walking 1,1733 m/s | ✅ | Running divergente (43%): não usado |
+| Criaturas no mundo (Folhisco, Lobrapedra) | ✅ | ✅ (labs) | ✅ | ⚠️ Folhisco visual aprovado; Lobrapedra `modeled_candidate` | ✅ `main` | ✅ | ✅ demo | densidade/estatísticas provisórias |
 | IA autônoma do Hunter (escolha de destino + A*) | ✅ | ✅ (Alpha, JS) | ✅ (Rust, nova) | — | ✅ | ✅ | ✅ 20 min simulados | sem controle direto |
-| Porte da IA/combate da Alpha | ✅ | ✅ Alpha | ⚠️ rng, hash, clamp, strike | — | ✅ | ❌ (strike não usado em gameplay) | ✅ paridade bit a bit | `parity_alpha01.rs` |
+| Porte da IA/combate da Alpha | ✅ | ✅ Alpha | ⚠️ rng, hash, clamp, strike | — | ✅ | ✅ `strike` é a regra de golpe dos Hunters | ✅ paridade bit a bit | `parity_alpha01.rs`; IA de criatura é nova (não portada) |
 | Frustum culling | ✅ | — | ⚠️ esferas por chunk/GLB; Hunter skinned com culling desligado | — | ✅ | ✅ | ❌ ganho não medido | — |
-| Occlusion culling | ✅ | — | ❌ | — | — | ❌ | ❌ | backlog |
+| Occlusion culling | ✅ | — | ⚠️ por relevo, só atores animados | — | ✅ | ✅ | ⚠️ headless/software | ganho em GPU real não medido |
 | Backface culling | ✅ | — | ⚠️ `FrontSide` na camada física; GLBs usam material como exportado | — | ✅ | ✅ | ❌ não auditado | — |
 | Tela de carregamento V02 | ✅ | ✅ | ✅ isolado | ❌ | ✅ `build real/loading-screen/v02` | ❌ | ❌ | fora do corte |
-| HUD ilustrada (22/11) | ✅ | — | ❌ | — | ❌ imagem ausente do repo | ❌ (HUD técnica provisória) | — | — |
-| Carroças, resgate, bestiário, caçadas | ✅ | — | ❌ | — | — | ❌ | ❌ | backlog explícito |
+| HUD ilustrada (22/11) | ✅ | — | ❌ | — | ❌ imagem ausente do repo | ⚠️ HUD técnica: Hunters clicáveis, ordens, inventário, Bestiário | ✅ headless | arte da HUD pendente |
+| Carroças, resgate, bestiário, caçadas | ✅ | — | ✅ | ❌ (carroça sem asset; Dodarro blockout) | ✅ | ✅ | ✅ demo roteirizada + navegador | parâmetros PROVISÓRIOS em `gameplay-provisorio-v01.json` |
 | Clima V08 completo | ✅ | ✅ (referência) | ❌ | — | — | ❌ | ❌ | backlog |
 | PvP / Battle Royale / economia-RMT / stress 1.000 | ✅ | — | ❌ | — | — | ❌ | ❌ | backlog |
-| Modo econômico pixel art | ✅ | — | ❌ | — | — | ❌ | ❌ | backlog |
+| Modo econômico pixel art | ✅ | — | ✅ | ❌ (sprites técnicos) | ✅ | ✅ | ⚠️ medido só em software | `evidencias/cliente-v01-modo-economico.png` |
 | Fauna em revisão (PRs #1–#7 do wildhaven2) | — | ✅ | ✅ nos PRs | ❌ em revisão | ✅ nos PRs | ❌ | ❌ | **não tocados** por este PR |
 | `game/alpha01` | — | ✅ | — | — | ✅ | — (somente leitura) | — | não modificada |

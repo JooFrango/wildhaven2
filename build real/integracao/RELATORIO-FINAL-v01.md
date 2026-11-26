@@ -33,6 +33,32 @@ Escopo definido pelo diretor: Fase 0 + Fase 1 + início da Fase 2. Branch `feat/
 - **Publicação:** código, relatórios, hashes e captura neste PR. Nenhum GLB novo foi criado, então a regra de publicação binária do `AGENTS.md` não se aplicou. Os pacotes WHP1 não foram publicados por tamanho.
 - **Integração:** `game/build-real-v01` usa os 223 hexes certificados e o Hunter do workshop. A `game/alpha01` não foi alterada.
 
+
+## Atualização — fatia demonstrável do roadmap (mesma sessão, a pedido do diretor: "só pare quando terminar a build real")
+
+O critério de demonstração de `05-roadmap-aceitacao.md` foi **executado de ponta a ponta** sobre o terreno real compilado:
+explorar → avistar (página nova no Bestiário) → Caçar com seleção, carroça e pagamento → recusa do 7º Hunter →
+viagem simulada → acampamento em clareira → pegadas azuis → estratégia autônoma → combate e abate → itens guardados
+→ retorno à vila. Também foram executados: Hunter sozinho contra predador, armadilha com imobilização, Desvio 1 e 5,
+ferimento, resgate por Chad/Nailon (pode chegar tarde) e morte permanente.
+
+Evidências:
+- `game/build-real-v01/data/demo-check-v01.json`: linha do tempo completa da demo roteirizada.
+- `build real/integracao/evidencias/`: roteiro no navegador por cliques (diálogo Caçar, Modo Econômico).
+- Testes: `cargo test` **17/17** (9 unitários, 1 contrato, 3 regras de gameplay, 4 paridade com a Alpha) e `node --test` **17/17**.
+- Item a item, com o que é parcial e o que falta: [`ACEITACAO-ROADMAP-v01.md`](ACEITACAO-ROADMAP-v01.md).
+
+**Tudo o que é número de gameplay é PROVISÓRIO** (`game/build-real-v01/data/gameplay-provisorio-v01.json`): preço da
+carroça, armadilhas, drops, janela do Hunter caído (600 s), densidade de fauna, percepção da Lobrapedra, habilidades
+iniciais dos Hunters. Cada bloco cita o item de decisão do diretor (05-roadmap, itens 1–14).
+
+Ainda faltam para fechar 100% do roadmap:
+- **Arte e assets:** HUD ilustrada (a imagem não está no repo); animações de técnicas, Desvio, agachar e queda; carroça; aprovação do Dodarro.
+- **Medição:** desempenho em GPU real, incluindo GPU integrada.
+- **Sistemas:** LOD visual, occlusion de construções e vegetação, troca de equipamento, Escalada e Primeiros socorros com efeito.
+- **Escala:** IA adaptativa e stress de 1.000.
+- **Mapa:** navegação marítima; correção da escala das árvores.
+
 ## Próximos passos sugeridos
 
 1. Revisão do diretor sobre `node-classes-v01.json` e sobre os limites propostos (35°, 4 m, água).

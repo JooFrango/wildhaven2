@@ -48,3 +48,23 @@ cd game/build-real-v01/client && npm ci && npm run build
 ```bash
 cd game/build-real-v01/server && cargo run --release -p wh-server
 ```
+
+## 2026-11-26 (noite) — fatia demonstrável do roadmap
+
+**Pedido do diretor:** "só pare quando terminar a build real, qualquer coisa depois de pronto vamos polindo".
+**Feito:** gameplay completo no servidor (ordens, carroças, acampamento, criaturas, rastros, estratégias,
+combate, Desvio, resgate, morte, Bestiário, persistência), cliente com HUD, Bestiário/Caçar, criaturas,
+pegadas azuis, Modo Econômico e culling. Demo roteirizada e roteiro no navegador passaram.
+**Bugs achados e corrigidos no caminho:** cada replanejamento dava um passo para trás; o alvo do rodeio
+alternava; o Hunter que perdia o alvo fora de expedição entrava em loop; a rota `/assets` colidia com o bundle;
+o HUD perdia cliques; o canvas pixel cobria os painéis.
+**Próximo passo:** revisão do diretor dos números provisórios, assets faltantes (HUD, animações, carroça),
+medição em GPU real, escala das árvores.
+
+```bash
+cd game/build-real-v01/server && cargo run --release -p wh-server --bin wh-sim-check -- demo 30000 ../data/demo-check-v01.json
+```
+
+```bash
+cd game/build-real-v01/server && WH_TIME_SCALE=20 cargo run --release -p wh-server
+```

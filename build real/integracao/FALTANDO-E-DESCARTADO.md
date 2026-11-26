@@ -16,7 +16,7 @@
 - **Pacotes WHP1 não publicados:** 3,44 GB. Ficam reproduzíveis, com hashes registrados.
 - **Clipe `Running`:** os métodos de velocidade divergem 43% e o clipe precisa de revisão. Não existe clipe `Idle` no GLB do workshop; parado, o Hunter fica sem animação.
 - **FPS em GPU real não medido.** O teste de runtime usou Chromium headless com renderização por software (SwiftShader). Os 1–2 FPS observados ali **não** representam desempenho.
-- **Ainda não existe:** occlusion culling, LOD/HLOD visual, múltiplos Hunters em cena, criaturas, combate em gameplay, salvamento de travessias no reload (só o log no PostgreSQL), autenticação e contas.
+- **Ainda não existe** (depois da fatia demonstrável): LOD/HLOD visual, occlusion de construções e vegetação, animações de técnicas/Desvio/queda (sem clipes no GLB), troca de equipamento, efeito de Escalada e Primeiros socorros, simulação de criaturas fora de 1.500 m (congeladas), persistência de criaturas e pegadas, autenticação e contas. Item a item: `ACEITACAO-ROADMAP-v01.md`.
 
 ### Escala da vegetação — NÃO intencional (confirmado pelo diretor em 26/11/2026)
 - Árvores medidas: **103–279 m** de altura, com troncos de 3–10 m de raio (até 87 m em Emergente_1, por causa das raízes). Na mesma vila, as casas têm 5,9–6,6 m e a torre 13,9 m.

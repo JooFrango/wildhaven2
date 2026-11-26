@@ -14,6 +14,37 @@ Nenhuma aprovação artística é implicada por esta build; ver
 | Contratos | `contracts/v1/` | `wildhaven.snapshot.v1` (schema JSON), validado por teste no servidor e espelhado em `client/src/contracts.ts` |
 | Migrations | `server/migrations/` | `0001_init.sql` (mundos, Hunters com posição global, log de travessias) |
 
+### Gameplay da fatia demonstrável
+
+| Peça | Onde |
+| --- | --- |
+| Ordens (explorar, caçar, recolher) — sem mover Hunter | `POST /api/v1/orders`, `wh-core::game` |
+| 6 Hunters + Chad e Nailon, habilidades 1–20 por prática, sem nível geral | `wh-core::hunter` |
+| 2 carroças (6 vagas, custo), viagem por portais, acampamento em clareira | `wh-core::game` |
+| Folhisco (presa) e Lobrapedra (predador) por bioma, percepção da ficha | `wh-core::creature` |
+| Pegadas compactas, azuis quando descobertas, interrompidas pela água | `wh-core::tracks` |
+| Estratégia autônoma: rodeio agachado ou armadilha + grito; Desvio 1/5 | `wh-core::game` |
+| Ferimento, resgate por Chad/Nailon (pode fracassar), morte permanente | `wh-core::game` |
+| Bestiário (página no 1º avistamento, Conhecimento de Monstros) | `wh-core::bestiary` |
+| Estado salvo no PostgreSQL (`world_state`, migration 0002) | `wh-server::persist` |
+| Modo Econômico pixel art (mesma simulação) | `client/src/economic.ts` |
+
+**Todos os números de gameplay são PROVISÓRIOS** e ficam num arquivo só:
+[`data/gameplay-provisorio-v01.json`](data/gameplay-provisorio-v01.json). Cada bloco cita o item de
+decisão do diretor ou a ficha de espécie de onde veio. Aceitação item a item:
+[`build real/integracao/ACEITACAO-ROADMAP-v01.md`](../../build%20real/integracao/ACEITACAO-ROADMAP-v01.md).
+
+### Como jogar (no navegador)
+
+1. **Explorar**: manda Hunters da vila andarem por hexes vizinhos até avistarem animais (página nova no Bestiário).
+2. **Recolher exploradores** para trazê-los de volta.
+3. No **Bestiário**, abra a espécie (conhecimento, itens, mapinha) e clique **Caçar**: marque os Hunters
+   (só quem está na vila), escolha **a pé** ou a **carroça de Chad/Nailon** (custo estimado; o servidor confirma) e **Partir**.
+4. Observe: viagem, acampamento, busca de pegadas (azuis), estratégia, combate, retorno. Clique num Hunter para segui-lo.
+5. **E** alterna o Modo Econômico (pixel art); **F** mostra a malha física; arrastar orbita a câmera.
+
+Para acelerar a revisão, `WH_TIME_SCALE=20` (máx. 50) roda 20 passos de simulação por intervalo.
+
 A velocidade do Hunter (**1,1733 m/s**) é extraída do clipe `Walking` do GLB do workshop por
 `tools/clip-speed.mjs` (FK + pé plantado; estimativa por passada concorda em 5%). `Running`
 diverge 43% entre os dois métodos e não é usado.
@@ -108,11 +139,18 @@ cd game/build-real-v01/server && cargo test
 ```
 
 ```bash
-cd game/build-real-v01/server && cargo run --release -p wh-server --bin wh-sim-check -- 6000 ../data/sim-check-v01.json
+cd game/build-real-v01/server && cargo run --release -p wh-server --bin wh-sim-check -- travessia 30000 ../data/sim-check-v01.json
 ```
 
-`wh-sim-check` roda a simulação sem rede sobre o terreno compilado real e grava a evidência de
-travessia (hex de origem → destino, passo no tick da travessia, continuidade da posição global).
+```bash
+cd game/build-real-v01/server && cargo run --release -p wh-server --bin wh-sim-check -- demo 30000 ../data/demo-check-v01.json
+```
+
+A demo roteirizada leva ~10–40 min de relógio nesta máquina de 4 vCPU (simula ~6–15 h de jogo).
+
+`wh-sim-check travessia` grava a evidência da Fase 2 (hex de origem → destino, passo no tick da
+travessia, continuidade da posição global). `wh-sim-check demo` roda a expedição completa do roadmap
+e grava a linha do tempo de eventos.
 
 Regenerar os vetores de paridade a partir do TypeScript original da Alpha (somente leitura):
 
@@ -122,8 +160,9 @@ cd game/build-real-v01 && node --experimental-strip-types --no-warnings tools/ge
 
 ## O que NÃO está nesta build
 
-PvP, Battle Royale, economia/RMT, stress de 1.000 contas, clima V08 completo, carroças/resgate,
-bestiário, criaturas no mundo, combate em gameplay (só a regra `strike` portada com paridade),
-modo econômico pixel art, HUD ilustrada, occlusion culling, travessia marítima dos 6 `iceberg-sea`,
-colisores de vegetação instanciada dos costeiros. Ver o relatório final em
-`build real/integracao/RELATORIO-FINAL-v01.md`.
+PvP, Battle Royale, economia/RMT, stress de 1.000 contas e IA adaptativa N1/N2/N3, clima V08 completo,
+HUD ilustrada (imagem ausente do repo), animações de técnicas/Desvio/agachar/queda (o GLB do workshop
+só tem `Walking`/`Running`), troca de equipamento, LOD visual, travessia marítima dos 6 `iceberg-sea`,
+colisores de vegetação instanciada dos costeiros, correção da escala das árvores (pendente de decisão),
+medição em GPU real. Criaturas a mais de 1.500 m de qualquer ator ficam congeladas.
+Ver `build real/integracao/ACEITACAO-ROADMAP-v01.md` e `RELATORIO-FINAL-v01.md`.
