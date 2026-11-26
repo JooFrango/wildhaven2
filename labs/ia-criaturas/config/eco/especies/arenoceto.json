@@ -1,0 +1,54 @@
+{
+  "id": "arenoceto",
+  "nome": "Arenoceto",
+  "ficha": null,
+  "papel": "herbivoro",
+  "atividade": "diurno",
+  "_fonteFicha": "assets/models/creatures/arenoceto/v02/README.md: 'baleia filtradora e agressiva do Mar de Dunas'. Sem ficha em creatures/species/: todos os números são PROVISÓRIOS, derivados do GLB real (16 ossos, extensão 37,40×10,58×21,80 unidades, frente +X) e do conjunto de 20 clipes.",
+  "corpo": { "massaKg": [16000, 24000], "comprimentoM": 18, "alturaM": 5.1, "raio": 3.6 },
+  "movimento": { "andar": 0.8, "trote": 1.2, "corrida": 1.8, "aceleracao": 0.6, "giroGrausSeg": 18, "fatorCurvaFechada": 0.5, "resistenciaSeg": 40, "inclinacaoMaxGraus": 18, "nadar": false, "profundidadeMaxM": 0.6 },
+  "subsolo": {
+    "_nota": "Perfil do meio granular. O Arenoceto é enorme e pesado: arranca devagar, faz curvas largas e paga caro para mudar de profundidade.",
+    "profundidadeMaxM": 28, "alturaCorpoM": 5.1,
+    "cruzeiro": 3.2, "arranque": 7.5, "aceleracao": 0.9, "giroGrausSeg": 11,
+    "subidaMs": 0.55, "descidaMs": 0.8, "mergulhoSeg": 4.0, "emergenciaSeg": 5.0,
+    "profundidadeEntradaM": 5.55, "fatorAvancoTransicao": 0.22,
+    "custoPorMetro": 0.022, "custoVerticalPorMetro": 0.35, "inclinacaoMaxEntradaGraus": 30, "profundidadePreferidaM": 12
+  },
+  "percepcao": {
+    "visao": { "alcance": 20, "anguloGraus": 150, "alcanceProximo": 6, "tempoReconhecimentoSeg": 1.4 },
+    "audicao": { "alcance": 25, "erroRelativo": 0.35 },
+    "olfato": { "alcance": 15 },
+    "vibracao": { "alcance": 160, "alcanceVerticalM": 16, "limiar": 0.012, "sensibilidade": 1.3, "erroRelativo": 0.22 },
+    "memoriaSeg": 70,
+    "modificadoresPorEstado": { "descansando": { "visao": 0.6 } }
+  },
+  "furtividade": { "camuflagem": 0.5, "fatorParado": 0.8, "ruidoPassos": 1.4 },
+  "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.02, "custoCorridaPorSeg": 2.0, "recuperacaoPorSeg": 1.6, "fatorRecuperacaoParado": 0.6, "fomePorDia": 55, "sedePorDia": 10, "comerPorSeg": 9, "beberPorSeg": 10, "limiteExaustao": 6, "fomeComer": 35, "fomeDesesperada": 85, "sedeProcurar": 80 },
+  "dieta": { "vegetacao": ["sedimento"], "presas": [], "carnica": false, "microfauna": true, "_filtrador": "filter_feed e sift_sediment: peneira a areia. Modelado como consumo da biomassa da célula, não como caça." },
+  "teme": [],
+  "competidores": [],
+  "temperamento": { "agressividade": [0.6, 0.12], "coragem": [0.85, 0.08], "medo": [0.12, 0.06], "vigilancia": [0.3, 0.1] },
+  "social": { "tipo": "solitario", "tamanho": [1, 1], "probabilidadePar": 0.05, "cacaCooperativa": false, "territorial": false, "raioTerritorioM": 0, "marcacao": false, "alarme": false },
+  "combate": {
+    "protecao": { "cabeca": 0.45, "pescoco": 0.35, "tronco": 0.4, "flanco": 0.35, "pernas": 0.2, "cauda": 0.3 },
+    "resistenciaDor": 0.8, "equilibrio": 0.9, "forcaMordida": 0.4, "agarrar": false,
+    "forca": 0.95, "defesa": 0.8, "esquiva": 0.05,
+    "ataques": [
+      { "nome": "investida", "alcance": 7.0, "dano": 55, "preparoSeg": 1.2, "recargaSeg": 6.0, "regioes": ["tronco", "flanco"], "clipe": "charge" },
+      { "nome": "golpe_de_cauda", "alcance": 9.0, "dano": 42, "preparoSeg": 0.9, "recargaSeg": 4.5, "regioes": ["flanco", "pernas"], "clipe": "tail_slam" },
+      { "nome": "varrida_de_nadadeira", "alcance": 6.0, "dano": 24, "preparoSeg": 0.7, "recargaSeg": 3.0, "regioes": ["tronco", "pernas"], "clipe": "fin_sweep" }
+    ],
+    "exibicao": "threat_display"
+  },
+  "saude": { "max": 900, "resistencia": 1.6, "sangramentoBase": 0.4, "regenPorDia": 18, "suscetibilidadeDoenca": 0.15 },
+  "vida": { "expectativaAnos": 60, "maturidadeAnos": 12, "gestacaoDias": 380, "ovos": false, "ninhada": [1, 1], "estacaoReprodutiva": "chuvosa", "desmameDias": 300, "crescimentoAnos": 10 },
+  "modelo": {
+    "glb": "assets/models/creatures/arenoceto/v02/arenoceto-v02-skinned-animated-LOD0.glb",
+    "frente": "+X",
+    "medidaReferencia": "comprimento",
+    "clipes": { "parado": "idle", "andar": "swim_sand", "trote": "swim_sand", "corrida": "swim_fast", "girarEsq": "turn_left", "girarDir": "turn_right", "alerta": "alert", "comer": "filter_feed", "beber": "sift_sediment", "exibicao": "threat_display", "descansar": "rest", "ferido": "hurt", "morte": "death", "investida": "charge", "golpe_de_cauda": "tail_slam", "varrida_de_nadadeira": "fin_sweep", "mergulho": "dive", "emergencia": "surface", "escavar": "burrow", "irromper": "breach", "subsolo": "swim_sand", "subsoloRapido": "swim_fast", "bramido": "bellow" },
+    "limitacoes": ["sem clipes de locomoção de superfície (não há walk/run): na superfície só idle/breach — o Arenoceto é um nadador de areia obrigatório", "sem LOD1/LOD2", "root motion não medido nos clipes de natação na areia"]
+  },
+  "balanceamento": { "status": "provisorio", "provisorios": ["corpo.massaKg", "corpo.comprimentoM", "movimento.*", "subsolo.*", "percepcao.*", "necessidades.*", "combate.*", "saude.*", "vida.*", "atividade"] }
+}

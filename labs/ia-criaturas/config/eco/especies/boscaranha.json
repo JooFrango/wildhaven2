@@ -1,0 +1,255 @@
+{
+  "id": "boscaranha",
+  "nome": "Boscaranha",
+  "ficha": "creatures/species/boscaranha.json",
+  "papel": "carnivoro",
+  "atividade": "crepuscular",
+  "_fonteFicha": "floresta temperada; 12–26 kg; 0,38–0,60 m; solitária, emboscada; presa principal: folhisco; bote curto e golpe de quelíceras; veneno previsto na ficha como \"sistema de gameplay futuro\"",
+  "corpo": {
+    "massaKg": [
+      12,
+      26
+    ],
+    "comprimentoM": 1.5,
+    "alturaM": 0.5,
+    "raio": 0.55,
+    "ectotermico": true
+  },
+  "movimento": {
+    "andar": 0.75,
+    "trote": 2.2,
+    "corrida": 4.7,
+    "aceleracao": 14,
+    "giroGrausSeg": 300,
+    "fatorCurvaFechada": 0.6,
+    "resistenciaSeg": 3,
+    "inclinacaoMaxGraus": 50,
+    "nadar": false,
+    "profundidadeMaxM": 0.8
+  },
+  "percepcao": {
+    "visao": {
+      "alcance": 15,
+      "anguloGraus": 260,
+      "alcanceProximo": 2,
+      "tempoReconhecimentoSeg": 0.7
+    },
+    "audicao": {
+      "alcance": 4,
+      "erroRelativo": 0.4
+    },
+    "olfato": {
+      "alcance": 8
+    },
+    "memoriaSeg": 40,
+    "modificadoresPorEstado": {
+      "descansando": {
+        "visao": 0.7
+      },
+      "comendo_carcaca": {
+        "visao": 0.7,
+        "audicao": 0.9
+      }
+    }
+  },
+  "furtividade": {
+    "camuflagem": 0.35,
+    "fatorParado": 0.45,
+    "ruidoPassos": 0.3
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.04,
+    "custoCorridaPorSeg": 9,
+    "recuperacaoPorSeg": 2.6,
+    "fatorRecuperacaoParado": 0.5,
+    "fomePorDia": 25,
+    "sedePorDia": 20,
+    "comerPorSeg": 0.4,
+    "beberPorSeg": 12,
+    "limiteExaustao": 5,
+    "fomeCacar": 30,
+    "fomeDesesperada": 80,
+    "sedeProcurar": 45
+  },
+  "dieta": {
+    "vegetacao": [],
+    "presas": [
+      "folhisco",
+      "cromatil"
+    ],
+    "carnica": false,
+    "microfauna": true,
+    "_microfauna": "ficha: ground_vertebrates — recurso agregado nos níveis 2/3 (não individualizado)"
+  },
+  "teme": [
+    "varrisco",
+    "rocantraz"
+  ],
+  "competidores": [
+    "boscaranha"
+  ],
+  "temperamento": {
+    "agressividade": [
+      0.55,
+      0.15
+    ],
+    "coragem": [
+      0.55,
+      0.15
+    ],
+    "medo": [
+      0.35,
+      0.1
+    ],
+    "vigilancia": [
+      0.4,
+      0.1
+    ]
+  },
+  "social": {
+    "tipo": "solitario",
+    "tamanho": [
+      1,
+      1
+    ],
+    "probabilidadePar": 0,
+    "cacaCooperativa": false,
+    "territorial": true,
+    "raioTerritorioM": 60,
+    "marcacao": false
+  },
+  "combate": {
+    "protecao": {
+      "cabeca": 0.3,
+      "pescoco": 0.2,
+      "tronco": 0.3,
+      "flanco": 0.25,
+      "pernas": 0.15,
+      "cauda": 0.2
+    },
+    "resistenciaDor": 0.55,
+    "equilibrio": 0.6,
+    "forcaMordida": 0.6,
+    "agarrar": false,
+    "_v3": "provisório — ficha: sem couraça; bípede com cauda de equilíbrio; mordida e garra em foice",
+    "forca": 0.35,
+    "defesa": 0.3,
+    "esquiva": 0.35,
+    "ataques": [
+      {
+        "nome": "mordida",
+        "alcance": 0.9,
+        "dano": 5,
+        "preparoSeg": 0.3,
+        "recargaSeg": 1.2,
+        "regioes": [
+          "tronco",
+          "pernas",
+          "pescoco",
+          "flanco"
+        ],
+        "clipe": "bite"
+      },
+      {
+        "nome": "bote",
+        "alcance": 2.2,
+        "dano": 4,
+        "preparoSeg": 0.45,
+        "recargaSeg": 3.5,
+        "regioes": [
+          "tronco",
+          "pescoco"
+        ],
+        "clipe": "pounce",
+        "exigeSurpresa": true
+      }
+    ],
+    "exibicao": "threat_display"
+  },
+  "saude": {
+    "max": 60,
+    "resistencia": 1,
+    "sangramentoBase": 0.6,
+    "regenPorDia": 10,
+    "suscetibilidadeDoenca": 0.3
+  },
+  "vida": {
+    "expectativaAnos": 14,
+    "maturidadeAnos": 2.5,
+    "gestacaoDias": 70,
+    "ovos": true,
+    "ninhada": [
+      1,
+      3
+    ],
+    "estacaoReprodutiva": "chuvosa",
+    "desmameDias": 120,
+    "crescimentoAnos": 2
+  },
+  "modelo": {
+    "glb": "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD0.glb",
+    "frente": "-Z",
+    "medidaReferencia": "comprimento",
+    "clipes": {
+      "parado": "idle",
+      "andar": "walk",
+      "trote": "scuttle",
+      "corrida": "sprint",
+      "espreita": "stalk",
+      "girarEsq": "turn_left",
+      "girarDir": "turn_right",
+      "alerta": "vigilance",
+      "farejar": "sense_vibrations",
+      "mordida": "bite",
+      "garra_foice": "claw_slash",
+      "bote": "pounce",
+      "comer": "feed",
+      "beber": "feed",
+      "exibicao": "threat_display",
+      "descansar": "rest",
+      "ferido": "hurt",
+      "morte": "death"
+    },
+    "limitacoes": [
+      "clipes no lugar (manifesto)",
+      "sem VFX de teia nem de veneno"
+    ]
+  },
+  "balanceamento": {
+    "status": "experimental_v7",
+    "provisorios": [
+      "tudo exceto corpo, dieta e hábitos citados em _fonteFicha"
+    ],
+    "base": "varrisco.json"
+  },
+  "experimental": {
+    "v7": true,
+    "capacidades": [
+      "veneno",
+      "taticasDeEmboscada"
+    ],
+    "nota": "Espécie real do catálogo; veneno e parâmetros de combate são experimentais do laboratório."
+  },
+  "veneno": {
+    "tipo": "neurotoxico",
+    "potencia": 1,
+    "doseMg": 9,
+    "reservaMg": 27,
+    "recargaMgPorSeg": 0.01,
+    "ataques": [
+      "mordida",
+      "bote"
+    ],
+    "meiaVidaSeg": 150,
+    "latenciaSeg": 10,
+    "esperaSeg": 90,
+    "custoEnergiaPorMg": 0.4
+  },
+  "resistenciaVeneno": 0.6,
+  "taticasDeEmboscada": {
+    "raioBuscaM": 25,
+    "esperaMaxSeg": 120,
+    "distanciaDisparoM": 4
+  }
+}

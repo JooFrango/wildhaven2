@@ -1,0 +1,252 @@
+{
+  "id": "carniroca",
+  "nome": "Carniroca",
+  "ficha": "creatures/species/carniroca.json",
+  "papel": "carnivoro",
+  "atividade": "diurno",
+  "_fonteFicha": "ave carniceira média; floresta/campo temperado e penhascos; dieta: carniça e presa pequena oportunista; busca solitária, vários convergem sobre a carcaça ao ver uma descida ou ouvir chamado; GLB com 6 ossos de asa e clipes takeoff/fly/glide/flap_hard/bank/land. A ficha oficial não traz massa nem velocidades.",
+  "corpo": {
+    "massaKg": [
+      4,
+      7
+    ],
+    "comprimentoM": 1,
+    "alturaM": 0.7,
+    "raio": 0.4
+  },
+  "movimento": {
+    "andar": 0.6,
+    "trote": 1.3,
+    "corrida": 2.6,
+    "aceleracao": 6,
+    "giroGrausSeg": 220,
+    "fatorCurvaFechada": 0.6,
+    "resistenciaSeg": 8,
+    "inclinacaoMaxGraus": 35,
+    "nadar": false,
+    "profundidadeMaxM": 0.8
+  },
+  "percepcao": {
+    "visao": {
+      "alcance": 120,
+      "anguloGraus": 250,
+      "alcanceProximo": 2,
+      "tempoReconhecimentoSeg": 0.6
+    },
+    "audicao": {
+      "alcance": 30,
+      "erroRelativo": 0.25
+    },
+    "olfato": {
+      "alcance": 90
+    },
+    "memoriaSeg": 60,
+    "modificadoresPorEstado": {
+      "descansando": {
+        "visao": 0.7
+      },
+      "comendo_carcaca": {
+        "visao": 0.7,
+        "audicao": 0.9
+      }
+    }
+  },
+  "furtividade": {
+    "camuflagem": 0.05,
+    "fatorParado": 0.9,
+    "ruidoPassos": 0.5
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.03,
+    "custoCorridaPorSeg": 3,
+    "recuperacaoPorSeg": 2.2,
+    "fatorRecuperacaoParado": 0.5,
+    "fomePorDia": 45,
+    "sedePorDia": 35,
+    "comerPorSeg": 0.25,
+    "beberPorSeg": 12,
+    "limiteExaustao": 5,
+    "fomeCacar": 101,
+    "fomeDesesperada": 101,
+    "sedeProcurar": 45
+  },
+  "dieta": {
+    "vegetacao": [],
+    "presas": [],
+    "carnica": true,
+    "microfauna": false,
+    "_microfauna": "ficha: ground_vertebrates — recurso agregado nos níveis 2/3 (não individualizado)"
+  },
+  "teme": [
+    "varrisco",
+    "rocantraz",
+    "proto-cacador-camuflado"
+  ],
+  "competidores": [],
+  "temperamento": {
+    "agressividade": [
+      0.55,
+      0.15
+    ],
+    "coragem": [
+      0.55,
+      0.15
+    ],
+    "medo": [
+      0.35,
+      0.1
+    ],
+    "vigilancia": [
+      0.4,
+      0.1
+    ]
+  },
+  "social": {
+    "tipo": "solitario",
+    "tamanho": [
+      1,
+      1
+    ],
+    "probabilidadePar": 0,
+    "cacaCooperativa": false,
+    "territorial": false,
+    "raioTerritorioM": 220,
+    "marcacao": false
+  },
+  "combate": {
+    "protecao": {
+      "cabeca": 0.15,
+      "pescoco": 0.05,
+      "tronco": 0.1,
+      "flanco": 0.1,
+      "pernas": 0.1,
+      "cauda": 0.05
+    },
+    "resistenciaDor": 0.55,
+    "equilibrio": 0.6,
+    "forcaMordida": 0.5,
+    "agarrar": false,
+    "_v3": "provisório — ficha: sem couraça; bípede com cauda de equilíbrio; mordida e garra em foice",
+    "forca": 0.2,
+    "defesa": 0.15,
+    "esquiva": 0.5,
+    "ataques": [
+      {
+        "nome": "bicada",
+        "alcance": 0.6,
+        "dano": 4,
+        "preparoSeg": 0.3,
+        "recargaSeg": 1.2,
+        "regioes": [
+          "cabeca",
+          "tronco",
+          "flanco"
+        ],
+        "clipe": "peck_carrion"
+      }
+    ],
+    "exibicao": "threaten"
+  },
+  "saude": {
+    "max": 45,
+    "resistencia": 1,
+    "sangramentoBase": 0.6,
+    "regenPorDia": 10,
+    "suscetibilidadeDoenca": 0.3
+  },
+  "vida": {
+    "expectativaAnos": 14,
+    "maturidadeAnos": 2.5,
+    "gestacaoDias": 70,
+    "ovos": true,
+    "ninhada": [
+      1,
+      3
+    ],
+    "estacaoReprodutiva": "chuvosa",
+    "desmameDias": 120,
+    "crescimentoAnos": 2
+  },
+  "modelo": {
+    "glb": "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD0.glb",
+    "frente": "-Z",
+    "medidaReferencia": "comprimento",
+    "clipes": {
+      "parado": "idle",
+      "andar": "walk",
+      "trote": "hop",
+      "corrida": "hop",
+      "espreita": "stalk",
+      "girarEsq": "turn_left",
+      "girarDir": "turn_right",
+      "alerta": "scan",
+      "farejar": "scan",
+      "mordida": "bite",
+      "garra_foice": "claw_slash",
+      "bote": "pounce",
+      "comer": "tear_meat",
+      "beber": "peck_carrion",
+      "exibicao": "threaten",
+      "descansar": "rest",
+      "ferido": "hurt",
+      "morte": "death",
+      "bicada": "peck_carrion",
+      "decolar": "takeoff",
+      "voar": "fly",
+      "voarForte": "flap_hard",
+      "planar": "glide",
+      "pousar": "land",
+      "curvaEsq": "bank_left",
+      "curvaDir": "bank_right"
+    },
+    "limitacoes": [
+      "clipes no lugar (manifesto)",
+      "sem IK de patas no pouso"
+    ]
+  },
+  "balanceamento": {
+    "status": "experimental_v7",
+    "provisorios": [
+      "tudo exceto corpo, dieta e hábitos citados em _fonteFicha"
+    ],
+    "base": "varrisco.json"
+  },
+  "experimental": {
+    "v7": true,
+    "capacidades": [
+      "voo",
+      "comportamentoDeBando",
+      "necrofagia"
+    ],
+    "nota": "Espécie real do catálogo; todos os números de voo são experimentais do laboratório."
+  },
+  "voo": {
+    "velMin": 6,
+    "velCruzeiro": 11,
+    "velMax": 17,
+    "aceleracao": 5,
+    "giroGrausSeg": 75,
+    "subidaMax": 3,
+    "descidaMax": 6,
+    "razaoPlaneio": 12,
+    "altitudeCruzeiroM": 22,
+    "altitudeMaxM": 80,
+    "folgaObstaculoM": 4,
+    "custoBatidoPorSeg": 1.4,
+    "custoPlaneioPorSeg": 0.12,
+    "decolagemSeg": 1.6,
+    "energiaMinDecolar": 25,
+    "energiaPousar": 18,
+    "distanciaVoarM": 25,
+    "distanciaFugaM": 30,
+    "pairar": false,
+    "bando": {
+      "raioM": 45,
+      "separacaoM": 6,
+      "coesao": 1,
+      "alinhamento": 1,
+      "separacao": 2.4
+    }
+  }
+}

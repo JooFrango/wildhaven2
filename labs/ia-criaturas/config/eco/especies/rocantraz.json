@@ -1,0 +1,42 @@
+{
+  "id": "rocantraz",
+  "nome": "Rocantraz",
+  "ficha": "creatures/species/rocantraz-v04.json",
+  "papel": "carnivoro",
+  "atividade": "diurno",
+  "_fonteFicha": "ápice; floresta temperada/tropical, montanhas, deserto, deserto rochoso; territorial, solitário, muito raro, grande área de vida; dieta: herbívoros grandes, carnívoros intermediários e carniça; evita perseguições longas (rocantraz.md)",
+  "corpo": { "massaKg": [3200, 4800], "comprimentoM": 9.0, "alturaM": 4.2, "raio": 1.6 },
+  "movimento": { "andar": 2.0, "trote": 4.5, "corrida": 9.0, "aceleracao": 4, "giroGrausSeg": 90, "fatorCurvaFechada": 0.4, "resistenciaSeg": 8, "inclinacaoMaxGraus": 30, "nadar": false, "profundidadeMaxM": 1.6 },
+  "percepcao": {
+    "visao": { "alcance": 60, "anguloGraus": 150, "alcanceProximo": 4, "tempoReconhecimentoSeg": 1.0 },
+    "audicao": { "alcance": 45, "erroRelativo": 0.2 },
+    "olfato": { "alcance": 120 },
+    "memoriaSeg": 60
+  },
+  "furtividade": { "camuflagem": 0.05, "fatorParado": 0.85, "ruidoPassos": 1.6 },
+  "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.05, "custoCorridaPorSeg": 10, "recuperacaoPorSeg": 2.0, "fatorRecuperacaoParado": 0.5, "fomePorDia": 25, "sedePorDia": 35, "comerPorSeg": 8, "beberPorSeg": 25, "limiteExaustao": 8, "fomeCacar": 45, "fomeDesesperada": 85, "sedeProcurar": 45 },
+  "dieta": { "vegetacao": [], "presas": ["varrisco"], "carnica": true, "_nota": "herbívoros grandes da savana (ex.: Arumbar) não estão no cenário; Velsari/Cromátil/Tarruco são pequenos demais para a dieta da ficha" },
+  "teme": [],
+  "competidores": ["varrisco"],
+  "temperamento": { "agressividade": [0.6, 0.1], "coragem": [0.85, 0.08], "medo": [0.1, 0.05], "vigilancia": [0.3, 0.1] },
+  "social": { "tipo": "solitario", "tamanho": [1, 1], "territorial": true, "raioTerritorioM": 900, "marcacao": true, "raro": true },
+  "combate": {
+    "protecao": {"cabeca": 0.6, "pescoco": 0.4, "tronco": 0.5, "flanco": 0.45, "pernas": 0.35, "cauda": 0.4}, "resistenciaDor": 0.8, "equilibrio": 0.85, "forcaMordida": 1.4, "agarrar": true, "_v3": "provisório — GLB: placas na testa (ForeheadPlate); porte de 3–5 t",
+   
+    "forca": 1.0, "defesa": 0.7, "esquiva": 0.05,
+    "ataques": [
+      { "nome": "mordida", "alcance": 3.5, "dano": 95, "preparoSeg": 0.6, "recargaSeg": 1.6, "regioes": ["tronco", "pescoco"], "clipe": "bite" },
+      { "nome": "golpe", "alcance": 3.0, "dano": 60, "preparoSeg": 0.5, "recargaSeg": 1.4, "regioes": ["tronco", "pernas", "flanco"], "clipe": "swipe" }
+    ],
+    "exibicao": "roar"
+  },
+  "saude": { "max": 900, "resistencia": 1.8, "sangramentoBase": 0.3, "regenPorDia": 30, "suscetibilidadeDoenca": 0.2 },
+  "vida": { "expectativaAnos": 40, "maturidadeAnos": 10, "gestacaoDias": 120, "ovos": true, "ninhada": [1, 2], "estacaoReprodutiva": "chuvosa", "desmameDias": 365, "crescimentoAnos": 8 },
+  "modelo": {
+    "glb": "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD0.glb",
+    "frente": "+Z",
+    "medidaReferencia": "comprimento",
+    "clipes": { "parado": "idle", "andar": "walk", "trote": "walk", "corrida": "run", "espreita": "stalk", "investida": "charge", "mordida": "bite", "golpe": "swipe", "exibicao": "roar", "comer": "feed", "defender": "defend", "descansar": "rest", "ferido": "defend", "morte": "die" }
+  },
+  "balanceamento": { "status": "provisorio", "provisorios": ["corpo.massaKg", "movimento.corrida", "combate.ataques", "saude.max", "vida.expectativaAnos", "dieta.presas"] }
+}

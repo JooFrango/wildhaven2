@@ -1,0 +1,234 @@
+{
+  "id": "pica-termita",
+  "nome": "Pica-Termita de Crista",
+  "ficha": "creatures/species/pica_termita.json",
+  "papel": "herbivoro",
+  "atividade": "diurno",
+  "_fonteFicha": "especialista em cupins; campo/savana/borda de floresta; 0,9–2,6 kg; 0,65–0,95 m; par territorial; anda 0,67 m/s, corre 2 m/s, voa; 60 cupins por visita; compete com Ferrunco e Dunlíngua",
+  "corpo": {
+    "massaKg": [
+      0.9,
+      2.6
+    ],
+    "comprimentoM": 0.9,
+    "alturaM": 0.8,
+    "raio": 0.3
+  },
+  "movimento": {
+    "andar": 0.67,
+    "trote": 1.3,
+    "corrida": 2,
+    "aceleracao": 8,
+    "giroGrausSeg": 300,
+    "fatorCurvaFechada": 0.8,
+    "resistenciaSeg": 8,
+    "inclinacaoMaxGraus": 35,
+    "nadar": false,
+    "profundidadeMaxM": 0.1,
+    "escalarRochas": false
+  },
+  "percepcao": {
+    "visao": {
+      "alcance": 60,
+      "anguloGraus": 295,
+      "alcanceProximo": 2,
+      "tempoReconhecimentoSeg": 0.5
+    },
+    "audicao": {
+      "alcance": 20,
+      "erroRelativo": 0.25
+    },
+    "olfato": {
+      "alcance": 6
+    },
+    "memoriaSeg": 90,
+    "modificadoresPorEstado": {
+      "comendo": {
+        "visao": 0.7
+      },
+      "aquecendo": {
+        "visao": 0.9
+      }
+    }
+  },
+  "furtividade": {
+    "camuflagem": 0.55,
+    "fatorParado": 0.5,
+    "ruidoPassos": 0.4
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.02,
+    "custoCorridaPorSeg": 4.5,
+    "recuperacaoPorSeg": 3,
+    "fatorRecuperacaoParado": 0.6,
+    "fomePorDia": 60,
+    "sedePorDia": 30,
+    "comerPorSeg": 1,
+    "beberPorSeg": 6,
+    "limiteExaustao": 6,
+    "fomeProcurar": 35,
+    "sedeProcurar": 50
+  },
+  "dieta": {
+    "vegetacao": [],
+    "presas": [],
+    "carnica": false,
+    "cupins": {
+      "porSeg": 3,
+      "alcanceM": 1.2,
+      "abre": false
+    }
+  },
+  "teme": [
+    "varrisco",
+    "rocantraz",
+    "boscaranha",
+    "proto-cacador-camuflado"
+  ],
+  "temperamento": {
+    "agressividade": [
+      0.1,
+      0.05
+    ],
+    "coragem": [
+      0.25,
+      0.1
+    ],
+    "medo": [
+      0.75,
+      0.1
+    ],
+    "vigilancia": [
+      0.55,
+      0.1
+    ]
+  },
+  "social": {
+    "tipo": "solitario",
+    "tamanho": [
+      1,
+      1
+    ],
+    "territorial": true,
+    "refugio": "rochas"
+  },
+  "combate": {
+    "protecao": {
+      "cabeca": 0.25,
+      "pescoco": 0.15,
+      "tronco": 0.35,
+      "flanco": 0.3,
+      "pernas": 0.1,
+      "cauda": 0.2
+    },
+    "resistenciaDor": 0.5,
+    "equilibrio": 0.75,
+    "forcaMordida": 0.2,
+    "agarrar": false,
+    "_v3": "provisório — ficha: dorso com placas achatadas sobrepostas; corpo baixo",
+    "forca": 0.05,
+    "defesa": 0.3,
+    "esquiva": 0.6,
+    "ataques": [
+      {
+        "nome": "bicada",
+        "alcance": 0.5,
+        "dano": 2,
+        "preparoSeg": 0.2,
+        "recargaSeg": 1,
+        "regioes": [
+          "cabeca",
+          "pernas"
+        ],
+        "clipe": "peck"
+      }
+    ]
+  },
+  "saude": {
+    "max": 20,
+    "resistencia": 0.7,
+    "sangramentoBase": 0.5,
+    "regenPorDia": 8,
+    "suscetibilidadeDoenca": 0.3
+  },
+  "vida": {
+    "expectativaAnos": 7,
+    "maturidadeAnos": 1.5,
+    "gestacaoDias": 45,
+    "ovos": true,
+    "ninhada": [
+      2,
+      5
+    ],
+    "estacaoReprodutiva": "chuvosa",
+    "desmameDias": 0,
+    "crescimentoAnos": 1.2,
+    "cuidadoParental": false
+  },
+  "modelo": {
+    "glb": "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD0.glb",
+    "frente": "+Z",
+    "medidaReferencia": "comprimento",
+    "clipes": {
+      "parado": "idle",
+      "andar": "walk",
+      "trote": "hop",
+      "corrida": "hop",
+      "comer": "feed",
+      "beber": "peck",
+      "alerta": "alert",
+      "ameaca": "crest_display",
+      "recuo": "flee",
+      "aquecer": "bask",
+      "descansar": "rest",
+      "ferido": "hurt",
+      "morte": "death",
+      "inspecionar": "inspect",
+      "decolar": "fly",
+      "voar": "fly",
+      "planar": "fly",
+      "pousar": "land"
+    },
+    "limitacoes": [
+      "sem clipe de decolagem nem de planeio: usa fly",
+      "animação por pivôs"
+    ]
+  },
+  "balanceamento": {
+    "status": "experimental_v7",
+    "provisorios": [
+      "tudo exceto corpo, dieta e hábitos citados em _fonteFicha"
+    ],
+    "base": "cromatil.json"
+  },
+  "experimental": {
+    "v7": true,
+    "capacidades": [
+      "voo",
+      "cupinivoria"
+    ],
+    "nota": "Espécie real do catálogo. GLB com animação por pivôs (sem SkinnedMesh); só tem clipes fly e land."
+  },
+  "voo": {
+    "velMin": 4,
+    "velCruzeiro": 8,
+    "velMax": 12,
+    "aceleracao": 6,
+    "giroGrausSeg": 110,
+    "subidaMax": 3,
+    "descidaMax": 5,
+    "razaoPlaneio": 6,
+    "altitudeCruzeiroM": 10,
+    "altitudeMaxM": 40,
+    "folgaObstaculoM": 3,
+    "custoBatidoPorSeg": 2.2,
+    "custoPlaneioPorSeg": 0.4,
+    "decolagemSeg": 0.8,
+    "energiaMinDecolar": 25,
+    "energiaPousar": 20,
+    "distanciaVoarM": 18,
+    "distanciaFugaM": 20,
+    "pairar": false
+  }
+}

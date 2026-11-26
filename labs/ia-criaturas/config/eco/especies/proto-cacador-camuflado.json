@@ -1,0 +1,256 @@
+{
+  "id": "proto-cacador-camuflado",
+  "nome": "PROTÓTIPO · Caçador Camuflado",
+  "ficha": null,
+  "papel": "carnivoro",
+  "atividade": "crepuscular",
+  "_fonteFicha": "ESPÉCIE HIPOTÉTICA DE LABORATÓRIO. Não existe no catálogo. Usa o GLB do Varrisco só como corpo de teste.",
+  "corpo": {
+    "massaKg": [
+      55,
+      85
+    ],
+    "comprimentoM": 2.9,
+    "alturaM": 1.4,
+    "raio": 0.6
+  },
+  "movimento": {
+    "andar": 1.5,
+    "trote": 4.2,
+    "corrida": 13,
+    "aceleracao": 10,
+    "giroGrausSeg": 230,
+    "fatorCurvaFechada": 0.6,
+    "resistenciaSeg": 14,
+    "inclinacaoMaxGraus": 40,
+    "nadar": false,
+    "profundidadeMaxM": 0.8
+  },
+  "percepcao": {
+    "visao": {
+      "alcance": 45,
+      "anguloGraus": 170,
+      "alcanceProximo": 2.5,
+      "tempoReconhecimentoSeg": 0.8
+    },
+    "audicao": {
+      "alcance": 35,
+      "erroRelativo": 0.2
+    },
+    "olfato": {
+      "alcance": 60
+    },
+    "memoriaSeg": 45,
+    "modificadoresPorEstado": {
+      "descansando": {
+        "visao": 0.7
+      },
+      "comendo_carcaca": {
+        "visao": 0.7,
+        "audicao": 0.9
+      }
+    }
+  },
+  "furtividade": {
+    "camuflagem": 0.2,
+    "fatorParado": 0.7,
+    "ruidoPassos": 0.7
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.04,
+    "custoCorridaPorSeg": 6.5,
+    "recuperacaoPorSeg": 2.6,
+    "fatorRecuperacaoParado": 0.5,
+    "fomePorDia": 40,
+    "sedePorDia": 50,
+    "comerPorSeg": 2.5,
+    "beberPorSeg": 12,
+    "limiteExaustao": 5,
+    "fomeCacar": 40,
+    "fomeDesesperada": 80,
+    "sedeProcurar": 45
+  },
+  "dieta": {
+    "vegetacao": [],
+    "presas": [
+      "velsari",
+      "cromatil",
+      "tarruco",
+      "folhisco"
+    ],
+    "carnica": true,
+    "microfauna": true,
+    "_microfauna": "ficha: ground_vertebrates — recurso agregado nos níveis 2/3 (não individualizado)"
+  },
+  "teme": [
+    "rocantraz"
+  ],
+  "competidores": [
+    "proto-cacador-camuflado"
+  ],
+  "temperamento": {
+    "agressividade": [
+      0.55,
+      0.15
+    ],
+    "coragem": [
+      0.55,
+      0.15
+    ],
+    "medo": [
+      0.35,
+      0.1
+    ],
+    "vigilancia": [
+      0.4,
+      0.1
+    ]
+  },
+  "social": {
+    "tipo": "solitario",
+    "tamanho": [
+      1,
+      1
+    ],
+    "probabilidadePar": 0,
+    "cacaCooperativa": false,
+    "territorial": true,
+    "raioTerritorioM": 220,
+    "marcacao": true
+  },
+  "combate": {
+    "protecao": {
+      "cabeca": 0.15,
+      "pescoco": 0.05,
+      "tronco": 0.1,
+      "flanco": 0.1,
+      "pernas": 0.1,
+      "cauda": 0.05
+    },
+    "resistenciaDor": 0.55,
+    "equilibrio": 0.6,
+    "forcaMordida": 1,
+    "agarrar": true,
+    "_v3": "provisório — ficha: sem couraça; bípede com cauda de equilíbrio; mordida e garra em foice",
+    "forca": 0.6,
+    "defesa": 0.35,
+    "esquiva": 0.3,
+    "ataques": [
+      {
+        "nome": "mordida",
+        "alcance": 1.5,
+        "dano": 18,
+        "preparoSeg": 0.35,
+        "recargaSeg": 0.9,
+        "regioes": [
+          "pescoco",
+          "tronco",
+          "pernas"
+        ],
+        "clipe": "bite"
+      },
+      {
+        "nome": "garra_foice",
+        "alcance": 1.3,
+        "dano": 26,
+        "preparoSeg": 0.45,
+        "recargaSeg": 1.3,
+        "regioes": [
+          "tronco",
+          "pernas",
+          "flanco"
+        ],
+        "clipe": "claw_slash"
+      },
+      {
+        "nome": "bote",
+        "alcance": 3.2,
+        "dano": 22,
+        "preparoSeg": 0.6,
+        "recargaSeg": 3,
+        "regioes": [
+          "tronco",
+          "pescoco"
+        ],
+        "clipe": "pounce",
+        "exigeSurpresa": true
+      }
+    ],
+    "exibicao": "threat_display"
+  },
+  "saude": {
+    "max": 160,
+    "resistencia": 1,
+    "sangramentoBase": 0.6,
+    "regenPorDia": 10,
+    "suscetibilidadeDoenca": 0.3
+  },
+  "vida": {
+    "expectativaAnos": 14,
+    "maturidadeAnos": 2.5,
+    "gestacaoDias": 70,
+    "ovos": true,
+    "ninhada": [
+      1,
+      3
+    ],
+    "estacaoReprodutiva": "chuvosa",
+    "desmameDias": 120,
+    "crescimentoAnos": 2
+  },
+  "modelo": {
+    "glb": "assets/models/creatures/varrisco/v02/varrisco-animated-v02-LOD0.glb",
+    "frente": "+X",
+    "medidaReferencia": "comprimento",
+    "clipes": {
+      "parado": "idle",
+      "andar": "walk",
+      "trote": "walk",
+      "corrida": "run",
+      "espreita": "stalk",
+      "girarEsq": "turn_left",
+      "girarDir": "turn_right",
+      "alerta": "alert",
+      "farejar": "sniff",
+      "mordida": "bite",
+      "garra_foice": "claw_slash",
+      "bote": "pounce",
+      "comer": "feed",
+      "beber": "drink",
+      "exibicao": "threat_display",
+      "descansar": "rest",
+      "ferido": "hurt",
+      "morte": "death"
+    },
+    "limitacoes": [
+      "ciclos no lugar podem deslizar (manifesto)",
+      "sem GLB juvenil"
+    ]
+  },
+  "balanceamento": {
+    "status": "experimental_v7",
+    "provisorios": [
+      "tudo exceto corpo, dieta e hábitos citados em _fonteFicha"
+    ],
+    "base": "varrisco.json"
+  },
+  "experimental": {
+    "v7": true,
+    "hipotetica": true,
+    "capacidades": [
+      "camuflagemAtiva"
+    ],
+    "proxyVisual": "GLB do Varrisco (não é a aparência desta criatura)",
+    "nota": "Serve só para testar camuflagem óptica ativa. Nada aqui altera o Varrisco."
+  },
+  "camuflagemAtiva": {
+    "reducaoVisual": 0.82,
+    "custoPorSeg": 0.55,
+    "custoExtraCorridaPorSeg": 1.6,
+    "energiaMin": 15,
+    "energiaReativar": 35,
+    "recargaSeg": 12,
+    "transicaoSeg": 1.5
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "serracorion",
+  "nome": "Serracórion",
+  "ficha": null,
+  "papel": "carnivoro",
+  "atividade": "crepuscular",
+  "_fonteFicha": "assets/models/creatures/serracorion/v03/README.md: 43 juntas, pinças dianteiras, arco de cauda com lâmina, 20 clipes com burrow, emerge e sand_dig. Números PROVISÓRIOS; extensão 14,83×9,86×10,22 unidades, frente -X. walk e run têm root motion quase nulo (0,008 e 0,059 m/s): a velocidade vem do motor, não do clipe.",
+  "corpo": { "massaKg": [900, 1500], "comprimentoM": 6.0, "alturaM": 2.4, "raio": 1.8 },
+  "movimento": { "andar": 1.1, "trote": 3.0, "corrida": 7.5, "aceleracao": 5, "giroGrausSeg": 150, "fatorCurvaFechada": 0.6, "resistenciaSeg": 16, "inclinacaoMaxGraus": 38, "nadar": false, "profundidadeMaxM": 0.6 },
+  "subsolo": {
+    "_nota": "Escavador de emboscada, não nadador de areia: enterra-se e espera. Avanço subterrâneo curto e caro (clipes burrow/emerge/sand_dig, sem swim_sand).",
+    "profundidadeMaxM": 3.2, "alturaCorpoM": 2.4,
+    "cruzeiro": 0.5, "arranque": 0.9, "aceleracao": 0.7, "giroGrausSeg": 25,
+    "subidaMs": 0.9, "descidaMs": 0.7, "mergulhoSeg": 4.2, "emergenciaSeg": 3.9,
+    "custoPorMetro": 0.28, "custoVerticalPorMetro": 0.45, "inclinacaoMaxEntradaGraus": 32,
+    "profundidadePreferidaM": 2.0
+  },
+  "percepcao": {
+    "visao": { "alcance": 22, "anguloGraus": 300, "alcanceProximo": 4, "tempoReconhecimentoSeg": 0.7 },
+    "audicao": { "alcance": 30, "erroRelativo": 0.25 },
+    "olfato": { "alcance": 55 },
+    "vibracao": { "alcance": 130, "alcanceVerticalM": 6, "limiar": 0.01, "sensibilidade": 2.0, "erroRelativo": 0.15 },
+    "memoriaSeg": 60,
+    "modificadoresPorEstado": { "descansando": { "visao": 0.5 }, "emboscada": { "visao": 0.4, "audicao": 1.1 } }
+  },
+  "furtividade": { "camuflagem": 0.7, "fatorParado": 0.4, "ruidoPassos": 0.9 },
+  "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.04, "custoCorridaPorSeg": 6.0, "recuperacaoPorSeg": 2.3, "fatorRecuperacaoParado": 0.5, "fomePorDia": 42, "sedePorDia": 25, "comerPorSeg": 3.0, "beberPorSeg": 10, "limiteExaustao": 5, "fomeCacar": 38, "fomeDesesperada": 80, "sedeProcurar": 60 },
+  "dieta": { "vegetacao": [], "presas": ["arraia-de-areia", "escarvao"], "carnica": true, "microfauna": true },
+  "teme": ["arenoceto"],
+  "competidores": ["escarvao"],
+  "temperamento": { "agressividade": [0.7, 0.12], "coragem": [0.65, 0.12], "medo": [0.25, 0.1], "vigilancia": [0.55, 0.1] },
+  "social": { "tipo": "solitario", "tamanho": [1, 1], "probabilidadePar": 0.05, "cacaCooperativa": false, "territorial": true, "raioTerritorioM": 180, "marcacao": true, "alarme": false },
+  "combate": {
+    "protecao": { "cabeca": 0.4, "pescoco": 0.35, "tronco": 0.45, "flanco": 0.35, "pernas": 0.2, "cauda": 0.3 },
+    "resistenciaDor": 0.7, "equilibrio": 0.8, "forcaMordida": 0.8, "agarrar": true,
+    "forca": 0.75, "defesa": 0.6, "esquiva": 0.3,
+    "ataques": [
+      { "nome": "pinca", "alcance": 3.4, "dano": 28, "preparoSeg": 0.4, "recargaSeg": 1.6, "regioes": ["pernas", "flanco", "tronco"], "clipe": "pincer_grab" },
+      { "nome": "pancada_de_pinca", "alcance": 3.0, "dano": 38, "preparoSeg": 0.6, "recargaSeg": 2.8, "regioes": ["tronco", "cabeca"], "clipe": "pincer_slam" },
+      { "nome": "mordida", "alcance": 2.2, "dano": 24, "preparoSeg": 0.35, "recargaSeg": 1.4, "regioes": ["pescoco", "tronco"], "clipe": "bite" },
+      { "nome": "ferroada_de_cauda", "alcance": 4.2, "dano": 46, "preparoSeg": 0.7, "recargaSeg": 4.5, "regioes": ["tronco", "pescoco"], "clipe": "tail_sting", "exigeSurpresa": true }
+    ],
+    "exibicao": "threat_display"
+  },
+  "saude": { "max": 320, "resistencia": 1.3, "sangramentoBase": 0.55, "regenPorDia": 13, "suscetibilidadeDoenca": 0.25 },
+  "vida": { "expectativaAnos": 22, "maturidadeAnos": 4, "gestacaoDias": 160, "ovos": true, "ninhada": [1, 3], "estacaoReprodutiva": "chuvosa", "desmameDias": 120, "crescimentoAnos": 3 },
+  "modelo": {
+    "glb": "assets/models/creatures/serracorion/v03/serracorion-v03-rig-animado-LOD0.glb",
+    "frente": "-X",
+    "medidaReferencia": "comprimento",
+    "clipes": { "parado": "idle", "andar": "walk", "trote": "walk", "corrida": "run", "girarEsq": "turn_left", "girarDir": "turn_right", "alerta": "alert", "comer": "feed", "beber": "feed", "exibicao": "threat_display", "descansar": "rest", "ferido": "hurt", "morte": "death", "pinca": "pincer_grab", "pancada_de_pinca": "pincer_slam", "mordida": "bite", "ferroada_de_cauda": "tail_sting", "varrida_de_cauda": "tail_sweep", "investida": "charge", "mergulho": "burrow", "emergencia": "emerge", "escavar": "sand_dig", "subsolo": "sand_dig" },
+    "limitacoes": ["walk e run têm root motion quase nulo: a velocidade do clipe é dada pelo motor, com teto de timeScale 6", "sem clipe de deslocamento subterrâneo contínuo: sand_dig em ciclo enquanto enterrado (fallback PROVISÓRIO, identificado no inspetor)", "sem LOD1/LOD2"]
+  },
+  "balanceamento": { "status": "provisorio", "provisorios": ["corpo.*", "movimento.*", "subsolo.*", "percepcao.*", "necessidades.*", "combate.*", "saude.*", "vida.*", "atividade"] }
+}

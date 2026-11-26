@@ -1,0 +1,53 @@
+{
+  "id": "arraia-de-areia",
+  "nome": "Arraia-de-Areia",
+  "ficha": null,
+  "papel": "herbivoro",
+  "atividade": "crepuscular",
+  "_fonteFicha": "Sem ficha em creatures/species/. Números PROVISÓRIOS derivados do GLB real (23 ossos, extensão 19,83×4,41×18,00 unidades, frente +X) e dos 22 clipes, entre eles glide_shallow e evade — uma criatura ágil, de corpo achatado, que vive rente à superfície da areia.",
+  "corpo": { "massaKg": [320, 560], "comprimentoM": 6.0, "alturaM": 1.3, "raio": 2.2 },
+  "movimento": { "andar": 0.9, "trote": 1.4, "corrida": 2.2, "aceleracao": 1.2, "giroGrausSeg": 45, "fatorCurvaFechada": 0.6, "resistenciaSeg": 25, "inclinacaoMaxGraus": 22, "nadar": false, "profundidadeMaxM": 0.4 },
+  "subsolo": {
+    "_nota": "Corpo achatado e leve: acelera rápido, faz curvas fechadas, muda de profundidade com facilidade e prefere o terço superior do corpo de areia (glide_shallow).",
+    "profundidadeMaxM": 9, "alturaCorpoM": 1.3,
+    "cruzeiro": 4.5, "arranque": 10.0, "aceleracao": 4.0, "giroGrausSeg": 85,
+    "subidaMs": 2.2, "descidaMs": 2.6, "mergulhoSeg": 1.4, "emergenciaSeg": 1.6,
+    "custoPorMetro": 0.012, "custoVerticalPorMetro": 0.06, "inclinacaoMaxEntradaGraus": 40,
+    "profundidadePreferidaM": 1.6
+  },
+  "percepcao": {
+    "visao": { "alcance": 26, "anguloGraus": 300, "alcanceProximo": 4, "tempoReconhecimentoSeg": 0.7 },
+    "audicao": { "alcance": 30, "erroRelativo": 0.25 },
+    "olfato": { "alcance": 35 },
+    "vibracao": { "alcance": 110, "alcanceVerticalM": 7, "limiar": 0.02, "sensibilidade": 1.1, "erroRelativo": 0.25 },
+    "memoriaSeg": 50,
+    "modificadoresPorEstado": { "descansando": { "visao": 0.5 }, "comendo": { "visao": 0.8 } }
+  },
+  "furtividade": { "camuflagem": 0.75, "fatorParado": 0.5, "ruidoPassos": 0.5 },
+  "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.03, "custoCorridaPorSeg": 4.0, "recuperacaoPorSeg": 2.2, "fatorRecuperacaoParado": 0.55, "fomePorDia": 45, "sedePorDia": 15, "comerPorSeg": 2.2, "beberPorSeg": 8, "limiteExaustao": 5, "fomeComer": 35, "fomeDesesperada": 80, "sedeProcurar": 70 },
+  "dieta": { "vegetacao": ["raizes", "sedimento"], "presas": [], "carnica": true, "microfauna": true, "_fonte": "clipes feed_roots, filter_feed e scavenge: raízes, sedimento e carniça." },
+  "teme": ["serracorion", "arenoceto"],
+  "competidores": [],
+  "temperamento": { "agressividade": [0.25, 0.1], "coragem": [0.35, 0.12], "medo": [0.6, 0.12], "vigilancia": [0.6, 0.1] },
+  "social": { "tipo": "bando", "tamanho": [2, 5], "probabilidadePar": 0.3, "cacaCooperativa": false, "territorial": false, "raioTerritorioM": 0, "marcacao": false, "alarme": true, "alcanceAlarmeM": 45 },
+  "combate": {
+    "protecao": { "cabeca": 0.2, "pescoco": 0.15, "tronco": 0.25, "flanco": 0.2, "pernas": 0.1, "cauda": 0.15 },
+    "resistenciaDor": 0.45, "equilibrio": 0.5, "forcaMordida": 0.3, "agarrar": false,
+    "forca": 0.3, "defesa": 0.25, "esquiva": 0.7,
+    "ataques": [
+      { "nome": "tapa_de_nadadeira", "alcance": 2.6, "dano": 12, "preparoSeg": 0.3, "recargaSeg": 1.6, "regioes": ["cabeca", "flanco"], "clipe": "fin_slap" },
+      { "nome": "varrida_de_cauda", "alcance": 3.2, "dano": 15, "preparoSeg": 0.4, "recargaSeg": 2.2, "regioes": ["pernas", "flanco"], "clipe": "tail_sweep" }
+    ],
+    "exibicao": "threat_display"
+  },
+  "saude": { "max": 120, "resistencia": 0.9, "sangramentoBase": 0.7, "regenPorDia": 12, "suscetibilidadeDoenca": 0.35 },
+  "vida": { "expectativaAnos": 18, "maturidadeAnos": 3, "gestacaoDias": 150, "ovos": true, "ninhada": [1, 4], "estacaoReprodutiva": "chuvosa", "desmameDias": 90, "crescimentoAnos": 2.5 },
+  "modelo": {
+    "glb": "assets/models/creatures/arraia-de-areia/v03/arraia-de-areia-v03-rig-animated-LOD0.glb",
+    "frente": "+X",
+    "medidaReferencia": "comprimento",
+    "clipes": { "parado": "idle", "andar": "glide_shallow", "trote": "swim_sand", "corrida": "swim_fast", "girarEsq": "turn_left", "girarDir": "turn_right", "alerta": "alert", "comer": "feed_roots", "beber": "filter_feed", "exibicao": "threat_display", "descansar": "rest", "ferido": "hurt", "morte": "death", "tapa_de_nadadeira": "fin_slap", "varrida_de_cauda": "tail_sweep", "mergulho": "dive", "emergencia": "surface", "escavar": "burrow", "irromper": "breach", "subsolo": "swim_sand", "subsoloRaso": "glide_shallow", "subsoloRapido": "swim_fast", "esquiva": "evade", "investida": "charge", "carnica": "scavenge" },
+    "limitacoes": ["sem clipes de locomoção de superfície (não há walk/run): fora da areia só idle/breach", "sem LOD1/LOD2"]
+  },
+  "balanceamento": { "status": "provisorio", "provisorios": ["corpo.*", "movimento.*", "subsolo.*", "percepcao.*", "necessidades.*", "combate.*", "saude.*", "vida.*", "atividade"] }
+}

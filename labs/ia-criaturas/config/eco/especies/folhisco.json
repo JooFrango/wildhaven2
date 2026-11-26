@@ -1,0 +1,208 @@
+{
+  "id": "folhisco",
+  "nome": "Folhisco",
+  "ficha": "creatures/species/folhisco.json",
+  "papel": "herbivoro",
+  "atividade": "diurno",
+  "_fonteFicha": "floresta temperada; 2–3 kg; 0,35–0,45 m; bando pequeno (4–9); anda 1,1 m/s, dispara 5 m/s por 6 s; não voa; presa principal da Boscaranha",
+  "corpo": {
+    "massaKg": [
+      2,
+      3
+    ],
+    "comprimentoM": 0.6,
+    "alturaM": 0.4,
+    "raio": 0.2
+  },
+  "movimento": {
+    "andar": 1.1,
+    "trote": 2.6,
+    "corrida": 5,
+    "aceleracao": 14,
+    "giroGrausSeg": 420,
+    "fatorCurvaFechada": 0.8,
+    "resistenciaSeg": 6,
+    "inclinacaoMaxGraus": 40,
+    "nadar": false,
+    "profundidadeMaxM": 0.1,
+    "escalarRochas": false
+  },
+  "percepcao": {
+    "visao": {
+      "alcance": 30,
+      "anguloGraus": 300,
+      "alcanceProximo": 2,
+      "tempoReconhecimentoSeg": 0.5
+    },
+    "audicao": {
+      "alcance": 20,
+      "erroRelativo": 0.2
+    },
+    "olfato": {
+      "alcance": 4
+    },
+    "memoriaSeg": 30,
+    "modificadoresPorEstado": {
+      "comendo": {
+        "visao": 0.7
+      },
+      "aquecendo": {
+        "visao": 0.9
+      }
+    }
+  },
+  "furtividade": {
+    "camuflagem": 0.55,
+    "fatorParado": 0.5,
+    "ruidoPassos": 0.4
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.02,
+    "custoCorridaPorSeg": 4.5,
+    "recuperacaoPorSeg": 3,
+    "fatorRecuperacaoParado": 0.6,
+    "fomePorDia": 35,
+    "sedePorDia": 25,
+    "comerPorSeg": 1.5,
+    "beberPorSeg": 6,
+    "limiteExaustao": 6,
+    "fomeProcurar": 45,
+    "sedeProcurar": 50
+  },
+  "dieta": {
+    "vegetacao": [
+      "capim",
+      "arbusto"
+    ],
+    "presas": [],
+    "carnica": false
+  },
+  "teme": [
+    "boscaranha",
+    "varrisco",
+    "rocantraz",
+    "proto-cacador-camuflado",
+    "proto-serpente-termica"
+  ],
+  "temperamento": {
+    "agressividade": [
+      0.1,
+      0.05
+    ],
+    "coragem": [
+      0.25,
+      0.1
+    ],
+    "medo": [
+      0.75,
+      0.1
+    ],
+    "vigilancia": [
+      0.55,
+      0.1
+    ]
+  },
+  "social": {
+    "tipo": "bando",
+    "tamanho": [
+      4,
+      9
+    ],
+    "territorial": false,
+    "refugio": "cobertura",
+    "coesaoM": 6
+  },
+  "combate": {
+    "protecao": {
+      "cabeca": 0.25,
+      "pescoco": 0.15,
+      "tronco": 0.35,
+      "flanco": 0.3,
+      "pernas": 0.1,
+      "cauda": 0.2
+    },
+    "resistenciaDor": 0.5,
+    "equilibrio": 0.75,
+    "forcaMordida": 0.2,
+    "agarrar": false,
+    "_v3": "provisório — ficha: dorso com placas achatadas sobrepostas; corpo baixo",
+    "forca": 0.05,
+    "defesa": 0.3,
+    "esquiva": 0.6,
+    "ataques": [
+      {
+        "nome": "bicada",
+        "alcance": 0.4,
+        "dano": 1,
+        "preparoSeg": 0.2,
+        "recargaSeg": 1,
+        "regioes": [
+          "cabeca",
+          "pernas"
+        ],
+        "clipe": "peck"
+      }
+    ]
+  },
+  "saude": {
+    "max": 22,
+    "resistencia": 0.7,
+    "sangramentoBase": 0.5,
+    "regenPorDia": 8,
+    "suscetibilidadeDoenca": 0.3
+  },
+  "vida": {
+    "expectativaAnos": 7,
+    "maturidadeAnos": 1.5,
+    "gestacaoDias": 45,
+    "ovos": true,
+    "ninhada": [
+      2,
+      5
+    ],
+    "estacaoReprodutiva": "chuvosa",
+    "desmameDias": 0,
+    "crescimentoAnos": 1.2,
+    "cuidadoParental": false
+  },
+  "modelo": {
+    "glb": "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb",
+    "frente": "-Z",
+    "medidaReferencia": "comprimento",
+    "clipes": {
+      "parado": "idle",
+      "andar": "walk",
+      "trote": "run",
+      "corrida": "run",
+      "comer": "peck",
+      "beber": "drink",
+      "alerta": "alert",
+      "ameaca": "alarm_call",
+      "recuo": "hide",
+      "aquecer": "bask",
+      "descansar": "preen",
+      "ferido": "hurt",
+      "morte": "death"
+    },
+    "limitacoes": [
+      "clipes no lugar (manifesto)"
+    ]
+  },
+  "balanceamento": {
+    "status": "experimental_v7",
+    "provisorios": [
+      "tudo exceto corpo, dieta e hábitos citados em _fonteFicha"
+    ],
+    "base": "cromatil.json"
+  },
+  "experimental": {
+    "v7": true,
+    "capacidades": [],
+    "nota": "Espécie real do catálogo usada como presa vulnerável nos cenários de veneno."
+  },
+  "memoriaDePerigo": {
+    "raioM": 15,
+    "seg": 600
+  }
+}

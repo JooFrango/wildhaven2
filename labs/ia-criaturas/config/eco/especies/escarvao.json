@@ -1,0 +1,54 @@
+{
+  "id": "escarvao",
+  "nome": "Escarvão",
+  "ficha": null,
+  "papel": "carnivoro",
+  "atividade": "noturno",
+  "_fonteFicha": "assets/models/creatures/escarvao/v02/README.md: oito pernas de quatro ossos, dois pedipalpos, ferrão de cauda; o próprio README pede revisão do contato dos tarsos com areia. Números PROVISÓRIOS; velocidades de clipe medidas no GLB (walk 0,455 m/s e run 1,963 m/s na escala do modelo, 51 ossos, extensão 5,21×2,68×4,05 unidades).",
+  "corpo": { "massaKg": [70, 110], "comprimentoM": 2.2, "alturaM": 0.8, "raio": 0.7 },
+  "movimento": { "andar": 0.9, "trote": 2.4, "corrida": 5.6, "aceleracao": 7, "giroGrausSeg": 260, "fatorCurvaFechada": 0.75, "resistenciaSeg": 12, "inclinacaoMaxGraus": 42, "nadar": false, "profundidadeMaxM": 0.3 },
+  "subsolo": {
+    "_nota": "Não nada na areia: escava e fica enterrado à espreita. Avanço subterrâneo lento e raso, a poucos metros do ponto de entrada (clipes burrow/emerge, sem swim_sand).",
+    "profundidadeMaxM": 1.4, "alturaCorpoM": 0.8,
+    "cruzeiro": 0.35, "arranque": 0.6, "aceleracao": 0.8, "giroGrausSeg": 40,
+    "subidaMs": 0.7, "descidaMs": 0.6, "mergulhoSeg": 2.25, "emergenciaSeg": 1.8,
+    "custoPorMetro": 0.3, "custoVerticalPorMetro": 0.5, "inclinacaoMaxEntradaGraus": 35,
+    "profundidadePreferidaM": 0.9
+  },
+  "percepcao": {
+    "visao": { "alcance": 14, "anguloGraus": 320, "alcanceProximo": 2, "tempoReconhecimentoSeg": 0.5 },
+    "audicao": { "alcance": 22, "erroRelativo": 0.3 },
+    "olfato": { "alcance": 40 },
+    "vibracao": { "alcance": 70, "alcanceVerticalM": 4, "limiar": 0.015, "sensibilidade": 1.8, "erroRelativo": 0.18 },
+    "memoriaSeg": 55,
+    "modificadoresPorEstado": { "descansando": { "visao": 0.5 }, "emboscada": { "visao": 0.4, "audicao": 1.1 } }
+  },
+  "furtividade": { "camuflagem": 0.8, "fatorParado": 0.35, "ruidoPassos": 0.4 },
+  "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.035, "custoCorridaPorSeg": 5.5, "recuperacaoPorSeg": 2.4, "fatorRecuperacaoParado": 0.5, "fomePorDia": 35, "sedePorDia": 20, "comerPorSeg": 1.6, "beberPorSeg": 8, "limiteExaustao": 5, "fomeCacar": 35, "fomeDesesperada": 80, "sedeProcurar": 65 },
+  "dieta": { "vegetacao": [], "presas": [], "carnica": true, "microfauna": true, "_nota": "Predador de pequenos vertebrados e invertebrados das dunas; no laboratório come carniça e a microfauna agregada dos níveis 2/3. Não ataca as espécies grandes." },
+  "teme": ["serracorion", "arenoceto"],
+  "competidores": ["serracorion"],
+  "temperamento": { "agressividade": [0.5, 0.12], "coragem": [0.4, 0.12], "medo": [0.45, 0.1], "vigilancia": [0.7, 0.08] },
+  "social": { "tipo": "solitario", "tamanho": [1, 1], "probabilidadePar": 0.05, "cacaCooperativa": false, "territorial": true, "raioTerritorioM": 60, "marcacao": false, "alarme": false },
+  "combate": {
+    "protecao": { "cabeca": 0.35, "pescoco": 0.3, "tronco": 0.4, "flanco": 0.3, "pernas": 0.15, "cauda": 0.25 },
+    "resistenciaDor": 0.6, "equilibrio": 0.75, "forcaMordida": 0.5, "agarrar": true,
+    "forca": 0.45, "defesa": 0.5, "esquiva": 0.45,
+    "ataques": [
+      { "nome": "pinca", "alcance": 1.4, "dano": 16, "preparoSeg": 0.3, "recargaSeg": 1.2, "regioes": ["pernas", "flanco"], "clipe": "pincer_grab" },
+      { "nome": "esmagamento", "alcance": 1.2, "dano": 26, "preparoSeg": 0.5, "recargaSeg": 2.4, "regioes": ["tronco", "pescoco"], "clipe": "pincer_crush" },
+      { "nome": "ferroada", "alcance": 1.8, "dano": 30, "preparoSeg": 0.45, "recargaSeg": 3.0, "regioes": ["tronco", "cabeca"], "clipe": "sting" }
+    ],
+    "exibicao": "threat_display"
+  },
+  "saude": { "max": 150, "resistencia": 1.1, "sangramentoBase": 0.5, "regenPorDia": 11, "suscetibilidadeDoenca": 0.25 },
+  "vida": { "expectativaAnos": 10, "maturidadeAnos": 2, "gestacaoDias": 90, "ovos": true, "ninhada": [2, 6], "estacaoReprodutiva": "chuvosa", "desmameDias": 60, "crescimentoAnos": 1.5 },
+  "modelo": {
+    "glb": "assets/models/creatures/escarvao/v02/escarvao_cobre_rig_anim_v02.glb",
+    "frente": "+X",
+    "medidaReferencia": "comprimento",
+    "clipes": { "parado": "idle", "andar": "walk", "trote": "walk", "corrida": "run", "lateral": "scuttle_side", "girarEsq": "turn_left", "girarDir": "turn_right", "alerta": "alert", "comer": "feed", "beber": "feed", "exibicao": "threat_display", "descansar": "rest", "ferido": "hurt", "morte": "death", "pinca": "pincer_grab", "esmagamento": "pincer_crush", "ferroada": "sting", "varrida_de_cauda": "tail_sweep", "mergulho": "burrow", "emergencia": "emerge", "escavar": "burrow", "subsolo": "burrow" },
+    "limitacoes": ["sem clipe de deslocamento subterrâneo: enquanto enterrado o laboratório segura o último quadro de burrow (fallback PROVISÓRIO, identificado no inspetor)", "sem LOD1/LOD2", "variantes rubro e oliva não usadas"]
+  },
+  "balanceamento": { "status": "provisorio", "provisorios": ["corpo.*", "movimento.*", "subsolo.*", "percepcao.*", "necessidades.*", "combate.*", "saude.*", "vida.*", "atividade"] }
+}

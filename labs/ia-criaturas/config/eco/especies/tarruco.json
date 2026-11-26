@@ -1,0 +1,35 @@
+{
+  "id": "tarruco",
+  "nome": "Tarruco",
+  "ficha": "creatures/species/tarruco.json",
+  "papel": "herbivoro",
+  "atividade": "crepuscular",
+  "_fonteFicha": "savana; raízes superficiais, brotos, frutos caídos; quase sempre solitário (exceto mãe e filhote); 12 kg; 0,75 m; 0,38 m; 24 km/h; resposta: hide → freeze → flee",
+  "corpo": { "massaKg": [9, 15], "comprimentoM": 0.75, "alturaM": 0.38, "raio": 0.28 },
+  "movimento": { "andar": 0.9, "trote": 2.6, "corrida": 6.7, "aceleracao": 8, "giroGrausSeg": 330, "fatorCurvaFechada": 0.75, "resistenciaSeg": 20, "inclinacaoMaxGraus": 32, "nadar": false, "profundidadeMaxM": 0.25 },
+  "percepcao": {
+    "visao": { "alcance": 22, "anguloGraus": 280, "alcanceProximo": 1.5, "tempoReconhecimentoSeg": 0.7 },
+    "audicao": { "alcance": 28, "erroRelativo": 0.15 },
+    "olfato": { "alcance": 25 },
+    "memoriaSeg": 30,
+    "modificadoresPorEstado": { "comendo": { "visao": 0.6, "audicao": 0.9 }, "escondido": { "visao": 0.8 } }
+  },
+  "furtividade": { "camuflagem": 0.35, "fatorParado": 0.45, "ruidoPassos": 0.6 },
+  "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.03, "custoCorridaPorSeg": 3.5, "recuperacaoPorSeg": 2.5, "fatorRecuperacaoParado": 0.5, "fomePorDia": 50, "sedePorDia": 45, "comerPorSeg": 2, "beberPorSeg": 8, "limiteExaustao": 6, "fomeProcurar": 45, "sedeProcurar": 45 },
+  "dieta": { "vegetacao": ["capim", "arbusto"], "presas": [], "carnica": false },
+  "teme": ["varrisco", "rocantraz", "proto-cacador-camuflado"],
+  "temperamento": { "agressividade": [0.1, 0.05], "coragem": [0.25, 0.1], "medo": [0.65, 0.1], "vigilancia": [0.55, 0.1] },
+  "social": { "tipo": "solitario", "tamanho": [1, 1], "maeEFilhote": true, "territorial": false, "respostaAmeaca": ["esconder", "congelar", "fugir"] },
+  "combate": {
+    "protecao": {"cabeca": 0.3, "pescoco": 0.1, "tronco": 0.6, "flanco": 0.5, "pernas": 0.1, "cauda": 0.3}, "resistenciaDor": 0.5, "equilibrio": 0.8, "forcaMordida": 0.3, "agarrar": false, "_v3": "provisório — ficha: carapaça dorsal blindada (armadillo_shell); quadrúpede baixo",
+    "forca": 0.08, "defesa": 0.2, "esquiva": 0.45, "ataques": [{ "nome": "mordida_defensiva", "alcance": 0.5, "dano": 3, "preparoSeg": 0.2, "recargaSeg": 1.0, "regioes": ["cabeca", "pernas"], "clipe": "alert" }] },
+  "saude": { "max": 60, "resistencia": 0.8, "sangramentoBase": 0.6, "regenPorDia": 10, "suscetibilidadeDoenca": 0.35 },
+  "vida": { "expectativaAnos": 6, "maturidadeAnos": 0.9, "gestacaoDias": 60, "ninhada": [1, 3], "estacaoReprodutiva": "chuvosa", "desmameDias": 70, "crescimentoAnos": 0.8 },
+  "modelo": {
+    "glb": "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD0.glb",
+    "frente": "+Z",
+    "medidaReferencia": "comprimento",
+    "clipes": { "parado": "idle", "andar": "walk", "trote": "trot", "corrida": "flee", "comer": "dig", "beber": "forage", "alerta": "alert", "farejar": "sniff", "descansar": "rest", "ferido": "alert", "morte": "death" }
+  },
+  "balanceamento": { "status": "provisorio", "provisorios": ["movimento.resistenciaSeg", "furtividade.camuflagem", "vida.gestacaoDias", "vida.expectativaAnos"] }
+}

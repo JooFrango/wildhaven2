@@ -1,0 +1,252 @@
+{
+  "id": "proto-serpente-termica",
+  "nome": "PROTÓTIPO · Serpentino Termossensível",
+  "ficha": null,
+  "papel": "carnivoro",
+  "atividade": "noturno",
+  "_fonteFicha": "ESPÉCIE HIPOTÉTICA DE LABORATÓRIO. Não há serpente no catálogo. Usa o GLB do Gravarto só como corpo de teste (réptil quadrúpede, não serpente).",
+  "corpo": {
+    "massaKg": [
+      28,
+      45
+    ],
+    "comprimentoM": 2.6,
+    "alturaM": 0.7,
+    "raio": 0.5,
+    "ectotermico": true
+  },
+  "movimento": {
+    "andar": 0.8,
+    "trote": 2.2,
+    "corrida": 6.5,
+    "aceleracao": 9,
+    "giroGrausSeg": 160,
+    "fatorCurvaFechada": 0.6,
+    "resistenciaSeg": 5,
+    "inclinacaoMaxGraus": 35,
+    "nadar": false,
+    "profundidadeMaxM": 0.8
+  },
+  "percepcao": {
+    "visao": {
+      "alcance": 14,
+      "anguloGraus": 150,
+      "alcanceProximo": 1.5,
+      "tempoReconhecimentoSeg": 1.2
+    },
+    "audicao": {
+      "alcance": 6,
+      "erroRelativo": 0.4
+    },
+    "olfato": {
+      "alcance": 25
+    },
+    "memoriaSeg": 40,
+    "modificadoresPorEstado": {
+      "descansando": {
+        "visao": 0.7
+      },
+      "comendo_carcaca": {
+        "visao": 0.7,
+        "audicao": 0.9
+      }
+    },
+    "termorrecepcao": {
+      "alcance": 16,
+      "anguloGraus": 130,
+      "sensibilidadeC": 2,
+      "contrasteRefC": 12,
+      "erroRelativo": 0.2,
+      "tempoReconhecimentoSeg": 1
+    }
+  },
+  "furtividade": {
+    "camuflagem": 0.4,
+    "fatorParado": 0.4,
+    "ruidoPassos": 0.35
+  },
+  "necessidades": {
+    "energiaMax": 100,
+    "custoBasePorSeg": 0.04,
+    "custoCorridaPorSeg": 6.5,
+    "recuperacaoPorSeg": 2.6,
+    "fatorRecuperacaoParado": 0.5,
+    "fomePorDia": 12,
+    "sedePorDia": 15,
+    "comerPorSeg": 2.5,
+    "beberPorSeg": 12,
+    "limiteExaustao": 5,
+    "fomeCacar": 30,
+    "fomeDesesperada": 80,
+    "sedeProcurar": 45
+  },
+  "dieta": {
+    "vegetacao": [],
+    "presas": [
+      "folhisco",
+      "cromatil"
+    ],
+    "carnica": false,
+    "microfauna": true,
+    "_microfauna": "ficha: ground_vertebrates — recurso agregado nos níveis 2/3 (não individualizado)"
+  },
+  "teme": [
+    "rocantraz",
+    "proto-cacador-camuflado"
+  ],
+  "competidores": [
+    "proto-serpente-termica"
+  ],
+  "temperamento": {
+    "agressividade": [
+      0.55,
+      0.15
+    ],
+    "coragem": [
+      0.55,
+      0.15
+    ],
+    "medo": [
+      0.35,
+      0.1
+    ],
+    "vigilancia": [
+      0.4,
+      0.1
+    ]
+  },
+  "social": {
+    "tipo": "solitario",
+    "tamanho": [
+      1,
+      1
+    ],
+    "probabilidadePar": 0,
+    "cacaCooperativa": false,
+    "territorial": false,
+    "raioTerritorioM": 220,
+    "marcacao": false
+  },
+  "combate": {
+    "protecao": {
+      "cabeca": 0.15,
+      "pescoco": 0.05,
+      "tronco": 0.1,
+      "flanco": 0.1,
+      "pernas": 0.1,
+      "cauda": 0.05
+    },
+    "resistenciaDor": 0.55,
+    "equilibrio": 0.6,
+    "forcaMordida": 0.8,
+    "agarrar": false,
+    "_v3": "provisório — ficha: sem couraça; bípede com cauda de equilíbrio; mordida e garra em foice",
+    "forca": 0.45,
+    "defesa": 0.3,
+    "esquiva": 0.3,
+    "ataques": [
+      {
+        "nome": "mordida",
+        "alcance": 1.6,
+        "dano": 8,
+        "preparoSeg": 0.25,
+        "recargaSeg": 1.8,
+        "regioes": [
+          "tronco",
+          "pernas",
+          "pescoco",
+          "flanco"
+        ],
+        "clipe": "bite"
+      }
+    ],
+    "exibicao": "threaten"
+  },
+  "saude": {
+    "max": 90,
+    "resistencia": 1,
+    "sangramentoBase": 0.6,
+    "regenPorDia": 10,
+    "suscetibilidadeDoenca": 0.3
+  },
+  "vida": {
+    "expectativaAnos": 14,
+    "maturidadeAnos": 2.5,
+    "gestacaoDias": 70,
+    "ovos": true,
+    "ninhada": [
+      1,
+      3
+    ],
+    "estacaoReprodutiva": "chuvosa",
+    "desmameDias": 120,
+    "crescimentoAnos": 2
+  },
+  "modelo": {
+    "glb": "assets/models/creatures/gravarto/v02/gravarto-v02-animated-LOD0.glb",
+    "frente": "+X",
+    "medidaReferencia": "comprimento",
+    "clipes": {
+      "parado": "idle",
+      "andar": "walk",
+      "trote": "trot",
+      "corrida": "short_sprint",
+      "espreita": "stalk",
+      "girarEsq": "turn_left",
+      "girarDir": "turn_right",
+      "alerta": "alert",
+      "farejar": "sniff",
+      "mordida": "bite",
+      "garra_foice": "claw_slash",
+      "bote": "pounce",
+      "comer": "feed",
+      "beber": "drink",
+      "exibicao": "threaten",
+      "descansar": "rest",
+      "ferido": "hurt",
+      "morte": "death"
+    },
+    "limitacoes": [
+      "PROXY: corpo do Gravarto",
+      "sem animação de língua/fosseta"
+    ]
+  },
+  "balanceamento": {
+    "status": "experimental_v7",
+    "provisorios": [
+      "tudo exceto corpo, dieta e hábitos citados em _fonteFicha"
+    ],
+    "base": "varrisco.json"
+  },
+  "experimental": {
+    "v7": true,
+    "hipotetica": true,
+    "capacidades": [
+      "termorrecepcao",
+      "veneno",
+      "taticasDeEmboscada"
+    ],
+    "proxyVisual": "GLB do Gravarto (não é uma serpente; não é a aparência desta criatura)",
+    "nota": "Serve só para testar termorrecepção e veneno hemotóxico. Nada aqui altera o Gravarto."
+  },
+  "veneno": {
+    "tipo": "hemotoxico",
+    "potencia": 1,
+    "doseMg": 25,
+    "reservaMg": 60,
+    "recargaMgPorSeg": 0.01,
+    "ataques": [
+      "mordida"
+    ],
+    "meiaVidaSeg": 200,
+    "latenciaSeg": 15,
+    "esperaSeg": 120,
+    "custoEnergiaPorMg": 0.2
+  },
+  "resistenciaVeneno": 0.5,
+  "taticasDeEmboscada": {
+    "raioBuscaM": 20,
+    "esperaMaxSeg": 180,
+    "distanciaDisparoM": 2.2
+  }
+}

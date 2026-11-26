@@ -1,0 +1,36 @@
+{
+  "id": "velsari",
+  "nome": "Velsari",
+  "ficha": "creatures/species/velsari.json",
+  "papel": "herbivoro",
+  "atividade": "diurno",
+  "_fonteFicha": "savana; grama e brotos; small_group 4–10 com alarme; 22 kg; ~1 m; 0,65 m de cernelha; 50 km/h; resposta: alert → call → flee; saltos laterais de fuga",
+  "corpo": { "massaKg": [18, 26], "comprimentoM": 1.0, "alturaM": 0.65, "raio": 0.35 },
+  "movimento": { "andar": 1.3, "trote": 4.0, "corrida": 12.5, "aceleracao": 9, "giroGrausSeg": 320, "fatorCurvaFechada": 0.7, "resistenciaSeg": 35, "inclinacaoMaxGraus": 34, "nadar": false, "profundidadeMaxM": 0.45 },
+  "percepcao": {
+    "visao": { "alcance": 38, "anguloGraus": 300, "alcanceProximo": 2.5, "tempoReconhecimentoSeg": 0.7 },
+    "audicao": { "alcance": 30, "erroRelativo": 0.15 },
+    "olfato": { "alcance": 12 },
+    "memoriaSeg": 40,
+    "modificadoresPorEstado": { "pastando": { "visao": 0.55, "audicao": 0.8 }, "bebendo": { "visao": 0.45, "audicao": 0.8 }, "descansando": { "visao": 0.7 }, "vigiando": { "visao": 1.25, "audicao": 1.1 } }
+  },
+  "furtividade": { "camuflagem": 0.15, "fatorParado": 0.75, "ruidoPassos": 1 },
+  "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.03, "custoCorridaPorSeg": 2.4, "recuperacaoPorSeg": 2.5, "fatorRecuperacaoParado": 0.5, "fomePorDia": 55, "sedePorDia": 80, "comerPorSeg": 3, "beberPorSeg": 12, "limiteExaustao": 6, "fomeProcurar": 45, "sedeProcurar": 40 },
+  "dieta": { "vegetacao": ["capim"], "presas": [], "carnica": false },
+  "teme": ["varrisco", "rocantraz", "proto-cacador-camuflado"],
+  "temperamento": { "agressividade": [0.12, 0.06], "coragem": [0.3, 0.1], "medo": [0.7, 0.1], "vigilancia": [0.6, 0.15] },
+  "social": { "tipo": "bando", "tamanho": [4, 10], "sentinela": true, "alarme": true, "alcanceAlarmeM": 70, "coesaoM": 9, "fuga": "coordenada_com_dispersao", "protegeFilhotes": true, "dominancia": true, "territorial": false },
+  "combate": {
+    "protecao": {"cabeca": 0.05, "pescoco": 0.03, "tronco": 0.05, "flanco": 0.05, "pernas": 0.05, "cauda": 0}, "resistenciaDor": 0.25, "equilibrio": 0.55, "forcaMordida": 0.2, "agarrar": false, "_v3": "provisório — ficha: presa leve, sem proteção; defesa por fuga e saltos",
+    "forca": 0.15, "defesa": 0.1, "esquiva": 0.55, "ataques": [{ "nome": "coice", "alcance": 1.0, "dano": 5, "preparoSeg": 0.25, "recargaSeg": 1.4, "regioes": ["cabeca", "tronco"], "clipe": "leap" }] },
+  "saude": { "max": 100, "resistencia": 0.8, "sangramentoBase": 0.7, "regenPorDia": 14, "suscetibilidadeDoenca": 0.4 },
+  "vida": { "expectativaAnos": 9, "maturidadeAnos": 1.2, "gestacaoDias": 150, "ninhada": [1, 2], "estacaoReprodutiva": "chuvosa", "desmameDias": 110, "crescimentoAnos": 1.0 },
+  "modelo": {
+    "glb": "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD0.glb",
+    "frente": "+Z",
+    "medidaReferencia": "comprimento",
+    "clipes": { "parado": "idle", "andar": "walk", "trote": "walk", "corrida": "run", "fuga": "flee", "salto": "leap", "comer": "graze", "beber": "graze", "alerta": "alert", "chamar": "call", "vigiar": "alert", "descansar": "rest", "ferido": "alert", "morte": "death" },
+    "limitacoes": ["sem clipe 'drink' (beber usa 'graze')", "sem GLB juvenil (filhote = adulto em escala)"]
+  },
+  "balanceamento": { "status": "provisorio", "provisorios": ["movimento.resistenciaSeg", "percepcao.visao.alcance", "percepcao.audicao.alcance", "necessidades.fomePorDia", "necessidades.sedePorDia", "combate.esquiva", "saude.regenPorDia", "vida.gestacaoDias", "vida.expectativaAnos"] }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "cromatil",
+  "nome": "Cromátil",
+  "ficha": "creatures/species/cromatil.json",
+  "papel": "herbivoro",
+  "atividade": "diurno",
+  "_fonteFicha": "savana seca/rochosa; folhas, flores, brotos, suculentas; solitário; ectotérmico, busca insolação e se refugia entre rochas; 2,5–5 kg",
+  "corpo": { "massaKg": [2.5, 5], "comprimentoM": 0.55, "alturaM": 0.15, "raio": 0.18 },
+  "movimento": { "andar": 0.5, "trote": 2.0, "corrida": 5.0, "aceleracao": 12, "giroGrausSeg": 400, "fatorCurvaFechada": 0.8, "resistenciaSeg": 12, "inclinacaoMaxGraus": 55, "nadar": false, "profundidadeMaxM": 0.1, "escalarRochas": true },
+  "percepcao": {
+    "visao": { "alcance": 20, "anguloGraus": 320, "alcanceProximo": 1.0, "tempoReconhecimentoSeg": 0.5 },
+    "audicao": { "alcance": 15, "erroRelativo": 0.2 },
+    "olfato": { "alcance": 5 },
+    "memoriaSeg": 20,
+    "modificadoresPorEstado": { "comendo": { "visao": 0.7 }, "aquecendo": { "visao": 0.9 } }
+  },
+  "furtividade": { "camuflagem": 0.55, "fatorParado": 0.5, "ruidoPassos": 0.4 },
+  "necessidades": { "energiaMax": 100, "custoBasePorSeg": 0.02, "custoCorridaPorSeg": 4.5, "recuperacaoPorSeg": 3, "fatorRecuperacaoParado": 0.6, "fomePorDia": 35, "sedePorDia": 25, "comerPorSeg": 1.5, "beberPorSeg": 6, "limiteExaustao": 6, "fomeProcurar": 45, "sedeProcurar": 50 },
+  "dieta": { "vegetacao": ["capim", "arbusto"], "presas": [], "carnica": false },
+  "teme": ["varrisco", "rocantraz", "boscaranha", "proto-serpente-termica", "proto-cacador-camuflado"],
+  "temperamento": { "agressividade": [0.1, 0.05], "coragem": [0.25, 0.1], "medo": [0.75, 0.1], "vigilancia": [0.55, 0.1] },
+  "social": { "tipo": "solitario", "tamanho": [1, 1], "territorial": false, "refugio": "rochas" },
+  "combate": {
+    "protecao": {"cabeca": 0.25, "pescoco": 0.15, "tronco": 0.35, "flanco": 0.3, "pernas": 0.1, "cauda": 0.2}, "resistenciaDor": 0.5, "equilibrio": 0.75, "forcaMordida": 0.2, "agarrar": false, "_v3": "provisório — ficha: dorso com placas achatadas sobrepostas; corpo baixo",
+    "forca": 0.05, "defesa": 0.3, "esquiva": 0.6, "ataques": [{ "nome": "chicotada_cauda", "alcance": 0.5, "dano": 2, "preparoSeg": 0.2, "recargaSeg": 1.2, "regioes": ["cabeca"], "clipe": "tail_whip" }] },
+  "saude": { "max": 30, "resistencia": 0.7, "sangramentoBase": 0.5, "regenPorDia": 8, "suscetibilidadeDoenca": 0.3 },
+  "vida": { "expectativaAnos": 7, "maturidadeAnos": 1.5, "gestacaoDias": 45, "ovos": true, "ninhada": [2, 5], "estacaoReprodutiva": "chuvosa", "desmameDias": 0, "crescimentoAnos": 1.2, "cuidadoParental": false },
+  "modelo": {
+    "glb": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb",
+    "frente": "+X",
+    "medidaReferencia": "comprimento",
+    "clipes": { "parado": "idle", "andar": "walk", "trote": "scurry", "corrida": "scurry", "comer": "forage", "beber": "forage", "alerta": "head_tilt", "ameaca": "threat", "recuo": "retreat", "aquecer": "bask", "descansar": "rest", "ferido": "retreat", "morte": "death" },
+    "limitacoes": ["ficha sem comprimento: 0,55 m é provisório (coerente com 2,5–5 kg)", "ciclo 'scurry' autorado para velocidade baixa: desliza em sprint"]
+  },
+  "balanceamento": { "status": "provisorio", "provisorios": ["corpo.comprimentoM", "movimento.corrida", "furtividade.camuflagem", "vida.gestacaoDias", "vida.ninhada", "vida.expectativaAnos"] }
+}
