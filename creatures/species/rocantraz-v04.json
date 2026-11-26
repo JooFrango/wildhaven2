@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "0.4.0",
+  "id": "rocantraz",
+  "name": "Rocantraz",
+  "type": "apex_carnivore",
+  "status": "biped_anatomy_biomechanics_v04_asset",
+  "habitats": [
+    "temperate_forest",
+    "tropical_forest",
+    "mountains",
+    "desert",
+    "rocky_desert"
+  ],
+  "variants": {
+    "forest": {
+      "palette": "moss, limestone, charcoal",
+      "strategy": "camouflaged ambush"
+    },
+    "desert": {
+      "palette": "ochre, rust and sand",
+      "strategy": "short burst pursuit"
+    }
+  },
+  "rarity": "very_rare",
+  "social": "solitary",
+  "locomotion": "strictly_bipedal",
+  "anatomy": {
+    "loadBearingLimbs": 2,
+    "attackArms": 2,
+    "tailSegments": 8,
+    "refinement": [
+      "muscle connection at hips and shoulders",
+      "soft patellar sleeve",
+      "thigh hamstring",
+      "Achilles tendon",
+      "broad metatarsal foot",
+      "shorter skull",
+      "zygomatic arch",
+      "breathing intercostal mesh"
+    ]
+  },
+  "biomechanics": {
+    "kinematics": "analytic two-link sagittal-plane foot IK",
+    "stability": "alternating lateral support and body mass transfer",
+    "footContact": "near-ground height in stance with elevated swing; no full horizontal locking",
+    "other": [
+      "ankle roll",
+      "delayed tail balance",
+      "braced combat stance",
+      "breathing rib motion"
+    ]
+  },
+  "animations": [
+    "idle",
+    "walk",
+    "stalk",
+    "run",
+    "charge",
+    "bite",
+    "swipe",
+    "roar",
+    "feed",
+    "defend",
+    "rest",
+    "die"
+  ],
+  "assets": {
+    "forest": "assets/models/creatures/rocantraz/rocantraz-forest-biped-animated-v04.glb",
+    "desert": "assets/models/creatures/rocantraz/rocantraz-desert-biped-animated-v04.glb",
+    "preview": "assets/models/creatures/rocantraz/rocantraz-biped-forest-desert-real-3d-detail-v04.png",
+    "manifest": "assets/models/creatures/rocantraz/rocantraz-biped-manifest-v04.json",
+    "source": "assets/models/creatures/rocantraz-v04/source/rocantraz.mjs"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawns": false,
+    "navigation": false,
+    "terrainIK": false
+  },
+  "limitations": [
+    "hierarchical transforms, no weighted skin deformation",
+    "foot IK has ground-height target but is baked in-place",
+    "no physics collision"
+  ],
+  "notes": "The Rocantraz remains a large fantastical apex predator, not an actual zoological species."
+}

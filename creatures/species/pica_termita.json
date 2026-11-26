@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "0.1",
+  "id": "pica_termita",
+  "name": "Pica-Termita de Crista",
+  "status": "in_review",
+  "category": "insectivore_specialist",
+  "habitats": [
+    "grassland",
+    "savanna",
+    "tropical_forest_edge",
+    "temperate_forest_edge"
+  ],
+  "diet": [
+    "termites"
+  ],
+  "social": {
+    "type": "territorial_pair",
+    "notes": "Projeto de espécie territorial, sem comportamento implementado na Alpha jogável."
+  },
+  "behaviors": [
+    "idle",
+    "walk",
+    "hop",
+    "fly",
+    "land",
+    "lookout",
+    "inspect",
+    "peck",
+    "feed",
+    "tongue_out",
+    "tongue_in",
+    "crest_display",
+    "wing_spread",
+    "alert",
+    "flee",
+    "rest",
+    "hurt",
+    "death"
+  ],
+  "ecologicalRelationships": {
+    "trophicRole": "termite_colony_predator",
+    "foodSource": "persistent_termite_colonies",
+    "colonyPopulationConsumedPerVisit": 60,
+    "visibleMoundDamagePerVisit": 0.01,
+    "specialism": "A retirada de indivíduos diminui a população do cupinzeiro. Se chegar a zero, a colônia se extingue para sempre.",
+    "competition": [
+      "ferrunco",
+      "dunlingua"
+    ]
+  },
+  "artDirection": "Ave fantástica de crista alta vermelho-laranja, penas de asa volumétricas iridescentes, cauda ornamental longa, bico fino e língua extratora; pernas agarradoras.",
+  "body": {
+    "heightMinM": 0.65,
+    "heightMaxM": 0.95,
+    "massMinKg": 0.9,
+    "massMaxKg": 2.6
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 295,
+      "rearBlindSpotDeg": 65,
+      "notes": "Visão conceitual, depende de obstáculos e vegetação."
+    },
+    "smell": {
+      "relativeAcuity": "low",
+      "notes": "A detecção olfativa sofre interferência de vento, relevo e umidade."
+    }
+  },
+  "locomotion": {
+    "walkMps": 0.6666666666666666,
+    "sprintMps": 2,
+    "flight": true,
+    "notes": "Valores provisórios para testes ecológicos; a movimentação não está implementada no game."
+  },
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/pica-termita/pica_termita-animated-v02.glb",
+    "riggedModel": "assets/models/creatures/pica-termita/pica_termita-animated-v02.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "hop",
+      "fly",
+      "land",
+      "lookout",
+      "inspect",
+      "peck",
+      "feed",
+      "tongue_out",
+      "tongue_in",
+      "crest_display",
+      "wing_spread",
+      "alert",
+      "flee",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "notes": "GLB com geometrias mid-poly reais e rig hierárquico com animações por pivôs; não usa SkinnedMesh/skin weights. Criado e versionado em wildhaven-termite-specialists-3d-v01. Asset independente da Alpha."
+}

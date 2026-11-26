@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "0.1",
+  "id": "velsari",
+  "name": "Velsari",
+  "title": "Corredor Dourado",
+  "category": "small_herbivore",
+  "status": "animated_3d_asset_in_review",
+  "habitats": [
+    "savanna"
+  ],
+  "diet": [
+    "grass",
+    "new_shoots"
+  ],
+  "rarity": "relatively_common",
+  "social": {
+    "type": "small_group",
+    "typical": [
+      4,
+      10
+    ],
+    "alarmCommunication": true
+  },
+  "body": {
+    "lengthTargetM": 1,
+    "shoulderHeightTargetM": 0.65,
+    "adultMassTargetKg": 22
+  },
+  "behavior": {
+    "movement": "fast springing gait and lateral escape jumps",
+    "predatorResponse": [
+      "alert",
+      "call",
+      "flee"
+    ],
+    "maxSpeedTargetKmh": 50
+  },
+  "animations": [
+    "idle",
+    "walk",
+    "run",
+    "leap",
+    "graze",
+    "alert",
+    "call",
+    "flee",
+    "rest",
+    "death"
+  ],
+  "assets": {
+    "model": "assets/models/creatures/velsari/velsari-savanna-animated-v01.glb",
+    "preview": "assets/models/creatures/velsari/velsari-real-3d-three-quarter-v01.png",
+    "source": "assets/models/creatures/savanna-small-herbivores/source/fauna.mjs"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false
+  },
+  "notes": "Original small savanna ungulate, golden markings, short horns, large ears. Concept approved. Real polygonal 3D + animations only."
+}

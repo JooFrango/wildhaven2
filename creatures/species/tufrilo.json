@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "0.1",
+  "id": "tufrilo",
+  "name": "Tufrilo",
+  "status": "in_review",
+  "category": "herbivore",
+  "habitats": [
+    "temperate_forest",
+    "temperate_forest_edge",
+    "shrubland",
+    "grassland_transition"
+  ],
+  "diet": [
+    "seeds",
+    "sprouts",
+    "young_leaves",
+    "berries",
+    "fallen_fruit",
+    "soft_herbs"
+  ],
+  "social": {
+    "type": "small_family_group",
+    "notes": "Grupos de 3–7 que trocam alertas audíveis e procuram abrigo entre raízes e tocas rasas."
+  },
+  "behaviors": [
+    "idle",
+    "walk",
+    "hop",
+    "bound",
+    "sprint",
+    "sniff",
+    "forage",
+    "nibble",
+    "collect_seed",
+    "stash_seed",
+    "dig",
+    "look_around",
+    "alert_call",
+    "freeze",
+    "flee",
+    "hide",
+    "groom",
+    "drink",
+    "rest",
+    "sleep"
+  ],
+  "ecologicalRelationships": {
+    "role": "small_herbivore_and_seed_distributor",
+    "preyFor": [
+      "boscaranha",
+      "nharuk"
+    ],
+    "foragingImpact": [
+      "consumes_seeds_and_sprouts",
+      "locally_disturbs_leaf_litter",
+      "caches_some_seeds_which_may_germinate"
+    ],
+    "interactions": {
+      "folhisco": "competition_for_some_seeds_and_berries",
+      "boscaranha": "ambush_predator",
+      "nharuk": "opportunistic_prey_when_vulnerable",
+      "carniroca": "scavenger_after_death"
+    },
+    "notes": "Seed caches and life-cycle ecology are proposals; 3D clips exist but no ecosystem or inventory logic is implemented."
+  },
+  "body": {
+    "heightMinM": 0.18,
+    "heightMaxM": 0.27,
+    "massMinKg": 2,
+    "massMaxKg": 5
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 275,
+      "rearBlindSpotDeg": 85,
+      "detectMovingTargetM": 19,
+      "detectStillTargetM": 7,
+      "notes": "Temperate understory reduces visibility; no seeing through vegetation."
+    },
+    "hearing": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 30,
+      "notes": "Alarm whistles audible to local family group; wind and obstacles attenuate sound."
+    },
+    "smell": {
+      "relativeAcuity": "medium",
+      "detectionRangeM": 15,
+      "notes": "Detects plants, seed caches and recent predator scent when conditions allow."
+    }
+  },
+  "locomotion": {
+    "walkMps": 0.68,
+    "sprintMps": 5.1,
+    "maxSprintSeconds": 5,
+    "flight": false,
+    "jumpHeightM": 0.48,
+    "notes": "Hopping herbivore with powerful hind legs, short energetic escape bursts and low stamina. Gameplay tuning values."
+  },
+  "threatResponse": {
+    "strategy": "freeze_then_hide_or_hop_away",
+    "states": [
+      "forage",
+      "alert",
+      "freeze",
+      "warn",
+      "flee",
+      "hide"
+    ],
+    "alarmCall": true,
+    "notes": "Does not automatically know predator location; responds to realistic nearby cues."
+  },
+  "artDirection": "Original small forest herbivore mid-poly quadruped. Compact pear-shaped moss and russet body, cream throat, large upright leaf-shaped ears, slightly oversized hind legs, short tuft tail, dorsal bristled crest, four clearly articulated paws, rounded expressive facial anatomy but not a rabbit clone. Real GLB mesh and skeleton.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/tufrilo/tufrilo_animated_v01.glb",
+    "riggedModel": "assets/models/creatures/tufrilo/tufrilo_animated_v01.glb",
+    "animations": [
+      "idle",
+      "breathing",
+      "walk",
+      "hop",
+      "bound",
+      "sprint",
+      "turn_left",
+      "turn_right",
+      "sniff",
+      "forage",
+      "nibble",
+      "collect_seed",
+      "stash_seed",
+      "dig",
+      "look_around",
+      "alert_call",
+      "freeze",
+      "flee",
+      "hide",
+      "groom",
+      "drink",
+      "rest",
+      "sleep",
+      "hurt",
+      "death"
+    ]
+  },
+  "notes": "Protótipo 3D procedural real v0.1, 2 GLBs LOD0/LOD1 verificados, 20 ossos e 25 clipes. Fonte e viewer em assets/models/creatures/temperate-wildlife-pair-v01. Sem IA integrada, sem comportamento real de guardar sementes, sem IK e ainda pendente de aprovação visual."
+}

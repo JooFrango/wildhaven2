@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "0.1",
+  "id": "tarruco",
+  "name": "Tarruco",
+  "title": "Raizeiro da Savana",
+  "category": "small_herbivore",
+  "status": "redesigned_animated_3d_asset_in_review",
+  "habitats": [
+    "savanna"
+  ],
+  "subhabitats": [
+    "savanna_shrubland"
+  ],
+  "diet": [
+    "surface_roots",
+    "new_shoots",
+    "fallen_fruit"
+  ],
+  "rarity": "moderately_common",
+  "social": {
+    "type": "mostly_solitary",
+    "exception": [
+      "mother_and_offspring"
+    ]
+  },
+  "body": {
+    "lengthTargetM": 0.75,
+    "shoulderHeightTargetM": 0.38,
+    "adultMassTargetKg": 12
+  },
+  "anatomy": {
+    "design": "short snout, large ears, three small brow crest bumps, compact furred body, powerful forelegs and digging claws",
+    "exclusions": [
+      "armadillo_shell",
+      "dorsal_armored_carapace",
+      "tapir_trunk"
+    ]
+  },
+  "behavior": {
+    "movement": "low quick steps",
+    "foodSearch": "shallow scraping to uncover roots",
+    "predatorResponse": [
+      "hide",
+      "freeze",
+      "flee"
+    ],
+    "maxSpeedTargetKmh": 24
+  },
+  "animations": [
+    "idle",
+    "walk",
+    "trot",
+    "dig",
+    "forage",
+    "alert",
+    "flee",
+    "sniff",
+    "rest",
+    "death"
+  ],
+  "assets": {
+    "model": "assets/models/creatures/tarruco/tarruco-savanna-animated-v01.glb",
+    "preview": "assets/models/creatures/tarruco/tarruco-real-3d-three-quarter-v01.png",
+    "source": "assets/models/creatures/savanna-small-herbivores/source/fauna.mjs"
+  },
+  "integration": {
+    "gameplay": false,
+    "spawn": false,
+    "ai": false
+  },
+  "notes": "Old armored-tatu/Tapir concept rejected; redesigned as distinct short-muzzled furry root grazer. Real 3D asset + 10 animations only."
+}

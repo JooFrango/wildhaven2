@@ -1,0 +1,142 @@
+{
+  "schemaVersion": "0.1",
+  "id": "torvalho",
+  "name": "Torvalho",
+  "status": "proposal",
+  "category": "herbivore",
+  "habitats": [
+    "temperate_grassland",
+    "temperate_forest_edge",
+    "woodland_clearing",
+    "temperate_riparian_meadow"
+  ],
+  "diet": [
+    "grasses",
+    "sedges",
+    "herbaceous_plants",
+    "fallen_leaves",
+    "young_shoots"
+  ],
+  "social": {
+    "type": "defensive_herd",
+    "notes": "Manadas de 5–12; adultos experientes formam bloqueios para proteger filhotes. Machos podem se afastar em parte do ciclo reprodutivo."
+  },
+  "behaviors": [
+    "graze",
+    "ruminate",
+    "drink",
+    "rest",
+    "rub_horns",
+    "dust_bath",
+    "sniff_air",
+    "watch",
+    "alarm_snort",
+    "group_defense",
+    "protect_calf",
+    "charge",
+    "stomp",
+    "flee",
+    "regroup",
+    "migrate_short_range",
+    "calve"
+  ],
+  "ecologicalRelationships": {
+    "role": "large_grazer_and_ecosystem_engineer",
+    "predators": [
+      "large_apex_predators"
+    ],
+    "seedDispersal": true,
+    "habitatEffects": [
+      "tramples_grass_and_forms_paths",
+      "creates_small_clearings",
+      "fertilizes_soil",
+      "redistributes_seeds"
+    ],
+    "notes": "Pastagem limitada por disponibilidade real; caça e mortalidade influenciam tamanho da manada."
+  },
+  "body": {
+    "heightMinM": 1.55,
+    "heightMaxM": 1.9,
+    "massMinKg": 480,
+    "massMaxKg": 820
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 300,
+      "rearBlindSpotDeg": 60,
+      "detectMovingTargetM": 38,
+      "detectStillTargetM": 16,
+      "notes": "Olhos laterais para vigiar flancos, menos precisão frontal, reduzido por mata densa e relevo; medidas são parâmetros provisórios."
+    },
+    "hearing": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 35,
+      "notes": "Detecta estalos, pisadas e vocalização; ruídos de vento e água afetam alcance."
+    },
+    "smell": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 45,
+      "notes": "Sentido prioritário para reconhecer predadores a favor do vento, indivíduos e água; não atravessa barreiras de forma mágica."
+    }
+  },
+  "locomotion": {
+    "walkMps": 1,
+    "sprintMps": 8.5,
+    "maxSprintSeconds": 8,
+    "flight": false,
+    "jumpHeightM": 0.45,
+    "notes": "Marcha pesada e econômica; arrancadas curtas, inércia, curvas amplas e capacidade de transpor pequenos obstáculos; evita encostas muito íngremes e lama funda."
+  },
+  "threatResponse": {
+    "strategy": "investigate_then_herd_shield_or_charge",
+    "states": [
+      "grazing",
+      "watching",
+      "sniffing",
+      "alert",
+      "circle_calves",
+      "intimidate",
+      "charge",
+      "retreat",
+      "regroup"
+    ],
+    "alarmCall": true,
+    "notes": "Se ameaça está longe, junta o grupo e protege filhotes; se predador se aproxima, adultos dominantes podem avançar em investida curta. Nunca escolhe enfrentar o perigo automaticamente, considera vulnerabilidade e saúde."
+  },
+  "artDirection": "Grande herbívoro quadrúpede original inspirado em bois selvagens e bisões: musculatura espessa nas espáduas, corcova baixa, peito amplo, patas robustas com cascos fendidos, focinho largo e dois chifres grossos arqueados lateralmente e para cima; juba curta de pelos grossos marrom-escuros no pescoço e ombros, dorso castanho-cobre, ventre terra, marcas naturais assimétricas. Cauda longa com tufo. Sem escamas: diferenciar nitidamente do Silvarano reptiliano. Mid-poly 3D orgânico, silhueta poderosa, nada caricatural.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/torvalho/torvalho_animated_v01.glb",
+    "riggedModel": "assets/models/creatures/torvalho/torvalho_animated_v01.glb",
+    "animations": [
+      "walk",
+      "trot",
+      "run",
+      "calf_follow",
+      "idle",
+      "graze",
+      "chew",
+      "ruminate",
+      "sniff_air",
+      "watch",
+      "alert",
+      "alarm_bellow",
+      "herd_guard",
+      "stomp",
+      "charge_windup",
+      "charge",
+      "horn_sweep",
+      "head_toss",
+      "drink",
+      "rest",
+      "sleep",
+      "dust_bath",
+      "tail_swish",
+      "turn_left",
+      "turn_right",
+      "hurt",
+      "death"
+    ]
+  },
+  "notes": "Modelos originais LOD0 e LOD1 publicados e verificados no GitHub, 27 animações cada. Aprovação estética final pendente. Arte conceitual ainda não enviada como PNG. IA de manada, colisões e gameplay não implementados."
+}
