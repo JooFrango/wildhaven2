@@ -1,0 +1,80 @@
+{
+  "id": "frutavil",
+  "version": "v01",
+  "status": "asset_for_art_review",
+  "gameplayIntegrated": false,
+  "LODs": [
+    {
+      "path": "frutavil-savanna-animated-v01-LOD0.glb",
+      "bytes": 248540,
+      "sha256": "91f8c8d150ea70db4d3428052b0ef0b5237494c589d86054384d268ab75f432e",
+      "triangleCount": 5724,
+      "nodes": 13,
+      "meshNodes": 12,
+      "animationNames": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 0
+    },
+    {
+      "path": "frutavil-savanna-animated-v01-LOD1.glb",
+      "bytes": 185412,
+      "sha256": "8e928a201109af51ad8650053c26147f1022fe50746f7520df277c96c1b9bd5a",
+      "triangleCount": 3514,
+      "nodes": 13,
+      "meshNodes": 12,
+      "animationNames": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 1
+    },
+    {
+      "path": "frutavil-savanna-animated-v01-LOD2.glb",
+      "bytes": 140816,
+      "sha256": "73d06538072bc9b9107ca4c5f120fab1732bb821ae387b572ea73725f25c03e5",
+      "triangleCount": 2118,
+      "nodes": 13,
+      "meshNodes": 12,
+      "animationNames": [
+        "idle",
+        "walk",
+        "hop",
+        "perch",
+        "peck",
+        "eat_fruit",
+        "wing_flap",
+        "short_flight",
+        "alert",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 2
+    }
+  ]
+}

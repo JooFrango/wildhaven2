@@ -1,0 +1,80 @@
+{
+  "id": "cromatil",
+  "version": "v01",
+  "status": "asset_for_art_review",
+  "gameplayIntegrated": false,
+  "LODs": [
+    {
+      "path": "cromatil-savanna-animated-v01-LOD0.glb",
+      "bytes": 321120,
+      "sha256": "e20a09480c52ad9156b89a0911cbe69b99a82c202a8f2a0c641083946a14415d",
+      "triangleCount": 7283,
+      "nodes": 19,
+      "meshNodes": 18,
+      "animationNames": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 0
+    },
+    {
+      "path": "cromatil-savanna-animated-v01-LOD1.glb",
+      "bytes": 222676,
+      "sha256": "7b539473fb9c5720d3d61fe0b5719c25892c8f025bbea542f0b42abfdd4ee511",
+      "triangleCount": 3780,
+      "nodes": 19,
+      "meshNodes": 18,
+      "animationNames": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 1
+    },
+    {
+      "path": "cromatil-savanna-animated-v01-LOD2.glb",
+      "bytes": 185492,
+      "sha256": "83557a0e1fed190c6789939904475970a452e285efd163f9a880bd19041e02bb",
+      "triangleCount": 2632,
+      "nodes": 19,
+      "meshNodes": 18,
+      "animationNames": [
+        "idle",
+        "walk",
+        "scurry",
+        "bask",
+        "forage",
+        "head_tilt",
+        "tail_whip",
+        "threat",
+        "retreat",
+        "rest",
+        "death"
+      ],
+      "animationCount": 11,
+      "rig": "articulated rigid hierarchical nodes (no skin weights)",
+      "lod": 2
+    }
+  ]
+}
