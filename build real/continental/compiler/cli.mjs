@@ -30,6 +30,12 @@ const here=dirname(fileURLToPath(import.meta.url));
 const manifest=JSON.parse(await readFile(opts.manifest?resolve(opts.manifest):join(here,"../data/continent-272.manifest.json"),"utf8"));
 const specs=opts["tree-rules"]?JSON.parse(await readFile(resolve(opts["tree-rules"]),"utf8")):{};
 if(specs.schema && specs.schema!=="wildhaven.tree-rules.v1")throw Error("Wrong tree-rule schema");
+// Classificação física adicional e versionada (proposta revisável); sem ela, comportamento original.
+const nodeClassFile=opts["node-classes"]?resolve(opts["node-classes"]):null;
+const nodeClassSpec=nodeClassFile?JSON.parse(await readFile(nodeClassFile,"utf8")):null;
+if(nodeClassSpec&&nodeClassSpec.schema!=="wildhaven.node-classes.v1")throw Error("Wrong node-classes schema");
+const nodeClassPatterns=(nodeClassSpec?.nodeClassPatterns??[]).map(p=>({re:new RegExp(p.pattern,"u"),cls:p.class}));
+const nodeClassSha=nodeClassFile?createHash("sha256").update(await readFile(nodeClassFile)).digest("hex"):null;
 const outBase=resolve(opts.out);
 const sha256=b=>createHash("sha256").update(b).digest("hex");
 const blobSha=b=>createHash("sha1").update("blob "+b.byteLength+"\0").update(b).digest("hex");
@@ -46,7 +52,9 @@ async function compileOne(tile, file){
   const rules=specs.byTile?.[tile.id]??{};
   const result=compileTile(bytes,{id:tile.id,centerX:tile.x,centerZ:tile.z,
     res:Number(opts.res??2),chunkMeters:Number(opts.chunk??256),baseY:Number(opts.baseY??878.959),
-    nodeClasses:rules.nodeClasses??{},treeRules:rules.trees??{}});
+    nodeClasses:{...(nodeClassSpec?.nodeClasses??{}),...(rules.nodeClasses??{})},
+    nodeClassPatterns,treeRules:rules.trees??{}});
+  if(nodeClassSpec)result.report.nodeClassification={version:nodeClassSpec.version,status:nodeClassSpec.status,sha256:nodeClassSha};
   if(opts.vegetation){
     const sidecar=await readFile(resolve(opts.vegetation));
     const sidecarHash=sha256(sidecar);

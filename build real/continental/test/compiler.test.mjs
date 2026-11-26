@@ -156,3 +156,37 @@ test("vegetation sidecar yields stable instance IDs and demands approved collide
   assert.throws(()=>extractSidecarTrees(b,{tileId:"SYNTHETIC",centerX:0,centerZ:0,
     treeRules:{Dossel_1:{cuttable:true}}}),/radius/);
 });
+
+test("node-class patterns classify only explicitly matched names; unmatched stay reported",()=>{
+  const glb=makeFixture();
+  // Sem padrão: 'terrain' é reconhecido pelo NODE_CLASSES original.
+  const base=compileTile(glb,{id:"T",centerX:0,centerZ:0,res:1,chunkMeters:8});
+  assert.ok(base.report.categoryMeshes.terrain===1);
+  // Padrão que reclassifica 'boulders' não pode sobrepor a tabela explícita (tabela vence).
+  const pat=[{re:/^boul/u,cls:"water"}];
+  const withPat=compileTile(glb,{id:"T",centerX:0,centerZ:0,res:1,chunkMeters:8,nodeClassPatterns:pat});
+  assert.equal(withPat.report.categoryMeshes.rock,base.report.categoryMeshes.rock);
+  // Instâncias GPU sem regra medida continuam reportadas, mesmo com padrões.
+  const inst=compileTile(glb,{id:"T",centerX:0,centerZ:0,res:1,chunkMeters:8,nodeClassPatterns:[{re:/^Dossel/u,cls:"canopy"}]});
+  assert.ok(inst.report.unknownNodes.some(n=>n.reason==="unclassified_gpu_instances"));
+});
+
+test("CLI --node-classes records version+SHA-256 of the classification in the report",async()=>{
+  const dir=await mkdtemp(join(tmpdir(),"wh-nc-"));
+  try{
+    const glb=makeFixture(),file=join(dir,"t.glb");await writeFile(file,glb);
+    const blob=createHash("sha1").update("blob "+glb.length+"\0").update(glb).digest("hex");
+    const manifest={tiles:[{id:"T",x:0,z:0,source:{bytes:glb.length,gitBlobSha1:blob}}]};
+    await writeFile(join(dir,"m.json"),JSON.stringify(manifest));
+    const nc={schema:"wildhaven.node-classes.v1",version:"t1",status:"teste",nodeClasses:{},nodeClassPatterns:[]};
+    await writeFile(join(dir,"nc.json"),JSON.stringify(nc));
+    const cli=fileURLToPath(new URL("../compiler/cli.mjs",import.meta.url));
+    const r=spawnSync(process.execPath,[cli,"--tile","T","--glb",file,"--out",join(dir,"o"),"--manifest",join(dir,"m.json"),
+      "--node-classes",join(dir,"nc.json"),"--res","1","--chunk","8"],{encoding:"utf8"});
+    assert.equal(r.status,0,r.stderr);
+    const idx=JSON.parse(await readFile(join(dir,"o","T-physics-v01","index.json"),"utf8"));
+    assert.equal(idx.report.nodeClassification.version,"t1");
+    assert.match(idx.report.nodeClassification.sha256,/^[0-9a-f]{64}$/);
+    assert.equal(idx.certified,false);
+  }finally{await rm(dir,{recursive:true,force:true});}
+});
