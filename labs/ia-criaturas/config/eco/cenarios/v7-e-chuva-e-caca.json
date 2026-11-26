@@ -1,0 +1,117 @@
+{
+ "id": "v7-e-chuva-e-caca",
+ "nome": "V7·E — Chuva e caça",
+ "descricao": "EXPERIMENTAL. Um Varrisco faminto e cinco Velsaris na savana, sob chuva intensa do segundo 5 ao 235. Par do cenário de controle: mesma posição inicial, mesma semente, só o clima muda.",
+ "dt": 0.1,
+ "duracaoSeg": 240,
+ "relogio": {
+  "segundosPorDia": 600,
+  "diaInicial": 30,
+  "horaInicial": 16.8,
+  "diasPorAno": 365
+ },
+ "clima": {
+  "fracaoChuvosa": 0.4,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 24,
+  "eventos": [
+   {
+    "tipo": "chuva_intensa",
+    "inicioSeg": 5,
+    "duracaoSeg": 230,
+    "intensidade": 1
+   }
+  ]
+ },
+ "terreno": {
+  "tipo": "procedural",
+  "largura": 200,
+  "profundidade": 150,
+  "res": 1,
+  "amplitude": 2,
+  "capim": 45,
+  "rochas": [
+   {
+    "x": 120,
+    "y": 60,
+    "raio": 2.4,
+    "altura": 1.8
+   },
+   {
+    "x": 78,
+    "y": 104,
+    "raio": 2.2,
+    "altura": 1.6
+   }
+  ],
+  "arbustos": [
+   {
+    "x": 70,
+    "y": 80,
+    "raio": 7,
+    "ocultacao": 75,
+    "alimento": 25
+   },
+   {
+    "x": 96,
+    "y": 62,
+    "raio": 5,
+    "ocultacao": 70,
+    "alimento": 20
+   },
+   {
+    "x": 132,
+    "y": 96,
+    "raio": 7,
+    "ocultacao": 80,
+    "alimento": 25
+   },
+   {
+    "x": 150,
+    "y": 60,
+    "raio": 6,
+    "ocultacao": 75,
+    "alimento": 20
+   }
+  ]
+ },
+ "populacoes": [
+  {
+   "especie": "velsari",
+   "grupos": [
+    {
+     "x": 112,
+     "y": 80,
+     "raio": 6,
+     "adultos": 5,
+     "raioCasa": 40
+    }
+   ]
+  },
+  {
+   "especie": "varrisco",
+   "individuos": [
+    {
+     "id": "varrisco-1",
+     "x": 66,
+     "y": 82,
+     "direcaoGraus": 0,
+     "fome": [
+      75,
+      85
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      92,
+      98
+     ]
+    }
+   ]
+  }
+ ]
+}

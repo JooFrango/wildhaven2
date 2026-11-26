@@ -1,0 +1,21 @@
+{
+  "id": "predador-cansado",
+  "nome": "Predador com pouca energia",
+  "descricao": "Campo aberto; o predador começa faminto e com pouca energia. Deve caçar por desespero e desistir por cansaço com frequência.",
+  "duracaoSeg": 90,
+  "dt": 0.1,
+  "terreno": { "largura": 60, "altura": 40, "cor": "#2f3b2a" },
+  "obstaculos": [],
+  "alimentos": [
+    { "id": "capim-norte", "x": 46, "y": 11, "raio": 2.5, "quantidade": 60, "regeneracaoPorSeg": 0.2 },
+    { "id": "capim-sul", "x": 49, "y": 29, "raio": 2.5, "quantidade": 60, "regeneracaoPorSeg": 0.2 }
+  ],
+  "criaturas": [
+    { "id": "herbivoro", "especie": "herbivoro-exemplo", "x": 36, "y": 20, "variacaoPos": 5, "energia": 100, "fome": 55 },
+    {
+      "id": "predador", "especie": "predador-exemplo", "x": 14, "y": 20, "variacaoPos": 4,
+      "direcaoGraus": 0, "variacaoDirecaoGraus": 70, "energia": 30, "fome": 85,
+      "patrulha": [[14, 8], [36, 8], [50, 20], [36, 32], [14, 32]]
+    }
+  ]
+}

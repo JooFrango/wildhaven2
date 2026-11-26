@@ -1,0 +1,22 @@
+{
+  "id": "aproximacao-furtiva",
+  "nome": "Aproximação furtiva",
+  "descricao": "Uma faixa de capim alto separa o predador da presa, que come em campo aberto logo depois dela. O predador patrulha através do capim: mede quem detecta quem primeiro e a que distância.",
+  "duracaoSeg": 90,
+  "dt": 0.1,
+  "terreno": { "largura": 60, "altura": 40, "cor": "#2f3b2a" },
+  "obstaculos": [
+    { "id": "faixa-capim", "tipo": "capim-alto", "x": 26, "y": 4, "w": 13, "h": 32, "bloqueiaVisao": false, "bloqueiaMovimento": false, "ocultacao": 0.6, "atenuacaoSom": 0.85 }
+  ],
+  "alimentos": [
+    { "id": "capim-baixo", "x": 45, "y": 20, "raio": 3, "quantidade": 120, "regeneracaoPorSeg": 0.4 }
+  ],
+  "criaturas": [
+    { "id": "herbivoro", "especie": "herbivoro-exemplo", "x": 45, "y": 20, "variacaoPos": 3, "energia": 100, "fome": 70 },
+    {
+      "id": "predador", "especie": "predador-exemplo", "x": 12, "y": 20, "variacaoPos": 6,
+      "direcaoGraus": 0, "variacaoDirecaoGraus": 30, "energia": 100, "fome": 65,
+      "patrulha": [[33, 20], [52, 22], [52, 36], [12, 34], [12, 6], [33, 8]]
+    }
+  ]
+}

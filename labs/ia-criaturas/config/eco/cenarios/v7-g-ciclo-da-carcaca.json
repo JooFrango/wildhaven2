@@ -1,0 +1,173 @@
+{
+ "id": "v7-g-ciclo-da-carcaca",
+ "nome": "V7·G — Ciclo de uma carcaça",
+ "descricao": "EXPERIMENTAL. Um Varrisco abate um Velsari com a perna ferida. Três Carnirocas (necrófagas do catálogo) chegam pelo ar; insetos Dunébrio (detritívoro do catálogo que consome restos orgânicos) acumulam conforme o odor. A decomposição está acelerada no cenário (ossos em ~0,45 dia) para o ciclo caber numa sessão: carne → restos → ossos (PROXY procedural) → reciclagem.",
+ "dt": 0.1,
+ "duracaoSeg": 900,
+ "relogio": {
+  "segundosPorDia": 600,
+  "diaInicial": 30,
+  "horaInicial": 9,
+  "diasPorAno": 365
+ },
+ "clima": {
+  "fracaoChuvosa": 0.4,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 29
+ },
+ "decomposicao": {
+  "diasAteOssos": 0.45,
+  "ossosDias": 0.4,
+  "maxCarcacas": 8,
+  "necrofagos": {
+   "especie": "dunebrio",
+   "glb": "assets/models/creatures/detritivoros/dunebrio-optimized-v02-LOD0.glb",
+   "maxPorCarcaca": 24,
+   "comePorSegKg": 0.0012,
+   "chegadaPorSeg": 0.25
+  }
+ },
+ "terreno": {
+  "tipo": "procedural",
+  "largura": 220,
+  "profundidade": 160,
+  "res": 1,
+  "amplitude": 1.5,
+  "capim": 40,
+  "arbustos": [
+   {
+    "x": 70,
+    "y": 60,
+    "raio": 6,
+    "ocultacao": 70,
+    "alimento": 20
+   },
+   {
+    "x": 150,
+    "y": 110,
+    "raio": 7,
+    "ocultacao": 75,
+    "alimento": 25
+   }
+  ]
+ },
+ "populacoes": [
+  {
+   "especie": "velsari",
+   "individuos": [
+    {
+     "id": "presa",
+     "x": 106,
+     "y": 80,
+     "raioCasa": 30,
+     "fome": [
+      45,
+      60
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      60,
+      80
+     ],
+     "ferimentos": [
+      {
+       "regiao": "pernas",
+       "gravidade": 0.7,
+       "origem": "cenario"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "varrisco",
+   "individuos": [
+    {
+     "id": "predador",
+     "x": 86,
+     "y": 78,
+     "direcaoGraus": 0,
+     "fome": [
+      75,
+      85
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      92,
+      98
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "carniroca",
+   "individuos": [
+    {
+     "id": "carniroca-1",
+     "x": 150,
+     "y": 40,
+     "direcaoGraus": 180,
+     "altitudeInicialM": 24,
+     "fome": [
+      70,
+      85
+     ],
+     "sede": [
+      5,
+      15
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "carniroca-2",
+     "x": 158,
+     "y": 46,
+     "direcaoGraus": 180,
+     "altitudeInicialM": 27,
+     "fome": [
+      70,
+      85
+     ],
+     "sede": [
+      5,
+      15
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    },
+    {
+     "id": "carniroca-3",
+     "x": 166,
+     "y": 52,
+     "direcaoGraus": 180,
+     "altitudeInicialM": 30,
+     "fome": [
+      70,
+      85
+     ],
+     "sede": [
+      5,
+      15
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    }
+   ]
+  }
+ ]
+}

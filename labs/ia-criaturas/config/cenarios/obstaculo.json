@@ -1,0 +1,25 @@
+{
+  "id": "obstaculo",
+  "nome": "Obstáculo entre os animais",
+  "descricao": "Paredão de rocha entre os dois (bloqueia visão e movimento) e uma moita que só bloqueia visão. A presa pode quebrar a linha de visão.",
+  "duracaoSeg": 90,
+  "dt": 0.1,
+  "terreno": { "largura": 60, "altura": 40, "cor": "#2f3b2a" },
+  "obstaculos": [
+    { "id": "paredao", "tipo": "rocha", "x": 27, "y": 11, "w": 4, "h": 18, "bloqueiaVisao": true, "bloqueiaMovimento": true },
+    { "id": "pedra-ne", "tipo": "rocha", "x": 42, "y": 30, "w": 5, "h": 3, "bloqueiaVisao": true, "bloqueiaMovimento": true },
+    { "id": "moita", "tipo": "moita", "x": 44, "y": 5, "w": 6, "h": 6, "bloqueiaVisao": true, "bloqueiaMovimento": false }
+  ],
+  "alimentos": [
+    { "id": "capim-perto-rocha", "x": 37, "y": 20, "raio": 2.5, "quantidade": 60, "regeneracaoPorSeg": 0.2 },
+    { "id": "capim-leste", "x": 52, "y": 22, "raio": 2.5, "quantidade": 60, "regeneracaoPorSeg": 0.2 }
+  ],
+  "criaturas": [
+    { "id": "herbivoro", "especie": "herbivoro-exemplo", "x": 40, "y": 20, "variacaoPos": 4, "energia": 100, "fome": 55 },
+    {
+      "id": "predador", "especie": "predador-exemplo", "x": 16, "y": 20, "variacaoPos": 4,
+      "direcaoGraus": 0, "variacaoDirecaoGraus": 60, "energia": 100, "fome": 60,
+      "patrulha": [[16, 6], [40, 6], [54, 14], [40, 36], [16, 34]]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "territorios-separados",
+  "nome": "Territórios separados",
+  "descricao": "Terreno grande; presa e predador começam longe, cada um no seu canto, com rochas e uma faixa de capim alto no meio. Mede quantos encontros simplesmente não acontecem.",
+  "duracaoSeg": 90,
+  "dt": 0.1,
+  "terreno": { "largura": 120, "altura": 80, "cor": "#2f3b2a" },
+  "obstaculos": [
+    { "id": "rocha-centro", "tipo": "rocha", "x": 56, "y": 30, "w": 6, "h": 14, "bloqueiaVisao": true, "bloqueiaMovimento": true },
+    { "id": "rocha-norte", "tipo": "rocha", "x": 70, "y": 10, "w": 10, "h": 4, "bloqueiaVisao": true, "bloqueiaMovimento": true },
+    { "id": "capim-faixa", "tipo": "capim-alto", "x": 64, "y": 46, "w": 14, "h": 26, "bloqueiaVisao": false, "bloqueiaMovimento": false, "ocultacao": 0.6, "atenuacaoSom": 0.85 }
+  ],
+  "alimentos": [
+    { "id": "capim-leste", "x": 98, "y": 58, "raio": 3, "quantidade": 80, "regeneracaoPorSeg": 0.3 },
+    { "id": "capim-nordeste", "x": 104, "y": 40, "raio": 2.5, "quantidade": 60, "regeneracaoPorSeg": 0.2 },
+    { "id": "capim-faixa-comida", "x": 71, "y": 60, "raio": 2.5, "quantidade": 50, "regeneracaoPorSeg": 0.2 }
+  ],
+  "criaturas": [
+    { "id": "herbivoro", "especie": "herbivoro-exemplo", "x": 98, "y": 58, "variacaoPos": 10, "energia": 100, "fome": 55 },
+    {
+      "id": "predador", "especie": "predador-exemplo", "x": 18, "y": 18, "variacaoPos": 10,
+      "direcaoGraus": 0, "variacaoDirecaoGraus": 180, "energia": 100, "fome": 60,
+      "patrulha": [[12, 12], [48, 10], [84, 28], [52, 52], [40, 70], [12, 60]]
+    }
+  ]
+}

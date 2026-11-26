@@ -1,0 +1,109 @@
+{
+ "id": "v7-f-cupinzeiro",
+ "nome": "V7·F — Cupinzeiro",
+ "descricao": "EXPERIMENTAL. Dois cupinzeiros do laboratório (cone PROXY; nenhum é acrescentado ao mapa oficial). Um Ferrunco, que abre a casca, e uma Pica-Termita, que só alcança a superfície, competem pela colônia maior. A população de cupins é finita e se recupera devagar.",
+ "dt": 0.1,
+ "duracaoSeg": 300,
+ "relogio": {
+  "segundosPorDia": 600,
+  "diaInicial": 30,
+  "horaInicial": 9,
+  "diasPorAno": 365
+ },
+ "clima": {
+  "fracaoChuvosa": 0.4,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 25
+ },
+ "terreno": {
+  "tipo": "procedural",
+  "largura": 180,
+  "profundidade": 130,
+  "res": 1,
+  "amplitude": 1.5,
+  "capim": 35,
+  "arbustos": [
+   {
+    "x": 60,
+    "y": 40,
+    "raio": 6,
+    "ocultacao": 70,
+    "alimento": 20
+   },
+   {
+    "x": 130,
+    "y": 96,
+    "raio": 6,
+    "ocultacao": 70,
+    "alimento": 20
+   }
+  ]
+ },
+ "cupinzeiros": [
+  {
+   "id": "colonia-grande",
+   "x": 96,
+   "y": 66,
+   "populacaoMax": 3500,
+   "alturaM": 1.9
+  },
+  {
+   "id": "colonia-pequena",
+   "x": 128,
+   "y": 50,
+   "populacao": 500,
+   "populacaoMax": 1500,
+   "alturaM": 1.1
+  }
+ ],
+ "populacoes": [
+  {
+   "especie": "ferrunco",
+   "individuos": [
+    {
+     "id": "ferrunco",
+     "x": 60,
+     "y": 70,
+     "direcaoGraus": 0,
+     "fome": [
+      80,
+      88
+     ],
+     "sede": [
+      5,
+      12
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "pica-termita",
+   "individuos": [
+    {
+     "id": "pica-termita",
+     "x": 80,
+     "y": 96,
+     "direcaoGraus": -40,
+     "fome": [
+      80,
+      88
+     ],
+     "sede": [
+      5,
+      12
+     ],
+     "energia": [
+      90,
+      98
+     ]
+    }
+   ]
+  }
+ ]
+}

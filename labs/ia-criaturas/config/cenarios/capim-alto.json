@@ -1,0 +1,22 @@
+{
+  "id": "capim-alto",
+  "nome": "Camuflagem no capim alto",
+  "descricao": "A presa come dentro de um capinzal (oculta 60% e abafa som). O predador patrulha uma rota sorteada pela semente que às vezes passa perto, às vezes atravessa o capim. Testa camuflagem, imobilidade e quase-encontros.",
+  "duracaoSeg": 90,
+  "dt": 0.1,
+  "terreno": { "largura": 60, "altura": 40, "cor": "#2f3b2a" },
+  "obstaculos": [
+    { "id": "capinzal", "tipo": "capim-alto", "x": 20, "y": 12, "w": 24, "h": 16, "bloqueiaVisao": false, "bloqueiaMovimento": false, "ocultacao": 0.6, "atenuacaoSom": 0.85 },
+    { "id": "pedra", "tipo": "rocha", "x": 50, "y": 30, "w": 4, "h": 4, "bloqueiaVisao": true, "bloqueiaMovimento": true }
+  ],
+  "alimentos": [
+    { "id": "capim-escondido", "x": 32, "y": 20, "raio": 3, "quantidade": 120, "regeneracaoPorSeg": 0.4 }
+  ],
+  "criaturas": [
+    { "id": "herbivoro", "especie": "herbivoro-exemplo", "x": 32, "y": 20, "variacaoPos": 2, "energia": 100, "fome": 70 },
+    {
+      "id": "predador", "especie": "predador-exemplo", "x": 6, "y": 6, "variacaoPos": 3,
+      "direcaoGraus": 0, "variacaoDirecaoGraus": 90, "energia": 100, "fome": 60
+    }
+  ]
+}

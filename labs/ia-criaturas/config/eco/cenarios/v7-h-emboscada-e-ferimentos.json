@@ -1,0 +1,96 @@
+{
+ "id": "v7-h-emboscada-e-ferimentos",
+ "nome": "V7·H — Emboscada e ferimentos",
+ "descricao": "EXPERIMENTAL. Uma Boscaranha embosca na cobertura por onde um bando de Folhiscos se alimenta. Mostra aproximação da cobertura, espera, disparo, contato real, sangue no osso da região atingida, veneno e fuga ou morte.",
+ "dt": 0.1,
+ "duracaoSeg": 600,
+ "relogio": {
+  "segundosPorDia": 600,
+  "diaInicial": 30,
+  "horaInicial": 17.3,
+  "diasPorAno": 365
+ },
+ "clima": {
+  "fracaoChuvosa": 0.4,
+  "chanceChuvaChuvosa": 0,
+  "chanceChuvaSeca": 0,
+  "chanceIncendio": 0,
+  "temperaturaC": 19
+ },
+ "terreno": {
+  "tipo": "procedural",
+  "largura": 150,
+  "profundidade": 110,
+  "res": 1,
+  "amplitude": 1,
+  "capim": 20,
+  "rochas": [
+   {
+    "x": 60,
+    "y": 44,
+    "raio": 2,
+    "altura": 1.5
+   }
+  ],
+  "arbustos": [
+   {
+    "x": 78,
+    "y": 56,
+    "raio": 5,
+    "ocultacao": 85,
+    "alimento": 35
+   },
+   {
+    "x": 90,
+    "y": 62,
+    "raio": 5,
+    "ocultacao": 85,
+    "alimento": 35
+   },
+   {
+    "x": 84,
+    "y": 48,
+    "raio": 4,
+    "ocultacao": 80,
+    "alimento": 30
+   }
+  ]
+ },
+ "populacoes": [
+  {
+   "especie": "boscaranha",
+   "individuos": [
+    {
+     "id": "boscaranha",
+     "x": 74,
+     "y": 60,
+     "direcaoGraus": 0,
+     "fome": [
+      75,
+      85
+     ],
+     "sede": [
+      10,
+      20
+     ],
+     "energia": [
+      92,
+      98
+     ]
+    }
+   ]
+  },
+  {
+   "especie": "folhisco",
+   "grupos": [
+    {
+     "x": 88,
+     "y": 58,
+     "raio": 4,
+     "adultos": 6,
+     "raioCasa": 14
+    }
+   ]
+  }
+ ]
+}

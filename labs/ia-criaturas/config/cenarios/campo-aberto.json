@@ -1,0 +1,22 @@
+{
+  "id": "campo-aberto",
+  "nome": "Campo aberto",
+  "descricao": "Terreno sem obstáculos. Herbívoro e predador descansados, posições e direções variam com a semente.",
+  "duracaoSeg": 90,
+  "dt": 0.1,
+  "terreno": { "largura": 60, "altura": 40, "cor": "#2f3b2a" },
+  "obstaculos": [],
+  "alimentos": [
+    { "id": "capim-norte", "x": 46, "y": 11, "raio": 2.5, "quantidade": 60, "regeneracaoPorSeg": 0.2 },
+    { "id": "capim-sul", "x": 49, "y": 29, "raio": 2.5, "quantidade": 60, "regeneracaoPorSeg": 0.2 },
+    { "id": "capim-centro", "x": 32, "y": 31, "raio": 2, "quantidade": 40, "regeneracaoPorSeg": 0.2 }
+  ],
+  "criaturas": [
+    { "id": "herbivoro", "especie": "herbivoro-exemplo", "x": 42, "y": 20, "variacaoPos": 6, "energia": 100, "fome": 55 },
+    {
+      "id": "predador", "especie": "predador-exemplo", "x": 10, "y": 20, "variacaoPos": 5,
+      "direcaoGraus": 0, "variacaoDirecaoGraus": 120, "energia": 100, "fome": 60,
+      "patrulha": [[10, 8], [30, 6], [50, 8], [52, 34], [30, 35], [8, 32]]
+    }
+  ]
+}
