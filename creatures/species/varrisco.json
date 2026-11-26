@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "0.1",
+  "id": "varrisco",
+  "name": "Varrisco",
+  "status": "asset_in_review_not_integrated",
+  "category": "medium_carnivore",
+  "habitats": [
+    "savanna",
+    "desert",
+    "rocky_desert"
+  ],
+  "diet": [
+    "small_herbivores",
+    "ground_vertebrates",
+    "vulnerable_medium_herbivores",
+    "opportunistic_carrion"
+  ],
+  "social": {
+    "type": "solitary_or_pair",
+    "notes": "Solitary or occasional hunting pair; ecological behavior planned only."
+  },
+  "body": {
+    "lengthMinM": 2.7,
+    "lengthMaxM": 3.1,
+    "heightMinM": 1.3,
+    "heightMaxM": 1.5,
+    "massMinKg": 55,
+    "massMaxKg": 85
+  },
+  "artDirection": "Faceted naturalistic mid/low-poly biped; ocre and rust body with charcoal tail bands, angled nape filaments, muscular hips, digitigrade hind legs, raised sickle claw. One phenotype shared by savanna and desert. Original animal, not a replica of Velociraptor or Rocantraz.",
+  "uniqueTraits": [
+    "elevated_sickle_claw",
+    "counterbalance_band_tail",
+    "short_nape_quills",
+    "faceted_wedge_skull"
+  ],
+  "ecologicalRelationships": {
+    "role": "fast_medium_biped_predator",
+    "proposedPrey": [
+      "small_savanna_herbivores",
+      "small_desert_vertebrates"
+    ],
+    "proposedCompetitors": [
+      "mid_sized_predators",
+      "garruva_when_scavenging"
+    ],
+    "note": "Design proposals only; no spawn, prey selection, hunting, reproduction, or RMT code implemented."
+  },
+  "assets": {
+    "model": "assets/models/creatures/varrisco/v02/varrisco-animated-v02-LOD0.glb",
+    "riggedModel": "assets/models/creatures/varrisco/v02/varrisco-animated-v02-LOD0.glb",
+    "staticOriginal": "assets/models/creatures/varrisco/v01/varrisco-v01-original-chat-blockout.glb",
+    "manifest": "assets/models/creatures/varrisco/v02/manifest.json",
+    "preview": "assets/models/creatures/varrisco/v02/previews/varrisco-v02-three-real-glb-views.png",
+    "animatedPreview": "assets/models/creatures/varrisco/v02/previews/varrisco-v02-walk-run-animated-real-glb.gif",
+    "animationNames": [
+      "idle",
+      "walk",
+      "run",
+      "stalk",
+      "turn_left",
+      "turn_right",
+      "alert",
+      "sniff",
+      "bite",
+      "claw_slash",
+      "pounce",
+      "feed",
+      "drink",
+      "threat_display",
+      "rest",
+      "hurt",
+      "death"
+    ]
+  },
+  "rig": {
+    "skins": 1,
+    "joints": 22,
+    "method": "weighted_skinning_with_keyframed_gltf_animations",
+    "terrainIK": false
+  },
+  "integration": {
+    "gameplay": false,
+    "spawns": false,
+    "ecologyAI": false
+  },
+  "notes": "Conceito aprovado; usuário autorizou animações. Arte final dos movimentos continua em revisão; sem LOD1/2 nesta fase."
+}

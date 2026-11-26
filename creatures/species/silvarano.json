@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "0.1",
+  "id": "silvarano",
+  "name": "Silvarano",
+  "status": "proposal",
+  "category": "herbivore",
+  "habitats": [
+    "temperate_forest",
+    "tropical_rainforest",
+    "temperate_forest_edge",
+    "tropical_forest_clearing",
+    "riparian_forest"
+  ],
+  "diet": [
+    "broad_leaves",
+    "soft_shoots",
+    "ferns",
+    "flowers",
+    "fallen_fruit",
+    "tender_bark"
+  ],
+  "social": {
+    "type": "small_social_group",
+    "notes": "Grupos frouxos de 3 a 7; fêmeas e jovens tendem a manter vínculos; alguns machos adultos vivem sós fora da estação reprodutiva. Compartilham alarme por som e postura, sem telepatia."
+  },
+  "behaviors": [
+    "browse_leaves",
+    "forage_fallen_fruit",
+    "drink",
+    "rest",
+    "thermoregulate",
+    "scan",
+    "freeze",
+    "alarm_call",
+    "flee_zigzag",
+    "regroup",
+    "defensive_posture",
+    "head_sweep",
+    "hind_kick",
+    "short_charge",
+    "social_display",
+    "courtship",
+    "nest_guard",
+    "care_for_young",
+    "cross_shallow_stream"
+  ],
+  "ecologicalRelationships": {
+    "role": "medium_forest_browser_and_seed_disperser",
+    "predators": [
+      "large_forest_predators"
+    ],
+    "prey": [
+      "none_herbivore"
+    ],
+    "competition": [
+      "other_mid_sized_browsers"
+    ],
+    "seedDispersal": true,
+    "vegetationImpact": "selective_browsing_and_trail_creation",
+    "ecosystemImportance": "prey_biomass_for_large_predators_and_seed_dispersal"
+  },
+  "body": {
+    "heightMinM": 1.15,
+    "heightMaxM": 1.35,
+    "massMinKg": 110,
+    "massMaxKg": 170
+  },
+  "perception": {
+    "vision": {
+      "horizontalFovDeg": 290,
+      "rearBlindSpotDeg": 70,
+      "detectMovingTargetM": 45,
+      "detectStillTargetM": 18,
+      "notes": "Olhos laterais, boa detecção de movimento; alcance referencial diurno em terreno aberto, reduzido por vegetação, chuva e luz. A galhada não fornece sensores extras."
+    },
+    "hearing": {
+      "relativeAcuity": "high",
+      "detectionRangeM": 38,
+      "notes": "Aberturas auditivas discretas sem orelhas de mamífero. Ruído de água e vento reduz probabilidade de detecção."
+    },
+    "smell": {
+      "relativeAcuity": "medium",
+      "detectionRangeM": 25,
+      "notes": "Identifica vegetação, rastros e indivíduos próximos. Vento, direção e tempo de permanência dos odores afetam o alcance."
+    }
+  },
+  "locomotion": {
+    "walkMps": 1.4,
+    "sprintMps": 11,
+    "maxSprintSeconds": 8,
+    "flight": false,
+    "jumpHeightM": 1.1,
+    "notes": "Trote 3,2 m/s e arrancada de até ~12 m/s por poucos segundos (hipótese de design). Corre entre troncos, não cruza paredões ou rios profundos. Corpo e cauda reagem às curvas. Frio prolongado reduz energia/velocidade."
+  },
+  "threatResponse": {
+    "strategy": "detect_freeze_alarm_escape_cover_or_defend",
+    "states": [
+      "foraging",
+      "vigilance",
+      "freeze",
+      "scan",
+      "alarm",
+      "flee",
+      "hide",
+      "regroup",
+      "protect_young",
+      "defend",
+      "injured"
+    ],
+    "alarmCall": true,
+    "notes": "Foge primeiro; quando encurralado ou protegendo filhotes, pode exibir a galhada, golpeá-la lateralmente, coicear ou realizar investida curta. Probabilidades variam por temperamento, saúde e tamanho do grupo."
+  },
+  "artDirection": "Herbívoro reptiliano quadrúpede de médio porte: silhueta esguia inspirada em cervos, cabeça e mandíbula reptilianas alongadas, olhos laterais âmbar, aberturas auditivas pequenas, pescoço de escamas sobrepostas, membros longos terminando em dedos escamosos com garras curtas (sem cascos), cauda musculosa equilibradora, escamas verde-oliva e musgo com ventre arenoso e fileira discreta de escudos dorsais; coroa craniana de galhos ósseos recobertos de queratina, permanentes, sem galhada mammaliana sazonal. Variante temperada mais cobre-marrom e tropical mais verde profundo com marcas discretas. 3D mid-poly real, naturalista estilizado, adequado a Wildhaven.",
+  "assets": {
+    "concept": null,
+    "model": "assets/models/creatures/silvarano/silvarano_temperate_animated_v01.glb",
+    "riggedModel": "assets/models/creatures/silvarano/silvarano_temperate_animated_v01.glb",
+    "animations": [
+      "idle",
+      "walk",
+      "trot",
+      "run",
+      "sprint",
+      "turn_left",
+      "turn_right",
+      "browse",
+      "chew",
+      "drink",
+      "rest",
+      "sleep",
+      "thermoregulate",
+      "scan",
+      "freeze",
+      "alarm_call",
+      "flee_start",
+      "jump",
+      "land",
+      "regroup",
+      "social_display",
+      "head_sweep",
+      "hind_kick",
+      "short_charge",
+      "hurt",
+      "death",
+      "nest_guard",
+      "juvenile_follow"
+    ]
+  },
+  "notes": "Design ecológico e modelos v0.1 em revisão. Dois GLBs originais (variações temperada/tropical) com 28 animações cada publicados no GitHub e verificados. Conceito PNG permanece apenas na conversa. IA e integração ao jogo não implementadas."
+}
