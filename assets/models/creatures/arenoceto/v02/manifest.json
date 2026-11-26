@@ -1,0 +1,192 @@
+{
+  "species": "arenoceto",
+  "version": "v02",
+  "status": "awaiting_artistic_animation_approval",
+  "previous_version": "v01 UV static GLB preserved without changes",
+  "original_glb_sha256": "ef6e9aa0bb9d5437098866b64c0c4b9d53e02d8ec5bdb45bc9863e2932e86d33",
+  "glb": "arenoceto-v02-skinned-animated-LOD0.glb",
+  "bytes": 1588096,
+  "sha256": "2c70d4c14c7fa6148c4f3d76a292f8bb57a5b8fe6a4cee0d96d27d413fa92bfd",
+  "triangles": 2052,
+  "vertices": 6156,
+  "meshes": 1,
+  "skins": 1,
+  "joint_count": 16,
+  "joint_names": [
+    "root",
+    "body_rear",
+    "body_mid",
+    "body_front",
+    "neck",
+    "skull",
+    "jaw",
+    "tail_base",
+    "tail_mid",
+    "tail_tip",
+    "fin_L_root",
+    "fin_L_mid",
+    "fin_L_tip",
+    "fin_R_root",
+    "fin_R_mid",
+    "fin_R_tip"
+  ],
+  "animated_clips": [
+    {
+      "name": "idle",
+      "duration_seconds": 6.0,
+      "samples": 25,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "swim_sand",
+      "duration_seconds": 4.0,
+      "samples": 33,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "swim_fast",
+      "duration_seconds": 2.7,
+      "samples": 33,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "turn_left",
+      "duration_seconds": 3.5,
+      "samples": 29,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "turn_right",
+      "duration_seconds": 3.5,
+      "samples": 29,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "dive",
+      "duration_seconds": 4.0,
+      "samples": 33,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "surface",
+      "duration_seconds": 4.0,
+      "samples": 33,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "burrow",
+      "duration_seconds": 4.6,
+      "samples": 33,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "breach",
+      "duration_seconds": 5.0,
+      "samples": 41,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "filter_feed",
+      "duration_seconds": 5.0,
+      "samples": 33,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "sift_sediment",
+      "duration_seconds": 5.0,
+      "samples": 33,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "alert",
+      "duration_seconds": 3.0,
+      "samples": 25,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "threat_display",
+      "duration_seconds": 4.5,
+      "samples": 33,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "bellow",
+      "duration_seconds": 4.0,
+      "samples": 33,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "charge",
+      "duration_seconds": 2.7,
+      "samples": 33,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "fin_sweep",
+      "duration_seconds": 4.0,
+      "samples": 33,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "tail_slam",
+      "duration_seconds": 3.3,
+      "samples": 33,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "hurt",
+      "duration_seconds": 2.5,
+      "samples": 25,
+      "loop": false,
+      "channels": 17
+    },
+    {
+      "name": "rest",
+      "duration_seconds": 6.0,
+      "samples": 25,
+      "loop": true,
+      "channels": 17
+    },
+    {
+      "name": "death",
+      "duration_seconds": 6.0,
+      "samples": 41,
+      "loop": false,
+      "channels": 17
+    }
+  ],
+  "animation_count": 20,
+  "geometry_reused_identically": true,
+  "uv_reused_identically": true,
+  "embedded_texture_reused_identically": true,
+  "weights": {
+    "scheme": "4-influence MAX, normalized glTF JOINTS_0 and WEIGHTS_0",
+    "skin_deformation": "weighted genuine skinning, not pivot-only"
+  },
+  "integration": "not_integrated_in_alpha",
+  "source": "source/build_rig.py",
+  "validation": {
+    "independent_animation_channels": true,
+    "rendered_actual_exported_skin_samplers": true,
+    "real_glb_snapshots": 3,
+    "real_glb_gif_clips": 6,
+    "source_version_sha256_verified": true
+  }
+}
