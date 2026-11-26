@@ -37,6 +37,19 @@ if(nodeClassSpec&&nodeClassSpec.schema!=="wildhaven.node-classes.v1")throw Error
 const nodeClassPatterns=(nodeClassSpec?.nodeClassPatterns??[]).map(p=>({re:new RegExp(p.pattern,"u"),cls:p.class}));
 const nodeClassSha=nodeClassFile?createHash("sha256").update(await readFile(nodeClassFile)).digest("hex"):null;
 const outBase=resolve(opts.out);
+// Centros do manifesto estão arredondados a 0,1 m; a grade hexagonal declarada
+// (R = 2500 m, passo 4330,127 m) permite recuperar o centro exato por coordenada axial.
+if(opts["snap-centers"]&&opts["snap-centers"]!=="lattice")throw Error("--snap-centers aceita apenas 'lattice'");
+function latticeCenter(x,z,R=2500){
+  const r=Math.round(z/(1.5*R)),q=Math.round(x/(Math.sqrt(3)*R)-r/2);
+  return {q,r,x:Math.sqrt(3)*R*(q+r/2),z:1.5*R*r};
+}
+function centerOf(tile){
+  if(opts["snap-centers"]!=="lattice")return {x:tile.x,z:tile.z,snap:null};
+  const c=latticeCenter(tile.x,tile.z),correction=Math.hypot(c.x-tile.x,c.z-tile.z);
+  if(correction>0.5)throw Error("Centro fora da grade hexagonal ("+correction.toFixed(3)+" m): "+tile.id);
+  return {x:c.x,z:c.z,snap:{mode:"lattice",q:c.q,r:c.r,manifestX:tile.x,manifestZ:tile.z,exactX:c.x,exactZ:c.z,correctionMeters:Number(correction.toFixed(6))}};
+}
 const sha256=b=>createHash("sha256").update(b).digest("hex");
 const blobSha=b=>createHash("sha1").update("blob "+b.byteLength+"\0").update(b).digest("hex");
 function checkedPath(root, p) {
@@ -50,17 +63,19 @@ async function compileOne(tile, file){
   if(tile.source.gitBlobSha1 && blobSha(bytes)!==tile.source.gitBlobSha1)throw Error("Git blob hash mismatch: "+tile.id);
   if(tile.source.sha256 && sha256(bytes)!==tile.source.sha256)throw Error("Source SHA-256 mismatch: "+tile.id);
   const rules=specs.byTile?.[tile.id]??{};
-  const result=compileTile(bytes,{id:tile.id,centerX:tile.x,centerZ:tile.z,
+  const center=centerOf(tile);
+  const result=compileTile(bytes,{id:tile.id,centerX:center.x,centerZ:center.z,
     res:Number(opts.res??2),chunkMeters:Number(opts.chunk??256),baseY:Number(opts.baseY??878.959),
     nodeClasses:{...(nodeClassSpec?.nodeClasses??{}),...(rules.nodeClasses??{})},
     nodeClassPatterns,treeRules:rules.trees??{}});
+  if(center.snap)result.report.centerSnap=center.snap;
   if(nodeClassSpec)result.report.nodeClassification={version:nodeClassSpec.version,status:nodeClassSpec.status,sha256:nodeClassSha};
   if(opts.vegetation){
     const sidecar=await readFile(resolve(opts.vegetation));
     const sidecarHash=sha256(sidecar);
     if(opts["vegetation-sha256"]&&sidecarHash!==opts["vegetation-sha256"].toLowerCase())
       throw Error("Sidecar vegetation SHA-256 mismatch for "+tile.id);
-    const extracted=extractSidecarTrees(sidecar,{tileId:tile.id,centerX:tile.x,centerZ:tile.z,
+    const extracted=extractSidecarTrees(sidecar,{tileId:tile.id,centerX:center.x,centerZ:center.z,
       treeRules:rules.trees??{},sourceLabel:"vegetation"});
     result.trees.push(...extracted.trees);
     result.report.sidecarVegetation={source:resolve(opts.vegetation),sha256:sidecarHash,

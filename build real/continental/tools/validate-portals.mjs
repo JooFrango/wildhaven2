@@ -47,6 +47,15 @@ if (opts["node-classes"]) {
 const classOf = (name, id) => (nodeClassSpec?.nodeClasses?.[name]) ?? NODE_CLASSES[name] ?? (name === id ? "terrain" : null)
   ?? patterns.find(p => p.re.test(name))?.cls ?? null;
 const isSea = t => t.biome === "iceberg-sea";
+// Mesmo encaixe de centros usado na compilação (ver compile-report: report.centerSnap).
+const SNAP = opts["snap-centers"] === "lattice";
+for (const t of manifest.tiles) {
+  if (!SNAP) break;
+  const r = Math.round(t.z / (1.5 * R)), q = Math.round(t.x / (Math.sqrt(3) * R) - r / 2);
+  const ex = Math.sqrt(3) * R * (q + r / 2), ez = 1.5 * R * r;
+  if (Math.hypot(ex - t.x, ez - t.z) > 0.5) throw Error("centro fora da grade: " + t.id);
+  t.manifestX = t.x; t.manifestZ = t.z; t.x = ex; t.z = ez;
+}
 
 // ---------- emenda pela malha real ----------
 const BUCKET = 16;
@@ -215,6 +224,7 @@ const count = f => perTile.filter(f).length;
 const report = {schema: "wildhaven.continental.portal-report.v1", generatedAt: new Date().toISOString(),
   parameters: {stepMeters: STEP, seamToleranceMeters: TOL, maxSlopeDeg: MAX_SLOPE_DEG, minPortalWidthMeters: MIN_WIDTH,
     insetMeters: INSET, hexPointToPointMeters: 2 * R, hexFlatToFlatMeters: STEP_CENTERS,
+    centers: SNAP ? "lattice-exato (centros do manifesto arredondados a 0,1 m corrigidos pela grade R=2500 m)" : "manifesto",
     nodeClassification: nodeClassSpec ? {version: nodeClassSpec.version, status: nodeClassSpec.status} : null,
     proposalNote: "Inclinação máxima, largura mínima de portal e 'água bloqueia travessia a pé' são PROPOSTAS técnicas desta build, não regras aprovadas pelo diretor; a tolerância de 0,03 m vem do guia."},
   summary: {
