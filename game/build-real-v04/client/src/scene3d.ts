@@ -157,7 +157,8 @@ export class Scene3D {
   /** Tempo que o hex do Hunter seguido está sem relevo próprio pronto (0 se pronto). */
   regionStalledMs() {
     const fh = this.S.snap.hunters.find(h => h.id === this.S.follow);
-    const tv = fh ? this.world.tiles.get(fh.tile_id) : undefined;
+    const tid = ((this.S as any).livreTile as string | null | undefined) ?? fh?.tile_id;
+    const tv = tid ? this.world.tiles.get(tid) : undefined;
     const ok = !!tv && tv.tile3.every(t => t.node.ready);
     if (ok || !fh) { this.stallSince = 0; return 0; }
     if (!this.stallSince) this.stallSince = performance.now();
@@ -182,7 +183,8 @@ export class Scene3D {
     const simNow = snap.sim_time_s + Math.min(1, (tf - S.recvAt) / 1000) * ((snap.sim_time_s - prev.sim_time_s) / Math.max(0.001, span / 1000));
     const fh = snap.hunters.find(h => h.id === S.follow) ?? snap.hunters[0];
     const fa = fh ? this.actors.hunters.get(fh.id) : undefined;
-    const focus = fa?.ready ? this.focusV.copy(fa.obj.position) : fh ? this.focusV.set(fh.x - S.origin.x, fh.y, fh.z - S.origin.z) : null;
+    const lv = (S as any).livre as { x: number; y: number; z: number } | null | undefined;
+    const focus = lv ? this.focusV.set(lv.x, lv.y, lv.z) : fa?.ready ? this.focusV.copy(fa.obj.position) : fh ? this.focusV.set(fh.x - S.origin.x, fh.y, fh.z - S.origin.z) : null;
     const tgt = fh?.target_creature != null && fh.activity === "combatendo" ? this.actors.creatures.get(fh.target_creature)?.obj.position ?? null : null;
     const cf = this.camfix;
     if (cf && cf.length === 6) { camera.position.set(cf[0], cf[1], cf[2]); camera.lookAt(cf[3], cf[4], cf[5]); camera.far = 60000; camera.near = 1; camera.updateProjectionMatrix(); this.cam.target.set(cf[3], cf[4], cf[5]); }
@@ -193,7 +195,7 @@ export class Scene3D {
       this.streamT = tf;
       this.world.stream(this.cam.target, this.cam.velocity);
       this.veg.stream(this.cam.target);
-      const tile = S.continent.tiles.find(t => t.id === fh?.tile_id);
+      const tile = S.continent.tiles.find(t => t.id === ((S as any).livreTile ?? fh?.tile_id));
       if (tile) this.atm.setBiome(tile.biome, fh!.y);
     }
     const w: WeatherView = ((snap.game as any).weather?.[S.follow] as WeatherView | undefined) ?? CLEAR;

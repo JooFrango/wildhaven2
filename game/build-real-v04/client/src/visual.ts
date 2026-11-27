@@ -214,16 +214,18 @@ export class VisualWorld {
   /** Mesma regra do GLTFLoader: primitiva com COLOR_0 usa uma variante do material com cores de vértice
    *  (o materials.glb não tem primitivas, então o loader não pôde decidir sozinho). Uma variante por material do hex. */
   private materialFor(n: NodeRes, g: THREE.BufferGeometry): THREE.Material {
-    const base = n.tile.materials[n.mat] ?? n.tile.materials[0];
-    if (!base) { const m = new THREE.MeshStandardMaterial({ vertexColors: !!g.getAttribute("color"), roughness: 0.94 }); n.tile.materials[n.mat] = m; return m; }
-    const vc = !!g.getAttribute("color");
-    const key = n.mat * 2 + (vc ? 1 : 0);
+    const vc = !!g.getAttribute("color"), flat = !g.getAttribute("normal");
+    const key = n.mat * 4 + (vc ? 1 : 0) + (flat ? 2 : 0);
     let m = n.tile.variants.get(key);
-    if (!m) {
-      m = vc && !(base as THREE.MeshStandardMaterial).vertexColors ? base.clone() : base;
-      if (vc) (m as THREE.MeshStandardMaterial).vertexColors = true;
-      n.tile.variants.set(key, m);
-    }
+    if (m) return m;
+    const base = (n.tile.materials[n.mat] ?? n.tile.materials[0]) as THREE.MeshStandardMaterial | undefined;
+    if (!base) m = new THREE.MeshStandardMaterial({ vertexColors: vc, flatShading: flat, roughness: 0.94 });
+    // Variante nos dois sentidos para as cores de vértice (malha sem COLOR_0 num material com vertexColors lê cor 0).
+    // Sem NORMAL (50 dos 272 GLBs originais: planícies, savanas, selva, deserto central), o glTF manda o cliente usar
+    // normais PLANAS; sem isso a iluminação dava zero e o relevo saía preto. flatShading = o facetado do próprio asset.
+    else if (base.vertexColors !== vc || base.flatShading !== flat) { m = base.clone(); (m as THREE.MeshStandardMaterial).vertexColors = vc; (m as THREE.MeshStandardMaterial).flatShading = flat; }
+    else m = base;
+    n.tile.variants.set(key, m);
     return m;
   }
   /** Orçamento de malhas novas por quadro (evita picos ao girar a câmera). */

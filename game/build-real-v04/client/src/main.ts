@@ -34,7 +34,7 @@ const ECO_FPS = [12, 15, 20];
 export interface Shared {
   snap: SnapshotFull; prev: SnapshotFull; recvAt: number; prevAt: number;
   prevH: Map<string, HunterFull>; prevC: Map<number, CreatureSnap>;
-  follow: string; origin: { x: number; z: number }; continent: ContinentSummary;
+  follow: string; origin: { x: number; z: number }; continent: ContinentSummary; livre?: { x: number; y: number; z: number } | null;
 }
 
 async function waitHealth(onTry: (n: number) => void) {
@@ -98,8 +98,9 @@ async function main() {
     // mapas do quadro anterior montados UMA vez por mensagem (a V02 montava a cada quadro)
     S.prevH = new Map(S.prev.hunters.map(h => [h.id, h as HunterFull]));
     S.prevC = new Map(S.prev.game.creatures.map(c => [c.id, c as CreatureSnap]));
-    if (!net.connected || loading.reason === "sessao") loading.hide();
-    loading.reason = "";
+    // só a tela da sessão termina com a chegada de dados; a de região espera o relevo (antes o motivo era zerado
+    // a cada mensagem e a tela "Carregando terrenos da região" nunca mais se fechava)
+    if (loading.reason === "sessao") { loading.hide(); loading.reason = ""; }
   };
   const currentBiome = () => { const fh = S.snap.hunters.find(h => h.id === S.follow); return continent.tiles.find(t => t.id === fh?.tile_id)?.biome ?? ""; };
   loading.remember(currentBiome());
@@ -133,7 +134,7 @@ async function main() {
       await s.init((stage, frac, label) => loading.stage(stage, frac, label), initial);
       clearTimeout(slow);
       if (!initial) loading.hide();
-      scene3d = s; scene3dLoading = null;
+      scene3d = s; scene3dLoading = null; (window as any).__wildhavenScene = s; // depuração
       ui.setPortrait(s.portraitUrl);
       return s;
     })();
@@ -196,6 +197,18 @@ async function main() {
   };
   (window as any).__wildhavenSetMode = setMode;
   (window as any).__wildhavenCamera = cam;
+  // depuração/evidência (capturas por bioma): câmera livre no centro de um hex, com o relevo real carregado.
+  // Não altera a simulação; `__wildhavenOlhar(null)` volta a seguir o Hunter.
+  (window as any).__wildhavenOlhar = async (id: string | null, dist = 260, pitch = 28, yaw = 35) => {
+    if (!id) { S.livre = null; (S as any).livreTile = null; return null; }
+    const t = continent.tiles.find(x => x.id === id); if (!t) return null;
+    const c = latticeCenter(t.x, t.z), x = c.x - origin.x, z = c.z - origin.z;
+    await heights.load(id);
+    const y = heights.heightAt(x, z) ?? 0;
+    S.livre = { x, y, z }; (S as any).livreTile = id;
+    cam.zoomTo(dist); (cam as any).wantPitch = (cam as any).pitch = (pitch * Math.PI) / 180; (cam as any).wantYaw = (cam as any).yaw = (yaw * Math.PI) / 180; (cam as any).dist = dist;
+    return { id, biome: t.biome, x, y, z };
+  };
 
   // ---------------------------------------------------------------- interface (temporizador próprio, 4 Hz)
   const ui = new Ui({
@@ -274,6 +287,7 @@ async function main() {
   (window as any).__wildhavenPerf = perf.public;
   perf.publish();
 
+  (window as any).__wildhavenDbg = () => ({ motivo: loading.reason, visivel: loading.visible, laco: loops.kind, economico: economic, oculto: document.hidden, cena: !!scene3d }); // depuração
   // carregamentos prolongados de região (ex.: Hunter seguido chega a um hex sem relevo pronto): tela de carregamento
   setInterval(() => {
     if (document.hidden || economic || !scene3d || loops.kind !== "3d") return;

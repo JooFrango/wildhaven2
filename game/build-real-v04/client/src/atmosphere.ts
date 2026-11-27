@@ -83,7 +83,13 @@ float gn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); 
 const GROUND_FS = `{
   vec2 q = vGroundW.xz;
   float n = gn(q * 0.45) * 0.5 + gn(q * 0.11) * 0.3 + gn(q * 1.7) * 0.2;
-  float slope = 1.0 - clamp(vGroundN.y, 0.0, 1.0);
+  // malha sem NORMAL (flatShading): a normal da face vem das derivadas da posição, como na iluminação
+  #ifdef FLAT_SHADED
+    vec3 gN = normalize(cross(dFdx(vGroundW), dFdy(vGroundW))); if (gN.y < 0.0) gN = -gN;
+  #else
+    vec3 gN = vGroundN;
+  #endif
+  float slope = 1.0 - clamp(gN.y, 0.0, 1.0);
   vec3 tint = mix(vec3(0.86, 0.92, 0.78), vec3(1.10, 1.06, 0.92), n);
   diffuseColor.rgb *= tint;
   diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.92, 0.80, 0.66) + vec3(0.03, 0.02, 0.0), smoothstep(0.18, 0.4, slope) * 0.7);
