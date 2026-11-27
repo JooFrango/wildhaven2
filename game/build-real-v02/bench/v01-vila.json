@@ -1,0 +1,420 @@
+{
+  "label": "V01 vila (HV_01)",
+  "url": "http://127.0.0.1:8790/",
+  "renderer": "Chromium headless + SwiftShader (software) — FPS não representa GPU",
+  "viewport": "1280x720@1",
+  "last": {
+    "t": 63.63,
+    "mode": "3d",
+    "frameMs": 4.086417815451282,
+    "frames": 0,
+    "fps": 1.5438054805094559,
+    "heapMB": 132.56072998046875,
+    "drawCalls": 182,
+    "triangles": 1002810,
+    "culled": 0,
+    "tested": 40,
+    "materialAudit": {
+      "folhisco": {
+        "total": 20,
+        "doubleSided": 20
+      },
+      "lobrapedra": {
+        "total": 12,
+        "doubleSided": 12
+      },
+      "hunter": {
+        "total": 1,
+        "doubleSided": 1
+      },
+      "dodo": {
+        "total": 1,
+        "doubleSided": 1
+      }
+    },
+    "ecoFrameMs": 0
+  },
+  "maxDrawCalls": 182,
+  "maxTriangles": 1002810,
+  "samples": [
+    {
+      "t": 5.588,
+      "mode": "3d",
+      "frameMs": 11.351109174606211,
+      "frames": 0,
+      "fps": 2.508990549462677,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 14,
+      "triangles": 871580,
+      "culled": 40,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 11.006,
+      "mode": "3d",
+      "frameMs": 13.378402438848994,
+      "frames": 0,
+      "fps": 1.4685366032724265,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 16.086,
+      "mode": "3d",
+      "frameMs": 10.430699433436054,
+      "frames": 0,
+      "fps": 1.4641288433382138,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 21.45,
+      "mode": "3d",
+      "frameMs": 8.46645261016544,
+      "frames": 0,
+      "fps": 1.7127686905839647,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 26.54,
+      "mode": "3d",
+      "frameMs": 6.7202299112091515,
+      "frames": 0,
+      "fps": 1.5488267637255835,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 31.68,
+      "mode": "3d",
+      "frameMs": 5.888183982923944,
+      "frames": 0,
+      "fps": 1.5996160921369338,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 36.696,
+      "mode": "3d",
+      "frameMs": 5.2151480555996,
+      "frames": 0,
+      "fps": 1.5982100047917753,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 41.945,
+      "mode": "3d",
+      "frameMs": 4.906613701021245,
+      "frames": 0,
+      "fps": 1.5656802880869993,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 47.56,
+      "mode": "3d",
+      "frameMs": 4.497941297007414,
+      "frames": 0,
+      "fps": 1.6281341582516777,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 53.182,
+      "mode": "3d",
+      "frameMs": 4.213292224965947,
+      "frames": 0,
+      "fps": 1.5678896205688804,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 58.322,
+      "mode": "3d",
+      "frameMs": 4.051450782276185,
+      "frames": 0,
+      "fps": 1.4750350320795804,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    },
+    {
+      "t": 63.63,
+      "mode": "3d",
+      "frameMs": 4.086417815451282,
+      "frames": 0,
+      "fps": 1.5438054805094559,
+      "heapMB": 132.56072998046875,
+      "drawCalls": 182,
+      "triangles": 1002810,
+      "culled": 0,
+      "tested": 40,
+      "materialAudit": {
+        "folhisco": {
+          "total": 20,
+          "doubleSided": 20
+        },
+        "lobrapedra": {
+          "total": 12,
+          "doubleSided": 12
+        },
+        "hunter": {
+          "total": 1,
+          "doubleSided": 1
+        },
+        "dodo": {
+          "total": 1,
+          "doubleSided": 1
+        }
+      },
+      "ecoFrameMs": 0
+    }
+  ],
+  "logs": [
+    "warning: [.WebGL-0x121c00387c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x121c00387c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x121c00387c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x121c00387c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+  ],
+  "screenshot": "../bench/v01-vila.png"
+}
