@@ -61,6 +61,8 @@ enum Cmd {
 /// Tráfego WebSocket (todas as conexões) para o painel F3.
 #[derive(Default)]
 struct Traffic {
+    /// V04.1 (MET-02): nanossegundos gastos montando mensagens para os clientes (filtro + diff + serialização)
+    push_ns: AtomicU64,
     bytes: AtomicU64,
     msgs: AtomicU64,
     clients: AtomicU32,
@@ -358,6 +360,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
     let mut busy_pct = 0.0;
     let mut traffic_last = (0u64, 0u64);
     let mut traffic_rate = (0.0f64, 0.0f64);
+    let (mut push_last, mut push_ms_s, mut view_ms_acc, mut view_ms_s) = (0u64, 0.0f64, 0.0f64, 0.0f64);
     let mut batch_hist: std::collections::VecDeque<f64> = std::collections::VecDeque::with_capacity(300);
     loop {
         // comandos até o próximo prazo (resposta imediata ao jogador)
@@ -459,6 +462,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
         let tp = Instant::now();
         let mut value = serde_json::to_value(w.snapshot(now_ms())).unwrap_or_default();
         let view_ms = tp.elapsed().as_secs_f64() * 1000.0;
+        view_ms_acc += view_ms;
         for e in w.game.events.iter() {
             if e.seq > important_seq && IMPORTANT.contains(&e.kind.as_str()) {
                 important_seq = e.seq;
@@ -473,6 +477,11 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
             let (b, m) = (traffic.bytes.load(Ordering::Relaxed), traffic.msgs.load(Ordering::Relaxed));
             traffic_rate = ((b - traffic_last.0) as f64 / el, (m - traffic_last.1) as f64 / el);
             traffic_last = (b, m);
+            // V04.1 (MET-02): custo por segundo da visão publicada (thread da simulação) e da montagem das mensagens
+            // por cliente (tarefas do WebSocket) — fora do cronômetro do passo, antes invisíveis nas métricas
+            let pn = traffic.push_ns.load(Ordering::Relaxed);
+            push_ms_s = (pn - push_last) as f64 / 1e6 / el; push_last = pn;
+            view_ms_s = view_ms_acc / el; view_ms_acc = 0.0;
             steps_window = (Instant::now(), 0);
             busy_ns = 0;
             let p2 = sysinfo::ProcSample::now();
@@ -493,6 +502,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
                 "intervalo_ms": {"total": total_ms, "passos": steps_ms, "janelas_fisicas": window_ms, "gameplay": game_ms, "visao_fio": view_ms, "p50": pq(0.5), "p95": pq(0.95), "p99": pq(0.99), "max": sorted.last().copied().unwrap_or(0.0)},
                 "ocupacao_thread_sim_pct": busy_pct,
                 "processo": proc_view,
+                "custo_ms_por_s": {"passos": busy_pct * 10.0, "visao_publicada": view_ms_s, "mensagens_clientes": push_ms_s},
                 "ws": {"clientes": traffic.clients.load(Ordering::Relaxed), "bytes_por_s": traffic_rate.0, "msgs_por_s": traffic_rate.1, "completos": traffic.fulls.load(Ordering::Relaxed), "ressincronizacoes": traffic.resyncs.load(Ordering::Relaxed)},
                 "terreno": w.terrain.stats,
                 "pacotes": pacotes.resumo(), "viagensAguardandoPacotes": pendentes.len(),
@@ -550,20 +560,26 @@ async fn push(mut socket: WebSocket, s: AppState) {
         let fresh = base.as_ref().map(|(sq, _)| *sq != p.seq).unwrap_or(true) && p.seq > 0;
         let due = last_send.elapsed() >= modo.min_gap() || (modo == Modo::Fundo && p.important_seq > sent_important) || want_full;
         if fresh && due {
-            let view = relevant(&p.value, foco.as_deref());
+            let t_push = std::time::Instant::now();
+            let mut view = relevant(&p.value, foco.as_deref());
             let msg = if want_full || base.is_none() {
-                let mut v = view.clone();
-                if let Some(o) = v.as_object_mut() {
+                // V04.1: marca, serializa e desmarca no próprio valor (antes: mais uma cópia profunda do estado)
+                let mut m = String::new();
+                if let Some(o) = view.as_object_mut() {
                     o.insert("$t".into(), "full".into());
                     o.insert("$seq".into(), p.seq.into());
+                    m = serde_json::to_string(&*o).unwrap_or_default();
+                    o.remove("$t");
+                    o.remove("$seq");
                 }
                 s.traffic.fulls.fetch_add(1, Ordering::Relaxed);
-                serde_json::to_string(&v).unwrap_or_default()
+                m
             } else {
                 let (bseq, bval) = base.as_ref().unwrap();
                 let patch = wire::diff(bval, &view, "").unwrap_or_else(|| serde_json::json!({}));
                 serde_json::to_string(&serde_json::json!({"$t": "d", "$seq": p.seq, "$base": bseq, "p": patch})).unwrap_or_default()
             };
+            s.traffic.push_ns.fetch_add(t_push.elapsed().as_nanos() as u64, Ordering::Relaxed);
             s.traffic.bytes.fetch_add(msg.len() as u64, Ordering::Relaxed);
             s.traffic.msgs.fetch_add(1, Ordering::Relaxed);
             if socket.send(Message::Text(msg.into())).await.is_err() {
@@ -617,10 +633,52 @@ fn relevant(v: &serde_json::Value, foco: Option<&str>) -> serde_json::Value {
     let (hx, hz) = (h["x"].as_f64().unwrap_or(0.0), h["z"].as_f64().unwrap_or(0.0));
     let alvos: std::collections::HashSet<u64> = v["hunters"].as_array().map(|a| a.iter().filter_map(|h| h["target_creature"].as_u64()).collect()).unwrap_or_default();
     let near = |o: &serde_json::Value, r: f64| { let (x, z) = (o["x"].as_f64().unwrap_or(f64::MAX), o["z"].as_f64().unwrap_or(f64::MAX)); ((x - hx).powi(2) + (z - hz).powi(2)).sqrt() <= r };
-    let mut out = v.clone();
-    if let Some(cs) = out["game"]["creatures"].as_array_mut() { cs.retain(|c| near(c, RAIO_FOCO_M) || c["id"].as_u64().map(|i| alvos.contains(&i)).unwrap_or(false)); }
-    if let Some(ts) = out["game"]["tracks"].as_array_mut() { ts.retain(|t| near(t, RAIO_RASTROS_M)); }
-    out
+    // V04.1: copia só o que o cliente recebe. Antes, o estado INTEIRO (todas as criaturas perto de qualquer Hunter)
+    // era copiado e só depois filtrado, para cada cliente, a cada envio. Mesmo resultado (teste `relevant_igual`).
+    let (Some(top), Some(game)) = (v.as_object(), v["game"].as_object()) else { return v.clone() };
+    let mut g = serde_json::Map::new();
+    for (k, val) in game {
+        let nv = match (k.as_str(), val.as_array()) {
+            ("creatures", Some(a)) => serde_json::Value::Array(a.iter().filter(|c| near(c, RAIO_FOCO_M) || c["id"].as_u64().map(|i| alvos.contains(&i)).unwrap_or(false)).cloned().collect()),
+            ("tracks", Some(a)) => serde_json::Value::Array(a.iter().filter(|t| near(t, RAIO_RASTROS_M)).cloned().collect()),
+            _ => val.clone(),
+        };
+        g.insert(k.clone(), nv);
+    }
+    let mut out = serde_json::Map::new();
+    for (k, val) in top { out.insert(k.clone(), if k == "game" { serde_json::Value::Object(std::mem::take(&mut g)) } else { val.clone() }); }
+    serde_json::Value::Object(out)
+}
+
+#[cfg(test)]
+mod tests_relevant {
+    use super::*;
+    /// A versão da V04 (cópia inteira + filtro), para provar que a nova devolve o mesmo valor.
+    fn relevant_v04(v: &serde_json::Value, foco: Option<&str>) -> serde_json::Value {
+        let Some(id) = foco else { return v.clone() };
+        let Some(h) = v["hunters"].as_array().and_then(|a| a.iter().find(|h| h["id"] == id)) else { return v.clone() };
+        let (hx, hz) = (h["x"].as_f64().unwrap_or(0.0), h["z"].as_f64().unwrap_or(0.0));
+        let alvos: std::collections::HashSet<u64> = v["hunters"].as_array().map(|a| a.iter().filter_map(|h| h["target_creature"].as_u64()).collect()).unwrap_or_default();
+        let near = |o: &serde_json::Value, r: f64| { let (x, z) = (o["x"].as_f64().unwrap_or(f64::MAX), o["z"].as_f64().unwrap_or(f64::MAX)); ((x - hx).powi(2) + (z - hz).powi(2)).sqrt() <= r };
+        let mut out = v.clone();
+        if let Some(cs) = out["game"]["creatures"].as_array_mut() { cs.retain(|c| near(c, RAIO_FOCO_M) || c["id"].as_u64().map(|i| alvos.contains(&i)).unwrap_or(false)); }
+        if let Some(ts) = out["game"]["tracks"].as_array_mut() { ts.retain(|t| near(t, RAIO_RASTROS_M)); }
+        out
+    }
+    fn amostra(n: usize) -> serde_json::Value {
+        let mut r: u32 = 12345; let mut f = || { r ^= r << 13; r ^= r >> 17; r ^= r << 5; (r as f64 / u32::MAX as f64) * 6000.0 - 3000.0 };
+        let cs: Vec<_> = (0..n).map(|i| serde_json::json!({"id": i, "x": f(), "z": f(), "species": "folhisco", "hp": 10.0, "state": "patrulhando", "crossings": []})).collect();
+        let ts: Vec<_> = (0..n / 2).map(|i| serde_json::json!({"id": i, "x": f(), "z": f()})).collect();
+        serde_json::json!({"tick": 7, "hunters": [{"id": "h1", "x": 10.0, "z": -20.0, "target_creature": 3}, {"id": "h2", "x": 2000.0, "z": 0.0}], "game": {"creatures": cs, "tracks": ts, "money": 5}, "server": {"seq": 1}})
+    }
+    #[test]
+    fn relevant_igual() {
+        let v = amostra(3000);
+        for f in [Some("h1"), Some("h2"), Some("nenhum"), None] { assert_eq!(relevant(&v, f), relevant_v04(&v, f)); }
+        let t = std::time::Instant::now(); for _ in 0..50 { std::hint::black_box(relevant_v04(&v, Some("h1"))); } let a = t.elapsed();
+        let t = std::time::Instant::now(); for _ in 0..50 { std::hint::black_box(relevant(&v, Some("h1"))); } let b = t.elapsed();
+        eprintln!("relevant 3000 criaturas: V04 {:.2} ms, V04.1 {:.2} ms por chamada", a.as_secs_f64() * 20.0, b.as_secs_f64() * 20.0);
+    }
 }
 
 /// CPU e RSS do processo (Linux: /proc; Windows: GetProcessTimes/K32GetProcessMemoryInfo, sem dependências).
