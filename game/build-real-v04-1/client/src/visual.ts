@@ -35,7 +35,7 @@ class NodeRes {
   constructor(readonly tile: TileVis, readonly name: string, readonly cat: string, readonly off: number, readonly len: number, readonly tris: number, readonly mat: number) {}
   get ready() { return this.state === "ready" && !!this.mesh; }
 }
-interface LeafE { cat: string; box: THREE.Box3; l0: NodeRes; l1: NodeRes; err1: number; lod: number }
+interface LeafE { cat: string; box: THREE.Box3; l0: NodeRes; l1: NodeRes; err1: number; lod: number; wbox?: THREE.Box3 }
 interface BlockE { box: THREE.Box3; parts: { cat: string; node: NodeRes; err: number }[]; leaves: LeafE[]; err: number; wbox: THREE.Box3 }
 
 export class TileVis {
@@ -72,7 +72,10 @@ export class VisualWorld {
   private projView = new THREE.Matrix4();
   private tmpV = new THREE.Vector3();
   private horizon: Horizon | null = null;
-  private occl = new Map<object, { t: number; hidden: boolean }>();
+  private occl = new Map<object, { t: number; hidden: boolean; gen: number; queued?: boolean }>();
+  /** V04.1: incrementa quando a câmera se move; resultados de oclusão só expiram se a câmera mudou desde o teste. */
+  private camGen = 0;
+  private evictT = 0;
   private occlQueue: { obj: object; box: THREE.Box3 }[] = [];
   private queue: NodeRes[] = [];
   private inflight = 0;
@@ -274,7 +277,9 @@ export class VisualWorld {
   /** Fila de oclusão compartilhada (atores, células de vegetação): orçamento de raios por quadro, resultado reaproveitado. */
   occlusionTest(obj: object, box: THREE.Box3) {
     const r = this.occl.get(obj);
-    if (!r || this.now - r.t > 600) this.occlQueue.push({ obj, box });
+    // V04.1: antes, todo resultado expirava em 600 ms e voltava à fila mesmo com a câmera parada — o terreno nunca
+    // pulava a atualização (e cada folha alocava uma caixa nova por quadro). O relevo é estático: só a câmera muda.
+    if (!r || (this.now - r.t > 600 && r.gen !== this.camGen && !r.queued)) { this.occlQueue.push({ obj, box }); if (r) r.queued = true; }
     return r?.hidden ?? false;
   }
   private runOcclusion(cam: THREE.Vector3, budget: number) {
@@ -283,11 +288,11 @@ export class VisualWorld {
       const { obj, box } = this.occlQueue.shift()!;
       const was = this.occl.get(obj)?.hidden;
       const hidden = this.occluded(cam, box);
-      this.occl.set(obj, { t: this.now, hidden });
+      this.occl.set(obj, { t: this.now, hidden, gen: this.camGen });
       if (was !== hidden) this.dirty = true;
       n += 3;
     }
-    if (this.occlQueue.length > 4000) this.occlQueue.length = 0;
+    if (this.occlQueue.length > 4000) { for (const q of this.occlQueue) { const r = this.occl.get(q.obj); if (r) r.queued = false; } this.occlQueue.length = 0; }
     if (this.occl.size > 20000) this.occl.clear();
   }
 
@@ -299,6 +304,7 @@ export class VisualWorld {
     const moved = camera.position.distanceToSquared(this.lastCamPos) > 0.25 || camera.quaternion.angleTo(this.lastCamQ) > 0.004;
     const s = this.stats;
     if (!moved && !this.dirty && !this.occlQueue.length) { s.updatesSkipped++; this.pump(); return; }
+    if (moved) this.camGen++;
     this.lastCamPos.copy(camera.position); this.lastCamQ.copy(camera.quaternion); this.dirty = false;
     Object.assign(s, { tiles: this.tiles.size, leavesDrawn: 0, blocksDrawn: 0, tilesAsOne: 0, frustumCulled: 0, distanceCulled: 0, occlusionCulled: 0, bytes: this.stats.loadedBytes, fallbacks: 0 });
     this.projView.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
@@ -342,11 +348,11 @@ export class VisualWorld {
         // folhas: pede o LOD escolhido; se faltar alguma folha visível, o bloco inteiro fica no nível de bloco
         let leavesReady = true;
         for (const l of e.leaves) {
-          wb.copy(l.box).translate(tv.group.position);
+          const wb = (l.wbox ??= l.box.clone().translate(tv.group.position));
           if (!this.frustum.intersectsBox(wb)) continue;
           const dL = wb.distanceToPoint(cam);
           if (l.cat === "rock" && dL > rockMax) continue;
-          if (dL > 500 && this.occlusionTest(l, wb.clone())) continue;
+          if (dL > 500 && this.occlusionTest(l, wb)) continue;
           const want1 = (l.err1 * K) / Math.max(1, dL) < tau * (l.lod === 1 ? 1.2 : 1);
           const n = want1 ? l.l1 : l.l0;
           this.want(n, prio(wb));
@@ -370,11 +376,11 @@ export class VisualWorld {
         }
         for (const p of e.parts) show(p.node, false);
         for (const l of e.leaves) {
-          wb.copy(l.box).translate(tv.group.position);
+          const wb = (l.wbox ??= l.box.clone().translate(tv.group.position));
           if (!this.frustum.intersectsBox(wb)) { show(l.l0, false); show(l.l1, false); s.frustumCulled++; continue; }
           const dL = wb.distanceToPoint(cam);
           if (l.cat === "rock" && dL > rockMax) { show(l.l0, false); show(l.l1, false); s.distanceCulled++; continue; }
-          if (dL > 500 && this.occlusionTest(l, wb.clone())) { show(l.l0, false); show(l.l1, false); s.occlusionCulled++; continue; }
+          if (dL > 500 && this.occlusionTest(l, wb)) { show(l.l0, false); show(l.l1, false); s.occlusionCulled++; continue; }
           let want1 = (l.err1 * K) / Math.max(1, dL) < tau * (l.lod === 1 ? 1.2 : 1);
           if (!want1 && !l.l0.ready) want1 = true; // L0 ainda chegando: mostra L1 (já pronto)
           l.lod = want1 ? 1 : 0;
@@ -386,7 +392,7 @@ export class VisualWorld {
     this.runOcclusion(cam, 72);
     if (this.horizon) { this.horizon.update(); s.horizonHidden = this.horizon.hiddenCount; }
     this.pump();
-    this.evict();
+    if (this.now - this.evictT > 1000) { this.evictT = this.now; this.evict(); }
     let total = 0, ram = 0, vram = 0, drawn = 0;
     for (const tv of this.tiles.values()) for (const n of tv.nodes) { total++; if (n.mesh) { ram++; if (n.drawnOnce) vram++; if (n.mesh.visible) drawn++; } }
     Object.assign(s, { nodesTotal: total, nodesRam: ram, nodesVram: vram, nodesDrawn: drawn, nodesHidden: ram - drawn, queue: this.queue.length, inflight: this.inflight, bytes: this.stats.loadedBytes });
