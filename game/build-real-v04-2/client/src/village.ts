@@ -13,6 +13,7 @@ export class Village {
   private near: THREE.Object3D | null = null;
   private far: THREE.Object3D | null = null;
   lamps: THREE.PointLight[] = [];
+  private center = new THREE.Vector3();
   private loader = new GLTFLoader();
   night = 0;
   constructor(private origin: { x: number; z: number }, _actors: Actors) {
@@ -49,7 +50,7 @@ export class Village {
   }
   update(camera: THREE.Camera, _dt: number) {
     if (!this.near || !this.far) return;
-    const d = camera.position.distanceTo(new THREE.Vector3(this.group.position.x, 930, this.group.position.z));
+    const d = camera.position.distanceTo(this.center.set(this.group.position.x, 930, this.group.position.z));
     this.near.visible = d < 450;
     this.far.visible = d >= 450 && d < 6000;
     for (const l of this.lamps) { l.intensity = this.near.visible ? this.night * 7 : 0; l.visible = l.intensity > 0.05; }

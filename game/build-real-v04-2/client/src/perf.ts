@@ -132,7 +132,7 @@ function estimateVram(r: THREE.WebGLRenderer) {
   const seen = new Set<unknown>(); let bytes = 0;
   scene.traverse(o => {
     const m = o as THREE.Mesh; if (!m.isMesh || !m.geometry) return;
-    for (const a of [...Object.values(m.geometry.attributes), m.geometry.index]) if (a && !seen.has(a)) { seen.add(a); bytes += ((a as THREE.BufferAttribute).array as ArrayBufferView).byteLength; }
+    for (const a of [...Object.values(m.geometry.attributes), m.geometry.index]) if (a && !seen.has(a)) { seen.add(a); bytes += ((a as THREE.BufferAttribute).array as ArrayBufferView | null)?.byteLength ?? (a as any).__whBytes ?? 0; }
     for (const mat of Array.isArray(m.material) ? m.material : [m.material]) for (const v of Object.values(mat)) {
       const t = v as THREE.Texture;
       if (t?.isTexture && !seen.has(t)) { seen.add(t); const img = t.image as { width?: number; height?: number }; if (img?.width) bytes += img.width * img.height! * 4 * 1.33; }

@@ -21,6 +21,7 @@ export class StrategyCamera {
   /** Fator de quanto a câmera se afasta além do mínimo para enquadrar o combate. */
   private combatFrame = 0;
   velocity = new THREE.Vector3();
+  private tPan = new THREE.Vector3(); private tFwd = new THREE.Vector3(); private tRight = new THREE.Vector3();
   private lastTarget = new THREE.Vector3();
 
   constructor(readonly camera: THREE.PerspectiveCamera, private dom: HTMLElement, private ground: (x: number, z: number) => number | null) {
@@ -45,8 +46,8 @@ export class StrategyCamera {
 
   update(dt: number, focus: THREE.Vector3 | null, combatWith: THREE.Vector3 | null) {
     const k = this.keys;
-    const pan = new THREE.Vector3();
-    const fwd = new THREE.Vector3(-Math.sin(this.yaw), 0, -Math.cos(this.yaw)), right = new THREE.Vector3(-fwd.z, 0, fwd.x);
+    const pan = this.tPan.set(0, 0, 0); // V04.2: temporárias reaproveitadas
+    const fwd = this.tFwd.set(-Math.sin(this.yaw), 0, -Math.cos(this.yaw)), right = this.tRight.set(-fwd.z, 0, fwd.x);
     if (k.has("w") || k.has("arrowup")) pan.add(fwd);
     if (k.has("s") || k.has("arrowdown")) pan.sub(fwd);
     if (k.has("d") || k.has("arrowright")) pan.add(right);

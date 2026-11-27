@@ -3,6 +3,11 @@
 // o horário e o clima vêm do servidor autoritativo (snapshot.clock / snapshot.game.weather).
 import * as THREE from "three";
 import type { GraphicsSettings } from "./settings";
+// V04.2: cores fixas do ciclo de luz/clima e temporárias do quadro (sem alocação por quadro)
+const C_GOLD = new THREE.Color(0xffa060), C_MOONLIGHT = new THREE.Color(0x8fa6d8), C_SAND = new THREE.Color(0xc89a5a), C_RAIN = new THREE.Color(0x7c8a94);
+const C_SNOW = new THREE.Color(0xe8eef6), C_DUSK = new THREE.Color(0xffb27a), C_NIGHTFOG = new THREE.Color(0x0a1222), C_CLOUDZ = new THREE.Color(0x5d6670);
+const C_NIGHTZ = new THREE.Color(0x02050d), C_GOLDH = new THREE.Color(0xffa36b), C_NIGHTH = new THREE.Color(0x0b1424);
+const T_SUN = new THREE.Color(), T_FOG = new THREE.Color(), T_ZEN = new THREE.Color(), T_HOR = new THREE.Color(), T_MOON = new THREE.Vector3();
 
 export const ATMOS = {
   uTime: { value: 0 },
@@ -239,11 +244,12 @@ export class Atmosphere {
     const targetNight = THREE.MathUtils.smoothstep(-elev, -0.02, 0.18);
     this.night += (targetNight - this.night) * Math.min(1, dt * 0.8);
     const golden = THREE.MathUtils.smoothstep(0.35 - Math.max(0, elev), 0, 0.35);
-    const sunCol = new THREE.Color(0xffffff).lerp(new THREE.Color(0xffa060), golden * 0.85).multiply(this.cur.sunTint);
+    // V04.2: cores constantes e temporárias reaproveitadas (antes ~12 THREE.Color novas por quadro); mesma conta
+    const sunCol = T_SUN.set(0xffffff).lerp(C_GOLD, golden * 0.85).multiply(this.cur.sunTint);
     const cloudDim = 1 - 0.55 * w.cloud - 0.25 * w.intensity;
-    const moonDir = this.sunDir.clone().negate(); moonDir.y = Math.abs(moonDir.y) * 0.9 + 0.1; moonDir.normalize();
+    const moonDir = T_MOON.copy(this.sunDir).negate(); moonDir.y = Math.abs(moonDir.y) * 0.9 + 0.1; moonDir.normalize();
     const lightDir = this.night > 0.5 ? moonDir : this.sunDir;
-    this.sun.color.copy(this.night > 0.5 ? new THREE.Color(0x8fa6d8) : sunCol);
+    this.sun.color.copy(this.night > 0.5 ? C_MOONLIGHT : sunCol);
     const moonLight = 0.08 + 0.22 * (1 - Math.abs(w.moonPhase - 0.5) * 2);
     this.sun.intensity = this.night > 0.5 ? moonLight * (1 - 0.6 * w.cloud) : 2.6 * Math.max(0.05, Math.min(1, elev * 3)) * cloudDim;
     this.sun.position.copy(focus).addScaledVector(lightDir, 400);
@@ -260,19 +266,19 @@ export class Atmosphere {
     const wf = w.kind === "areia" ? 6 : w.kind === "nevasca" ? 4 : w.kind === "tempestade" ? 2.6 : w.kind === "chuva" || w.kind === "neve" ? 1.8 : w.kind === "nublado" ? 1.2 : 1;
     const dens = this.cur.density * (1 + (wf - 1) * Math.max(0.35, w.intensity)) * (1 + 0.6 * this.night);
     this.fog.density = this.settings.fog === "simples" ? dens * 0.9 : dens;
-    const fogCol = this.cur.fog.clone();
-    if (w.kind === "areia") fogCol.lerp(new THREE.Color(0xc89a5a), 0.7 * w.intensity);
-    if (w.kind === "chuva" || w.kind === "tempestade") fogCol.lerp(new THREE.Color(0x7c8a94), 0.6 * w.intensity);
-    if (w.kind === "neve" || w.kind === "nevasca") fogCol.lerp(new THREE.Color(0xe8eef6), 0.6 * w.intensity);
-    fogCol.lerp(new THREE.Color(0xffb27a), golden * 0.25 * (1 - this.night));
-    fogCol.lerp(new THREE.Color(0x0a1222), this.night * 0.92);
+    const fogCol = T_FOG.copy(this.cur.fog);
+    if (w.kind === "areia") fogCol.lerp(C_SAND, 0.7 * w.intensity);
+    if (w.kind === "chuva" || w.kind === "tempestade") fogCol.lerp(C_RAIN, 0.6 * w.intensity);
+    if (w.kind === "neve" || w.kind === "nevasca") fogCol.lerp(C_SNOW, 0.6 * w.intensity);
+    fogCol.lerp(C_DUSK, golden * 0.25 * (1 - this.night));
+    fogCol.lerp(C_NIGHTFOG, this.night * 0.92);
     this.fog.color.copy(fogCol);
     ATMOS.uFogBase.value = this.cur.base; ATMOS.uFogFalloff.value = this.cur.falloff;
     ATMOS.uWind.value.set(w.wind[0], w.wind[1]);
     ATMOS.uWindScale.value = 0.6 + Math.hypot(w.wind[0], w.wind[1]) * 0.8 + w.intensity * 1.2;
     // céu
-    const z = this.cur.zenith.clone().lerp(new THREE.Color(0x5d6670), w.cloud * 0.6).lerp(new THREE.Color(0x02050d), this.night);
-    const h = this.cur.horizon.clone().lerp(new THREE.Color(0xffa36b), golden * 0.55 * (1 - this.night)).lerp(fogCol, 0.35).lerp(new THREE.Color(0x0b1424), this.night * 0.9);
+    const z = T_ZEN.copy(this.cur.zenith).lerp(C_CLOUDZ, w.cloud * 0.6).lerp(C_NIGHTZ, this.night);
+    const h = T_HOR.copy(this.cur.horizon).lerp(C_GOLDH, golden * 0.55 * (1 - this.night)).lerp(fogCol, 0.35).lerp(C_NIGHTH, this.night * 0.9);
     this.skyU.uZenith.value.copy(z); this.skyU.uHorizon.value.copy(h); this.skyU.uFogColor.value.copy(fogCol);
     this.skyU.uSunDir.value.copy(this.sunDir); this.skyU.uMoonDir.value.copy(moonDir); this.skyU.uSunColor.value.copy(sunCol);
     this.skyU.uNight.value = this.night; this.skyU.uCloud.value = w.cloud; this.skyU.uAurora.value = w.aurora; this.skyU.uMoonPhase.value = w.moonPhase;

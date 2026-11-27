@@ -33,6 +33,9 @@ export class Scene3D {
   /** V04.1: compila em paralelo antes de mudar o número de luzes locais (lanternas/fogueiras). */
   readonly lightGate: LocalLightGate;
   shaderPrewarmMs = 0;
+  /** V04.2: grupos de luzes locais lidos pelo portão (lanternas da vila e fogueiras), sem arrays novos por quadro. */
+  private get localLights(): Iterable<THREE.PointLight>[] { return this.ll ??= [{ [Symbol.iterator]: () => this.village.lamps[Symbol.iterator]() }, this.actors.fires]; }
+  private ll: Iterable<THREE.PointLight>[] | undefined;
   /** V04.1: gravador de quadros (F3 → Gravar quadros). */
   readonly recorder = new FrameRecorder();
   readonly village: Village;
@@ -83,6 +86,7 @@ export class Scene3D {
     this.village = new Village(S.origin, this.actors);
     this.lightGate = new LocalLightGate(this.renderer, this.scene);
     this.actors.warm = o => this.renderer.compileAsync(o, this.camera, this.scene);
+    this.world.warm = o => this.renderer.compileAsync(o, this.camera, this.scene);
     this.fx = new WeatherFx();
     this.grass = new GrassField(this.world, settings);
     perf.attach(r);
@@ -160,7 +164,7 @@ export class Scene3D {
     const warm = new THREE.Group(); warm.name = "pre-compilacao";
     for (const p of this.actors.loadedTemplates()) warm.add(p);
     scene.add(warm);
-    this.shaderPrewarmMs = this.lightGate.prewarm(this.camera, [0, 1, 6, 7], [...this.village.lamps, ...this.actors.campFires()]);
+    this.shaderPrewarmMs = this.lightGate.prewarm(this.camera, [0, 1, 6, 7], this.localLights);
     warm.removeFromParent();
     progress(4, 1, "Hunters sincronizados");
   }
@@ -246,7 +250,7 @@ export class Scene3D {
     this.village.night = this.atm.night;
     // sombras: no máximo 30 atualizações por segundo (a 60 FPS, metade dos passes de sombra)
     if (this.renderer.shadowMap.enabled && tf - this.shadowT >= 33) { this.shadowT = tf; this.renderer.shadowMap.needsUpdate = true; }
-    this.lightGate.gate([...this.village.lamps, ...this.actors.campFires()], camera);
+    this.lightGate.gate(this.localLights, camera);
     this.renderer.info.reset();
     this.perf.beginGpu();
     this.renderer.render(this.scene, camera);

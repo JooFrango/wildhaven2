@@ -15,5 +15,6 @@ export default defineConfig({
       "/physics": server,
     },
   },
-  build: { outDir: "dist", assetsDir: "static", emptyOutDir: true, chunkSizeWarningLimit: 900 },
+  // V04.2: o laboratório WebGL × WebGPU sai como página separada (lab/webgpu.html); o jogo não o importa
+  build: { outDir: "dist", assetsDir: "static", emptyOutDir: true, chunkSizeWarningLimit: 900, rollupOptions: { input: { main: resolve(__dirname, "index.html"), labWebgpu: resolve(__dirname, "lab/webgpu.html") } } },
 });

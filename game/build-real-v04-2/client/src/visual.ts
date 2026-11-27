@@ -32,6 +32,8 @@ class NodeRes {
   abort: AbortController | null = null;
   bytes = 0;
   drawnOnce = false;
+  /** V04.2: precisa da cópia dos vértices na CPU depois do envio à GPU (só folhas L0 de relevo: raios do capim). */
+  keepCpu = false;
   constructor(readonly tile: TileVis, readonly name: string, readonly cat: string, readonly off: number, readonly len: number, readonly tris: number, readonly mat: number) {}
   get ready() { return this.state === "ready" && !!this.mesh; }
 }
@@ -57,6 +59,10 @@ export interface VisualStats {
   tiles: number; leavesDrawn: number; blocksDrawn: number; tilesAsOne: number; frustumCulled: number; distanceCulled: number; occlusionCulled: number; horizonHidden: number; loading: number; bytes: number;
   // V03: contagens do streaming por visibilidade
   nodesTotal: number; nodesRam: number; nodesVram: number; nodesDrawn: number; nodesHidden: number; nodesUnloaded: number; queue: number; inflight: number; canceled: number; fallbacks: number; loadedBytes: number; updatesSkipped: number;
+  /** V04.2: materiais de relevo compilados em paralelo antes de aparecer. */
+  compilacoes: number;
+  /** V04.2: nós cujos vértices saíram da RAM da CPU após o envio à GPU. */
+  cpuLiberados: number;
 }
 
 const BUDGET_MB: Record<string, number> = { economico: 0, baixo: 120, medio: 220, alto: 360 };
@@ -87,8 +93,11 @@ export class VisualWorld {
   private focus = new THREE.Vector3();
   private ahead = new THREE.Vector3();
   private wb = new THREE.Box3();
-  stats: VisualStats = { tiles: 0, leavesDrawn: 0, blocksDrawn: 0, tilesAsOne: 0, frustumCulled: 0, distanceCulled: 0, occlusionCulled: 0, horizonHidden: 0, loading: 0, bytes: 0, nodesTotal: 0, nodesRam: 0, nodesVram: 0, nodesDrawn: 0, nodesHidden: 0, nodesUnloaded: 0, queue: 0, inflight: 0, canceled: 0, fallbacks: 0, loadedBytes: 0, updatesSkipped: 0 };
+  stats: VisualStats = { tiles: 0, leavesDrawn: 0, blocksDrawn: 0, tilesAsOne: 0, frustumCulled: 0, distanceCulled: 0, occlusionCulled: 0, horizonHidden: 0, loading: 0, bytes: 0, nodesTotal: 0, nodesRam: 0, nodesVram: 0, nodesDrawn: 0, nodesHidden: 0, nodesUnloaded: 0, queue: 0, inflight: 0, canceled: 0, fallbacks: 0, loadedBytes: 0, updatesSkipped: 0, compilacoes: 0, cpuLiberados: 0 };
   waterMaterial: THREE.Material | null = null;
+  /** V04.2: pré-compilação assíncrona de materiais de relevo novos (definida pela cena). */
+  warm: ((o: THREE.Object3D) => Promise<unknown>) | null = null;
+  private warmed = new WeakSet<THREE.Material>();
   /** Carregamento inicial: callback de progresso real (nós prontos / pedidos). */
   onProgress: ((ready: number, wanted: number) => void) | null = null;
 
@@ -163,6 +172,7 @@ export class VisualWorld {
       const e = tv.blocks.get(`${Math.floor(l.i / 4)},${Math.floor(l.j / 4)}`); if (!e) continue;
       const l0 = node(l.lods[0].node, l.cat), l1 = node(l.lods[1].node, l.cat);
       if (!l0 || !l1) continue;
+      l0.keepCpu = l.cat === "terrain";
       e.leaves.push({ cat: l.cat, box: box(l.b), l0, l1, err1: l.lods[1].err, lod: -1 });
     }
     for (const t3 of j.tile3) { const n = node(t3.node, t3.cat); if (n) { tv.tile3.push({ cat: t3.cat, node: n, err: t3.err }); tv.err3 = Math.max(tv.err3, t3.err); } }
@@ -204,10 +214,32 @@ export class VisualWorld {
           if (n.cat === "water" && this.waterMaterial) mesh.material = this.waterMaterial;
           // mesmo patch da V02 (relevo com detalhe de solo; rochas sem), aplicado uma vez por material do hex
           else mesh.material = patchMaterial(this.materialFor(n, mesh.geometry), { ground: n.cat === "terrain" });
-          n.tile.group.add(mesh);
-          n.mesh = mesh; n.state = "ready";
+          // V04.2: material de relevo ainda não usado → compila em paralelo (compileAsync, luzes da cena) ANTES de o bloco
+          // aparecer; o hex inteiro (LOD3) segue como fallback sem buraco enquanto isso. Antes compilava no 1º desenho.
+          const mat = mesh.material as THREE.Material;
+          const pronto = () => { if (n.tile.disposed || n.state !== "loading") { this.stats.loadedBytes -= n.bytes; mesh.geometry.dispose(); return; } n.tile.group.add(mesh); n.mesh = mesh; n.state = "ready"; this.dirty = true; };
           n.bytes = Object.values(mesh.geometry.attributes).reduce((s, a) => s + (a as THREE.BufferAttribute).array.byteLength, 0) + (mesh.geometry.index?.array.byteLength ?? 0);
           this.stats.loadedBytes += n.bytes;
+          // V04.2: depois do envio à GPU a cópia dos vértices na CPU não é mais lida (sem raios, sem sombra projetada,
+          // oclusão e colisão usam a grade de alturas). Volumes calculados antes; o array é liberado no próprio envio
+          // (padrão onUpload do three.js). Só as folhas L0 de relevo ficam, para os raios do capim.
+          if (!n.keepCpu) {
+            const g = mesh.geometry; g.computeBoundingBox(); g.computeBoundingSphere();
+            for (const a of [...Object.values(g.attributes), g.index]) {
+              const at = a as THREE.BufferAttribute | null;
+              if (!at || (at as any).isInterleavedBufferAttribute) continue;
+              (at as any).__whBytes = at.array.byteLength;
+              at.onUpload(function (this: THREE.BufferAttribute) { (this as any).array = null; });
+            }
+            this.stats.cpuLiberados = (this.stats.cpuLiberados ?? 0) + 1;
+          }
+          if (this.warm && !this.warmed.has(mat)) {
+            this.warmed.add(mat); this.stats.compilacoes = (this.stats.compilacoes ?? 0) + 1;
+            mesh.visible = true; const p = this.warm(mesh); mesh.visible = false;
+            return p.catch(() => {}).then(pronto);
+          }
+          n.tile.group.add(mesh);
+          n.mesh = mesh; n.state = "ready";
           this.dirty = true;
         })
         .catch(e => { if (n.state === "loading") n.state = (e?.name === "AbortError") ? "none" : "failed"; })

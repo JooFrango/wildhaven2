@@ -32,9 +32,11 @@ export class LocalLightGate {
   }
 
   /** Chame depois que os sistemas decidiram `visible` das luzes locais e antes do render. */
-  gate(lights: THREE.PointLight[], camera: THREE.Camera) {
+  private on: THREE.PointLight[] = [];
+  gate(groups: Iterable<THREE.PointLight>[], camera: THREE.Camera) {
     for (const p of this.phantoms) p.visible = false;
-    const on = lights.filter(l => l.visible && l.parent);
+    const on = this.on; on.length = 0; // V04.2: sem arrays novos por quadro
+    for (const g of groups) for (const l of g) if (l.visible && l.parent) on.push(l);
     const want = on.length;
     if (want === this.applied) return;
     // contagem já compilada pelo portão e nada pendente: aplica (materiais novos desde então ainda passam pelo
@@ -60,7 +62,8 @@ export class LocalLightGate {
    * Pré-compilação síncrona (só atrás da tela de carregamento): para cada contagem de luzes locais, liga fantasmas
    * nessa quantidade e compila todos os materiais visíveis da cena. As luzes reais ficam desligadas durante isso.
    */
-  prewarm(camera: THREE.Camera, counts: number[], local: THREE.PointLight[]) {
+  prewarm(camera: THREE.Camera, counts: number[], groups: Iterable<THREE.PointLight>[]) {
+    const local: THREE.PointLight[] = []; for (const g of groups) for (const l of g) local.push(l);
     const t0 = performance.now(), keep = local.map(l => l.visible);
     for (const l of local) l.visible = false;
     // LODs e objetos ocultos agora (vila próxima/distante, níveis de vegetação) também entram: o compile() do

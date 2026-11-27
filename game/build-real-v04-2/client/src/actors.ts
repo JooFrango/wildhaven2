@@ -93,6 +93,8 @@ export class Actors {
   private camps = new Map<number, THREE.Object3D>();
   private traps = new Map<number, { obj: THREE.Object3D; mixer?: THREE.AnimationMixer; armed?: boolean; actions?: Map<string, THREE.AnimationAction> }>();
   private prints: THREE.InstancedMesh;
+  private printSeq!: THREE.InstancedBufferAttribute;
+  private printPhase = { value: 0 };
   private blobs: THREE.InstancedMesh;
   readonly materialAudit: Record<string, { total: number; doubleSided: number }> = {};
   stats = { mixersUpdated: 0, mixersSkipped: 0, actorsCulled: 0, creatureLods: [0, 0, 0], simulated: 0, created: 0, notCreated: 0, released: 0, visible: 0 };
@@ -111,6 +113,14 @@ export class Actors {
     // pegadas: brilho azul (só as DESCOBERTAS chegam do servidor); somem sobre água (servidor não gera)
     const pg = new THREE.PlaneGeometry(0.34, 0.5).rotateX(-Math.PI / 2);
     const pm = new THREE.MeshBasicMaterial({ color: 0x4cc9ff, transparent: true, opacity: 0.95, depthWrite: false, blending: THREE.AdditiveBlending, map: footprintTexture() });
+    // V04.2: o pulso das pegadas (escala 1 + 0,06·sen(t·0,004 + seq) em x/z) é calculado no shader; a matriz da
+    // instância só muda quando a lista de pegadas muda (antes: 900 matrizes recalculadas e reenviadas por quadro)
+    const seqAttr = new THREE.InstancedBufferAttribute(new Float32Array(900), 1); pg.setAttribute("aSeq", seqAttr); this.printSeq = seqAttr;
+    pm.onBeforeCompile = sh => {
+      sh.uniforms.uPhase = this.printPhase;
+      sh.vertexShader = sh.vertexShader.replace("#include <common>", "#include <common>\nattribute float aSeq; uniform float uPhase;")
+        .replace("#include <begin_vertex>", "#include <begin_vertex>\ntransformed.xz *= 1.0 + 0.06 * sin(uPhase + aSeq);");
+    };
     this.prints = new THREE.InstancedMesh(pg, pm, 900);
     this.prints.count = 0; this.prints.frustumCulled = false; this.prints.renderOrder = 2; this.prints.name = "pegadas";
     // sombra de contato barata (blob) sob cada ator
@@ -221,8 +231,11 @@ export class Actors {
     }
   }
 
+  private tmpP = new THREE.Vector3();
+  private tmpW = new THREE.Vector3();
+  private seenBuf = new Set<number>();
   private place(a: Actor, x: number, y: number, z: number, heading: number, dt: number) {
-    const p = new THREE.Vector3(x - this.origin.x, y, z - this.origin.z);
+    const p = this.tmpP.set(x - this.origin.x, y, z - this.origin.z); // V04.2: sem Vector3 novo por ator por quadro
     const sp = a.lastPos.lengthSq() ? a.lastPos.distanceTo(p) / Math.max(dt, 1e-3) : 0;
     a.speed += (Math.min(sp, 8) - a.speed) * Math.min(1, dt * 6);
     a.lastPos.copy(p);
@@ -270,7 +283,7 @@ export class Actors {
       this.tickMixer(a, dt, camPos);
       blob(a.obj, 1.1);
     }
-    const seen = new Set<number>();
+    const seen = this.seenBuf; seen.clear(); // V04.2: reaproveitado
     const now = performance.now();
     this.stats.simulated = creatures.length; this.stats.notCreated = 0;
     for (const c of creatures) {
@@ -369,7 +382,7 @@ export class Actors {
         ent.driver = this.spawn(HUNTER_URL, "condutor", a => { a.obj.removeFromParent(); a.obj.position.set(0, 1.05, 1.25); obj.add(a.obj); const act = a.actions.get("pose_sentar"); act?.play(); }, r => this.hunterClips(r));
         this.group.add(obj); this.wagons.set(w.id, ent); e = ent;
       }
-      const p = new THREE.Vector3(w.x - this.origin.x, w.y, w.z - this.origin.z);
+      const p = this.tmpW.set(w.x - this.origin.x, w.y, w.z - this.origin.z);
       const moved = e.last.lengthSq() ? e.last.distanceTo(p) : 0;
       e.last.copy(p);
       e.obj.position.copy(p);
@@ -396,7 +409,8 @@ export class Actors {
   }
 
   /** V04.1: luzes das fogueiras (para o portão de luzes locais da cena). */
-  campFires(): THREE.PointLight[] { const out: THREE.PointLight[] = []; for (const g of this.camps.values()) { const f = g.getObjectByName("fogueira") as THREE.PointLight | undefined; if (f) out.push(f); } return out; }
+  readonly fires = new Set<THREE.PointLight>();
+  campFires(): Iterable<THREE.PointLight> { return this.fires; }
 
   syncCamps(list: CampSnap[], ground: (x: number, z: number) => number | null) {
     for (const c of list) {
@@ -406,11 +420,11 @@ export class Actors {
       g.position.set(c.x - this.origin.x + 4, y, c.z - this.origin.z + 4);
       this.template(CAMP_URL).then(t => g.add(t.scene.clone(true))).catch(() => {});
       // fogueira: luz pontual pequena e barata (sem sombra)
-      const fire = new THREE.PointLight(0xff8a3a, 6, 18, 2); fire.position.set(0, 0.8, 0); fire.name = "fogueira"; g.add(fire);
+      const fire = new THREE.PointLight(0xff8a3a, 6, 18, 2); fire.position.set(0, 0.8, 0); fire.name = "fogueira"; g.add(fire); this.fires.add(fire);
       this.group.add(g); this.camps.set(c.id, g);
     }
     for (const [id, g] of this.camps) {
-      if (!list.some(c => c.id === id)) { g.removeFromParent(); this.camps.delete(id); continue; }
+      if (!list.some(c => c.id === id)) { g.removeFromParent(); this.camps.delete(id); const f0 = g.getObjectByName("fogueira") as THREE.PointLight | undefined; if (f0) this.fires.delete(f0); continue; }
       const f = g.getObjectByName("fogueira") as THREE.PointLight | undefined;
       if (f) f.intensity = 5 + Math.sin(performance.now() * 0.013) * 0.8 + Math.sin(performance.now() * 0.031) * 0.6;
     }
@@ -446,6 +460,7 @@ export class Actors {
    *  preserva a identidade da lista sem mudanças); por quadro, só o pulso de brilho (escrita direta na matriz). */
   private trackList: FootprintSnap[] | null = null;
   private trackBase = new Float32Array(900 * 5);
+  private trackDrawn: FootprintSnap[] | null = null;
   private trackN = 0;
   syncTracks(list: FootprintSnap[], ground: (x: number, z: number) => number | null, now: number) {
     if (list !== this.trackList) {
@@ -462,13 +477,19 @@ export class Actors {
       }
       this.trackN = n;
     }
-    const E = this.prints.instanceMatrix.array as Float32Array, B = this.trackBase;
-    for (let n = 0; n < this.trackN; n++) {
-      const o = n * 5, c = Math.cos(B[o + 3]), si = Math.sin(B[o + 3]), p = 1 + 0.06 * Math.sin(now * 0.004 + B[o + 4]), e = n * 16;
-      E[e] = c * p; E[e + 1] = 0; E[e + 2] = -si * p; E[e + 3] = 0; E[e + 4] = 0; E[e + 5] = 1; E[e + 6] = 0; E[e + 7] = 0;
-      E[e + 8] = si * p; E[e + 9] = 0; E[e + 10] = c * p; E[e + 11] = 0; E[e + 12] = B[o]; E[e + 13] = B[o + 1]; E[e + 14] = B[o + 2]; E[e + 15] = 1;
+    // fase do pulso em double e reduzida a [0, 2π) (o shader só soma ângulos pequenos: sem perda de precisão em float)
+    this.printPhase.value = (now * 0.004) % (Math.PI * 2);
+    if (list !== this.trackDrawn) {
+      this.trackDrawn = list;
+      const E = this.prints.instanceMatrix.array as Float32Array, B = this.trackBase, S = this.printSeq.array as Float32Array;
+      for (let n = 0; n < this.trackN; n++) {
+        const o = n * 5, c = Math.cos(B[o + 3]), si = Math.sin(B[o + 3]), e = n * 16;
+        E[e] = c; E[e + 1] = 0; E[e + 2] = -si; E[e + 3] = 0; E[e + 4] = 0; E[e + 5] = 1; E[e + 6] = 0; E[e + 7] = 0;
+        E[e + 8] = si; E[e + 9] = 0; E[e + 10] = c; E[e + 11] = 0; E[e + 12] = B[o]; E[e + 13] = B[o + 1]; E[e + 14] = B[o + 2]; E[e + 15] = 1;
+        S[n] = B[o + 4] % (Math.PI * 2);
+      }
+      this.prints.count = this.trackN; this.prints.instanceMatrix.needsUpdate = this.trackN > 0; this.printSeq.needsUpdate = this.trackN > 0;
     }
-    this.prints.count = this.trackN; this.prints.instanceMatrix.needsUpdate = this.trackN > 0;
   }
 
 }
