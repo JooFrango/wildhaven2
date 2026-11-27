@@ -4,6 +4,7 @@
 //   node tools/test/alternancia-memoria.mjs --url http://127.0.0.1:8791/ --ciclos 5 --tres 20 --eco 70 --out bench/v03-alternancia.json
 import { createRequire } from "node:module";
 import fs from "node:fs";
+import { browserTree, uniqueProfile, rss as rssOf } from "./proc.mjs";
 const require = createRequire(import.meta.url);
 let pw; try { pw = require("playwright"); } catch { pw = require("/opt/node22/lib/node_modules/playwright"); }
 const A = Object.fromEntries(process.argv.slice(2).reduce((acc, v, i, a) => (v.startsWith("--") ? [...acc, [v.slice(2), a[i + 1]]] : acc), []));
@@ -11,15 +12,20 @@ const ciclos = Number(A.ciclos ?? 5), tres = Number(A.tres ?? 20), eco = Number(
 const cmd = pid => { try { return fs.readFileSync(`/proc/${pid}/cmdline`, "utf8"); } catch { return ""; } };
 const rss = pid => { try { return +/VmRSS:\s+(\d+)/.exec(fs.readFileSync(`/proc/${pid}/status`, "utf8"))[1] / 1024; } catch { return 0; } };
 const chrome = () => fs.readdirSync("/proc").filter(d => /^\d+$/.test(d)).map(Number).filter(p => /chrom|headless_shell/.test(cmd(p)));
-const before = new Set(chrome());
-const b = await pw.chromium.launch({ channel: "chromium", args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--enable-precise-memory-info", "--js-flags=--expose-gc"] });
-const p = await b.newPage({ viewport: { width: 1280, height: 720 } });
+const PROFILE = uniqueProfile("alternan");
+const bCtx = await pw.chromium.launchPersistentContext(PROFILE, { channel: "chromium", viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1, args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--enable-precise-memory-info", "--js-flags=--expose-gc"] });
+const b = { close: () => bCtx.close() };
+const p = bCtx.pages()[0] ?? await bCtx.newPage();
 await p.goto(A.url ?? "http://127.0.0.1:8791/");
 await p.waitForFunction(() => (window).__wildhavenPerf?.framesDrawn > 5, null, { timeout: 180000 });
+const cdp = await bCtx.newCDPSession(p);
 const sample = async fase => {
-  await p.evaluate(() => (window).gc?.());
-  const s = await p.evaluate(() => ({ heap: performance.memory?.usedJSHeapSize / 1048576, perf: window.__wildhavenPerf }));
-  const r = chrome().filter(x => !before.has(x)).reduce((t, x) => t + rss(x), 0);
+  // heap exato: coleta de lixo completa e uso real (performance.memory é atrasado/arredondado)
+  await cdp.send("HeapProfiler.collectGarbage");
+  const hu = await cdp.send("Runtime.getHeapUsage");
+  const s = await p.evaluate(() => ({ heap: 0, perf: window.__wildhavenPerf }));
+  s.heap = hu.usedSize / 1048576;
+  const r = browserTree(PROFILE).reduce((t, x) => t + rss(x), 0);
   return { fase, heapMB: s.heap, rssMB: r, vramEstMB: s.perf?.vramEstMB ?? null, loops: s.perf?.loops, nosRelevoRAM: s.perf?.streaming?.relevo?.emRAM ?? null, geometrias: s.perf?.geometries ?? null };
 };
 const out = [await sample("inicio-3d")];

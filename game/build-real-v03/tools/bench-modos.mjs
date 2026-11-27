@@ -8,6 +8,7 @@
 // rasterização que numa GPU real não pesa na CPU. Econômico e oculto não dependem disso.
 import { createRequire } from "node:module";
 import fs from "node:fs";
+import { browserTree, uniqueProfile, rss as rssOf } from "./test/proc.mjs";
 const require = createRequire(import.meta.url);
 let pw; try { pw = require("playwright"); } catch { pw = require("/opt/node22/lib/node_modules/playwright"); }
 const A = Object.fromEntries(process.argv.slice(2).reduce((acc, v, i, a) => (v.startsWith("--") ? [...acc, [v.slice(2), a[i + 1]]] : acc), []));
@@ -23,9 +24,11 @@ const cpuOf = pids => pids.reduce((a, p) => a + (procStat(p)?.t ?? 0), 0);
 const cmd = pid => { try { return fs.readFileSync(`/proc/${pid}/cmdline`, "utf8"); } catch { return ""; } };
 const chromePids = () => fs.readdirSync("/proc").filter(d => /^\d+$/.test(d)).map(Number).filter(p => /chrom|headless_shell/.test(cmd(p)));
 const before = new Set(chromePids());
-const browser = await pw.chromium.launch({ channel: process.env.BENCH_CHANNEL ?? "chromium", headless: !process.env.DISPLAY, args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist", "--enable-precise-memory-info"] });
-const ctx = await browser.newContext({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 });
-const page = await ctx.newPage();
+const PROFILE = uniqueProfile("bench-mo");
+const browserCtx = await pw.chromium.launchPersistentContext(PROFILE, { channel: "chromium", viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1, args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist", "--enable-precise-memory-info"] });
+const browser = { close: () => browserCtx.close() };
+const ctx = browserCtx;
+const page = ctx.pages()[0] ?? await ctx.newPage();
 if (A["sem-raf"]) await page.addInitScript(() => { (window).__semRaf = true; });
 await page.addInitScript(() => {
   const w = window; w.__bench = { frames: [], long: 0, longMs: 0 };
@@ -52,7 +55,7 @@ if (modo === "oculto") {
   await page.waitForTimeout(3000);
 }
 const vis = await page.evaluate(() => document.visibilityState);
-const pids = chromePids().filter(p => !before.has(p));
+const pids = browserTree(PROFILE);
 const spid = A["server-pid"] ? Number(A["server-pid"]) : null;
 await page.evaluate(() => { (window).__bench.frames.length = 0; (window).__bench.long = 0; (window).__bench.longMs = 0; (window).__bench.drawn0 = (window).__wildhavenPerf?.framesDrawn ?? null; });
 const c0 = cpuOf(pids), s0 = spid ? procStat(spid)?.t ?? 0 : 0, w0 = wsBytes, m0 = wsMsgs, tm0 = Date.now();

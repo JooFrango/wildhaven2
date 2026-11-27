@@ -450,14 +450,18 @@ async fn push(mut socket: WebSocket, s: AppState) {
     let mut sent_important = 0u64;
     let mut last_send = std::time::Instant::now() - Duration::from_secs(60);
     let mut want_full = true;
+    // V03: filtro de relevância para a apresentação — criaturas e rastros perto do Hunter que ESTE cliente segue
+    // (mais as criaturas em combate com qualquer Hunter). A simulação continua com todas.
+    let mut foco: Option<String> = None;
     loop {
         // envia se houver publicação nova e o modo permitir (o watch guarda só a mais recente: coalesce atrasos)
         let p = rx.borrow().clone();
         let fresh = base.as_ref().map(|(sq, _)| *sq != p.seq).unwrap_or(true) && p.seq > 0;
         let due = last_send.elapsed() >= modo.min_gap() || (modo == Modo::Fundo && p.important_seq > sent_important) || want_full;
         if fresh && due {
+            let view = relevant(&p.value, foco.as_deref());
             let msg = if want_full || base.is_none() {
-                let mut v = p.value.clone();
+                let mut v = view.clone();
                 if let Some(o) = v.as_object_mut() {
                     o.insert("$t".into(), "full".into());
                     o.insert("$seq".into(), p.seq.into());
@@ -466,7 +470,7 @@ async fn push(mut socket: WebSocket, s: AppState) {
                 serde_json::to_string(&v).unwrap_or_default()
             } else {
                 let (bseq, bval) = base.as_ref().unwrap();
-                let patch = wire::diff(bval, &p.value, "").unwrap_or_else(|| serde_json::json!({}));
+                let patch = wire::diff(bval, &view, "").unwrap_or_else(|| serde_json::json!({}));
                 serde_json::to_string(&serde_json::json!({"$t": "d", "$seq": p.seq, "$base": bseq, "p": patch})).unwrap_or_default()
             };
             s.traffic.bytes.fetch_add(msg.len() as u64, Ordering::Relaxed);
@@ -474,7 +478,7 @@ async fn push(mut socket: WebSocket, s: AppState) {
             if socket.send(Message::Text(msg.into())).await.is_err() {
                 break;
             }
-            base = Some((p.seq, p.value.clone()));
+            base = Some((p.seq, view));
             sent_important = p.important_seq;
             last_send = std::time::Instant::now();
             want_full = false;
@@ -492,6 +496,12 @@ async fn push(mut socket: WebSocket, s: AppState) {
                             Some("fundo") => modo = Modo::Fundo,
                             _ => {}
                         }
+                        if let Some(f) = v["foco"].as_str() {
+                            if foco.as_deref() != Some(f) {
+                                foco = Some(f.to_string());
+                                want_full = true; // o conjunto filtrado mudou: estado completo
+                            }
+                        }
                         if v["resync"].as_bool() == Some(true) {
                             want_full = true;
                             s.traffic.resyncs.fetch_add(1, Ordering::Relaxed);
@@ -505,6 +515,21 @@ async fn push(mut socket: WebSocket, s: AppState) {
         }
     }
     s.traffic.clients.fetch_sub(1, Ordering::Relaxed);
+}
+
+/// Raio de apresentação em torno do Hunter seguido (m): criaturas e rastros além disso não trafegam.
+const RAIO_FOCO_M: f64 = 1500.0;
+const RAIO_RASTROS_M: f64 = 600.0;
+fn relevant(v: &serde_json::Value, foco: Option<&str>) -> serde_json::Value {
+    let Some(id) = foco else { return v.clone() };
+    let Some(h) = v["hunters"].as_array().and_then(|a| a.iter().find(|h| h["id"] == id)) else { return v.clone() };
+    let (hx, hz) = (h["x"].as_f64().unwrap_or(0.0), h["z"].as_f64().unwrap_or(0.0));
+    let alvos: std::collections::HashSet<u64> = v["hunters"].as_array().map(|a| a.iter().filter_map(|h| h["target_creature"].as_u64()).collect()).unwrap_or_default();
+    let near = |o: &serde_json::Value, r: f64| { let (x, z) = (o["x"].as_f64().unwrap_or(f64::MAX), o["z"].as_f64().unwrap_or(f64::MAX)); ((x - hx).powi(2) + (z - hz).powi(2)).sqrt() <= r };
+    let mut out = v.clone();
+    if let Some(cs) = out["game"]["creatures"].as_array_mut() { cs.retain(|c| near(c, RAIO_FOCO_M) || c["id"].as_u64().map(|i| alvos.contains(&i)).unwrap_or(false)); }
+    if let Some(ts) = out["game"]["tracks"].as_array_mut() { ts.retain(|t| near(t, RAIO_RASTROS_M)); }
+    out
 }
 
 /// CPU e RSS do processo (Linux: /proc; Windows: GetProcessTimes/K32GetProcessMemoryInfo, sem dependências).

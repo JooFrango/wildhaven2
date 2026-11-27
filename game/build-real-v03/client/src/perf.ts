@@ -1,5 +1,5 @@
 // Métricas do apresentador V03 (nada é estimado sem dizer): intervalos reais de quadro (p50/p95/p99,
-// 1% low, travamentos > 50 ms e > 100 ms), tempo de CPU por quadro, tempo de GPU (EXT_disjoint_timer_query_webgl2,
+// 1% low, travamentos > max(50 ms, 2× o intervalo-alvo) e > max(100 ms, 3×)), tempo de CPU por quadro, tempo de GPU (EXT_disjoint_timer_query_webgl2,
 // quando o navegador expõe), draw calls, triângulos, RAM JS (performance.memory, só Chromium), VRAM ESTIMADA
 // (soma de buffers e texturas, recalculada a cada 5 s — a V02 varria a cena a cada 30 quadros), quadros
 // efetivamente desenhados, estado dos laços 3D / pixel art e uma série temporal para o relatório exportável.
@@ -13,6 +13,8 @@ export class Perf {
   resScale = 1;
   framesDrawn = 0;
   stalls50 = 0;
+  /** Intervalo-alvo do laço ativo (3D: 16,7 ms; Econômico: 1000/FPS). Travamento = intervalo > max(50 ms, 2× alvo). */
+  targetMs = 1000 / 60;
   stalls100 = 0;
   private times: number[] = [];
   private cpu: number[] = [];
@@ -62,8 +64,8 @@ export class Perf {
     if (this.last) {
       const dt = now - this.last;
       this.times.push(dt);
-      if (dt > 50) this.stalls50++;
-      if (dt > 100) this.stalls100++;
+      if (dt > Math.max(50, 2 * this.targetMs)) this.stalls50++;
+      if (dt > Math.max(100, 3 * this.targetMs)) this.stalls100++;
     }
     this.last = now; this.cpu.push(cpuMs); this.framesDrawn++;
     if (this.times.length > 600) this.times.shift();

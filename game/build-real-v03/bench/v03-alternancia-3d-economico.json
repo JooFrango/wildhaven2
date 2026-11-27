@@ -1,0 +1,186 @@
+{
+  "schema": "wildhaven.teste.alternancia.v1",
+  "ciclos": 5,
+  "segundos3D": 25,
+  "segundosEco": 70,
+  "amostras": [
+    {
+      "fase": "inicio-3d",
+      "heapMB": 37.413875579833984,
+      "rssMB": 1353.23046875,
+      "vramEstMB": 112.20057884216308,
+      "loops": {
+        "ativo": "3d",
+        "tresD": "rodando",
+        "pixel": "parado",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": 40,
+      "geometrias": 101
+    },
+    {
+      "ciclo": 1,
+      "fase": "fim-eco",
+      "heapMB": 5.630516052246094,
+      "rssMB": 964.27734375,
+      "vramEstMB": 0,
+      "loops": {
+        "ativo": "pixel",
+        "tresD": "descartado",
+        "pixel": "rodando",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": null,
+      "geometrias": 0
+    },
+    {
+      "ciclo": 1,
+      "fase": "fim-3d",
+      "heapMB": 38.10730743408203,
+      "rssMB": 1413.47265625,
+      "vramEstMB": 112.19464317321777,
+      "loops": {
+        "ativo": "3d",
+        "tresD": "rodando",
+        "pixel": "parado",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": 37,
+      "geometrias": 99
+    },
+    {
+      "ciclo": 2,
+      "fase": "fim-eco",
+      "heapMB": 5.8613433837890625,
+      "rssMB": 1034.33984375,
+      "vramEstMB": 0,
+      "loops": {
+        "ativo": "pixel",
+        "tresD": "descartado",
+        "pixel": "rodando",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": null,
+      "geometrias": 0
+    },
+    {
+      "ciclo": 2,
+      "fase": "fim-3d",
+      "heapMB": 38.451900482177734,
+      "rssMB": 1483.01171875,
+      "vramEstMB": 112.13162437438965,
+      "loops": {
+        "ativo": "3d",
+        "tresD": "rodando",
+        "pixel": "parado",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": 27,
+      "geometrias": 88
+    },
+    {
+      "ciclo": 3,
+      "fase": "fim-eco",
+      "heapMB": 6.0653839111328125,
+      "rssMB": 1104.58203125,
+      "vramEstMB": 0,
+      "loops": {
+        "ativo": "pixel",
+        "tresD": "descartado",
+        "pixel": "rodando",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": null,
+      "geometrias": 0
+    },
+    {
+      "ciclo": 3,
+      "fase": "fim-3d",
+      "heapMB": 38.35224914550781,
+      "rssMB": 1522.51171875,
+      "vramEstMB": 111.96841255187988,
+      "loops": {
+        "ativo": "3d",
+        "tresD": "rodando",
+        "pixel": "parado",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": 24,
+      "geometrias": 82
+    },
+    {
+      "ciclo": 4,
+      "fase": "fim-eco",
+      "heapMB": 6.125637054443359,
+      "rssMB": 1147.25390625,
+      "vramEstMB": 0,
+      "loops": {
+        "ativo": "pixel",
+        "tresD": "descartado",
+        "pixel": "rodando",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": null,
+      "geometrias": 0
+    },
+    {
+      "ciclo": 4,
+      "fase": "fim-3d",
+      "heapMB": 38.58475112915039,
+      "rssMB": 1529.21875,
+      "vramEstMB": 112.04077926635742,
+      "loops": {
+        "ativo": "3d",
+        "tresD": "rodando",
+        "pixel": "parado",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": 38,
+      "geometrias": 98
+    },
+    {
+      "ciclo": 5,
+      "fase": "fim-eco",
+      "heapMB": 6.232208251953125,
+      "rssMB": 1154.51953125,
+      "vramEstMB": 0,
+      "loops": {
+        "ativo": "pixel",
+        "tresD": "descartado",
+        "pixel": "rodando",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": null,
+      "geometrias": 0
+    },
+    {
+      "ciclo": 5,
+      "fase": "fim-3d",
+      "heapMB": 38.716793060302734,
+      "rssMB": 1540.5703125,
+      "vramEstMB": 112.20132270812988,
+      "loops": {
+        "ativo": "3d",
+        "tresD": "rodando",
+        "pixel": "parado",
+        "interface": "4 Hz",
+        "visibilidade": "visible"
+      },
+      "nosRelevoRAM": 39,
+      "geometrias": 104
+    }
+  ],
+  "crescimentoHeapEco_MB": 0.3708648681640625,
+  "crescimentoRssEco_MB": 120.1796875,
+  "renderer": "SwiftShader (software)"
+}

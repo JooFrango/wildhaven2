@@ -62,6 +62,8 @@ export class EconomicView {
   private cloudSpr: HTMLCanvasElement[] = [];
   private dust = Array.from({ length: 90 }, () => ({ x: Math.random() * W, y: Math.random() * H, v: Math.random() }));
   private atlas = new Map<Spr, [HTMLCanvasElement, HTMLCanvasElement]>();
+  private treeSprites = new Map<string, { tree: Spr; pine: Spr }>();
+  private pool: Region[] = [];
   private regions = new Map<number, Region>();
   private norm = { hmin: 0, span: 30, pal: "", gen: 0 };
   private pending: { hmin: number; span: number; pal: string; gen: number } | null = null;
@@ -84,7 +86,7 @@ export class EconomicView {
     for (const c of this.clouds) this.cloudSpr[c.i] = this.blobSprite(c.r);
   }
   /** Libera as regiões em cache (ex.: ao voltar ao 3D por muito tempo). */
-  clear() { this.regions.clear(); this.atlas.clear(); this.stats.regions = 0; }
+  clear() { this.regions.clear(); this.atlas.clear(); this.treeSprites.clear(); this.pool.length = 0; this.stats.regions = 0; }
 
   // ------------------------------------------------------------ atlas (sprites pré-renderizados)
   private sprite(s: Spr, flip: boolean): HTMLCanvasElement {
@@ -143,7 +145,10 @@ export class EconomicView {
     const c = r.trees ?? document.createElement("canvas"); c.width = TILE + 2 * PAD; c.height = TILE + 2 * PAD; r.trees = c;
     const g = c.getContext("2d")!; g.clearRect(0, 0, c.width, c.height);
     const x0 = r.gx * TILE * MPP, z0 = r.gy * TILE * MPP, x1 = x0 + TILE * MPP, z1 = z0 + TILE * MPP;
-    const tree = TREE(...pal.tree), pine = PINE(...pal.tree);
+    // sprites de árvore por paleta criados UMA vez (antes: objetos novos por região → o atlas crescia sem fim)
+    let tp = this.treeSprites.get(palKey);
+    if (!tp) { tp = { tree: TREE(...pal.tree), pine: PINE(...pal.tree) }; this.treeSprites.set(palKey, tp); }
+    const { tree, pine } = tp;
     // mesmas árvores da V02: célula de 12 m, semente pela célula, só onde há relevo e não é água
     for (let wz = Math.floor(z0 / 12) - 1; wz <= Math.floor(z1 / 12) + 1; wz++) for (let wx = Math.floor(x0 / 12) - 1; wx <= Math.floor(x1 / 12) + 1; wx++) {
       const hsh = Math.sin(wx * 12.9898 + wz * 78.233) * 43758.5453, rr = hsh - Math.floor(hsh);
@@ -172,12 +177,15 @@ export class EconomicView {
     const k = (gx + 32768) * 65536 + (gy + 32768);
     let r = this.regions.get(k);
     if (!r) {
-      const ground = document.createElement("canvas"); ground.width = ground.height = TILE;
-      r = { gx, gy, gen: -1, ground, trees: null, treeKey: "", used: 0 };
+      // canvases reaproveitados das regiões descartadas (sem depender do coletor de lixo para a memória nativa)
+      const pooled = this.pool.pop();
+      const ground = pooled?.ground ?? document.createElement("canvas"); ground.width = ground.height = TILE;
+      r = { gx, gy, gen: -1, ground, trees: pooled?.trees ?? null, treeKey: "", used: 0 };
       this.regions.set(k, r);
       if (this.regions.size > 140) { // LRU: descarta as menos usadas
         let oldK = -1, oldU = Infinity; for (const [kk, rr] of this.regions) if (rr.used < oldU) { oldU = rr.used; oldK = kk; }
-        this.regions.delete(oldK);
+        const old = this.regions.get(oldK); this.regions.delete(oldK);
+        if (old) this.pool.push(old);
       }
     }
     r.used = this.frameNo;

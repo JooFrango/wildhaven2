@@ -9,6 +9,8 @@ const canon = v => { if (Array.isArray(v)) return v.map(canon); if (v && typeof 
 const norm = s => { const c = structuredClone(s); for (const k of ["tracks", "creatures"]) c.game?.[k]?.sort((a, b) => String(a.id).localeCompare(String(b.id))); return JSON.stringify(canon(c)); };
 let ok = 0, bad = 0, bytesA = 0, msgsA = 0;
 const a = new WebSocket(url), b = new WebSocket(url);
+const FOCO = process.env.FOCO; // com foco: ambas as conexões recebem a visão filtrada do mesmo Hunter
+if (FOCO) { a.onopen = () => a.send(JSON.stringify({ foco: FOCO })); b.onopen = () => b.send(JSON.stringify({ foco: FOCO })); }
 a.onmessage = e => { bytesA += e.data.length; msgsA++; const s = A.receive(e.data); if (s) { recon.set(A.seq, norm(s)); if (recon.size > 400) recon.delete(recon.keys().next().value); } if (A.needResync) { console.error("A pediu ressincronização"); a.send(JSON.stringify({ resync: true })); } };
 b.onmessage = e => {
   const m = JSON.parse(e.data);
