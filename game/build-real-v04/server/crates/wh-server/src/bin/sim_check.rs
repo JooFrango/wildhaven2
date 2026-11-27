@@ -21,10 +21,10 @@ use wh_core::terrain::TerrainStore;
 
 fn boot(root: &std::path::Path) -> Result<World, Box<dyn std::error::Error>> {
     let manifest: Manifest = serde_json::from_slice(&std::fs::read(root.join("build real/continental/data/continent-272.manifest.json"))?)?;
-    let report: PortalReport = serde_json::from_slice(&std::fs::read(root.join("build real/integracao/relatorio-continental-272.json"))?)?;
+    let report: PortalReport = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v04/data/relatorio-continental-272-v04.json"))?)?;
     let portals = PortalIndex::from_report(report)?;
     let continent = Arc::new(Continent::from_manifest(manifest)?);
-    let physics_dir = root.join(".generated/physics-272");
+    let physics_dir = root.join(".generated/physics-272-v04");
     let allowed: HashSet<String> = portals.certified.iter().filter(|t| physics_dir.join(format!("{t}-physics-v01")).join("index.json").is_file()).cloned().collect();
     let speeds: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v04/data/hunter-workshop-clip-speeds.json"))?)?;
     let walk = speeds["clips"].as_array().unwrap().iter().find(|c| c["name"] == "Walking").unwrap()["speedMetersPerSecond"].as_f64().unwrap();

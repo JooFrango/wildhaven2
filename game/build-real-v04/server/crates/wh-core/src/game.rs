@@ -655,6 +655,7 @@ impl GameState {
             // mesmo consumo de números aleatórios da V02; se um chunk ainda não chegou, desfaz e tenta no próximo tick
             let mut r = XorShift32::new(job.rng);
             let mut home = None;
+            let mut fallback: Option<(f64, f64)> = None;
             let mut pending = false;
             for _ in 0..40 {
                 let a = r.next_f64() * std::f64::consts::TAU;
@@ -667,10 +668,39 @@ impl GameState {
                     pending = true;
                     break;
                 }
-                if walkable_cell(ctx.t, x, z).is_some() {
+                if walkable_cell(ctx.t, x, z).is_none() {
+                    continue;
+                }
+                // V04 (distribuição ecológica, PROVISÓRIO): predadores mantêm território — sem outro grupo da mesma
+                // espécie no raio de forrageio; presas preferem ficar a até ~300 m de água (se houver no hex)
+                if sp.papel == "predador" {
+                    let terr = sp.raio_forrageio_m;
+                    if self.creatures.iter().any(|o| o.species == sid && ((o.home.0 - x).powi(2) + (o.home.1 - z).powi(2)).sqrt() < terr) {
+                        continue;
+                    }
                     home = Some((x, z));
                     break;
                 }
+                if fallback.is_none() {
+                    fallback = Some((x, z));
+                }
+                let mut agua = false;
+                'ring: for rr in [150.0f64, 300.0] {
+                    for k in 0..8 {
+                        let aa = k as f64 * std::f64::consts::TAU / 8.0;
+                        if ctx.t.sample(x + aa.cos() * rr, z + aa.sin() * rr).map(|c| c.water.is_some()).unwrap_or(false) {
+                            agua = true;
+                            break 'ring;
+                        }
+                    }
+                }
+                if agua {
+                    home = Some((x, z));
+                    break;
+                }
+            }
+            if home.is_none() && sp.papel != "predador" {
+                home = fallback;
             }
             if pending {
                 self.metrics.spawn_waits += 1;

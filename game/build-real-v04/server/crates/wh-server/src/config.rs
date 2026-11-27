@@ -47,9 +47,9 @@ impl Config {
         Ok(Self {
             bind: env("WH_BIND").unwrap_or_else(|| "127.0.0.1:8787".into()),
             manifest,
-            physics_dir: r("WH_PHYSICS_DIR", ".generated/physics-272"),
+            physics_dir: r("WH_PHYSICS_DIR", ".generated/physics-272-v04"),
             visual_dir: r("WH_VISUAL_DIR", ".generated/visual-v04"),
-            portal_report: r("WH_PORTAL_REPORT", "build real/integracao/relatorio-continental-272.json"),
+            portal_report: r("WH_PORTAL_REPORT", "game/build-real-v04/data/relatorio-continental-272-v04.json"),
             clip_speeds: r("WH_CLIP_SPEEDS", "game/build-real-v04/data/hunter-workshop-clip-speeds.json"),
             hunter_glb: r("WH_HUNTER_GLB", "labs/hunters/assets/hunter-pve-v01/hunter_pve_v01.glb"),
             spawn: r("WH_SPAWN", "game/build-real-v04/data/spawn-v02.json"),

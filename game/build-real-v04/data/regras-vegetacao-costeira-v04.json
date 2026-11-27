@@ -1,0 +1,2649 @@
+{
+ "schema": "wildhaven.regras-vegetacao-costeira.v04",
+ "status": "PROPOSTA TÉCNICA — raio do tronco MEDIDO na malha original e escalado pelo MESMO fator da correção visual aprovada (altura-alvo da família / altura original), para o colisor coincidir com a árvore desenhada; obstáculo NÃO cortável. Pendente de revisão do diretor.",
+ "fonteEscala": "game/build-real-v04/data/vegetacao-provisoria-v02.json (familias.*.alturaAlvoM)",
+ "metodo": "raio = menor, entre faixas de 2% da altura nos 40% inferiores, da maior distância horizontal ao centro da faixa (seção mais estreita = tronco) (unidades do GLB, multiplicado pela escala de cada instância no compilador)",
+ "hexes": [
+  "arcos",
+  "costa_+00_+14",
+  "costa_+01_+14",
+  "costa_+02_+14",
+  "costa_+03_+09",
+  "costa_+03_+14",
+  "costa_+03_-04",
+  "costa_+03_-05",
+  "costa_+04_+07",
+  "costa_+04_+08",
+  "costa_+04_+09",
+  "costa_+04_+10",
+  "costa_+04_+11",
+  "costa_+04_+12",
+  "costa_+04_+13",
+  "costa_+05_+04",
+  "costa_+05_+05",
+  "costa_+06_+02",
+  "costa_+07_+02",
+  "costa_+08_+02",
+  "costa_+08_-09",
+  "costa_+09_+00",
+  "costa_+09_+01",
+  "costa_+09_-09",
+  "costa_+10_-01",
+  "costa_+10_-06",
+  "costa_+10_-07",
+  "costa_+10_-08",
+  "costa_+10_-09",
+  "costa_+11_-02",
+  "costa_+11_-03",
+  "costa_+11_-04",
+  "costa_+11_-05",
+  "costa_+11_-06",
+  "costa_-01_+15",
+  "costa_-02_+14",
+  "costa_-02_+15",
+  "costa_-03_+14",
+  "costa_-04_+11",
+  "costa_-04_+12",
+  "costa_-04_+14",
+  "falesia",
+  "praia"
+ ],
+ "trees": {
+  "Folhosa_01": {
+   "radius": 0.854,
+   "cuttable": false
+  },
+  "Folhosa_02": {
+   "radius": 0.817,
+   "cuttable": false
+  },
+  "Folhosa_03": {
+   "radius": 0.853,
+   "cuttable": false
+  },
+  "Folhosa_04": {
+   "radius": 0.845,
+   "cuttable": false
+  },
+  "Folhosa_05": {
+   "radius": 0.817,
+   "cuttable": false
+  },
+  "Moita de savana 0": {
+   "radius": 0.966,
+   "cuttable": false
+  },
+  "Moita de savana 1": {
+   "radius": 0.966,
+   "cuttable": false
+  },
+  "Moita de savana 2": {
+   "radius": 0.966,
+   "cuttable": false
+  },
+  "Dossel_1": {
+   "radius": 0.752,
+   "cuttable": false
+  },
+  "Dossel_2": {
+   "radius": 1.201,
+   "cuttable": false
+  },
+  "Figueira_de_varzea_1": {
+   "radius": 3.222,
+   "cuttable": false
+  },
+  "Figueira_de_varzea_2": {
+   "radius": 2.477,
+   "cuttable": false
+  },
+  "Arbusto_1": {
+   "radius": 0.904,
+   "cuttable": false
+  },
+  "Arbusto_2": {
+   "radius": 0.856,
+   "cuttable": false
+  },
+  "Juncos": {
+   "radius": 0.569,
+   "cuttable": false
+  },
+  "Palmeira_1": {
+   "radius": 0.59,
+   "cuttable": false
+  },
+  "Palmeira_2": {
+   "radius": 0.584,
+   "cuttable": false
+  },
+  "Emergente_1": {
+   "radius": 4.522,
+   "cuttable": false
+  },
+  "Emergente_2": {
+   "radius": 3.476,
+   "cuttable": false
+  }
+ },
+ "evidencia": {
+  "Folhosa_01": [
+   {
+    "hex": "costa_+08_-09",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_-09",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-09",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-08",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-07",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-06",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-06",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-05",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-05",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-04",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-04",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-03",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-02",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-01",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+00",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+01",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+07_+02",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+08_+02",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   },
+   {
+    "hex": "praia",
+    "alturaOriginalM": 108.14,
+    "raioTroncoOriginalM": 5.772,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.148,
+    "raioFisicoM": 0.854,
+    "verticesBase": 8
+   }
+  ],
+  "Folhosa_02": [
+   {
+    "hex": "costa_+08_-09",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_-09",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-09",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-08",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-07",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-06",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-06",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-05",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-05",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-04",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-04",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-03",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-02",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-01",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+00",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+01",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+07_+02",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+08_+02",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "praia",
+    "alturaOriginalM": 168.95,
+    "raioTroncoOriginalM": 8.626,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0947,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   }
+  ],
+  "Folhosa_03": [
+   {
+    "hex": "costa_+08_-09",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_-09",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-09",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-08",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-07",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-06",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-06",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-05",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-05",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-04",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-04",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-03",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-02",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-01",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+00",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+01",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+07_+02",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+08_+02",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   },
+   {
+    "hex": "praia",
+    "alturaOriginalM": 142.55,
+    "raioTroncoOriginalM": 7.6,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1122,
+    "raioFisicoM": 0.853,
+    "verticesBase": 8
+   }
+  ],
+  "Folhosa_04": [
+   {
+    "hex": "costa_+08_-09",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_-09",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-09",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-08",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-07",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-06",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-06",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-05",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-05",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-04",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-04",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-03",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-02",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-01",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+00",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+01",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+07_+02",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+08_+02",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   },
+   {
+    "hex": "praia",
+    "alturaOriginalM": 126.7,
+    "raioTroncoOriginalM": 6.69,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.1263,
+    "raioFisicoM": 0.845,
+    "verticesBase": 8
+   }
+  ],
+  "Folhosa_05": [
+   {
+    "hex": "costa_+08_-09",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_-09",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-09",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-08",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-07",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-06",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-06",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-05",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-05",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_-04",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-04",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-03",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+11_-02",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+10_-01",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+00",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+09_+01",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+07_+02",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+08_+02",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   },
+   {
+    "hex": "praia",
+    "alturaOriginalM": 206.29,
+    "raioTroncoOriginalM": 10.533,
+    "familia": "Folhosa",
+    "alturaAlvoVisualM": 16,
+    "fatorEscala": 0.0776,
+    "raioFisicoM": 0.817,
+    "verticesBase": 8
+   }
+  ],
+  "Moita de savana 0": [
+   {
+    "hex": "costa_+06_+02",
+    "alturaOriginalM": 4.63,
+    "raioTroncoOriginalM": 2.978,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3243,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+05_+04",
+    "alturaOriginalM": 4.63,
+    "raioTroncoOriginalM": 2.978,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3243,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+05_+05",
+    "alturaOriginalM": 4.63,
+    "raioTroncoOriginalM": 2.978,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3243,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "arcos",
+    "alturaOriginalM": 4.63,
+    "raioTroncoOriginalM": 2.978,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3243,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+07",
+    "alturaOriginalM": 4.63,
+    "raioTroncoOriginalM": 2.978,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3243,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+08",
+    "alturaOriginalM": 4.63,
+    "raioTroncoOriginalM": 2.978,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3243,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   }
+  ],
+  "Moita de savana 1": [
+   {
+    "hex": "costa_+06_+02",
+    "alturaOriginalM": 4.54,
+    "raioTroncoOriginalM": 2.922,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3304,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+05_+04",
+    "alturaOriginalM": 4.54,
+    "raioTroncoOriginalM": 2.922,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3304,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+05_+05",
+    "alturaOriginalM": 4.54,
+    "raioTroncoOriginalM": 2.922,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3304,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "arcos",
+    "alturaOriginalM": 4.54,
+    "raioTroncoOriginalM": 2.922,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3304,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+07",
+    "alturaOriginalM": 4.54,
+    "raioTroncoOriginalM": 2.922,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3304,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+08",
+    "alturaOriginalM": 4.54,
+    "raioTroncoOriginalM": 2.922,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.3304,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   }
+  ],
+  "Moita de savana 2": [
+   {
+    "hex": "costa_+06_+02",
+    "alturaOriginalM": 8.61,
+    "raioTroncoOriginalM": 5.543,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.1742,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+05_+04",
+    "alturaOriginalM": 8.61,
+    "raioTroncoOriginalM": 5.543,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.1742,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+05_+05",
+    "alturaOriginalM": 8.61,
+    "raioTroncoOriginalM": 5.543,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.1742,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "arcos",
+    "alturaOriginalM": 8.61,
+    "raioTroncoOriginalM": 5.543,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.1742,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+07",
+    "alturaOriginalM": 8.61,
+    "raioTroncoOriginalM": 5.543,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.1742,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+08",
+    "alturaOriginalM": 8.61,
+    "raioTroncoOriginalM": 5.543,
+    "familia": "Moita de savana",
+    "alturaAlvoVisualM": 1.5,
+    "fatorEscala": 0.1742,
+    "raioFisicoM": 0.966,
+    "verticesBase": 2
+   }
+  ],
+  "Dossel_1": [
+   {
+    "hex": "costa_+03_+09",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+09",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+10",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+11",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+11",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+12",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+12",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "falesia",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+13",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+14",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-03_+14",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-02_+14",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+00_+14",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+01_+14",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+02_+14",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_+14",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-02_+15",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-01_+15",
+    "alturaOriginalM": 215.92,
+    "raioTroncoOriginalM": 6.764,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1112,
+    "raioFisicoM": 0.752,
+    "verticesBase": 8
+   }
+  ],
+  "Dossel_2": [
+   {
+    "hex": "costa_+03_+09",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+09",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+10",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+11",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+11",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+12",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+12",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "falesia",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+13",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+14",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-03_+14",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-02_+14",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+00_+14",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+01_+14",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+02_+14",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_+14",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-02_+15",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-01_+15",
+    "alturaOriginalM": 124.26,
+    "raioTroncoOriginalM": 6.218,
+    "familia": "Dossel",
+    "alturaAlvoVisualM": 24,
+    "fatorEscala": 0.1931,
+    "raioFisicoM": 1.201,
+    "verticesBase": 8
+   }
+  ],
+  "Figueira_de_varzea_1": [
+   {
+    "hex": "costa_+03_+09",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+04_+09",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+04_+10",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+04_+11",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+04_+12",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+04_+13",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+01_+14",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+02_+14",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+03_+14",
+    "alturaOriginalM": 92.16,
+    "raioTroncoOriginalM": 19.797,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1628,
+    "raioFisicoM": 3.222,
+    "verticesBase": 7
+   }
+  ],
+  "Figueira_de_varzea_2": [
+   {
+    "hex": "costa_+03_+09",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+04_+09",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+04_+10",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+04_+11",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+04_+12",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+04_+13",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+01_+14",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+02_+14",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+03_+14",
+    "alturaOriginalM": 108.96,
+    "raioTroncoOriginalM": 17.99,
+    "familia": "Figueira_de_varzea",
+    "alturaAlvoVisualM": 15,
+    "fatorEscala": 0.1377,
+    "raioFisicoM": 2.477,
+    "verticesBase": 36
+   }
+  ],
+  "Arbusto_1": [
+   {
+    "hex": "costa_+03_+09",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+09",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+10",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-04_+11",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+11",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-04_+12",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+12",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "falesia",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+13",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-04_+14",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-03_+14",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-02_+14",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+00_+14",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+01_+14",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+02_+14",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+03_+14",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-02_+15",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-01_+15",
+    "alturaOriginalM": 4.57,
+    "raioTroncoOriginalM": 2.579,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.3504,
+    "raioFisicoM": 0.904,
+    "verticesBase": 2
+   }
+  ],
+  "Arbusto_2": [
+   {
+    "hex": "costa_+03_+09",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+09",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+10",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-04_+11",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+11",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-04_+12",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+12",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "falesia",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+04_+13",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-04_+14",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-03_+14",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-02_+14",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+00_+14",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+01_+14",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+02_+14",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_+03_+14",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-02_+15",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   },
+   {
+    "hex": "costa_-01_+15",
+    "alturaOriginalM": 6.74,
+    "raioTroncoOriginalM": 3.607,
+    "familia": "Arbusto",
+    "alturaAlvoVisualM": 1.6,
+    "fatorEscala": 0.2374,
+    "raioFisicoM": 0.856,
+    "verticesBase": 2
+   }
+  ],
+  "Juncos": [
+   {
+    "hex": "costa_+03_+09",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+09",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+10",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+11",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+12",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+04_+13",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+01_+14",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+02_+14",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+03_+14",
+    "alturaOriginalM": 7.89,
+    "raioTroncoOriginalM": 3.204,
+    "familia": "Juncos",
+    "alturaAlvoVisualM": 1.4,
+    "fatorEscala": 0.1775,
+    "raioFisicoM": 0.569,
+    "verticesBase": 8
+   }
+  ],
+  "Palmeira_1": [
+   {
+    "hex": "costa_-04_+11",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+12",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   },
+   {
+    "hex": "falesia",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+14",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-03_+14",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-02_+14",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+00_+14",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-02_+15",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-01_+15",
+    "alturaOriginalM": 118.33,
+    "raioTroncoOriginalM": 5.817,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.1014,
+    "raioFisicoM": 0.59,
+    "verticesBase": 8
+   }
+  ],
+  "Palmeira_2": [
+   {
+    "hex": "costa_-04_+11",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+12",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   },
+   {
+    "hex": "falesia",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-04_+14",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-03_+14",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-02_+14",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_+00_+14",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-02_+15",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   },
+   {
+    "hex": "costa_-01_+15",
+    "alturaOriginalM": 125.35,
+    "raioTroncoOriginalM": 6.105,
+    "familia": "Palmeira",
+    "alturaAlvoVisualM": 12,
+    "fatorEscala": 0.0957,
+    "raioFisicoM": 0.584,
+    "verticesBase": 8
+   }
+  ],
+  "Emergente_1": [
+   {
+    "hex": "costa_-04_+11",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_-04_+12",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   },
+   {
+    "hex": "falesia",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_-04_+14",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_-03_+14",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_-02_+14",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_+00_+14",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_-02_+15",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   },
+   {
+    "hex": "costa_-01_+15",
+    "alturaOriginalM": 235.93,
+    "raioTroncoOriginalM": 33.343,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1356,
+    "raioFisicoM": 4.522,
+    "verticesBase": 7
+   }
+  ],
+  "Emergente_2": [
+   {
+    "hex": "costa_-04_+11",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_-04_+12",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   },
+   {
+    "hex": "falesia",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_-04_+14",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_-03_+14",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_-02_+14",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_+00_+14",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_-02_+15",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   },
+   {
+    "hex": "costa_-01_+15",
+    "alturaOriginalM": 278.93,
+    "raioTroncoOriginalM": 30.298,
+    "familia": "Emergente",
+    "alturaAlvoVisualM": 32,
+    "fatorEscala": 0.1147,
+    "raioFisicoM": 3.476,
+    "verticesBase": 36
+   }
+  ]
+ }
+}
