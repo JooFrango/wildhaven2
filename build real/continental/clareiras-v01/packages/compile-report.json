@@ -1,0 +1,39 @@
+{
+  "schema": "wildhaven.physics.compile-report.v1",
+  "requested": 3,
+  "success": 3,
+  "failures": 0,
+  "scope": "derived-assets-only-no-certified-portals",
+  "items": [
+    {
+      "id": "FX_16",
+      "ok": true,
+      "physicalChunks": 286,
+      "treeInstances": 801,
+      "unknownMeshes": 0,
+      "output": "packages/FX_16-physics-v01/",
+      "sourceBytes": 7909520,
+      "packedBytes": 11768616
+    },
+    {
+      "id": "FX_19",
+      "ok": true,
+      "physicalChunks": 286,
+      "treeInstances": 940,
+      "unknownMeshes": 0,
+      "output": "packages/FX_19-physics-v01/",
+      "sourceBytes": 8966676,
+      "packedBytes": 11962665
+    },
+    {
+      "id": "FX_20",
+      "ok": true,
+      "physicalChunks": 277,
+      "treeInstances": 434,
+      "unknownMeshes": 0,
+      "output": "packages/FX_20-physics-v01/",
+      "sourceBytes": 4578300,
+      "packedBytes": 11992387
+    }
+  ]
+}

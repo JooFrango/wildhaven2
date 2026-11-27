@@ -1,0 +1,23 @@
+{
+  "schema": "wildhaven.tree-rules.v1",
+  "byTile": {
+    "FX_19": {
+      "nodeClasses": {
+        "clareira_flores": "ignore",
+        "clareira_capim": "ignore"
+      }
+    },
+    "FX_20": {
+      "nodeClasses": {
+        "clareira_flores": "ignore",
+        "clareira_capim": "ignore"
+      }
+    },
+    "FX_16": {
+      "nodeClasses": {
+        "clareira_flores": "ignore",
+        "clareira_capim": "ignore"
+      }
+    }
+  }
+}

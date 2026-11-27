@@ -1,0 +1,4347 @@
+{
+  "schema": "wildhaven.trees.catalog.v1",
+  "tileId": "FX_20",
+  "trees": [
+    {
+      "id": "FX_20-0",
+      "species": "conifer",
+      "worldX": 28048.54814171396,
+      "worldY": 891.298871307624,
+      "worldZ": -6407.678309849331,
+      "radius": 3.177914873292383,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-2",
+      "species": "broadleaf",
+      "worldX": 24107.84347339644,
+      "worldY": 928.1757773852505,
+      "worldZ": -7416.8715744018555,
+      "radius": 3.82687302563141,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-4",
+      "species": "broadleaf",
+      "worldX": 27960.957960090775,
+      "worldY": 928.8461094059498,
+      "worldZ": -8501.762016296387,
+      "radius": 4.807178497550568,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-7",
+      "species": "broadleaf",
+      "worldX": 24073.08094593062,
+      "worldY": 937.3247056125838,
+      "worldZ": -8519.270217895508,
+      "radius": 3.9673354319541296,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-9",
+      "species": "broadleaf",
+      "worldX": 24406.755033455032,
+      "worldY": 914.7214314494975,
+      "worldZ": -7627.955965042114,
+      "radius": 2.629109134018677,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-10",
+      "species": "conifer",
+      "worldX": 24201.06723699856,
+      "worldY": 926.2020757462845,
+      "worldZ": -7779.524645124163,
+      "radius": 2.2605477274877543,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-13",
+      "species": "conifer",
+      "worldX": 26168.37846833924,
+      "worldY": 872.7093589349953,
+      "worldZ": -7785.38996233259,
+      "radius": 2.0564476133955667,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-15",
+      "species": "broadleaf",
+      "worldX": 26687.44582935347,
+      "worldY": 888.0106761363543,
+      "worldZ": -6331.624237060547,
+      "radius": 3.651693728080214,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-19",
+      "species": "conifer",
+      "worldX": 27761.39386227758,
+      "worldY": 896.6627662654925,
+      "worldZ": -6639.085562569754,
+      "radius": 1.7024091683716562,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-20",
+      "species": "conifer",
+      "worldX": 27745.08197262914,
+      "worldY": 897.473880321226,
+      "worldZ": -6689.214338030134,
+      "radius": 2.0189003483942733,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-21",
+      "species": "broadleaf",
+      "worldX": 26086.21716114058,
+      "worldY": 893.8097210716269,
+      "worldZ": -5699.228363037109,
+      "radius": 4.69545331181012,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-22",
+      "species": "broadleaf",
+      "worldX": 26325.110815010208,
+      "worldY": 874.270601574433,
+      "worldZ": -7665.072372436523,
+      "radius": 4.162520007993946,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-24",
+      "species": "broadleaf",
+      "worldX": 24621.339658699173,
+      "worldY": 906.360967083849,
+      "worldZ": -7790.355812072754,
+      "radius": 3.2608084151767094,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-29",
+      "species": "broadleaf",
+      "worldX": 24092.08889575972,
+      "worldY": 925.9292578755251,
+      "worldZ": -6513.314994812012,
+      "radius": 5.634331764042644,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-30",
+      "species": "broadleaf",
+      "worldX": 24874.64211841597,
+      "worldY": 894.3468798311285,
+      "worldZ": -7669.059228897095,
+      "radius": 4.953311395390754,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-31",
+      "species": "broadleaf",
+      "worldX": 27003.019834480423,
+      "worldY": 898.0805101121068,
+      "worldZ": -9186.556427001953,
+      "radius": 3.311420910510024,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-32",
+      "species": "broadleaf",
+      "worldX": 25870.172472915787,
+      "worldY": 872.1347592738721,
+      "worldZ": -7697.767095565796,
+      "radius": 4.572836704973174,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-35",
+      "species": "conifer",
+      "worldX": 26372.682501891137,
+      "worldY": 878.6245179493601,
+      "worldZ": -8510.775730678013,
+      "radius": 2.381275738846935,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-36",
+      "species": "conifer",
+      "worldX": 26777.88243126474,
+      "worldY": 891.0683222758312,
+      "worldZ": -5567.380301339286,
+      "radius": 4.082187286073789,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-37",
+      "species": "broadleaf",
+      "worldX": 26207.46992107405,
+      "worldY": 879.142501518054,
+      "worldZ": -6745.033386230469,
+      "radius": 3.2415288821179167,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-38",
+      "species": "broadleaf",
+      "worldX": 26064.127388916153,
+      "worldY": 896.3917128156027,
+      "worldZ": -9405.821685791016,
+      "radius": 3.026412319674254,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-40",
+      "species": "broadleaf",
+      "worldX": 27633.64762683882,
+      "worldY": 893.3295712586912,
+      "worldZ": -6462.280776977539,
+      "radius": 3.7646244537050912,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-41",
+      "species": "broadleaf",
+      "worldX": 25425.34689136519,
+      "worldY": 897.3998373580874,
+      "worldZ": -8958.4677734375,
+      "radius": 3.502678498837814,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-42",
+      "species": "broadleaf",
+      "worldX": 26414.219495735306,
+      "worldY": 886.1488954051514,
+      "worldZ": -6307.167617797852,
+      "radius": 4.332223730472558,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-44",
+      "species": "conifer",
+      "worldX": 24436.07299174186,
+      "worldY": 910.54315774326,
+      "worldZ": -7287.94779750279,
+      "radius": 3.528149642945885,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-45",
+      "species": "broadleaf",
+      "worldX": 27484.093839607376,
+      "worldY": 895.0859585721264,
+      "worldZ": -6643.177810668945,
+      "radius": 4.679005078861672,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-49",
+      "species": "conifer",
+      "worldX": 25650.1186024422,
+      "worldY": 900.5631386774918,
+      "worldZ": -5453.046369280134,
+      "radius": 2.969347685125127,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-50",
+      "species": "broadleaf",
+      "worldX": 26978.374418220657,
+      "worldY": 888.2444836351599,
+      "worldZ": -7837.997352600098,
+      "radius": 3.7435418861562595,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-51",
+      "species": "broadleaf",
+      "worldX": 26682.78137775435,
+      "worldY": 880.6330940590949,
+      "worldZ": -7696.701711654663,
+      "radius": 4.256683796857743,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-53",
+      "species": "conifer",
+      "worldX": 25529.167068715913,
+      "worldY": 880.9251236001704,
+      "worldZ": -8227.818873814174,
+      "radius": 2.2961258504878375,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-56",
+      "species": "broadleaf",
+      "worldX": 26339.25051685347,
+      "worldY": 878.43358701828,
+      "worldZ": -8516.626640319824,
+      "radius": 3.594153683799506,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-58",
+      "species": "conifer",
+      "worldX": 28078.430186914855,
+      "worldY": 927.9135001610766,
+      "worldZ": -8083.884556361607,
+      "radius": 2.317622409504377,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-59",
+      "species": "conifer",
+      "worldX": 28098.940929102355,
+      "worldY": 898.9035133843455,
+      "worldZ": -6700.654314313616,
+      "radius": 2.089774971415335,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-62",
+      "species": "broadleaf",
+      "worldX": 27813.27737232222,
+      "worldY": 915.5284686804098,
+      "worldZ": -7840.193820953369,
+      "radius": 2.1328227973060847,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-63",
+      "species": "conifer",
+      "worldX": 26944.523806125235,
+      "worldY": 889.718855420529,
+      "worldZ": -5865.23046875,
+      "radius": 2.415988321204157,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-64",
+      "species": "broadleaf",
+      "worldX": 25551.604753456253,
+      "worldY": 896.9870110748707,
+      "worldZ": -5642.323455810547,
+      "radius": 3.0133417458308824,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-67",
+      "species": "conifer",
+      "worldX": 24206.39743719387,
+      "worldY": 921.4071745289923,
+      "worldZ": -7159.734161376953,
+      "radius": 3.1380284949912274,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-70",
+      "species": "broadleaf",
+      "worldX": 25340.730703315872,
+      "worldY": 881.1984672421922,
+      "worldZ": -7878.401348114014,
+      "radius": 3.5629626200046176,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-71",
+      "species": "broadleaf",
+      "worldX": 25976.9097418554,
+      "worldY": 908.6659259549222,
+      "worldZ": -9800.959747314453,
+      "radius": 2.964958175330497,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-72",
+      "species": "broadleaf",
+      "worldX": 26806.819242439407,
+      "worldY": 890.6945121588155,
+      "worldZ": -5647.72216796875,
+      "radius": 4.526150448660269,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-73",
+      "species": "conifer",
+      "worldX": 25012.912504158157,
+      "worldY": 890.0199156781721,
+      "worldZ": -7753.060673304966,
+      "radius": 2.934835221650352,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-75",
+      "species": "conifer",
+      "worldX": 25382.906008273672,
+      "worldY": 883.8459384846348,
+      "worldZ": -6404.10400390625,
+      "radius": 2.861646980640002,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-76",
+      "species": "broadleaf",
+      "worldX": 23920.270322761673,
+      "worldY": 940.048586920394,
+      "worldZ": -7801.91162109375,
+      "radius": 4.3181753039812225,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-78",
+      "species": "broadleaf",
+      "worldX": 24009.171445808548,
+      "worldY": 940.2508154691568,
+      "worldZ": -8717.548583984375,
+      "radius": 4.574403915054628,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-79",
+      "species": "conifer",
+      "worldX": 26297.285036593985,
+      "worldY": 880.6970848720705,
+      "worldZ": -6688.091169084822,
+      "radius": 2.2382287446796334,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-83",
+      "species": "broadleaf",
+      "worldX": 25053.101049385208,
+      "worldY": 885.206298924094,
+      "worldZ": -7113.515918731689,
+      "radius": 5.1046664227853835,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-84",
+      "species": "broadleaf",
+      "worldX": 24362.66683765425,
+      "worldY": 913.1731678102861,
+      "worldZ": -7116.109912872314,
+      "radius": 3.841144823906705,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-86",
+      "species": "broadleaf",
+      "worldX": 24090.601133308548,
+      "worldY": 925.9800872572177,
+      "worldZ": -6582.893692016602,
+      "radius": 3.9459083381984827,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-87",
+      "species": "conifer",
+      "worldX": 24867.009829074454,
+      "worldY": 908.5720654521839,
+      "worldZ": -8628.703247070312,
+      "radius": 2.7011961808849803,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-89",
+      "species": "broadleaf",
+      "worldX": 26321.456499061722,
+      "worldY": 874.6967123689913,
+      "worldZ": -7485.344152927399,
+      "radius": 2.5253049318679763,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-93",
+      "species": "broadleaf",
+      "worldX": 25351.472272834915,
+      "worldY": 903.9672823655345,
+      "worldZ": -9152.895324707031,
+      "radius": 1.9873368232674655,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-94",
+      "species": "broadleaf",
+      "worldX": 23943.444913826126,
+      "worldY": 941.6171884703035,
+      "worldZ": -8416.136993408203,
+      "radius": 3.327472037755515,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-96",
+      "species": "conifer",
+      "worldX": 25587.005408385277,
+      "worldY": 879.133618840586,
+      "worldZ": -8182.466544015067,
+      "radius": 1.6330799036229096,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-99",
+      "species": "conifer",
+      "worldX": 24136.47078401307,
+      "worldY": 928.7753107550786,
+      "worldZ": -7702.954945155552,
+      "radius": 2.8364567673311742,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-102",
+      "species": "broadleaf",
+      "worldX": 25130.040952644486,
+      "worldY": 887.4980530934727,
+      "worldZ": -6417.816131591797,
+      "radius": 3.4193017829466754,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-105",
+      "species": "broadleaf",
+      "worldX": 27504.627012214798,
+      "worldY": 909.3336418515463,
+      "worldZ": -8502.556762695312,
+      "radius": 4.81970054192728,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-107",
+      "species": "broadleaf",
+      "worldX": 25245.47335620894,
+      "worldY": 881.8413864248269,
+      "worldZ": -7661.654891967773,
+      "radius": 2.609800769168325,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-109",
+      "species": "conifer",
+      "worldX": 26431.128433462007,
+      "worldY": 875.6672478149767,
+      "worldZ": -7831.319266183035,
+      "radius": 2.9394890094411212,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-111",
+      "species": "broadleaf",
+      "worldX": 25269.00403400435,
+      "worldY": 891.7495633301755,
+      "worldZ": -8467.71044921875,
+      "radius": 4.321978322102245,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-114",
+      "species": "broadleaf",
+      "worldX": 27088.71032520308,
+      "worldY": 900.0344617197579,
+      "worldZ": -9159.059204101562,
+      "radius": 4.271366794130628,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-115",
+      "species": "broadleaf",
+      "worldX": 26461.18370624556,
+      "worldY": 884.0165204309228,
+      "worldZ": -6546.403274536133,
+      "radius": 4.720245392176889,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-116",
+      "species": "broadleaf",
+      "worldX": 25754.8261603929,
+      "worldY": 872.7527675382115,
+      "worldZ": -7669.301158905029,
+      "radius": 2.659775233198567,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-117",
+      "species": "conifer",
+      "worldX": 24980.513447587287,
+      "worldY": 903.44560410278,
+      "worldZ": -8574.789045061383,
+      "radius": 2.3780520365909794,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-119",
+      "species": "broadleaf",
+      "worldX": 25492.191762886185,
+      "worldY": 876.0061429261432,
+      "worldZ": -7622.923972129822,
+      "radius": 4.225458161506884,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-120",
+      "species": "broadleaf",
+      "worldX": 27020.386152229446,
+      "worldY": 888.9391719883259,
+      "worldZ": -5769.38996887207,
+      "radius": 4.512969608182922,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-121",
+      "species": "conifer",
+      "worldX": 25697.775131460054,
+      "worldY": 902.0829917874212,
+      "worldZ": -5368.677490234375,
+      "radius": 2.603911983323651,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-125",
+      "species": "broadleaf",
+      "worldX": 26583.413007698196,
+      "worldY": 885.1736579330847,
+      "worldZ": -6570.895919799805,
+      "radius": 3.07068337487716,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-126",
+      "species": "conifer",
+      "worldX": 26227.021284065384,
+      "worldY": 900.7634547446726,
+      "worldZ": -9621.545584542411,
+      "radius": 3.9332598996722754,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-127",
+      "species": "broadleaf",
+      "worldX": 26731.081563911575,
+      "worldY": 883.21017590607,
+      "worldZ": -8392.643951416016,
+      "radius": 3.281333229524415,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-129",
+      "species": "broadleaf",
+      "worldX": 25373.509366951126,
+      "worldY": 879.6128572014777,
+      "worldZ": -6783.497360229492,
+      "radius": 5.266667198293687,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-130",
+      "species": "broadleaf",
+      "worldX": 26086.97029396071,
+      "worldY": 872.8482015869614,
+      "worldZ": -7962.232654571533,
+      "radius": 3.1754240627511052,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-131",
+      "species": "broadleaf",
+      "worldX": 24726.66036792769,
+      "worldY": 914.0740859591166,
+      "worldZ": -8644.287826538086,
+      "radius": 2.5245544101398756,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-135",
+      "species": "conifer",
+      "worldX": 24826.12680731106,
+      "worldY": 907.6555455063541,
+      "worldZ": -8486.835649762836,
+      "radius": 1.9170619436348506,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-136",
+      "species": "broadleaf",
+      "worldX": 24099.420560798782,
+      "worldY": 936.8295297111188,
+      "worldZ": -8599.921585083008,
+      "radius": 5.4233510910816785,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-137",
+      "species": "conifer",
+      "worldX": 24694.861060240746,
+      "worldY": 923.9623357004214,
+      "worldZ": -9195.870675223214,
+      "radius": 2.3081853481558268,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-138",
+      "species": "conifer",
+      "worldX": 23922.527354883605,
+      "worldY": 936.9646647191082,
+      "worldZ": -7201.452362060547,
+      "radius": 3.901473221109883,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-139",
+      "species": "broadleaf",
+      "worldX": 24759.56187244429,
+      "worldY": 895.0780089535117,
+      "worldZ": -6879.91862487793,
+      "radius": 4.967102904284593,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-140",
+      "species": "broadleaf",
+      "worldX": 24026.029264412064,
+      "worldY": 933.5337740439555,
+      "worldZ": -7585.124606132507,
+      "radius": 5.440448419226924,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-142",
+      "species": "conifer",
+      "worldX": 26957.613771945547,
+      "worldY": 887.9201372204781,
+      "worldZ": -7421.4764731270925,
+      "radius": 2.7143740667009335,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-145",
+      "species": "conifer",
+      "worldX": 25767.275955434663,
+      "worldY": 872.6604814528426,
+      "worldZ": -7671.077274867466,
+      "radius": 3.107083170141601,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-146",
+      "species": "conifer",
+      "worldX": 24831.74021063137,
+      "worldY": 894.3705994864324,
+      "worldZ": -6477.294590541294,
+      "radius": 4.177106146295621,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-147",
+      "species": "broadleaf",
+      "worldX": 24795.460996589798,
+      "worldY": 895.3988706506318,
+      "worldZ": -6490.841117858887,
+      "radius": 3.131146938515979,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-149",
+      "species": "broadleaf",
+      "worldX": 24094.87551685347,
+      "worldY": 929.7757692099364,
+      "worldZ": -7552.417830944061,
+      "radius": 3.3674211115508697,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-151",
+      "species": "broadleaf",
+      "worldX": 25328.125944099564,
+      "worldY": 903.8193408430927,
+      "worldZ": -9119.777069091797,
+      "radius": 5.039388943903764,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-155",
+      "species": "broadleaf",
+      "worldX": 25579.745653114456,
+      "worldY": 875.1111459616524,
+      "worldZ": -7075.948348999023,
+      "radius": 5.224529738680273,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-156",
+      "species": "conifer",
+      "worldX": 27015.889921150345,
+      "worldY": 891.8141317267686,
+      "worldZ": -8550.487670898438,
+      "radius": 3.712796836142035,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-157",
+      "species": "broadleaf",
+      "worldX": 27941.26193042769,
+      "worldY": 929.3686659558803,
+      "worldZ": -8628.882263183594,
+      "radius": 4.049109542762491,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-159",
+      "species": "broadleaf",
+      "worldX": 25764.62625499739,
+      "worldY": 892.1939459468848,
+      "worldZ": -5824.320816040039,
+      "radius": 4.456839565482526,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-162",
+      "species": "broadleaf",
+      "worldX": 25472.80524631514,
+      "worldY": 880.5912772007503,
+      "worldZ": -6579.057289123535,
+      "radius": 3.360359880627187,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-163",
+      "species": "conifer",
+      "worldX": 28117.251510854585,
+      "worldY": 919.0013498752196,
+      "worldZ": -7535.7697759355815,
+      "radius": 1.6901628256783894,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-165",
+      "species": "conifer",
+      "worldX": 27045.501336468424,
+      "worldY": 889.2549212913916,
+      "worldZ": -5902.516148158482,
+      "radius": 2.149756361197937,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-166",
+      "species": "conifer",
+      "worldX": 26064.845886464936,
+      "worldY": 875.9601208055778,
+      "worldZ": -6929.959437779018,
+      "radius": 3.727843313461709,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-167",
+      "species": "broadleaf",
+      "worldX": 27300.148664436478,
+      "worldY": 895.8161210911412,
+      "worldZ": -7108.49853515625,
+      "radius": 3.61433828648267,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-169",
+      "species": "conifer",
+      "worldX": 26582.389258482934,
+      "worldY": 886.6410494984337,
+      "worldZ": -6396.405569893974,
+      "radius": 3.032291193907675,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-170",
+      "species": "broadleaf",
+      "worldX": 24688.28857227339,
+      "worldY": 897.8296927969827,
+      "worldZ": -6900.9572830200195,
+      "radius": 2.551267240106316,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-171",
+      "species": "broadleaf",
+      "worldX": 24256.73817249312,
+      "worldY": 926.0126278643165,
+      "worldZ": -8047.690979003906,
+      "radius": 3.687447207846627,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-172",
+      "species": "conifer",
+      "worldX": 25444.786806613516,
+      "worldY": 876.8259527674459,
+      "worldZ": -7609.622980390276,
+      "radius": 3.353814610382759,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-173",
+      "species": "conifer",
+      "worldX": 25434.00072611686,
+      "worldY": 876.453546443763,
+      "worldZ": -7209.43550327846,
+      "radius": 2.481052273588174,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-174",
+      "species": "broadleaf",
+      "worldX": 24793.92547412886,
+      "worldY": 893.8152455266633,
+      "worldZ": -6882.514289855957,
+      "radius": 3.1883971441384644,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-176",
+      "species": "broadleaf",
+      "worldX": 23974.705884895462,
+      "worldY": 940.4144590970424,
+      "worldZ": -8401.917526245117,
+      "radius": 3.563267212113408,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-177",
+      "species": "conifer",
+      "worldX": 24804.566556892532,
+      "worldY": 894.537594079434,
+      "worldZ": -6574.823338099888,
+      "radius": 2.537751343091893,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-179",
+      "species": "broadleaf",
+      "worldX": 27388.165006599564,
+      "worldY": 892.7257425801458,
+      "worldZ": -6468.52131652832,
+      "radius": 5.414935911283304,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-182",
+      "species": "conifer",
+      "worldX": 28070.281121624674,
+      "worldY": 888.6735333813104,
+      "worldZ": -6314.146153041294,
+      "radius": 3.050726225281768,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-183",
+      "species": "broadleaf",
+      "worldX": 26419.591749153275,
+      "worldY": 900.788936991303,
+      "worldZ": -9652.189575195312,
+      "radius": 3.344794879140808,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-184",
+      "species": "conifer",
+      "worldX": 27446.553268667085,
+      "worldY": 897.8385241740875,
+      "worldZ": -6985.621891566685,
+      "radius": 3.328880821972073,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-186",
+      "species": "conifer",
+      "worldX": 26510.340909919876,
+      "worldY": 894.3796275630085,
+      "worldZ": -5452.257847377232,
+      "radius": 3.053290965990905,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-189",
+      "species": "broadleaf",
+      "worldX": 25518.42833515181,
+      "worldY": 901.9737186023835,
+      "worldZ": -9245.687728881836,
+      "radius": 5.689217553979477,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-190",
+      "species": "conifer",
+      "worldX": 24673.550338979585,
+      "worldY": 899.4337972011052,
+      "worldZ": -6514.880990164621,
+      "radius": 2.402882330550595,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-192",
+      "species": "conifer",
+      "worldX": 26064.040196244514,
+      "worldY": 902.9674843477542,
+      "worldZ": -9644.525669642857,
+      "radius": 3.2042183926087686,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-193",
+      "species": "conifer",
+      "worldX": 24363.96291919722,
+      "worldY": 913.149462094694,
+      "worldZ": -6311.621006556919,
+      "radius": 3.2468473387451167,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-194",
+      "species": "broadleaf",
+      "worldX": 25395.411268196243,
+      "worldY": 895.0456063176205,
+      "worldZ": -5782.726364135742,
+      "radius": 4.197337463444993,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-196",
+      "species": "broadleaf",
+      "worldX": 26087.037084541458,
+      "worldY": 875.717482780799,
+      "worldZ": -6970.892066955566,
+      "radius": 3.895451018065808,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-198",
+      "species": "broadleaf",
+      "worldX": 25999.533786139626,
+      "worldY": 872.1208596104482,
+      "worldZ": -7789.607246398926,
+      "radius": 3.229049336597683,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-199",
+      "species": "broadleaf",
+      "worldX": 24815.13284107222,
+      "worldY": 910.1250931764264,
+      "worldZ": -8607.084396362305,
+      "radius": 3.9808707922790685,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-200",
+      "species": "conifer",
+      "worldX": 24985.623703237397,
+      "worldY": 888.9275175624391,
+      "worldZ": -6610.305044991629,
+      "radius": 1.978142020450555,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-202",
+      "species": "broadleaf",
+      "worldX": 24758.80550952925,
+      "worldY": 897.3796627769896,
+      "worldZ": -7483.241850376129,
+      "radius": 4.402308091546313,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-205",
+      "species": "conifer",
+      "worldX": 26976.514432869095,
+      "worldY": 889.1625151644697,
+      "worldZ": -6984.261862618582,
+      "radius": 2.929783553408375,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-207",
+      "species": "broadleaf",
+      "worldX": 25592.65920825972,
+      "worldY": 878.279136962294,
+      "worldZ": -8122.171501159668,
+      "radius": 3.13210332326712,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-210",
+      "species": "broadleaf",
+      "worldX": 24382.561933479446,
+      "worldY": 916.7838624805638,
+      "worldZ": -7720.382093429565,
+      "radius": 4.209789027435406,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-212",
+      "species": "broadleaf",
+      "worldX": 26880.350873909134,
+      "worldY": 889.9838821559931,
+      "worldZ": -5972.17301940918,
+      "radius": 3.921580847126377,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-213",
+      "species": "broadleaf",
+      "worldX": 24761.245099983353,
+      "worldY": 897.490183152541,
+      "worldZ": -7509.4351797401905,
+      "radius": 3.7612584270020735,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-215",
+      "species": "broadleaf",
+      "worldX": 26222.695501289505,
+      "worldY": 879.1347196817449,
+      "worldZ": -8610.095794677734,
+      "radius": 4.8003774770627015,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-216",
+      "species": "conifer",
+      "worldX": 27031.10457307557,
+      "worldY": 889.7270513165564,
+      "worldZ": -7634.841129847935,
+      "radius": 2.9433805051843764,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-217",
+      "species": "broadleaf",
+      "worldX": 24562.20789905562,
+      "worldY": 908.792748662568,
+      "worldZ": -7767.653579711914,
+      "radius": 3.277536734513874,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-218",
+      "species": "broadleaf",
+      "worldX": 24701.500959358353,
+      "worldY": 901.555875087211,
+      "worldZ": -7673.4200077056885,
+      "radius": 3.0069252244441413,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-219",
+      "species": "conifer",
+      "worldX": 24199.253638365746,
+      "worldY": 930.6602189015913,
+      "worldZ": -8276.918971470424,
+      "radius": 2.978326742258776,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-220",
+      "species": "broadleaf",
+      "worldX": 24097.412260017532,
+      "worldY": 933.9304677167353,
+      "worldZ": -8135.775718688965,
+      "radius": 5.0617149664404115,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-221",
+      "species": "conifer",
+      "worldX": 24780.589453795434,
+      "worldY": 904.9231560996335,
+      "worldZ": -5786.762486049107,
+      "radius": 3.7499741128937374,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-222",
+      "species": "broadleaf",
+      "worldX": 25564.49859043135,
+      "worldY": 902.0610314526896,
+      "worldZ": -9291.52700805664,
+      "radius": 2.249590017967076,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-223",
+      "species": "broadleaf",
+      "worldX": 24245.970365486282,
+      "worldY": 924.5896159318462,
+      "worldZ": -7844.074798583984,
+      "radius": 2.833677411297095,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-224",
+      "species": "broadleaf",
+      "worldX": 25441.224927864212,
+      "worldY": 889.8618174202194,
+      "worldZ": -8626.937469482422,
+      "radius": 3.447905418932407,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-226",
+      "species": "broadleaf",
+      "worldX": 27053.020780525345,
+      "worldY": 890.5401327178436,
+      "worldZ": -6450.725326538086,
+      "radius": 2.8649415368495297,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-227",
+      "species": "broadleaf",
+      "worldX": 26432.295114479202,
+      "worldY": 884.8994241281567,
+      "worldZ": -6434.030044555664,
+      "radius": 4.109439502502663,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-232",
+      "species": "broadleaf",
+      "worldX": 25418.70037647261,
+      "worldY": 893.9117193239542,
+      "worldZ": -5826.62548828125,
+      "radius": 1.9456132576466825,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-234",
+      "species": "broadleaf",
+      "worldX": 25960.18701025023,
+      "worldY": 872.9101105969589,
+      "worldZ": -7248.892259597778,
+      "radius": 5.366214284296927,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-236",
+      "species": "broadleaf",
+      "worldX": 24557.42420764937,
+      "worldY": 905.0075713245304,
+      "worldZ": -6328.740020751953,
+      "radius": 4.682476422887316,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-237",
+      "species": "broadleaf",
+      "worldX": 27049.367338142532,
+      "worldY": 890.3450582224683,
+      "worldZ": -7325.70654296875,
+      "radius": 3.2514209420682816,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-238",
+      "species": "broadleaf",
+      "worldX": 27704.949796638626,
+      "worldY": 894.8619463038265,
+      "worldZ": -6547.22444152832,
+      "radius": 3.8036220261710083,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-244",
+      "species": "broadleaf",
+      "worldX": 26286.648405037064,
+      "worldY": 874.9791551572916,
+      "worldZ": -7330.495086669922,
+      "radius": 4.923572166220096,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-245",
+      "species": "conifer",
+      "worldX": 24500.95976280771,
+      "worldY": 913.8308680159402,
+      "worldZ": -7961.67937360491,
+      "radius": 2.58687566368883,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-246",
+      "species": "broadleaf",
+      "worldX": 25109.633611641068,
+      "worldY": 889.3396687099141,
+      "worldZ": -6305.5457763671875,
+      "radius": 4.7961356755608335,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-249",
+      "species": "broadleaf",
+      "worldX": 26856.630964241165,
+      "worldY": 890.0827039130972,
+      "worldZ": -5932.402114868164,
+      "radius": 2.3765733790150603,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-252",
+      "species": "broadleaf",
+      "worldX": 27525.52068897261,
+      "worldY": 893.4375759505833,
+      "worldZ": -6485.62939453125,
+      "radius": 4.289157196105436,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-253",
+      "species": "broadleaf",
+      "worldX": 26081.63380428328,
+      "worldY": 872.3245992441156,
+      "worldZ": -7812.937225341797,
+      "radius": 4.9767390853667255,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-255",
+      "species": "conifer",
+      "worldX": 24588.90622625637,
+      "worldY": 904.7146208553285,
+      "worldZ": -7473.100445883615,
+      "radius": 3.8082419517918438,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-256",
+      "species": "conifer",
+      "worldX": 26847.80058312021,
+      "worldY": 891.4621520561853,
+      "worldZ": -8974.538417271206,
+      "radius": 3.253430963665964,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-258",
+      "species": "broadleaf",
+      "worldX": 25578.202447853226,
+      "worldY": 876.2059562119523,
+      "worldZ": -7890.291492462158,
+      "radius": 3.2471355824222776,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-259",
+      "species": "conifer",
+      "worldX": 26800.66319298349,
+      "worldY": 885.6956153099812,
+      "worldZ": -8519.511465890067,
+      "radius": 2.8664227872414716,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-261",
+      "species": "conifer",
+      "worldX": 27518.871854744095,
+      "worldY": 894.1201261857,
+      "worldZ": -6541.438982282366,
+      "radius": 2.2340400961357236,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-262",
+      "species": "broadleaf",
+      "worldX": 26933.50176044478,
+      "worldY": 890.4469712531397,
+      "worldZ": -8684.56216430664,
+      "radius": 3.7041982711663746,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-263",
+      "species": "broadleaf",
+      "worldX": 24145.535886726517,
+      "worldY": 928.0145384629832,
+      "worldZ": -7663.7407150268555,
+      "radius": 3.12801440234558,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-265",
+      "species": "broadleaf",
+      "worldX": 24777.974760017532,
+      "worldY": 909.5828202317371,
+      "worldZ": -8490.567878723145,
+      "radius": 4.5336842704819125,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-266",
+      "species": "conifer",
+      "worldX": 24577.51987371731,
+      "worldY": 904.356424878281,
+      "worldZ": -7358.862871442522,
+      "radius": 2.146514405928196,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-274",
+      "species": "broadleaf",
+      "worldX": 24913.62353321089,
+      "worldY": 902.3442742110082,
+      "worldZ": -8370.747184753418,
+      "radius": 5.549903378658426,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-275",
+      "species": "broadleaf",
+      "worldX": 24675.575254402298,
+      "worldY": 914.3688718540368,
+      "worldZ": -8539.94223022461,
+      "radius": 4.182567099425625,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-276",
+      "species": "conifer",
+      "worldX": 26096.437396692687,
+      "worldY": 876.4129830969944,
+      "worldZ": -6907.376142229353,
+      "radius": 2.890905115583599,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-278",
+      "species": "conifer",
+      "worldX": 26180.957835840636,
+      "worldY": 878.0263789730773,
+      "worldZ": -8530.758597237724,
+      "radius": 2.9013882286449384,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-279",
+      "species": "broadleaf",
+      "worldX": 25008.09221454634,
+      "worldY": 902.1894204117216,
+      "worldZ": -5682.89030456543,
+      "radius": 2.9667661551333357,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-283",
+      "species": "conifer",
+      "worldX": 25368.073820076126,
+      "worldY": 913.7391564640463,
+      "worldZ": -9565.802839006697,
+      "radius": 2.4123332611000343,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-289",
+      "species": "conifer",
+      "worldX": 25589.9790106802,
+      "worldY": 883.4440745134416,
+      "worldZ": -8472.55188860212,
+      "radius": 2.270097553117386,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-290",
+      "species": "conifer",
+      "worldX": 25547.172043081147,
+      "worldY": 885.0557450647535,
+      "worldZ": -6242.314208984375,
+      "radius": 1.9005047549925647,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-291",
+      "species": "conifer",
+      "worldX": 23873.862943611282,
+      "worldY": 941.810218236045,
+      "worldZ": -7697.4471108572825,
+      "radius": 2.489296414471162,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-293",
+      "species": "broadleaf",
+      "worldX": 24744.644453010696,
+      "worldY": 902.4870770912353,
+      "worldZ": -7916.937240600586,
+      "radius": 4.685933732293788,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-294",
+      "species": "conifer",
+      "worldX": 27417.23089841039,
+      "worldY": 897.2991069039148,
+      "worldZ": -6980.159327915737,
+      "radius": 1.79888122246254,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-295",
+      "species": "broadleaf",
+      "worldX": 24176.428617439407,
+      "worldY": 932.6769560948092,
+      "worldZ": -8408.40274810791,
+      "radius": 3.655082231453946,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-297",
+      "species": "conifer",
+      "worldX": 25416.230715304922,
+      "worldY": 892.7311154654267,
+      "worldZ": -5884.245343889509,
+      "radius": 3.0176094007228476,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-300",
+      "species": "broadleaf",
+      "worldX": 24912.850324592728,
+      "worldY": 889.93745651689,
+      "worldZ": -7218.826515197754,
+      "radius": 3.470003264187001,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-302",
+      "species": "broadleaf",
+      "worldX": 25074.79598041548,
+      "worldY": 889.0271624023699,
+      "worldZ": -6383.70426940918,
+      "radius": 5.463434271888444,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-306",
+      "species": "broadleaf",
+      "worldX": 24718.457151374954,
+      "worldY": 898.9088062209568,
+      "worldZ": -7461.9017696380615,
+      "radius": 5.2954308036400715,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-308",
+      "species": "conifer",
+      "worldX": 24231.520152735167,
+      "worldY": 921.7867514344873,
+      "worldZ": -7423.596599033901,
+      "radius": 2.6432072820663715,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-309",
+      "species": "broadleaf",
+      "worldX": 25059.44980426802,
+      "worldY": 899.3716933309324,
+      "worldZ": -8505.870635986328,
+      "radius": 2.6141785080882047,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-310",
+      "species": "broadleaf",
+      "worldX": 25441.789213142532,
+      "worldY": 876.5079424029941,
+      "worldZ": -7143.982162475586,
+      "radius": 1.9658302531113028,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-311",
+      "species": "broadleaf",
+      "worldX": 26219.419189415115,
+      "worldY": 881.9634623883551,
+      "worldZ": -8793.185287475586,
+      "radius": 4.969192656931201,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-312",
+      "species": "broadleaf",
+      "worldX": 25420.270833931107,
+      "worldY": 880.6619440869497,
+      "worldZ": -8012.128040313721,
+      "radius": 5.091076501176909,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-314",
+      "species": "broadleaf",
+      "worldX": 24978.412168464798,
+      "worldY": 887.6258702825464,
+      "worldZ": -7189.007839202881,
+      "radius": 3.02336546984607,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-317",
+      "species": "broadleaf",
+      "worldX": 25699.614450416702,
+      "worldY": 893.2985113661367,
+      "worldZ": -5779.949554443359,
+      "radius": 3.0194121893657284,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-318",
+      "species": "conifer",
+      "worldX": 25387.78439136519,
+      "worldY": 896.6002518286227,
+      "worldZ": -5714.667951311384,
+      "radius": 1.6278683469820863,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-320",
+      "species": "broadleaf",
+      "worldX": 26324.495584449905,
+      "worldY": 885.0067339807702,
+      "worldZ": -6347.2652587890625,
+      "radius": 3.727132833457673,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-323",
+      "species": "broadleaf",
+      "worldX": 24007.3009776689,
+      "worldY": 939.0138528548254,
+      "worldZ": -8362.866493225098,
+      "radius": 3.933900883047002,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-326",
+      "species": "broadleaf",
+      "worldX": 25327.310689888138,
+      "worldY": 893.8016509532434,
+      "worldZ": -8665.02114868164,
+      "radius": 3.9983330795356307,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-328",
+      "species": "broadleaf",
+      "worldX": 26754.51061817183,
+      "worldY": 891.0673857823184,
+      "worldZ": -5686.130310058594,
+      "radius": 3.527580649748462,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-334",
+      "species": "broadleaf",
+      "worldX": 25001.332136116165,
+      "worldY": 912.8605224374957,
+      "worldZ": -9091.570816040039,
+      "radius": 3.0848365788551106,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-335",
+      "species": "broadleaf",
+      "worldX": 26882.857931099075,
+      "worldY": 885.5386440492905,
+      "worldZ": -7823.306396484375,
+      "radius": 5.082874297923928,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-338",
+      "species": "broadleaf",
+      "worldX": 27607.303281746048,
+      "worldY": 892.8944360720159,
+      "worldZ": -6435.867736816406,
+      "radius": 2.6114938620685773,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-340",
+      "species": "broadleaf",
+      "worldX": 24611.719877205032,
+      "worldY": 909.2720919375286,
+      "worldZ": -7996.131477355957,
+      "radius": 2.725466680436116,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-341",
+      "species": "conifer",
+      "worldX": 27555.215465235167,
+      "worldY": 914.4554540326319,
+      "worldZ": -8895.071794782367,
+      "radius": 2.8688984318872714,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-342",
+      "species": "broadleaf",
+      "worldX": 26959.284032783646,
+      "worldY": 889.6088646656613,
+      "worldZ": -5842.930130004883,
+      "radius": 4.506678023529716,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-344",
+      "species": "conifer",
+      "worldX": 24832.85997904655,
+      "worldY": 910.4667800523073,
+      "worldZ": -8664.734758649554,
+      "radius": 3.518500486097956,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-347",
+      "species": "broadleaf",
+      "worldX": 24785.496061287064,
+      "worldY": 899.1990486202365,
+      "worldZ": -7786.319488525391,
+      "radius": 3.3241099465942345,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-350",
+      "species": "broadleaf",
+      "worldX": 25490.023260078568,
+      "worldY": 876.6853688625004,
+      "worldZ": -7738.695917129517,
+      "radius": 3.2957322911434437,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-355",
+      "species": "conifer",
+      "worldX": 25929.637302088195,
+      "worldY": 892.00646929524,
+      "worldZ": -9167.606515066964,
+      "radius": 2.6308550341397456,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-357",
+      "species": "broadleaf",
+      "worldX": 25594.386060676712,
+      "worldY": 877.144302119646,
+      "worldZ": -8022.441146850586,
+      "radius": 2.368462377444154,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-359",
+      "species": "broadleaf",
+      "worldX": 26607.410467109818,
+      "worldY": 888.0659054489067,
+      "worldZ": -9023.615585327148,
+      "radius": 4.611023025435249,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-362",
+      "species": "broadleaf",
+      "worldX": 26654.80486866011,
+      "worldY": 879.9381204010057,
+      "worldZ": -7747.414451599121,
+      "radius": 3.1910990865765707,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-365",
+      "species": "broadleaf",
+      "worldX": 24527.671812019486,
+      "worldY": 905.2177340053436,
+      "worldZ": -7105.745208740234,
+      "radius": 5.276734814332706,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-366",
+      "species": "broadleaf",
+      "worldX": 24779.935880623,
+      "worldY": 895.8839287123559,
+      "worldZ": -7398.669514656067,
+      "radius": 3.0185478272891078,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-369",
+      "species": "conifer",
+      "worldX": 24376.65303498963,
+      "worldY": 919.866701144884,
+      "worldZ": -7988.852155412947,
+      "radius": 2.3255621539153717,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-370",
+      "species": "broadleaf",
+      "worldX": 26270.022787056107,
+      "worldY": 875.7419002116679,
+      "worldZ": -7179.956844329834,
+      "radius": 3.8069997046666226,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-372",
+      "species": "conifer",
+      "worldX": 25060.475762737955,
+      "worldY": 887.7083628234185,
+      "worldZ": -7685.445037841797,
+      "radius": 3.065574010267482,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-373",
+      "species": "broadleaf",
+      "worldX": 27698.43917652144,
+      "worldY": 912.4849709735895,
+      "worldZ": -7919.934875488281,
+      "radius": 4.398043559946062,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-374",
+      "species": "broadleaf",
+      "worldX": 25212.069387397903,
+      "worldY": 884.3739413047417,
+      "worldZ": -6557.522048950195,
+      "radius": 4.330964755153858,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-376",
+      "species": "conifer",
+      "worldX": 24114.094127344542,
+      "worldY": 932.5805463291028,
+      "worldZ": -8053.935276576451,
+      "radius": 3.3144145747426825,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-377",
+      "species": "broadleaf",
+      "worldX": 27019.098722419876,
+      "worldY": 889.5503287290417,
+      "worldZ": -7370.628697395325,
+      "radius": 2.3372201397175187,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-378",
+      "species": "broadleaf",
+      "worldX": 27449.169523201126,
+      "worldY": 893.1288557894231,
+      "worldZ": -6482.803924560547,
+      "radius": 3.4255795962164983,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-379",
+      "species": "broadleaf",
+      "worldX": 25217.321477852005,
+      "worldY": 891.3961849986805,
+      "worldZ": -8356.588928222656,
+      "radius": 3.348960750221483,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-380",
+      "species": "broadleaf",
+      "worldX": 26630.748777351517,
+      "worldY": 892.8495650216388,
+      "worldZ": -5498.240539550781,
+      "radius": 3.7326190374972223,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-381",
+      "species": "broadleaf",
+      "worldX": 25334.861448249954,
+      "worldY": 885.611686868987,
+      "worldZ": -6321.701354980469,
+      "radius": 5.183158939932968,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-382",
+      "species": "conifer",
+      "worldX": 24692.798839258605,
+      "worldY": 898.6384483071733,
+      "worldZ": -7256.281496320452,
+      "radius": 4.130775125044102,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-383",
+      "species": "broadleaf",
+      "worldX": 25993.74135359301,
+      "worldY": 893.0945295975828,
+      "worldZ": -5752.192810058594,
+      "radius": 3.5218031682334834,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-385",
+      "species": "broadleaf",
+      "worldX": 26356.002195320267,
+      "worldY": 897.4384723845831,
+      "worldZ": -5295.523651123047,
+      "radius": 3.338170177771564,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-386",
+      "species": "broadleaf",
+      "worldX": 25816.330503425736,
+      "worldY": 893.7574421541353,
+      "worldZ": -5738.550369262695,
+      "radius": 3.5908002171519526,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-387",
+      "species": "broadleaf",
+      "worldX": 25683.06445499434,
+      "worldY": 902.215815570391,
+      "worldZ": -5367.45361328125,
+      "radius": 3.2385768538510105,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-388",
+      "species": "broadleaf",
+      "worldX": 27232.681898079056,
+      "worldY": 888.624769077411,
+      "worldZ": -5985.910797119141,
+      "radius": 4.154645683586412,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-391",
+      "species": "broadleaf",
+      "worldX": 25679.76074024214,
+      "worldY": 903.0887194207304,
+      "worldZ": -5329.03564453125,
+      "radius": 4.428240944197547,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-393",
+      "species": "broadleaf",
+      "worldX": 28017.53533741011,
+      "worldY": 932.0236714725359,
+      "worldZ": -8562.341583251953,
+      "radius": 5.040806968722222,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-404",
+      "species": "broadleaf",
+      "worldX": 25172.700590095657,
+      "worldY": 882.6960328807245,
+      "worldZ": -6871.80403137207,
+      "radius": 3.3906147007498055,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-407",
+      "species": "conifer",
+      "worldX": 25381.715744253022,
+      "worldY": 877.2999040204452,
+      "worldZ": -7325.48675101144,
+      "radius": 1.7175650565607359,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-408",
+      "species": "conifer",
+      "worldX": 26560.959265807152,
+      "worldY": 886.1547691496639,
+      "worldZ": -6429.531337193081,
+      "radius": 3.906957878114967,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-409",
+      "species": "conifer",
+      "worldX": 26638.479529479027,
+      "worldY": 879.7295149312245,
+      "worldZ": -7654.911008562361,
+      "radius": 3.4290827360613068,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-411",
+      "species": "conifer",
+      "worldX": 26332.56170459761,
+      "worldY": 876.0479994695098,
+      "worldZ": -7252.62115914481,
+      "radius": 3.1788103518254576,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-412",
+      "species": "broadleaf",
+      "worldX": 24889.278226814407,
+      "worldY": 890.4704703972527,
+      "worldZ": -7094.298515319824,
+      "radius": 5.75406097935311,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-413",
+      "species": "broadleaf",
+      "worldX": 27317.871808967728,
+      "worldY": 896.9462157647695,
+      "worldZ": -7290.620628356934,
+      "radius": 5.396400879298566,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-415",
+      "species": "broadleaf",
+      "worldX": 25815.968460045,
+      "worldY": 872.3353099108327,
+      "worldZ": -7672.8105545043945,
+      "radius": 3.1289962402810128,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-417",
+      "species": "broadleaf",
+      "worldX": 24919.717359504837,
+      "worldY": 906.1245913628692,
+      "worldZ": -8600.398666381836,
+      "radius": 5.6420910619955595,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-420",
+      "species": "broadleaf",
+      "worldX": 26125.158172569412,
+      "worldY": 877.712446550616,
+      "worldZ": -6807.275718688965,
+      "radius": 3.9633078260825054,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-421",
+      "species": "broadleaf",
+      "worldX": 26398.13281055464,
+      "worldY": 884.4550814917927,
+      "worldZ": -6446.166763305664,
+      "radius": 3.0256025866698257,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-423",
+      "species": "broadleaf",
+      "worldX": 26126.940143547195,
+      "worldY": 877.9674483999927,
+      "worldZ": -8524.058868408203,
+      "radius": 3.7171204346959072,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-426",
+      "species": "conifer",
+      "worldX": 24501.420299219542,
+      "worldY": 906.7506326151095,
+      "worldZ": -6404.098318917411,
+      "radius": 3.474534165745246,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-429",
+      "species": "conifer",
+      "worldX": 24016.296275782042,
+      "worldY": 940.1292892740219,
+      "worldZ": -8752.239554268974,
+      "radius": 3.0971942229959213,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-430",
+      "species": "broadleaf",
+      "worldX": 24749.358671150345,
+      "worldY": 913.7340132372224,
+      "worldZ": -8675.15576171875,
+      "radius": 5.094616162487944,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-432",
+      "species": "conifer",
+      "worldX": 24897.939132924897,
+      "worldY": 890.1684907825672,
+      "worldZ": -6920.461277553013,
+      "radius": 2.038721591750911,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-435",
+      "species": "broadleaf",
+      "worldX": 24770.847974739212,
+      "worldY": 912.2920023650994,
+      "worldZ": -8636.932815551758,
+      "radius": 3.6241432957686004,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-436",
+      "species": "broadleaf",
+      "worldX": 27543.46375843062,
+      "worldY": 910.5962260816345,
+      "worldZ": -8453.66390991211,
+      "radius": 2.7664749811881633,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-437",
+      "species": "broadleaf",
+      "worldX": 26197.149852714676,
+      "worldY": 872.9788607492045,
+      "worldZ": -7833.039398193359,
+      "radius": 2.929581312634544,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-438",
+      "species": "broadleaf",
+      "worldX": 26084.736416778702,
+      "worldY": 895.4686229894816,
+      "worldZ": -9379.132919311523,
+      "radius": 3.724903526782928,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-440",
+      "species": "broadleaf",
+      "worldX": 25333.383459053177,
+      "worldY": 878.2511861677572,
+      "worldZ": -7226.907989501953,
+      "radius": 4.564756644690094,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-443",
+      "species": "broadleaf",
+      "worldX": 26112.187161407608,
+      "worldY": 877.0386830783472,
+      "worldZ": -6859.297874450684,
+      "radius": 4.155402491931576,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-444",
+      "species": "conifer",
+      "worldX": 24101.03208074856,
+      "worldY": 936.1248155812934,
+      "worldZ": -8487.767482212612,
+      "radius": 3.9528208969566667,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-445",
+      "species": "conifer",
+      "worldX": 24667.66368998405,
+      "worldY": 899.9327478602312,
+      "worldZ": -6467.192958286831,
+      "radius": 2.9673740730048577,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-447",
+      "species": "broadleaf",
+      "worldX": 25056.075414619583,
+      "worldY": 889.4338253127322,
+      "worldZ": -6383.697372436523,
+      "radius": 4.0197662396653335,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-448",
+      "species": "broadleaf",
+      "worldX": 27510.70623584761,
+      "worldY": 899.2466644799838,
+      "worldZ": -7023.049598693848,
+      "radius": 5.072117695867066,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-450",
+      "species": "broadleaf",
+      "worldX": 24559.709623298782,
+      "worldY": 903.500244282797,
+      "worldZ": -7034.360504150391,
+      "radius": 4.522182363350103,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-453",
+      "species": "conifer",
+      "worldX": 24311.28713794722,
+      "worldY": 915.6903102616739,
+      "worldZ": -7102.385593959263,
+      "radius": 3.9536884969718225,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-454",
+      "species": "conifer",
+      "worldX": 23986.161998438292,
+      "worldY": 931.8069785957937,
+      "worldZ": -6699.448503766741,
+      "radius": 2.430647062486838,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-456",
+      "species": "broadleaf",
+      "worldX": 26302.454931221146,
+      "worldY": 896.5631919062969,
+      "worldZ": -5427.2789306640625,
+      "radius": 2.0613190974305287,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-458",
+      "species": "conifer",
+      "worldX": 26100.117864570755,
+      "worldY": 872.4450640685208,
+      "worldZ": -7835.062517438616,
+      "radius": 2.7649255493459504,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-460",
+      "species": "broadleaf",
+      "worldX": 26233.492464027542,
+      "worldY": 878.535226527498,
+      "worldZ": -6823.989601135254,
+      "radius": 3.74914729374533,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-461",
+      "species": "conifer",
+      "worldX": 26759.94068496173,
+      "worldY": 888.8711641413352,
+      "worldZ": -6266.353655133928,
+      "radius": 2.750419259626656,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-462",
+      "species": "conifer",
+      "worldX": 25035.405537431037,
+      "worldY": 899.6021044311337,
+      "worldZ": -5784.219290597099,
+      "radius": 2.0478962619236536,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-463",
+      "species": "conifer",
+      "worldX": 25703.786135226797,
+      "worldY": 878.9994039358148,
+      "worldZ": -6599.927455357143,
+      "radius": 4.175963852452749,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-465",
+      "species": "conifer",
+      "worldX": 24261.57246858338,
+      "worldY": 918.8605677091624,
+      "worldZ": -7217.431636265346,
+      "radius": 2.1878817707817904,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-467",
+      "species": "broadleaf",
+      "worldX": 24889.125577888626,
+      "worldY": 892.2619692057724,
+      "worldZ": -6526.393981933594,
+      "radius": 4.603722952142093,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-468",
+      "species": "broadleaf",
+      "worldX": 26960.332487068314,
+      "worldY": 889.6156871730107,
+      "worldZ": -6576.82967376709,
+      "radius": 4.441318856583611,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-471",
+      "species": "broadleaf",
+      "worldX": 25771.437129936356,
+      "worldY": 892.321546078634,
+      "worldZ": -5817.02473449707,
+      "radius": 4.268766485322394,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-476",
+      "species": "broadleaf",
+      "worldX": 25101.070539436478,
+      "worldY": 886.4841308493496,
+      "worldZ": -6568.294593811035,
+      "radius": 5.050032345872198,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-477",
+      "species": "broadleaf",
+      "worldX": 26828.256818733353,
+      "worldY": 887.916550860666,
+      "worldZ": -6613.708679199219,
+      "radius": 4.687001882060775,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-479",
+      "species": "broadleaf",
+      "worldX": 26931.12698169722,
+      "worldY": 889.5452155631283,
+      "worldZ": -5691.327331542969,
+      "radius": 4.687744623993469,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-480",
+      "species": "broadleaf",
+      "worldX": 24540.6779307939,
+      "worldY": 908.2838847791405,
+      "worldZ": -7622.132919311523,
+      "radius": 3.8434504812444645,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-483",
+      "species": "broadleaf",
+      "worldX": 25469.67550083174,
+      "worldY": 881.3286422998401,
+      "worldZ": -6523.891395568848,
+      "radius": 3.4107165144892146,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-484",
+      "species": "broadleaf",
+      "worldX": 25951.852472505707,
+      "worldY": 879.8037108040808,
+      "worldZ": -6557.544746398926,
+      "radius": 2.580271605581805,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-485",
+      "species": "conifer",
+      "worldX": 25204.216232534272,
+      "worldY": 881.158171778544,
+      "worldZ": -7158.23155430385,
+      "radius": 3.77378604404065,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-489",
+      "species": "conifer",
+      "worldX": 25736.553637057852,
+      "worldY": 872.7918005680178,
+      "worldZ": -7624.867901393345,
+      "radius": 2.465949453327142,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-490",
+      "species": "broadleaf",
+      "worldX": 26119.882848701614,
+      "worldY": 904.9859465885854,
+      "worldZ": -9735.925415039062,
+      "radius": 4.9664991588204,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-491",
+      "species": "broadleaf",
+      "worldX": 24677.979246101517,
+      "worldY": 902.0242123051722,
+      "worldZ": -7617.5851039886475,
+      "radius": 3.009188933250354,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-494",
+      "species": "broadleaf",
+      "worldX": 26254.551412544388,
+      "worldY": 890.0514712718121,
+      "worldZ": -9204.598571777344,
+      "radius": 3.6028960053385126,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-496",
+      "species": "broadleaf",
+      "worldX": 24170.451230964798,
+      "worldY": 925.5601463466265,
+      "worldZ": -7508.474004715681,
+      "radius": 4.7117164349824305,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-497",
+      "species": "broadleaf",
+      "worldX": 25578.947709999222,
+      "worldY": 895.9198653871491,
+      "worldZ": -9058.842987060547,
+      "radius": 4.5225779332859535,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-498",
+      "species": "conifer",
+      "worldX": 24087.74633158561,
+      "worldY": 931.7272328335141,
+      "worldZ": -7774.287022181919,
+      "radius": 1.9486911380118708,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-499",
+      "species": "broadleaf",
+      "worldX": 26943.470907173294,
+      "worldY": 888.0958950151395,
+      "worldZ": -8259.16667175293,
+      "radius": 2.748465832592852,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-500",
+      "species": "broadleaf",
+      "worldX": 24197.048124275345,
+      "worldY": 928.0036067359486,
+      "worldZ": -7963.593704223633,
+      "radius": 2.4885001064904326,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-503",
+      "species": "conifer",
+      "worldX": 23891.59285432557,
+      "worldY": 943.6414151564499,
+      "worldZ": -8520.503365652901,
+      "radius": 2.8604036422878383,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-505",
+      "species": "conifer",
+      "worldX": 24065.810470815522,
+      "worldY": 936.8900774353854,
+      "worldZ": -8389.924063546317,
+      "radius": 4.200103724710616,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-506",
+      "species": "conifer",
+      "worldX": 25211.376563170434,
+      "worldY": 897.4022288905006,
+      "worldZ": -5763.528895786831,
+      "radius": 2.1398758135180183,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-509",
+      "species": "conifer",
+      "worldX": 26305.567795034272,
+      "worldY": 892.5046133843255,
+      "worldZ": -9316.395560128349,
+      "radius": 3.5724605867609043,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-512",
+      "species": "broadleaf",
+      "worldX": 27452.468351326126,
+      "worldY": 906.8849674859657,
+      "worldZ": -8450.57063293457,
+      "radius": 4.196844680723317,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-514",
+      "species": "conifer",
+      "worldX": 24243.07940915258,
+      "worldY": 923.0659862828156,
+      "worldZ": -7657.479921613421,
+      "radius": 4.264058162514372,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-516",
+      "species": "broadleaf",
+      "worldX": 27446.84608264937,
+      "worldY": 892.3207390882083,
+      "worldZ": -6410.134201049805,
+      "radius": 4.388813458828147,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-517",
+      "species": "broadleaf",
+      "worldX": 23925.41717334761,
+      "worldY": 935.1208699513456,
+      "worldZ": -6594.897018432617,
+      "radius": 2.7481827836689474,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-518",
+      "species": "broadleaf",
+      "worldX": 25639.231996498245,
+      "worldY": 884.0649784825654,
+      "worldZ": -8565.123962402344,
+      "radius": 3.4359844806295627,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-519",
+      "species": "broadleaf",
+      "worldX": 25188.189428291458,
+      "worldY": 882.6542083086592,
+      "worldZ": -7545.604216098785,
+      "radius": 3.01197705427821,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-521",
+      "species": "broadleaf",
+      "worldX": 27042.16717334761,
+      "worldY": 892.1778600989567,
+      "worldZ": -8478.728126525879,
+      "radius": 2.8176900417454056,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-522",
+      "species": "broadleaf",
+      "worldX": 27775.000455818314,
+      "worldY": 896.2895106151876,
+      "worldZ": -6616.167045593262,
+      "radius": 2.399633062437568,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-524",
+      "species": "conifer",
+      "worldX": 24469.279028990746,
+      "worldY": 912.357901150205,
+      "worldZ": -7693.648284912109,
+      "radius": 3.5749589323531903,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-525",
+      "species": "broadleaf",
+      "worldX": 25200.30122943892,
+      "worldY": 893.1024450856285,
+      "worldZ": -8422.799270629883,
+      "radius": 4.126001880227023,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-527",
+      "species": "broadleaf",
+      "worldX": 26862.878339729446,
+      "worldY": 888.8479265922774,
+      "worldZ": -8711.838760375977,
+      "radius": 4.853726812937921,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-528",
+      "species": "broadleaf",
+      "worldX": 26180.17449947371,
+      "worldY": 884.2952943825519,
+      "worldZ": -6327.084014892578,
+      "radius": 5.134847637432918,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-529",
+      "species": "conifer",
+      "worldX": 25279.125813309944,
+      "worldY": 888.7218391697556,
+      "worldZ": -8310.79359654018,
+      "radius": 2.6323602106107047,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-533",
+      "species": "conifer",
+      "worldX": 26980.892449749674,
+      "worldY": 888.8861729995687,
+      "worldZ": -7184.4948163713725,
+      "radius": 3.4065112709110057,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-534",
+      "species": "broadleaf",
+      "worldX": 25626.749326667923,
+      "worldY": 876.4124768310777,
+      "worldZ": -8004.797801971436,
+      "radius": 3.0774668577007085,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-536",
+      "species": "broadleaf",
+      "worldX": 26683.233793220657,
+      "worldY": 891.9134404090635,
+      "worldZ": -5600.695556640625,
+      "radius": 4.185065421567409,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-537",
+      "species": "conifer",
+      "worldX": 25664.640152212007,
+      "worldY": 900.3625743508469,
+      "worldZ": -5457.670253208706,
+      "radius": 3.378223638917032,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-539",
+      "species": "conifer",
+      "worldX": 27027.34470281887,
+      "worldY": 891.4125741764818,
+      "worldZ": -8425.916303362164,
+      "radius": 2.275876820825276,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-540",
+      "species": "broadleaf",
+      "worldX": 26851.13366504683,
+      "worldY": 884.7899196806345,
+      "worldZ": -7995.607681274414,
+      "radius": 3.9321026458716593,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-541",
+      "species": "conifer",
+      "worldX": 27976.73710655771,
+      "worldY": 930.0269630152693,
+      "worldZ": -8544.966761997768,
+      "radius": 3.5826289726490166,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-542",
+      "species": "broadleaf",
+      "worldX": 25873.541813812393,
+      "worldY": 891.9518379568835,
+      "worldZ": -5824.9515380859375,
+      "radius": 2.342487990140273,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-543",
+      "species": "broadleaf",
+      "worldX": 24185.83447071089,
+      "worldY": 921.3250129442168,
+      "worldZ": -6375.819610595703,
+      "radius": 2.4304905968798196,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-544",
+      "species": "conifer",
+      "worldX": 25251.22175185626,
+      "worldY": 890.1545187105589,
+      "worldZ": -8345.681666782924,
+      "radius": 3.254229347127025,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-546",
+      "species": "broadleaf",
+      "worldX": 26860.831815681595,
+      "worldY": 889.5320440416533,
+      "worldZ": -6227.628845214844,
+      "radius": 5.108448069343558,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-547",
+      "species": "broadleaf",
+      "worldX": 27890.75782581343,
+      "worldY": 918.2086541499114,
+      "worldZ": -7852.877716064453,
+      "radius": 4.913810868907154,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-552",
+      "species": "broadleaf",
+      "worldX": 24033.505826912064,
+      "worldY": 934.2052548185137,
+      "worldZ": -7746.40657043457,
+      "radius": 2.252300574574609,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-554",
+      "species": "broadleaf",
+      "worldX": 27232.651426277298,
+      "worldY": 887.7980982071117,
+      "worldZ": -5886.745056152344,
+      "radius": 4.034583776682322,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-556",
+      "species": "conifer",
+      "worldX": 24846.407673661506,
+      "worldY": 893.2147098205916,
+      "worldZ": -6572.608912876674,
+      "radius": 2.17447094704266,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-557",
+      "species": "broadleaf",
+      "worldX": 27689.434171638626,
+      "worldY": 896.5094917789995,
+      "worldZ": -6649.6740798950195,
+      "radius": 2.7800724100427674,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-561",
+      "species": "broadleaf",
+      "worldX": 25851.248648605484,
+      "worldY": 872.2769261571167,
+      "worldZ": -7722.887542724609,
+      "radius": 3.4177745019587484,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-562",
+      "species": "broadleaf",
+      "worldX": 25385.730756721634,
+      "worldY": 903.8108752176722,
+      "worldZ": -9184.498046875,
+      "radius": 3.4579527083579937,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-563",
+      "species": "broadleaf",
+      "worldX": 26214.991163215775,
+      "worldY": 873.4157912104412,
+      "worldZ": -7954.618476867676,
+      "radius": 2.91479774194117,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-567",
+      "species": "broadleaf",
+      "worldX": 24559.624113044876,
+      "worldY": 909.1289835279254,
+      "worldZ": -7787.502834320068,
+      "radius": 3.7334657387075447,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-569",
+      "species": "broadleaf",
+      "worldX": 24316.045072517532,
+      "worldY": 915.1154615833999,
+      "worldZ": -6355.21142578125,
+      "radius": 3.904837758362402,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-570",
+      "species": "broadleaf",
+      "worldX": 26196.072872123856,
+      "worldY": 874.1258454104351,
+      "worldZ": -8124.513206481934,
+      "radius": 4.154702452437767,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-575",
+      "species": "broadleaf",
+      "worldX": 23985.16720386519,
+      "worldY": 934.2099255907159,
+      "worldZ": -7335.011228561401,
+      "radius": 5.620889121502918,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-579",
+      "species": "broadleaf",
+      "worldX": 25947.82743354811,
+      "worldY": 873.151455462647,
+      "worldZ": -7203.061660766602,
+      "radius": 3.3292234806314234,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-584",
+      "species": "broadleaf",
+      "worldX": 27155.154874763626,
+      "worldY": 889.0055168837139,
+      "worldZ": -5976.6295166015625,
+      "radius": 3.2054618889590887,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-585",
+      "species": "broadleaf",
+      "worldX": 25535.96314044966,
+      "worldY": 880.691448757507,
+      "worldZ": -8221.29931640625,
+      "radius": 4.568679798500336,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-586",
+      "species": "broadleaf",
+      "worldX": 24479.184553108353,
+      "worldY": 906.7861979743748,
+      "worldZ": -6879.100242614746,
+      "radius": 5.423378525310604,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-587",
+      "species": "conifer",
+      "worldX": 24891.556198354585,
+      "worldY": 892.6781766174274,
+      "worldZ": -7556.440979003906,
+      "radius": 3.0345643320095754,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-589",
+      "species": "broadleaf",
+      "worldX": 27500.535734138626,
+      "worldY": 894.7380447474296,
+      "worldZ": -6601.7373046875,
+      "radius": 3.9278973567406554,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-591",
+      "species": "conifer",
+      "worldX": 24309.425251786506,
+      "worldY": 922.8271463881595,
+      "worldZ": -7972.762119838169,
+      "radius": 3.645386532832354,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-593",
+      "species": "broadleaf",
+      "worldX": 26894.934659919876,
+      "worldY": 885.9293489700121,
+      "worldZ": -7940.3460121154785,
+      "radius": 3.4094205033072558,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-595",
+      "species": "conifer",
+      "worldX": 25542.9231853105,
+      "worldY": 875.3652993907205,
+      "worldZ": -7099.3419189453125,
+      "radius": 2.902481275595054,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-596",
+      "species": "conifer",
+      "worldX": 24755.051821261954,
+      "worldY": 895.4325299747227,
+      "worldZ": -6764.962541852678,
+      "radius": 2.111382889256567,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-599",
+      "species": "broadleaf",
+      "worldX": 25342.34783741011,
+      "worldY": 878.740975905809,
+      "worldZ": -7553.726651668549,
+      "radius": 3.9622121696984665,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-601",
+      "species": "broadleaf",
+      "worldX": 25559.612462959427,
+      "worldY": 875.3524866719553,
+      "worldZ": -7722.0889892578125,
+      "radius": 2.130412295547255,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-604",
+      "species": "broadleaf",
+      "worldX": 24695.40609546675,
+      "worldY": 898.2975444737108,
+      "worldZ": -6577.683303833008,
+      "radius": 3.279465530019552,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-605",
+      "species": "conifer",
+      "worldX": 27204.87351141262,
+      "worldY": 887.3635979853008,
+      "worldZ": -5803.380179268974,
+      "radius": 3.0119334018200763,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-608",
+      "species": "broadleaf",
+      "worldX": 24643.675931892532,
+      "worldY": 904.3426159042765,
+      "worldZ": -7696.634525299072,
+      "radius": 4.175463071135202,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-610",
+      "species": "broadleaf",
+      "worldX": 27039.14376636519,
+      "worldY": 890.4635108358951,
+      "worldZ": -6501.73348236084,
+      "radius": 4.371544522586165,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-613",
+      "species": "broadleaf",
+      "worldX": 27084.206647834915,
+      "worldY": 891.4808261590617,
+      "worldZ": -7884.81946182251,
+      "radius": 3.0960775837077787,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-614",
+      "species": "broadleaf",
+      "worldX": 27377.069257698196,
+      "worldY": 896.5334991696864,
+      "worldZ": -6967.910003662109,
+      "radius": 4.283852226258002,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-615",
+      "species": "broadleaf",
+      "worldX": 27997.28565784468,
+      "worldY": 922.3790792485969,
+      "worldZ": -7904.195037841797,
+      "radius": 3.484887622016587,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-616",
+      "species": "broadleaf",
+      "worldX": 27582.039472541946,
+      "worldY": 913.7924498756074,
+      "worldZ": -8669.734848022461,
+      "radius": 2.756205264709734,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-618",
+      "species": "broadleaf",
+      "worldX": 27029.97123523726,
+      "worldY": 895.0947260124549,
+      "worldZ": -8885.303833007812,
+      "radius": 5.837363038839127,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-620",
+      "species": "broadleaf",
+      "worldX": 24741.989164314407,
+      "worldY": 899.7861572638968,
+      "worldZ": -7670.469257354736,
+      "radius": 3.7411296603829083,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-621",
+      "species": "conifer",
+      "worldX": 26843.852497880256,
+      "worldY": 885.9694024641318,
+      "worldZ": -7152.216552734375,
+      "radius": 3.012019637332065,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-626",
+      "species": "conifer",
+      "worldX": 25680.489761587007,
+      "worldY": 882.3546213836779,
+      "worldZ": -8513.49507359096,
+      "radius": 2.1634935815700755,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-627",
+      "species": "broadleaf",
+      "worldX": 26026.248906574387,
+      "worldY": 871.9809718712833,
+      "worldZ": -7668.533432006836,
+      "radius": 4.442379686661375,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-631",
+      "species": "broadleaf",
+      "worldX": 24926.502836189407,
+      "worldY": 889.3782551355278,
+      "worldZ": -7192.031181335449,
+      "radius": 3.914540783212332,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-633",
+      "species": "conifer",
+      "worldX": 24507.850910966194,
+      "worldY": 907.1839209972468,
+      "worldZ": -7299.714505876814,
+      "radius": 2.314370294135912,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-634",
+      "species": "broadleaf",
+      "worldX": 26960.534162483353,
+      "worldY": 889.6670950593558,
+      "worldZ": -6544.95556640625,
+      "radius": 3.540198926152399,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-635",
+      "species": "broadleaf",
+      "worldX": 24548.478788337845,
+      "worldY": 920.8191794590475,
+      "worldZ": -8645.933837890625,
+      "radius": 3.625963136548974,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-636",
+      "species": "conifer",
+      "worldX": 24080.864914174897,
+      "worldY": 926.531006088039,
+      "worldZ": -6512.074035644531,
+      "radius": 2.359603893277077,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-637",
+      "species": "broadleaf",
+      "worldX": 24683.918256721634,
+      "worldY": 924.2252362487941,
+      "worldZ": -9192.850967407227,
+      "radius": 2.7309495791992258,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-638",
+      "species": "broadleaf",
+      "worldX": 24887.44874378218,
+      "worldY": 892.0478803840675,
+      "worldZ": -6561.44172668457,
+      "radius": 2.1808263364737903,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-639",
+      "species": "conifer",
+      "worldX": 25510.187519852912,
+      "worldY": 879.7087592475823,
+      "worldZ": -8104.00590297154,
+      "radius": 1.631695134816984,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-640",
+      "species": "conifer",
+      "worldX": 27008.900358162064,
+      "worldY": 889.4630190412264,
+      "worldZ": -5907.642804827009,
+      "radius": 2.388120603215913,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-641",
+      "species": "conifer",
+      "worldX": 25279.153096024787,
+      "worldY": 879.4547400451569,
+      "worldZ": -7153.838684082031,
+      "radius": 2.610601883071281,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-643",
+      "species": "broadleaf",
+      "worldX": 24638.2942790605,
+      "worldY": 899.8433449091888,
+      "worldZ": -6860.79035949707,
+      "radius": 3.715399480323832,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-644",
+      "species": "broadleaf",
+      "worldX": 23980.04952808394,
+      "worldY": 934.5390657443062,
+      "worldZ": -7345.0286502838135,
+      "radius": 2.9140384558024834,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-645",
+      "species": "conifer",
+      "worldX": 27310.809529130256,
+      "worldY": 898.8332622865987,
+      "worldZ": -7878.264731270926,
+      "radius": 2.9944390530899945,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-647",
+      "species": "conifer",
+      "worldX": 27364.64975652981,
+      "worldY": 897.2702268662522,
+      "worldZ": -7132.011954171317,
+      "radius": 4.19498055482127,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-648",
+      "species": "broadleaf",
+      "worldX": 25664.5755328752,
+      "worldY": 874.2290542271006,
+      "worldZ": -7113.209884643555,
+      "radius": 4.232483597106065,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-650",
+      "species": "broadleaf",
+      "worldX": 25281.66986652388,
+      "worldY": 879.3616043104648,
+      "worldZ": -7280.431652069092,
+      "radius": 2.450610391423065,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-652",
+      "species": "conifer",
+      "worldX": 24226.657499275345,
+      "worldY": 923.6886499751836,
+      "worldZ": -7633.53367287772,
+      "radius": 4.25351453365753,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-654",
+      "species": "broadleaf",
+      "worldX": 26729.549711189407,
+      "worldY": 888.0190272218464,
+      "worldZ": -6385.0474853515625,
+      "radius": 3.1443637856619193,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-656",
+      "species": "conifer",
+      "worldX": 24113.818039174897,
+      "worldY": 937.1040797469918,
+      "worldZ": -8748.164114815849,
+      "radius": 1.797407274522281,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-657",
+      "species": "conifer",
+      "worldX": 26425.20616173349,
+      "worldY": 879.0267072605918,
+      "worldZ": -8502.336635044643,
+      "radius": 2.937674301860611,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-659",
+      "species": "conifer",
+      "worldX": 26691.563513854027,
+      "worldY": 891.1446658199022,
+      "worldZ": -5774.557547433036,
+      "radius": 2.1093160181492725,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-662",
+      "species": "broadleaf",
+      "worldX": 26921.399488411087,
+      "worldY": 889.808769607849,
+      "worldZ": -5824.751525878906,
+      "radius": 3.06119995994942,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-669",
+      "species": "conifer",
+      "worldX": 24200.440929102355,
+      "worldY": 924.5476712908132,
+      "worldZ": -7576.309068952288,
+      "radius": 3.8355336671794165,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-670",
+      "species": "conifer",
+      "worldX": 24882.820149247444,
+      "worldY": 907.7332046961832,
+      "worldZ": -8614.350742885044,
+      "radius": 2.7393532808342593,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-671",
+      "species": "conifer",
+      "worldX": 25486.297252344542,
+      "worldY": 884.3527275086158,
+      "worldZ": -8386.917794363839,
+      "radius": 3.434993571746854,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-674",
+      "species": "broadleaf",
+      "worldX": 24269.812742195267,
+      "worldY": 917.9996799685788,
+      "worldZ": -7139.758270263672,
+      "radius": 5.7523427881867315,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-675",
+      "species": "conifer",
+      "worldX": 24179.959797684944,
+      "worldY": 923.1306023530022,
+      "worldZ": -7218.651620047433,
+      "radius": 2.4465816997720062,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-677",
+      "species": "conifer",
+      "worldX": 25880.656989195824,
+      "worldY": 879.3542677893772,
+      "worldZ": -6574.261448451451,
+      "radius": 2.319196161215129,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-678",
+      "species": "conifer",
+      "worldX": 24210.544758622444,
+      "worldY": 919.8742256517257,
+      "worldZ": -6457.724225725447,
+      "radius": 2.0662378152407777,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-683",
+      "species": "broadleaf",
+      "worldX": 24876.74072071089,
+      "worldY": 905.9122207623334,
+      "worldZ": -8497.925086975098,
+      "radius": 4.135744338715164,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-684",
+      "species": "broadleaf",
+      "worldX": 24802.79495044722,
+      "worldY": 894.2390436112426,
+      "worldZ": -7271.190847396851,
+      "radius": 2.5000557241064274,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-686",
+      "species": "broadleaf",
+      "worldX": 26824.9201182939,
+      "worldY": 896.0607211559975,
+      "worldZ": -9300.055892944336,
+      "radius": 4.31323289896854,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-687",
+      "species": "broadleaf",
+      "worldX": 26768.187734565872,
+      "worldY": 890.9943598466241,
+      "worldZ": -5667.0274658203125,
+      "radius": 3.8721400580120537,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-688",
+      "species": "broadleaf",
+      "worldX": 24610.145978889603,
+      "worldY": 902.4297540823077,
+      "worldZ": -7290.102333068848,
+      "radius": 4.716121713381644,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-691",
+      "species": "conifer",
+      "worldX": 24171.70683312021,
+      "worldY": 935.337729347327,
+      "worldZ": -8762.599905831474,
+      "radius": 2.997913925985313,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-692",
+      "species": "broadleaf",
+      "worldX": 25811.717847786087,
+      "worldY": 880.7453185969276,
+      "worldZ": -8543.860641479492,
+      "radius": 2.96247553189716,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-694",
+      "species": "conifer",
+      "worldX": 25226.51166012914,
+      "worldY": 880.6372393631905,
+      "worldZ": -7145.802076067243,
+      "radius": 2.2089364887434964,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-695",
+      "species": "broadleaf",
+      "worldX": 25579.387525520462,
+      "worldY": 880.3510245092408,
+      "worldZ": -8261.212989807129,
+      "radius": 4.267548909344076,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-697",
+      "species": "conifer",
+      "worldX": 24508.860990486282,
+      "worldY": 905.8431490825878,
+      "worldZ": -6531.241367885044,
+      "radius": 3.699758784846866,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-698",
+      "species": "conifer",
+      "worldX": 25023.96166361686,
+      "worldY": 897.0578505002015,
+      "worldZ": -8300.634878976005,
+      "radius": 2.0069206073558683,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-699",
+      "species": "conifer",
+      "worldX": 26234.83863200065,
+      "worldY": 890.0263154407389,
+      "worldZ": -9200.112810407367,
+      "radius": 3.4026094685446644,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-701",
+      "species": "conifer",
+      "worldX": 25457.09334260682,
+      "worldY": 876.1578902264218,
+      "worldZ": -7185.809666224888,
+      "radius": 1.862122910946427,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-702",
+      "species": "broadleaf",
+      "worldX": 26774.250547371048,
+      "worldY": 890.4752140660839,
+      "worldZ": -5862.858551025391,
+      "radius": 4.233285356230078,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-703",
+      "species": "broadleaf",
+      "worldX": 24874.091886482376,
+      "worldY": 900.5564799622613,
+      "worldZ": -8161.487945556641,
+      "radius": 5.815673878829359,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-704",
+      "species": "broadleaf",
+      "worldX": 24868.558225593704,
+      "worldY": 904.6343866890973,
+      "worldZ": -8404.44312286377,
+      "radius": 4.001767869245271,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-707",
+      "species": "conifer",
+      "worldX": 25632.745533768928,
+      "worldY": 884.7705736217915,
+      "worldZ": -8596.71128627232,
+      "radius": 3.8312301427038853,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-708",
+      "species": "broadleaf",
+      "worldX": 24531.406232795853,
+      "worldY": 904.4794779237782,
+      "worldZ": -6911.531295776367,
+      "radius": 5.484927434564335,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-709",
+      "species": "conifer",
+      "worldX": 24381.12769668048,
+      "worldY": 911.9143390815009,
+      "worldZ": -6406.508893694197,
+      "radius": 3.259881899545759,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-710",
+      "species": "broadleaf",
+      "worldX": 24565.179105720657,
+      "worldY": 903.9882041728816,
+      "worldZ": -7208.638961791992,
+      "radius": 2.8603441435232386,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-711",
+      "species": "broadleaf",
+      "worldX": 25269.534788093704,
+      "worldY": 884.3814431527894,
+      "worldZ": -6474.7065353393555,
+      "radius": 4.297442811952946,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-712",
+      "species": "conifer",
+      "worldX": 26288.376824749674,
+      "worldY": 897.5818101751897,
+      "worldZ": -5352.241385323661,
+      "radius": 2.7046456712684845,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-713",
+      "species": "conifer",
+      "worldX": 24329.141333678246,
+      "worldY": 913.9106450425345,
+      "worldZ": -6532.448983328683,
+      "radius": 2.3563566759288728,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-714",
+      "species": "broadleaf",
+      "worldX": 25810.30247112288,
+      "worldY": 872.551395578761,
+      "worldZ": -7734.905742645264,
+      "radius": 4.1097885602750095,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-716",
+      "species": "conifer",
+      "worldX": 24024.003742997444,
+      "worldY": 930.7186375711772,
+      "worldZ": -7052.203238351004,
+      "radius": 2.7220566708134344,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-717",
+      "species": "broadleaf",
+      "worldX": 24858.378354988236,
+      "worldY": 891.5367262568991,
+      "worldZ": -7078.164215087891,
+      "radius": 2.4440114507080644,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-718",
+      "species": "conifer",
+      "worldX": 26561.506158245767,
+      "worldY": 878.0209987604123,
+      "worldZ": -7722.7503662109375,
+      "radius": 1.9533689565113288,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-721",
+      "species": "broadleaf",
+      "worldX": 26589.553716621536,
+      "worldY": 880.6905881567864,
+      "worldZ": -8434.857421875,
+      "radius": 3.567007644028325,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-723",
+      "species": "broadleaf",
+      "worldX": 24155.72530933394,
+      "worldY": 925.3502426754158,
+      "worldZ": -7369.538612365723,
+      "radius": 3.7527779580953085,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-724",
+      "species": "broadleaf",
+      "worldX": 26964.075185737747,
+      "worldY": 893.2352567418899,
+      "worldZ": -8884.702239990234,
+      "radius": 3.9959000840352923,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-725",
+      "species": "conifer",
+      "worldX": 27389.11548964923,
+      "worldY": 908.2925178352815,
+      "worldZ": -8972.765747070312,
+      "radius": 1.8064980361730718,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-727",
+      "species": "conifer",
+      "worldX": 25066.989530525345,
+      "worldY": 897.3126402282179,
+      "worldZ": -8405.889805385044,
+      "radius": 4.096336314977256,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-730",
+      "species": "conifer",
+      "worldX": 25935.328223871642,
+      "worldY": 879.1740605514501,
+      "worldZ": -6599.160287039621,
+      "radius": 1.6380335893403757,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-734",
+      "species": "broadleaf",
+      "worldX": 27992.075300178665,
+      "worldY": 898.0016326461821,
+      "worldZ": -6670.838264465332,
+      "radius": 2.8221923968899767,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-736",
+      "species": "broadleaf",
+      "worldX": 24129.919095955032,
+      "worldY": 924.502377012361,
+      "worldZ": -6939.1593017578125,
+      "radius": 5.078411956620554,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-737",
+      "species": "broadleaf",
+      "worldX": 25648.76696582808,
+      "worldY": 893.6481294812824,
+      "worldZ": -5772.998062133789,
+      "radius": 2.1413938225591393,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-739",
+      "species": "broadleaf",
+      "worldX": 24246.049299202103,
+      "worldY": 921.2631280910218,
+      "worldZ": -7453.704226016998,
+      "radius": 4.209323223055,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-740",
+      "species": "conifer",
+      "worldX": 24171.48656596061,
+      "worldY": 933.6188605334845,
+      "worldZ": -8506.978585379464,
+      "radius": 2.7775807058858804,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-742",
+      "species": "broadleaf",
+      "worldX": 26090.320009193558,
+      "worldY": 872.2195958836458,
+      "worldZ": -7636.292838096619,
+      "radius": 5.778210240132964,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-744",
+      "species": "conifer",
+      "worldX": 25192.21628485012,
+      "worldY": 881.4465130080088,
+      "worldZ": -7155.497292654855,
+      "radius": 3.3311555400434822,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-747",
+      "species": "broadleaf",
+      "worldX": 24233.26939197554,
+      "worldY": 923.8129311294136,
+      "worldZ": -7687.227899551392,
+      "radius": 2.762624280370754,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-748",
+      "species": "broadleaf",
+      "worldX": 25578.033800087112,
+      "worldY": 877.8198662364846,
+      "worldZ": -8057.990280151367,
+      "radius": 3.8753621010934913,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-749",
+      "species": "conifer",
+      "worldX": 26388.93639070252,
+      "worldY": 884.1180698921326,
+      "worldZ": -6468.775477818081,
+      "radius": 1.9408287196252596,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-750",
+      "species": "broadleaf",
+      "worldX": 24957.528242073196,
+      "worldY": 892.0140082998537,
+      "worldZ": -6359.228820800781,
+      "radius": 4.062891347433045,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-753",
+      "species": "broadleaf",
+      "worldX": 25613.315492591995,
+      "worldY": 899.4322035163881,
+      "worldZ": -5514.889465332031,
+      "radius": 5.9382872176234,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-754",
+      "species": "broadleaf",
+      "worldX": 25357.92431446089,
+      "worldY": 887.9489622251607,
+      "worldZ": -8401.46312713623,
+      "radius": 3.076576331360775,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-755",
+      "species": "conifer",
+      "worldX": 24092.760578934944,
+      "worldY": 926.0583645730957,
+      "worldZ": -6397.136526925224,
+      "radius": 2.2429355643477407,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-756",
+      "species": "conifer",
+      "worldX": 24587.81962608896,
+      "worldY": 902.3638758994695,
+      "worldZ": -7070.221317836216,
+      "radius": 2.400245209562785,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-757",
+      "species": "conifer",
+      "worldX": 26527.391900433267,
+      "worldY": 881.1060079743174,
+      "worldZ": -8584.48153250558,
+      "radius": 3.9940718260087205,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-758",
+      "species": "broadleaf",
+      "worldX": 24152.61507984175,
+      "worldY": 930.4682366453683,
+      "worldZ": -8010.308910369873,
+      "radius": 3.548032802868678,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-759",
+      "species": "broadleaf",
+      "worldX": 26645.69894214644,
+      "worldY": 881.3132237202094,
+      "worldZ": -8376.324562072754,
+      "radius": 3.5635051871706183,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-761",
+      "species": "broadleaf",
+      "worldX": 24512.26778980269,
+      "worldY": 905.5190436409492,
+      "worldZ": -6586.067764282227,
+      "radius": 4.090543084457588,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-762",
+      "species": "conifer",
+      "worldX": 26998.262689007486,
+      "worldY": 890.0704005493066,
+      "worldZ": -6530.779654366629,
+      "radius": 2.8677376581674774,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-766",
+      "species": "conifer",
+      "worldX": 25605.625403502465,
+      "worldY": 874.5936869421208,
+      "worldZ": -7130.839704241072,
+      "radius": 1.6159385597943958,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-767",
+      "species": "conifer",
+      "worldX": 25511.58360313974,
+      "worldY": 907.6107687650882,
+      "worldZ": -9457.75985281808,
+      "radius": 3.4383129028351513,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-768",
+      "species": "conifer",
+      "worldX": 28002.593656501907,
+      "worldY": 922.2914049583455,
+      "worldZ": -7887.553745814732,
+      "radius": 2.9693761973903587,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-769",
+      "species": "broadleaf",
+      "worldX": 27539.462949714798,
+      "worldY": 911.9121409552854,
+      "worldZ": -8660.685119628906,
+      "radius": 4.249678952792333,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-771",
+      "species": "broadleaf",
+      "worldX": 24029.03223987593,
+      "worldY": 937.4918496071908,
+      "worldZ": -8236.951110839844,
+      "radius": 5.5972150114155035,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-772",
+      "species": "broadleaf",
+      "worldX": 27553.83517261519,
+      "worldY": 893.2738731940968,
+      "worldZ": -6467.405029296875,
+      "radius": 4.126667800537131,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-773",
+      "species": "conifer",
+      "worldX": 24082.670822378022,
+      "worldY": 936.1092612445163,
+      "worldZ": -8368.963614327567,
+      "radius": 1.9832639296674233,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-777",
+      "species": "conifer",
+      "worldX": 24741.34329029097,
+      "worldY": 902.7647023759652,
+      "worldZ": -7927.740927559988,
+      "radius": 3.532720834708199,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-778",
+      "species": "conifer",
+      "worldX": 26046.4455089189,
+      "worldY": 902.5543186801776,
+      "worldZ": -9622.538434709822,
+      "radius": 2.6726348856368447,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-780",
+      "species": "conifer",
+      "worldX": 25637.834148096495,
+      "worldY": 874.478145811201,
+      "worldZ": -7103.422533307757,
+      "radius": 1.8529406079629587,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-782",
+      "species": "broadleaf",
+      "worldX": 24589.30779834761,
+      "worldY": 908.576636829567,
+      "worldZ": -7857.298294067383,
+      "radius": 4.07700492324342,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-783",
+      "species": "conifer",
+      "worldX": 23962.35886297512,
+      "worldY": 935.584035339423,
+      "worldZ": -7363.357308523996,
+      "radius": 1.8812359023579748,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-789",
+      "species": "broadleaf",
+      "worldX": 25443.911848030228,
+      "worldY": 898.0169237668265,
+      "worldZ": -5630.62629699707,
+      "radius": 3.2685566476498886,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-791",
+      "species": "broadleaf",
+      "worldX": 24406.757780037064,
+      "worldY": 917.6881683831717,
+      "worldZ": -7917.745471954346,
+      "radius": 4.5935339246759925,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-793",
+      "species": "conifer",
+      "worldX": 24393.505260157042,
+      "worldY": 912.8061213596578,
+      "worldZ": -7314.551498413086,
+      "radius": 2.8059938125267196,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-795",
+      "species": "broadleaf",
+      "worldX": 24803.999341926712,
+      "worldY": 893.5893073867111,
+      "worldZ": -6804.14241027832,
+      "radius": 3.87628729338624,
+      "cuttable": false,
+      "state": "standing"
+    },
+    {
+      "id": "FX_20-797",
+      "species": "conifer",
+      "worldX": 25165.943448982376,
+      "worldY": 884.3363628269491,
+      "worldZ": -6653.064784458706,
+      "radius": 4.257008852323678,
+      "cuttable": false,
+      "state": "standing"
+    }
+  ],
+  "requiresMappingReview": false
+}

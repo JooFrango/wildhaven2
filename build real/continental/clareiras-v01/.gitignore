@@ -1,0 +1,4 @@
+node_modules/
+physics/
+packages-intermediate/
+debug-route.*

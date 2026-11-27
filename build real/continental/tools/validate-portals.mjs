@@ -34,7 +34,7 @@ const STEP = Number(opts.step ?? 2), TOL = Number(opts.tolerance ?? 0.03);
 const MAX_SLOPE_DEG = Number(opts["max-slope"] ?? 35), MIN_WIDTH = Number(opts["min-width"] ?? 4);
 const INSET = 4, SEAM_EPS = 0.01, R = 2500, APOTHEM = R * Math.sqrt(3) / 2, STEP_CENTERS = 2 * APOTHEM;
 const here = dirname(fileURLToPath(import.meta.url));
-const manifest = JSON.parse(await readFile(join(here, "../data/continent-272.manifest.json"), "utf8"));
+const manifest = JSON.parse(await readFile(opts.manifest ? resolve(opts.manifest) : join(here, "../data/continent-272.manifest.json"), "utf8"));
 const tiles = new Map(manifest.tiles.map(t => [t.id, t]));
 const physicsDir = resolve(opts.physics);
 const compileReport = JSON.parse(await readFile(join(physicsDir, "compile-report.json"), "utf8"));

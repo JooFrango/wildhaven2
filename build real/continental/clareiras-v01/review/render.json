@@ -1,0 +1,66 @@
+[
+  {
+    "view": "air",
+    "mode": "before",
+    "calls": 21,
+    "triangles": 969908,
+    "geometryArrayBytes": 30922832,
+    "jsHeapBytes": 174054485
+  },
+  {
+    "view": "air",
+    "mode": "after",
+    "calls": 12,
+    "triangles": 172638,
+    "geometryArrayBytes": 31117736,
+    "jsHeapBytes": 95714673
+  },
+  {
+    "view": "edge",
+    "mode": "before",
+    "calls": 21,
+    "triangles": 969908,
+    "geometryArrayBytes": 30922832,
+    "jsHeapBytes": 95961751
+  },
+  {
+    "view": "edge",
+    "mode": "after",
+    "calls": 24,
+    "triangles": 152166,
+    "geometryArrayBytes": 31765124,
+    "jsHeapBytes": 96530311
+  },
+  {
+    "view": "hunter",
+    "mode": "before",
+    "calls": 14,
+    "triangles": 596050,
+    "geometryArrayBytes": 30922832,
+    "jsHeapBytes": 96901977
+  },
+  {
+    "view": "hunter",
+    "mode": "after",
+    "calls": 21,
+    "triangles": 105240,
+    "geometryArrayBytes": 31765124,
+    "jsHeapBytes": 96630449
+  },
+  {
+    "view": "island",
+    "mode": "before",
+    "calls": 21,
+    "triangles": 969908,
+    "geometryArrayBytes": 30922832,
+    "jsHeapBytes": 96919639
+  },
+  {
+    "view": "island",
+    "mode": "after",
+    "calls": 18,
+    "triangles": 126016,
+    "geometryArrayBytes": 31765124,
+    "jsHeapBytes": 97306959
+  }
+]

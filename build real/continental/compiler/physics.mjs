@@ -101,6 +101,7 @@ export function compileTile(bytes,{id,centerX,centerZ,res=2,chunkMeters=256,base
     }
     const cat=cats[name]??(name===id?"terrain":null)??nodeClassPatterns.find(p=>p.re.test(name))?.cls??null;
     if(cat!==null&&!valid.has(cat))throw Error("Invalid node category "+cat+" for "+name);
+    if(inst && cat==="ignore")return;
     if(inst){
       // GPU instances are never silently omitted from PHYSICAL certification:
       // unresolved trees/rocks must be handled by a reviewed rule.

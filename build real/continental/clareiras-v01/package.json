@@ -1,0 +1,16 @@
+{
+  "name": "clareiras-v01",
+  "version": "1.0.0",
+  "description": "Piloto de clareiras temperadas de Wildhaven",
+  "scripts": {
+    "test": "node sites.mjs && node validate.mjs",
+    "start": "node serve.mjs",
+    "capture": "node capture.mjs"
+  },
+  "type": "commonjs",
+  "dependencies": {
+    "playwright-core": "1.55.0",
+    "three": "0.180.0"
+  },
+  "private": true
+}

@@ -1,0 +1,200 @@
+{
+ "schema": "wildhaven.continental.portal-report.v1",
+ "generatedAt": "2026-11-27T03:54:57.844Z",
+ "parameters": {
+  "stepMeters": 2,
+  "seamToleranceMeters": 0.03,
+  "maxSlopeDeg": 35,
+  "minPortalWidthMeters": 4,
+  "insetMeters": 4,
+  "hexPointToPointMeters": 5000,
+  "hexFlatToFlatMeters": 4330.127018922193,
+  "centers": "lattice-exato (centros do manifesto arredondados a 0,1 m corrigidos pela grade R=2500 m)",
+  "nodeClassification": {
+   "version": "v01",
+   "status": "proposta-tecnica-pendente-revisao-do-diretor"
+  },
+  "proposalNote": "Inclinação máxima, largura mínima de portal e 'água bloqueia travessia a pé' são PROPOSTAS técnicas desta build, não regras aprovadas pelo diretor; a tolerância de 0,03 m vem do guia."
+ },
+ "summary": {
+  "inCatalog": 3,
+  "glbAccessible": 3,
+  "compiled": 3,
+  "scaleVerified": 3,
+  "withValidatedPortal": 3,
+  "certified": 3,
+  "maritimeException": 0,
+  "edges": 3,
+  "edgesValidated": 3,
+  "edgesRejected": 0,
+  "edgesMaritime": 0,
+  "edgesWithoutPackage": 0,
+  "edgesNonGeometric": 0
+ },
+ "tiles": [
+  {
+   "id": "FX_16",
+   "biome": "temperate forest",
+   "family": "FX_16.glb",
+   "inCatalog": true,
+   "glbAccessible": true,
+   "compiled": true,
+   "unknownNodes": 0,
+   "scale": {
+    "terrainTris": 12996,
+    "widthX": 4330.127,
+    "depthZ": 5000,
+    "scaleOk": true,
+    "sourceSha256": "9557bc9617881205537bf6b636e19f814ea3e598d35693a4873e5fd6d2bcf083"
+   },
+   "edges": 2,
+   "landEdges": 2,
+   "validatedEdges": 2,
+   "status": "certificado-tecnico",
+   "reasons": []
+  },
+  {
+   "id": "FX_19",
+   "biome": "temperate forest",
+   "family": "FX_19.glb",
+   "inCatalog": true,
+   "glbAccessible": true,
+   "compiled": true,
+   "unknownNodes": 0,
+   "scale": {
+    "terrainTris": 12996,
+    "widthX": 4330.127,
+    "depthZ": 5000,
+    "scaleOk": true,
+    "sourceSha256": "66c5ae59726134d00ab4f33a15e3a6bb26ad74818192d219fc49df312d8f7a73"
+   },
+   "edges": 2,
+   "landEdges": 2,
+   "validatedEdges": 2,
+   "status": "certificado-tecnico",
+   "reasons": []
+  },
+  {
+   "id": "FX_20",
+   "biome": "temperate forest",
+   "family": "FX_20.glb",
+   "inCatalog": true,
+   "glbAccessible": true,
+   "compiled": true,
+   "unknownNodes": 0,
+   "scale": {
+    "terrainTris": 12996,
+    "widthX": 4330.127,
+    "depthZ": 5000,
+    "scaleOk": true,
+    "sourceSha256": "4098e1b75acf399e73d3bd1ff805b1811b1d60991b4f792fdda408e3a9a09029"
+   },
+   "edges": 2,
+   "landEdges": 2,
+   "validatedEdges": 2,
+   "status": "certificado-tecnico",
+   "reasons": []
+  }
+ ],
+ "edges": [
+  {
+   "a": "FX_16",
+   "b": "FX_19",
+   "centerDistance": 4330.127,
+   "samples": 1249,
+   "coveredSamples": 1249,
+   "approvedSamples": 1249,
+   "seamGapMeters": {
+    "p50": 0.0004,
+    "p95": 0.0005,
+    "max": 0.0005
+   },
+   "failures": {
+    "semCobertura": 0,
+    "emenda": 0,
+    "inclinacao": 0,
+    "agua": 0,
+    "bloqueio": 0
+   },
+   "hydrologyMismatchSamples": 0,
+   "portals": [
+    {
+     "widthMeters": 2498,
+     "centerX": 22734.03,
+     "centerZ": -9374.5,
+     "fromS": -1250,
+     "toS": 1248
+    }
+   ],
+   "portalCount": 1,
+   "portalWidthMeters": 2498,
+   "status": "validado"
+  },
+  {
+   "a": "FX_16",
+   "b": "FX_20",
+   "centerDistance": 4330.127,
+   "samples": 1249,
+   "coveredSamples": 1249,
+   "approvedSamples": 1249,
+   "seamGapMeters": {
+    "p50": 0.0006,
+    "p95": 0.0007,
+    "max": 0.0007
+   },
+   "failures": {
+    "semCobertura": 0,
+    "emenda": 0,
+    "inclinacao": 0,
+    "agua": 0,
+    "bloqueio": 0
+   },
+   "hydrologyMismatchSamples": 0,
+   "portals": [
+    {
+     "widthMeters": 2498,
+     "centerX": 24899.1,
+     "centerZ": -9375.5,
+     "fromS": -1250,
+     "toS": 1248
+    }
+   ],
+   "portalCount": 1,
+   "portalWidthMeters": 2498,
+   "status": "validado"
+  },
+  {
+   "a": "FX_19",
+   "b": "FX_20",
+   "centerDistance": 4330.127,
+   "samples": 1249,
+   "coveredSamples": 1249,
+   "approvedSamples": 1249,
+   "seamGapMeters": {
+    "p50": 0.001,
+    "p95": 0.0012,
+    "max": 0.0012
+   },
+   "failures": {
+    "semCobertura": 0,
+    "emenda": 0,
+    "inclinacao": 0,
+    "agua": 0,
+    "bloqueio": 0
+   },
+   "hydrologyMismatchSamples": 0,
+   "portals": [
+    {
+     "widthMeters": 2498,
+     "centerX": 23815.7,
+     "centerZ": -7501,
+     "fromS": -1250,
+     "toS": 1248
+    }
+   ],
+   "portalCount": 1,
+   "portalWidthMeters": 2498,
+   "status": "validado"
+  }
+ ]
+}
