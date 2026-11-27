@@ -1,0 +1,1213 @@
+{
+ "schema": "wildhaven.tree-rules.v1",
+ "_origem": "gerado de data/regras-vegetacao-costeira-v04.json (raios medidos na malha, escala visual aprovada) — PROPOSTA TÉCNICA",
+ "byTile": {
+  "costa_+08_-09": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+09_-09": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+10_-09": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+10_-08": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+10_-07": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+10_-06": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+11_-06": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+03_-05": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+11_-05": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+03_-04": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+11_-04": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+11_-03": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+11_-02": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+10_-01": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+09_+00": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+09_+01": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+07_+02": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+08_+02": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "praia": {
+   "trees": {
+    "Folhosa_01": {
+     "radius": 0.854,
+     "cuttable": false
+    },
+    "Folhosa_02": {
+     "radius": 0.817,
+     "cuttable": false
+    },
+    "Folhosa_03": {
+     "radius": 0.853,
+     "cuttable": false
+    },
+    "Folhosa_04": {
+     "radius": 0.845,
+     "cuttable": false
+    },
+    "Folhosa_05": {
+     "radius": 0.817,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+06_+02": {
+   "trees": {
+    "Moita de savana 0": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 1": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 2": {
+     "radius": 0.966,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+05_+04": {
+   "trees": {
+    "Moita de savana 0": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 1": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 2": {
+     "radius": 0.966,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+05_+05": {
+   "trees": {
+    "Moita de savana 0": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 1": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 2": {
+     "radius": 0.966,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "arcos": {
+   "trees": {
+    "Moita de savana 0": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 1": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 2": {
+     "radius": 0.966,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+04_+07": {
+   "trees": {
+    "Moita de savana 0": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 1": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 2": {
+     "radius": 0.966,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+04_+08": {
+   "trees": {
+    "Moita de savana 0": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 1": {
+     "radius": 0.966,
+     "cuttable": false
+    },
+    "Moita de savana 2": {
+     "radius": 0.966,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+03_+09": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+04_+09": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+04_+10": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_-04_+11": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+04_+11": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_-04_+12": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+04_+12": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "falesia": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+04_+13": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_-04_+14": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_-03_+14": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_-02_+14": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+00_+14": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+01_+14": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+02_+14": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_+03_+14": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_1": {
+     "radius": 3.222,
+     "cuttable": false
+    },
+    "Figueira_de_varzea_2": {
+     "radius": 2.477,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Juncos": {
+     "radius": 0.569,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_-02_+15": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  },
+  "costa_-01_+15": {
+   "trees": {
+    "Dossel_1": {
+     "radius": 0.752,
+     "cuttable": false
+    },
+    "Dossel_2": {
+     "radius": 1.201,
+     "cuttable": false
+    },
+    "Arbusto_1": {
+     "radius": 0.904,
+     "cuttable": false
+    },
+    "Arbusto_2": {
+     "radius": 0.856,
+     "cuttable": false
+    },
+    "Palmeira_1": {
+     "radius": 0.59,
+     "cuttable": false
+    },
+    "Palmeira_2": {
+     "radius": 0.584,
+     "cuttable": false
+    },
+    "Emergente_1": {
+     "radius": 4.522,
+     "cuttable": false
+    },
+    "Emergente_2": {
+     "radius": 3.476,
+     "cuttable": false
+    }
+   },
+   "nodeClasses": {}
+  }
+ }
+}

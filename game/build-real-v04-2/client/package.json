@@ -1,0 +1,23 @@
+{
+  "name": "wildhaven-build-real-v04-1-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Cliente 3D TypeScript + Three.js da Build Real V02 (apresenta a simulação autoritativa; sem controle direto do Hunter).",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/alegreya-sans": "5.3.0",
+    "@fontsource/cinzel": "5.3.0",
+    "three": "0.181.2",
+    "three-mesh-bvh": "0.9.17"
+  },
+  "devDependencies": {
+    "@types/three": "0.181.0",
+    "typescript": "5.9.3",
+    "vite": "7.2.2"
+  }
+}

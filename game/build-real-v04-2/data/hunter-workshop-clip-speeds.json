@@ -1,0 +1,34 @@
+{
+  "schema": "wildhaven.clip-speed.v1",
+  "source": "../../assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb",
+  "bytes": 254744,
+  "sha256": "90f7cf659aa4243e07f6bef0ff28e0d616815f344095ad57e81dca817cbc5cf8",
+  "note": "speedMetersPerSecond é o valor usado; se agreement > 0.10 os dois métodos divergem e o clipe precisa de revisão antes de dirigir gameplay",
+  "method": "foot-plant: mediana de -v_horizontal do pé mais baixo nas amostras em que ele está a ≤2 cm da altura mínima do clipe",
+  "clips": [
+    {
+      "name": "Running",
+      "durationSeconds": 0.625,
+      "forwardAxis": "z",
+      "stanceSamples": 35,
+      "speedMetersPerSecond": 3.8385,
+      "footExcursionMeters": 0.6837,
+      "strideEstimateMetersPerSecond": 2.1879,
+      "agreement": 0.43,
+      "hipsRootDriftMeters": -0.0043,
+      "rootMotion": "in-place"
+    },
+    {
+      "name": "Walking",
+      "durationSeconds": 1,
+      "forwardAxis": "z",
+      "stanceSamples": 164,
+      "speedMetersPerSecond": 1.1733,
+      "footExcursionMeters": 0.6179,
+      "strideEstimateMetersPerSecond": 1.2359,
+      "agreement": 0.053,
+      "hipsRootDriftMeters": 0.0066,
+      "rootMotion": "in-place"
+    }
+  ]
+}

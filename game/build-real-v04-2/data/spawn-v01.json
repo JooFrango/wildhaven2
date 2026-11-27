@@ -1,0 +1,27 @@
+{
+  "schema": "wildhaven.spawn.v1",
+  "worldId": "auralis-v01",
+  "seed": 20261126,
+  "rationale": "Vila dos Hunters (HV_01) tem portal validado para vizinho certificado",
+  "edge": {
+    "from": "HV_01",
+    "to": "ER_18",
+    "portalWidthMeters": 2498,
+    "portalCenter": [
+      29229.22,
+      -5624.5
+    ]
+  },
+  "note": "Ponto de partida técnico da Fase 2 (validação de travessia). Não é decisão de design de onde os Hunters nascem.",
+  "hunters": [
+    {
+      "id": "hunter-001",
+      "name": "Hunter do Workshop",
+      "tile": "HV_01",
+      "x": 29154.22,
+      "z": -5494.596,
+      "groundY": 931.832,
+      "asset": "assets/hunters/hunter-workshop/base/hunter-masculino-1000v/hunter_masculino_1000v.glb"
+    }
+  ]
+}

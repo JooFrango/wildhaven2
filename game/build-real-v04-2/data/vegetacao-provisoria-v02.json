@@ -1,0 +1,34 @@
+{
+  "schema": "wildhaven.visual.vegetation-rules.v1",
+  "status": "PROVISÓRIO — aguardando decisão do diretor (alturas-alvo e escopo da correção de escala)",
+  "motivo": "Nos GLBs originais as árvores medem 85–190 m, as flores ~11 m e os arbustos ~8 m, contra casas de 3–7 m na vila. O diretor confirmou que não é intencional. A correção é APENAS visual: o GLB original e a física WHP1 não mudam.",
+  "regra": "fator = alturaAlvoM / mediana medida da família; cada instância mantém sua variação relativa. 'preenchimento' recompõe a cobertura que a copa gigante ocupava: n ≈ preenchimento / fator², limitado por maxPorOriginal, dentro da projeção da copa original.",
+  "familias": {
+    "v12:broadleaf": { "alturaAlvoM": 17, "preenchimento": 0.32, "maxPorOriginal": 24 },
+    "v12:conifer": { "alturaAlvoM": 21, "preenchimento": 0.32, "maxPorOriginal": 24 },
+    "Folhosa": { "alturaAlvoM": 16, "preenchimento": 0.3, "maxPorOriginal": 24 },
+    "Conifera": { "alturaAlvoM": 20, "preenchimento": 0.3, "maxPorOriginal": 24 },
+    "Emergente": { "alturaAlvoM": 32, "preenchimento": 0.25, "maxPorOriginal": 16 },
+    "Dossel": { "alturaAlvoM": 24, "preenchimento": 0.3, "maxPorOriginal": 20 },
+    "Figueira_de_varzea": { "alturaAlvoM": 15, "preenchimento": 0.3, "maxPorOriginal": 20 },
+    "Palmeira": { "alturaAlvoM": 12, "preenchimento": 0.25, "maxPorOriginal": 12 },
+    "v12:shrubs": { "alturaAlvoM": 1.4, "preenchimento": 0.18, "maxPorOriginal": 10 },
+    "v12:wildflowers": { "alturaAlvoM": 0.45, "preenchimento": 0.02, "maxPorOriginal": 5 },
+    "Arbusto": { "alturaAlvoM": 1.6, "preenchimento": 0.2, "maxPorOriginal": 8 },
+    "Juncos": { "alturaAlvoM": 1.4, "preenchimento": 0.2, "maxPorOriginal": 8 },
+    "Moita de savana": { "alturaAlvoM": 1.5, "preenchimento": 0.2, "maxPorOriginal": 8 }
+  },
+  "padrao": {
+    "tree": { "alturaAlvoM": 18, "preenchimento": 0.3, "maxPorOriginal": 20 },
+    "small": { "alturaAlvoM": 1.3, "preenchimento": 0.12, "maxPorOriginal": 8 },
+    "rock": { "fator": 1 }
+  },
+  "fontesExtras": {
+    "HV_01": ["world/hunters-village-v01/models/hv_01_forest.glb"]
+  },
+  "exclusoes": [
+    { "tile": "HV_01", "x": 0, "z": 0, "raioM": 95, "motivo": "lotes, praça e trilhas da vila (bounds de phase_4.glb: −43…41 × −44…53 m)" }
+  ],
+  "lodRelevo": { "L1": [0.35, 0.6], "L2": [0.1, 2.5], "L3": [0.025, 8] },
+  "lodPrototipo": { "L1": 0.35, "L2": 0.1, "L3": 0.02 }
+}
