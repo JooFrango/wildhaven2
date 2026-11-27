@@ -186,7 +186,9 @@ export class EconomicView {
       // canvases reaproveitados das regiões descartadas (sem depender do coletor de lixo para a memória nativa)
       const pooled = this.pool.pop();
       const ground = pooled?.ground ?? document.createElement("canvas"); ground.width = ground.height = TILE;
-      r = { gx, gy, gen: -1, ground, trees: pooled?.trees ?? null, treeKey: "", used: 0 };
+      // `used` já no quadro atual: com `used: 0` o LRU (> 140) descartava a própria região recém-criada e ela era
+      // refeita a cada consulta, redesenhando o relevo dezenas de vezes por segundo (CPU 10% → 30% no teste de 2 h).
+      r = { gx, gy, gen: -1, ground, trees: pooled?.trees ?? null, treeKey: "", used: this.frameNo };
       this.regions.set(k, r);
       if (this.regions.size > 140) { // LRU: descarta as menos usadas
         let oldK = -1, oldU = Infinity; for (const [kk, rr] of this.regions) if (rr.used < oldU) { oldU = rr.used; oldK = kk; }
