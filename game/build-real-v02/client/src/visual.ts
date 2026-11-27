@@ -158,6 +158,22 @@ export class VisualWorld {
     return null;
   }
 
+  /** Altura suavizada (bilinear na grade máx. de 32 m) — usada pelo Modo Econômico. */
+  heightSmooth(x: number, z: number): number | null {
+    for (const tv of this.tiles.values()) {
+      const h = tv.heights; if (!h) continue;
+      const fx = (x - h.ox - h.x0) / h.cell - 0.5, fz = (z - h.oz - h.z0) / h.cell - 0.5;
+      const i = Math.floor(fx), j = Math.floor(fz);
+      if (i < 0 || j < 0 || i + 1 >= h.nx || j + 1 >= h.nz) continue;
+      const g = (a: number, b: number) => h.max[b * h.nx + a];
+      const v00 = g(i, j), v10 = g(i + 1, j), v01 = g(i, j + 1), v11 = g(i + 1, j + 1);
+      if (![v00, v10, v01, v11].every(Number.isFinite)) { const v = [v00, v10, v01, v11].find(Number.isFinite); if (v !== undefined) return v; continue; }
+      const tx = fx - i, tz = fz - j;
+      return (v00 * (1 - tx) + v10 * tx) * (1 - tz) + (v01 * (1 - tx) + v11 * tx) * tz;
+    }
+    return null;
+  }
+
   /** Raio de visada câmera → ponto bloqueado pelo relevo? (conservador: alturas mínimas e margem). */
   private rayBlocked(from: THREE.Vector3, to: THREE.Vector3) {
     const d = from.distanceTo(to);

@@ -529,6 +529,7 @@ export class Ui {
       <tr><td>Culling relevo</td><td>frustum ${w.frustumCulled ?? 0} · distância ${w.distanceCulled ?? 0} · oclusão ${w.occlusionCulled ?? 0}</td></tr>
       <tr><td>Vegetação</td><td>${v.drawn ?? 0}/${v.candidates ?? 0} inst. · LOD ${(v.perLod ?? []).join("/")} · ${f(v.updateMs, 2)} ms</td></tr>
       <tr><td>Culling vegetação (células)</td><td>frustum ${v.cellsFrustum ?? 0} · distância ${v.cellsDistance ?? 0} · oclusão ${v.cellsOcclusion ?? 0}</td></tr>
+      <tr><td>Capim / flores</td><td>${c.grass?.tufts ?? 0} / ${c.grass?.flowers ?? 0} tufos · ${c.grass?.cells ?? 0} células · ${f(c.grass?.ms, 2)} ms</td></tr>
       <tr><td>Atores</td><td>descartados ${a.actorsCulled ?? 0} · mixers ${a.mixersUpdated ?? 0} atualizados / ${a.mixersSkipped ?? 0} adiados · LOD criaturas ${(a.creatureLods ?? []).join("/")}</td></tr>
       <tr><td>Servidor: tick</td><td>${f(m.tick_ms, 2)} ms (máx ${f(m.tick_ms_max, 1)}) · ×${this.escala}</td></tr>
       <tr><td>Criaturas (relevância)</td><td>${m.creatures_total ?? 0}: perto ${m.near ?? 0} · médio ${m.mid ?? 0} · longe ${m.far ?? 0} · congeladas ${m.frozen ?? 0}</td></tr>

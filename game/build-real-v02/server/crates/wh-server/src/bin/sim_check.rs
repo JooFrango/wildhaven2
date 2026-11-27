@@ -148,10 +148,12 @@ fn demo(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::err
         note(&mut steps, w, &format!("retorno à vila com itens ({} na vila)", w.game.village_storage.len()), ok && !w.game.village_storage.is_empty());
     }
     // 4. Hunter sozinho contra predador: ferimento → resgate (ou morte permanente)
-    if !w.game.bestiary.pages.contains_key("lobrapedra") {
+    // V02: criaturas exploram; um avistamento só na borda da vila não serve de habitat para a caçada
+    let habitat_seen = |w: &World| w.game.bestiary.pages.get("lobrapedra").map(|p| p.pontos.iter().any(|(t, _, _)| t != &w.game.village_tile)).unwrap_or(false);
+    if !habitat_seen(w) {
         let scouts: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter" && h.alive && h.activity == Activity::NaVila).take(2).map(|h| h.id.clone()).collect();
         w.order(Order::Explorar { hunters: scouts.clone() })?;
-        let ok = run_until(w, ticks * 3, |w| w.game.bestiary.pages.contains_key("lobrapedra"));
+        let ok = run_until(w, ticks * 3, habitat_seen);
         note(&mut steps, w, "explorar e avistar Lobrapedra", ok);
         w.order(Order::Recolher { hunters: scouts })?;
         run_until(w, ticks, |w| w.game.hunters.iter().filter(|h| h.role == "hunter" && h.alive).all(|h| h.activity == Activity::NaVila));

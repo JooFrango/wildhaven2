@@ -17,6 +17,7 @@
 //        [--chunk 256] [--horizon <saida.glb>] [--stats-only]
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
 import { NodeIO, Document, Accessor } from "@gltf-transform/core";
 import { ALL_EXTENSIONS } from "@gltf-transform/extensions";
@@ -24,7 +25,7 @@ import { prune } from "@gltf-transform/functions";
 import { MeshoptSimplifier } from "meshoptimizer";
 import { PNG } from "pngjs";
 
-const HERE = path.dirname(new URL(import.meta.url).pathname);
+const HERE = path.dirname(fileURLToPath(import.meta.url));
 const REPO = path.resolve(HERE, "../../../..");
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, arr) => {
   if (v.startsWith("--")) a.push([v.slice(2), arr[i + 1] && !arr[i + 1].startsWith("--") ? arr[i + 1] : true]);

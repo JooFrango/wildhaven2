@@ -370,11 +370,14 @@ impl GameState {
             }
         }
         // destino: ponto de avistamento registrado (mapinha), nunca a posição atual do animal
+        // V02: criaturas agora exploram e podem ter sido vistas só na borda da vila; o hex da vila vira o último recurso
+        let near_first = |a: &&(String, f64, f64), b: &&(String, f64, f64)| d2((a.1, a.2), self.village).partial_cmp(&d2((b.1, b.2), self.village)).unwrap();
         let (tile, x, z) = page
             .pontos
             .iter()
             .filter(|(tl, _, _)| ctx.t.is_allowed(tl) && tl != &self.village_tile)
-            .min_by(|a, b| d2((a.1, a.2), self.village).partial_cmp(&d2((b.1, b.2), self.village)).unwrap())
+            .min_by(near_first)
+            .or_else(|| page.pontos.iter().filter(|(tl, _, _)| ctx.t.is_allowed(tl)).min_by(near_first))
             .cloned()
             .ok_or("Nenhum habitat avistado em hex liberado")?;
         let route = route_between(ctx.t, ctx.portals, &self.village_tile, &tile, (x, z)).ok_or("Sem rota por portais validados até o habitat")?;

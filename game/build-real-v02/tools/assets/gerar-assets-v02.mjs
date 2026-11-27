@@ -7,12 +7,13 @@
 // Uso: node tools/assets/gerar-assets-v02.mjs  (gera em game/build-real-v02/assets/models/ + manifest)
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import crypto from "node:crypto";
 import { createRequire } from "node:module";
-const require = createRequire(path.join(path.dirname(new URL(import.meta.url).pathname), "../visual/package.json"));
+const require = createRequire(path.join(path.dirname(fileURLToPath(import.meta.url)), "../visual/package.json"));
 const { Document, NodeIO, Accessor } = require("@gltf-transform/core");
 
-const HERE = path.dirname(new URL(import.meta.url).pathname);
+const HERE = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.resolve(HERE, "../../assets/models");
 
 // ------------------------------------------------------------------ construtor de malhas facetadas

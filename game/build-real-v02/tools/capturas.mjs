@@ -16,7 +16,7 @@ await page.goto(url, { waitUntil: "domcontentloaded" });
 for (const s of JSON.parse(stepsJson)) {
   if (s.espera) await page.waitForTimeout(s.espera);
   if (s.tecla) await page.keyboard.press(s.tecla);
-  if (s.js) console.log("js:", JSON.stringify(await page.evaluate(s.js)).slice(0, 400));
+  if (s.js) console.log("js:", String(JSON.stringify(await page.evaluate(s.js))).slice(0, 400));
   if (s.foto) { await page.screenshot({ path: `${dir}/${s.foto}.png` }); console.log("foto", s.foto); }
 }
 console.log(logs.slice(-10).join("\n"));

@@ -3,7 +3,8 @@
 // fichas; hp/dano/itens/densidade são fórmulas provisórias até a decisão do diretor (itens 8 e 14).
 import fs from "node:fs";
 import path from "node:path";
-const REPO = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../../..");
+import { fileURLToPath } from "node:url";
+const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const v01 = JSON.parse(fs.readFileSync(path.join(REPO, "game/build-real-v02/data/gameplay-provisorio-v01.json"), "utf8"));
 const out = structuredClone(v01);
 out.status = "PROVISÓRIO V02 — derivado da v01 + fichas de creatures/species; nenhum número é regra aprovada";

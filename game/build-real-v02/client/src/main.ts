@@ -10,6 +10,7 @@ import { Actors, loadCreatureCatalog } from "./actors";
 import { StrategyCamera } from "./camera";
 import { WeatherFx, waterMaterial } from "./weatherfx";
 import { Village } from "./village";
+import { GrassField } from "./grass";
 import { EconomicView } from "./economic";
 import { Ui } from "./ui";
 import { loadSettings, saveSettings, PROFILES, type GraphicsSettings } from "./settings";
@@ -60,7 +61,8 @@ async function main() {
   const actors = new Actors(origin, settings);
   const village = new Village(origin, actors);
   const fx = new WeatherFx();
-  scene.add(world.group, veg.group, actors.group, village.group, fx.points);
+  const grass = new GrassField(world, settings);
+  scene.add(world.group, veg.group, grass.group, actors.group, village.group, fx.points);
   const ground = (x: number, z: number) => world.heightAt(x, z, "max");
   const cam = new StrategyCamera(camera, renderer.domElement, ground);
   const gameplay = await loadCreatureCatalog().catch(() => null);
@@ -157,6 +159,7 @@ async function main() {
     atm.update(dt, snap.clock, cam.target, camera);
     world.update(camera, renderer.domElement.height);
     veg.update(camera, renderer.domElement.height, tf);
+    grass.update(cam.target, camera, tf);
     const prevH = new Map(prev.hunters.map(h => [h.id, h as HunterFull]));
     const prevC = new Map(prev.game.creatures.map(c => [c.id, c as CreatureSnap]));
     actors.simTime = simNow;
@@ -172,7 +175,7 @@ async function main() {
     perf.beginGpu();
     renderer.render(scene, camera);
     perf.endGpu();
-    perf.frame(performance.now() - tf, { world: world.stats, veg: veg.stats, actors: actors.stats });
+    perf.frame(performance.now() - tf, { world: world.stats, veg: veg.stats, actors: actors.stats, grass: grass.stats });
     // resolução dinâmica: busca 60 FPS (16,7 ms) sem descer de 50% da resolução
     if (settings.dynamicResolution && tf - dynT > 1500) {
       dynT = tf;

@@ -77,7 +77,7 @@ export class EconomicView {
     const g = this.ctx, D = this.img.data;
     const pal = BIOME[this.biomeKey] ?? BIOME.floresta;
     const fx = focus.x - origin.x, fz = focus.z - origin.z;
-    const hAt = (px: number, py: number) => world.heightAt(fx + (px - W / 2) * MPP, fz + (py - H / 2) * MPP, "max");
+    const hAt = (px: number, py: number) => world.heightSmooth(fx + (px - W / 2) * MPP, fz + (py - H / 2) * MPP);
     const night = s.clock.phase === "night" ? 0.55 : 0;
     const weather = ((s.game as any).weather?.[followId] ?? { kind: "limpo", intensity: 0, cloud: 0.2, wind: [0.6, 0.2] }) as { kind: string; intensity: number; cloud: number; wind: [number, number] };
     // relevo: altura → cor (baixo/alto), sombreamento por luz NO e faixas de cota a cada 20 m
@@ -93,7 +93,7 @@ export class EconomicView {
         const hx = hs[y * (W / 2) + Math.min(W / 2 - 1, x + 1)], hy = hs[Math.min(H / 2 - 1, y + 1) * (W / 2) + x];
         const sl = ((hx === hx ? hx : h) - h) + ((hy === hy ? hy : h) - h);
         const shade = Math.max(0.55, Math.min(1.25, 1 - sl * 0.06));
-        const band = Math.floor(h / 20) % 2 === 0 ? 1 : 0.96;
+        const band = 1 - 0.035 * Math.max(0, 1 - Math.abs(((h % 20) + 20) % 20 - 10) / 1.2); // linha de cota suave a cada 20 m
         r = (pal.low[0] + (pal.high[0] - pal.low[0]) * t) * shade * band; gg = (pal.low[1] + (pal.high[1] - pal.low[1]) * t) * shade * band; b = (pal.low[2] + (pal.high[2] - pal.low[2]) * t) * shade * band;
         if (h < 1.5) { r = 40; gg = 96; b = 150; }
       }
