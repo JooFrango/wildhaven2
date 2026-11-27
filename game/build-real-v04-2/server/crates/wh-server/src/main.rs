@@ -61,6 +61,11 @@ enum Cmd {
 /// Tráfego WebSocket (todas as conexões) para o painel F3.
 #[derive(Default)]
 struct Traffic {
+    /// V04.2: clientes por modo (3D, Econômico, fundo) — a publicação segue o ritmo que eles realmente consomem
+    modo_tres: AtomicU32,
+    modo_eco: AtomicU32,
+    modo_fundo: AtomicU32,
+    publicacoes_puladas: AtomicU64,
     /// V04.1 (MET-02): nanossegundos gastos montando mensagens para os clientes (filtro + diff + serialização)
     push_ns: AtomicU64,
     bytes: AtomicU64,
@@ -352,6 +357,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
     let mut seq: u64 = 0;
     let mut important_seq: u64 = 0;
     let mut last_save = Instant::now();
+    let mut last_pub = Instant::now() - Duration::from_secs(10);
     let mut proc = sysinfo::ProcSample::now();
     let mut proc_view = serde_json::json!({});
     let mut steps_window: (Instant, u64) = (Instant::now(), 0);
@@ -458,6 +464,25 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
             n += 1;
         }
         let steps_ms = tb.elapsed().as_secs_f64() * 1000.0;
+        // persistência (V04.2: antes da decisão de publicar, para não depender do ritmo da publicação): a cada 10 s, ou já após morte/ordem/página nova (serialização aqui, gravação assíncrona)
+        if persist && (w.game.pending_save || last_save.elapsed() >= Duration::from_secs(10)) && last_save.elapsed() >= Duration::from_secs(1) {
+            w.game.pending_save = false;
+            last_save = Instant::now();
+            let _ = save_tx.send((serde_json::to_string(&w.game).unwrap_or_default(), w.game.hunters.clone()));
+        }
+        // ---- V04.2: publicação no ritmo que os clientes consomem: 200 ms com algum cliente 3D, 400 ms só com
+        // Econômico, 5 s só com clientes em segundo plano (ou já, se houver acontecimento importante novo), 1 s sem
+        // clientes (as leituras REST continuam com no máximo 1 s de atraso). A simulação não muda.
+        let (n3, ne, nf) = (traffic.modo_tres.load(Ordering::Relaxed), traffic.modo_eco.load(Ordering::Relaxed), traffic.modo_fundo.load(Ordering::Relaxed));
+        let gap = if n3 > 0 { Duration::ZERO } else if ne > 0 { Duration::from_millis(400) } else if nf > 0 { Duration::from_secs(5) } else { Duration::from_secs(1) };
+        let novo_importante = w.game.events.iter().any(|e| e.seq > important_seq && IMPORTANT.contains(&e.kind.as_str()));
+        if last_pub.elapsed() + Duration::from_millis(5) < gap && !novo_importante {
+            traffic.publicacoes_puladas.fetch_add(1, Ordering::Relaxed);
+            busy_ns += tb.elapsed().as_nanos();
+            steps_window.1 += n;
+            continue;
+        }
+        last_pub = Instant::now();
         // ---- publicação: visão + conversão para o fio (fora de qualquer lock; o mundo é só desta thread)
         let tp = Instant::now();
         let mut value = serde_json::to_value(w.snapshot(now_ms())).unwrap_or_default();
@@ -503,6 +528,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
                 "ocupacao_thread_sim_pct": busy_pct,
                 "processo": proc_view,
                 "custo_ms_por_s": {"passos": busy_pct * 10.0, "visao_publicada": view_ms_s, "mensagens_clientes": push_ms_s},
+                "publicacao": {"intervalo_ms": gap.as_millis() as u64, "puladas": traffic.publicacoes_puladas.load(Ordering::Relaxed), "clientes_3d": n3, "clientes_eco": ne, "clientes_fundo": nf},
                 "ws": {"clientes": traffic.clients.load(Ordering::Relaxed), "bytes_por_s": traffic_rate.0, "msgs_por_s": traffic_rate.1, "completos": traffic.fulls.load(Ordering::Relaxed), "ressincronizacoes": traffic.resyncs.load(Ordering::Relaxed)},
                 "terreno": w.terrain.stats,
                 "pacotes": pacotes.resumo(), "viagensAguardandoPacotes": pendentes.len(),
@@ -510,12 +536,6 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
         }
         busy_ns += tb.elapsed().as_nanos();
         let _ = tx.send(Arc::new(Published { seq, value, json: OnceLock::new(), important_seq }));
-        // persistência: a cada 10 s, ou já após morte/ordem/página nova (serialização aqui, gravação assíncrona)
-        if persist && (w.game.pending_save || last_save.elapsed() >= Duration::from_secs(10)) && last_save.elapsed() >= Duration::from_secs(1) {
-            w.game.pending_save = false;
-            last_save = Instant::now();
-            let _ = save_tx.send((serde_json::to_string(&w.game).unwrap_or_default(), w.game.hunters.clone()));
-        }
     }
 }
 
@@ -547,6 +567,8 @@ async fn push(mut socket: WebSocket, s: AppState) {
     let mut rx = s.latest.clone();
     s.traffic.clients.fetch_add(1, Ordering::Relaxed);
     let mut modo = Modo::Tres;
+    let conta = |t: &Traffic, m: Modo, d: i32| { let a = match m { Modo::Tres => &t.modo_tres, Modo::Eco => &t.modo_eco, Modo::Fundo => &t.modo_fundo }; if d > 0 { a.fetch_add(1, Ordering::Relaxed); } else { a.fetch_sub(1, Ordering::Relaxed); } };
+    conta(&s.traffic, modo, 1);
     let mut base: Option<(u64, serde_json::Value)> = None; // último estado que ESTE cliente recebeu
     let mut sent_important = 0u64;
     let mut last_send = std::time::Instant::now() - Duration::from_secs(60);
@@ -597,12 +619,14 @@ async fn push(mut socket: WebSocket, s: AppState) {
                 match m {
                     Some(Ok(Message::Text(t))) => {
                         let v: serde_json::Value = serde_json::from_str(t.as_str()).unwrap_or_default();
+                        let antes = modo;
                         match v["modo"].as_str() {
                             Some("3d") => modo = Modo::Tres,
                             Some("eco") => modo = Modo::Eco,
                             Some("fundo") => modo = Modo::Fundo,
                             _ => {}
                         }
+                        if antes != modo { conta(&s.traffic, antes, -1); conta(&s.traffic, modo, 1); }
                         if let Some(f) = v["foco"].as_str() {
                             if foco.as_deref() != Some(f) {
                                 foco = Some(f.to_string());
@@ -622,6 +646,7 @@ async fn push(mut socket: WebSocket, s: AppState) {
         }
     }
     s.traffic.clients.fetch_sub(1, Ordering::Relaxed);
+    conta(&s.traffic, modo, -1);
 }
 
 /// Raio de apresentação em torno do Hunter seguido (m): criaturas e rastros além disso não trafegam.
