@@ -40,7 +40,7 @@ Para regenerar, rode os passos do workflow `wildhaven-windows-portable-v04.yml`.
 
 ## Em andamento ou a fazer
 
-- [ ] CI V04 (workflow do continente completo) verde, com ZIP base e release `build-real-v04-hexes` publicados e SHA-256 conferido após download.
+- [x] CI V04 (workflow do continente completo) verde (execução 7), com ZIP base e release `build-real-v04-hexes` publicados e SHA-256 conferido após download.
 - [x] Cliente no navegador com o continente: capturas reais de 16 hexes (13 classes), troca para Hunter distante, Bestiário com espécies novas e mapa com rota (`evidencias/v04/`). Três defeitos achados e corrigidos (RELATORIO-V04 §7).
 - [x] Benchmark V03 × V04 na mesma cena (`BENCHMARK-V03-V04.md`).
 - [ ] Testes longos da V04 (Econômico, oculto, 3D), mais 8 h e 24 h se a infraestrutura permitir.

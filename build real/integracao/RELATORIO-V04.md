@@ -3,9 +3,14 @@
 **Código:** `game/build-real-v04/`, na branch independente `feat/build-real-v04-mundo-completo`, com base na V03 otimizada. A V03 continua em `game/build-real-v03/`.
 
 **Downloads (Windows):**
-- [Wildhaven-Windows-portatil-v04.zip](https://github.com/JooFrango/wildhaven2/releases/download/build-real-v04-portatil/Wildhaven-Windows-portatil-v04.zip) (212.032.000 bytes, SHA-256 `f75942430f55a12ebb506d72db721df40c40c1cb06e263f6232a87cf02d4aea4`). Traz a vila, os 6 hexes vizinhos, o horizonte dos 272 hexes e as 34 espécies.
-- [Pacotes por hex](https://github.com/JooFrango/wildhaven2/releases/tag/build-real-v04-hexes): 259 pacotes, 3,84 GB, mais o índice `hexes-v04.json`. São baixados **sob demanda** pelo servidor, ou todos de uma vez por `Baixar-Continente-Completo.bat`.
-- Baixei os dois de novo, direto do GitHub, e conferi o SHA-256: o ZIP base e o pacote `X3.zip`.
+- [Wildhaven-Windows-portatil-v04.zip](https://github.com/JooFrango/wildhaven2/releases/download/build-real-v04-portatil/Wildhaven-Windows-portatil-v04.zip):
+  - 212.031.689 bytes, SHA-256 `b3a26d5822ffbe167e210a656f2d0f41e81d35c125566730825ffb77a899ce62`;
+  - commit `523e357`, execução 7 do workflow (verde);
+  - traz a vila, os 6 hexes vizinhos, o horizonte dos 272 hexes e as 34 espécies.
+- [Pacotes por hex](https://github.com/JooFrango/wildhaven2/releases/tag/build-real-v04-hexes):
+  - 259 pacotes, 4,03 GB somados no índice `hexes-v04.json`;
+  - são baixados **sob demanda** pelo servidor, ou todos de uma vez por `Baixar-Continente-Completo.bat`.
+- **Conferência:** baixei de novo direto do GitHub o ZIP base, o índice e o pacote `PL_NW.zip`. Bytes e SHA-256 conferem com o `.sha256` e com o índice. O cliente no ZIP traz as correções do relevo sem normais e da tela de região.
 
 > Nenhum FPS foi medido em GPU real (contêiner com SwiftShader). A aprovação artística e o desempenho no computador do diretor continuam sujeitos à validação dele.
 
