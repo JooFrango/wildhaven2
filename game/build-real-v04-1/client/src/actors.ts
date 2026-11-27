@@ -123,6 +123,10 @@ export class Actors {
   /** V03: pré-carrega os modelos (todos os LODs) de uma espécie — usado na tela de carregamento. */
   preload(species: string) { return Promise.all((CREATURE_LODS[species] ?? []).map(u => this.template(u))); }
 
+  private loaded = new Map<string, THREE.Object3D>();
+  /** V04.1: cenas-modelo já carregadas (pré-compilação de shaders; os clones usam os mesmos materiais). */
+  loadedTemplates() { return [...this.loaded.values()].filter(o => !o.parent); }
+
   template(url: string) {
     if (!this.templates.has(url)) {
       this.templates.set(url, this.loader.loadAsync(url).then(g => {
@@ -134,6 +138,7 @@ export class Actors {
           for (const mat of Array.isArray(m.material) ? m.material : [m.material]) { a.total++; if (mat.side === THREE.DoubleSide) a.doubleSided++; patchMaterial(mat); }
         });
         this.materialAudit[url.split("/").pop()!] = a;
+        this.loaded.set(url, g.scene);
         return g;
       }));
     }
@@ -366,6 +371,9 @@ export class Actors {
       }
     }
   }
+
+  /** V04.1: luzes das fogueiras (para o portão de luzes locais da cena). */
+  campFires(): THREE.PointLight[] { const out: THREE.PointLight[] = []; for (const g of this.camps.values()) { const f = g.getObjectByName("fogueira") as THREE.PointLight | undefined; if (f) out.push(f); } return out; }
 
   syncCamps(list: CampSnap[], ground: (x: number, z: number) => number | null) {
     for (const c of list) {

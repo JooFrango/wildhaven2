@@ -12,7 +12,7 @@ export class Village {
   phase = Number(new URLSearchParams(location.search).get("fase") ?? 1);
   private near: THREE.Object3D | null = null;
   private far: THREE.Object3D | null = null;
-  private lamps: THREE.PointLight[] = [];
+  lamps: THREE.PointLight[] = [];
   private loader = new GLTFLoader();
   night = 0;
   constructor(private origin: { x: number; z: number }, _actors: Actors) {

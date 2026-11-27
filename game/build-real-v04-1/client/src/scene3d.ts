@@ -14,6 +14,7 @@ import type { StrategyCamera } from "./camera";
 import { WeatherFx, waterMaterial } from "./weatherfx";
 import { Village } from "./village";
 import { GrassField } from "./grass";
+import { LocalLightGate } from "./lights";
 import type { GraphicsSettings } from "./settings";
 import type { Perf } from "./perf";
 import type { HeightIndex } from "./heights";
@@ -28,6 +29,9 @@ export class Scene3D {
   readonly world: VisualWorld;
   readonly veg: Vegetation;
   readonly actors: Actors;
+  /** V04.1: compila em paralelo antes de mudar o número de luzes locais (lanternas/fogueiras). */
+  readonly lightGate: LocalLightGate;
+  shaderPrewarmMs = 0;
   readonly village: Village;
   readonly fx: WeatherFx;
   readonly grass: GrassField;
@@ -74,6 +78,7 @@ export class Scene3D {
     this.veg = new Vegetation(S.origin, settings, this.world);
     this.actors = new Actors(S.origin, settings);
     this.village = new Village(S.origin, this.actors);
+    this.lightGate = new LocalLightGate(this.renderer, this.scene);
     this.fx = new WeatherFx();
     this.grass = new GrassField(this.world, settings);
     perf.attach(r);
@@ -139,7 +144,18 @@ export class Scene3D {
     progress(4, 0.6, "Sincronizando Hunters: retrato");
     this.portraitUrl = await renderPortrait(this.renderer, this.actors).catch(() => null);
     try { if (this.portraitUrl) localStorage.setItem("wildhaven.v04.retrato", this.portraitUrl); } catch { /* sem armazenamento */ }
-    this.village.load().catch(e => console.warn("vila", e));
+    // V04.1: a vila entra antes da pré-compilação (no máximo 8 s de espera; depois segue carregando no jogo)
+    await Promise.race([this.village.load().catch(e => console.warn("vila", e)), new Promise(r => setTimeout(r, 8000))]);
+    // V04.1: pré-compilação dos shaders atrás da tela de carregamento. Sem isso, os primeiros quadros do jogo
+    // compilavam cada programa ao desenhar (picos de 260–480 ms nos primeiros segundos, auditoria do Codex).
+    // Modelos das criaturas e do Hunter entram por um instante num grupo temporário (mesmos materiais dos clones);
+    // contagens de luzes locais: 0 (dia), 1 (uma fogueira), 6 (lanternas) e 7 (lanternas + fogueira).
+    progress(4, 0.8, "Preparando sombreamento (shaders)");
+    const warm = new THREE.Group(); warm.name = "pre-compilacao";
+    for (const p of this.actors.loadedTemplates()) warm.add(p);
+    scene.add(warm);
+    this.shaderPrewarmMs = this.lightGate.prewarm(this.camera, [0, 1, 6, 7], [...this.village.lamps, ...this.actors.campFires()]);
+    warm.removeFromParent();
     progress(4, 1, "Hunters sincronizados");
   }
 
@@ -219,6 +235,7 @@ export class Scene3D {
     this.village.night = this.atm.night;
     // sombras: no máximo 30 atualizações por segundo (a 60 FPS, metade dos passes de sombra)
     if (this.renderer.shadowMap.enabled && tf - this.shadowT >= 33) { this.shadowT = tf; this.renderer.shadowMap.needsUpdate = true; }
+    this.lightGate.gate([...this.village.lamps, ...this.actors.campFires()], camera);
     this.renderer.info.reset();
     this.perf.beginGpu();
     this.renderer.render(this.scene, camera);
@@ -238,6 +255,7 @@ export class Scene3D {
   dispose() {
     this.stopLoop(); this.disposed = true;
     removeEventListener("resize", this.onResize);
+    this.lightGate.dispose();
     this.world.dispose();
     const mats = new Set<THREE.Material>(), texs = new Set<THREE.Texture>();
     this.scene.traverse(o => {
