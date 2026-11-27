@@ -30,7 +30,7 @@ fn boot(root: &std::path::Path) -> Result<World, Box<dyn std::error::Error>> {
     let walk = speeds["clips"].as_array().unwrap().iter().find(|c| c["name"] == "Walking").unwrap()["speedMetersPerSecond"].as_f64().unwrap();
     let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v02/data/spawn-v02.json"))?)?;
     let s = &spawn["hunters"][0];
-    let data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v02/data/gameplay-provisorio-v01.json"))?)?;
+    let data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v02/data/gameplay-provisorio-v02.json"))?)?;
     let mut terrain = TerrainStore::new(continent, physics_dir, allowed, 256 * 1024 * 1024);
     let game = GameState::new(&data, (s["x"].as_f64().unwrap(), s["z"].as_f64().unwrap()), s["tile"].as_str().unwrap(), walk, spawn["seed"].as_u64().unwrap() as u32, &mut terrain);
     Ok(World::new(WorldClock::new(0), terrain, portals, data, game))

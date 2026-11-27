@@ -1,0 +1,79 @@
+{
+ "schema": "wildhaven.assets.v02.manifest.v1",
+ "status": "PROPOSTA TÉCNICA V02 — sem aprovação artística; criados porque não existiam no repositório (carroça, acampamento, Presa de Ferro, Laço de Raiz)",
+ "gerador": "game/build-real-v02/tools/assets/gerar-assets-v02.mjs (fonte editável: este script)",
+ "ossos": 0,
+ "items": [
+  {
+   "file": "game/build-real-v02/assets/models/carroca/carroca_v02.glb",
+   "bytes": 157128,
+   "sha256": "5c50bd8111deb9cf02f81be1b722aa2e0937e2fd0e6ee29f63529b2ee0217198",
+   "triangles": 1400,
+   "nodes": [
+    "carroca",
+    "ferragens",
+    "lona",
+    "estandarte",
+    "lanterna",
+    "roda_DE",
+    "roda_DD",
+    "roda_TE",
+    "roda_TD"
+   ],
+   "clips": []
+  },
+  {
+   "file": "game/build-real-v02/assets/models/acampamento/acampamento_v02.glb",
+   "bytes": 60896,
+   "sha256": "e4ce3b826df63b90a53d9f751f9b5e98abc3af6257aa211f682a72bb52a37b37",
+   "triangles": 548,
+   "nodes": [
+    "acampamento",
+    "chama"
+   ],
+   "clips": []
+  },
+  {
+   "file": "game/build-real-v02/assets/models/armadilhas/presa_de_ferro_v02.glb",
+   "bytes": 59268,
+   "sha256": "1cae58fa90cc5755941dfe8c1960eb7da97d40125ed525e1ccfd5f2596052579",
+   "triangles": 512,
+   "nodes": [
+    "presa_de_ferro",
+    "mandibula_a",
+    "mandibula_b"
+   ],
+   "clips": [
+    {
+     "name": "acionar",
+     "duration": 0.24
+    },
+    {
+     "name": "rearmar",
+     "duration": 1.2
+    }
+   ]
+  },
+  {
+   "file": "game/build-real-v02/assets/models/armadilhas/laco_de_raiz_v02.glb",
+   "bytes": 44068,
+   "sha256": "06481ad20e932e4f4db1142a9624331c4c4be42fca4b75c18eb42b95403d52af",
+   "triangles": 372,
+   "nodes": [
+    "laco_de_raiz",
+    "galho",
+    "laco"
+   ],
+   "clips": [
+    {
+     "name": "acionar",
+     "duration": 0.4
+    },
+    {
+     "name": "rearmar",
+     "duration": 1.5
+    }
+   ]
+  }
+ ]
+}

@@ -1,6 +1,7 @@
 //! Wildhaven Build Real v01 — núcleo autoritativo.
 //! Módulos portados da Alpha aos poucos (rng, combat) têm testes de paridade por seed.
 pub mod bestiary;
+pub mod climate;
 pub mod clock;
 pub mod combat;
 pub mod creature;

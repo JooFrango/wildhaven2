@@ -117,7 +117,7 @@ export class VisualWorld {
       m.receiveShadow = cat !== "water";
       m.castShadow = false;
       if (cat === "water" && this.waterMaterial) m.material = this.waterMaterial;
-      else patchMaterial(m.material as THREE.Material);
+      else patchMaterial(m.material as THREE.Material, { ground: cat === "terrain" });
       tv.group.add(m);
       return m;
     };

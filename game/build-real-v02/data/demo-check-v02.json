@@ -1,0 +1,2439 @@
+{
+  "bestiary": {
+    "pages": {
+      "cavoru": {
+        "abates": 0,
+        "avistamentos": 2,
+        "conhecimento": "avistado",
+        "habitats": [
+          "ER_24"
+        ],
+        "itens": [
+          "Pele de Cavoru",
+          "Carne de Cavoru"
+        ],
+        "nome": "Cavoru",
+        "pontos": [
+          [
+            "ER_24",
+            26963.0,
+            901.6824964663149
+          ],
+          [
+            "ER_24",
+            26963.997449682265,
+            903.916301771637
+          ]
+        ],
+        "primeiro_avistamento_tick": 63240,
+        "primeiro_por": "Hunter 06",
+        "species": "cavoru"
+      },
+      "folhisco": {
+        "abates": 1,
+        "avistamentos": 481,
+        "conhecimento": "dominado",
+        "habitats": [
+          "ER_24",
+          "F_E3",
+          "HV_01",
+          "PL_E_N"
+        ],
+        "itens": [
+          "Penas de Folhisco",
+          "Carne pequena"
+        ],
+        "nome": "Folhisco",
+        "pontos": [
+          [
+            "ER_24",
+            25333.802179263042,
+            -1101.8021792630495
+          ],
+          [
+            "ER_24",
+            25369.921207852643,
+            -1138.0787921473625
+          ],
+          [
+            "ER_24",
+            25359.178740872077,
+            -1117.1787408720747
+          ],
+          [
+            "ER_24",
+            25355.762437513305,
+            -1137.7624375133016
+          ],
+          [
+            "ER_24",
+            25358.639661169884,
+            -1124.6396611698794
+          ],
+          [
+            "ER_24",
+            25355.958559651048,
+            -1125.0
+          ],
+          [
+            "ER_24",
+            25366.6132084752,
+            -1115.3867915248056
+          ],
+          [
+            "ER_24",
+            25365.707082294113,
+            -1143.0
+          ]
+        ],
+        "primeiro_avistamento_tick": 10435,
+        "primeiro_por": "Hunter 01",
+        "species": "folhisco"
+      },
+      "lobrapedra": {
+        "abates": 0,
+        "avistamentos": 39,
+        "conhecimento": "estudado",
+        "habitats": [
+          "ER_24",
+          "F_P_R",
+          "PL_E_N"
+        ],
+        "itens": [
+          "Pele de Lobrapedra",
+          "Presas de Lobrapedra"
+        ],
+        "nome": "Lobrapedra",
+        "pontos": [
+          [
+            "F_P_R",
+            19996.366245951718,
+            4505.979040594838
+          ],
+          [
+            "F_P_R",
+            19783.671836802285,
+            4397.6718368022875
+          ],
+          [
+            "F_P_R",
+            19638.12232015574,
+            4331.0
+          ],
+          [
+            "F_P_R",
+            19346.00613087522,
+            4160.00613087522
+          ],
+          [
+            "F_P_R",
+            19205.37405280443,
+            4095.374052804429
+          ],
+          [
+            "F_P_R",
+            19047.755789304596,
+            4029.0
+          ],
+          [
+            "F_P_R",
+            18760.38024415691,
+            3893.0
+          ],
+          [
+            "F_P_R",
+            18600.005816978646,
+            3812.005816978647
+          ]
+        ],
+        "primeiro_avistamento_tick": 24920,
+        "primeiro_por": "Chad",
+        "species": "lobrapedra"
+      },
+      "silvarano": {
+        "abates": 0,
+        "avistamentos": 8,
+        "conhecimento": "estudado",
+        "habitats": [
+          "ER_24",
+          "HV_01"
+        ],
+        "itens": [
+          "Pele de Silvarano",
+          "Carne de Silvarano"
+        ],
+        "nome": "Silvarano",
+        "pontos": [
+          [
+            "HV_01",
+            26783.55999999988,
+            -2065.0
+          ],
+          [
+            "HV_01",
+            26784.959999999875,
+            -2065.0
+          ],
+          [
+            "HV_01",
+            26784.959999999875,
+            -2065.0
+          ],
+          [
+            "HV_01",
+            26777.099678324073,
+            -2074.900321675926
+          ],
+          [
+            "HV_01",
+            26777.099678324073,
+            -2074.900321675926
+          ],
+          [
+            "HV_01",
+            26777.099678324073,
+            -2074.900321675926
+          ],
+          [
+            "ER_24",
+            26859.137686860704,
+            -1786.862313139297
+          ],
+          [
+            "ER_24",
+            26858.220776883445,
+            -1797.4162907078442
+          ]
+        ],
+        "primeiro_avistamento_tick": 26675,
+        "primeiro_por": "Hunter 05",
+        "species": "silvarano"
+      }
+    }
+  },
+  "dead": [],
+  "events": [
+    {
+      "kind": "expedicao",
+      "t": 30474.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152374
+    },
+    {
+      "kind": "expedicao",
+      "t": 30475.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152375
+    },
+    {
+      "kind": "expedicao",
+      "t": 30475.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152376
+    },
+    {
+      "kind": "expedicao",
+      "t": 30475.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152377
+    },
+    {
+      "kind": "expedicao",
+      "t": 30475.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152378
+    },
+    {
+      "kind": "expedicao",
+      "t": 30475.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152379
+    },
+    {
+      "kind": "expedicao",
+      "t": 30476.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152380
+    },
+    {
+      "kind": "expedicao",
+      "t": 30476.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152381
+    },
+    {
+      "kind": "expedicao",
+      "t": 30476.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152382
+    },
+    {
+      "kind": "expedicao",
+      "t": 30476.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152383
+    },
+    {
+      "kind": "expedicao",
+      "t": 30476.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152384
+    },
+    {
+      "kind": "expedicao",
+      "t": 30477.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152385
+    },
+    {
+      "kind": "expedicao",
+      "t": 30477.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152386
+    },
+    {
+      "kind": "expedicao",
+      "t": 30477.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152387
+    },
+    {
+      "kind": "expedicao",
+      "t": 30477.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152388
+    },
+    {
+      "kind": "expedicao",
+      "t": 30477.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152389
+    },
+    {
+      "kind": "expedicao",
+      "t": 30478.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152390
+    },
+    {
+      "kind": "expedicao",
+      "t": 30478.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152391
+    },
+    {
+      "kind": "expedicao",
+      "t": 30478.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152392
+    },
+    {
+      "kind": "expedicao",
+      "t": 30478.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152393
+    },
+    {
+      "kind": "expedicao",
+      "t": 30478.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152394
+    },
+    {
+      "kind": "expedicao",
+      "t": 30479.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152395
+    },
+    {
+      "kind": "expedicao",
+      "t": 30479.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152396
+    },
+    {
+      "kind": "expedicao",
+      "t": 30479.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152397
+    },
+    {
+      "kind": "expedicao",
+      "t": 30479.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152398
+    },
+    {
+      "kind": "expedicao",
+      "t": 30479.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152399
+    },
+    {
+      "kind": "expedicao",
+      "t": 30480.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152400
+    },
+    {
+      "kind": "expedicao",
+      "t": 30480.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152401
+    },
+    {
+      "kind": "expedicao",
+      "t": 30480.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152402
+    },
+    {
+      "kind": "expedicao",
+      "t": 30480.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152403
+    },
+    {
+      "kind": "expedicao",
+      "t": 30480.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152404
+    },
+    {
+      "kind": "expedicao",
+      "t": 30481.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152405
+    },
+    {
+      "kind": "expedicao",
+      "t": 30481.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152406
+    },
+    {
+      "kind": "expedicao",
+      "t": 30481.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152407
+    },
+    {
+      "kind": "expedicao",
+      "t": 30481.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152408
+    },
+    {
+      "kind": "expedicao",
+      "t": 30481.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152409
+    },
+    {
+      "kind": "expedicao",
+      "t": 30482.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152410
+    },
+    {
+      "kind": "expedicao",
+      "t": 30482.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152411
+    },
+    {
+      "kind": "expedicao",
+      "t": 30482.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152412
+    },
+    {
+      "kind": "expedicao",
+      "t": 30482.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152413
+    },
+    {
+      "kind": "expedicao",
+      "t": 30482.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152414
+    },
+    {
+      "kind": "expedicao",
+      "t": 30483.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152415
+    },
+    {
+      "kind": "expedicao",
+      "t": 30483.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152416
+    },
+    {
+      "kind": "expedicao",
+      "t": 30483.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152417
+    },
+    {
+      "kind": "expedicao",
+      "t": 30483.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152418
+    },
+    {
+      "kind": "expedicao",
+      "t": 30483.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152419
+    },
+    {
+      "kind": "expedicao",
+      "t": 30484.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152420
+    },
+    {
+      "kind": "expedicao",
+      "t": 30484.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152421
+    },
+    {
+      "kind": "expedicao",
+      "t": 30484.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152422
+    },
+    {
+      "kind": "expedicao",
+      "t": 30484.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152423
+    },
+    {
+      "kind": "expedicao",
+      "t": 30484.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152424
+    },
+    {
+      "kind": "expedicao",
+      "t": 30485.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152425
+    },
+    {
+      "kind": "expedicao",
+      "t": 30485.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152426
+    },
+    {
+      "kind": "expedicao",
+      "t": 30485.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152427
+    },
+    {
+      "kind": "expedicao",
+      "t": 30485.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152428
+    },
+    {
+      "kind": "expedicao",
+      "t": 30485.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152429
+    },
+    {
+      "kind": "expedicao",
+      "t": 30486.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152430
+    },
+    {
+      "kind": "expedicao",
+      "t": 30486.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152431
+    },
+    {
+      "kind": "expedicao",
+      "t": 30486.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152432
+    },
+    {
+      "kind": "expedicao",
+      "t": 30486.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152433
+    },
+    {
+      "kind": "expedicao",
+      "t": 30486.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152434
+    },
+    {
+      "kind": "expedicao",
+      "t": 30487.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152435
+    },
+    {
+      "kind": "expedicao",
+      "t": 30487.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152436
+    },
+    {
+      "kind": "expedicao",
+      "t": 30487.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152437
+    },
+    {
+      "kind": "expedicao",
+      "t": 30487.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152438
+    },
+    {
+      "kind": "expedicao",
+      "t": 30487.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152439
+    },
+    {
+      "kind": "expedicao",
+      "t": 30488.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152440
+    },
+    {
+      "kind": "expedicao",
+      "t": 30488.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152441
+    },
+    {
+      "kind": "expedicao",
+      "t": 30488.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152442
+    },
+    {
+      "kind": "expedicao",
+      "t": 30488.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152443
+    },
+    {
+      "kind": "expedicao",
+      "t": 30488.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152444
+    },
+    {
+      "kind": "expedicao",
+      "t": 30489.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152445
+    },
+    {
+      "kind": "expedicao",
+      "t": 30489.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152446
+    },
+    {
+      "kind": "expedicao",
+      "t": 30489.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152447
+    },
+    {
+      "kind": "expedicao",
+      "t": 30489.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152448
+    },
+    {
+      "kind": "expedicao",
+      "t": 30489.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152449
+    },
+    {
+      "kind": "expedicao",
+      "t": 30490.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152450
+    },
+    {
+      "kind": "expedicao",
+      "t": 30490.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152451
+    },
+    {
+      "kind": "expedicao",
+      "t": 30490.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152452
+    },
+    {
+      "kind": "expedicao",
+      "t": 30490.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152453
+    },
+    {
+      "kind": "expedicao",
+      "t": 30490.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152454
+    },
+    {
+      "kind": "expedicao",
+      "t": 30491.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152455
+    },
+    {
+      "kind": "expedicao",
+      "t": 30491.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152456
+    },
+    {
+      "kind": "expedicao",
+      "t": 30491.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152457
+    },
+    {
+      "kind": "expedicao",
+      "t": 30491.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152458
+    },
+    {
+      "kind": "expedicao",
+      "t": 30491.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152459
+    },
+    {
+      "kind": "expedicao",
+      "t": 30492.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152460
+    },
+    {
+      "kind": "expedicao",
+      "t": 30492.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152461
+    },
+    {
+      "kind": "expedicao",
+      "t": 30492.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152462
+    },
+    {
+      "kind": "expedicao",
+      "t": 30492.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152463
+    },
+    {
+      "kind": "expedicao",
+      "t": 30492.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152464
+    },
+    {
+      "kind": "expedicao",
+      "t": 30493.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152465
+    },
+    {
+      "kind": "expedicao",
+      "t": 30493.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152466
+    },
+    {
+      "kind": "expedicao",
+      "t": 30493.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152467
+    },
+    {
+      "kind": "expedicao",
+      "t": 30493.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152468
+    },
+    {
+      "kind": "expedicao",
+      "t": 30493.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152469
+    },
+    {
+      "kind": "expedicao",
+      "t": 30494.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152470
+    },
+    {
+      "kind": "expedicao",
+      "t": 30494.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152471
+    },
+    {
+      "kind": "expedicao",
+      "t": 30494.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152472
+    },
+    {
+      "kind": "expedicao",
+      "t": 30494.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152473
+    },
+    {
+      "kind": "expedicao",
+      "t": 30494.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152474
+    },
+    {
+      "kind": "expedicao",
+      "t": 30495.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152475
+    },
+    {
+      "kind": "expedicao",
+      "t": 30495.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152476
+    },
+    {
+      "kind": "expedicao",
+      "t": 30495.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152477
+    },
+    {
+      "kind": "expedicao",
+      "t": 30495.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152478
+    },
+    {
+      "kind": "expedicao",
+      "t": 30495.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152479
+    },
+    {
+      "kind": "expedicao",
+      "t": 30496.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152480
+    },
+    {
+      "kind": "expedicao",
+      "t": 30496.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152481
+    },
+    {
+      "kind": "expedicao",
+      "t": 30496.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152482
+    },
+    {
+      "kind": "expedicao",
+      "t": 30496.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152483
+    },
+    {
+      "kind": "expedicao",
+      "t": 30496.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152484
+    },
+    {
+      "kind": "expedicao",
+      "t": 30497.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152485
+    },
+    {
+      "kind": "expedicao",
+      "t": 30497.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152486
+    },
+    {
+      "kind": "expedicao",
+      "t": 30497.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152487
+    },
+    {
+      "kind": "expedicao",
+      "t": 30497.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152488
+    },
+    {
+      "kind": "expedicao",
+      "t": 30497.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152489
+    },
+    {
+      "kind": "expedicao",
+      "t": 30498.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152490
+    },
+    {
+      "kind": "expedicao",
+      "t": 30498.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152491
+    },
+    {
+      "kind": "expedicao",
+      "t": 30498.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152492
+    },
+    {
+      "kind": "expedicao",
+      "t": 30498.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152493
+    },
+    {
+      "kind": "expedicao",
+      "t": 30498.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152494
+    },
+    {
+      "kind": "expedicao",
+      "t": 30499.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152495
+    },
+    {
+      "kind": "expedicao",
+      "t": 30499.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152496
+    },
+    {
+      "kind": "expedicao",
+      "t": 30499.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152497
+    },
+    {
+      "kind": "expedicao",
+      "t": 30499.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152498
+    },
+    {
+      "kind": "expedicao",
+      "t": 30499.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152499
+    },
+    {
+      "kind": "expedicao",
+      "t": 30500.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152500
+    },
+    {
+      "kind": "expedicao",
+      "t": 30500.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152501
+    },
+    {
+      "kind": "expedicao",
+      "t": 30500.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152502
+    },
+    {
+      "kind": "expedicao",
+      "t": 30500.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152503
+    },
+    {
+      "kind": "expedicao",
+      "t": 30500.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152504
+    },
+    {
+      "kind": "expedicao",
+      "t": 30501.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152505
+    },
+    {
+      "kind": "expedicao",
+      "t": 30501.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152506
+    },
+    {
+      "kind": "expedicao",
+      "t": 30501.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152507
+    },
+    {
+      "kind": "expedicao",
+      "t": 30501.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152508
+    },
+    {
+      "kind": "expedicao",
+      "t": 30501.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152509
+    },
+    {
+      "kind": "expedicao",
+      "t": 30502.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152510
+    },
+    {
+      "kind": "expedicao",
+      "t": 30502.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152511
+    },
+    {
+      "kind": "expedicao",
+      "t": 30502.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152512
+    },
+    {
+      "kind": "expedicao",
+      "t": 30502.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152513
+    },
+    {
+      "kind": "expedicao",
+      "t": 30502.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152514
+    },
+    {
+      "kind": "expedicao",
+      "t": 30503.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152515
+    },
+    {
+      "kind": "expedicao",
+      "t": 30503.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152516
+    },
+    {
+      "kind": "expedicao",
+      "t": 30503.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152517
+    },
+    {
+      "kind": "expedicao",
+      "t": 30503.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152518
+    },
+    {
+      "kind": "expedicao",
+      "t": 30503.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152519
+    },
+    {
+      "kind": "expedicao",
+      "t": 30504.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152520
+    },
+    {
+      "kind": "expedicao",
+      "t": 30504.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152521
+    },
+    {
+      "kind": "expedicao",
+      "t": 30504.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152522
+    },
+    {
+      "kind": "expedicao",
+      "t": 30504.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152523
+    },
+    {
+      "kind": "expedicao",
+      "t": 30504.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152524
+    },
+    {
+      "kind": "expedicao",
+      "t": 30505.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152525
+    },
+    {
+      "kind": "expedicao",
+      "t": 30505.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152526
+    },
+    {
+      "kind": "expedicao",
+      "t": 30505.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152527
+    },
+    {
+      "kind": "expedicao",
+      "t": 30505.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152528
+    },
+    {
+      "kind": "expedicao",
+      "t": 30505.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152529
+    },
+    {
+      "kind": "expedicao",
+      "t": 30506.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152530
+    },
+    {
+      "kind": "expedicao",
+      "t": 30506.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152531
+    },
+    {
+      "kind": "expedicao",
+      "t": 30506.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152532
+    },
+    {
+      "kind": "expedicao",
+      "t": 30506.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152533
+    },
+    {
+      "kind": "expedicao",
+      "t": 30506.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152534
+    },
+    {
+      "kind": "expedicao",
+      "t": 30507.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152535
+    },
+    {
+      "kind": "expedicao",
+      "t": 30507.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152536
+    },
+    {
+      "kind": "expedicao",
+      "t": 30507.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152537
+    },
+    {
+      "kind": "expedicao",
+      "t": 30507.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152538
+    },
+    {
+      "kind": "expedicao",
+      "t": 30507.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152539
+    },
+    {
+      "kind": "expedicao",
+      "t": 30508.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152540
+    },
+    {
+      "kind": "expedicao",
+      "t": 30508.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152541
+    },
+    {
+      "kind": "expedicao",
+      "t": 30508.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152542
+    },
+    {
+      "kind": "expedicao",
+      "t": 30508.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152543
+    },
+    {
+      "kind": "expedicao",
+      "t": 30508.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152544
+    },
+    {
+      "kind": "expedicao",
+      "t": 30509.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152545
+    },
+    {
+      "kind": "expedicao",
+      "t": 30509.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152546
+    },
+    {
+      "kind": "expedicao",
+      "t": 30509.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152547
+    },
+    {
+      "kind": "expedicao",
+      "t": 30509.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152548
+    },
+    {
+      "kind": "expedicao",
+      "t": 30509.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152549
+    },
+    {
+      "kind": "expedicao",
+      "t": 30510.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152550
+    },
+    {
+      "kind": "expedicao",
+      "t": 30510.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152551
+    },
+    {
+      "kind": "expedicao",
+      "t": 30510.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152552
+    },
+    {
+      "kind": "expedicao",
+      "t": 30510.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152553
+    },
+    {
+      "kind": "expedicao",
+      "t": 30510.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152554
+    },
+    {
+      "kind": "expedicao",
+      "t": 30511.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152555
+    },
+    {
+      "kind": "expedicao",
+      "t": 30511.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152556
+    },
+    {
+      "kind": "expedicao",
+      "t": 30511.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152557
+    },
+    {
+      "kind": "expedicao",
+      "t": 30511.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152558
+    },
+    {
+      "kind": "expedicao",
+      "t": 30511.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152559
+    },
+    {
+      "kind": "expedicao",
+      "t": 30512.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152560
+    },
+    {
+      "kind": "expedicao",
+      "t": 30512.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152561
+    },
+    {
+      "kind": "expedicao",
+      "t": 30512.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152562
+    },
+    {
+      "kind": "expedicao",
+      "t": 30512.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152563
+    },
+    {
+      "kind": "expedicao",
+      "t": 30512.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152564
+    },
+    {
+      "kind": "expedicao",
+      "t": 30513.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152565
+    },
+    {
+      "kind": "expedicao",
+      "t": 30513.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152566
+    },
+    {
+      "kind": "expedicao",
+      "t": 30513.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152567
+    },
+    {
+      "kind": "expedicao",
+      "t": 30513.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152568
+    },
+    {
+      "kind": "expedicao",
+      "t": 30513.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152569
+    },
+    {
+      "kind": "expedicao",
+      "t": 30514.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152570
+    },
+    {
+      "kind": "expedicao",
+      "t": 30514.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152571
+    },
+    {
+      "kind": "expedicao",
+      "t": 30514.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152572
+    },
+    {
+      "kind": "expedicao",
+      "t": 30514.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152573
+    },
+    {
+      "kind": "expedicao",
+      "t": 30514.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152574
+    },
+    {
+      "kind": "expedicao",
+      "t": 30515.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152575
+    },
+    {
+      "kind": "expedicao",
+      "t": 30515.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152576
+    },
+    {
+      "kind": "expedicao",
+      "t": 30515.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152577
+    },
+    {
+      "kind": "expedicao",
+      "t": 30515.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152578
+    },
+    {
+      "kind": "expedicao",
+      "t": 30515.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152579
+    },
+    {
+      "kind": "expedicao",
+      "t": 30516.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152580
+    },
+    {
+      "kind": "expedicao",
+      "t": 30516.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152581
+    },
+    {
+      "kind": "expedicao",
+      "t": 30516.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152582
+    },
+    {
+      "kind": "expedicao",
+      "t": 30516.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152583
+    },
+    {
+      "kind": "expedicao",
+      "t": 30516.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152584
+    },
+    {
+      "kind": "expedicao",
+      "t": 30517.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152585
+    },
+    {
+      "kind": "expedicao",
+      "t": 30517.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152586
+    },
+    {
+      "kind": "expedicao",
+      "t": 30517.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152587
+    },
+    {
+      "kind": "expedicao",
+      "t": 30517.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152588
+    },
+    {
+      "kind": "expedicao",
+      "t": 30517.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152589
+    },
+    {
+      "kind": "expedicao",
+      "t": 30518.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152590
+    },
+    {
+      "kind": "expedicao",
+      "t": 30518.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152591
+    },
+    {
+      "kind": "expedicao",
+      "t": 30518.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152592
+    },
+    {
+      "kind": "expedicao",
+      "t": 30518.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152593
+    },
+    {
+      "kind": "expedicao",
+      "t": 30518.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152594
+    },
+    {
+      "kind": "expedicao",
+      "t": 30519.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152595
+    },
+    {
+      "kind": "expedicao",
+      "t": 30519.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152596
+    },
+    {
+      "kind": "expedicao",
+      "t": 30519.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152597
+    },
+    {
+      "kind": "expedicao",
+      "t": 30519.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152598
+    },
+    {
+      "kind": "expedicao",
+      "t": 30519.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152599
+    },
+    {
+      "kind": "expedicao",
+      "t": 30520.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152600
+    },
+    {
+      "kind": "expedicao",
+      "t": 30520.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152601
+    },
+    {
+      "kind": "expedicao",
+      "t": 30520.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152602
+    },
+    {
+      "kind": "expedicao",
+      "t": 30520.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152603
+    },
+    {
+      "kind": "expedicao",
+      "t": 30520.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152604
+    },
+    {
+      "kind": "expedicao",
+      "t": 30521.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152605
+    },
+    {
+      "kind": "expedicao",
+      "t": 30521.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152606
+    },
+    {
+      "kind": "expedicao",
+      "t": 30521.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152607
+    },
+    {
+      "kind": "expedicao",
+      "t": 30521.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152608
+    },
+    {
+      "kind": "expedicao",
+      "t": 30521.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152609
+    },
+    {
+      "kind": "expedicao",
+      "t": 30522.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152610
+    },
+    {
+      "kind": "expedicao",
+      "t": 30522.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152611
+    },
+    {
+      "kind": "expedicao",
+      "t": 30522.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152612
+    },
+    {
+      "kind": "expedicao",
+      "t": 30522.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152613
+    },
+    {
+      "kind": "expedicao",
+      "t": 30522.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152614
+    },
+    {
+      "kind": "expedicao",
+      "t": 30523.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152615
+    },
+    {
+      "kind": "expedicao",
+      "t": 30523.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152616
+    },
+    {
+      "kind": "expedicao",
+      "t": 30523.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152617
+    },
+    {
+      "kind": "expedicao",
+      "t": 30523.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152618
+    },
+    {
+      "kind": "expedicao",
+      "t": 30523.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152619
+    },
+    {
+      "kind": "expedicao",
+      "t": 30524.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152620
+    },
+    {
+      "kind": "expedicao",
+      "t": 30524.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152621
+    },
+    {
+      "kind": "expedicao",
+      "t": 30524.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152622
+    },
+    {
+      "kind": "expedicao",
+      "t": 30524.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152623
+    },
+    {
+      "kind": "expedicao",
+      "t": 30524.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152624
+    },
+    {
+      "kind": "expedicao",
+      "t": 30525.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152625
+    },
+    {
+      "kind": "expedicao",
+      "t": 30525.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152626
+    },
+    {
+      "kind": "expedicao",
+      "t": 30525.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152627
+    },
+    {
+      "kind": "expedicao",
+      "t": 30525.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152628
+    },
+    {
+      "kind": "expedicao",
+      "t": 30525.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152629
+    },
+    {
+      "kind": "expedicao",
+      "t": 30526.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152630
+    },
+    {
+      "kind": "expedicao",
+      "t": 30526.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152631
+    },
+    {
+      "kind": "expedicao",
+      "t": 30526.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152632
+    },
+    {
+      "kind": "expedicao",
+      "t": 30526.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152633
+    },
+    {
+      "kind": "expedicao",
+      "t": 30526.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152634
+    },
+    {
+      "kind": "expedicao",
+      "t": 30527.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152635
+    },
+    {
+      "kind": "expedicao",
+      "t": 30527.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152636
+    },
+    {
+      "kind": "expedicao",
+      "t": 30527.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152637
+    },
+    {
+      "kind": "expedicao",
+      "t": 30527.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152638
+    },
+    {
+      "kind": "expedicao",
+      "t": 30527.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152639
+    },
+    {
+      "kind": "expedicao",
+      "t": 30528.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152640
+    },
+    {
+      "kind": "expedicao",
+      "t": 30528.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152641
+    },
+    {
+      "kind": "expedicao",
+      "t": 30528.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152642
+    },
+    {
+      "kind": "expedicao",
+      "t": 30528.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152643
+    },
+    {
+      "kind": "expedicao",
+      "t": 30528.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152644
+    },
+    {
+      "kind": "expedicao",
+      "t": 30529.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152645
+    },
+    {
+      "kind": "expedicao",
+      "t": 30529.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152646
+    },
+    {
+      "kind": "expedicao",
+      "t": 30529.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152647
+    },
+    {
+      "kind": "expedicao",
+      "t": 30529.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152648
+    },
+    {
+      "kind": "expedicao",
+      "t": 30529.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152649
+    },
+    {
+      "kind": "expedicao",
+      "t": 30530.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152650
+    },
+    {
+      "kind": "expedicao",
+      "t": 30530.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152651
+    },
+    {
+      "kind": "expedicao",
+      "t": 30530.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152652
+    },
+    {
+      "kind": "expedicao",
+      "t": 30530.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152653
+    },
+    {
+      "kind": "expedicao",
+      "t": 30530.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152654
+    },
+    {
+      "kind": "expedicao",
+      "t": 30531.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152655
+    },
+    {
+      "kind": "expedicao",
+      "t": 30531.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152656
+    },
+    {
+      "kind": "expedicao",
+      "t": 30531.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152657
+    },
+    {
+      "kind": "expedicao",
+      "t": 30531.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152658
+    },
+    {
+      "kind": "expedicao",
+      "t": 30531.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152659
+    },
+    {
+      "kind": "expedicao",
+      "t": 30532.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152660
+    },
+    {
+      "kind": "expedicao",
+      "t": 30532.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152661
+    },
+    {
+      "kind": "expedicao",
+      "t": 30532.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152662
+    },
+    {
+      "kind": "expedicao",
+      "t": 30532.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152663
+    },
+    {
+      "kind": "expedicao",
+      "t": 30532.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152664
+    },
+    {
+      "kind": "expedicao",
+      "t": 30533.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152665
+    },
+    {
+      "kind": "expedicao",
+      "t": 30533.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152666
+    },
+    {
+      "kind": "expedicao",
+      "t": 30533.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152667
+    },
+    {
+      "kind": "expedicao",
+      "t": 30533.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152668
+    },
+    {
+      "kind": "expedicao",
+      "t": 30533.800000000003,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152669
+    },
+    {
+      "kind": "expedicao",
+      "t": 30534.0,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152670
+    },
+    {
+      "kind": "expedicao",
+      "t": 30534.2,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152671
+    },
+    {
+      "kind": "expedicao",
+      "t": 30534.4,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152672
+    },
+    {
+      "kind": "expedicao",
+      "t": 30534.600000000002,
+      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
+      "tick": 152673
+    }
+  ],
+  "expeditions": [
+    {
+      "camp": 3514,
+      "cost": 54.0,
+      "dest": [
+        26898.776368329058,
+        -1739.0
+      ],
+      "dest_tile": "ER_24",
+      "hunt_started_s": 2929.2000000000003,
+      "id": 3513,
+      "kills": 1,
+      "members": [
+        "hunter-003",
+        "hunter-004",
+        "hunter-005"
+      ],
+      "rescued": false,
+      "rescuer": null,
+      "species": "folhisco",
+      "started_tick": 10435,
+      "state": "concluida",
+      "threat": null,
+      "transporte": "carroca",
+      "wagon": "chad"
+    },
+    {
+      "camp": 3516,
+      "cost": 54.0,
+      "dest": [
+        26887.0,
+        -1797.1200000000006
+      ],
+      "dest_tile": "ER_24",
+      "hunt_started_s": 7372.8,
+      "id": 3515,
+      "kills": 0,
+      "members": [
+        "hunter-006"
+      ],
+      "rescued": true,
+      "rescuer": null,
+      "species": "lobrapedra",
+      "started_tick": 32673,
+      "state": "cacando",
+      "threat": null,
+      "transporte": "carroca",
+      "wagon": "nailon"
+    }
+  ],
+  "hunters": [
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 2,
+      "hp": 100.0,
+      "id": "hunter-001",
+      "name": "Hunter 01",
+      "skills": {
+        "armadilhas": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 1,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 4,
+          "xp": 0.0
+        },
+        "furtividade": {
+          "level": 5,
+          "xp": 0.0
+        },
+        "rastreamento": {
+          "level": 6,
+          "xp": 0.0
+        },
+        "rodeio": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "velocidade": {
+          "level": 2,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 2,
+      "hp": 100.0,
+      "id": "hunter-002",
+      "name": "Hunter 02",
+      "skills": {
+        "armadilhas": {
+          "level": 6,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 5,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 7,
+          "xp": 0.0
+        },
+        "furtividade": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "rastreamento": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "rodeio": {
+          "level": 5,
+          "xp": 0.0
+        },
+        "velocidade": {
+          "level": 3,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 2,
+      "hp": 100.0,
+      "id": "hunter-003",
+      "name": "Hunter 03",
+      "skills": {
+        "armadilhas": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "furtividade": {
+          "level": 9,
+          "xp": 214.6999999999921
+        },
+        "rastreamento": {
+          "level": 9,
+          "xp": 15.0
+        },
+        "rodeio": {
+          "level": 1,
+          "xp": 0.0
+        },
+        "velocidade": {
+          "level": 4,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 2,
+      "hp": 100.0,
+      "id": "hunter-004",
+      "name": "Hunter 04",
+      "skills": {
+        "armadilhas": {
+          "level": 8,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 5,
+          "xp": 0.0
+        },
+        "furtividade": {
+          "level": 5,
+          "xp": 285.8999999999965
+        },
+        "rastreamento": {
+          "level": 4,
+          "xp": 15.0
+        },
+        "rodeio": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "velocidade": {
+          "level": 2,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 2,
+      "hp": 100.0,
+      "id": "hunter-005",
+      "name": "Hunter 05",
+      "skills": {
+        "armadilhas": {
+          "level": 1,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 1,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 3,
+          "xp": 10.0
+        },
+        "furtividade": {
+          "level": 6,
+          "xp": 125.69999999999713
+        },
+        "rastreamento": {
+          "level": 5,
+          "xp": 15.0
+        },
+        "rodeio": {
+          "level": 6,
+          "xp": 20.0
+        },
+        "velocidade": {
+          "level": 5,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "retornando_ao_acampamento",
+      "alive": true,
+      "crossings": 6,
+      "hp": 100.0,
+      "id": "hunter-006",
+      "name": "Hunter 06",
+      "skills": {
+        "armadilhas": {
+          "level": 4,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 6,
+          "xp": 50.0
+        },
+        "espada": {
+          "level": 6,
+          "xp": 40.0
+        },
+        "furtividade": {
+          "level": 1,
+          "xp": 3.800000000000002
+        },
+        "rastreamento": {
+          "level": 2,
+          "xp": 15.0
+        },
+        "rodeio": {
+          "level": 4,
+          "xp": 20.0
+        },
+        "velocidade": {
+          "level": 1,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "conduzindo",
+      "alive": true,
+      "crossings": 0,
+      "hp": 220.0,
+      "id": "chad",
+      "name": "Chad",
+      "skills": {
+        "desvio": {
+          "level": 6,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 10,
+          "xp": 0.0
+        },
+        "primeiros_socorros": {
+          "level": 8,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "conduzindo",
+      "alive": true,
+      "crossings": 0,
+      "hp": 220.0,
+      "id": "nailon",
+      "name": "Nailon",
+      "skills": {
+        "desvio": {
+          "level": 7,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 9,
+          "xp": 0.0
+        },
+        "primeiros_socorros": {
+          "level": 9,
+          "xp": 0.0
+        }
+      }
+    }
+  ],
+  "money": 392.0,
+  "schema": "wildhaven.demo-check.v1",
+  "simSeconds": 30534.600000000002,
+  "steps": [
+    {
+      "etapa": "explorar e avistar Folhisco (página nova no Bestiário)",
+      "ok": true,
+      "t": 2087.0,
+      "tick": 10435
+    },
+    {
+      "etapa": "7 Hunters na carroça recusado: Some(\"A carroça leva no máximo 6 Hunters (pedido: 7)\")",
+      "ok": true,
+      "t": 2087.0,
+      "tick": 10435
+    },
+    {
+      "etapa": "ordem Caçar Folhisco de carroça: Ok(\"Expedição 3513: caçar Folhisco em ER_24 com 3 Hunters, de carroça (custo 54)\") (dinheiro 500 → 446)",
+      "ok": true,
+      "t": 2087.0,
+      "tick": 10435
+    },
+    {
+      "etapa": "viagem simulada da carroça e acampamento em clareira",
+      "ok": true,
+      "t": 2929.2000000000003,
+      "tick": 14646
+    },
+    {
+      "etapa": "pegadas descobertas (azuis), em t=Some(2929.4)",
+      "ok": true,
+      "t": 5405.0,
+      "tick": 27025
+    },
+    {
+      "etapa": "rastro interrompido pela água, em t=None (só ocorre se a trilha cruzar água)",
+      "ok": true,
+      "t": 5405.0,
+      "tick": 27025
+    },
+    {
+      "etapa": "avistamento do alvo e escolha autônoma de estratégia, em t=Some(2930.0)",
+      "ok": true,
+      "t": 5405.0,
+      "tick": 27025
+    },
+    {
+      "etapa": "abate do alvo (1)",
+      "ok": true,
+      "t": 5405.0,
+      "tick": 27025
+    },
+    {
+      "etapa": "retorno à vila com itens (2 na vila)",
+      "ok": true,
+      "t": 6534.6,
+      "tick": 32673
+    },
+    {
+      "etapa": "ordem Caçar Lobrapedra com Hunter sozinho: Ok(\"Expedição 3515: caçar Lobrapedra em ER_24 com 1 Hunters, de carroça (custo 54)\")",
+      "ok": true,
+      "t": 6534.6,
+      "tick": 32673
+    },
+    {
+      "etapa": "Hunter sozinho: ferimento → resgate/morte, ou abate",
+      "ok": false,
+      "t": 18534.600000000002,
+      "tick": 92673
+    },
+    {
+      "etapa": "expedição do predador encerrada: [\"cacando\"]",
+      "ok": false,
+      "t": 30534.600000000002,
+      "tick": 152673
+    },
+    {
+      "etapa": "desfecho do predador: []",
+      "ok": false,
+      "t": 30534.600000000002,
+      "tick": 152673
+    }
+  ],
+  "streaming": {
+    "cap_bytes": 268435456,
+    "evictions": 112,
+    "hits": 1357102763,
+    "load_errors": 0,
+    "misses": 1750,
+    "pinned_chunks": 37,
+    "resident_bytes": 268369920,
+    "resident_chunks": 1638
+  },
+  "villageStorage": [
+    "Penas de Folhisco",
+    "Carne pequena"
+  ],
+  "wallSeconds": 446.360041111
+}

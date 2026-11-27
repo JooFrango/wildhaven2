@@ -25,6 +25,8 @@ pub struct World {
     pub window_radius_m: f64,
     pub nav: NavParams,
     pub window: Vec<(String, i32, i32)>,
+    /// Relógio universal: o servidor informa a hora real; sem isso (sim-check) usa época + tempo simulado.
+    pub clock_now_ms: Option<u64>,
 }
 
 #[derive(Debug, Serialize)]
@@ -48,11 +50,16 @@ pub struct Snapshot<'a> {
 
 impl World {
     pub fn new(clock: WorldClock, terrain: TerrainStore, portals: PortalIndex, data: GameData, game: GameState) -> Self {
-        Self { clock, terrain, portals, data, game, tick: 0, sim_time_s: 0.0, window_radius_m: 384.0, nav: NavParams::default(), window: vec![] }
+        Self { clock, terrain, portals, data, game, tick: 0, sim_time_s: 0.0, window_radius_m: 384.0, nav: NavParams::default(), window: vec![], clock_now_ms: None }
     }
 
     pub fn ctx_run<R>(&mut self, f: impl FnOnce(&mut GameState, &mut Ctx) -> R) -> R {
-        let mut ctx = Ctx { t: &mut self.terrain, portals: &self.portals, nav: &self.nav, data: &self.data, dt: STEP_SECONDS, tick: self.tick, now: self.sim_time_s };
+        let now_ms = self.clock_now_ms.unwrap_or(self.clock.epoch_ms + (self.sim_time_s * 1000.0) as u64);
+        let cs = self.clock.state(now_ms);
+        let night = cs.phase == crate::clock::Phase::Night;
+        let phase_frac = cs.phase_elapsed_s / (cs.phase_elapsed_s + cs.phase_remaining_s).max(1.0);
+        let moon = crate::climate::Climate::moon_phase(cs.cycle, cs.cycle_fraction, self.data.clima.ciclo_lunar_ciclos);
+        let mut ctx = Ctx { t: &mut self.terrain, portals: &self.portals, nav: &self.nav, data: &self.data, dt: STEP_SECONDS, tick: self.tick, now: self.sim_time_s, night, phase_frac, moon };
         f(&mut self.game, &mut ctx)
     }
 
@@ -65,7 +72,12 @@ impl World {
         self.sim_time_s = self.tick as f64 * STEP_SECONDS;
         let pos = self.game.actor_positions();
         self.window = self.terrain.update_windows(&pos, self.window_radius_m);
+        let t0 = std::time::Instant::now();
         self.ctx_run(|g, c| g.step(c));
+        let ms = t0.elapsed().as_secs_f64() * 1000.0;
+        let m = &mut self.game.metrics;
+        m.tick_ms = ms;
+        m.tick_ms_max = m.tick_ms_max.max(ms);
     }
 
     pub fn snapshot(&self, now_ms: u64) -> Snapshot<'_> {

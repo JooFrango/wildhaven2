@@ -18,8 +18,8 @@ export const ATMOS = {
  * Injeta, em qualquer material da cena, o fog com componente de altura e (opcional) o vento da
  * vegetação e o fade por dithering (sem transparência = sem overdraw de ordenação).
  */
-export function patchMaterial(m: THREE.Material, opts: { wind?: boolean; fade?: boolean } = {}) {
-  const key = `wh-atm-${opts.wind ? 1 : 0}${opts.fade ? 1 : 0}`;
+export function patchMaterial(m: THREE.Material, opts: { wind?: boolean; fade?: boolean; ground?: boolean } = {}) {
+  const key = `wh-atm-${opts.wind ? 1 : 0}${opts.fade ? 1 : 0}${opts.ground ? 1 : 0}`;
   if ((m as any).__whPatched === key) return m;
   (m as any).__whPatched = key;
   (m as any).fog = true;
@@ -28,7 +28,7 @@ export function patchMaterial(m: THREE.Material, opts: { wind?: boolean; fade?: 
     prev?.call(m, shader, r);
     Object.assign(shader.uniforms, ATMOS);
     let vs = shader.vertexShader, fs = shader.fragmentShader;
-    const decl = "uniform float uTime; uniform vec2 uWind; uniform float uWindScale; uniform float uFadeFar;\nvarying float vFogWorldY;\n" + (opts.fade ? "attribute float aFade; varying float vFade;\n" : "");
+    const decl = "uniform float uTime; uniform vec2 uWind; uniform float uWindScale; uniform float uFadeFar;\nvarying float vFogWorldY;\n" + (opts.fade ? "attribute float aFade; varying float vFade;\n" : "") + (opts.ground ? "varying vec3 vGroundW; varying vec3 vGroundN;\n" : "");
     vs = vs.replace("#include <common>", "#include <common>\n" + decl);
     if (opts.wind) vs = vs.replace("#include <begin_vertex>", `#include <begin_vertex>
       {
@@ -49,8 +49,10 @@ export function patchMaterial(m: THREE.Material, opts: { wind?: boolean; fade?: 
         #endif
         vFogWorldY = (modelMatrix * fwp).y;
         ${opts.fade ? "vFade = aFade;" : ""}
+        ${opts.ground ? "vGroundW = (modelMatrix * fwp).xyz; vGroundN = normalize(mat3(modelMatrix) * objectNormal);" : ""}
       }`);
-    fs = fs.replace("#include <common>", "#include <common>\nuniform float uFogBase; uniform float uFogFalloff; uniform float uFogHeightMix;\nvarying float vFogWorldY;\n" + (opts.fade ? "varying float vFade;\n" : ""));
+    fs = fs.replace("#include <common>", "#include <common>\nuniform float uFogBase; uniform float uFogFalloff; uniform float uFogHeightMix;\nvarying float vFogWorldY;\n" + (opts.fade ? "varying float vFade;\n" : "") + (opts.ground ? GROUND_FS_DECL : ""));
+    if (opts.ground) fs = fs.replace("#include <color_fragment>", "#include <color_fragment>\n" + GROUND_FS);
     if (opts.fade) fs = fs.replace("void main() {", `void main() {
       {
         // dithering ordenado 4×4: fade sem blending
@@ -71,6 +73,22 @@ export function patchMaterial(m: THREE.Material, opts: { wind?: boolean; fade?: 
   m.needsUpdate = true;
   return m;
 }
+
+// Detalhe de solo procedural (barato, sem textura extra): variação de cor em 3 escalas, terra exposta em
+// encosta e pedra em rampa forte. Multiplica a cor original (vértice/textura) do GLB — não a substitui.
+const GROUND_FS_DECL = `varying vec3 vGroundW; varying vec3 vGroundN;
+float gh(vec2 p){ p = fract(p * vec2(233.34, 851.73)); p += dot(p, p + 23.45); return fract(p.x * p.y); }
+float gn(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f); return mix(mix(gh(i), gh(i + vec2(1, 0)), f.x), mix(gh(i + vec2(0, 1)), gh(i + vec2(1, 1)), f.x), f.y); }
+`;
+const GROUND_FS = `{
+  vec2 q = vGroundW.xz;
+  float n = gn(q * 0.45) * 0.5 + gn(q * 0.11) * 0.3 + gn(q * 1.7) * 0.2;
+  float slope = 1.0 - clamp(vGroundN.y, 0.0, 1.0);
+  vec3 tint = mix(vec3(0.86, 0.92, 0.78), vec3(1.10, 1.06, 0.92), n);
+  diffuseColor.rgb *= tint;
+  diffuseColor.rgb = mix(diffuseColor.rgb, diffuseColor.rgb * vec3(0.92, 0.80, 0.66) + vec3(0.03, 0.02, 0.0), smoothstep(0.18, 0.4, slope) * 0.7);
+  diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.34, 0.33, 0.31) * (0.8 + 0.4 * n), smoothstep(0.42, 0.62, slope) * 0.85);
+}`;
 
 // ----------------------------------------------------------------- paletas por bioma
 export interface Palette { fog: THREE.Color; density: number; base: number; falloff: number; sky: THREE.Color; ground: THREE.Color; sunTint: THREE.Color; zenith: THREE.Color; horizon: THREE.Color }

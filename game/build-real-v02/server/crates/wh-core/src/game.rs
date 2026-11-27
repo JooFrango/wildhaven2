@@ -7,7 +7,8 @@
 
 use crate::bestiary::Bestiary;
 use crate::combat::{strike, StrikeCreature, StrikeHunter, StrikeOutcome};
-use crate::creature::{line_of_sight, step_creature, AttackRequest, Creature, HunterView, Shout};
+use crate::climate::Climate;
+use crate::creature::{line_of_sight, step_creature, AttackRequest, Creature, CreatureView, HunterView, PreyAttack, Shout, StepEnv};
 use crate::data::GameData;
 use crate::hunter::{Activity, Goal, Hunter, HunterState};
 use crate::mover::{Mover, Step};
@@ -17,7 +18,7 @@ use crate::rng::XorShift32;
 use crate::terrain::TerrainStore;
 use crate::tracks::{Footprint, Tracks};
 use serde::{Deserialize, Serialize};
-use std::collections::{BTreeSet, HashMap, HashSet, VecDeque};
+use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet, VecDeque};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Wagon {
@@ -113,6 +114,17 @@ pub struct GameState {
     seen: HashMap<(String, u64), f64>,
     #[serde(skip)]
     pub pending_save: bool,
+    /// V02: clima continental (persistido com o mundo).
+    #[serde(default)]
+    pub climate: Climate,
+    #[serde(skip)]
+    pub metrics: TickMetrics,
+    #[serde(skip)]
+    village_wander_s: HashMap<String, f64>,
+    #[serde(skip)]
+    pub night_flag: bool,
+    #[serde(skip)]
+    pub moon_phase: f64,
 }
 
 #[derive(Debug, Clone, Deserialize)]
@@ -121,6 +133,44 @@ pub enum Order {
     Explorar { hunters: Vec<String> },
     Cacar { species: String, hunters: Vec<String>, transporte: String, carroca: Option<String> },
     Recolher { hunters: Vec<String> },
+    /// V02: descansar (volta à vila e recupera vida).
+    Descansar { hunters: Vec<String> },
+    /// V02: viajar a pé até um hex e explorar lá (rota pelos portais validados).
+    Viajar { hunters: Vec<String>, tile: String },
+    /// V02: trocar a arma (só na vila; armas do catálogo provisório).
+    Equipar { hunter: String, arma: String },
+}
+
+/// Clima local entregue ao apresentador (por Hunter) — mesma fonte que a IA usa.
+#[derive(Debug, Clone, Serialize)]
+pub struct WeatherView {
+    pub kind: String,
+    pub intensity: f64,
+    pub cloud: f64,
+    pub wind: [f64; 2],
+    pub aurora: f64,
+    #[serde(rename = "moonPhase")]
+    pub moon_phase: f64,
+    #[serde(rename = "temperatureC")]
+    pub temperature_c: f64,
+    #[serde(rename = "visionFactor")]
+    pub vision_factor: f64,
+}
+
+/// Métricas do passo (relevância, A*, criaturas) para o menu do desenvolvedor.
+#[derive(Debug, Clone, Default, Serialize)]
+pub struct TickMetrics {
+    pub tick_ms: f64,
+    pub tick_ms_max: f64,
+    pub creatures_total: usize,
+    pub near: usize,
+    pub mid: usize,
+    pub far: usize,
+    pub frozen: usize,
+    pub astar_used: u32,
+    pub astar_budget: u32,
+    pub astar_deferred: u32,
+    pub prey_kills: u64,
 }
 
 #[derive(Debug, Serialize)]
@@ -136,6 +186,10 @@ pub struct GameView<'a> {
     pub events: Vec<&'a Event>,
     pub village: (f64, f64),
     pub village_storage: &'a [String],
+    pub weather: BTreeMap<String, WeatherView>,
+    pub climate_nodes: Vec<(&'a str, &'a str, f64, f64)>,
+    pub metrics: &'a TickMetrics,
+    pub night: bool,
 }
 
 pub struct Ctx<'a> {
@@ -146,6 +200,10 @@ pub struct Ctx<'a> {
     pub dt: f64,
     pub tick: u64,
     pub now: f64,
+    /// Relógio universal (dia 2 h + noite 40 min).
+    pub night: bool,
+    pub phase_frac: f64,
+    pub moon: f64,
 }
 
 fn d2(a: (f64, f64), b: (f64, f64)) -> f64 {
@@ -155,6 +213,7 @@ fn d2(a: (f64, f64), b: (f64, f64)) -> f64 {
 impl GameState {
     pub fn new(data: &GameData, village: (f64, f64), village_tile: &str, walk: f64, seed: u32, t: &mut TerrainStore) -> Self {
         let mut g = GameState { money: data.economia.dinheiro_inicial, village, village_tile: village_tile.into(), rng: seed.max(1), ..Default::default() };
+        g.climate = Climate::new(&climate_tiles(t), seed);
         let mut slots = walkable_ring(t, village, 2.5, 24);
         let mut take = |g: &mut GameState| -> (f64, f64) {
             let p = if slots.is_empty() { village } else { slots.remove(0) };
@@ -209,6 +268,61 @@ impl GameState {
     // ------------------------------------------------------------------ ordens
     pub fn order(&mut self, o: Order, ctx: &mut Ctx) -> Result<String, String> {
         match o {
+            Order::Descansar { hunters } => {
+                let mut n = 0;
+                for id in &hunters {
+                    let v = self.village;
+                    let h = self.hunters.iter_mut().find(|h| &h.id == id).ok_or(format!("Hunter desconhecido: {id}"))?;
+                    if !h.standing() || h.expedition.is_some() || !matches!(h.activity, Activity::NaVila | Activity::Patrulhando | Activity::Descansando) {
+                        return Err(format!("{} não pode descansar agora (em expedição, ferido ou ocupado)", h.name));
+                    }
+                    if h.mv.dist(v.0, v.1) < 80.0 { h.activity = Activity::Descansando; h.mv.stop(); } else { h.activity = Activity::VoltandoVila; h.route.clear(); }
+                    n += 1;
+                }
+                let txt = format!("{n} Hunter(s) vão descansar na vila");
+                self.event(ctx.tick, ctx.now, "ordem", txt.clone());
+                Ok(txt)
+            }
+            Order::Viajar { hunters, tile } => {
+                let info = ctx.t.continent.tile(&tile).cloned().ok_or(format!("Hex desconhecido: {tile}"))?;
+                if !ctx.t.is_allowed(&tile) {
+                    return Err(format!("{tile} não está certificado para travessia nesta build"));
+                }
+                let c = crate::hex::center_of(crate::hex::axial_of(info.x, info.z).0, crate::hex::axial_of(info.x, info.z).1);
+                let dest = walkable_ring(ctx.t, c, 30.0, 12).into_iter().next().unwrap_or(c);
+                let mut n = 0;
+                for id in &hunters {
+                    let h = self.hunters.iter_mut().find(|h| &h.id == id).ok_or(format!("Hunter desconhecido: {id}"))?;
+                    if h.role != "hunter" || !h.standing() || h.expedition.is_some() || !matches!(h.activity, Activity::NaVila | Activity::Patrulhando) {
+                        return Err(format!("{} não está disponível para viajar", h.name));
+                    }
+                    let route = route_between(ctx.t, ctx.portals, &h.mv.tile_id.clone(), &tile, dest).ok_or(format!("Sem rota por portais validados até {tile}"))?;
+                    h.route = route;
+                    h.route_idx = 0;
+                    h.activity = Activity::Viajando;
+                    h.goal = None;
+                    n += 1;
+                }
+                let txt = format!("{n} Hunter(s) viajam a pé até {tile} ({})", info.biome);
+                self.event(ctx.tick, ctx.now, "ordem", txt.clone());
+                self.pending_save = true;
+                Ok(txt)
+            }
+            Order::Equipar { hunter, arma } => {
+                if !ctx.data.combate.armas.contains_key(&arma) {
+                    return Err(format!("Arma desconhecida: {arma}"));
+                }
+                let h = self.hunters.iter_mut().find(|h| h.id == hunter).ok_or(format!("Hunter desconhecido: {hunter}"))?;
+                if h.activity != Activity::NaVila && h.activity != Activity::Descansando {
+                    return Err(format!("{} só troca de arma na vila", h.name));
+                }
+                h.arma = arma.clone();
+                h.skills.entry(arma.clone()).or_insert(crate::hunter::Skill { level: 1, xp: 0.0 });
+                let txt = format!("{} equipou: {arma} (provisório)", h.name);
+                self.event(ctx.tick, ctx.now, "equipamento", txt.clone());
+                self.pending_save = true;
+                Ok(txt)
+            }
             Order::Explorar { hunters } => {
                 let mut n = 0;
                 for id in &hunters {
@@ -313,6 +427,8 @@ impl GameState {
 
     // ------------------------------------------------------------------ passo
     pub fn step(&mut self, ctx: &mut Ctx) {
+        self.night_flag = ctx.night;
+        self.moon_phase = ctx.moon;
         self.spawn_near_actors(ctx);
         self.tracks.expire(ctx.now, ctx.data.rastros.vida_s);
         self.shouts.retain(|s| ctx.now - s.t < 90.0);
@@ -323,16 +439,82 @@ impl GameState {
             .map(|h| HunterView { id: h.id.clone(), x: h.mv.x, z: h.mv.z, moving: h.state == HunterState::Caminhando, crouched: h.crouched, stealth: h.skill("furtividade"), hp: h.hp })
             .collect();
         let actors = self.actor_positions();
-        let radius = ctx.data.spawn.raio_simulacao_detalhada_m;
+        if self.climate.nodes.is_empty() { self.climate = Climate::new(&climate_tiles(ctx.t), self.rng); }
+        let ccfg = ctx.data.clima.view();
+        self.climate.update(ctx.now, !ctx.night, ctx.phase_frac, &ccfg);
+        // grade espacial (células de 128 m) para percepção eficiente: cada criatura só olha vizinhos
+        const CELL: f64 = 128.0;
+        let key = |x: f64, z: f64| ((x / CELL).floor() as i32, (z / CELL).floor() as i32);
+        let mut hgrid: HashMap<(i32, i32), Vec<usize>> = HashMap::new();
+        for (i, h) in views.iter().enumerate() { hgrid.entry(key(h.x, h.z)).or_default().push(i); }
+        let cviews: Vec<CreatureView> = self.creatures.iter().map(|c| {
+            let sp = &ctx.data.especies[&c.species];
+            CreatureView { id: c.id, species: c.species.clone(), group: c.group, x: c.mv.x, z: c.mv.z, alive: c.alive, carcass: !c.alive && c.carcass_since_s.is_some(), prey: sp.papel != "predador", mass: sp.massa_kg, home: c.home }
+        }).collect();
+        let mut cgrid: HashMap<(i32, i32), Vec<usize>> = HashMap::new();
+        for (i, c) in cviews.iter().enumerate() { cgrid.entry(key(c.x, c.z)).or_default().push(i); }
+        let near_of = |grid: &HashMap<(i32, i32), Vec<usize>>, x: f64, z: f64, r: i32| -> Vec<usize> {
+            let (ci, cj) = key(x, z);
+            let mut out = vec![];
+            for di in -r..=r { for dj in -r..=r { if let Some(v) = grid.get(&(ci + di, cj + dj)) { out.extend_from_slice(v); } } }
+            out
+        };
+        let rel = &ctx.data.relevancia;
         let mut attacks: Vec<AttackRequest> = vec![];
+        let mut prey_attacks: Vec<PreyAttack> = vec![];
         let mut rng = XorShift32::new(self.rng);
-        for c in self.creatures.iter_mut() {
-            if !actors.iter().any(|a| d2(*a, (c.mv.x, c.mv.z)) <= radius) {
-                continue; // fora da janela detalhada: congelada (simulação estratégica ainda não implementada)
-            }
-            step_creature(c, ctx.data, ctx.t, ctx.portals, ctx.nav, &views, &self.shouts, &mut self.tracks, &mut rng, ctx.dt, ctx.tick, ctx.now, &mut attacks);
+        let mut budget = rel.orcamento_astar_por_tick;
+        let mut m = TickMetrics { astar_budget: budget, prey_kills: self.metrics.prey_kills, tick_ms_max: self.metrics.tick_ms_max, ..Default::default() };
+        m.creatures_total = self.creatures.len();
+        for ci in 0..self.creatures.len() {
+            let (cx, cz) = (self.creatures[ci].mv.x, self.creatures[ci].mv.z);
+            let dmin = actors.iter().map(|a| d2(*a, (cx, cz))).fold(f64::MAX, f64::min);
+            // níveis de relevância: perto = todo tick; médio = a cada N; longe = só necessidades; além = congelada
+            let (level, every) = if dmin <= rel.perto_m { (0u8, 1u64) } else if dmin <= rel.medio_m { (1, rel.passo_medio.max(1)) } else if dmin <= rel.longe_m { (2, rel.passo_longe.max(1)) } else { m.frozen += 1; continue };
+            match level { 0 => m.near += 1, 1 => m.mid += 1, _ => m.far += 1 }
+            if (ctx.tick + self.creatures[ci].id) % every != 0 { continue; }
+            let hv: Vec<HunterView> = near_of(&hgrid, cx, cz, 1).into_iter().map(|i| views[i].clone()).collect();
+            let ov: Vec<CreatureView> = near_of(&cgrid, cx, cz, 2).into_iter().filter(|&i| cviews[i].id != self.creatures[ci].id).map(|i| cviews[i].clone()).collect();
+            let eff = self.climate.effects(cx, cz, ctx.night, &ccfg);
+            let env = StepEnv { data: ctx.data, nec: &ctx.data.necessidades, dt: ctx.dt * every as f64, tick: ctx.tick, now: ctx.now, night: ctx.night, level };
+            let before = budget;
+            step_creature(&mut self.creatures[ci], &env, &eff, ctx.t, ctx.portals, ctx.nav, &hv, &ov, &self.shouts, &mut self.tracks, &mut rng, &mut budget, &mut attacks, &mut prey_attacks);
+            m.astar_used += before - budget;
+            if budget == 0 && self.creatures[ci].mv.target.is_some() && self.creatures[ci].mv.path_idx >= self.creatures[ci].mv.path.len() { m.astar_deferred += 1; }
         }
         self.rng = rng.state;
+        // predação entre espécies: dano, morte, carcaça
+        for pa in prey_attacks {
+            let Some(ti) = self.creatures.iter().position(|c| c.id == pa.to && c.alive) else { continue };
+            let t = &mut self.creatures[ti];
+            t.hp -= pa.damage;
+            if t.hp <= 0.0 {
+                t.alive = false;
+                t.mv.stop();
+                t.carcass_since_s = Some(ctx.now);
+                t.state = "carcaca".into();
+                let (tsp, tx, tz) = (t.species.clone(), t.mv.x, t.mv.z);
+                m.prey_kills += 1;
+                if let Some(a) = self.creatures.iter_mut().find(|c| c.id == pa.from) {
+                    a.prey = None;
+                    a.state = "alimentando".into();
+                    a.busy_until_s = ctx.now + 40.0;
+                    let asp = a.species.clone();
+                    let (an, tn) = (ctx.data.especies[&asp].nome.clone(), ctx.data.especies[&tsp].nome.clone());
+                    // só vira acontecimento visível se algum Hunter estiver perto (ecossistema longe continua simulado)
+                    if actors.iter().any(|p| d2(*p, (tx, tz)) < 400.0) {
+                        self.event(ctx.tick, ctx.now, "ecossistema", format!("{an} abateu {tn}"));
+                    }
+                }
+            } else if let Some(tc) = self.creatures.get_mut(ti) {
+                // a presa ferida foge do atacante
+                tc.state = "fugindo".into();
+            }
+        }
+        // carcaças se decompõem
+        let dur = ctx.data.necessidades.carcaca_duracao_s;
+        self.creatures.retain(|c| c.alive || c.carcass_since_s.map(|t| ctx.now - t < dur).unwrap_or(true));
+        self.metrics = m;
         for a in attacks {
             self.resolve_creature_attack(a, ctx);
         }
@@ -406,12 +588,15 @@ impl GameState {
 
     // -------------------------------------------------------------- percepção
     fn perceive(&mut self, ctx: &mut Ctx) {
-        let vis = ctx.data.hunters.visao_m;
+        let ccfg = ctx.data.clima.view();
+        let base_vis = ctx.data.hunters.visao_m;
         let mut sightings: Vec<(usize, usize)> = vec![];
         for (hi, h) in self.hunters.iter().enumerate() {
             if !h.standing() || h.activity == Activity::NaVila {
                 continue;
             }
+            // chuva/areia/nevasca e noite reduzem a visão do Hunter (mesma fonte do clima das criaturas)
+            let vis = base_vis * self.climate.effects(h.mv.x, h.mv.z, ctx.night, &ccfg).visao;
             for (ci, c) in self.creatures.iter().enumerate() {
                 if !c.alive || h.mv.dist(c.mv.x, c.mv.z) > vis {
                     continue;
@@ -699,10 +884,25 @@ impl GameState {
                 return;
             }
             Activity::NaVila => {
+                let (v, id) = (self.village, self.hunters[i].id.clone());
+                let next = self.village_wander_s.get(&id).copied().unwrap_or(0.0);
                 let h = &mut self.hunters[i];
-                if h.mv.dist(self.village.0, self.village.1) > 40.0 {
-                    h.mv.go_to(self.village.0, self.village.1, 5.0);
+                if h.mv.dist(v.0, v.1) > 60.0 {
+                    h.mv.go_to(v.0, v.1, 5.0);
                     moved = true;
+                } else if h.mv.target.is_some() {
+                    moved = true;
+                } else if ctx.now >= next {
+                    // vida na vila (apresentação da rotina, sem regra econômica): passeia entre pontos próximos
+                    let a = h.rng() * std::f64::consts::TAU;
+                    let r = 6.0 + h.rng() * 26.0;
+                    let (x, z) = (v.0 + a.cos() * r, v.1 + a.sin() * r);
+                    if walkable_cell(ctx.t, x, z).is_some() {
+                        h.mv.go_to(x, z, 1.0);
+                        moved = true;
+                    }
+                    let wait = 25.0 + h.rng() * 70.0;
+                    self.village_wander_s.insert(id, ctx.now + wait);
                 }
             }
             Activity::Embarcado | Activity::Conduzindo => {
@@ -775,6 +975,13 @@ impl GameState {
                     let name = h.name.clone();
                     self.event(ctx.tick, ctx.now, "vila", format!("{name} chegou à vila"));
                     self.pending_save = true;
+                } else if h.expedition.is_none() {
+                    // V02: viagem por ordem do jogador terminou — explora a região de destino
+                    h.route.clear();
+                    h.activity = Activity::Patrulhando;
+                    let name = h.name.clone();
+                    let tile = h.mv.tile_id.clone();
+                    self.event(ctx.tick, ctx.now, "viagem", format!("{name} chegou a {tile} e começou a explorar"));
                 } else {
                     h.activity = Activity::Procurando;
                 }
@@ -984,6 +1191,9 @@ impl GameState {
             Activity::Descansando => {
                 let h = &mut self.hunters[i];
                 h.hp = (h.hp + data.acampamento.cura_descanso_hp_s * ctx.dt).min(h.hp_max);
+                if h.expedition.is_none() && h.hp >= h.hp_max {
+                    h.activity = Activity::NaVila;
+                }
             }
         }
         // regeneração lenta fora do acampamento
@@ -1234,7 +1444,7 @@ impl GameState {
             let rested = alive.iter().all(|m| m.2 == Activity::Descansando && m.3 >= m.4 * 0.8);
             let timed_out = e.state == "cacando" && ctx.now - e.hunt_started_s > ctx.data.expedicao.max_horas_sem_abate * 3600.0;
             let any_down = alive.iter().any(|m| matches!(m.2, Activity::Caido | Activity::Carregado));
-            if timed_out && e.kills == 0 && !any_down && e.rescuer.is_none() {
+            if timed_out && e.kills == 0 && !any_down && e.rescuer.is_none() && !e.rescued {
                 // desiste: todos os de pé voltam ao acampamento para retornar
                 let ids: Vec<String> = alive.iter().map(|m| m.0.clone()).collect();
                 for h in self.hunters.iter_mut().filter(|h| ids.contains(&h.id) && h.standing() && h.activity != Activity::Descansando) {
@@ -1393,6 +1603,15 @@ impl GameState {
             events: self.events.iter().rev().take(60).collect(),
             village: self.village,
             village_storage: &self.village_storage,
+            weather: self.hunters.iter().map(|h| {
+                let l = self.climate.at(h.mv.x, h.mv.z);
+                let cfg = data.clima.view();
+                let vis = self.climate.effects(h.mv.x, h.mv.z, self.night_flag, &cfg).visao;
+                (h.id.clone(), WeatherView { kind: l.kind, intensity: l.intensity, cloud: l.cloud, wind: [l.wind.0, l.wind.1], aurora: l.aurora, moon_phase: self.moon_phase, temperature_c: l.temperature_c, vision_factor: vis })
+            }).collect(),
+            climate_nodes: self.climate.nodes.iter().zip(self.climate.local.iter()).map(|(n, l)| (n.id.as_str(), l.kind.as_str(), l.intensity, l.temperature_c)).collect(),
+            metrics: &self.metrics,
+            night: self.night_flag,
         }
     }
 }
@@ -1504,4 +1723,9 @@ pub fn route_between(t: &mut TerrainStore, portals: &PortalIndex, from: &str, to
     }
     pts.push(dest);
     Some(pts)
+}
+
+/// Nós do campo climático: um por hex do continente (id, centro, bioma).
+fn climate_tiles(t: &TerrainStore) -> Vec<(String, f64, f64, String)> {
+    t.continent.tiles.iter().map(|x| (x.id.clone(), x.x, x.z, x.biome.clone())).collect()
 }

@@ -34,6 +34,8 @@ pub fn now_ms() -> u64 {
 #[derive(Clone)]
 struct AppState {
     world: Arc<Mutex<World>>,
+    /// Velocidade da simulação (passos por intervalo de 200 ms): 1, 5, 10 ou 50. O relógio dia/noite é universal.
+    scale: Arc<std::sync::atomic::AtomicU32>,
     latest: Arc<RwLock<String>>,
     continent_json: Arc<String>,
     cfg: Arc<config::Config>,
@@ -113,18 +115,20 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let continent_json = Arc::new(continent_summary(&continent, &report_value));
     let world = Arc::new(Mutex::new(world));
     let latest = Arc::new(RwLock::new(String::from("{}")));
-    let state = AppState { latest: latest.clone(), continent_json, cfg: cfg.clone(), world: world.clone() };
+    let scale = Arc::new(std::sync::atomic::AtomicU32::new(cfg.time_scale));
+    let state = AppState { latest: latest.clone(), continent_json, cfg: cfg.clone(), world: world.clone(), scale: scale.clone() };
 
     // laço de simulação (passo fixo; time_scale passos por intervalo)
     {
-        let (world, latest, scale) = (world.clone(), latest.clone(), cfg.time_scale);
+        let (world, latest, scale) = (world.clone(), latest.clone(), scale.clone());
         tokio::spawn(async move {
             let mut iv = tokio::time::interval(Duration::from_millis(200));
             loop {
                 iv.tick().await;
                 let json = {
                     let mut w = world.lock().unwrap();
-                    for _ in 0..scale {
+                    w.clock_now_ms = Some(now_ms());
+                    for _ in 0..scale.load(std::sync::atomic::Ordering::Relaxed) {
                         w.step();
                     }
                     serde_json::to_string(&w.snapshot(now_ms())).unwrap_or_default()
@@ -168,6 +172,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/api/v1/continent", get(continent_handler))
         .route("/api/v1/stream", get(stream))
         .route("/api/v1/orders", post(order_handler))
+        .route("/api/v1/tempo", post(tempo_handler).get(tempo_get))
+        .route("/api/v1/dev/clima", post(dev_clima_handler))
         .route_service("/api/v1/gameplay", ServeFile::new(&cfg.gameplay))
         .nest_service("/assets", ServeDir::new(cfg.repo_root.join("assets")))
         .nest_service("/fichas", ServeDir::new(cfg.repo_root.join("creatures/species")))
@@ -209,6 +215,42 @@ async fn order_handler(State(s): State<AppState>, Json(o): Json<Order>) -> Respo
         Ok(msg) => (StatusCode::OK, Json(serde_json::json!({"ok": true, "message": msg}))).into_response(),
         Err(msg) => (StatusCode::UNPROCESSABLE_ENTITY, Json(serde_json::json!({"ok": false, "message": msg}))).into_response(),
     }
+}
+
+#[derive(serde::Deserialize)]
+struct Tempo {
+    escala: u32,
+}
+/// Velocidade da simulação local (×1, ×5, ×10, ×50). Não altera regras: só quantos passos por intervalo.
+async fn tempo_handler(State(s): State<AppState>, Json(t): Json<Tempo>) -> Response {
+    if ![1, 5, 10, 50].contains(&t.escala) {
+        return (StatusCode::UNPROCESSABLE_ENTITY, Json(serde_json::json!({"ok": false, "message": "escala aceita: 1, 5, 10 ou 50"}))).into_response();
+    }
+    s.scale.store(t.escala, std::sync::atomic::Ordering::Relaxed);
+    Json(serde_json::json!({"ok": true, "message": format!("Velocidade ×{}", t.escala), "escala": t.escala})).into_response()
+}
+async fn tempo_get(State(s): State<AppState>) -> Response {
+    Json(serde_json::json!({"escala": s.scale.load(std::sync::atomic::Ordering::Relaxed)})).into_response()
+}
+#[derive(serde::Deserialize)]
+struct DevClima {
+    tipo: String,
+    x: f64,
+    z: f64,
+    #[serde(default)]
+    duracao_s: Option<f64>,
+}
+/// Menu do desenvolvedor: força clima numa região (testes visuais e de IA). Respeita o bioma (areia só em
+/// deserto/savana; neve/nevasca só no frio). A mudança vale para a simulação inteira, não só para a câmera.
+async fn dev_clima_handler(State(s): State<AppState>, Json(d): Json<DevClima>) -> Response {
+    let valid = ["limpo", "chuva", "tempestade", "neve", "nevasca", "areia"];
+    if !valid.contains(&d.tipo.as_str()) {
+        return (StatusCode::UNPROCESSABLE_ENTITY, Json(serde_json::json!({"ok": false, "message": "tipo inválido"}))).into_response();
+    }
+    let mut w = s.world.lock().unwrap();
+    let now = w.sim_time_s;
+    w.game.climate.force(d.x, d.z, &d.tipo, now, d.duracao_s.unwrap_or(900.0));
+    Json(serde_json::json!({"ok": true, "message": format!("Clima forçado (dev): {}", d.tipo)})).into_response()
 }
 
 async fn snapshot(State(s): State<AppState>) -> Response {

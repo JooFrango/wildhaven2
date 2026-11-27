@@ -53,7 +53,7 @@ impl Config {
             clip_speeds: r("WH_CLIP_SPEEDS", "game/build-real-v02/data/hunter-workshop-clip-speeds.json"),
             hunter_glb: r("WH_HUNTER_GLB", "labs/hunters/assets/hunter-pve-v01/hunter_pve_v01.glb"),
             spawn: r("WH_SPAWN", "game/build-real-v02/data/spawn-v02.json"),
-            gameplay: r("WH_GAMEPLAY", "game/build-real-v02/data/gameplay-provisorio-v01.json"),
+            gameplay: r("WH_GAMEPLAY", "game/build-real-v02/data/gameplay-provisorio-v02.json"),
             client_dist: r("WH_CLIENT_DIST", "game/build-real-v02/client/dist"),
             migrations_dir: r("WH_MIGRATIONS_DIR", "game/build-real-v02/server/migrations"),
             world_id: env("WH_WORLD_ID").unwrap_or_else(|| "auralis-v02".into()),

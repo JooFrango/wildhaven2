@@ -3,10 +3,10 @@
 // nunca alteram a simulação (o servidor simula todos os Hunters e criaturas fora da câmera).
 import * as THREE from "three";
 import { SNAPSHOT_SCHEMA, type ContinentSummary, type CreatureSnap, type HunterFull, type SnapshotFull } from "./contracts";
-import { Atmosphere, CLEAR, type WeatherView } from "./atmosphere";
+import { Atmosphere, CLEAR, paletteKey, type WeatherView } from "./atmosphere";
 import { VisualWorld, latticeCenter } from "./visual";
 import { Vegetation } from "./vegetation";
-import { Actors } from "./actors";
+import { Actors, loadCreatureCatalog } from "./actors";
 import { StrategyCamera } from "./camera";
 import { WeatherFx, waterMaterial } from "./weatherfx";
 import { Village } from "./village";
@@ -63,6 +63,7 @@ async function main() {
   scene.add(world.group, veg.group, actors.group, village.group, fx.points);
   const ground = (x: number, z: number) => world.heightAt(x, z, "max");
   const cam = new StrategyCamera(camera, renderer.domElement, ground);
+  const gameplay = await loadCreatureCatalog().catch(() => null);
   setLoading("Carregando horizonte do continente (272 hexes)…", 0.15);
   await world.loadHorizon("/v02/horizon/horizonte-272-v01.glb").catch(e => console.warn("horizonte", e));
   setLoading("Carregando vegetação e protótipos…", 0.3);
@@ -87,6 +88,9 @@ async function main() {
       if (settings.profile === "economico" && !economic) setMode(true);
     },
     camera: cam,
+    portrait: () => renderPortrait(renderer, actors),
+    setVillagePhase: n => { village.load(n).then(() => ui.toast(`Vila: fase ${n} (apresentação; regra econômica pendente)`)).catch(() => {}); },
+    focusVillage: () => { cam.focusOn(); const v = snap.hunters.find(h => h.activity === "na_vila"); if (v) { follow = v.id; ui.selected = v.id; actors.setSelected(v.id); } },
   });
   ui.selected = follow; actors.setSelected(follow);
   const setMode = (on: boolean) => {
@@ -125,7 +129,7 @@ async function main() {
   const clock = new THREE.Clock();
   const frustum = new THREE.Frustum(), pv = new THREE.Matrix4();
   let streamT = 0, dynT = 0, ecoRaf = 0;
-  const weatherOf = (s: SnapshotFull): WeatherView => ((s.game as any).weather as WeatherView | undefined) ?? CLEAR;
+  const weatherOf = (s: SnapshotFull): WeatherView => ((s.game as any).weather?.[follow] as WeatherView | undefined) ?? CLEAR;
 
   const frame = () => {
     const tf = performance.now();
@@ -163,8 +167,11 @@ async function main() {
     actors.syncTracks(snap.game.tracks, ground, tf);
     village.update(camera, dt);
     fx.update(camera.position, w.kind, w.intensity, settings.particles);
+    village.night = atm.night;
     renderer.info.reset();
+    perf.beginGpu();
     renderer.render(scene, camera);
+    perf.endGpu();
     perf.frame(performance.now() - tf, { world: world.stats, veg: veg.stats, actors: actors.stats });
     // resolução dinâmica: busca 60 FPS (16,7 ms) sem descer de 50% da resolução
     if (settings.dynamicResolution && tf - dynT > 1500) {
@@ -179,13 +186,48 @@ async function main() {
   const ecoLoop = () => {
     const tf = performance.now();
     const fh = snap.hunters.find(h => h.id === follow) ?? snap.hunters[0];
-    if (fh) eco.draw(snap, { x: fh.x, z: fh.z }, tf, world, origin);
+    if (tf - streamT > 1000 && fh) { streamT = tf; world.stream(new THREE.Vector3(fh.x - origin.x, fh.y, fh.z - origin.z), new THREE.Vector3()); const t = continent.tiles.find(x => x.id === fh.tile_id); if (t) eco.biomeKey = paletteKey(t.biome); }
+    if (fh) eco.draw(snap, { x: fh.x, z: fh.z }, tf, world, origin, fh.id);
     perf.frame(performance.now() - tf, null);
     ui.frame(snap, tf);
     ecoRaf = requestAnimationFrame(ecoLoop);
   };
   renderer.setAnimationLoop(frame);
   (window as any).__wildhavenPerf = perf.public;
+}
+/** Retrato do Hunter: render real do GLB (cabeça/ombros) num alvo fora da tela, uma vez. */
+async function renderPortrait(r: THREE.WebGLRenderer, actors: Actors): Promise<string | null> {
+  const g = await actors.template("/glb/hunter.glb");
+  const { clone } = await import("three/examples/jsm/utils/SkeletonUtils.js");
+  const obj = clone(g.scene);
+  const sc = new THREE.Scene();
+  sc.background = new THREE.Color(0x2a2219);
+  sc.add(new THREE.HemisphereLight(0xffe8c8, 0x302418, 1.4));
+  const key = new THREE.DirectionalLight(0xffd7a0, 2.6); key.position.set(1.5, 2.5, 2.5); sc.add(key);
+  const rim = new THREE.DirectionalLight(0x9fc4ff, 1.4); rim.position.set(-2, 2, -2); sc.add(rim);
+  sc.add(obj);
+  const mixer = new THREE.AnimationMixer(obj);
+  const clip = g.animations.find(a => a.name === "pvp12_guard") ?? g.animations[0];
+  if (clip) { mixer.clipAction(clip).play(); mixer.update(0.8); }
+  obj.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(obj), h = box.max.y - box.min.y;
+  const cam = new THREE.PerspectiveCamera(30, 1, 0.05, 50);
+  // a caixa inclui a espada erguida: a cabeça fica pela altura do osso Head
+  let headBone: THREE.Object3D | undefined; obj.traverse(o => { if (o.name === "Head") headBone = o; });
+  const head = headBone ? headBone.getWorldPosition(new THREE.Vector3()) : new THREE.Vector3((box.min.x + box.max.x) / 2, box.min.y + h * 0.8, (box.min.z + box.max.z) / 2);
+  head.y += 0.06;
+  cam.position.copy(head).add(new THREE.Vector3(0.22, 0.02, 0.62)); cam.lookAt(head.x, head.y - 0.08, head.z);
+  const rt = new THREE.WebGLRenderTarget(160, 160, { samples: 4 });
+  rt.texture.colorSpace = THREE.SRGBColorSpace;
+  r.setRenderTarget(rt); r.render(sc, cam); r.setRenderTarget(null);
+  const px = new Uint8Array(160 * 160 * 4);
+  r.readRenderTargetPixels(rt, 0, 0, 160, 160, px);
+  rt.dispose();
+  const c = document.createElement("canvas"); c.width = c.height = 160;
+  const ctx = c.getContext("2d")!, img = ctx.createImageData(160, 160);
+  for (let y = 0; y < 160; y++) img.data.set(px.subarray((159 - y) * 640, (160 - y) * 640), y * 640);
+  ctx.putImageData(img, 0, 0);
+  return c.toDataURL("image/png");
 }
 main().catch(e => { console.error(e); setLoading("Erro: " + (e?.message ?? e), 1); });
 void PROFILES;

@@ -70,7 +70,7 @@ export class EconomicView {
   }
   private shadow(cx: number, cy: number, w: number) { this.ctx.fillStyle = "rgba(0,0,0,0.28)"; this.ctx.fillRect(Math.round(cx - w / 2), Math.round(cy), w, 1); }
 
-  draw(s: SnapshotFull, focus: { x: number; z: number }, now: number, world: VisualWorld, origin: { x: number; z: number }) {
+  draw(s: SnapshotFull, focus: { x: number; z: number }, now: number, world: VisualWorld, origin: { x: number; z: number }, followId = "") {
     if (now - this.last < 80) return;
     this.last = now;
     const t0 = performance.now();
@@ -79,7 +79,7 @@ export class EconomicView {
     const fx = focus.x - origin.x, fz = focus.z - origin.z;
     const hAt = (px: number, py: number) => world.heightAt(fx + (px - W / 2) * MPP, fz + (py - H / 2) * MPP, "max");
     const night = s.clock.phase === "night" ? 0.55 : 0;
-    const weather = ((s.game as any).weather ?? { kind: "limpo", intensity: 0, cloud: 0.2, wind: [0.6, 0.2] }) as { kind: string; intensity: number; cloud: number; wind: [number, number] };
+    const weather = ((s.game as any).weather?.[followId] ?? { kind: "limpo", intensity: 0, cloud: 0.2, wind: [0.6, 0.2] }) as { kind: string; intensity: number; cloud: number; wind: [number, number] };
     // relevo: altura → cor (baixo/alto), sombreamento por luz NO e faixas de cota a cada 20 m
     let hmin = Infinity, hmax = -Infinity;
     const hs = new Float32Array((W / 2) * (H / 2));

@@ -11,14 +11,18 @@ import type { CampSnap, CreatureSnap, FootprintSnap, HunterFull, TrapSnap, Wagon
 import type { GraphicsSettings } from "./settings";
 
 export const HUNTER_URL = "/glb/hunter.glb";
-export const CREATURE_URLS: Record<string, string> = {
-  folhisco: "/assets/models/creatures/folhisco/folhisco_animated_v01.glb",
-  lobrapedra: "/assets/models/creatures/lobrapedra/v02/lobrapedra-animated-v02.glb",
-};
+/** LODs reais por espécie (LOD0/1/2 com os mesmos clipes), vindos de /api/v1/gameplay (especies[*].lods). */
+export const CREATURE_LODS: Record<string, string[]> = {};
+export async function loadCreatureCatalog() {
+  const g = await (await fetch("/api/v1/gameplay")).json();
+  for (const [id, sp] of Object.entries<any>(g.especies ?? {})) CREATURE_LODS[id] = (sp.lods ?? [sp.asset]).filter(Boolean).map((p: string) => "/" + p);
+  return g;
+}
+const LOD_DIST = [28, 75]; // m (com histerese de 15%) — trocas de LOD de criatura
 const DODO_URL = "/assets/models/creatures/dodarro/dodarro_montaria_v02_blockout.glb";
 const WAGON_URL = "/v02/models/carroca/carroca_v02.glb";
 const CAMP_URL = "/v02/models/acampamento/acampamento_v02.glb";
-const TRAP_URLS: Record<string, string> = { rede: "/v02/models/armadilhas/presa_de_ferro_v02.glb", laco: "/v02/models/armadilhas/laco_de_raiz_v02.glb" };
+const TRAP_URLS: Record<string, string> = { presa_de_ferro: "/v02/models/armadilhas/presa_de_ferro_v02.glb", laco_de_raiz: "/v02/models/armadilhas/laco_de_raiz_v02.glb" };
 
 // ------------------------------------------------------------------ poses esqueléticas provisórias
 type PoseSpec = Record<string, [number, number, number]>; // delta Euler (rad) no espaço local do osso
@@ -70,6 +74,7 @@ const GESTURES: Record<string, string> = {
 export interface Actor {
   obj: THREE.Object3D; mixer: THREE.AnimationMixer; actions: Map<string, THREE.AnimationAction>; base?: string; gesture?: { name: string; t: number };
   crouch?: THREE.AnimationAction; lastPos: THREE.Vector3; speed: number; box: THREE.Box3; ready: boolean; kind: string; accum: number; label?: string;
+  lod?: number; swapping?: boolean;
 }
 
 export class Actors {
@@ -84,7 +89,7 @@ export class Actors {
   private prints: THREE.InstancedMesh;
   private blobs: THREE.InstancedMesh;
   readonly materialAudit: Record<string, { total: number; doubleSided: number }> = {};
-  stats = { mixersUpdated: 0, mixersSkipped: 0, actorsCulled: 0 };
+  stats = { mixersUpdated: 0, mixersSkipped: 0, actorsCulled: 0, creatureLods: [0, 0, 0] };
   simTime = 0;
 
   constructor(private origin: { x: number; z: number }, private settings: GraphicsSettings) {
@@ -225,10 +230,27 @@ export class Actors {
     for (const c of creatures) {
       seen.add(c.id);
       let a = this.creatures.get(c.id);
-      const url = CREATURE_URLS[c.species];
-      if (!url) continue;
-      if (!a) { a = this.spawn(url, c.species, () => {}); this.creatures.set(c.id, a); continue; }
+      const lods = CREATURE_LODS[c.species];
+      if (!lods?.length) continue;
+      const d = camPos.distanceTo(new THREE.Vector3(c.x - this.origin.x, c.y, c.z - this.origin.z));
+      if (!a) { const lod = d < LOD_DIST[0] ? 0 : d < LOD_DIST[1] ? 1 : 2; a = this.spawn(lods[Math.min(lod, lods.length - 1)], c.species, () => {}); a.lod = lod; this.creatures.set(c.id, a); continue; }
       if (!a.ready) continue;
+      // LOD de criatura pela distância (histerese): troca a malha mantendo posição e o tempo do clipe
+      const want = d < LOD_DIST[0] * (a.lod === 0 ? 1.15 : 1) ? 0 : d < LOD_DIST[1] * (a.lod === 1 ? 1.15 : 1) ? 1 : 2;
+      if (want !== a.lod && !a.swapping && lods.length > 1) {
+        a.swapping = true;
+        const old = a;
+        const t = old.base ? old.actions.get(old.base)?.time ?? 0 : 0;
+        const nu = this.spawn(lods[Math.min(want, lods.length - 1)], c.species, n => {
+          n.obj.position.copy(old.obj.position); n.obj.rotation.copy(old.obj.rotation); n.lastPos.copy(old.lastPos); n.speed = old.speed;
+          if (old.base && n.actions.has(old.base)) { const act = n.actions.get(old.base)!; act.play(); act.time = t; n.base = old.base; }
+          old.obj.removeFromParent();
+          n.lod = want;
+          this.creatures.set(c.id, n);
+        });
+        void nu;
+        continue;
+      }
       const p = prevC.get(c.id) ?? c;
       this.place(a, p.x + (c.x - p.x) * alpha, p.y + (c.y - p.y) * alpha, p.z + (c.z - p.z) * alpha, c.heading, dt);
       a.obj.visible = visibleTest(a);
@@ -239,9 +261,11 @@ export class Actors {
       }
       if (a.base && c.alive && (c.clip === "walk" || c.clip === "run")) a.actions.get(a.base)!.timeScale = THREE.MathUtils.clamp(a.speed / (c.clip === "run" ? 6 : 1.6), 0.4, 2);
       this.tickMixer(a, dt, camPos);
-      blob(a.obj, c.species === "lobrapedra" ? 2.2 : 0.9);
+      blob(a.obj, c.species === "lobrapedra" || c.species === "torvalho" || c.species === "nharuk" ? 2.2 : c.species === "silvarano" || c.species === "cavoru" ? 1.6 : 0.9);
     }
     for (const [id, a] of this.creatures) if (!seen.has(id)) { a.obj.removeFromParent(); this.creatures.delete(id); }
+    this.stats.creatureLods = [0, 0, 0];
+    for (const a of this.creatures.values()) if (a.ready && a.obj.visible) this.stats.creatureLods[a.lod ?? 0]++;
     this.blobs.count = nb; this.blobs.instanceMatrix.needsUpdate = true;
   }
 
@@ -359,7 +383,8 @@ function creatureClip(a: Actor, c: CreatureSnap) {
   const want = c.clip;
   const alias: Record<string, string[]> = {
     idle: ["idle", "Idle", "breathe"], walk: ["walk", "Walk", "walking"], run: ["run", "Run", "gallop", "walk"], peck: ["peck", "eat", "graze", "idle"], bite: ["bite", "attack", "Attack", "idle"],
-    eat: ["eat", "graze", "peck", "idle"], drink: ["drink", "eat", "graze", "idle"], sleep: ["sleep", "rest", "lie", "idle"], rest: ["rest", "sleep", "idle"], flee: ["run", "walk"],
+    eat: ["eat", "graze", "browse", "forage", "nibble", "peck", "idle"], feed: ["feed", "eat", "bite", "idle"], drink: ["drink", "eat", "graze", "idle"], sleep: ["sleep", "rest", "lie", "idle"], rest: ["rest", "sleep", "breathing", "idle"], flee: ["run", "sprint", "walk"],
+    growl: ["growl", "threat", "alert", "defensive_idle", "idle"],
   };
   return pick(a, alias[want] ?? [want, "idle"]);
 }

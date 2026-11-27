@@ -1,4 +1,4 @@
-//! Leitura de `data/gameplay-provisorio-v01.json`. Todos os números de gameplay vêm
+//! Leitura de `data/gameplay-provisorio-v02.json` (aceita também a v01). Todos os números de gameplay vêm
 //! desse arquivo (nada fixo no código), para o diretor ajustar sem recompilar.
 
 use serde::Deserialize;
@@ -212,6 +212,81 @@ pub struct GameData {
     pub spawn: Spawn,
     pub conhecimento: Conhecimento,
     pub expedicao: ExpedicaoCfg,
+    /// V02 (opcionais: arquivos v01 continuam válidos)
+    #[serde(default)]
+    pub necessidades: Necessidades,
+    #[serde(default)]
+    pub relevancia: Relevancia,
+    #[serde(default)]
+    pub clima: ClimaCfgData,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase", default)]
+pub struct Necessidades {
+    pub fome_cheia_s: f64,
+    pub sede_cheia_s: f64,
+    pub energia_duracao_s: f64,
+    pub recuperacao_energia_s: f64,
+    pub limiar_fome: f64,
+    pub limiar_sede: f64,
+    pub limiar_cansaco: f64,
+    pub busca_agua_raio_m: f64,
+    pub carcaca_duracao_s: f64,
+    pub presas_descansam_a_noite: bool,
+    pub territorio_fator: f64,
+}
+impl Default for Necessidades {
+    fn default() -> Self {
+        Self { fome_cheia_s: 2400.0, sede_cheia_s: 1500.0, energia_duracao_s: 3600.0, recuperacao_energia_s: 700.0, limiar_fome: 0.6, limiar_sede: 0.65, limiar_cansaco: 0.25, busca_agua_raio_m: 260.0, carcaca_duracao_s: 1500.0, presas_descansam_a_noite: true, territorio_fator: 2.0 }
+    }
+}
+
+#[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase", default)]
+pub struct Relevancia {
+    pub perto_m: f64,
+    pub medio_m: f64,
+    pub longe_m: f64,
+    pub passo_medio: u64,
+    pub passo_longe: u64,
+    pub orcamento_astar_por_tick: u32,
+}
+impl Default for Relevancia {
+    fn default() -> Self { Self { perto_m: 450.0, medio_m: 1500.0, longe_m: 4500.0, passo_medio: 3, passo_longe: 15, orcamento_astar_por_tick: 14 } }
+}
+
+#[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ClimaFator {
+    pub visao: f64,
+    pub audicao: f64,
+    pub olfato: f64,
+    pub locomocao: f64,
+    #[serde(default)]
+    pub delta_temperatura_c: f64,
+    #[serde(default)]
+    pub apaga_rastros: bool,
+}
+
+#[derive(Debug, Clone, Deserialize)]
+#[serde(rename_all = "camelCase", default)]
+pub struct ClimaCfgData {
+    pub fatores: BTreeMap<String, ClimaFator>,
+    pub noite_visao: f64,
+    pub ciclo_lunar_ciclos: f64,
+    pub frente_intervalo_s: f64,
+    pub frente_vida_s: (f64, f64),
+    pub megatempestade_chance: f64,
+    pub atualizacao_s: f64,
+}
+impl Default for ClimaCfgData {
+    fn default() -> Self { Self { fatores: BTreeMap::new(), noite_visao: 0.5, ciclo_lunar_ciclos: 8.0, frente_intervalo_s: 900.0, frente_vida_s: (1800.0, 5400.0), megatempestade_chance: 0.06, atualizacao_s: 10.0 } }
+}
+impl ClimaCfgData {
+    pub fn view(&self) -> crate::climate::ClimateCfg<'_> {
+        crate::climate::ClimateCfg { fatores: &self.fatores, noite_visao: self.noite_visao, frente_intervalo_s: self.frente_intervalo_s, frente_vida_s: self.frente_vida_s, mega_chance: self.megatempestade_chance, atualizacao_s: self.atualizacao_s }
+    }
 }
 
 impl GameData {
