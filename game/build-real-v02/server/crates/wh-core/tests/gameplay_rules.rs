@@ -21,6 +21,10 @@ fn hex(b: &[u8]) -> String {
 }
 
 fn fixture_world(tag: &str) -> World {
+    fixture_world_with(tag, "gameplay-provisorio-v01.json")
+}
+
+fn fixture_world_with(tag: &str, gameplay: &str) -> World {
     let dir = std::env::temp_dir().join(format!("wh-rules-{tag}-{}", std::process::id()));
     let tdir = dir.join("A-physics-v01");
     std::fs::create_dir_all(&tdir).unwrap();
@@ -61,7 +65,7 @@ fn fixture_world(tag: &str) -> World {
         "edges": [{"a": "A", "b": "B", "status": "validado", "portals": [{"widthMeters": 100.0, "centerX": 2165.06, "centerZ": 0.0, "fromS": -50.0, "toS": 50.0}]}]})).unwrap();
     let continent = Arc::new(Continent::from_manifest(manifest).unwrap());
     let portals = PortalIndex::from_report(report).unwrap();
-    let data = GameData::from_slice(&std::fs::read(concat!(env!("CARGO_MANIFEST_DIR"), "/../../../data/gameplay-provisorio-v01.json")).unwrap()).unwrap();
+    let data = GameData::from_slice(&std::fs::read(format!("{}/../../../data/{gameplay}", env!("CARGO_MANIFEST_DIR"))).unwrap()).unwrap();
     let mut terrain = TerrainStore::new(continent, dir, HashSet::from(["A".to_string(), "B".to_string()]), 64 << 20);
     let game = GameState::new(&data, (50.0, 50.0), "A", 1.1733, 7, &mut terrain);
     World::new(WorldClock::new(0), terrain, portals, data, game)
@@ -148,4 +152,46 @@ fn dodge_level_5_waits_three_seconds_and_death_is_permanent_after_save() {
 fn resolve(w: &mut World, hunter: &str, damage: f64) {
     let a = AttackRequest { creature: 1, hunter: hunter.into(), damage };
     w.ctx_run(|g, c| g.debug_attack(a, c));
+}
+
+/// V02: predação entre espécies (fome do predador) gera carcaça e o predador passa a se alimentar.
+#[test]
+fn hungry_predator_kills_prey_leaving_carcass_v02() {
+    let mut w = fixture_world_with("eco", "gameplay-provisorio-v02.json");
+    let (nh, tf) = (w.data.especies["nharuk"].clone(), w.data.especies["tufrilo"].clone());
+    let mut pred = wh_core::creature::Creature::spawn(900_001, "nharuk", &nh, 900_001, 80.0, 80.0, "A");
+    pred.fome = 1.0;
+    pred.energia = 1.0;
+    let mut prey = wh_core::creature::Creature::spawn(900_002, "tufrilo", &tf, 900_002, 84.0, 80.0, "A");
+    prey.energia = 1.0;
+    w.game.creatures.push(pred);
+    w.game.creatures.push(prey);
+    w.game.spawned.insert("A".into());
+    w.game.spawned.insert("B".into());
+    let mut dead = false;
+    for _ in 0..3000 {
+        w.step();
+        if let Some(p) = w.game.creatures.iter().find(|c| c.id == 900_002) {
+            if !p.alive {
+                assert!(p.carcass_since_s.is_some(), "presa abatida vira carcaça");
+                dead = true;
+                break;
+            }
+        }
+    }
+    assert!(dead, "predador faminto abate a presa próxima");
+    w.step();
+    let pr = w.game.creatures.iter().find(|c| c.id == 900_001).unwrap();
+    assert_eq!(pr.state, "alimentando", "o predador se alimenta da carcaça");
+    assert!(w.game.metrics.prey_kills >= 1);
+}
+
+/// V02: ordem Equipar só na vila e só com arma do catálogo.
+#[test]
+fn equip_order_validates_weapon_and_place_v02() {
+    let mut w = fixture_world_with("eq", "gameplay-provisorio-v02.json");
+    let id = hunters(&w)[0].clone();
+    assert!(w.order(Order::Equipar { hunter: id.clone(), arma: "machado".into() }).is_err());
+    assert!(w.order(Order::Equipar { hunter: id.clone(), arma: "lanca".into() }).is_ok());
+    assert_eq!(w.game.hunters.iter().find(|h| h.id == id).unwrap().arma, "lanca");
 }

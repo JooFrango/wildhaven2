@@ -26,7 +26,7 @@ export class WeatherFx {
           vec3 w = vec3(uCam.x, uCam.y - 12.0, uCam.z) + p;
           vec4 mv = modelViewMatrix * vec4(w, 1.0);
           gl_Position = projectionMatrix * mv;
-          gl_PointSize = uSize * (uKind < 0.5 ? 2.0 : uKind < 1.5 ? 3.5 : 2.5) * (60.0 / -mv.z);
+          gl_PointSize = min(7.0, uSize * (uKind < 0.5 ? 2.0 : uKind < 1.5 ? 3.5 : 2.5) * (60.0 / -mv.z));
           vA = clamp(1.0 - length(p.xz) / 40.0, 0.0, 1.0);
         }`,
       fragmentShader: `uniform float uKind; uniform vec3 uColor; varying float vA;

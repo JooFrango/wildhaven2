@@ -289,7 +289,8 @@ export class Actors {
           const m = g.scene.clone(true); obj.add(m);
           m.traverse(o => { if (/^roda/i.test(o.name)) ent.wheels.push(o); if (/lona/i.test(o.name)) ent.cover = o; });
         }).catch(() => {});
-        ent.dodo = this.spawn(DODO_URL, "dodarro", a => { a.obj.removeFromParent(); a.obj.position.set(0, 0, 3.4); obj.add(a.obj); });
+        // o blockout do Dodarro olha para +X (perfil publicado: bico à direita) — gira para +Z, à frente dos varais
+        ent.dodo = this.spawn(DODO_URL, "dodarro", a => { a.obj.removeFromParent(); a.obj.rotation.y = -Math.PI / 2; a.obj.position.set(0, 0, 5.05); obj.add(a.obj); });
         // condutor (Chad/Nailon) sentado no banco — pose provisória "sentar"
         ent.driver = this.spawn(HUNTER_URL, "condutor", a => { a.obj.removeFromParent(); a.obj.position.set(0, 1.05, 1.25); obj.add(a.obj); const act = a.actions.get("pose_sentar"); act?.play(); }, r => this.hunterClips(r));
         this.group.add(obj); this.wagons.set(w.id, ent); e = ent;
@@ -301,7 +302,11 @@ export class Actors {
       const cur = e.obj.rotation.y, d = Math.atan2(Math.sin(w.heading - cur), Math.cos(w.heading - cur));
       e.obj.rotation.y = cur + d * Math.min(1, dt * 4);
       for (const wh of e.wheels) wh.rotation.x += moved / 0.55; // rodas giram com a distância percorrida (raio 0,55 m)
-      if (e.dodo?.ready) {
+      if (e.dodo?.ready && !e.dodo.actions.size) {
+        // blockout sem rig/clipes (pendência registrada): só um balanço leve de passada enquanto puxa
+        e.dodo.obj.position.y = moved > 0.002 ? Math.abs(Math.sin(performance.now() * 0.009)) * 0.07 : 0;
+      }
+      if (e.dodo?.ready && e.dodo.actions.size) {
         const walk = e.dodo.actions.get("walk") ?? e.dodo.actions.get("Walk") ?? [...e.dodo.actions.values()][0];
         const idle = e.dodo.actions.get("idle") ?? e.dodo.actions.get("Idle");
         const want = moved > 0.002 ? walk : idle ?? walk;

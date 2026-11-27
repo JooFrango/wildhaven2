@@ -1,59 +1,12 @@
 {
   "bestiary": {
     "pages": {
-      "cavoru": {
-        "abates": 0,
-        "avistamentos": 6,
-        "conhecimento": "estudado",
-        "habitats": [
-          "HV_01"
-        ],
-        "itens": [
-          "Pele de Cavoru",
-          "Carne de Cavoru"
-        ],
-        "nome": "Cavoru",
-        "pontos": [
-          [
-            "HV_01",
-            26789.061813152013,
-            -2595.0618131520123
-          ],
-          [
-            "HV_01",
-            26795.270011029796,
-            -2609.270011029797
-          ],
-          [
-            "HV_01",
-            26795.962840989283,
-            -2607.9628409892885
-          ],
-          [
-            "HV_01",
-            26908.10730162785,
-            -2787.0
-          ],
-          [
-            "HV_01",
-            26903.632507163733,
-            -2789.0
-          ],
-          [
-            "HV_01",
-            26903.52003371836,
-            -2788.4799662816445
-          ]
-        ],
-        "primeiro_avistamento_tick": 66395,
-        "primeiro_por": "Hunter 06",
-        "species": "cavoru"
-      },
       "folhisco": {
         "abates": 1,
-        "avistamentos": 374,
+        "avistamentos": 389,
         "conhecimento": "dominado",
         "habitats": [
+          "ER_18",
           "ER_24"
         ],
         "itens": [
@@ -63,44 +16,44 @@
         "nome": "Folhisco",
         "pontos": [
           [
-            "ER_24",
-            26232.71361736786,
-            -1119.4006066059476
+            "ER_18",
+            29392.57512494061,
+            -5738.575124940613
           ],
           [
-            "ER_24",
-            26232.71361736786,
-            -1119.4006066059476
+            "ER_18",
+            29392.38886270324,
+            -5738.388862703243
           ],
           [
-            "ER_24",
-            26211.365967648147,
-            -1141.0
+            "ER_18",
+            29371.0,
+            -5700.764271247379
           ],
           [
-            "ER_24",
-            26211.365967648147,
-            -1141.0
+            "ER_18",
+            29387.513053398176,
+            -5686.486946601822
           ],
           [
-            "ER_24",
-            26211.365967648147,
-            -1141.0
+            "ER_18",
+            29370.061421845057,
+            -5702.061421845062
           ],
           [
-            "ER_24",
-            26189.700797256544,
-            -1135.700797256541
+            "ER_18",
+            29369.937169261044,
+            -5701.937169261049
           ],
           [
-            "ER_24",
-            26190.478614715852,
-            -1136.4786147158484
+            "ER_18",
+            29369.931151332683,
+            -5701.931151332689
           ],
           [
-            "ER_24",
-            26190.478614715852,
-            -1136.4786147158484
+            "ER_18",
+            29372.532797277065,
+            -5695.467202722934
           ]
         ],
         "primeiro_avistamento_tick": 10435,
@@ -108,10 +61,11 @@
         "species": "folhisco"
       },
       "lobrapedra": {
-        "abates": 1,
-        "avistamentos": 21,
+        "abates": 4,
+        "avistamentos": 43,
         "conhecimento": "dominado",
         "habitats": [
+          "ER_18",
           "ER_24",
           "HV_01"
         ],
@@ -122,49 +76,77 @@
         "nome": "Lobrapedra",
         "pontos": [
           [
-            "HV_01",
-            26430.222823182754,
-            -2371.7771768172424
+            "ER_18",
+            29674.796999149195,
+            -6742.796999149196
           ],
           [
-            "HV_01",
-            26494.23999999996,
-            -2441.0
+            "ER_18",
+            29799.812035355473,
+            -6861.812035355474
           ],
           [
-            "HV_01",
-            26503.5627307646,
-            -2445.0
+            "ER_18",
+            29909.973936331637,
+            -6971.973936331638
           ],
           [
-            "HV_01",
-            26666.514718625283,
-            -2435.0
+            "ER_18",
+            29997.0,
+            -7075.409226855709
           ],
           [
-            "HV_01",
-            26693.07333355432,
-            -2445.0
+            "ER_18",
+            29973.0,
+            -7174.21774849355
           ],
           [
-            "HV_01",
-            26809.0,
-            -2471.499991823938
+            "ER_18",
+            29937.0,
+            -7307.128786358822
           ],
           [
-            "HV_01",
-            26844.436557768506,
-            -2576.7782148576653
+            "ER_18",
+            30023.0,
+            -7446.4297402533775
           ],
           [
-            "HV_01",
-            26945.0,
-            -2653.3448040067797
+            "ER_18",
+            29947.0,
+            -7566.201010126787
           ]
         ],
         "primeiro_avistamento_tick": 28890,
         "primeiro_por": "Hunter 05",
         "species": "lobrapedra"
+      },
+      "silvarano": {
+        "abates": 0,
+        "avistamentos": 2,
+        "conhecimento": "avistado",
+        "habitats": [
+          "ER_18"
+        ],
+        "itens": [
+          "Pele de Silvarano",
+          "Carne de Silvarano"
+        ],
+        "nome": "Silvarano",
+        "pontos": [
+          [
+            "ER_18",
+            29400.604020202532,
+            -5929.395979797464
+          ],
+          [
+            "ER_18",
+            29403.839646832905,
+            -5918.160353167093
+          ]
+        ],
+        "primeiro_avistamento_tick": 57595,
+        "primeiro_por": "Hunter 01",
+        "species": "silvarano"
       }
     }
   },
@@ -287,56 +269,110 @@
     {
       "kind": "ordem",
       "t": 9193.0,
-      "text": "Expedição 3515: caçar Lobrapedra em HV_01 com 1 Hunters, de carroça (custo 50)",
+      "text": "Ordem: explorar (2 Hunters)",
       "tick": 45965
     },
     {
-      "kind": "acampamento",
-      "t": 9738.6,
-      "text": "Carroça de Nailon montou acampamento numa clareira em HV_01",
-      "tick": 48693
-    },
-    {
-      "kind": "rastro",
-      "t": 9740.6,
-      "text": "Hunter 06 descobriu pegadas de lobrapedra: brilham em azul",
-      "tick": 48703
-    },
-    {
-      "kind": "rastro",
-      "t": 10548.0,
-      "text": "Hunter 06 descobriu pegadas de lobrapedra: brilham em azul",
-      "tick": 52740
-    },
-    {
-      "kind": "rastro",
-      "t": 11041.2,
-      "text": "Hunter 06 descobriu pegadas de lobrapedra: brilham em azul",
-      "tick": 55206
-    },
-    {
       "kind": "bestiario",
-      "t": 13279.0,
-      "text": "Hunter 06 avistou Cavoru pela primeira vez: nova página no Bestiário",
-      "tick": 66395
+      "t": 11519.0,
+      "text": "Hunter 01 avistou Silvarano pela primeira vez: nova página no Bestiário",
+      "tick": 57595
     },
     {
-      "kind": "expedicao",
-      "t": 24138.600000000002,
-      "text": "Expedição 3515: sem sucesso após 4 h, voltando ao acampamento",
-      "tick": 120693
+      "kind": "abate",
+      "t": 12172.0,
+      "text": "Hunter 01 abateu Lobrapedra e recolheu: Pele de Lobrapedra, Presas de Lobrapedra",
+      "tick": 60860
     },
     {
-      "kind": "expedicao",
-      "t": 24216.600000000002,
-      "text": "Expedição 3515: caçada concluída, retornando à vila",
-      "tick": 121083
+      "kind": "abate",
+      "t": 13076.400000000001,
+      "text": "Hunter 01 abateu Lobrapedra e recolheu: Pele de Lobrapedra, Presas de Lobrapedra",
+      "tick": 65382
     },
     {
       "kind": "vila",
-      "t": 24760.800000000003,
+      "t": 13738.0,
+      "text": "Hunter 02 chegou à vila",
+      "tick": 68690
+    },
+    {
+      "kind": "vila",
+      "t": 15241.2,
+      "text": "Hunter 01 chegou à vila",
+      "tick": 76206
+    },
+    {
+      "kind": "ordem",
+      "t": 15241.2,
+      "text": "Expedição 4173: caçar Lobrapedra em ER_18 com 1 Hunters, de carroça (custo 54)",
+      "tick": 76206
+    },
+    {
+      "kind": "acampamento",
+      "t": 16063.400000000001,
+      "text": "Carroça de Nailon montou acampamento numa clareira em ER_18",
+      "tick": 80317
+    },
+    {
+      "kind": "rastro",
+      "t": 16063.6,
+      "text": "Hunter 06 descobriu pegadas de lobrapedra: brilham em azul",
+      "tick": 80318
+    },
+    {
+      "kind": "rastro",
+      "t": 19819.2,
+      "text": "Hunter 06 descobriu pegadas de lobrapedra: brilham em azul",
+      "tick": 99096
+    },
+    {
+      "kind": "estrategia",
+      "t": 20168.0,
+      "text": "Hunter 06 avistou Lobrapedra e escolheu: armadilha + grito (conhecimento: dominado)",
+      "tick": 100840
+    },
+    {
+      "kind": "armadilha",
+      "t": 20168.2,
+      "text": "Hunter 06 armou presa_de_ferro e gritou para atrair a presa",
+      "tick": 100841
+    },
+    {
+      "kind": "armadilha",
+      "t": 20176.600000000002,
+      "text": "Lobrapedra preso na armadilha (presa_de_ferro) por 6.0 s",
+      "tick": 100883
+    },
+    {
+      "kind": "abate",
+      "t": 21716.800000000003,
+      "text": "Hunter 06 abateu Lobrapedra e recolheu: Pele de Lobrapedra, Presas de Lobrapedra",
+      "tick": 108584
+    },
+    {
+      "kind": "ecossistema",
+      "t": 22222.4,
+      "text": "Lobrapedra abateu Folhisco",
+      "tick": 111112
+    },
+    {
+      "kind": "acampamento",
+      "t": 23558.600000000002,
+      "text": "Hunter 06 guardou 2 itens no acampamento e descansa",
+      "tick": 117793
+    },
+    {
+      "kind": "expedicao",
+      "t": 23558.600000000002,
+      "text": "Expedição 4173: caçada concluída, retornando à vila",
+      "tick": 117793
+    },
+    {
+      "kind": "vila",
+      "t": 24381.0,
       "text": "Carroça de Nailon voltou à vila",
-      "tick": 123804
+      "tick": 121905
     }
   ],
   "expeditions": [
@@ -366,23 +402,23 @@
       "wagon": "chad"
     },
     {
-      "camp": 3516,
-      "cost": 50.0,
+      "camp": 4174,
+      "cost": 54.0,
       "dest": [
-        26945.0,
-        -2653.3448040067797
+        29316.152299287965,
+        -5677.0
       ],
-      "dest_tile": "HV_01",
-      "hunt_started_s": 9738.6,
-      "id": 3515,
-      "kills": 0,
+      "dest_tile": "ER_18",
+      "hunt_started_s": 16063.400000000001,
+      "id": 4173,
+      "kills": 1,
       "members": [
         "hunter-006"
       ],
-      "rescued": true,
+      "rescued": false,
       "rescuer": null,
       "species": "lobrapedra",
-      "started_tick": 45965,
+      "started_tick": 76206,
       "state": "concluida",
       "threat": null,
       "transporte": "carroca",
@@ -393,7 +429,7 @@
     {
       "activity": "na_vila",
       "alive": true,
-      "crossings": 2,
+      "crossings": 6,
       "hp": 100.0,
       "id": "hunter-001",
       "name": "Hunter 01",
@@ -408,7 +444,7 @@
         },
         "espada": {
           "level": 4,
-          "xp": 0.0
+          "xp": 120.0
         },
         "furtividade": {
           "level": 5,
@@ -431,7 +467,7 @@
     {
       "activity": "na_vila",
       "alive": true,
-      "crossings": 2,
+      "crossings": 4,
       "hp": 100.0,
       "id": "hunter-002",
       "name": "Hunter 02",
@@ -583,14 +619,14 @@
     {
       "activity": "na_vila",
       "alive": true,
-      "crossings": 0,
+      "crossings": 6,
       "hp": 100.0,
       "id": "hunter-006",
       "name": "Hunter 06",
       "skills": {
         "armadilhas": {
           "level": 4,
-          "xp": 0.0
+          "xp": 30.0
         },
         "desvio": {
           "level": 6,
@@ -598,7 +634,7 @@
         },
         "espada": {
           "level": 6,
-          "xp": 0.0
+          "xp": 60.0
         },
         "furtividade": {
           "level": 1,
@@ -606,7 +642,7 @@
         },
         "rastreamento": {
           "level": 2,
-          "xp": 45.0
+          "xp": 30.0
         },
         "rodeio": {
           "level": 4,
@@ -663,9 +699,9 @@
       }
     }
   ],
-  "money": 396.0,
+  "money": 392.0,
   "schema": "wildhaven.demo-check.v1",
-  "simSeconds": 24760.800000000003,
+  "simSeconds": 24381.0,
   "steps": [
     {
       "etapa": "explorar e avistar Folhisco (página nova no Bestiário)",
@@ -722,45 +758,57 @@
       "tick": 45965
     },
     {
-      "etapa": "ordem Caçar Lobrapedra com Hunter sozinho: Ok(\"Expedição 3515: caçar Lobrapedra em HV_01 com 1 Hunters, de carroça (custo 50)\")",
+      "etapa": "explorar e avistar Lobrapedra",
       "ok": true,
-      "t": 9193.0,
-      "tick": 45965
+      "t": 11471.0,
+      "tick": 57355
+    },
+    {
+      "etapa": "ordem Caçar Lobrapedra com Hunter sozinho: Ok(\"Expedição 4173: caçar Lobrapedra em ER_18 com 1 Hunters, de carroça (custo 54)\")",
+      "ok": true,
+      "t": 15241.2,
+      "tick": 76206
     },
     {
       "etapa": "Hunter sozinho: ferimento → resgate/morte, ou abate",
-      "ok": false,
-      "t": 21193.0,
-      "tick": 105965
+      "ok": true,
+      "t": 21716.800000000003,
+      "tick": 108584
     },
     {
       "etapa": "expedição do predador encerrada: [\"concluida\"]",
       "ok": true,
-      "t": 24760.800000000003,
-      "tick": 123804
+      "t": 24381.0,
+      "tick": 121905
     },
     {
-      "etapa": "desfecho do predador: []",
-      "ok": false,
-      "t": 24760.800000000003,
-      "tick": 123804
+      "etapa": "desfecho do predador: [\"Hunter 06 abateu Lobrapedra e recolheu: Pele de Lobrapedra, Presas de Lobrapedra\"]",
+      "ok": true,
+      "t": 24381.0,
+      "tick": 121905
     }
   ],
   "streaming": {
     "cap_bytes": 268435456,
     "evictions": 0,
-    "hits": 81981770,
+    "hits": 164348852,
     "load_errors": 0,
-    "misses": 856,
+    "misses": 1162,
     "pinned_chunks": 15,
-    "resident_bytes": 140247040,
-    "resident_chunks": 856
+    "resident_bytes": 190382080,
+    "resident_chunks": 1162
   },
   "villageStorage": [
     "Penas de Folhisco",
     "Carne pequena",
     "Pele de Lobrapedra",
+    "Presas de Lobrapedra",
+    "Pele de Lobrapedra",
+    "Presas de Lobrapedra",
+    "Pele de Lobrapedra",
+    "Presas de Lobrapedra",
+    "Pele de Lobrapedra",
     "Presas de Lobrapedra"
   ],
-  "wallSeconds": 103.56409139
+  "wallSeconds": 138.423595432
 }
