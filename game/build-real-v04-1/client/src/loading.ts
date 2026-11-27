@@ -40,9 +40,13 @@ export class Loading {
     f.id = "tela-carregamento"; f.title = "Carregando Wildhaven";
     f.src = "/carregamento/index.html" + (cena ? `?cena=${cena}` : "");
     f.addEventListener("load", () => {
-      const doc = f.contentDocument, win = f.contentWindow as any;
-      if (doc) { const st = doc.createElement("style"); st.textContent = ".console{display:none!important}body{overflow:hidden}"; doc.head.append(st); }
-      this.api = win?.WildhavenLoading ?? null;
+      // V04.1: com o servidor fora do ar o quadro carrega uma página de erro do navegador (outra origem) e ler
+      // `WildhavenLoading` lançava exceção; agora a tela segue sem a API até o próximo carregamento válido
+      try {
+        const doc = f.contentDocument, win = f.contentWindow as any;
+        if (doc) { const st = doc.createElement("style"); st.textContent = ".console{display:none!important}body{overflow:hidden}"; doc.head.append(st); }
+        this.api = win?.WildhavenLoading ?? null;
+      } catch { this.api = null; }
       if (this.api && this.queued) this.api.setProgress(this.queued[0], this.queued[1]);
     });
     this.host.prepend(f);

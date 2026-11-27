@@ -106,3 +106,10 @@ body.economico .painel{backdrop-filter:none;-webkit-backdrop-filter:none;backgro
    furando o teto de 12/15/20 FPS. Aqui ele pisca pela classe .pulso, trocada no ciclo de 4 Hz da interface: mesmo brilho, 2 trocas/s. */
 body.economico .hcard.caido{animation:none}body.economico .hcard.caido.pulso{box-shadow:0 0 10px var(--erro)}
 body.wh-fundo-manual *, body.wh-fundo-manual *::before, body.wh-fundo-manual *::after { animation-play-state: paused !important; }
+/* V04.1: aviso do segundo plano manual — estático (sem animação, sem backdrop-filter), só aparece no modo */
+#fundo-manual{display:none}
+body.wh-fundo-manual #fundo-manual{display:flex;position:fixed;inset:0;z-index:60;align-items:center;justify-content:center;background:rgba(12,10,8,.82);cursor:pointer}
+#fundo-manual>div{max-width:440px;padding:22px 26px;border:1px solid var(--borda,#6b5636);background:#211a12;color:#eadcc0;text-align:center;font:14px/1.5 inherit}
+#fundo-manual b{display:block;font-size:18px;margin-bottom:6px;color:#f1d48a}
+#fundo-manual .dica{opacity:.75;font-size:12px}
+.relogio .fundo-btn{margin-left:6px}

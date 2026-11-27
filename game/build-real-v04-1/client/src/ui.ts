@@ -20,6 +20,8 @@ export interface UiDeps {
   portrait?: () => Promise<string | null>; setVillagePhase?: (n: number) => void; focusVillage?: () => void;
   /** V03: exporta o relatório de desempenho (JSON) para o diretor enviar. */
   exportReport?: () => void;
+  /** V04.1: segundo plano manual (o mesmo de Shift+F8). */
+  setBackground?: (on: boolean) => void;
 }
 
 const ATIV: Record<string, string> = {
@@ -113,6 +115,8 @@ export class Ui {
     relogio.innerHTML = `<span class="dia"></span><span class="astro"></span><span class="hora"></span><span class="vel"></span><span class="tempo"></span>`;
     const vel = relogio.querySelector(".vel")!;
     for (const e of [1, 5, 10, 50]) { const b = el("button", "", `×${e}`); b.dataset.e = String(e); b.onclick = () => this.setSpeed(e); vel.append(b); }
+    const fundo = el("button", "fundo-btn", ICON.lua); fundo.title = "Segundo plano (Shift+F8): suspende a apresentação; o servidor continua simulando";
+    fundo.onclick = () => this.d.setBackground?.(true); relogio.append(fundo);
     const exped = el("div", "expedicao painel");
     const local = el("div", "local painel");
     const barra = el("div", "barra");
@@ -533,9 +537,11 @@ export class Ui {
   private system(body: HTMLElement) {
     const st = this.d.settings;
     body.innerHTML = `<h4>Perfil gráfico</h4><div class="perfis"></div><h4>Ajustes individuais</h4><div class="opts"></div>
+      <h4>Segundo plano</h4><p class="prov">Suspende quadros, animações e carregamentos visuais enquanto você usa outros programas. A simulação continua no servidor. Atalho: Shift+F8.</p><div class="perfis"><button class="fundo-sis">Pôr em segundo plano</button></div>
       <h4>Teclas</h4><label>Menu do desenvolvedor <input class="tecla" value="${esc(this.devKey)}" maxlength="3" size="4"></label>
       <p class="prov">M mapa · B bestiário · I inventário · Tab troca de Hunter · 1–9 seleciona · botão direito/meio gira · roda = zoom · WASD desloca a câmera · F volta a seguir · Q/E giram.</p>
       <p class="prov">A qualidade gráfica nunca altera a simulação: o servidor decide tudo.</p>`;
+    body.querySelector<HTMLButtonElement>(".fundo-sis")!.onclick = () => { this.close(); this.d.setBackground?.(true); };
     const perf = body.querySelector(".perfis")!;
     const names: Record<ProfileName, string> = { economico: "Econômico", baixo: "Baixo", medio: "Médio", alto: "Alto" };
     for (const p of ["economico", "baixo", "medio", "alto"] as ProfileName[]) {

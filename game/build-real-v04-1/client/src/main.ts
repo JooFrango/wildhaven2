@@ -47,6 +47,26 @@ async function waitHealth(onTry: (n: number) => void) {
 
 async function main() {
   const t0 = performance.now();
+  // V04.1 (BG-01): o segundo plano manual vale desde o início do carregamento. Antes, o atalho só era registrado
+  // no fim da inicialização e um Shift+F8 durante o carregamento era ignorado (o 3D carregava e desenhava).
+  let manualBackground = false;
+  let syncVisibility = () => {};
+  const fundoAviso = document.createElement("div");
+  fundoAviso.id = "fundo-manual";
+  fundoAviso.innerHTML = `<div><b>Wildhaven em segundo plano</b><p>A apresentação está suspensa: nenhum quadro, animação ou carregamento visual. O servidor continua simulando o continente.</p><p class="dica">Clique aqui ou pressione Shift+F8 para voltar.</p></div>`;
+  fundoAviso.onclick = () => setManualBackground(false);
+  document.body.append(fundoAviso);
+  function setManualBackground(on: boolean) {
+    if (manualBackground === on) return;
+    manualBackground = on;
+    document.body.classList.toggle("wh-fundo-manual", on);
+    syncVisibility();
+  }
+  addEventListener("keydown", e => {
+    if (e.code !== "F8" || !e.shiftKey || e.repeat) return;
+    e.preventDefault();
+    setManualBackground(!manualBackground);
+  });
   // ---------------------------------------------------------------- 1. servidor
   loading.stage(0, null, "Inicializando servidor");
   await waitHealth(n => n > 1 && loading.stage(0, null, `Inicializando servidor (tentativa ${n})`));
@@ -61,7 +81,6 @@ async function main() {
   const net = { ws: null as WebSocket | null, connected: false, lostAt: 0, reconnects: 0 };
   let onSnap: (s: SnapshotFull) => void = () => {};
   const firstSnap = new Promise<SnapshotFull>(resolve => { onSnap = resolve; });
-  let manualBackground = false;
   const background = () => manualBackground || document.hidden;
   let currentBiome = () => "";
   const modeName = () => (background() ? "fundo" : economic ? "eco" : "3d");
@@ -231,6 +250,7 @@ async function main() {
     portrait: async () => scene3d?.portraitUrl ?? cachedPortrait(),
     setVillagePhase: n => { scene3d?.village.load(n).then(() => ui.toast(`Vila: fase ${n} (apresentação; regra econômica pendente)`)).catch(() => {}); },
     focusVillage: () => { cam.focusOn(); const v = S.snap.hunters.find(h => h.activity === "na_vila"); if (v) { S.follow = v.id; focusId = v.id; send({ foco: v.id }); ui.selected = v.id; scene3d?.actors.setSelected(v.id); } },
+    setBackground: on => setManualBackground(on),
     exportReport: () => downloadJson(`wildhaven-desempenho-${new Date().toISOString().replace(/[:.]/g, "-")}.json`, buildReport(perf, (S.snap as any).server ?? null, settings, { rede: wireStats(), carregamento_s: perf.loadSeconds })),
   });
   ui.selected = S.follow;
@@ -253,7 +273,7 @@ async function main() {
   let hiddenSince = 0;
   const HIDDEN_DISPOSE_MS = 60_000;
   setInterval(() => { if (background() && hiddenSince && scene3d && performance.now() - hiddenSince > HIDDEN_DISPOSE_MS) { scene3d.dispose(); scene3d = null; perf.attach(null); } }, 5000);
-  const syncVisibility = () => {
+  syncVisibility = () => {
     if (background()) {
       hiddenSince ||= performance.now();
       stopLoops(); scene3d?.suspend(); clearInterval(uiState.timer);
@@ -270,13 +290,7 @@ async function main() {
     }
   };
   document.addEventListener("visibilitychange", syncVisibility);
-  addEventListener("keydown", e => {
-    if (e.code !== "F8" || !e.shiftKey || e.repeat) return;
-    e.preventDefault();
-    manualBackground = !manualBackground;
-    document.body.classList.toggle("wh-fundo-manual", manualBackground);
-    syncVisibility();
-  });
+  // V04.1: o mesmo segundo plano manual também pela interface (relógio e Sistema); aviso estático criado no início de main().
 
   // ---------------------------------------------------------------- carregamento inicial
   if (background()) {
@@ -297,11 +311,12 @@ async function main() {
   perf.loadSeconds = (performance.now() - t0) / 1000;
   loading.hide();
   startLoop();
+  if (background()) syncVisibility(); // segundo plano pedido durante o carregamento: aplica (modo "fundo" no servidor)
   if (economic) ecoSince = performance.now();
   (window as any).__wildhavenPerf = perf.public;
   perf.publish();
 
-  (window as any).__wildhavenDbg = () => ({ motivo: loading.reason, visivel: loading.visible, laco: loops.kind, economico: economic, oculto: background(), cena: !!scene3d }); // depuração
+  (window as any).__wildhavenDbg = () => ({ motivo: loading.reason, visivel: loading.visible, laco: loops.kind, economico: economic, oculto: background(), cena: !!scene3d, quadros: perf.framesDrawn }); // depuração (quadros: contador ao vivo, não o publicado a cada 30)
   // carregamentos prolongados de região (ex.: Hunter seguido chega a um hex sem relevo pronto): tela de carregamento
   setInterval(() => {
     if (background() || economic || !scene3d || loops.kind !== "3d") return;
