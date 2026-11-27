@@ -122,8 +122,26 @@ export class Actors {
 
   /** V03: pré-carrega os modelos (todos os LODs) de uma espécie — usado na tela de carregamento. */
   preload(species: string) { return Promise.all((CREATURE_LODS[species] ?? []).map(u => this.template(u))); }
+  /**
+   * V04.1 (VIS-01): só os modelos que a primeira vista vai usar — o LOD que cada criatura teria pela distância à
+   * câmera, e nada para quem não ocuparia 1,5 px na tela (não seria criada). Antes: todos os LODs de cada espécie
+   * entre as 64 primeiras criaturas do instantâneo, inclusive as que estavam longe ou fora da vista.
+   */
+  preloadView(creatures: CreatureSnap[], camPos: THREE.Vector3, viewK: number) {
+    const urls = new Set<string>();
+    for (const c of creatures) {
+      const lods = CREATURE_LODS[c.species]; if (!lods?.length) continue;
+      const d = Math.hypot(camPos.x - (c.x - this.origin.x), camPos.y - c.y, camPos.z - (c.z - this.origin.z));
+      if (d > (CREATURE_SIZE[c.species] ?? 1.2) * viewK / 1.5) continue;
+      const lod = d < LOD_DIST[0] ? 0 : d < LOD_DIST[1] ? 1 : 2;
+      urls.add(lods[Math.min(lod, lods.length - 1)]);
+    }
+    return [...urls];
+  }
 
   private loaded = new Map<string, THREE.Object3D>();
+  /** V04.1: pré-compilação assíncrona de um modelo recém-carregado (definida pela cena). */
+  warm: ((o: THREE.Object3D) => Promise<unknown>) | null = null;
   /** V04.1: cenas-modelo já carregadas (pré-compilação de shaders; os clones usam os mesmos materiais). */
   loadedTemplates() { return [...this.loaded.values()].filter(o => !o.parent); }
 
@@ -139,7 +157,9 @@ export class Actors {
         });
         this.materialAudit[url.split("/").pop()!] = a;
         this.loaded.set(url, g.scene);
-        return g;
+        // V04.1: compila os shaders do modelo (com as luzes da cena) ANTES de o primeiro clone aparecer; com
+        // KHR_parallel_shader_compile isso acontece fora do quadro (sem travar a troca de LOD/espécie nova)
+        return this.warm ? this.warm(g.scene).then(() => g, () => g) : g;
       }));
     }
     return this.templates.get(url)!;
@@ -270,6 +290,9 @@ export class Actors {
         if (now - since > 10000 && !a.swapping) { this.release(c.id, a); continue; }
       } else this.farSince.delete(c.id);
       if (!a.ready) continue;
+      // V04.1: pré-carga preditiva do LOD mais detalhado quando a criatura se aproxima (1,5× a distância de troca):
+      // a troca não espera download + parse do GLB no meio do jogo
+      if (a.lod !== undefined && a.lod > 0 && lods.length > 1 && d < LOD_DIST[a.lod - 1] * 1.5) void this.template(lods[Math.min(a.lod - 1, lods.length - 1)]).catch(() => {});
       // LOD de criatura pela distância (histerese): troca a malha mantendo posição e o tempo do clipe
       const want = d < LOD_DIST[0] * (a.lod === 0 ? 1.15 : 1) ? 0 : d < LOD_DIST[1] * (a.lod === 1 ? 1.15 : 1) ? 1 : 2;
       if (want !== a.lod && !a.swapping && lods.length > 1) {

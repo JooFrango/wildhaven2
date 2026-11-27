@@ -15,6 +15,7 @@ import { WeatherFx, waterMaterial } from "./weatherfx";
 import { Village } from "./village";
 import { GrassField } from "./grass";
 import { LocalLightGate } from "./lights";
+import { FrameRecorder } from "./recorder";
 import type { GraphicsSettings } from "./settings";
 import type { Perf } from "./perf";
 import type { HeightIndex } from "./heights";
@@ -32,6 +33,8 @@ export class Scene3D {
   /** V04.1: compila em paralelo antes de mudar o número de luzes locais (lanternas/fogueiras). */
   readonly lightGate: LocalLightGate;
   shaderPrewarmMs = 0;
+  /** V04.1: gravador de quadros (F3 → Gravar quadros). */
+  readonly recorder = new FrameRecorder();
   readonly village: Village;
   readonly fx: WeatherFx;
   readonly grass: GrassField;
@@ -79,6 +82,7 @@ export class Scene3D {
     this.actors = new Actors(S.origin, settings);
     this.village = new Village(S.origin, this.actors);
     this.lightGate = new LocalLightGate(this.renderer, this.scene);
+    this.actors.warm = o => this.renderer.compileAsync(o, this.camera, this.scene);
     this.fx = new WeatherFx();
     this.grass = new GrassField(this.world, settings);
     perf.attach(r);
@@ -133,10 +137,12 @@ export class Scene3D {
     progress(3, 0, "Preparando criaturas e vegetação");
     await this.veg.init().catch(e => console.warn("vegetação", e));
     this.veg.stream(this.cam.target);
-    const near = S.snap.game.creatures.slice(0, 64);
-    const species = [...new Set(near.map(c => c.species))];
+    // V04.1 (VIS-01): só o LOD que cada criatura visível usaria (antes: todos os LODs das espécies das 64 primeiras)
+    this.camera.updateMatrixWorld();
+    const viewK = this.renderer.domElement.height / (2 * Math.tan(THREE.MathUtils.degToRad(this.camera.fov) / 2));
+    const urls = this.actors.preloadView(S.snap.game.creatures, this.camera.position, viewK);
     let done = 0;
-    await Promise.all(species.map(sp => this.actors.preload(sp).catch(() => {}).then(() => progress(3, ++done / Math.max(1, species.length), `Preparando criaturas: ${done}/${species.length} espécies`))));
+    await Promise.all(urls.map(u => this.actors.template(u).catch(() => {}).then(() => progress(3, ++done / Math.max(1, urls.length), `Preparando criaturas: ${done}/${urls.length} modelos`))));
     progress(3, 1, "Criaturas prontas");
     // ---- Hunters: modelo animado (105 clipes) e retrato
     progress(4, 0, "Sincronizando Hunters");
@@ -241,6 +247,13 @@ export class Scene3D {
     this.renderer.render(this.scene, camera);
     this.perf.endGpu();
     this.perf.frame(performance.now() - tf, { world: this.world.stats, veg: this.veg.stats, actors: this.actors.stats, grass: this.grass.stats });
+    if (this.recorder.active) {
+      const inf = this.renderer.info as any;
+      this.recorder.sample(tf, performance.now() - tf, this.perf.gpuRaw, {
+        prog: inf.programs?.length ?? 0, geo: inf.memory.geometries, tex: inf.memory.textures, nodes: this.world.stats.nodesRam ?? 0,
+        created: this.actors.stats.created ?? 0, gate: this.lightGate.stats.compilacoes, drawCalls: inf.render.calls, triangles: inf.render.triangles,
+      });
+    }
     if (settings.dynamicResolution && tf - this.dynT > 1500) {
       this.dynT = tf;
       const ms = this.perf.gpuOrFrameMs();
