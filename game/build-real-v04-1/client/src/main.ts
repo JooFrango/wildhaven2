@@ -61,7 +61,10 @@ async function main() {
   const net = { ws: null as WebSocket | null, connected: false, lostAt: 0, reconnects: 0 };
   let onSnap: (s: SnapshotFull) => void = () => {};
   const firstSnap = new Promise<SnapshotFull>(resolve => { onSnap = resolve; });
-  const modeName = () => (document.hidden ? "fundo" : economic ? "eco" : "3d");
+  let manualBackground = false;
+  const background = () => manualBackground || document.hidden;
+  let currentBiome = () => "";
+  const modeName = () => (background() ? "fundo" : economic ? "eco" : "3d");
   const send = (o: unknown) => { if (net.ws?.readyState === WebSocket.OPEN) net.ws.send(JSON.stringify(o)); };
   let economic = params.get("modo") === "economico" || settings.profile === "economico";
   let focusId = "";
@@ -89,7 +92,7 @@ async function main() {
   // V04: hexes presentes no cache local do servidor (distribuição modular: chegam durante o jogo)
   const refreshHexes = () => fetch("/api/v1/hexes").then(r => (r.ok ? r.json() : null)).then(j => { if (j) heights.available = new Set<string>(j.tiles); }).catch(() => {});
   await refreshHexes();
-  setInterval(() => { if (!document.hidden) void refreshHexes(); }, 10000);
+  setInterval(() => { if (!background()) void refreshHexes(); }, 10000);
   focusId = first.hunters[0]?.id ?? ""; send({ foco: focusId });
   const S: Shared = { snap: first, prev: first, recvAt: performance.now(), prevAt: performance.now(), prevH: new Map(), prevC: new Map(), follow: first.hunters[0]?.id ?? "", origin, continent };
   onSnap = s => {
@@ -102,7 +105,7 @@ async function main() {
     // a cada mensagem e a tela "Carregando terrenos da região" nunca mais se fechava)
     if (loading.reason === "sessao") { loading.hide(); loading.reason = ""; }
   };
-  const currentBiome = () => { const fh = S.snap.hunters.find(h => h.id === S.follow); return continent.tiles.find(t => t.id === fh?.tile_id)?.biome ?? ""; };
+  currentBiome = () => { const fh = S.snap.hunters.find(h => h.id === S.follow); return continent.tiles.find(t => t.id === fh?.tile_id)?.biome ?? ""; };
   loading.remember(currentBiome());
 
   // ---------------------------------------------------------------- câmera persistente (sobrevive ao descarte do 3D)
@@ -151,7 +154,7 @@ async function main() {
   const ecoInterval = () => 1000 / (ECO_FPS.includes(settings.ecoFps) ? settings.ecoFps : 15);
   const ecoTick = () => {
     loops.ecoTimer = 0;
-    if (loops.kind !== "pixel" || document.hidden) return;
+    if (loops.kind !== "pixel" || background()) return;
     const tf = performance.now();
     const fh = S.snap.hunters.find(h => h.id === S.follow) ?? S.snap.hunters[0];
     if (fh) {
@@ -167,7 +170,7 @@ async function main() {
   let ecoStreamAt = 0;
   const startLoop = () => {
     stopLoops();
-    if (document.hidden) { perf.mode = "suspenso"; return; }
+    if (background()) { perf.mode = "suspenso"; return; }
     if (economic) {
       document.body.classList.add("economico");
       loops.kind = "pixel"; perf.mode = "pixel"; perf.targetMs = ecoInterval(); perf.pause(); loops.ecoNext = performance.now();
@@ -231,11 +234,11 @@ async function main() {
     exportReport: () => downloadJson(`wildhaven-desempenho-${new Date().toISOString().replace(/[:.]/g, "-")}.json`, buildReport(perf, (S.snap as any).server ?? null, settings, { rede: wireStats(), carregamento_s: perf.loadSeconds })),
   });
   ui.selected = S.follow;
-  const uiTick = () => { if (!document.hidden) ui.frame(S.snap, performance.now()); };
+  const uiTick = () => { if (!background()) ui.frame(S.snap, performance.now()); };
   const startUi = () => { clearInterval(uiState.timer); uiState.timer = window.setInterval(uiTick, 250); uiTick(); };
   const wireStats = () => ({ conectado: net.connected, reconexoes: net.reconnects, completos: wire.fulls, deltas: wire.deltas, ressincronizacoes: wire.resyncs, bytesRecebidos: wire.bytes, ultimaMensagemBytes: wire.lastBytes });
   perf.extra = () => ({
-    loops: { ativo: loops.kind, tresD: scene3d ? (loops.kind === "3d" ? "rodando" : "suspenso") : "descartado", pixel: loops.kind === "pixel" ? "rodando" : "parado", interface: document.hidden ? "suspensa" : "4 Hz", visibilidade: document.visibilityState },
+    loops: { ativo: loops.kind, tresD: scene3d ? (loops.kind === "3d" ? "rodando" : "suspenso") : "descartado", pixel: loops.kind === "pixel" ? "rodando" : "parado", interface: background() ? "suspensa" : "4 Hz", visibilidade: document.visibilityState },
     rede: wireStats(),
     economico: eco.stats,
     streaming: scene3d?.streamingStats() ?? null,
@@ -249,10 +252,10 @@ async function main() {
   // Segundo Plano > 60 s: o 3D suspenso também é DESCARTADO (RAM/VRAM), como no Econômico; volta com a tela de carregamento
   let hiddenSince = 0;
   const HIDDEN_DISPOSE_MS = 60_000;
-  setInterval(() => { if (document.hidden && hiddenSince && scene3d && performance.now() - hiddenSince > HIDDEN_DISPOSE_MS) { scene3d.dispose(); scene3d = null; perf.attach(null); } }, 5000);
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      hiddenSince = performance.now();
+  setInterval(() => { if (background() && hiddenSince && scene3d && performance.now() - hiddenSince > HIDDEN_DISPOSE_MS) { scene3d.dispose(); scene3d = null; perf.attach(null); } }, 5000);
+  const syncVisibility = () => {
+    if (background()) {
+      hiddenSince ||= performance.now();
       stopLoops(); scene3d?.suspend(); clearInterval(uiState.timer);
       perf.mode = "suspenso"; perf.pause();
       send({ modo: "fundo" });
@@ -262,13 +265,23 @@ async function main() {
       startUi();
       if (!economic) {
         if (scene3d) { scene3d.resume(); startLoop(); }
-        else void ensure3D(false).then(s => { if (!economic && !document.hidden) { s.resume(); startLoop(); } });
+        else void ensure3D(false).then(s => { if (!economic && !background()) { s.resume(); startLoop(); } });
       } else startLoop();
     }
+  };
+  document.addEventListener("visibilitychange", syncVisibility);
+  addEventListener("keydown", e => {
+    if (e.code !== "F8" || !e.shiftKey || e.repeat) return;
+    e.preventDefault();
+    manualBackground = !manualBackground;
+    document.body.classList.toggle("wh-fundo-manual", manualBackground);
+    syncVisibility();
   });
 
   // ---------------------------------------------------------------- carregamento inicial
-  if (economic) {
+  if (background()) {
+    hiddenSince = performance.now();
+  } else if (economic) {
     loading.stage(2, 0, "Carregando terrenos (grade de alturas)");
     const near = heights.near(f0.x - origin.x, f0.z - origin.z, 4200);
     let done = 0;
@@ -279,7 +292,7 @@ async function main() {
     await ensure3D(true);
   }
   loading.stage(5, 0.5, "Preparando interface");
-  startUi();
+  if (!background()) startUi();
   loading.stage(5, 1, "Pronto");
   perf.loadSeconds = (performance.now() - t0) / 1000;
   loading.hide();
@@ -288,10 +301,10 @@ async function main() {
   (window as any).__wildhavenPerf = perf.public;
   perf.publish();
 
-  (window as any).__wildhavenDbg = () => ({ motivo: loading.reason, visivel: loading.visible, laco: loops.kind, economico: economic, oculto: document.hidden, cena: !!scene3d }); // depuração
+  (window as any).__wildhavenDbg = () => ({ motivo: loading.reason, visivel: loading.visible, laco: loops.kind, economico: economic, oculto: background(), cena: !!scene3d }); // depuração
   // carregamentos prolongados de região (ex.: Hunter seguido chega a um hex sem relevo pronto): tela de carregamento
   setInterval(() => {
-    if (document.hidden || economic || !scene3d || loops.kind !== "3d") return;
+    if (background() || economic || !scene3d || loops.kind !== "3d") return;
     const slow = scene3d.regionStalledMs();
     if (slow > 1500 && !loading.visible) { loading.show(sceneForBiome(currentBiome()), "Carregando terrenos da região"); loading.reason = "regiao"; }
     else if (slow === 0 && loading.reason === "regiao") { loading.hide(); loading.reason = ""; }
