@@ -55,6 +55,7 @@ export class GrassField {
     const mk = (g: THREE.BufferGeometry, n: number) => {
       const fade = new THREE.InstancedBufferAttribute(new Float32Array(n).fill(1), 1); fade.setUsage(THREE.DynamicDrawUsage); g.setAttribute("aFade", fade);
       const im = new THREE.InstancedMesh(g, mat, n); im.count = 0; im.frustumCulled = false; im.receiveShadow = true;
+      im.matrixAutoUpdate = false; im.updateMatrix(); // V04.1: estática (as instâncias carregam a posição)
       im.setColorAt(0, new THREE.Color(1, 1, 1)); im.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
       return { im, fade };
     };

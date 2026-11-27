@@ -52,6 +52,11 @@ export class Vegetation {
     gltf.scene.traverse(o => { if ((o as THREE.Mesh).isMesh) byName.set(o.name, o as THREE.Mesh); });
     const mat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.9, metalness: 0, side: THREE.DoubleSide });
     patchMaterial(mat, { wind: true, fade: true });
+    // V04.1: o LOD1 (sem receber sombra) ganha um material próprio com os MESMOS parâmetros. Com um material só,
+    // `receiveShadow` diferente entre LOD0 e LOD1 obrigava o three.js a reavaliar e trocar o programa a cada
+    // desenho (getParameters + chave do programa ~100× por quadro). Mesmo shader de antes em cada desenho.
+    const matL1 = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.9, metalness: 0, side: THREE.DoubleSide });
+    patchMaterial(matL1, { wind: true, fade: true });
     const matFar = new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide });
     patchMaterial(matFar, { wind: false, fade: true });
     for (const p of this.protos) {
@@ -63,11 +68,12 @@ export class Vegetation {
         const fade = new THREE.InstancedBufferAttribute(new Float32Array(cap).fill(1), 1);
         fade.setUsage(THREE.DynamicDrawUsage);
         g.setAttribute("aFade", fade);
-        const im = new THREE.InstancedMesh(g, lod >= 2 ? matFar : mat, cap);
+        const im = new THREE.InstancedMesh(g, lod >= 2 ? matFar : lod === 1 ? matL1 : mat, cap);
         im.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
         im.setColorAt(0, new THREE.Color(1, 1, 1));
         im.instanceColor!.setUsage(THREE.DynamicDrawUsage);
         im.count = 0; im.frustumCulled = false; // o culling é feito por célula aqui
+        im.matrixAutoUpdate = false; im.updateMatrix(); // V04.1: a malha não se move (as instâncias carregam a posição)
         im.castShadow = lod <= 1 && p.kind === "tree"; im.receiveShadow = lod === 0;
         im.name = `veg:${p.family}:${p.id}:L${lod}`;
         this.group.add(im); row[lod] = im; frow[lod] = fade;

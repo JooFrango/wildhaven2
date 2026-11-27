@@ -34,6 +34,8 @@ export class Village {
       for (const mat of Array.isArray(m.material) ? m.material : [m.material]) { (mat as THREE.MeshStandardMaterial).side = THREE.FrontSide; patchMaterial(mat); }
     });
     this.group.add(this.near, this.far);
+    // V04.1: a vila é estática — matrizes calculadas uma vez (antes, ~centenas de nós recalculados a cada quadro)
+    for (const sc of [this.near, this.far]) { sc.updateMatrixWorld(true); sc.traverse(o => { o.matrixAutoUpdate = false; }); }
     // lanternas: pontos de luz junto às construções (provisório até haver marcadores no GLB)
     for (const l of this.lamps) l.removeFromParent();
     this.lamps = [];
