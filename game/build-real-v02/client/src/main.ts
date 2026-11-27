@@ -62,12 +62,32 @@ async function main() {
   const village = new Village(origin, actors);
   const fx = new WeatherFx();
   const grass = new GrassField(world, settings);
-  scene.add(world.group, veg.group, grass.group, actors.group, village.group, fx.points);
+  // Modo de comparação/auditoria (?comparar=original): GLBs ORIGINAIS dos hexes, sem chunks, LOD, culling,
+  // vegetação derivada, horizonte, fog nem shaders da V02 — para conferir fidelidade com a mesma câmera.
+  const ORIGINAL = params.get("comparar") === "original";
+  const NOFOG = params.get("fog") === "0" || ORIGINAL;
+  const camfix = params.get("camfix")?.split(",").map(Number);
+  if (params.get("hud") === "0") document.getElementById("ui")!.style.display = "none";
+  if (ORIGINAL) {
+    const { GLTFLoader } = await import("three/examples/jsm/loaders/GLTFLoader.js");
+    const gl = new GLTFLoader(), orig = new THREE.Group(); orig.name = "originais"; scene.add(orig);
+    const ids = new Set([first.game.village ? "HV_01" : "HV_01"]);
+    for (const t of continent.tiles) { const c = latticeCenter(t.x, t.z); if (Math.hypot(c.x - origin.x, c.z - origin.z) < 6000) ids.add(t.id); }
+    for (const id of ids) {
+      const t = continent.tiles.find(x => x.id === id)!; const c = latticeCenter(t.x, t.z);
+      const g = await gl.loadAsync(`/glb/terrain/${id}`).catch(() => null); if (!g) continue;
+      g.scene.position.set(c.x - origin.x, 0, c.z - origin.z); g.scene.name = "original:" + id; orig.add(g.scene);
+    }
+    // ativos originais da vila (mesma transformação horizontal do hex HV_01)
+    for (const f of ["phase_1.glb", "hv_01_forest.glb"]) { const g = await gl.loadAsync(`/world/hunters-village-v01/models/${f}`).catch(() => null); if (g) { g.scene.position.set(28145.825623 - origin.x, 0, -3750 - origin.z); orig.add(g.scene); } }
+    (window as any).__wildhavenOriginais = [...ids];
+  } else scene.add(world.group, veg.group, grass.group, village.group);
+  scene.add(actors.group, fx.points);
   const ground = (x: number, z: number) => world.heightAt(x, z, "max");
   const cam = new StrategyCamera(camera, renderer.domElement, ground);
   const gameplay = await loadCreatureCatalog().catch(() => null);
   setLoading("Carregando horizonte do continente (272 hexes)…", 0.15);
-  await world.loadHorizon("/v02/horizon/horizonte-272-v01.glb").catch(e => console.warn("horizonte", e));
+  if (!ORIGINAL) await world.loadHorizon("/v02/horizon/horizonte-272-v01.glb").catch(e => console.warn("horizonte", e));
   setLoading("Carregando vegetação e protótipos…", 0.3);
   await veg.init().catch(e => console.warn("vegetação", e));
   village.load().catch(e => console.warn("vila", e));
@@ -143,7 +163,8 @@ async function main() {
     const focus = fa?.ready ? fa.obj.position.clone() : fh ? new THREE.Vector3(fh.x - origin.x, fh.y, fh.z - origin.z) : null;
     // enquadramento de combate: criatura-alvo do Hunter seguido
     const tgt = fh?.target_creature != null && fh.activity === "combatendo" ? actors.creatures.get(fh.target_creature)?.obj.position ?? null : null;
-    cam.update(dt, focus, tgt);
+    if (camfix && camfix.length === 6) { camera.position.set(camfix[0], camfix[1], camfix[2]); camera.lookAt(camfix[3], camfix[4], camfix[5]); camera.far = 60000; camera.near = 1; camera.updateProjectionMatrix(); cam.target.set(camfix[3], camfix[4], camfix[5]); }
+    else cam.update(dt, focus, tgt);
     camera.updateMatrixWorld();
     pv.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse); frustum.setFromProjectionMatrix(pv);
     if (tf - streamT > 400) {
@@ -157,6 +178,7 @@ async function main() {
     const w = weatherOf(snap);
     atm.weather = w;
     atm.update(dt, snap.clock, cam.target, camera);
+    if (NOFOG) scene.fog = null; else scene.fog = atm.fog;
     world.update(camera, renderer.domElement.height);
     veg.update(camera, renderer.domElement.height, tf);
     grass.update(cam.target, camera, tf);

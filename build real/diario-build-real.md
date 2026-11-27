@@ -68,3 +68,27 @@ cd game/build-real-v01/server && cargo run --release -p wh-server --bin wh-sim-c
 ```bash
 cd game/build-real-v01/server && WH_TIME_SCALE=20 cargo run --release -p wh-server
 ```
+
+## 2026-11-27 — Build Real V02 (branch `claude/hopeful-noether-oehmyn`)
+
+**Pedido:** reconstrução visual, otimização, integração e interface (V01 preservada em `game/build-real-v01`).
+**Feito:**
+- pipeline visual offline (chunks de 256 m, LOD por erro absoluto, vegetação instanciada, horizonte dos 272 hexes);
+- renderer novo (culling hierárquico, oclusão por relevo, fog de altura, céu, clima, perfis);
+- Hunters PvE com clipes reais, sem pose T;
+- vila com fases reais; carroça, acampamento e armadilhas como proposta;
+- clima V7 portado ao continente, porque o V08 não existe;
+- ecossistema com necessidades e predação; relevância, grade espacial e orçamento de A*;
+- HUD conforme a ilustração do diretor; Bestiário, mapa e menu do desenvolvedor;
+- Modo Econômico com o 3D suspenso; ZIP portátil validado no Windows (Actions) e publicado.
+**Auditoria pedida pelo diretor:** o LOD0 é idêntico aos GLBs originais (0 m de diferença, 100% dos vértices), e os 6 vizinhos do HV_01 conferem. A maior diferença visual é a vegetação re-escalada (provisória).
+**Testes:** `cargo test` 20/20, `node --test` 17/17, demo 14/14.
+**Não medido:** FPS em GPU real.
+**Próximo passo:**
+- o diretor decide a escala da vegetação e aprova (ou não) os assets propostos;
+- medir no computador do diretor;
+- reduzir draw calls do perfil Médio.
+
+```bash
+node game/build-real-v02/tools/visual/build-visual.mjs --around HV_01 --chunk 256
+```

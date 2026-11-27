@@ -1,0 +1,135 @@
+[
+ {
+  "id": "HV_01",
+  "origemTris": 43846,
+  "lod0Tris": 43846,
+  "escalaNos": [
+   "1,1,1"
+  ],
+  "alturaOriginal": [
+   878.95,
+   955.84
+  ],
+  "alturaLOD0": [
+   878.95,
+   955.84
+  ],
+  "verticesCasados": "25800/25800",
+  "maxDiferencaAlturaM": 0,
+  "diferencaMediaCor": 0.0135
+ },
+ {
+  "id": "FX_20",
+  "origemTris": 12996,
+  "lod0Tris": 12996,
+  "escalaNos": [
+   "1,1,1"
+  ],
+  "alturaOriginal": [
+   871.88,
+   946.15
+  ],
+  "alturaLOD0": [
+   871.88,
+   946.15
+  ],
+  "verticesCasados": "9854/9854",
+  "maxDiferencaAlturaM": 0,
+  "diferencaMediaCor": 0.0057
+ },
+ {
+  "id": "ER_18",
+  "origemTris": 73876,
+  "lod0Tris": 73876,
+  "escalaNos": [
+   "1,1,1"
+  ],
+  "alturaOriginal": [
+   886.28,
+   2060.37
+  ],
+  "alturaLOD0": [
+   886.28,
+   2060.37
+  ],
+  "verticesCasados": "44322/44322",
+  "maxDiferencaAlturaM": 0,
+  "diferencaMediaCor": 0.0171
+ },
+ {
+  "id": "ER_21",
+  "origemTris": 73876,
+  "lod0Tris": 73876,
+  "escalaNos": [
+   "1,1,1"
+  ],
+  "alturaOriginal": [
+   904.65,
+   1090.51
+  ],
+  "alturaLOD0": [
+   904.65,
+   1090.51
+  ],
+  "verticesCasados": "44322/44322",
+  "maxDiferencaAlturaM": 0,
+  "diferencaMediaCor": 0.0105
+ },
+ {
+  "id": "ER_22",
+  "origemTris": 73876,
+  "lod0Tris": 73876,
+  "escalaNos": [
+   "1,1,1"
+  ],
+  "alturaOriginal": [
+   921.95,
+   2530.61
+  ],
+  "alturaLOD0": [
+   921.95,
+   2530.61
+  ],
+  "verticesCasados": "44322/44322",
+  "maxDiferencaAlturaM": 0,
+  "diferencaMediaCor": 0.0204
+ },
+ {
+  "id": "ER_24",
+  "origemTris": 73876,
+  "lod0Tris": 73876,
+  "escalaNos": [
+   "1,1,1"
+  ],
+  "alturaOriginal": [
+   807.61,
+   961.79
+  ],
+  "alturaLOD0": [
+   807.61,
+   961.79
+  ],
+  "verticesCasados": "44322/44322",
+  "maxDiferencaAlturaM": 0,
+  "diferencaMediaCor": 0.0124
+ },
+ {
+  "id": "ER_25",
+  "origemTris": 73876,
+  "lod0Tris": 73876,
+  "escalaNos": [
+   "1,1,1"
+  ],
+  "alturaOriginal": [
+   874.51,
+   2068.18
+  ],
+  "alturaLOD0": [
+   874.51,
+   2068.18
+  ],
+  "verticesCasados": "44322/44322",
+  "maxDiferencaAlturaM": 0,
+  "diferencaMediaCor": 0.0183
+ }
+]

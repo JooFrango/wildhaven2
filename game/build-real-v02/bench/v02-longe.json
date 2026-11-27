@@ -1,0 +1,353 @@
+{
+  "label": "V02 longe",
+  "url": "http://127.0.0.1:8791/?cam=700,14,40",
+  "renderer": "Chromium headless + SwiftShader (software) — FPS não representa GPU",
+  "viewport": "1280x720@1",
+  "last": {
+    "t": 37.338,
+    "mode": "3d",
+    "fps": 2.1185243771540003,
+    "low1": 0.7381708127264708,
+    "frameMs": 472.0266666666294,
+    "cpuMs": 59.97333333343268,
+    "gpuMs": null,
+    "gpuTimer": false,
+    "drawCalls": 203,
+    "triangles": 360132,
+    "geometries": 98,
+    "textures": 23,
+    "heapMB": 307.0831298828125,
+    "vramEstMB": 360.4296533203126,
+    "loadSeconds": 1.3179000000022352,
+    "resScale": 0.5000000000000001,
+    "culling": {
+      "world": {
+        "tiles": 7,
+        "leavesDrawn": 5,
+        "blocksDrawn": 13,
+        "tilesAsOne": 3,
+        "frustumCulled": 28,
+        "distanceCulled": 0,
+        "occlusionCulled": 0,
+        "horizonHidden": 7,
+        "loading": 0,
+        "bytes": 56683356
+      },
+      "veg": {
+        "candidates": 5173,
+        "drawn": 2308,
+        "perLod": [
+          0,
+          0,
+          9,
+          2299
+        ],
+        "cellsFrustum": 203,
+        "cellsDistance": 1469,
+        "cellsOcclusion": 0,
+        "drawCallsMax": 13,
+        "updateMs": 0.5999999977648258
+      },
+      "actors": {
+        "mixersUpdated": 0,
+        "mixersSkipped": 10,
+        "actorsCulled": 0,
+        "creatureLods": [
+          0,
+          0,
+          0
+        ]
+      },
+      "grass": {
+        "tufts": 1986,
+        "flowers": 303,
+        "cells": 177,
+        "ms": 179
+      }
+    }
+  },
+  "maxDrawCalls": 203,
+  "maxTriangles": 360132,
+  "samples": [
+    {
+      "t": 6.58
+    },
+    {
+      "t": 11.586
+    },
+    {
+      "t": 16.609
+    },
+    {
+      "t": 21.92,
+      "mode": "3d",
+      "fps": 1.733683152067203,
+      "low1": 0.7381708127264708,
+      "frameMs": 576.8066666666418,
+      "cpuMs": 112.07000000004967,
+      "gpuMs": null,
+      "gpuTimer": false,
+      "drawCalls": 202,
+      "triangles": 358222,
+      "geometries": 97,
+      "textures": 21,
+      "heapMB": 307.0831298828125,
+      "vramEstMB": 307.3816604614259,
+      "loadSeconds": 1.3179000000022352,
+      "resScale": 0.5000000000000001,
+      "culling": {
+        "world": {
+          "tiles": 7,
+          "leavesDrawn": 5,
+          "blocksDrawn": 13,
+          "tilesAsOne": 3,
+          "frustumCulled": 28,
+          "distanceCulled": 0,
+          "occlusionCulled": 0,
+          "horizonHidden": 7,
+          "loading": 1,
+          "bytes": 56683356
+        },
+        "veg": {
+          "candidates": 5173,
+          "drawn": 2308,
+          "perLod": [
+            0,
+            0,
+            9,
+            2299
+          ],
+          "cellsFrustum": 203,
+          "cellsDistance": 1469,
+          "cellsOcclusion": 0,
+          "drawCallsMax": 13,
+          "updateMs": 0.5999999977648258
+        },
+        "actors": {
+          "mixersUpdated": 0,
+          "mixersSkipped": 10,
+          "actorsCulled": 0,
+          "creatureLods": [
+            0,
+            0,
+            0
+          ]
+        },
+        "grass": {
+          "tufts": 1986,
+          "flowers": 303,
+          "cells": 177,
+          "ms": 179
+        }
+      }
+    },
+    {
+      "t": 27.048,
+      "mode": "3d",
+      "fps": 1.733683152067203,
+      "low1": 0.7381708127264708,
+      "frameMs": 576.8066666666418,
+      "cpuMs": 112.07000000004967,
+      "gpuMs": null,
+      "gpuTimer": false,
+      "drawCalls": 202,
+      "triangles": 358222,
+      "geometries": 97,
+      "textures": 21,
+      "heapMB": 307.0831298828125,
+      "vramEstMB": 307.3816604614259,
+      "loadSeconds": 1.3179000000022352,
+      "resScale": 0.5000000000000001,
+      "culling": {
+        "world": {
+          "tiles": 7,
+          "leavesDrawn": 5,
+          "blocksDrawn": 13,
+          "tilesAsOne": 3,
+          "frustumCulled": 28,
+          "distanceCulled": 0,
+          "occlusionCulled": 0,
+          "horizonHidden": 7,
+          "loading": 0,
+          "bytes": 56683356
+        },
+        "veg": {
+          "candidates": 5173,
+          "drawn": 2308,
+          "perLod": [
+            0,
+            0,
+            9,
+            2299
+          ],
+          "cellsFrustum": 203,
+          "cellsDistance": 1469,
+          "cellsOcclusion": 0,
+          "drawCallsMax": 13,
+          "updateMs": 0.6000000014901161
+        },
+        "actors": {
+          "mixersUpdated": 0,
+          "mixersSkipped": 10,
+          "actorsCulled": 0,
+          "creatureLods": [
+            0,
+            0,
+            0
+          ]
+        },
+        "grass": {
+          "tufts": 1986,
+          "flowers": 303,
+          "cells": 177,
+          "ms": 179
+        }
+      }
+    },
+    {
+      "t": 32.211,
+      "mode": "3d",
+      "fps": 2.1185243771540003,
+      "low1": 0.7381708127264708,
+      "frameMs": 472.0266666666294,
+      "cpuMs": 59.97333333343268,
+      "gpuMs": null,
+      "gpuTimer": false,
+      "drawCalls": 203,
+      "triangles": 360132,
+      "geometries": 98,
+      "textures": 23,
+      "heapMB": 307.0831298828125,
+      "vramEstMB": 360.4296533203126,
+      "loadSeconds": 1.3179000000022352,
+      "resScale": 0.5000000000000001,
+      "culling": {
+        "world": {
+          "tiles": 7,
+          "leavesDrawn": 5,
+          "blocksDrawn": 13,
+          "tilesAsOne": 3,
+          "frustumCulled": 28,
+          "distanceCulled": 0,
+          "occlusionCulled": 0,
+          "horizonHidden": 7,
+          "loading": 0,
+          "bytes": 56683356
+        },
+        "veg": {
+          "candidates": 5173,
+          "drawn": 2308,
+          "perLod": [
+            0,
+            0,
+            9,
+            2299
+          ],
+          "cellsFrustum": 203,
+          "cellsDistance": 1469,
+          "cellsOcclusion": 0,
+          "drawCallsMax": 13,
+          "updateMs": 1
+        },
+        "actors": {
+          "mixersUpdated": 0,
+          "mixersSkipped": 10,
+          "actorsCulled": 0,
+          "creatureLods": [
+            0,
+            0,
+            0
+          ]
+        },
+        "grass": {
+          "tufts": 1986,
+          "flowers": 303,
+          "cells": 177,
+          "ms": 179
+        }
+      }
+    },
+    {
+      "t": 37.338,
+      "mode": "3d",
+      "fps": 2.1185243771540003,
+      "low1": 0.7381708127264708,
+      "frameMs": 472.0266666666294,
+      "cpuMs": 59.97333333343268,
+      "gpuMs": null,
+      "gpuTimer": false,
+      "drawCalls": 203,
+      "triangles": 360132,
+      "geometries": 98,
+      "textures": 23,
+      "heapMB": 307.0831298828125,
+      "vramEstMB": 360.4296533203126,
+      "loadSeconds": 1.3179000000022352,
+      "resScale": 0.5000000000000001,
+      "culling": {
+        "world": {
+          "tiles": 7,
+          "leavesDrawn": 5,
+          "blocksDrawn": 13,
+          "tilesAsOne": 3,
+          "frustumCulled": 28,
+          "distanceCulled": 0,
+          "occlusionCulled": 0,
+          "horizonHidden": 7,
+          "loading": 0,
+          "bytes": 56683356
+        },
+        "veg": {
+          "candidates": 5173,
+          "drawn": 2308,
+          "perLod": [
+            0,
+            0,
+            9,
+            2299
+          ],
+          "cellsFrustum": 203,
+          "cellsDistance": 1469,
+          "cellsOcclusion": 0,
+          "drawCallsMax": 13,
+          "updateMs": 0.5999999977648258
+        },
+        "actors": {
+          "mixersUpdated": 0,
+          "mixersSkipped": 10,
+          "actorsCulled": 0,
+          "creatureLods": [
+            0,
+            0,
+            0
+          ]
+        },
+        "grass": {
+          "tufts": 1986,
+          "flowers": 303,
+          "cells": 177,
+          "ms": 179
+        }
+      }
+    }
+  ],
+  "logs": [
+    "warning: [.WebGL-0x22f400374800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x22f400374800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x22f400374800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x22f400374800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "screenshot": "../bench/v02-longe.png"
+}
