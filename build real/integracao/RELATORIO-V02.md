@@ -14,7 +14,7 @@ Nenhuma aprovação artística foi presumida. Todos os FPS deste ambiente vêm d
 | ZIP portátil | [Wildhaven-Windows-portatil-v02.zip](https://github.com/JooFrango/wildhaven2/releases/download/build-real-v02-portatil/Wildhaven-Windows-portatil-v02.zip) (pré-lançamento [`build-real-v02-portatil`](https://github.com/JooFrango/wildhaven2/releases/tag/build-real-v02-portatil)) |
 | Pipeline | `.github/workflows/wildhaven-windows-portable-v02.yml`; republica o ZIP a cada push na branch |
 | Validação no Windows (runner) | o `wh-server.exe` sobe sem Rust, Node ou Git no PATH; responde health, o cliente V02, o snapshot com Hunters, 9 assets V02 e confirma "7 tiles liberados" |
-| Conferência após o download | ZIP do commit `6413a20`: 202.886.796 bytes, SHA-256 `fce942e4…0226`, idêntico ao do runner. Foi extraído e servido com o build Linux: 7 hexes, 213 draw calls, 422 mil triângulos (`evidencias/v02/v02-pacote-portatil-extraido.png`) |
+| Conferência após o download | ZIP atual (commit `fe95ca3`, [run 45939310465](https://github.com/JooFrango/wildhaven2/actions/runs/45939310465)): 202.887.479 bytes, SHA-256 `6c33a7c6b872e7c3dba6ff9ab9ebb4f6758ee0177902a8acad09ea74ac75aae9`, idêntico ao publicado pelo runner. Um ZIP anterior (commit `6413a20`, mesmo conteúdo de dados) foi extraído e servido com o build Linux: 7 hexes, 213 draw calls, 422 mil triângulos (`evidencias/v02/v02-pacote-portatil-extraido.png`) |
 | Uso | extrair tudo → clicar duas vezes em `Iniciar-Wildhaven.bat` → o navegador abre `http://127.0.0.1:8787` |
 
 A execução por clique num Windows de verdade **não foi testada**: só no runner do GitHub Actions, por PowerShell.
