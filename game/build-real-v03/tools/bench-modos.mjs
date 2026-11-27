@@ -26,8 +26,10 @@ const before = new Set(chromePids());
 const browser = await pw.chromium.launch({ channel: process.env.BENCH_CHANNEL ?? "chromium", headless: !process.env.DISPLAY, args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist", "--enable-precise-memory-info"] });
 const ctx = await browser.newContext({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 });
 const page = await ctx.newPage();
+if (A["sem-raf"]) await page.addInitScript(() => { (window).__semRaf = true; });
 await page.addInitScript(() => {
   const w = window; w.__bench = { frames: [], long: 0, longMs: 0 };
+  if ((window).__semRaf) return;
   let last = 0; const f = t => { if (last) w.__bench.frames.push(t - last); last = t; if (w.__bench.frames.length > 200000) w.__bench.frames.splice(0, 100000); requestAnimationFrame(f); }; requestAnimationFrame(f);
   try { new PerformanceObserver(l => { for (const e of l.getEntries()) { w.__bench.long++; w.__bench.longMs += e.duration; } }).observe({ type: "longtask", buffered: true }); } catch { /* sem long tasks */ }
 });

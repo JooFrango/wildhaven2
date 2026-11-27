@@ -198,6 +198,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .nest_service("/visual", ServeDir::new(&cfg.visual_dir).precompressed_gzip())
         .nest_service("/v02", ServeDir::new(cfg.repo_root.join("game/build-real-v02/assets"))) // assets da V02, sem cópia
         .nest_service("/world", ServeDir::new(cfg.repo_root.join("world")))
+        // V03: telas de carregamento ORIGINAIS (Codex), servidas sem cópia nem alteração
+        .nest_service("/carregamento", ServeDir::new(cfg.repo_root.join("build real/loading-screen/v02")))
         .nest_service("/labs", ServeDir::new(cfg.repo_root.join("labs")))
         .fallback_service(client)
         .with_state(state);

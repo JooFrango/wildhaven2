@@ -19,6 +19,8 @@ export async function loadCreatureCatalog() {
   return g;
 }
 const LOD_DIST = [28, 75]; // m (com histerese de 15%) — trocas de LOD de criatura
+/** Altura aproximada (m) para o critério de tamanho projetado na criação preguiçosa (engenharia, PROVISÓRIO). */
+const CREATURE_SIZE: Record<string, number> = { lobrapedra: 3, torvalho: 3, nharuk: 3, silvarano: 2, cavoru: 2, boscaranha: 1.5, folhisco: 1, tufrilo: 1 };
 const DODO_URL = "/assets/models/creatures/dodarro/dodarro_montaria_v02_blockout.glb";
 const WAGON_URL = "/v02/models/carroca/carroca_v02.glb";
 const CAMP_URL = "/v02/models/acampamento/acampamento_v02.glb";
@@ -89,8 +91,16 @@ export class Actors {
   private prints: THREE.InstancedMesh;
   private blobs: THREE.InstancedMesh;
   readonly materialAudit: Record<string, { total: number; doubleSided: number }> = {};
-  stats = { mixersUpdated: 0, mixersSkipped: 0, actorsCulled: 0, creatureLods: [0, 0, 0] };
+  stats = { mixersUpdated: 0, mixersSkipped: 0, actorsCulled: 0, creatureLods: [0, 0, 0], simulated: 0, created: 0, notCreated: 0, released: 0, visible: 0 };
   simTime = 0;
+  /** V03: fator de projeção (px por metro a 1 m) do quadro atual — decide criação preguiçosa dos modelos. */
+  viewK = 800;
+  private farSince = new Map<number, number>();
+  private sv = new THREE.Vector3();
+  private sv2 = new THREE.Vector3();
+  private sq = new THREE.Quaternion();
+  private sm4 = new THREE.Matrix4();
+  private boxSize = new THREE.Vector3(3, 3, 3);
 
   constructor(private origin: { x: number; z: number }, private settings: GraphicsSettings) {
     this.group.name = "atores";
@@ -105,6 +115,9 @@ export class Actors {
     this.blobs.count = 0; this.blobs.frustumCulled = false; this.blobs.renderOrder = 1; this.blobs.name = "sombras-de-contato";
     this.group.add(this.prints, this.blobs);
   }
+
+  /** V03: pré-carrega os modelos (todos os LODs) de uma espécie — usado na tela de carregamento. */
+  preload(species: string) { return Promise.all((CREATURE_LODS[species] ?? []).map(u => this.template(u))); }
 
   template(url: string) {
     if (!this.templates.has(url)) {
@@ -200,15 +213,16 @@ export class Actors {
 
   sync(hunters: HunterFull[], prevH: Map<string, HunterFull>, creatures: CreatureSnap[], prevC: Map<number, CreatureSnap>, alpha: number, dt: number, simNow: number, camPos: THREE.Vector3, ground: (x: number, z: number) => number | null, occluded: (o: THREE.Object3D, b: THREE.Box3) => boolean, frustum: THREE.Frustum) {
     this.stats.mixersUpdated = 0; this.stats.mixersSkipped = 0; this.stats.actorsCulled = 0;
-    const m4 = new THREE.Matrix4(); let nb = 0;
+    const m4 = this.sm4; let nb = 0;
     const blob = (o: THREE.Object3D, r: number) => {
       if (nb >= this.blobs.instanceMatrix.count || !o.visible) return;
       const y = ground(o.position.x, o.position.z) ?? o.position.y;
-      m4.compose(new THREE.Vector3(o.position.x, Math.max(y, o.position.y - 0.4) + 0.04, o.position.z), new THREE.Quaternion(), new THREE.Vector3(r, 1, r));
+      this.sq.identity(); this.sv.set(o.position.x, Math.max(y, o.position.y - 0.4) + 0.04, o.position.z); this.sv2.set(r, 1, r);
+      m4.compose(this.sv, this.sq, this.sv2);
       this.blobs.setMatrixAt(nb++, m4);
     };
     const visibleTest = (a: Actor) => {
-      a.box.setFromCenterAndSize(a.obj.position.clone().setY(a.obj.position.y + 1), new THREE.Vector3(3, 3, 3));
+      a.box.setFromCenterAndSize(this.sv.copy(a.obj.position).setY(a.obj.position.y + 1), this.boxSize);
       const inF = frustum.intersectsBox(a.box);
       const occ = inF && a.obj.position.distanceTo(camPos) > 150 && occluded(a.obj, a.box);
       if (!inF || occ) this.stats.actorsCulled++;
@@ -227,13 +241,24 @@ export class Actors {
       blob(a.obj, 1.1);
     }
     const seen = new Set<number>();
+    const now = performance.now();
+    this.stats.simulated = creatures.length; this.stats.notCreated = 0;
     for (const c of creatures) {
       seen.add(c.id);
       let a = this.creatures.get(c.id);
       const lods = CREATURE_LODS[c.species];
       if (!lods?.length) continue;
-      const d = camPos.distanceTo(new THREE.Vector3(c.x - this.origin.x, c.y, c.z - this.origin.z));
-      if (!a) { const lod = d < LOD_DIST[0] ? 0 : d < LOD_DIST[1] ? 1 : 2; a = this.spawn(lods[Math.min(lod, lods.length - 1)], c.species, () => {}); a.lod = lod; this.creatures.set(c.id, a); continue; }
+      const d = Math.hypot(camPos.x - (c.x - this.origin.x), camPos.y - c.y, camPos.z - (c.z - this.origin.z));
+      // V03: o modelo (esqueleto + mixer) só existe se a criatura ocupar ≥ 1,5 px na tela; some com histerese (10 s)
+      const reach = (CREATURE_SIZE[c.species] ?? 1.2) * this.viewK / 1.5;
+      if (!a) {
+        if (d > reach) { this.stats.notCreated++; continue; }
+        const lod = d < LOD_DIST[0] ? 0 : d < LOD_DIST[1] ? 1 : 2; a = this.spawn(lods[Math.min(lod, lods.length - 1)], c.species, () => {}); a.lod = lod; this.creatures.set(c.id, a); this.stats.created++; continue;
+      }
+      if (d > reach * 1.3) {
+        const since = this.farSince.get(c.id) ?? now; this.farSince.set(c.id, since);
+        if (now - since > 10000 && !a.swapping) { this.release(c.id, a); continue; }
+      } else this.farSince.delete(c.id);
       if (!a.ready) continue;
       // LOD de criatura pela distância (histerese): troca a malha mantendo posição e o tempo do clipe
       const want = d < LOD_DIST[0] * (a.lod === 0 ? 1.15 : 1) ? 0 : d < LOD_DIST[1] * (a.lod === 1 ? 1.15 : 1) ? 1 : 2;
@@ -263,10 +288,21 @@ export class Actors {
       this.tickMixer(a, dt, camPos);
       blob(a.obj, c.species === "lobrapedra" || c.species === "torvalho" || c.species === "nharuk" ? 2.2 : c.species === "silvarano" || c.species === "cavoru" ? 1.6 : 0.9);
     }
-    for (const [id, a] of this.creatures) if (!seen.has(id)) { a.obj.removeFromParent(); this.creatures.delete(id); }
+    for (const [id, a] of this.creatures) if (!seen.has(id)) this.release(id, a);
     this.stats.creatureLods = [0, 0, 0];
-    for (const a of this.creatures.values()) if (a.ready && a.obj.visible) this.stats.creatureLods[a.lod ?? 0]++;
+    let vis = 0;
+    for (const a of this.creatures.values()) if (a.ready && a.obj.visible) { this.stats.creatureLods[a.lod ?? 0]++; vis++; }
+    this.stats.visible = vis;
     this.blobs.count = nb; this.blobs.instanceMatrix.needsUpdate = true;
+  }
+
+  /** Libera o ator: para as ações e o mixer (o esqueleto clonado deixa de ser referenciado). */
+  private release(id: number, a: Actor) {
+    a.obj.removeFromParent();
+    a.mixer.stopAllAction();
+    a.mixer.uncacheRoot(a.obj);
+    this.creatures.delete(id); this.farSince.delete(id);
+    this.stats.released++;
   }
 
   private decorateHunter(a: Actor, h: HunterFull) {
@@ -365,22 +401,35 @@ export class Actors {
     for (const [id, e] of this.traps) if (!list.some(t => t.id === id)) { e.obj.removeFromParent(); this.traps.delete(id); }
   }
 
+  /** Pegadas: base (posição no chão, rumo) recalculada só quando a LISTA muda (o protocolo incremental
+   *  preserva a identidade da lista sem mudanças); por quadro, só o pulso de brilho (escrita direta na matriz). */
+  private trackList: FootprintSnap[] | null = null;
+  private trackBase = new Float32Array(900 * 5);
+  private trackN = 0;
   syncTracks(list: FootprintSnap[], ground: (x: number, z: number) => number | null, now: number) {
-    const m = new THREE.Matrix4(), q = new THREE.Quaternion();
-    let n = 0, prev: FootprintSnap | null = null;
-    for (const f of list) {
-      if (n >= 900) break;
-      const x = f.x - this.origin.x, z = f.z - this.origin.z, y = ground(x, z);
-      if (y === null) { prev = f; continue; }
-      const dir = prev && prev.creature === f.creature ? Math.atan2(f.x - prev.x, f.z - prev.z) : 0;
-      q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), dir);
-      const pulse = 1 + 0.06 * Math.sin(now * 0.004 + f.seq);
-      m.compose(new THREE.Vector3(x + (f.seq % 2 ? 0.18 : -0.18), y + 0.05, z), q, new THREE.Vector3(pulse, 1, pulse));
-      this.prints.setMatrixAt(n++, m);
-      prev = f;
+    if (list !== this.trackList) {
+      this.trackList = list;
+      let n = 0, prev: FootprintSnap | null = null;
+      for (const f of list) {
+        if (n >= 900) break;
+        const x = f.x - this.origin.x, z = f.z - this.origin.z, y = ground(x, z);
+        if (y === null) { prev = f; continue; }
+        const dir = prev && prev.creature === f.creature ? Math.atan2(f.x - prev.x, f.z - prev.z) : 0;
+        const B = this.trackBase, o = n * 5;
+        B[o] = x + (f.seq % 2 ? 0.18 : -0.18); B[o + 1] = y + 0.05; B[o + 2] = z; B[o + 3] = dir; B[o + 4] = f.seq;
+        n++; prev = f;
+      }
+      this.trackN = n;
     }
-    this.prints.count = n; this.prints.instanceMatrix.needsUpdate = true;
+    const E = this.prints.instanceMatrix.array as Float32Array, B = this.trackBase;
+    for (let n = 0; n < this.trackN; n++) {
+      const o = n * 5, c = Math.cos(B[o + 3]), si = Math.sin(B[o + 3]), p = 1 + 0.06 * Math.sin(now * 0.004 + B[o + 4]), e = n * 16;
+      E[e] = c * p; E[e + 1] = 0; E[e + 2] = -si * p; E[e + 3] = 0; E[e + 4] = 0; E[e + 5] = 1; E[e + 6] = 0; E[e + 7] = 0;
+      E[e + 8] = si * p; E[e + 9] = 0; E[e + 10] = c * p; E[e + 11] = 0; E[e + 12] = B[o]; E[e + 13] = B[o + 1]; E[e + 14] = B[o + 2]; E[e + 15] = 1;
+    }
+    this.prints.count = this.trackN; this.prints.instanceMatrix.needsUpdate = this.trackN > 0;
   }
+
 }
 
 function creatureClip(a: Actor, c: CreatureSnap) {

@@ -18,6 +18,8 @@ export interface UiDeps {
   continent: ContinentSummary; settings: GraphicsSettings; perf: Perf; camera: StrategyCamera;
   select: (id: string) => void; setEconomic: (on: boolean) => void; applySettings: (s: GraphicsSettings) => void;
   portrait?: () => Promise<string | null>; setVillagePhase?: (n: number) => void; focusVillage?: () => void;
+  /** V03: exporta o relatório de desempenho (JSON) para o diretor enviar. */
+  exportReport?: () => void;
 }
 
 const ATIV: Record<string, string> = {
@@ -47,6 +49,17 @@ export class Ui {
   private seenEvents = new Set<string>();
   private unread = 0;
   private portraitUrl: string | null = null;
+  // V03: escrita incremental no DOM — só toca o elemento quando o valor muda (mesmo HTML/CSS da V02)
+  private htmlCache = new WeakMap<Element, string>();
+  private refCache = new Map<string, Element>();
+  private html(e: Element, v: string) { if (this.htmlCache.get(e) !== v) { e.innerHTML = v; this.htmlCache.set(e, v); } }
+  private text(e: Element, v: string) { if (e.textContent !== v) e.textContent = v; }
+  private width(e: HTMLElement, v: string) { if (e.style.width !== v) e.style.width = v; }
+  private cls(e: Element, v: string) { if (e.className !== v) e.className = v; }
+  /** Referência DOM reutilizável (consulta uma vez). */
+  private $(root: Element, sel: string, key: string): Element { let e = this.refCache.get(key); if (!e || !e.isConnected) { e = root.querySelector(sel)!; this.refCache.set(key, e); } return e; }
+  /** Retrato vindo da cena 3D (ou do cache local no Modo Econômico). */
+  setPortrait(url: string | null) { if (url && url !== this.portraitUrl) { this.portraitUrl = url; this.lastBig = 0; } }
   private rows = new Map<string, HTMLElement>();
   private modal: HTMLElement | null = null;
   private modalKind = "";
@@ -78,7 +91,7 @@ export class Ui {
   private build() {
     const R = this.root;
     R.innerHTML = "";
-    const logo = el("div", "logo", `<span class="garra">${ICON.cacar}</span><b>WILDHAVEN</b><i>Build Real V02</i>`);
+    const logo = el("div", "logo", `<span class="garra">${ICON.cacar}</span><b>WILDHAVEN</b><i>Build Real V03</i>`);
     const menu = el("nav", "menu painel");
     const items: [string, string, string][] = [
       ["explorar", "Explorar", "Hunters na vila saem para explorar (autônomos)"], ["cacar", "Caçar", "Abrir o Bestiário e escolher a presa"],
@@ -178,7 +191,7 @@ export class Ui {
     this.lastBig = now;
     this.paintClock(s); this.paintExpedition(s); this.paintLocal(s); this.paintBar(s); this.paintCombat(s);
     if (!this.dev.hidden) this.paintDev(s);
-    if (this.modal && (this.modalKind === "mapa" || this.modalKind === "inventario" || this.modalKind === "eventos" || this.modalKind === "acampamento" || this.modalKind === "armadilhas" || this.modalKind === "rastrear") && now % 1000 < 260) this.renderModal();
+    if (this.modal && (this.modalKind === "mapa" || this.modalKind === "inventario" || this.modalKind === "eventos" || this.modalKind === "acampamento" || this.modalKind === "armadilhas" || this.modalKind === "rastrear") && now % 1000 < 260) this.renderModal(true);
   }
 
   private paintClock(s: SnapshotFull) {
@@ -187,13 +200,13 @@ export class Ui {
     const frac = c.phase_elapsed_s / (c.phase_elapsed_s + c.phase_remaining_s);
     const hours = c.phase === "day" ? 6 + 12 * frac : (18 + 12 * frac) % 24;
     const hh = Math.floor(hours), mm = Math.floor((hours - hh) * 60);
-    r.querySelector(".dia")!.textContent = `Dia ${c.cycle + 1} • Ciclo ${c.cycle}`;
-    r.querySelector(".astro")!.innerHTML = c.phase === "day" ? ICON.sol : ICON.lua;
-    r.querySelector(".astro")!.className = "astro " + c.phase;
-    r.querySelector(".hora")!.textContent = `${String(hh).padStart(2, "0")}:${String(mm).padStart(2, "0")}`;
+    this.text(this.$(r, ".dia", "rel.dia")!, `Dia ${c.cycle + 1} • Ciclo ${c.cycle}`);
+    this.html(this.$(r, ".astro", "rel.astro")!, c.phase === "day" ? ICON.sol : ICON.lua);
+    this.cls(this.$(r, ".astro", "rel.astro")!, "astro " + c.phase);
+    this.text(this.$(r, ".hora", "rel.hora")!, `${String(hh).padStart(2, "0")}:${String(mm).padStart(2, "0")}`);
     const w = (s.game as any).weather?.[this.selected];
-    r.querySelector(".tempo")!.innerHTML = w ? `${weatherIcon(w.kind, c.phase === "night")}` : "";
-    (r.querySelector(".tempo") as HTMLElement).title = w ? CLIMA[w.kind] ?? w.kind : "";
+    this.html(this.$(r, ".tempo", "rel.tempo")!, w ? `${weatherIcon(w.kind, c.phase === "night")}` : "");
+    (this.$(r, ".tempo", "rel.tempo") as HTMLElement).title = w ? CLIMA[w.kind] ?? w.kind : "";
   }
 
   private paintExpedition(s: SnapshotFull) {
@@ -202,7 +215,7 @@ export class Ui {
     if (!h) { box.hidden = true; return; }
     box.hidden = false;
     if (!e) {
-      box.innerHTML = `<h3>${ICON.acampamento}<span>${h.activity === "patrulhando" ? "Exploração" : h.activity === "viajando" ? "Viagem" : "Sem expedição"}</span></h3><div class="sub">${esc(h.name)} — ${ATIV[h.activity] ?? h.activity}</div>`;
+      this.html(box!, `<h3>${ICON.acampamento}<span>${h.activity === "patrulhando" ? "Exploração" : h.activity === "viajando" ? "Viagem" : "Sem expedição"}</span></h3><div class="sub">${esc(h.name)} — ${ATIV[h.activity] ?? h.activity}</div>`);
       return;
     }
     const nome = this.gameplay?.especies?.[e.species]?.nome ?? e.species;
@@ -212,9 +225,9 @@ export class Ui {
     const steps = ["Encontrar pegadas", "Seguir o rastro", "Aproximar-se (furtivo)", "Abater ou capturar", "Retornar à vila"];
     const done = (i: number) => (i < stage || (i === 4 && e.state === "concluida"));
     void order;
-    box.innerHTML = `<h3>${ICON.cacar}<span>Expedição Atual</span></h3><div class="sub">${ICON.rastrear}<span>${e.state === "viajando" ? "Viajando até" : "Rastreando"}: ${esc(nome)} — ${e.dest_tile}</span></div>` +
+    this.html(box, `<h3>${ICON.cacar}<span>Expedição Atual</span></h3><div class="sub">${ICON.rastrear}<span>${e.state === "viajando" ? "Viajando até" : "Rastreando"}: ${esc(nome)} — ${e.dest_tile}</span></div>` +
       steps.map((t, i) => `<div class="passo ${done(i) ? "feito" : i === stage ? "atual" : ""}"><span class="cx">${done(i) ? ICON.check : ""}</span>${t}</div>`).join("") +
-      `<div class="mini">${e.members.length} Hunters · ${e.transporte === "carroca" ? "carroça " + (e.wagon ?? "") : "a pé"} · abates ${e.kills}${e.rescuer ? " · resgate em curso" : ""}</div>`;
+      `<div class="mini">${e.members.length} Hunters · ${e.transporte === "carroca" ? "carroça " + (e.wagon ?? "") : "a pé"} · abates ${e.kills}${e.rescuer ? " · resgate em curso" : ""}</div>`);
   }
 
   private paintLocal(s: SnapshotFull) {
@@ -223,39 +236,38 @@ export class Ui {
     const w = (s.game as any).weather?.[h.id];
     const dir = w ? ["Norte", "Nordeste", "Leste", "Sudeste", "Sul", "Sudoeste", "Oeste", "Noroeste"][Math.round(((Math.atan2(w.wind[0], -w.wind[1]) * 180) / Math.PI + 360) % 360 / 45) % 8] : "—";
     const forca = w ? Math.hypot(w.wind[0], w.wind[1]) : 0;
-    this.refs.local.innerHTML = `<div class="b">${ICON.folha}<b>${esc(BIOMA_PT[t?.biome ?? ""] ?? t?.biome ?? "—")}</b><span>— ${h.tile_id}</span></div>
+    this.html(this.refs.local, `<div class="b">${ICON.folha}<b>${esc(BIOMA_PT[t?.biome ?? ""] ?? t?.biome ?? "—")}</b><span>— ${h.tile_id}</span></div>
       <div class="c">${ICON.temp}<span>${w ? Math.round(w.temperatureC) + "°C" : "—"}</span>${ICON.vento}<span>Vento: ${dir} (${forca < 0.7 ? "fraco" : forca < 1.5 ? "moderado" : "forte"})</span></div>
-      <div class="c">${w ? weatherIcon(w.kind, s.clock.phase === "night") : ""}<span>${w ? CLIMA[w.kind] ?? w.kind : ""}${w && w.intensity > 0.05 ? ` · ${(w.intensity * 100).toFixed(0)}%` : ""}${w && w.visionFactor < 0.95 ? ` · visão ×${w.visionFactor.toFixed(2)}` : ""}</span></div>`;
+      <div class="c">${w ? weatherIcon(w.kind, s.clock.phase === "night") : ""}<span>${w ? CLIMA[w.kind] ?? w.kind : ""}${w && w.intensity > 0.05 ? ` · ${(w.intensity * 100).toFixed(0)}%` : ""}${w && w.visionFactor < 0.95 ? ` · visão ×${w.visionFactor.toFixed(2)}` : ""}</span></div>`);
   }
 
   private paintBar(s: SnapshotFull) {
     const h = this.sel(), b = this.refs.barra;
     if (h) {
-      b.querySelector(".arma")!.innerHTML = `${ICON[h.arma] ?? ICON.espada}<span>${ARMA_PT[h.arma] ?? h.arma}</span>`;
-      const img = b.querySelector(".retrato img") as HTMLImageElement;
+      this.html(this.$(b, ".arma", "bar.arma")!, `${ICON[h.arma] ?? ICON.espada}<span>${ARMA_PT[h.arma] ?? h.arma}</span>`);
+      const img = this.$(b, ".retrato img", "bar.retrato img") as HTMLImageElement;
       if (this.portraitUrl && img.src !== this.portraitUrl) img.src = this.portraitUrl;
-      b.querySelector(".retrato .num")!.textContent = String(s.hunters.indexOf(h) + 1).padStart(2, "0");
-      b.querySelector(".retrato")!.className = "retrato " + (h.role === "socorrista" ? "socorrista" : "") + (h.alive ? "" : " morto");
-      b.querySelector(".nome")!.innerHTML = `${esc(h.name)}${h.role === "socorrista" ? ` <small>${ICON.cruz} socorrista</small>` : ""}`;
-      b.querySelector(".vida-txt")!.textContent = `${Math.max(0, Math.round(h.hp))} / ${Math.round(h.hp_max)}`;
-      (b.querySelector(".bar.vida i") as HTMLElement).style.width = pct(h.hp, h.hp_max);
+      this.text(this.$(b, ".retrato .num", "bar.retrato .num")!, String(s.hunters.indexOf(h) + 1).padStart(2, "0"));
+      this.cls(this.$(b, ".retrato", "bar.retrato")!, "retrato " + (h.role === "socorrista" ? "socorrista" : "") + (h.alive ? "" : " morto"));
+      this.html(this.$(b, ".nome", "bar.nome")!, `${esc(h.name)}${h.role === "socorrista" ? ` <small>${ICON.cruz} socorrista</small>` : ""}`);
+      this.text(this.$(b, ".vida-txt", "bar.vida-txt")!, `${Math.max(0, Math.round(h.hp))} / ${Math.round(h.hp_max)}`);
+      this.width(this.$(b, ".bar.vida i", "bar.bar.vida i") as HTMLElement, pct(h.hp, h.hp_max));
       const sk = h.skills[h.arma];
-      b.querySelector(".prof-txt")!.textContent = sk ? `${ARMA_PT[h.arma] ?? h.arma} ${sk.level}/20` : "—";
-      (b.querySelector(".bar.prof i") as HTMLElement).style.width = sk ? pct(sk.level, 20) : "0%";
+      this.text(this.$(b, ".prof-txt", "bar.prof-txt")!, sk ? `${ARMA_PT[h.arma] ?? h.arma} ${sk.level}/20` : "—");
+      this.width(this.$(b, ".bar.prof i", "bar.bar.prof i") as HTMLElement, sk ? pct(sk.level, 20) : "0%");
       const cond = [ATIV[h.activity] ?? h.activity, h.crouched ? "agachado" : "", h.hp < h.hp_max * 0.5 && h.alive ? "ferido" : ""].filter(Boolean).join(" · ");
-      b.querySelector(".estado")!.innerHTML = `${ICON.rastrear}<span>Estado: ${esc(cond)}</span>`;
+      this.html(this.$(b, ".estado", "bar.estado")!, `${ICON.rastrear}<span>Estado: ${esc(cond)}</span>`);
       // slots 1–6: itens agregados do inventário do Hunter (não há poções no servidor ainda)
       const counts = new Map<string, number>(); for (const it of h.inventory) counts.set(it, (counts.get(it) ?? 0) + 1);
-      const slots = b.querySelector(".slots")!; slots.innerHTML = "";
       const list = [...counts.entries()];
+      let slotsHtml = "";
       for (let i = 0; i < 6; i++) {
         const it = list[i];
-        const d = el("div", "slot" + (it ? " cheio" : ""), `<span class="n">${i + 1}</span>${it ? itemIcon(it[0]) + `<span class="q">${it[1]}</span>` : ""}`);
-        if (it) d.title = it[0];
-        slots.append(d);
+        slotsHtml += `<div class="slot${it ? " cheio" : ""}"${it ? ` title="${esc(it[0])}"` : ""}><span class="n">${i + 1}</span>${it ? itemIcon(it[0]) + `<span class="q">${it[1]}</span>` : ""}</div>`;
       }
+      this.html(this.$(b, ".slots", "bar.slots"), slotsHtml); // só reconstrói se os itens mudaram
     }
-    const list = b.querySelector(".hunters")!;
+    const list = this.$(b, ".hunters", "bar.hunters")!;
     for (const [i, x] of s.hunters.entries()) {
       let r = this.rows.get(x.id);
       if (!r) {
@@ -263,13 +275,13 @@ export class Ui {
         const id = x.id; r.onclick = () => this.pick(id); r.title = x.name;
         list.append(r); this.rows.set(x.id, r);
       }
-      r.className = "hcard" + (x.id === this.selected ? " sel" : "") + (x.alive ? "" : " morto") + (x.role === "socorrista" ? " socorrista" : "") + (x.activity === "caido" ? " caido" : "");
+      this.cls(r, "hcard" + (x.id === this.selected ? " sel" : "") + (x.alive ? "" : " morto") + (x.role === "socorrista" ? " socorrista" : "") + (x.activity === "caido" ? " caido" : ""));
       const img = r.querySelector("img") as HTMLImageElement; if (this.portraitUrl && img.src !== this.portraitUrl) img.src = this.portraitUrl;
-      r.querySelector(".n")!.textContent = String(i + 1).padStart(2, "0");
-      r.querySelector(".st")!.innerHTML = x.alive ? (x.role === "socorrista" ? ICON.cruz : x.activity === "combatendo" ? ICON.cacar : x.activity === "na_vila" ? ICON.vila : ICON.rastrear) : ICON.fechar;
-      (r.querySelector(".bar i") as HTMLElement).style.width = pct(x.hp, x.hp_max);
+      this.text(r.querySelector(".n")!, String(i + 1).padStart(2, "0"));
+      this.html(r.querySelector(".st")!, x.alive ? (x.role === "socorrista" ? ICON.cruz : x.activity === "combatendo" ? ICON.cacar : x.activity === "na_vila" ? ICON.vila : ICON.rastrear) : ICON.fechar);
+      this.width(r.querySelector(".bar i") as HTMLElement, pct(x.hp, x.hp_max));
     }
-    const badge = b.querySelector(".alerta .badge") as HTMLElement; badge.textContent = this.unread ? String(Math.min(99, this.unread)) : ""; badge.hidden = !this.unread;
+    const badge = this.$(b, ".alerta .badge", "bar.alerta .badge") as HTMLElement; this.text(badge, this.unread ? String(Math.min(99, this.unread)) : ""); if (badge.hidden !== !this.unread) badge.hidden = !this.unread;
   }
 
   /** Lateral esquerda: arma, informações de combate e condições do Hunter selecionado. */
@@ -279,11 +291,11 @@ export class Ui {
     const alvo = h.target_creature != null ? s.game.creatures.find(c => c.id === h.target_creature) : undefined;
     const nomeAlvo = alvo ? this.gameplay?.especies?.[alvo.species]?.nome ?? alvo.species : null;
     const cond = [h.crouched && "Agachado", h.activity === "caido" && "Caído", !h.alive && "Morto", h.hp < h.hp_max * 0.5 && h.alive && "Ferido", h.activity === "combatendo" && "Em combate", h.activity === "embarcado" && "Na carroça"].filter(Boolean);
-    box.innerHTML = `<div class="t">${ICON[h.arma] ?? ICON.espada}<b>${ARMA_PT[h.arma] ?? h.arma}</b><span>nív. ${k(h.arma)}</span></div>
+    this.html(box, `<div class="t">${ICON[h.arma] ?? ICON.espada}<b>${ARMA_PT[h.arma] ?? h.arma}</b><span>nív. ${k(h.arma)}</span></div>
       <div class="g"><span>Desvio</span><b>${k("desvio")}</b><span>Furtividade</span><b>${k("furtividade")}</b><span>Rastreamento</span><b>${k("rastreamento")}</b><span>Armadilhas</span><b>${k("armadilhas")}</b></div>
       ${nomeAlvo ? `<div class="alvo">${ICON.cacar}<span>Alvo: ${esc(nomeAlvo)} ${alvo ? `(${Math.max(0, Math.round(alvo.hp))}/${Math.round(alvo.hp_max)})` : ""}</span></div>` : ""}
       ${h.last_action ? `<div class="acao">${esc(h.last_action)}</div>` : ""}
-      <div class="cond">${cond.length ? cond.map(c => `<span>${c}</span>`).join("") : "<span class='ok'>Sem condições</span>"}</div>`;
+      <div class="cond">${cond.length ? cond.map(c => `<span>${c}</span>`).join("") : "<span class='ok'>Sem condições</span>"}</div>`);
   }
 
   // ------------------------------------------------------------ janelas
@@ -301,8 +313,20 @@ export class Ui {
     const x = el("button", "x", ICON.fechar); x.onclick = () => this.close(); h.append(x);
     return h;
   }
-  private renderModal() {
+  private modalHtml = "";
+  private renderModal(refresh = false) {
     const m = this.modal, s = this.snap; if (!m || !s) return;
+    // V03: atualização periódica sem reconstruir o DOM: o mapa só redesenha o canvas; as listas só trocam se mudaram
+    if (refresh && this.modalKind === "mapa") { const cv = m.querySelector("canvas.mapa-grande") as HTMLCanvasElement | null; if (cv) { this.drawMap(cv, s, { travel: true }); return; } }
+    if (refresh) {
+      const tmp = el("div", m.className); const real = this.modal; this.modal = tmp;
+      this.buildModal(tmp, s);
+      this.modal = real;
+      if (tmp.innerHTML === this.modalHtml) return;
+    }
+    this.buildModal(m, s);
+  }
+  private buildModal(m: HTMLElement, s: SnapshotFull) {
     const keepScroll = m.querySelector(".corpo")?.scrollTop ?? 0;
     m.innerHTML = "";
     const body = el("div", "corpo");
@@ -320,6 +344,7 @@ export class Ui {
     }
     m.append(body);
     body.scrollTop = keepScroll;
+    this.modalHtml = m.innerHTML;
   }
 
   private bestiary(body: HTMLElement, s: SnapshotFull, openSp?: string) {
@@ -513,39 +538,58 @@ export class Ui {
     body.append(eco);
   }
 
+  /** Menu do desenvolvedor (F3): esqueleto montado UMA vez; cada atualização só escreve as células. */
+  private devRows: [string, (p: any, m: any, sv: any) => string][] = [];
+  private devCells: HTMLElement[] = [];
   private paintDev(s: SnapshotFull) {
-    const p: any = (window as any).__wildhavenPerf ?? {}, c = p.culling ?? {}, w = c.world ?? {}, v = c.veg ?? {}, a = c.actors ?? {}, m: any = (s.game as any).metrics ?? {};
-    const f = (x: any, d = 1) => (typeof x === "number" ? x.toFixed(d) : "—");
-    this.dev.innerHTML = `<h3>Desenvolvedor <small>(${esc(this.devKey)})</small></h3><table>
-      <tr><td>Modo</td><td>${p.mode ?? "—"} · res. ×${f(p.resScale, 2)}</td></tr>
-      <tr><td>FPS médio / 1% low</td><td>${f(p.fps)} / ${f(p.low1)}</td></tr>
-      <tr><td>Quadro / CPU / GPU</td><td>${f(p.frameMs, 2)} / ${f(p.cpuMs, 2)} / ${p.gpuMs == null ? (p.gpuTimer ? "aguardando" : "indisponível") : f(p.gpuMs, 2)} ms</td></tr>
-      <tr><td>Draw calls / triângulos</td><td>${p.drawCalls ?? "—"} / ${p.triangles != null ? (p.triangles / 1000).toFixed(0) + " k" : "—"}</td></tr>
-      <tr><td>RAM JS / VRAM estimada</td><td>${f(p.heapMB, 0)} / ${f(p.vramEstMB, 0)} MB</td></tr>
-      <tr><td>Geometrias / texturas</td><td>${p.geometries ?? "—"} / ${p.textures ?? "—"}</td></tr>
-      <tr><td>Carregamento inicial</td><td>${f(p.loadSeconds, 1)} s</td></tr>
-      <tr><td>Hexes / carregando</td><td>${w.tiles ?? "—"} / ${w.loading ?? 0} · horizonte oculto ${w.horizonHidden ?? 0}</td></tr>
-      <tr><td>Relevo desenhado</td><td>folhas ${w.leavesDrawn ?? 0} · blocos ${w.blocksDrawn ?? 0} · hex inteiro ${w.tilesAsOne ?? 0}</td></tr>
-      <tr><td>Culling relevo</td><td>frustum ${w.frustumCulled ?? 0} · distância ${w.distanceCulled ?? 0} · oclusão ${w.occlusionCulled ?? 0}</td></tr>
-      <tr><td>Vegetação</td><td>${v.drawn ?? 0}/${v.candidates ?? 0} inst. · LOD ${(v.perLod ?? []).join("/")} · ${f(v.updateMs, 2)} ms</td></tr>
-      <tr><td>Culling vegetação (células)</td><td>frustum ${v.cellsFrustum ?? 0} · distância ${v.cellsDistance ?? 0} · oclusão ${v.cellsOcclusion ?? 0}</td></tr>
-      <tr><td>Capim / flores</td><td>${c.grass?.tufts ?? 0} / ${c.grass?.flowers ?? 0} tufos · ${c.grass?.cells ?? 0} células · ${f(c.grass?.ms, 2)} ms</td></tr>
-      <tr><td>Atores</td><td>descartados ${a.actorsCulled ?? 0} · mixers ${a.mixersUpdated ?? 0} atualizados / ${a.mixersSkipped ?? 0} adiados · LOD criaturas ${(a.creatureLods ?? []).join("/")}</td></tr>
-      <tr><td>Servidor: tick</td><td>${f(m.tick_ms, 2)} ms (máx ${f(m.tick_ms_max, 1)}) · ×${this.escala}</td></tr>
-      <tr><td>Criaturas (relevância)</td><td>${m.creatures_total ?? 0}: perto ${m.near ?? 0} · médio ${m.mid ?? 0} · longe ${m.far ?? 0} · congeladas ${m.frozen ?? 0}</td></tr>
-      <tr><td>A* por tick</td><td>${m.astar_used ?? 0}/${m.astar_budget ?? 0} · adiados ${m.astar_deferred ?? 0} · predações ${m.prey_kills ?? 0}</td></tr>
-      </table><div class="devbt"><span>Clima (simulação inteira, no Hunter):</span></div><div class="devbt fases"><span>Vila:</span></div>`;
-    const bt = this.dev.querySelector(".devbt")!;
-    for (const k of ["limpo", "chuva", "tempestade", "neve", "nevasca", "areia"]) {
-      const b = el("button", "", k); b.onclick = async () => {
-        const h = this.sel(); if (!h) return;
-        const r = await fetch("/api/v1/dev/clima", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ tipo: k, x: h.x, z: h.z }) });
-        const j = await r.json(); this.toast(j.message, r.ok ? "ok" : "erro");
-      };
-      bt.append(b);
+    const p: any = (window as any).__wildhavenPerf ?? {}, m: any = (s.game as any).metrics ?? {}, sv: any = (s as any).server ?? {};
+    const f = (x: any, d = 1) => (typeof x === "number" && Number.isFinite(x) ? x.toFixed(d) : "—");
+    if (!this.devCells.length) {
+      const c = (p: any) => p.culling ?? {}, wv = (p: any) => c(p).world ?? {}, vg = (p: any) => c(p).veg ?? {}, ac = (p: any) => c(p).actors ?? {}, st = (p: any) => p.streaming ?? {};
+      this.devRows = [
+        ["Laços", p => `${p.loops?.ativo ?? "—"} · 3D ${p.loops?.tresD ?? "—"} · pixel ${p.loops?.pixel ?? "—"} · UI ${p.loops?.interface ?? "—"} · aba ${p.loops?.visibilidade ?? "—"}`],
+        ["FPS médio / 1% low", p => `${f(p.fps)} / ${f(p.low1)} · desenhados ${p.framesDrawn ?? 0}`],
+        ["Quadro p50/p95/p99 (máx)", p => `${f(p.p50Ms, 1)} / ${f(p.p95Ms, 1)} / ${f(p.p99Ms, 1)} ms (${f(p.maxMs, 0)}) · travamentos >50 ms ${p.stalls50 ?? 0}, >100 ms ${p.stalls100 ?? 0}`],
+        ["CPU / GPU por quadro", p => `${f(p.cpuMs, 2)} ms / ${p.gpuMs == null ? (p.gpuTimer ? "aguardando" : "indisponível") : f(p.gpuMs, 2) + " ms"} · res. ×${f(p.resScale, 2)}`],
+        ["Draw calls / triângulos", p => `${p.drawCalls ?? "—"} / ${p.triangles != null ? (p.triangles / 1000).toFixed(0) + " k" : "—"}`],
+        ["RAM JS / VRAM estimada", p => `${f(p.heapMB, 0)} MB / ${f(p.vramEstMB, 0)} MB · alturas ${f(p.alturasMB, 1)} MB`],
+        ["Relevo (nós)", p => { const r = st(p).relevo ?? {}; return `RAM ${r.emRAM ?? 0} · VRAM ${r.emVRAM ?? 0} · desenhados ${r.desenhados ?? 0} · ocultos ${r.ocultos ?? 0} · descartados ${r.descartados ?? 0} · ${f(r.MB, 0)} MB`; }],
+        ["Streaming", p => { const r = st(p).relevo ?? {}; return `fila ${r.fila ?? 0} · baixando ${r.baixando ?? 0} · cancelados ${r.cancelados ?? 0} · fallback ${r.fallbacks ?? 0} · hexes ${wv(p).tiles ?? 0}`; }],
+        ["Culling relevo", p => `frustum ${wv(p).frustumCulled ?? 0} · distância ${wv(p).distanceCulled ?? 0} · oclusão ${wv(p).occlusionCulled ?? 0} · sem mudança ${wv(p).updatesSkipped ?? 0}`],
+        ["Vegetação", p => `${vg(p).drawn ?? 0}/${vg(p).candidates ?? 0} inst. · LOD ${(vg(p).perLod ?? []).join("/")} · ${f(vg(p).updateMs, 2)} ms · ${f(st(p).vegetacaoMB, 1)} MB`],
+        ["Criaturas (apresentação)", p => { const k = st(p).criaturas ?? {}; return `simuladas ${k.simuladas ?? 0} · modelos ${k.criadas ?? 0} criados / ${k.naoCriadas ?? 0} adiados / ${k.liberadas ?? 0} liberados · visíveis ${k.visiveis ?? 0} · mixers ${ac(p).mixersUpdated ?? 0}`; }],
+        ["Econômico", p => `${f(p.economico?.frameMs, 2)} ms/quadro · regiões ${p.economico?.regions ?? 0} · renderizadas ${p.economico?.rendered ?? 0} · atlas ${p.economico?.atlas ?? 0}`],
+        ["Tarefas ativas", p => Object.entries(p.tarefas ?? {}).map(([k, v]) => `${k} ${v}`).join(" · ")],
+        ["Rede (cliente)", p => `${p.rede?.conectado ? "conectado" : "DESCONECTADO"} · completos ${p.rede?.completos ?? 0} · deltas ${p.rede?.deltas ?? 0} · ressinc. ${p.rede?.ressincronizacoes ?? 0} · ${f((p.rede?.bytesRecebidos ?? 0) / 1048576, 1)} MB`],
+        ["Servidor: CPU / RAM", (_p, _m, sv) => `${f(sv.processo?.cpu_pct, 1)}% de 1 núcleo · ${f(sv.processo?.rss_mb, 0)} MB · thread de simulação ${f(sv.ocupacao_thread_sim_pct, 1)}%`],
+        ["Servidor: intervalo", (_p, _m, sv) => { const i = sv.intervalo_ms ?? {}; return `total ${f(i.total, 2)} ms (p95 ${f(i.p95, 2)}, máx ${f(i.max, 1)}) · janelas ${f(i.janelas_fisicas, 2)} · gameplay ${f(i.gameplay, 2)} · visão/fio ${f(i.visao_fio, 2)}`; }],
+        ["Servidor: escala", (_p, _m, sv) => `×${sv.escala ?? "—"} (efetiva ×${f(sv.escala_efetiva, 2)}) · dívida ${sv.divida_passos ?? 0} · descartados ${sv.passos_descartados ?? 0} · orçamento ${f(sv.orcamento_pct, 0)}%`],
+        ["Servidor: envio", (_p, _m, sv) => `${f((sv.ws?.bytes_por_s ?? 0) / 1024, 1)} KB/s · ${f(sv.ws?.msgs_por_s, 1)} msg/s · ${sv.ws?.clientes ?? 0} cliente(s) · último envio recebido ${f(((window as any).__wildhavenPerf?.rede?.ultimaMensagemBytes ?? 0) / 1024, 1)} KB`],
+        ["Terreno físico (servidor)", (_p, _m, sv) => `${sv.terreno?.resident_chunks ?? 0} chunks · ${f((sv.terreno?.resident_bytes ?? 0) / 1048576, 0)} MB · pré-carga ${sv.terreno?.prefetched ?? 0} · síncronos ${sv.terreno?.sync_loads ?? 0}`],
+        ["Criaturas (simulação)", (_p, m) => `${m.creatures_total ?? 0}: perto ${m.near ?? 0} · médio ${m.mid ?? 0} · longe ${m.far ?? 0} · congeladas ${m.frozen ?? 0} · fila de geração ${m.spawn_queue ?? 0}`],
+        ["A* por tick", (_p, m) => `${m.astar_used ?? 0}/${m.astar_budget ?? 0} · adiados ${m.astar_deferred ?? 0} · predações ${m.prey_kills ?? 0}`],
+      ];
+      const tbl = el("table");
+      for (const [label] of this.devRows) { const tr = el("tr"); const a = el("td"); a.textContent = label; const b = el("td"); tr.append(a, b); tbl.append(tr); this.devCells.push(b); }
+      this.dev.innerHTML = "";
+      this.dev.append(el("h3", "", `Desenvolvedor <small>(${esc(this.devKey)})</small>`), tbl);
+      const bt = el("div", "devbt", "<span>Clima (simulação inteira, no Hunter):</span>");
+      for (const k of ["limpo", "chuva", "tempestade", "neve", "nevasca", "areia"]) {
+        const b = el("button", "", k); b.onclick = async () => {
+          const h = this.sel(); if (!h) return;
+          const r = await fetch("/api/v1/dev/clima", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ tipo: k, x: h.x, z: h.z }) });
+          const j = await r.json(); this.toast(j.message, r.ok ? "ok" : "erro");
+        };
+        bt.append(b);
+      }
+      const fz = el("div", "devbt fases", "<span>Vila:</span>");
+      for (const n of [1, 2, 3, 4]) { const b = el("button", "", `F${n}`); b.onclick = () => this.d.setVillagePhase?.(n); fz.append(b); }
+      const ex = el("div", "devbt", "<span>Desempenho:</span>");
+      const eb = el("button", "", "Exportar relatório (JSON)"); eb.onclick = () => { this.d.exportReport?.(); this.toast("Relatório de desempenho exportado (JSON).", "ok"); };
+      ex.append(eb);
+      this.dev.append(bt, fz, ex);
     }
-    const fz = this.dev.querySelector(".fases")!;
-    for (const n of [1, 2, 3, 4]) { const b = el("button", "", `F${n}`); b.onclick = () => this.d.setVillagePhase?.(n); fz.append(b); }
+    this.devRows.forEach(([, fn], i) => this.text(this.devCells[i], fn(p, m, sv)));
   }
 }
 

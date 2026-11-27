@@ -22,13 +22,15 @@ export interface GraphicsSettings {
   postprocessing: boolean;
   animationQuality: "baixa" | "media" | "alta";
   clouds: boolean;
+  /** V03: limite de quadros do Modo Econômico (12, 15 ou 20 FPS). */
+  ecoFps: number;
 }
 
 export const PROFILES: Record<ProfileName, GraphicsSettings> = {
-  economico: { profile: "economico", viewDistance: 0, terrainErrorPx: 8, vegetationDensity: 0, treeDistance: 0, smallDistance: 0, shadows: "off", fog: "simples", particles: 0, resolutionScale: 0.5, maxPixelRatio: 1, dynamicResolution: false, antialias: false, postprocessing: false, animationQuality: "baixa", clouds: false },
-  baixo: { profile: "baixo", viewDistance: 4500, terrainErrorPx: 4, vegetationDensity: 0.45, treeDistance: 1400, smallDistance: 60, shadows: "off", fog: "simples", particles: 0.3, resolutionScale: 0.75, maxPixelRatio: 1, dynamicResolution: true, antialias: false, postprocessing: false, animationQuality: "baixa", clouds: false },
-  medio: { profile: "medio", viewDistance: 7000, terrainErrorPx: 2.5, vegetationDensity: 0.75, treeDistance: 2200, smallDistance: 110, shadows: "media", fog: "altura", particles: 0.6, resolutionScale: 1, maxPixelRatio: 1.5, dynamicResolution: true, antialias: true, postprocessing: false, animationQuality: "media", clouds: true },
-  alto: { profile: "alto", viewDistance: 10000, terrainErrorPx: 1.5, vegetationDensity: 1, treeDistance: 3200, smallDistance: 160, shadows: "alta", fog: "altura", particles: 1, resolutionScale: 1, maxPixelRatio: 2, dynamicResolution: true, antialias: true, postprocessing: true, animationQuality: "alta", clouds: true },
+  economico: { profile: "economico", viewDistance: 0, terrainErrorPx: 8, vegetationDensity: 0, treeDistance: 0, smallDistance: 0, shadows: "off", fog: "simples", particles: 0, resolutionScale: 0.5, maxPixelRatio: 1, dynamicResolution: false, antialias: false, postprocessing: false, animationQuality: "baixa", clouds: false, ecoFps: 15 },
+  baixo: { profile: "baixo", viewDistance: 4500, terrainErrorPx: 4, vegetationDensity: 0.45, treeDistance: 1400, smallDistance: 60, shadows: "off", fog: "simples", particles: 0.3, resolutionScale: 0.75, maxPixelRatio: 1, dynamicResolution: true, antialias: false, postprocessing: false, animationQuality: "baixa", clouds: false, ecoFps: 15 },
+  medio: { profile: "medio", viewDistance: 7000, terrainErrorPx: 2.5, vegetationDensity: 0.75, treeDistance: 2200, smallDistance: 110, shadows: "media", fog: "altura", particles: 0.6, resolutionScale: 1, maxPixelRatio: 1.5, dynamicResolution: true, antialias: true, postprocessing: false, animationQuality: "media", clouds: true, ecoFps: 15 },
+  alto: { profile: "alto", viewDistance: 10000, terrainErrorPx: 1.5, vegetationDensity: 1, treeDistance: 3200, smallDistance: 160, shadows: "alta", fog: "altura", particles: 1, resolutionScale: 1, maxPixelRatio: 2, dynamicResolution: true, antialias: true, postprocessing: true, animationQuality: "alta", clouds: true, ecoFps: 15 },
 };
 
 const KEY = "wildhaven.v03.graficos";

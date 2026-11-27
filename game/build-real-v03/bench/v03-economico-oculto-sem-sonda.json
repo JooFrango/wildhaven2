@@ -1,0 +1,161 @@
+{
+  "schema": "wildhaven.bench.cliente.v1",
+  "url": "http://127.0.0.1:8791/?perfil=economico",
+  "modo": "oculto",
+  "visibilityState": "hidden",
+  "segundos": 60.049,
+  "carregamento_s": 0.427,
+  "renderer": "Chromium headless + SwiftShader (software) — CPU do 3D inclui rasterização por software; não representa GPU real",
+  "cpu_navegador_pct_nucleo": 0.4163266665556462,
+  "cpu_servidor_pct_nucleo": 0.7993471997868408,
+  "rss_navegador_mb": 958.98046875,
+  "rss_servidor_mb": 73.4453125,
+  "heap_js_mb": 4.156461715698242,
+  "raf": {
+    "quadros": 0,
+    "por_s": 0,
+    "p50_ms": null,
+    "p95_ms": null,
+    "p99_ms": null,
+    "max_ms": null,
+    "low1_fps": null,
+    "travamentos_50ms": 0,
+    "travamentos_100ms": 0
+  },
+  "quadros_desenhados_jogo": 0,
+  "long_tasks": 0,
+  "long_tasks_ms": 0,
+  "ws": {
+    "bytes_por_s": 1725.6573798064915,
+    "msgs_por_s": 0.1998367999467102
+  },
+  "perf_jogo": {
+    "mode": "suspenso",
+    "fps": 15.0311015878601,
+    "low1": 14.749262536913676,
+    "frameMs": 66.52872340425482,
+    "p50Ms": 66.69999999925494,
+    "p95Ms": 67,
+    "p99Ms": 67.70000000018626,
+    "maxMs": 67.79999999981374,
+    "stalls50": 374,
+    "stalls100": 0,
+    "cpuMs": 0.5358090185676393,
+    "gpuMs": null,
+    "gpuTimer": false,
+    "drawCalls": 0,
+    "triangles": 0,
+    "geometries": 0,
+    "textures": 0,
+    "heapMB": 4.117650985717773,
+    "vramEstMB": 0,
+    "loadSeconds": 0.3118999999994412,
+    "resScale": 1,
+    "framesDrawn": 377,
+    "culling": null,
+    "loops": {
+      "ativo": "none",
+      "tresD": "descartado",
+      "pixel": "parado",
+      "interface": "suspensa",
+      "visibilidade": "hidden"
+    },
+    "rede": {
+      "conectado": true,
+      "reconexoes": 0,
+      "completos": 1,
+      "deltas": 74,
+      "ressincronizacoes": 0,
+      "bytesRecebidos": 230858,
+      "ultimaMensagemBytes": 15292
+    },
+    "economico": {
+      "frameMs": 0.348810934093745,
+      "regions": 35,
+      "rendered": 35,
+      "genSwaps": 0,
+      "atlas": 77,
+      "heightsMB": 0.166351318359375
+    },
+    "streaming": null,
+    "alturasMB": 0.166351318359375,
+    "tarefas": {
+      "carregando": 0
+    }
+  },
+  "serie": [
+    {
+      "t": 5,
+      "cpuNavegadorPct": 1.7996400719856027,
+      "cpuServidorPct": 0.7998400319936013,
+      "rssNavegadorMB": 955.734375
+    },
+    {
+      "t": 10,
+      "cpuNavegadorPct": 0.19984012789768185,
+      "cpuServidorPct": 0.7993605115907274,
+      "rssNavegadorMB": 956.015625
+    },
+    {
+      "t": 15,
+      "cpuNavegadorPct": 0.1998800719568259,
+      "cpuServidorPct": 0.7995202878273036,
+      "rssNavegadorMB": 956.16796875
+    },
+    {
+      "t": 20,
+      "cpuNavegadorPct": 0.3996802557953637,
+      "cpuServidorPct": 0.7993605115907274,
+      "rssNavegadorMB": 956.4921875
+    },
+    {
+      "t": 25,
+      "cpuNavegadorPct": 0,
+      "cpuServidorPct": 0.7993605115907274,
+      "rssNavegadorMB": 956.6796875
+    },
+    {
+      "t": 30,
+      "cpuNavegadorPct": 0.3997601439136518,
+      "cpuServidorPct": 0.7995202878273036,
+      "rssNavegadorMB": 962.5078125
+    },
+    {
+      "t": 35,
+      "cpuNavegadorPct": 0.5996402158704777,
+      "cpuServidorPct": 0.7995202878273036,
+      "rssNavegadorMB": 959.1796875
+    },
+    {
+      "t": 40,
+      "cpuNavegadorPct": 0,
+      "cpuServidorPct": 0.7993605115907274,
+      "rssNavegadorMB": 958.66796875
+    },
+    {
+      "t": 45,
+      "cpuNavegadorPct": 0,
+      "cpuServidorPct": 0.9994003597841296,
+      "rssNavegadorMB": 958.40234375
+    },
+    {
+      "t": 50,
+      "cpuNavegadorPct": 0.3996802557953637,
+      "cpuServidorPct": 0.7993605115907274,
+      "rssNavegadorMB": 957.94140625
+    },
+    {
+      "t": 55,
+      "cpuNavegadorPct": 0.1998800719568259,
+      "cpuServidorPct": 0.5996402158704777,
+      "rssNavegadorMB": 958.01953125
+    },
+    {
+      "t": 60,
+      "cpuNavegadorPct": 0.7995202878273036,
+      "cpuServidorPct": 0.7995202878273036,
+      "rssNavegadorMB": 958.85546875
+    }
+  ],
+  "logs": []
+}

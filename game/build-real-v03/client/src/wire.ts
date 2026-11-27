@@ -48,10 +48,11 @@ export class WireState {
   deltas = 0;
   resyncs = 0;
   bytes = 0;
+  lastBytes = 0;
   /** Devolve o estado novo, ou null se a mensagem foi descartada (e `needResync` ficou true). */
   needResync = false;
   receive(text: string): J | null {
-    this.bytes += text.length;
+    this.bytes += text.length; this.lastBytes = text.length;
     let msg: J;
     try { msg = JSON.parse(text); } catch { this.needResync = true; return null; }
     if (msg.$t === "full") {

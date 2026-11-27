@@ -36,7 +36,7 @@ fn boot(root: &std::path::Path) -> Result<World, Box<dyn std::error::Error>> {
         data.relevancia.orcamento_spawn_grupos = if g == 0 { u32::MAX } else { g };
     }
     let mut terrain = TerrainStore::new(continent, physics_dir, allowed, 256 * 1024 * 1024);
-    let game = GameState::new(&data, (s["x"].as_f64().unwrap(), s["z"].as_f64().unwrap()), s["tile"].as_str().unwrap(), walk, spawn["seed"].as_u64().unwrap() as u32, &mut terrain);
+    let game = GameState::new(&data, (s["x"].as_f64().unwrap(), s["z"].as_f64().unwrap()), s["tile"].as_str().unwrap(), walk, std::env::var("WH_SEED").ok().and_then(|v| v.parse().ok()).unwrap_or(spawn["seed"].as_u64().unwrap() as u32), &mut terrain);
     Ok(World::new(WorldClock::new(0), terrain, portals, data, game))
 }
 

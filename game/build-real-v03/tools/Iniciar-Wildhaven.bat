@@ -1,7 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-title Wildhaven - Build Real V02
+title Wildhaven - Build Real V03
 set "WH_REPO_ROOT=%CD%"
 set "WH_BIND=127.0.0.1:8787"
 if not defined WH_TIME_SCALE set "WH_TIME_SCALE=1"

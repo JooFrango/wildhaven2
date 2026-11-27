@@ -1,258 +1,274 @@
-// Cliente da Build Real V02: apresenta a simulação autoritativa do servidor Rust.
-// O jogador só COMANDA e OBSERVA; não move Hunters nem dá golpes. A qualidade gráfica e a câmera
-// nunca alteram a simulação (o servidor simula todos os Hunters e criaturas fora da câmera).
+// Cliente da Build Real V03: apresenta a simulação autoritativa do servidor Rust (o jogador só COMANDA e OBSERVA).
+// Mesma aparência e interface da V02; arquitetura de execução nova:
+// - UM laço por vez (3D, pixel art ou nenhum), controlado por `Loops`; a interface atualiza num temporizador
+//   próprio de 4 Hz (desacoplado do quadro), com retorno imediato de cliques e ordens;
+// - Segundo Plano: aba oculta/minimizada ⇒ nenhum quadro (3D e pixel art parados), sem streaming, sem
+//   partículas, sem interface; o servidor passa a enviar diferenças a cada 5 s ou em acontecimento importante;
+//   ao voltar, ressincronização completa;
+// - Modo Econômico sem NENHUM recurso 3D: não cria renderizador, não baixa GLBs; vindo do 3D, o 3D é suspenso
+//   na hora e DESCARTADO (RAM e VRAM) após 60 s contínuos no Econômico;
+// - WebSocket incremental (wire.ts) com ressincronização; o servidor ajusta a frequência ao modo;
+// - telas de carregamento originais (build real/loading-screen/v02) com progresso REAL por etapa.
 import * as THREE from "three";
 import { SNAPSHOT_SCHEMA, type ContinentSummary, type CreatureSnap, type HunterFull, type SnapshotFull } from "./contracts";
-import { Atmosphere, CLEAR, paletteKey, type WeatherView } from "./atmosphere";
-import { VisualWorld, latticeCenter } from "./visual";
-import { Vegetation } from "./vegetation";
-import { Actors, loadCreatureCatalog } from "./actors";
+import { paletteKey } from "./atmosphere";
+import { HeightIndex, latticeCenter } from "./heights";
+import { loadCreatureCatalog } from "./actors";
 import { StrategyCamera } from "./camera";
-import { WeatherFx, waterMaterial } from "./weatherfx";
-import { Village } from "./village";
-import { GrassField } from "./grass";
 import { EconomicView } from "./economic";
 import { Ui } from "./ui";
-import { loadSettings, saveSettings, PROFILES, type GraphicsSettings } from "./settings";
-import { Perf } from "./perf";
+import { loadSettings, saveSettings, type GraphicsSettings } from "./settings";
+import { Perf, buildReport, downloadJson } from "./perf";
+import { WireState } from "./wire";
+import { Loading, sceneForBiome } from "./loading";
+import type { Scene3D } from "./scene3d";
 
 const params = new URLSearchParams(location.search);
 const settings: GraphicsSettings = loadSettings();
 const view = document.getElementById("view")!;
-const loading = document.getElementById("carregando")!;
-const setLoading = (txt: string, frac: number) => { loading.querySelector(".msg")!.textContent = txt; (loading.querySelector(".barra i") as HTMLElement).style.width = `${Math.round(frac * 100)}%`; };
+const loading = new Loading(document.body, params.get("cena"));
+const ECO_DISPOSE_MS = 60_000;
+const ECO_FPS = [12, 15, 20];
 
-let renderer: THREE.WebGLRenderer;
-function makeRenderer() {
-  const r = new THREE.WebGLRenderer({ antialias: settings.antialias, powerPreference: "high-performance", reversedDepthBuffer: true, stencil: false });
-  r.outputColorSpace = THREE.SRGBColorSpace;
-  r.toneMapping = THREE.ACESFilmicToneMapping;
-  r.toneMappingExposure = 1.05;
-  r.shadowMap.enabled = settings.shadows !== "off";
-  r.shadowMap.type = THREE.PCFSoftShadowMap;
-  r.info.autoReset = false;
-  return r;
+/** Estado de apresentação compartilhado pelos laços. */
+export interface Shared {
+  snap: SnapshotFull; prev: SnapshotFull; recvAt: number; prevAt: number;
+  prevH: Map<string, HunterFull>; prevC: Map<number, CreatureSnap>;
+  follow: string; origin: { x: number; z: number }; continent: ContinentSummary;
 }
-renderer = makeRenderer();
-view.appendChild(renderer.domElement);
-const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x87a9c8);
-const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.5, 60000);
-let resScale = settings.resolutionScale;
-const applySize = () => {
-  renderer.setPixelRatio(Math.min(settings.maxPixelRatio, devicePixelRatio) * resScale);
-  renderer.setSize(innerWidth, innerHeight);
-  camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
-};
-applySize();
-addEventListener("resize", applySize);
+
+async function waitHealth(onTry: (n: number) => void) {
+  for (let n = 1; ; n++) {
+    onTry(n);
+    try { const r = await fetch("/api/v1/health", { cache: "no-store" }); if (r.ok && (await r.text()).trim() === "ok") return; } catch { /* servidor ainda subindo */ }
+    await new Promise(r => setTimeout(r, Math.min(1000, 150 * n)));
+  }
+}
 
 async function main() {
   const t0 = performance.now();
-  setLoading("Conectando ao servidor autoritativo…", 0.05);
+  // ---------------------------------------------------------------- 1. servidor
+  loading.stage(0, null, "Inicializando servidor");
+  await waitHealth(n => n > 1 && loading.stage(0, null, `Inicializando servidor (tentativa ${n})`));
+  // ---------------------------------------------------------------- 2. mundo (continente, catálogo, 1º snapshot pelo WebSocket)
+  loading.stage(1, 0, "Carregando mundo");
   const continent: ContinentSummary = await (await fetch("/api/v1/continent")).json();
-  const first: SnapshotFull = await (await fetch("/api/v1/snapshot")).json();
+  loading.stage(1, 1 / 3, "Carregando mundo: catálogo de espécies");
+  const gameplay = await loadCreatureCatalog().catch(() => null);
+  void gameplay;
+  loading.stage(1, 2 / 3, "Carregando mundo: estado da simulação");
+  const wire = new WireState();
+  const net = { ws: null as WebSocket | null, connected: false, lostAt: 0, reconnects: 0 };
+  let onSnap: (s: SnapshotFull) => void = () => {};
+  const firstSnap = new Promise<SnapshotFull>(resolve => { onSnap = resolve; });
+  const modeName = () => (document.hidden ? "fundo" : economic ? "eco" : "3d");
+  const send = (o: unknown) => { if (net.ws?.readyState === WebSocket.OPEN) net.ws.send(JSON.stringify(o)); };
+  let economic = params.get("modo") === "economico" || settings.profile === "economico";
+  const connect = () => {
+    const ws = new WebSocket(`${location.protocol === "https:" ? "wss" : "ws"}://${location.host}/api/v1/stream`);
+    net.ws = ws;
+    ws.onopen = () => { net.connected = true; send({ modo: modeName() }); if (wire.state) send({ resync: true }); };
+    ws.onmessage = ev => {
+      const s = wire.receive(ev.data);
+      if (wire.needResync) { wire.needResync = false; wire.resyncs++; send({ resync: true }); return; }
+      if (s) onSnap(s as SnapshotFull);
+    };
+    ws.onclose = () => {
+      net.connected = false; net.lostAt = performance.now(); net.reconnects++;
+      // recuperação de sessão: tela de carregamento se a queda passar de 1,5 s
+      setTimeout(() => { if (!net.connected) { loading.show(sceneForBiome(currentBiome()), "Recuperando a sessão com o servidor"); loading.reason = "sessao"; } }, 1500);
+      setTimeout(connect, Math.min(5000, 500 * net.reconnects));
+    };
+  };
+  connect();
+  const first = await firstSnap;
   if (first.schema !== SNAPSHOT_SCHEMA) throw new Error("contrato inesperado: " + first.schema);
   const origin = latticeCenter(first.game.village[0], first.game.village[1]);
-  const atm = new Atmosphere(scene, settings);
-  const world = new VisualWorld(origin, continent.tiles, settings);
-  world.waterMaterial = waterMaterial();
-  const veg = new Vegetation(origin, settings, world);
-  const actors = new Actors(origin, settings);
-  const village = new Village(origin, actors);
-  const fx = new WeatherFx();
-  const grass = new GrassField(world, settings);
-  // Modo de comparação/auditoria (?comparar=original): GLBs ORIGINAIS dos hexes, sem chunks, LOD, culling,
-  // vegetação derivada, horizonte, fog nem shaders da V02 — para conferir fidelidade com a mesma câmera.
-  const ORIGINAL = params.get("comparar") === "original";
-  const NOFOG = params.get("fog") === "0" || ORIGINAL;
-  const camfix = params.get("camfix")?.split(",").map(Number);
-  if (params.get("hud") === "0") document.getElementById("ui")!.style.display = "none";
-  if (ORIGINAL) {
-    const { GLTFLoader } = await import("three/examples/jsm/loaders/GLTFLoader.js");
-    const gl = new GLTFLoader(), orig = new THREE.Group(); orig.name = "originais"; scene.add(orig);
-    const ids = new Set([first.game.village ? "HV_01" : "HV_01"]);
-    for (const t of continent.tiles) { const c = latticeCenter(t.x, t.z); if (Math.hypot(c.x - origin.x, c.z - origin.z) < 6000) ids.add(t.id); }
-    for (const id of ids) {
-      const t = continent.tiles.find(x => x.id === id)!; const c = latticeCenter(t.x, t.z);
-      const g = await gl.loadAsync(`/glb/terrain/${id}`).catch(() => null); if (!g) continue;
-      g.scene.position.set(c.x - origin.x, 0, c.z - origin.z); g.scene.name = "original:" + id; orig.add(g.scene);
-    }
-    // ativos originais da vila (mesma transformação horizontal do hex HV_01)
-    for (const f of ["phase_1.glb", "hv_01_forest.glb"]) { const g = await gl.loadAsync(`/world/hunters-village-v01/models/${f}`).catch(() => null); if (g) { g.scene.position.set(28145.825623 - origin.x, 0, -3750 - origin.z); orig.add(g.scene); } }
-    (window as any).__wildhavenOriginais = [...ids];
-  } else scene.add(world.group, veg.group, grass.group, village.group);
-  scene.add(actors.group, fx.points);
-  const ground = (x: number, z: number) => world.heightAt(x, z, "max");
-  const cam = new StrategyCamera(camera, renderer.domElement, ground);
-  const gameplay = await loadCreatureCatalog().catch(() => null);
-  setLoading("Carregando horizonte do continente (272 hexes)…", 0.15);
-  if (!ORIGINAL) await world.loadHorizon("/v02/horizon/horizonte-272-v01.glb").catch(e => console.warn("horizonte", e));
-  setLoading("Carregando vegetação e protótipos…", 0.3);
-  await veg.init().catch(e => console.warn("vegetação", e));
-  village.load().catch(e => console.warn("vila", e));
+  const heights = new HeightIndex(origin, continent.tiles);
+  heights.available = await fetch("/visual/index.json").then(r => (r.ok ? r.json() : null)).then(j => (j ? new Set<string>(j.tiles) : null)).catch(() => null);
+  const S: Shared = { snap: first, prev: first, recvAt: performance.now(), prevAt: performance.now(), prevH: new Map(), prevC: new Map(), follow: first.hunters[0]?.id ?? "", origin, continent };
+  onSnap = s => {
+    if (s.tick === S.snap.tick) return;
+    S.prev = S.snap; S.prevAt = S.recvAt; S.snap = s; S.recvAt = performance.now();
+    // mapas do quadro anterior montados UMA vez por mensagem (a V02 montava a cada quadro)
+    S.prevH = new Map(S.prev.hunters.map(h => [h.id, h as HunterFull]));
+    S.prevC = new Map(S.prev.game.creatures.map(c => [c.id, c as CreatureSnap]));
+    if (!net.connected || loading.reason === "sessao") loading.hide();
+    loading.reason = "";
+  };
+  const currentBiome = () => { const fh = S.snap.hunters.find(h => h.id === S.follow); return continent.tiles.find(t => t.id === fh?.tile_id)?.biome ?? ""; };
+  loading.remember(currentBiome());
 
-  let snap = first, prev = first, recvAt = performance.now(), prevAt = recvAt;
-  let follow = first.hunters[0]?.id ?? "";
-  const eco = new EconomicView(document.body);
-  let economic = false;
-  const perf = new Perf(renderer);
-  (renderer as any).__whScene = scene;
-  const ui = new Ui({
-    continent, settings, perf,
-    select: id => { follow = id; cam.focusOn(); actors.setSelected(id); },
-    setEconomic: on => setMode(on),
-    applySettings: (s: GraphicsSettings) => {
-      const needRenderer = s.antialias !== settings.antialias;
-      Object.assign(settings, s); saveSettings(settings); resScale = settings.resolutionScale;
-      atm.applyShadows(); renderer.shadowMap.enabled = settings.shadows !== "off"; applySize();
-      if (needRenderer) ui.toast("Antisserrilhado muda ao recarregar a página.");
-      if (settings.profile === "economico" && !economic) setMode(true);
-    },
-    camera: cam,
-    portrait: () => renderPortrait(renderer, actors),
-    setVillagePhase: n => { village.load(n).then(() => ui.toast(`Vila: fase ${n} (apresentação; regra econômica pendente)`)).catch(() => {}); },
-    focusVillage: () => { cam.focusOn(); const v = snap.hunters.find(h => h.activity === "na_vila"); if (v) { follow = v.id; ui.selected = v.id; actors.setSelected(v.id); } },
-  });
-  ui.selected = follow; actors.setSelected(follow);
-  const setMode = (on: boolean) => {
+  // ---------------------------------------------------------------- câmera persistente (sobrevive ao descarte do 3D)
+  const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.5, 60000);
+  const ground = (x: number, z: number) => heights.heightAt(x, z, "max");
+  const cam = new StrategyCamera(camera, view, ground);
+  const f0 = first.hunters.find(h => h.id === S.follow) ?? first.hunters[0];
+  cam.target.set((f0?.x ?? origin.x) - origin.x, f0?.y ?? 900, (f0?.z ?? origin.z) - origin.z);
+  const cp = params.get("cam")?.split(",").map(Number);
+  if (cp && cp.length >= 2) { cam.zoomTo(cp[0]); (cam as any).wantPitch = (cam as any).pitch = (cp[1] * Math.PI) / 180; if (cp[2] !== undefined) (cam as any).wantYaw = (cam as any).yaw = (cp[2] * Math.PI) / 180; (cam as any).dist = cp[0]; }
+
+  const perf = new Perf();
+  const eco = new EconomicView(document.body, heights);
+  let scene3d: Scene3D | null = null;
+  let scene3dLoading: Promise<Scene3D> | null = null;
+  let ecoSince = 0;
+  const loops = { kind: "none" as "none" | "3d" | "pixel", ecoTimer: 0, ecoNext: 0 };
+  const uiState = { timer: 0 };
+
+  /** Cria e inicializa a cena 3D (relevo, horizonte, vegetação, Hunters) com progresso real. */
+  const ensure3D = async (initial: boolean): Promise<Scene3D> => {
+    if (scene3d) return scene3d;
+    if (scene3dLoading) return scene3dLoading;
+    scene3dLoading = (async () => {
+      const { Scene3D } = await import("./scene3d");
+      const s = new Scene3D(view, camera, cam, heights, S, settings, perf, params);
+      let slow = 0;
+      if (!initial) slow = window.setTimeout(() => loading.show(sceneForBiome(currentBiome()), "Preparando o mundo 3D"), 400);
+      await s.init((stage, frac, label) => loading.stage(stage, frac, label), initial);
+      clearTimeout(slow);
+      if (!initial) loading.hide();
+      scene3d = s; scene3dLoading = null;
+      ui.setPortrait(s.portraitUrl);
+      return s;
+    })();
+    return scene3dLoading;
+  };
+
+  // ---------------------------------------------------------------- laços (nunca simultâneos)
+  const stopLoops = () => {
+    scene3d?.stopLoop();
+    clearTimeout(loops.ecoTimer); loops.ecoTimer = 0;
+    loops.kind = "none";
+  };
+  const ecoInterval = () => 1000 / (ECO_FPS.includes(settings.ecoFps) ? settings.ecoFps : 15);
+  const ecoTick = () => {
+    loops.ecoTimer = 0;
+    if (loops.kind !== "pixel" || document.hidden) return;
+    const tf = performance.now();
+    const fh = S.snap.hunters.find(h => h.id === S.follow) ?? S.snap.hunters[0];
+    if (fh) {
+      // relevo compacto do hex do Hunter e vizinhos (sem GLB)
+      if (tf - ecoStreamAt > 1000) { ecoStreamAt = tf; for (const t of heights.near(fh.x - origin.x, fh.z - origin.z, 4200)) heights.load(t.id); const t = continent.tiles.find(x => x.id === fh.tile_id); if (t) eco.biomeKey = paletteKey(t.biome); }
+      if (eco.draw(S.snap, { x: fh.x, z: fh.z }, tf, origin, fh.id, 0)) perf.frame(performance.now() - tf, null);
+    }
+    // descarte do 3D após 60 s contínuos no Econômico
+    if (scene3d && ecoSince && tf - ecoSince > ECO_DISPOSE_MS) { scene3d.dispose(); scene3d = null; perf.attach(null); ui.log("Recursos 3D descartados da memória (Modo Econômico há mais de 60 s)."); }
+    loops.ecoNext = Math.max(loops.ecoNext + ecoInterval(), tf + 1);
+    loops.ecoTimer = window.setTimeout(ecoTick, Math.max(0, loops.ecoNext - performance.now()));
+  };
+  let ecoStreamAt = 0;
+  const startLoop = () => {
+    stopLoops();
+    if (document.hidden) { perf.mode = "suspenso"; return; }
+    if (economic) {
+      loops.kind = "pixel"; perf.mode = "pixel"; loops.ecoNext = performance.now();
+      view.hidden = true; eco.canvas.hidden = false;
+      ecoTick();
+    } else if (scene3d) {
+      loops.kind = "3d"; perf.mode = "3d";
+      view.hidden = false; eco.canvas.hidden = true;
+      scene3d.startLoop(() => ui);
+    }
+  };
+  const setMode = async (on: boolean) => {
+    if (on === economic && (on || scene3d)) { startLoop(); return; }
     economic = on;
-    renderer.domElement.hidden = on;
-    eco.canvas.hidden = !on;
-    perf.mode = on ? "pixel" : "3d";
-    ui.log(on ? "Modo Econômico: apresentação pixel art; renderização 3D SUSPENSA (simulação idêntica no servidor)." : "Modo 3D retomado.");
-    if (on) { renderer.setAnimationLoop(null); ecoLoop(); } else { cancelAnimationFrame(ecoRaf); renderer.setAnimationLoop(frame); }
+    send({ modo: modeName() });
+    if (on) {
+      ecoSince = performance.now();
+      scene3d?.suspend();
+      ui.log("Modo Econômico: pixel art; renderização 3D SUSPENSA (descartada após 60 s; simulação idêntica no servidor).");
+      startLoop();
+    } else {
+      ecoSince = 0;
+      stopLoops(); eco.canvas.hidden = true;
+      await ensure3D(false);
+      if (!economic) { scene3d!.resume(); startLoop(); ui.log("Modo 3D retomado."); }
+    }
   };
   (window as any).__wildhavenSetMode = setMode;
   (window as any).__wildhavenCamera = cam;
 
-  const ws = new WebSocket(`${location.protocol === "https:" ? "wss" : "ws"}://${location.host}/api/v1/stream`);
-  ws.onmessage = ev => {
-    const s: SnapshotFull = JSON.parse(ev.data);
-    if (s.schema !== SNAPSHOT_SCHEMA || s.tick === snap.tick) return;
-    prev = snap; prevAt = recvAt; snap = s; recvAt = performance.now();
-  };
-  ws.onclose = () => ui.log("Conexão com o servidor encerrada.");
+  // ---------------------------------------------------------------- interface (temporizador próprio, 4 Hz)
+  const ui = new Ui({
+    continent, settings, perf,
+    select: id => { S.follow = id; cam.focusOn(); scene3d?.actors.setSelected(id); loading.remember(currentBiome()); },
+    setEconomic: on => { void setMode(on); },
+    applySettings: (s: GraphicsSettings) => {
+      const needRenderer = s.antialias !== settings.antialias;
+      Object.assign(settings, s); saveSettings(settings);
+      scene3d?.applySettings();
+      if (needRenderer) ui.toast("Antisserrilhado muda ao recarregar a página.");
+      if (settings.profile === "economico" && !economic) void setMode(true);
+      if (loops.kind === "pixel") { loops.ecoNext = performance.now(); }
+    },
+    camera: cam,
+    portrait: async () => scene3d?.portraitUrl ?? cachedPortrait(),
+    setVillagePhase: n => { scene3d?.village.load(n).then(() => ui.toast(`Vila: fase ${n} (apresentação; regra econômica pendente)`)).catch(() => {}); },
+    focusVillage: () => { cam.focusOn(); const v = S.snap.hunters.find(h => h.activity === "na_vila"); if (v) { S.follow = v.id; ui.selected = v.id; scene3d?.actors.setSelected(v.id); } },
+    exportReport: () => downloadJson(`wildhaven-desempenho-${new Date().toISOString().replace(/[:.]/g, "-")}.json`, buildReport(perf, (S.snap as any).server ?? null, settings, { rede: wireStats(), carregamento_s: perf.loadSeconds })),
+  });
+  ui.selected = S.follow;
+  const uiTick = () => { if (!document.hidden) ui.frame(S.snap, performance.now()); };
+  const startUi = () => { clearInterval(uiState.timer); uiState.timer = window.setInterval(uiTick, 250); uiTick(); };
+  const wireStats = () => ({ conectado: net.connected, reconexoes: net.reconnects, completos: wire.fulls, deltas: wire.deltas, ressincronizacoes: wire.resyncs, bytesRecebidos: wire.bytes, ultimaMensagemBytes: wire.lastBytes });
+  perf.extra = () => ({
+    loops: { ativo: loops.kind, tresD: scene3d ? (loops.kind === "3d" ? "rodando" : "suspenso") : "descartado", pixel: loops.kind === "pixel" ? "rodando" : "parado", interface: document.hidden ? "suspensa" : "4 Hz", visibilidade: document.visibilityState },
+    rede: wireStats(),
+    economico: eco.stats,
+    streaming: scene3d?.streamingStats() ?? null,
+    alturasMB: heights.bytes / 1048576,
+    tarefas: scene3d?.tasks() ?? { carregando: 0 },
+  });
+  // em Segundo Plano o `perf` não recebe quadros: publica por temporizador lento (sem custo visual)
+  setInterval(() => { if (loops.kind === "none") perf.publish(); }, 2000);
 
-  // primeira carga: espera o hex do Hunter seguido e vizinhos
-  setLoading("Carregando o hex inicial e vizinhos…", 0.45);
-  const f0 = first.hunters.find(h => h.id === follow) ?? first.hunters[0];
-  const focus0 = new THREE.Vector3((f0?.x ?? origin.x) - origin.x, f0?.y ?? 900, (f0?.z ?? origin.z) - origin.z);
-  cam.target.copy(focus0);
-  // parâmetros de captura/benchmark: ?cam=distância,inclinação,rumo (graus)
-  const cp = params.get("cam")?.split(",").map(Number);
-  if (cp && cp.length >= 2) { cam.zoomTo(cp[0]); (cam as any).wantPitch = (cam as any).pitch = (cp[1] * Math.PI) / 180; if (cp[2] !== undefined) (cam as any).wantYaw = (cam as any).yaw = (cp[2] * Math.PI) / 180; (cam as any).dist = cp[0]; }
-  for (let i = 0; i < 60 && world.tiles.size < Math.min(3, continent.tiles.length); i++) { world.stream(focus0, new THREE.Vector3()); await new Promise(r => setTimeout(r, 250)); setLoading(`Carregando hexes… ${world.tiles.size}`, 0.45 + 0.08 * world.tiles.size); }
-  veg.stream();
+  // ---------------------------------------------------------------- segundo plano
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopLoops(); scene3d?.suspend(); clearInterval(uiState.timer);
+      perf.mode = "suspenso"; perf.pause();
+      send({ modo: "fundo" });
+    } else {
+      send({ modo: modeName() }); send({ resync: true }); // estado completo ao voltar
+      if (!economic) scene3d?.resume();
+      startLoop(); startUi();
+    }
+  });
+
+  // ---------------------------------------------------------------- carregamento inicial
+  if (economic) {
+    loading.stage(2, 0, "Carregando terrenos (grade de alturas)");
+    const near = heights.near(f0.x - origin.x, f0.z - origin.z, 4200);
+    let done = 0;
+    await Promise.all(near.map(t => heights.load(t.id).then(() => loading.stage(2, ++done / near.length, `Carregando terrenos: ${done}/${near.length} hexes`))));
+    loading.stage(3, 1, "Preparando criaturas: não se aplica no Modo Econômico (sem modelos 3D)");
+    loading.stage(4, 1, "Sincronizando Hunters");
+  } else {
+    await ensure3D(true);
+  }
+  loading.stage(5, 0.5, "Preparando interface");
+  startUi();
+  loading.stage(5, 1, "Pronto");
   perf.loadSeconds = (performance.now() - t0) / 1000;
-  loading.classList.add("fim"); setTimeout(() => (loading.hidden = true), 900);
-  if (params.get("modo") === "economico" || settings.profile === "economico") setMode(true);
-
-  const clock = new THREE.Clock();
-  const frustum = new THREE.Frustum(), pv = new THREE.Matrix4();
-  let streamT = 0, dynT = 0, ecoRaf = 0;
-  const weatherOf = (s: SnapshotFull): WeatherView => ((s.game as any).weather?.[follow] as WeatherView | undefined) ?? CLEAR;
-
-  const frame = () => {
-    const tf = performance.now();
-    const dt = Math.min(0.1, clock.getDelta());
-    const span = Math.max(1, recvAt - prevAt), a = Math.min(1, (tf - recvAt) / span);
-    const simNow = snap.sim_time_s + Math.min(1, (tf - recvAt) / 1000) * ((snap.sim_time_s - prev.sim_time_s) / Math.max(0.001, span / 1000));
-    const fh = snap.hunters.find(h => h.id === follow) ?? snap.hunters[0];
-    const fa = fh ? actors.hunters.get(fh.id) : undefined;
-    const focus = fa?.ready ? fa.obj.position.clone() : fh ? new THREE.Vector3(fh.x - origin.x, fh.y, fh.z - origin.z) : null;
-    // enquadramento de combate: criatura-alvo do Hunter seguido
-    const tgt = fh?.target_creature != null && fh.activity === "combatendo" ? actors.creatures.get(fh.target_creature)?.obj.position ?? null : null;
-    if (camfix && camfix.length === 6) { camera.position.set(camfix[0], camfix[1], camfix[2]); camera.lookAt(camfix[3], camfix[4], camfix[5]); camera.far = 60000; camera.near = 1; camera.updateProjectionMatrix(); cam.target.set(camfix[3], camfix[4], camfix[5]); }
-    else cam.update(dt, focus, tgt);
-    camera.updateMatrixWorld();
-    pv.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse); frustum.setFromProjectionMatrix(pv);
-    if (tf - streamT > 400) {
-      streamT = tf;
-      // os hexes de TODOS os Hunters fora da vila ficam carregados; a câmera prioriza o seguido
-      world.stream(cam.target, cam.velocity);
-      veg.stream();
-      const tile = continent.tiles.find(t => t.id === fh?.tile_id);
-      if (tile) atm.setBiome(tile.biome, fh!.y);
-    }
-    const w = weatherOf(snap);
-    atm.weather = w;
-    atm.update(dt, snap.clock, cam.target, camera);
-    if (NOFOG) scene.fog = null; else scene.fog = atm.fog;
-    world.update(camera, renderer.domElement.height);
-    veg.update(camera, renderer.domElement.height, tf);
-    grass.update(cam.target, camera, tf);
-    const prevH = new Map(prev.hunters.map(h => [h.id, h as HunterFull]));
-    const prevC = new Map(prev.game.creatures.map(c => [c.id, c as CreatureSnap]));
-    actors.simTime = simNow;
-    actors.sync(snap.hunters, prevH, snap.game.creatures, prevC, a, dt, simNow, camera.position, ground, (o, b) => world.occlusionTest(o, b), frustum);
-    actors.syncWagons(snap.game.wagons, snap.hunters, dt, camera.position);
-    actors.syncCamps(snap.game.camps, ground);
-    actors.syncTraps(snap.game.traps, ground, dt);
-    actors.syncTracks(snap.game.tracks, ground, tf);
-    village.update(camera, dt);
-    fx.update(camera.position, w.kind, w.intensity, settings.particles);
-    village.night = atm.night;
-    renderer.info.reset();
-    perf.beginGpu();
-    renderer.render(scene, camera);
-    perf.endGpu();
-    perf.frame(performance.now() - tf, { world: world.stats, veg: veg.stats, actors: actors.stats, grass: grass.stats });
-    // resolução dinâmica: busca 60 FPS (16,7 ms) sem descer de 50% da resolução
-    if (settings.dynamicResolution && tf - dynT > 1500) {
-      dynT = tf;
-      const ms = perf.gpuOrFrameMs();
-      const next = ms > 19 ? Math.max(0.5, resScale - 0.1) : ms < 12 ? Math.min(settings.resolutionScale, resScale + 0.05) : resScale;
-      if (Math.abs(next - resScale) > 0.01) { resScale = next; applySize(); }
-      perf.resScale = resScale;
-    }
-    ui.frame(snap, tf);
-  };
-  const ecoLoop = () => {
-    const tf = performance.now();
-    const fh = snap.hunters.find(h => h.id === follow) ?? snap.hunters[0];
-    if (tf - streamT > 1000 && fh) { streamT = tf; world.stream(new THREE.Vector3(fh.x - origin.x, fh.y, fh.z - origin.z), new THREE.Vector3()); const t = continent.tiles.find(x => x.id === fh.tile_id); if (t) eco.biomeKey = paletteKey(t.biome); }
-    if (fh) eco.draw(snap, { x: fh.x, z: fh.z }, tf, world, origin, fh.id);
-    perf.frame(performance.now() - tf, null);
-    ui.frame(snap, tf);
-    ecoRaf = requestAnimationFrame(ecoLoop);
-  };
-  renderer.setAnimationLoop(frame);
+  loading.hide();
+  startLoop();
+  if (economic) ecoSince = performance.now();
   (window as any).__wildhavenPerf = perf.public;
+  perf.publish();
+
+  // carregamentos prolongados de região (ex.: Hunter seguido chega a um hex sem relevo pronto): tela de carregamento
+  setInterval(() => {
+    if (document.hidden || economic || !scene3d || loops.kind !== "3d") return;
+    const slow = scene3d.regionStalledMs();
+    if (slow > 1500 && !loading.visible) { loading.show(sceneForBiome(currentBiome()), "Carregando terrenos da região"); loading.reason = "regiao"; }
+    else if (slow === 0 && loading.reason === "regiao") { loading.hide(); loading.reason = ""; }
+  }, 500);
 }
-/** Retrato do Hunter: render real do GLB (cabeça/ombros) num alvo fora da tela, uma vez. */
-async function renderPortrait(r: THREE.WebGLRenderer, actors: Actors): Promise<string | null> {
-  const g = await actors.template("/glb/hunter.glb");
-  const { clone } = await import("three/examples/jsm/utils/SkeletonUtils.js");
-  const obj = clone(g.scene);
-  const sc = new THREE.Scene();
-  sc.background = new THREE.Color(0x2a2219);
-  sc.add(new THREE.HemisphereLight(0xffe8c8, 0x302418, 1.4));
-  const key = new THREE.DirectionalLight(0xffd7a0, 2.6); key.position.set(1.5, 2.5, 2.5); sc.add(key);
-  const rim = new THREE.DirectionalLight(0x9fc4ff, 1.4); rim.position.set(-2, 2, -2); sc.add(rim);
-  sc.add(obj);
-  const mixer = new THREE.AnimationMixer(obj);
-  const clip = g.animations.find(a => a.name === "pvp12_guard") ?? g.animations[0];
-  if (clip) { mixer.clipAction(clip).play(); mixer.update(0.8); }
-  obj.updateMatrixWorld(true);
-  const box = new THREE.Box3().setFromObject(obj), h = box.max.y - box.min.y;
-  const cam = new THREE.PerspectiveCamera(30, 1, 0.05, 50);
-  // a caixa inclui a espada erguida: a cabeça fica pela altura do osso Head
-  let headBone: THREE.Object3D | undefined; obj.traverse(o => { if (o.name === "Head") headBone = o; });
-  const head = headBone ? headBone.getWorldPosition(new THREE.Vector3()) : new THREE.Vector3((box.min.x + box.max.x) / 2, box.min.y + h * 0.8, (box.min.z + box.max.z) / 2);
-  head.y += 0.06;
-  cam.position.copy(head).add(new THREE.Vector3(0.22, 0.02, 0.62)); cam.lookAt(head.x, head.y - 0.08, head.z);
-  const rt = new THREE.WebGLRenderTarget(160, 160, { samples: 4 });
-  rt.texture.colorSpace = THREE.SRGBColorSpace;
-  r.setRenderTarget(rt); r.render(sc, cam); r.setRenderTarget(null);
-  const px = new Uint8Array(160 * 160 * 4);
-  r.readRenderTargetPixels(rt, 0, 0, 160, 160, px);
-  rt.dispose();
-  const c = document.createElement("canvas"); c.width = c.height = 160;
-  const ctx = c.getContext("2d")!, img = ctx.createImageData(160, 160);
-  for (let y = 0; y < 160; y++) img.data.set(px.subarray((159 - y) * 640, (160 - y) * 640), y * 640);
-  ctx.putImageData(img, 0, 0);
-  return c.toDataURL("image/png");
+
+function cachedPortrait(): string | null {
+  try { return localStorage.getItem("wildhaven.v03.retrato"); } catch { return null; }
 }
-main().catch(e => { console.error(e); setLoading("Erro: " + (e?.message ?? e), 1); });
-void PROFILES;
+
+main().catch(e => { console.error(e); loading.error("Erro: " + (e?.message ?? e)); });

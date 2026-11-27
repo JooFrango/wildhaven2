@@ -3,6 +3,10 @@
 // A cada atualização (orçamento, não a cada quadro) as células passam por frustum, distância,
 // oclusão pelo relevo e densidade por distância; cada instância escolhe o LOD pelo TAMANHO
 // PROJETADO na tela; o fade de aparecimento usa dithering (sem transparência).
+// V03 (mesmo resultado visual, menos CPU): matrizes e cores de cada instância calculadas UMA vez por hex
+// (antes: compose() por instância a cada atualização, 4×/s mesmo com a câmera parada); atualização só quando
+// a câmera anda/gira ou há fade de aparecimento em curso; dados de um hex só carregados quando ele entra no
+// alcance das árvores e descartados quando sai (com folga).
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { patchMaterial } from "./atmosphere";
@@ -11,7 +15,7 @@ import type { VisualWorld } from "./visual";
 
 interface ProtoJ { id: number; family: string; kind: "tree" | "small" | "rock"; height: number; crown: number; nodes: string[]; tris: number[] }
 interface CellJ { i: number; j: number; start: number; count: number; maxH: number }
-interface TileVeg { id: string; data: Float32Array; F: number; cells: (CellJ & { box: THREE.Box3; key: object })[]; ox: number; oz: number }
+interface TileVeg { id: string; data: Float32Array; F: number; cells: (CellJ & { box: THREE.Box3; key: object })[]; ox: number; oz: number; mats: Float32Array; cols: Float32Array; born: Float64Array; wbox: THREE.Box3 }
 
 const MAXI = [6000, 9000, 14000, 26000];
 
@@ -27,7 +31,8 @@ export class Vegetation {
   private lastCam = new THREE.Vector3(1e9, 0, 0);
   private lastDir = new THREE.Vector3();
   private lastUpdate = 0;
-  private appear = new Map<number, number>(); // id de instância → instante em que apareceu
+  private fading = false;
+  private dirty = true;
   private frustum = new THREE.Frustum();
   private m4 = new THREE.Matrix4();
   private q = new THREE.Quaternion();
@@ -72,9 +77,12 @@ export class Vegetation {
     this.ready = true;
   }
 
-  stream() {
+  stream(focus: THREE.Vector3) {
+    const reach = this.settings.treeDistance;
+    if (reach <= 0 || this.settings.vegetationDensity <= 0) { if (this.tiles.size) { this.tiles.clear(); this.dirty = true; } return; }
     for (const tv of this.world.tiles.values()) {
       if (this.tiles.has(tv.id) || this.loading.has(tv.id)) continue;
+      if (tv.wbox.distanceToPoint(focus) > reach + 600) continue; // fora do alcance das árvores: nem baixa
       this.loading.add(tv.id);
       Promise.all([fetch(`/visual/${tv.id}/veg.json`).then(r => r.json()), fetch(`/visual/${tv.id}/veg.bin`).then(r => r.arrayBuffer())]).then(([j, b]) => {
         const data = new Float32Array(b), F = j.floatsPerInstance;
@@ -83,21 +91,34 @@ export class Vegetation {
           for (let n = c.start; n < c.start + c.count; n++) y0 = Math.min(y0, data[n * F + 1]);
           return { ...c, box: new THREE.Box3(new THREE.Vector3(c.i * 256 - 20 + tv.ox, y0 - 2, c.j * 256 - 20 + tv.oz), new THREE.Vector3(c.i * 256 + 276 + tv.ox, c.maxH + 2, c.j * 256 + 276 + tv.oz)), key: {} };
         });
-        this.tiles.set(tv.id, { id: tv.id, data, F, cells, ox: tv.ox, oz: tv.oz });
-        this.lastCam.set(1e9, 0, 0);
+        // pré-cálculo (uma vez): matriz e cor de cada instância
+        const N = Math.floor(data.length / F), mats = new Float32Array(N * 16), cols = new Float32Array(N * 3);
+        const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(), p = new THREE.Vector3(), yAxis = new THREE.Vector3(0, 1, 0);
+        for (let n = 0; n < N; n++) {
+          const o = n * F;
+          q.setFromAxisAngle(yAxis, data[o + 3]); sc.setScalar(data[o + 4]); p.set(data[o] + tv.ox, data[o + 1], data[o + 2] + tv.oz);
+          m4.compose(p, q, sc); m4.toArray(mats, n * 16);
+          cols[n * 3] = Math.min(1.6, data[o + 6]); cols[n * 3 + 1] = Math.min(1.6, data[o + 7]); cols[n * 3 + 2] = Math.min(1.6, data[o + 8]);
+        }
+        this.tiles.set(tv.id, { id: tv.id, data, F, cells, ox: tv.ox, oz: tv.oz, mats, cols, born: new Float64Array(N).fill(-1), wbox: tv.wbox.clone() });
+        this.dirty = true;
       }).catch(() => {}).finally(() => this.loading.delete(tv.id));
     }
-    for (const id of [...this.tiles.keys()]) if (!this.world.tiles.has(id)) { this.tiles.delete(id); this.lastCam.set(1e9, 0, 0); }
+    for (const [id, t] of [...this.tiles]) if (!this.world.tiles.has(id) || t.wbox.distanceToPoint(focus) > reach + 1800) { this.tiles.delete(id); this.dirty = true; }
   }
+  /** Bytes dos dados de vegetação residentes (RAM). */
+  get bytes() { let b = 0; for (const t of this.tiles.values()) b += t.data.byteLength + t.mats.byteLength + t.cols.byteLength + t.born.byteLength; return b; }
 
   /** Recalcula as instâncias visíveis quando a câmera anda/gira o bastante ou a cada 250 ms (fade). */
   update(camera: THREE.PerspectiveCamera, viewportH: number, now: number) {
     if (!this.ready) return;
-    const dir = camera.getWorldDirection(this.p).clone();
+    const dir = camera.getWorldDirection(this.p);
     const moved = camera.position.distanceTo(this.lastCam) > 3 || dir.angleTo(this.lastDir) > 0.03;
-    if (!moved && now - this.lastUpdate < 250) return;
+    // V02 recalculava a cada 250 ms mesmo parada; aqui só se andou/girou, se chegou hex novo ou se há fade em curso
+    if (!moved && !this.dirty && !(this.fading && now - this.lastUpdate >= 100)) return;
     const t0 = performance.now();
-    this.lastCam.copy(camera.position); this.lastDir.copy(dir); this.lastUpdate = now;
+    this.lastCam.copy(camera.position); this.lastDir.copy(dir); this.lastUpdate = now; this.dirty = false;
+    let fading = false;
     const st = this.stats; st.candidates = 0; st.drawn = 0; st.perLod = [0, 0, 0, 0]; st.cellsFrustum = 0; st.cellsDistance = 0; st.cellsOcclusion = 0; st.drawCallsMax = 0;
     for (const row of this.meshes) for (const im of row ?? []) if (im) im.count = 0;
     const set = this.settings;
@@ -109,7 +130,6 @@ export class Vegetation {
     // limiares de LOD por tamanho projetado (px de altura na tela)
     const lodPx = set.profile === "alto" ? [150, 60, 18] : set.profile === "medio" ? [190, 80, 24] : [260, 110, 34];
     const minPx = set.profile === "alto" ? 1.2 : 2;
-    const yAxis = new THREE.Vector3(0, 1, 0);
     for (const tv of this.tiles.values()) {
       const F = tv.F, D = tv.data;
       for (const c of tv.cells) {
@@ -137,21 +157,19 @@ export class Vegetation {
           if (!im || im.count >= im.instanceMatrix.count) continue;
           // fade suave na borda de distância e ao aparecer
           const edge = Math.min(1, (maxD - d) / (maxD * 0.12));
-          const gid = (tv.id.length * 7919 + n) | 0;
-          let born = this.appear.get(gid); if (born === undefined) { born = now; this.appear.set(gid, now); }
-          const fade = Math.min(edge, Math.min(1, (now - born) / 600 + 0.15));
-          this.q.setFromAxisAngle(yAxis, D[o + 3]); this.s.setScalar(D[o + 4]); this.p.set(x, y, z);
-          this.m4.compose(this.p, this.q, this.s);
+          let born = tv.born[n]; if (born < 0) { born = now; tv.born[n] = now; }
+          const appear = (now - born) / 600 + 0.15;
+          if (appear < 1) fading = true;
+          const fade = Math.min(edge, Math.min(1, appear));
           const k = im.count++;
-          im.setMatrixAt(k, this.m4);
-          this.col.setRGB(Math.min(1.6, D[o + 6]), Math.min(1.6, D[o + 7]), Math.min(1.6, D[o + 8]));
-          im.setColorAt(k, this.col);
+          im.instanceMatrix.array.set(tv.mats.subarray(n * 16, n * 16 + 16), k * 16);
+          (im.instanceColor!.array as Float32Array).set(tv.cols.subarray(n * 3, n * 3 + 3), k * 3);
           this.fades[proto.id][lod].setX(k, fade);
           st.drawn++; st.perLod[lod]++;
         }
       }
     }
-    if (this.appear.size > 60000) this.appear.clear();
+    this.fading = fading;
     this.finish(t0);
   }
 

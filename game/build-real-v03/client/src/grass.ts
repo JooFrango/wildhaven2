@@ -46,6 +46,7 @@ export class GrassField {
   private last = new THREE.Vector3(1e9, 0, 0);
   private ray = new THREE.Raycaster();
   stats = { tufts: 0, flowers: 0, cells: 0, ms: 0 };
+  private retryAt = 0;
   constructor(private world: VisualWorld, private settings: GraphicsSettings) {
     this.group.name = "capim";
     const mat = new THREE.MeshLambertMaterial({ vertexColors: true, side: THREE.DoubleSide });
@@ -62,6 +63,8 @@ export class GrassField {
     this.group.add(this.grass, this.flowers);
   }
 
+  /** V03: as folhas LOD0 chegam sob demanda; sem a malha ainda, a célula é refeita depois (não fica vazia). */
+  private pending = false;
   private groundAt(x: number, z: number): { y: number; nY: number; col: THREE.Color } | null {
     for (const tv of this.world.tiles.values()) {
       const lx = x - tv.ox, lz = z - tv.oz;
@@ -69,11 +72,13 @@ export class GrassField {
       if (!e) continue;
       const leaf = e.leaves.find(l => l.cat === "terrain" && lx >= l.box.min.x && lx <= l.box.max.x && lz >= l.box.min.z && lz <= l.box.max.z);
       if (!leaf) continue;
+      const l0 = leaf.l0.mesh;
+      if (!l0) { this.pending = true; return null; }
       tv.group.updateMatrixWorld(true);
       this.ray.set(new THREE.Vector3(x, leaf.box.max.y + 50, z), new THREE.Vector3(0, -1, 0));
-      const hit = this.ray.intersectObject(leaf.l0, false)[0];
+      const hit = this.ray.intersectObject(l0, false)[0];
       if (!hit || !hit.face) return null;
-      const c = leaf.l0.geometry.getAttribute("color");
+      const c = l0.geometry.getAttribute("color");
       const col = new THREE.Color(1, 1, 1);
       if (c) { const f = hit.face; col.setRGB((c.getX(f.a) + c.getX(f.b) + c.getX(f.c)) / 3, (c.getY(f.a) + c.getY(f.b) + c.getY(f.c)) / 3, (c.getZ(f.a) + c.getZ(f.b) + c.getZ(f.c)) / 3); }
       return { y: hit.point.y, nY: hit.face.normal.y, col };
@@ -81,8 +86,9 @@ export class GrassField {
     return null;
   }
 
-  private makeCell(ci: number, cj: number): Cell {
+  private makeCell(ci: number, cj: number): Cell | null {
     const items: number[] = [];
+    this.pending = false;
     let seed = (ci * 73856093) ^ (cj * 19349663);
     const rnd = () => { seed = (seed * 1664525 + 1013904223) | 0; return ((seed >>> 0) % 100000) / 100000; };
     const n = Math.round(26 * this.settings.vegetationDensity);
@@ -97,6 +103,7 @@ export class GrassField {
       const tint = [c.r * 1.25 + 0.04, c.g * 1.3 + 0.05, c.b * 1.1];
       items.push(x, g.y - 0.03, z, rnd() * Math.PI * 2, 0.7 + rnd() * 0.8, ...tint, flower ? 1 : 0);
     }
+    if (this.pending) return null;
     return { k: `${ci},${cj}`, items: Float32Array.from(items) };
   }
 
@@ -104,19 +111,20 @@ export class GrassField {
     const R = this.settings.smallDistance * 0.7;
     if (R <= 0 || this.settings.vegetationDensity <= 0) { this.grass.count = this.flowers.count = 0; return; }
     if (focus.distanceTo(this.last) < 4) return;
+    if (now < this.retryAt) return;
     const t0 = performance.now();
     this.last.copy(focus);
     const c0 = Math.floor(focus.x / CELL), c1 = Math.floor(focus.z / CELL), rc = Math.ceil(R / CELL);
     const want = new Set<string>();
-    let built = 0;
+    let built = 0, incomplete = false;
     for (let i = -rc; i <= rc; i++) for (let j = -rc; j <= rc; j++) {
       const k = `${c0 + i},${c1 + j}`;
       if (Math.hypot(i * CELL, j * CELL) > R + CELL) continue;
       want.add(k);
-      if (!this.cells.has(k) && built < 24) { this.cells.set(k, this.makeCell(c0 + i, c1 + j)); built++; } // orçamento por atualização
+      if (!this.cells.has(k) && built < 24) { const c = this.makeCell(c0 + i, c1 + j); built++; if (c) this.cells.set(k, c); else incomplete = true; } // orçamento por atualização
     }
     for (const k of this.cells.keys()) if (!want.has(k)) this.cells.delete(k);
-    if (built >= 24) this.last.set(1e9, 0, 0); // ainda faltam células: continua no próximo quadro
+    if (built >= 24 || incomplete) { this.last.set(1e9, 0, 0); this.retryAt = now + 300; } // faltam células: continua depois
     const m = new THREE.Matrix4(), q = new THREE.Quaternion(), s = new THREE.Vector3(), p = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0), col = new THREE.Color();
     let ng = 0, nf = 0;
     for (const cell of this.cells.values()) {

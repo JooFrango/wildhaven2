@@ -1,0 +1,161 @@
+{
+  "schema": "wildhaven.bench.cliente.v1",
+  "url": "http://127.0.0.1:8791/?perfil=economico",
+  "modo": "3d",
+  "visibilityState": "visible",
+  "segundos": 60.011,
+  "carregamento_s": 0.298,
+  "renderer": "Chromium headless + SwiftShader (software) — CPU do 3D inclui rasterização por software; não representa GPU real",
+  "cpu_navegador_pct_nucleo": 19.379780373598173,
+  "cpu_servidor_pct_nucleo": 0.9331622535868423,
+  "rss_navegador_mb": 855.44140625,
+  "rss_servidor_mb": 73.3515625,
+  "heap_js_mb": 4.084656715393066,
+  "raf": {
+    "quadros": 3601,
+    "por_s": 60.005665627968206,
+    "p50_ms": 16.69999999999709,
+    "p95_ms": 16.70000000001164,
+    "p99_ms": 16.80000000000291,
+    "max_ms": 16.80000000000291,
+    "low1_fps": 59.523809523799216,
+    "travamentos_50ms": 0,
+    "travamentos_100ms": 0
+  },
+  "quadros_desenhados_jogo": 900,
+  "long_tasks": 0,
+  "long_tasks_ms": 0,
+  "ws": {
+    "bytes_por_s": 4989.635233540517,
+    "msgs_por_s": 2.4828781390078483
+  },
+  "perf_jogo": {
+    "mode": "pixel",
+    "fps": 15.000187502343778,
+    "low1": 14.695077149128219,
+    "frameMs": 66.66583333333334,
+    "p50Ms": 66.59999999962747,
+    "p95Ms": 67.5,
+    "p99Ms": 67.70000000018626,
+    "maxMs": 68.69999999925494,
+    "stalls50": 1258,
+    "stalls100": 0,
+    "cpuMs": 0.3154999999903763,
+    "gpuMs": null,
+    "gpuTimer": false,
+    "drawCalls": 0,
+    "triangles": 0,
+    "geometries": 0,
+    "textures": 0,
+    "heapMB": 4.365514755249023,
+    "vramEstMB": 0,
+    "loadSeconds": 0.12470000000018626,
+    "resScale": 1,
+    "framesDrawn": 1260,
+    "culling": null,
+    "loops": {
+      "ativo": "pixel",
+      "tresD": "descartado",
+      "pixel": "rodando",
+      "interface": "4 Hz",
+      "visibilidade": "visible"
+    },
+    "rede": {
+      "conectado": true,
+      "reconexoes": 0,
+      "completos": 1,
+      "deltas": 208,
+      "ressincronizacoes": 0,
+      "bytesRecebidos": 445472,
+      "ultimaMensagemBytes": 1632
+    },
+    "economico": {
+      "frameMs": 0.25053039688563933,
+      "regions": 35,
+      "rendered": 35,
+      "genSwaps": 0,
+      "atlas": 77,
+      "heightsMB": 0.166351318359375
+    },
+    "streaming": null,
+    "alturasMB": 0.166351318359375,
+    "tarefas": {
+      "carregando": 0
+    }
+  },
+  "serie": [
+    {
+      "t": 5,
+      "cpuNavegadorPct": 20.8,
+      "cpuServidorPct": 1,
+      "rssNavegadorMB": 851.80078125
+    },
+    {
+      "t": 10,
+      "cpuNavegadorPct": 18.99620075984803,
+      "cpuServidorPct": 0.9998000399920015,
+      "rssNavegadorMB": 853.05859375
+    },
+    {
+      "t": 15,
+      "cpuNavegadorPct": 19.2,
+      "cpuServidorPct": 0.8,
+      "rssNavegadorMB": 853.484375
+    },
+    {
+      "t": 20,
+      "cpuNavegadorPct": 18.39632073585283,
+      "cpuServidorPct": 0.7998400319936013,
+      "rssNavegadorMB": 854.3984375
+    },
+    {
+      "t": 25,
+      "cpuNavegadorPct": 19.400000000000002,
+      "cpuServidorPct": 1,
+      "rssNavegadorMB": 854.6875
+    },
+    {
+      "t": 30,
+      "cpuNavegadorPct": 19.2,
+      "cpuServidorPct": 1,
+      "rssNavegadorMB": 855.734375
+    },
+    {
+      "t": 35,
+      "cpuNavegadorPct": 18.39632073585283,
+      "cpuServidorPct": 0.9998000399920015,
+      "rssNavegadorMB": 853.421875
+    },
+    {
+      "t": 40,
+      "cpuNavegadorPct": 20.400000000000002,
+      "cpuServidorPct": 0.8,
+      "rssNavegadorMB": 853.25390625
+    },
+    {
+      "t": 45,
+      "cpuNavegadorPct": 18.8,
+      "cpuServidorPct": 1,
+      "rssNavegadorMB": 852.97265625
+    },
+    {
+      "t": 50,
+      "cpuNavegadorPct": 20,
+      "cpuServidorPct": 1,
+      "rssNavegadorMB": 853.6015625
+    },
+    {
+      "t": 55,
+      "cpuNavegadorPct": 19.400000000000002,
+      "cpuServidorPct": 0.8,
+      "rssNavegadorMB": 854.34375
+    },
+    {
+      "t": 60,
+      "cpuNavegadorPct": 19.19616076784643,
+      "cpuServidorPct": 0.9998000399920015,
+      "rssNavegadorMB": 855.13671875
+    }
+  ],
+  "logs": []
+}
