@@ -1,0 +1,302 @@
+[
+  {
+    "cpuPctCore": 0.6240440207242124,
+    "requested": 1,
+    "seconds": 10.0153191,
+    "effective": 1.0018883926387252,
+    "dropped": 0,
+    "cpuPctMachine": 0.07800550259052655,
+    "backlog": 0,
+    "threads": [
+      {
+        "tid": 11792,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 25784,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26512,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 27424,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 27572,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 1900,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 23344,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 28476,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 28520,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26692,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 2736,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26516,
+        "cpuPctCore": 0.6240440207242124
+      },
+      {
+        "tid": 16896,
+        "cpuPctCore": 0.0
+      }
+    ],
+    "logical": 8,
+    "rssBytes": 159346688,
+    "lastInterval": {
+      "gameplay": 0.6249,
+      "janelas_fisicas": 0.0144,
+      "max": 6.020700000000001,
+      "p50": 1.2374,
+      "p95": 2.3804,
+      "p99": 3.2851,
+      "passos": 0.6415000000000001,
+      "total": 0.9726,
+      "visao_fio": 0.3301
+    }
+  },
+  {
+    "cpuPctCore": 1.5611519920893906,
+    "requested": 5,
+    "seconds": 10.0086347,
+    "effective": 4.964754709839379,
+    "dropped": 0,
+    "cpuPctMachine": 0.19514399901117382,
+    "backlog": 0,
+    "threads": [
+      {
+        "tid": 11792,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 25784,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26512,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 27424,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 27572,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 1900,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 23344,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 28476,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 28520,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26692,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 2736,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26516,
+        "cpuPctCore": 1.5611519920893906
+      },
+      {
+        "tid": 16896,
+        "cpuPctCore": 0.0
+      }
+    ],
+    "logical": 8,
+    "rssBytes": 159346688,
+    "lastInterval": {
+      "gameplay": 6.4144,
+      "janelas_fisicas": 0.1309,
+      "max": 15.979400000000002,
+      "p50": 1.3268,
+      "p95": 6.020700000000001,
+      "p99": 9.572000000000001,
+      "passos": 6.5537,
+      "total": 6.8779,
+      "visao_fio": 0.3232
+    }
+  },
+  {
+    "cpuPctCore": 2.8113533052138693,
+    "requested": 10,
+    "seconds": 10.0040788,
+    "effective": 10.013186532230737,
+    "dropped": 0,
+    "cpuPctMachine": 0.35141916315173366,
+    "backlog": 0,
+    "threads": [
+      {
+        "tid": 11792,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 25784,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26512,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 27424,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 27572,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 1900,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 23344,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 28476,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 28520,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26692,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 2736,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26516,
+        "cpuPctCore": 2.8113533052138693
+      },
+      {
+        "tid": 16896,
+        "cpuPctCore": 0.0
+      }
+    ],
+    "logical": 8,
+    "rssBytes": 159346688,
+    "lastInterval": {
+      "gameplay": 7.407000000000001,
+      "janelas_fisicas": 0.105,
+      "max": 21.4817,
+      "p50": 1.461,
+      "p95": 9.572000000000001,
+      "p99": 16.767500000000002,
+      "passos": 7.5194,
+      "total": 7.7903,
+      "visao_fio": 0.27040000000000003
+    }
+  },
+  {
+    "cpuPctCore": 9.053876997009278,
+    "requested": 50,
+    "seconds": 10.0095241,
+    "effective": 49.99610863621115,
+    "dropped": 0,
+    "cpuPctMachine": 1.1317346246261597,
+    "backlog": 0,
+    "threads": [
+      {
+        "tid": 11792,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 25784,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26512,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 27424,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 27572,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 1900,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 23344,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 28476,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 28520,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26692,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 2736,
+        "cpuPctCore": 0.0
+      },
+      {
+        "tid": 26516,
+        "cpuPctCore": 9.053876997009278
+      }
+    ],
+    "logical": 8,
+    "rssBytes": 159334400,
+    "lastInterval": {
+      "gameplay": 14.548699999999998,
+      "janelas_fisicas": 0.16729999999999995,
+      "max": 61.1825,
+      "p50": 3.9338,
+      "p95": 19.6624,
+      "p99": 24.6857,
+      "passos": 14.7264,
+      "total": 14.874500000000001,
+      "visao_fio": 0.1403
+    }
+  }
+]
