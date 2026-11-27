@@ -1,0 +1,3244 @@
+{
+ "schema": "wildhaven.gameplay.provisorio.v1",
+ "status": "PROVISÓRIO V04 — 8 espécies da V02 preservadas + espécies derivadas de fichas, laboratório de IA e GLBs; nenhum número é regra aprovada",
+ "origemDosValores": {
+  "fichas": "creatures/species/folhisco.json (locomoção, percepção, bando 4–9: 'valores iniciais para testes')",
+  "regrasConfirmadas": "build real/README.md e 05-roadmap: 2 carroças (Chad e Nailon), 6 Hunters por carroça, carroça cobra, Desvio 1 = jogar-se e levantar, Desvio 5 = rolar e esperar 3 s, resgate quando ≥1/3 caídos sem saída ou Hunter sozinho caído, morte permanente, habilidades 1–20 sem nível geral, rastro azul só quando descoberto e interrompido pela água",
+  "inventados": "todo valor marcado provisorio=true abaixo — escolhido por esta build técnica para tornar o ciclo testável",
+  "v02": "tools/gerar-gameplay-v02.mjs (fichas: percepção/locomoção/massa; fórmulas provisórias: hp, dano, itens, densidade)",
+  "v04": "tools/gerar-gameplay-v04.mjs (fichas + labs/ia-criaturas/config/eco/especies + clipes dos GLBs + data/biomas-v04.json)"
+ },
+ "economia": {
+  "provisorio": true,
+  "decisao": "item 7 (preço da carroça)",
+  "dinheiroInicial": 500,
+  "carroca": {
+   "base": 40,
+   "porKm": 6
+  }
+ },
+ "carrocas": {
+  "confirmado": "2 carroças, Chad e Nailon, 6 Hunters cada, puxadas por dodos",
+  "capacidade": 6,
+  "lista": [
+   {
+    "id": "chad",
+    "condutor": "Chad"
+   },
+   {
+    "id": "nailon",
+    "condutor": "Nailon"
+   }
+  ],
+  "velocidadeMps": 3,
+  "velocidadeProvisoria": "o dodo (Dodarro montaria v02) é blockout estático sem clipe de locomoção; a velocidade não pôde ser extraída",
+  "assetPuxador": "assets/models/creatures/dodarro/dodarro_montaria_v02_blockout.glb (aguardando aprovação artística)",
+  "assetCarroca": "AUSENTE — o cliente mostra um marcador técnico identificado"
+ },
+ "acampamento": {
+  "provisorio": true,
+  "raioClareiraM": 6,
+  "inclinacaoMaxGraus": 12,
+  "curaDescansoHpS": 1,
+  "curaCampoHpS": 0.05
+ },
+ "hunters": {
+  "provisorio": true,
+  "decisao": "item 1 (número de Hunters simultâneos)",
+  "visaoM": 60,
+  "lista": [
+   {
+    "id": "hunter-001",
+    "nome": "Hunter 01",
+    "forca": 8,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 4,
+     "desvio": 1,
+     "furtividade": 5,
+     "rastreamento": 6,
+     "armadilhas": 2,
+     "rodeio": 3,
+     "velocidade": 2
+    }
+   },
+   {
+    "id": "hunter-002",
+    "nome": "Hunter 02",
+    "forca": 11,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 7,
+     "desvio": 5,
+     "furtividade": 2,
+     "rastreamento": 3,
+     "armadilhas": 6,
+     "rodeio": 5,
+     "velocidade": 3
+    }
+   },
+   {
+    "id": "hunter-003",
+    "nome": "Hunter 03",
+    "forca": 6,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 2,
+     "desvio": 2,
+     "furtividade": 8,
+     "rastreamento": 9,
+     "armadilhas": 3,
+     "rodeio": 1,
+     "velocidade": 4
+    }
+   },
+   {
+    "id": "hunter-004",
+    "nome": "Hunter 04",
+    "forca": 9,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 5,
+     "desvio": 3,
+     "furtividade": 3,
+     "rastreamento": 4,
+     "armadilhas": 8,
+     "rodeio": 2,
+     "velocidade": 2
+    }
+   },
+   {
+    "id": "hunter-005",
+    "nome": "Hunter 05",
+    "forca": 7,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 3,
+     "desvio": 1,
+     "furtividade": 4,
+     "rastreamento": 5,
+     "armadilhas": 1,
+     "rodeio": 6,
+     "velocidade": 5
+    }
+   },
+   {
+    "id": "hunter-006",
+    "nome": "Hunter 06",
+    "forca": 10,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 6,
+     "desvio": 6,
+     "furtividade": 1,
+     "rastreamento": 2,
+     "armadilhas": 4,
+     "rodeio": 4,
+     "velocidade": 1
+    }
+   }
+  ],
+  "socorristas": [
+   {
+    "id": "chad",
+    "nome": "Chad",
+    "forca": 14,
+    "arma": "espada",
+    "armaduraHp": 120,
+    "habilidades": {
+     "espada": 10,
+     "desvio": 6,
+     "primeiros_socorros": 8
+    }
+   },
+   {
+    "id": "nailon",
+    "nome": "Nailon",
+    "forca": 13,
+    "arma": "espada",
+    "armaduraHp": 120,
+    "habilidades": {
+     "espada": 9,
+     "desvio": 7,
+     "primeiros_socorros": 9
+    }
+   }
+  ],
+  "hpBase": 100,
+  "habilidadesConfirmadas": [
+   "espada",
+   "desvio",
+   "velocidade",
+   "agilidade",
+   "armadilhas",
+   "mineracao",
+   "escalada",
+   "primeiros_socorros",
+   "rodeio",
+   "furtividade",
+   "rastreamento"
+  ],
+  "xpPorNivel": 100,
+  "nivelMax": 20,
+  "velocidadeBonusPorNivel": 0.01,
+  "velocidadeBonusProvisorio": "Velocidade melhora a eficiência: +1% sobre a velocidade extraída do clipe por nível acima de 1 (provisório)"
+ },
+ "combate": {
+  "regraPortada": "dano = 3 + força × 0,65 + ataque da arma; alcance 2,6 m; recarga 1,2 s (game/alpha01/src/combat/combat.ts, paridade por seed)",
+  "armas": {
+   "espada": {
+    "ataque": 6,
+    "bonusPorNivel": 0.5,
+    "provisorio": true
+   },
+   "lanca": {
+    "ataque": 5,
+    "bonusPorNivel": 0.45,
+    "alcanceM": 2.6,
+    "provisorio": true
+   },
+   "espadao": {
+    "ataque": 8.5,
+    "bonusPorNivel": 0.6,
+    "alcanceM": 2.2,
+    "provisorio": true
+   }
+  },
+  "caidoAteMorrerS": 600,
+  "caidoProvisorio": "item 3 (janela do Hunter caído): 600 s provisório — 180 s não dava tempo de um socorrista a pé chegar",
+  "desvio": {
+   "chancePorNivel": 0.05,
+   "nivel1": {
+    "acao": "jogar-se no chão e levantar",
+    "duracaoS": 1.4
+   },
+   "nivel5": {
+    "acao": "rolar e esperar 3 s antes de atacar",
+    "duracaoS": 0.9,
+    "esperaAntesDeAtacarS": 3
+   }
+  },
+  "armasNota": "lança e espadão: PROVISÓRIOS (existem clipes spear_*/greatsword_* no hunter_pve_v01); ataque/bonus sem aprovação"
+ },
+ "furtividade": {
+  "provisorio": true,
+  "velocidadeAgachadoFator": 0.5,
+  "reducaoDeteccaoPorNivel": 0.04,
+  "distanciaAtaqueRodeioM": 2.4,
+  "chanceDeteccaoPorSegundo": 0.9,
+  "rodeioDistanciaM": 5,
+  "notaDeteccao": "Detecção probabilística por segundo dentro do cone de visão, decrescendo com a distância (provisório); ponto cego traseiro da ficha (Folhisco 60°)."
+ },
+ "armadilhas": {
+  "provisorio": true,
+  "decisao": "item 10 (catálogo de armadilhas) — nomes V02 do diretor; valores herdados da v01 (laco→laco_de_raiz, rede→presa_de_ferro)",
+  "tipos": [
+   {
+    "id": "laco_de_raiz",
+    "nome": "Laço de Raiz",
+    "imobilizaS": [
+     3,
+     6
+    ],
+    "massaMaxKg": 60
+   },
+   {
+    "id": "presa_de_ferro",
+    "nome": "Presa de Ferro",
+    "imobilizaS": [
+     5,
+     9
+    ],
+    "massaMaxKg": 120
+   }
+  ],
+  "raioDisparoM": 1.6,
+  "gritoAlcanceM": 90,
+  "chanceEvitarBase": 0.25
+ },
+ "rastros": {
+  "provisorio": true,
+  "decisao": "item 9 (persistência dos rastros)",
+  "passoM": 2,
+  "maxPorCriatura": 400,
+  "vidaS": 3600,
+  "raioDescobertaM": 7,
+  "chanceBase": 0.04,
+  "chancePorNivel": 0.012
+ },
+ "resgate": {
+  "confirmado": "≥ 1/3 dos Hunters da caçada caídos e os demais sem chance realista, ou Hunter sozinho caído; não garantido; socorrista combate de verdade e pode perder",
+  "fracaoCaidos": 0.3334,
+  "semChanceSe": "soma de HP dos Hunters de pé < HP restante da ameaça (critério provisório)"
+ },
+ "especies": {
+  "folhisco": {
+   "nome": "Folhisco",
+   "fonte": "creatures/species/folhisco.json",
+   "asset": "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb",
+   "aprovacao": "visual aprovado em 2026-11-06",
+   "papel": "presa",
+   "hp": 14,
+   "dano": 0,
+   "massaKg": 2.5,
+   "andarMps": 1.1,
+   "correrMps": 5,
+   "correrMaxS": 6,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 20,
+   "grupo": [
+    4,
+    9
+   ],
+   "gruposPorHex": 30,
+   "itens": [
+    {
+     "id": "penas_folhisco",
+     "nome": "Penas de Folhisco"
+    },
+    {
+     "id": "carne_pequena",
+     "nome": "Carne pequena"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "temperate forest to grassland",
+    "forested mountain"
+   ],
+   "densidadeProvisoria": "30 bandos de 4–9 por hex de 16,2 km² (~12 aves/km²) — provisório",
+   "raioForrageioM": 60,
+   "pontoCegoTraseiroGraus": 60,
+   "lods": [
+    "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb",
+    "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD1.glb",
+    "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/folhisco/folhisco-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.35–0.45 m · 2–3 kg",
+    "social": "small_flock",
+    "dieta": [
+     "seeds",
+     "sprouts",
+     "young_leaves",
+     "berries",
+     "fallen_fruit"
+    ],
+    "comportamentos": [
+     "scratch_for_seeds",
+     "forage",
+     "drink",
+     "rest",
+     "preen",
+     "lookout",
+     "freeze",
+     "scan",
+     "alarm_call",
+     "flee_to_cover"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_edge",
+     "low_shrubland"
+    ],
+    "status": "proposal"
+   },
+   "locomocao": "terrestre",
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada"
+   ],
+   "clipes": 15,
+   "arteConceitual": "assets/models/creatures/folhisco/folhisco-optimized-v02-real-3d-three-quarter.png"
+  },
+  "lobrapedra": {
+   "nome": "Lobrapedra",
+   "fonte": "creatures/species/lobrapedra.json (sem percepção/locomoção na ficha)",
+   "asset": "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD0.glb",
+   "aprovacao": "modeled_candidate (sem aprovação artística)",
+   "papel": "predador",
+   "hp": 95,
+   "dano": 11,
+   "massaKg": 55,
+   "provisorio": true,
+   "andarMps": 1.4,
+   "correrMps": 6.5,
+   "correrMaxS": 20,
+   "visaoMovimentoM": 40,
+   "visaoParadoM": 18,
+   "audicaoM": 60,
+   "alcanceAtaqueM": 2,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    3
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_lobrapedra",
+     "nome": "Pele de Lobrapedra"
+    },
+    {
+     "id": "presas_lobrapedra",
+     "nome": "Presas de Lobrapedra"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain"
+   ],
+   "raioForrageioM": 300,
+   "pontoCegoTraseiroGraus": 90,
+   "pontoCegoProvisorio": "ficha sem percepção: 90° provisório",
+   "densidadeProvisoria": "6 matilhas de 2–3 por hex, vagueio de 300 m — provisório",
+   "lods": [
+    "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD0.glb",
+    "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD1.glb",
+    "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": null,
+    "social": "pack",
+    "dieta": [
+     "small_mammals",
+     "cervalume"
+    ],
+    "comportamentos": [
+     "patrol",
+     "track",
+     "stalk",
+     "chase",
+     "attack",
+     "retreat",
+     "rest",
+     "drink"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "rocky_forest_edge"
+    ],
+    "status": "modeled_candidate"
+   },
+   "locomocao": "terrestre",
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "montanha_rochosa"
+   ],
+   "clipes": 16,
+   "arteConceitual": "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-real-3d-three-quarter.png"
+  },
+  "silvarano": {
+   "nome": "Silvarano",
+   "fonte": "creatures/species/silvarano.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD0.glb",
+   "aprovacao": "proposal",
+   "papel": "presa",
+   "hp": 79,
+   "dano": 0,
+   "massaKg": 140,
+   "provisorio": true,
+   "andarMps": 1.4,
+   "correrMps": 11,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 45,
+   "visaoParadoM": 18,
+   "audicaoM": 38,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 4,
+   "itens": [
+    {
+     "id": "pele_silvarano",
+     "nome": "Pele de Silvarano"
+    },
+    {
+     "id": "carne_silvarano",
+     "nome": "Carne de Silvarano"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain",
+    "true tropical jungle",
+    "temperate forest to grassland",
+    "temperate forest -> open plains"
+   ],
+   "raioForrageioM": 220,
+   "pontoCegoTraseiroGraus": 70,
+   "densidadeProvisoria": "4 grupos por hex (provisório)",
+   "dieta": [
+    "broad_leaves",
+    "soft_shoots",
+    "ferns",
+    "flowers",
+    "fallen_fruit",
+    "tender_bark"
+   ],
+   "lods": [
+    "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD0.glb",
+    "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD1.glb",
+    "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "1.15–1.35 m · 110–170 kg",
+    "social": "small_social_group",
+    "dieta": [
+     "broad_leaves",
+     "soft_shoots",
+     "ferns",
+     "flowers",
+     "fallen_fruit",
+     "tender_bark"
+    ],
+    "comportamentos": [
+     "browse_leaves",
+     "forage_fallen_fruit",
+     "drink",
+     "rest",
+     "thermoregulate",
+     "scan",
+     "freeze",
+     "alarm_call",
+     "flee_zigzag",
+     "regroup"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "tropical_rainforest",
+     "temperate_forest_edge",
+     "tropical_forest_clearing",
+     "riparian_forest"
+    ],
+    "status": "proposal"
+   },
+   "locomocao": "terrestre",
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "selva"
+   ],
+   "clipes": 28,
+   "arteConceitual": "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-real-3d-three-quarter.png"
+  },
+  "cavoru": {
+   "nome": "Cavoru",
+   "fonte": "creatures/species/cavoru.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD0.glb",
+   "aprovacao": "in_review",
+   "papel": "presa",
+   "hp": 63,
+   "dano": 0,
+   "massaKg": 83,
+   "provisorio": true,
+   "andarMps": 1.05,
+   "correrMps": 7.4,
+   "correrMaxS": 6,
+   "visaoMovimentoM": 33,
+   "visaoParadoM": 13,
+   "audicaoM": 40,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 5,
+   "itens": [
+    {
+     "id": "pele_cavoru",
+     "nome": "Pele de Cavoru"
+    },
+    {
+     "id": "carne_cavoru",
+     "nome": "Carne de Cavoru"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 75,
+   "densidadeProvisoria": "5 grupos por hex (provisório)",
+   "dieta": [
+    "grass",
+    "young_shoots",
+    "tubers",
+    "bulbs",
+    "roots",
+    "fallen_fruit",
+    "herbs"
+   ],
+   "lods": [
+    "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD0.glb",
+    "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD1.glb",
+    "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.67–0.9 m · 58–108 kg",
+    "social": "small_family_group",
+    "dieta": [
+     "grass",
+     "young_shoots",
+     "tubers",
+     "bulbs",
+     "roots",
+     "fallen_fruit"
+    ],
+    "comportamentos": [
+     "idle",
+     "graze",
+     "sniff_ground",
+     "dig_shallow",
+     "pull_tuber",
+     "chew",
+     "drink",
+     "walk",
+     "trot",
+     "short_sprint"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_edge",
+     "temperate_grassland",
+     "grassland_shrubland",
+     "riparian_meadow"
+    ],
+    "status": "in_review"
+   },
+   "locomocao": "terrestre",
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "planicie"
+   ],
+   "clipes": 27,
+   "arteConceitual": "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-real-3d-three-quarter.png"
+  },
+  "torvalho": {
+   "nome": "Torvalho",
+   "fonte": "creatures/species/torvalho.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD0.glb",
+   "aprovacao": "proposal",
+   "papel": "presa",
+   "hp": 161,
+   "dano": 0,
+   "massaKg": 650,
+   "provisorio": true,
+   "andarMps": 1,
+   "correrMps": 8.5,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 38,
+   "visaoParadoM": 16,
+   "audicaoM": 35,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_torvalho",
+     "nome": "Pele de Torvalho"
+    },
+    {
+     "id": "carne_torvalho",
+     "nome": "Carne de Torvalho"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate forest",
+    "temperate forest to grassland",
+    "temperate forest -> open plains"
+   ],
+   "raioForrageioM": 320,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório)",
+   "dieta": [
+    "grasses",
+    "sedges",
+    "herbaceous_plants",
+    "fallen_leaves",
+    "young_shoots"
+   ],
+   "lods": [
+    "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD0.glb",
+    "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD1.glb",
+    "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/torvalho/torvalho-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "1.55–1.9 m · 480–820 kg",
+    "social": "defensive_herd",
+    "dieta": [
+     "grasses",
+     "sedges",
+     "herbaceous_plants",
+     "fallen_leaves",
+     "young_shoots"
+    ],
+    "comportamentos": [
+     "graze",
+     "ruminate",
+     "drink",
+     "rest",
+     "rub_horns",
+     "dust_bath",
+     "sniff_air",
+     "watch",
+     "alarm_snort",
+     "group_defense"
+    ],
+    "habitats": [
+     "temperate_grassland",
+     "temperate_forest_edge",
+     "woodland_clearing",
+     "temperate_riparian_meadow"
+    ],
+    "status": "proposal"
+   },
+   "locomocao": "terrestre",
+   "classesBioma": [
+    "floresta_temperada",
+    "planicie"
+   ],
+   "clipes": 27,
+   "arteConceitual": "assets/models/creatures/torvalho/torvalho-optimized-v02-real-3d-three-quarter.png"
+  },
+  "tufrilo": {
+   "nome": "Tufrilo",
+   "fonte": "creatures/species/tufrilo.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD0.glb",
+   "aprovacao": "in_review",
+   "papel": "presa",
+   "hp": 19,
+   "dano": 0,
+   "massaKg": 4,
+   "provisorio": true,
+   "andarMps": 0.68,
+   "correrMps": 5.1,
+   "correrMaxS": 5,
+   "visaoMovimentoM": 19,
+   "visaoParadoM": 7,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_tufrilo",
+     "nome": "Pele de Tufrilo"
+    },
+    {
+     "id": "carne_tufrilo",
+     "nome": "Carne de Tufrilo"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain",
+    "temperate forest to grassland",
+    "temperate forest -> open plains"
+   ],
+   "raioForrageioM": 120,
+   "pontoCegoTraseiroGraus": 85,
+   "densidadeProvisoria": "6 grupos por hex (provisório)",
+   "dieta": [
+    "seeds",
+    "sprouts",
+    "young_leaves",
+    "berries",
+    "fallen_fruit",
+    "soft_herbs"
+   ],
+   "lods": [
+    "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD0.glb",
+    "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD1.glb",
+    "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/tufrilo/tufrilo-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.18–0.27 m · 2–5 kg",
+    "social": "small_family_group",
+    "dieta": [
+     "seeds",
+     "sprouts",
+     "young_leaves",
+     "berries",
+     "fallen_fruit",
+     "soft_herbs"
+    ],
+    "comportamentos": [
+     "idle",
+     "walk",
+     "hop",
+     "bound",
+     "sprint",
+     "sniff",
+     "forage",
+     "nibble",
+     "collect_seed",
+     "stash_seed"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_edge",
+     "shrubland",
+     "grassland_transition"
+    ],
+    "status": "in_review"
+   },
+   "locomocao": "terrestre",
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "planicie"
+   ],
+   "clipes": 25,
+   "arteConceitual": "assets/models/creatures/tufrilo/tufrilo-optimized-v02-real-3d-three-quarter.png"
+  },
+  "nharuk": {
+   "nome": "Nharuk",
+   "fonte": "creatures/species/nharuk.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD0.glb",
+   "aprovacao": "in_review",
+   "papel": "predador",
+   "hp": 62,
+   "dano": 12,
+   "massaKg": 80,
+   "provisorio": true,
+   "andarMps": 1.25,
+   "correrMps": 12.5,
+   "correrMaxS": 7,
+   "visaoMovimentoM": 48,
+   "visaoParadoM": 21,
+   "audicaoM": 42,
+   "alcanceAtaqueM": 1.6320000000000001,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 2,
+   "itens": [
+    {
+     "id": "pele_nharuk",
+     "nome": "Pele de Nharuk"
+    },
+    {
+     "id": "carne_nharuk",
+     "nome": "Carne de Nharuk"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "true tropical jungle",
+    "temperate forest",
+    "forested mountain",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south"
+   ],
+   "raioForrageioM": 600,
+   "pontoCegoTraseiroGraus": 155,
+   "densidadeProvisoria": "2 grupos por hex (provisório)",
+   "dieta": [
+    "small_herbivores",
+    "ground_birds",
+    "folhisco",
+    "juvenile_silvarano_opportunistic",
+    "unprotected_torvalho_calf_rare",
+    "small_reptiles",
+    "fresh_carrion"
+   ],
+   "lods": [
+    "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD0.glb",
+    "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD1.glb",
+    "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.62–1.02 m · 35–125 kg",
+    "social": "solitary",
+    "dieta": [
+     "small_herbivores",
+     "ground_birds",
+     "folhisco",
+     "juvenile_silvarano_opportunistic",
+     "unprotected_torvalho_calf_rare",
+     "small_reptiles"
+    ],
+    "comportamentos": [
+     "rest",
+     "patrol",
+     "inspect_scent",
+     "listen",
+     "select_prey",
+     "stalk",
+     "ambush",
+     "pounce",
+     "attack",
+     "short_chase"
+    ],
+    "habitats": [
+     "tropical_rainforest",
+     "tropical_rainforest_understory",
+     "temperate_forest",
+     "temperate_forest_edge",
+     "temperate_grassland",
+     "riparian_meadow"
+    ],
+    "status": "in_review"
+   },
+   "locomocao": "terrestre",
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "planicie",
+    "selva"
+   ],
+   "clipes": 27,
+   "arteConceitual": "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-real-3d-three-quarter.png"
+  },
+  "boscaranha": {
+   "nome": "Boscaranha",
+   "fonte": "creatures/species/boscaranha.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD0.glb",
+   "aprovacao": "in_review",
+   "papel": "predador",
+   "hp": 34,
+   "dano": 7,
+   "massaKg": 19,
+   "provisorio": true,
+   "andarMps": 0.75,
+   "correrMps": 4.7,
+   "correrMaxS": 2,
+   "visaoMovimentoM": 15,
+   "visaoParadoM": 6,
+   "audicaoM": 4,
+   "alcanceAtaqueM": 1.2,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_boscaranha",
+     "nome": "Pele de Boscaranha"
+    },
+    {
+     "id": "carne_boscaranha",
+     "nome": "Carne de Boscaranha"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain"
+   ],
+   "raioForrageioM": 140,
+   "pontoCegoTraseiroGraus": 100,
+   "densidadeProvisoria": "3 grupos por hex (provisório)",
+   "dieta": [
+    "folhisco",
+    "small_vertebrates",
+    "large_invertebrates"
+   ],
+   "lods": [
+    "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD0.glb",
+    "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD1.glb",
+    "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/boscaranha/boscaranha-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.38–0.6 m · 12–26 kg",
+    "social": "solitary",
+    "dieta": [
+     "folhisco",
+     "small_vertebrates",
+     "large_invertebrates"
+    ],
+    "comportamentos": [
+     "idle",
+     "walk",
+     "scuttle",
+     "sprint",
+     "stalk",
+     "ambush",
+     "sense_vibrations",
+     "vigilance",
+     "pounce",
+     "bite"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_understory",
+     "fallen_trunk",
+     "mossy_root_system"
+    ],
+    "status": "in_review"
+   },
+   "locomocao": "terrestre",
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada"
+   ],
+   "clipes": 22,
+   "arteConceitual": "assets/models/creatures/boscaranha/boscaranha-optimized-v02-real-3d-three-quarter.png"
+  },
+  "arbelio": {
+   "nome": "Arbélio",
+   "fonte": "creatures/species/arbelio.json",
+   "asset": "assets/models/creatures/arbelio/arbelio-savanna-faceted-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/arbelio/arbelio-savanna-faceted-v02-LOD0.glb",
+    "assets/models/creatures/arbelio/arbelio-savanna-faceted-v02-LOD1.glb",
+    "assets/models/creatures/arbelio/arbelio-savanna-faceted-v02-LOD2.glb"
+   ],
+   "clipes": 11,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/arbelio/arbelio-real-3d-front-v01.png",
+   "arteConceitual": "assets/models/creatures/arbelio/arbelio-real-3d-three_quarter-v01.png",
+   "aprovacao": "in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 21,
+   "dano": 0,
+   "massaKg": 5,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_arbelio",
+     "nome": "Pele de Arbélio"
+    },
+    {
+     "id": "carne_arbelio",
+     "nome": "Carne de Arbélio"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "wooded_savanna",
+    "acacia_canopy"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "6 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "young_leaves",
+    "buds",
+    "flowers",
+    "acacia_pods"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "arenoceto": {
+   "nome": "Arenoceto",
+   "fonte": "labs/ia-criaturas/config/eco/especies/arenoceto.json",
+   "asset": "assets/models/creatures/arenoceto/v02/arenoceto-v02-skinned-animated-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/arenoceto/v02/arenoceto-v02-skinned-animated-LOD0.glb"
+   ],
+   "clipes": 20,
+   "ossos": 16,
+   "retrato": "assets/models/creatures/arenoceto/v02/previews/arenoceto-v02-real-animated-front.png",
+   "arteConceitual": "assets/models/creatures/arenoceto/v02/previews/arenoceto-v02-real-animated-three_quarter.png",
+   "aprovacao": "provisorio",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 900,
+   "dano": 0,
+   "massaKg": 20000,
+   "andarMps": 0.8,
+   "correrMps": 1.8,
+   "correrMaxS": 40,
+   "visaoMovimentoM": 20,
+   "visaoParadoM": 8,
+   "audicaoM": 25,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 1,
+   "itens": [
+    {
+     "id": "pele_arenoceto",
+     "nome": "Pele de Arenoceto"
+    },
+    {
+     "id": "carne_arenoceto",
+     "nome": "Carne de Arenoceto"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "erg_dune_desert",
+    "dunas",
+    "Dunas e Ossada",
+    "Oásis das Dunas",
+    "Mesas e Vale Seco",
+    "Torres de Arenito",
+    "Cânion Secreto",
+    "Arco Desértico",
+    "Arco e Cânion da Transição",
+    "Arco e Ossada Central",
+    "arcos",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "deserto_dunas",
+    "deserto_rochoso"
+   ],
+   "habitats": [
+    "dunes",
+    "desert"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "1 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "sedimento",
+    "filter_feed e sift_sediment: peneira a areia. Modelado como consumo da biomassa da célula, não como caça."
+   ],
+   "locomocao": "subterraneo_areia",
+   "atividade": "diurno",
+   "subsolo": {
+    "profundidadeMaxM": 28,
+    "cruzeiroMps": 3.2,
+    "arranqueMps": 7.5,
+    "mergulhoS": 4,
+    "emergenciaS": 5,
+    "vibracaoM": 160
+   },
+   "voo": null
+  },
+  "arraia_de_areia": {
+   "nome": "Arraia-de-Areia",
+   "fonte": "labs/ia-criaturas/config/eco/especies/arraia-de-areia.json",
+   "asset": "assets/models/creatures/arraia-de-areia/v03/arraia-de-areia-v03-rig-animated-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/arraia-de-areia/v03/arraia-de-areia-v03-rig-animated-LOD0.glb"
+   ],
+   "clipes": 22,
+   "ossos": 23,
+   "retrato": "assets/models/creatures/arraia-de-areia/v03/previews/arraia-de-areia-v03-GLB-animado-real-frente.png",
+   "arteConceitual": null,
+   "aprovacao": "provisorio",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 120,
+   "dano": 0,
+   "massaKg": 440,
+   "andarMps": 0.9,
+   "correrMps": 2.2,
+   "correrMaxS": 25,
+   "visaoMovimentoM": 26,
+   "visaoParadoM": 10,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    5
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_arraia_de_areia",
+     "nome": "Pele de Arraia-de-Areia"
+    },
+    {
+     "id": "carne_arraia_de_areia",
+     "nome": "Carne de Arraia-de-Areia"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "erg_dune_desert",
+    "dunas",
+    "Dunas e Ossada",
+    "Oásis das Dunas",
+    "Mesas e Vale Seco",
+    "Torres de Arenito",
+    "Cânion Secreto",
+    "Arco Desértico",
+    "Arco e Cânion da Transição",
+    "Arco e Ossada Central",
+    "arcos",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "deserto_dunas",
+    "deserto_rochoso"
+   ],
+   "habitats": [
+    "dunes",
+    "desert"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "raizes",
+    "sedimento",
+    "clipes feed_roots, filter_feed e scavenge: raízes, sedimento e carniça."
+   ],
+   "locomocao": "subterraneo_areia",
+   "atividade": "crepuscular",
+   "subsolo": {
+    "profundidadeMaxM": 9,
+    "cruzeiroMps": 4.5,
+    "arranqueMps": 10,
+    "mergulhoS": 1.4,
+    "emergenciaS": 1.6,
+    "vibracaoM": 110
+   },
+   "voo": null
+  },
+  "arumbar": {
+   "nome": "Arumbar",
+   "fonte": "creatures/species/arumbar.json",
+   "asset": "assets/models/creatures/arumbar/arumbar-savanna-optimized-v04-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/arumbar/arumbar-savanna-optimized-v04-LOD0.glb",
+    "assets/models/creatures/arumbar/arumbar-savanna-optimized-v04-LOD1.glb",
+    "assets/models/creatures/arumbar/arumbar-savanna-optimized-v04-LOD2.glb"
+   ],
+   "clipes": 8,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/arumbar/arumbar-real-3d-front-optimized-v04.png",
+   "arteConceitual": "assets/models/creatures/arumbar/arumbar-real-3d-three-quarter-optimized-v04.png",
+   "aprovacao": "asset_v03_organic_anatomy_in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 363,
+   "dano": 0,
+   "massaKg": 3500,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 1,
+   "itens": [
+    {
+     "id": "pele_arumbar",
+     "nome": "Pele de Arumbar"
+    },
+    {
+     "id": "carne_arumbar",
+     "nome": "Carne de Arumbar"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "savanna"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "1 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "savanna_grasses",
+    "shrubs",
+    "low_leaves"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "carniroca": {
+   "nome": "Carniroca",
+   "fonte": "creatures/species/carniroca.json + labs/ia-criaturas/config/eco/especies/carniroca.json",
+   "asset": "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD0.glb",
+    "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD1.glb",
+    "assets/models/creatures/carniroca/carniroca-optimized-v02-LOD2.glb"
+   ],
+   "clipes": 25,
+   "ossos": 18,
+   "retrato": "assets/models/creatures/carniroca/carniroca-optimized-v02-real-3d-front.png",
+   "arteConceitual": "assets/models/creatures/carniroca/carniroca-optimized-v02-real-3d-three-quarter.png",
+   "aprovacao": "in_review",
+   "provisorio": true,
+   "papel": "predador",
+   "hp": 45,
+   "dano": 1,
+   "massaKg": 6,
+   "andarMps": 0.6,
+   "correrMps": 2.6,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 120,
+   "visaoParadoM": 48,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1.2,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 2,
+   "itens": [
+    {
+     "id": "pele_carniroca",
+     "nome": "Pele de Carniroca"
+    },
+    {
+     "id": "carne_carniroca",
+     "nome": "Carne de Carniroca"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "forested mountain",
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south",
+    "snow-forest",
+    "forest-snow coastal ecotone"
+   ],
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "planicie"
+   ],
+   "habitats": [
+    "temperate_forest",
+    "temperate_forest_edge",
+    "temperate_grassland",
+    "cliff"
+   ],
+   "raioForrageioM": 450,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "2 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "carrion",
+    "small_opportunistic_prey"
+   ],
+   "locomocao": "voador",
+   "atividade": "diurno",
+   "subsolo": null,
+   "voo": {
+    "velMin": 6,
+    "velCruzeiro": 11,
+    "velMax": 17,
+    "aceleracao": 5,
+    "giroGrausSeg": 75,
+    "subidaMax": 3,
+    "descidaMax": 6,
+    "razaoPlaneio": 12,
+    "altitudeCruzeiroM": 22,
+    "altitudeMaxM": 80,
+    "folgaObstaculoM": 4,
+    "custoBatidoPorSeg": 1.4,
+    "custoPlaneioPorSeg": 0.12,
+    "decolagemSeg": 1.6,
+    "energiaMinDecolar": 25,
+    "energiaPousar": 18,
+    "distanciaVoarM": 25,
+    "distanciaFugaM": 30,
+    "pairar": false,
+    "bando": {
+     "raioM": 45,
+     "separacaoM": 6,
+     "coesao": 1,
+     "alinhamento": 1,
+     "separacao": 2.4
+    }
+   }
+  },
+  "cervalume": {
+   "nome": "Cervalume",
+   "fonte": "creatures/species/cervalume.json",
+   "asset": "assets/models/creatures/cervalume/v02/cervalume-optimized-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/cervalume/v02/cervalume-optimized-v02-LOD0.glb",
+    "assets/models/creatures/cervalume/v02/cervalume-optimized-v02-LOD1.glb",
+    "assets/models/creatures/cervalume/v02/cervalume-optimized-v02-LOD2.glb"
+   ],
+   "clipes": 14,
+   "ossos": 23,
+   "retrato": "assets/models/creatures/cervalume/v02/cervalume-optimized-v02-real-3d-front.png",
+   "arteConceitual": "assets/models/creatures/cervalume/v02/cervalume-optimized-v02-real-3d-three-quarter.png",
+   "aprovacao": "proposal",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 35,
+   "dano": 0,
+   "massaKg": 20,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_cervalume",
+     "nome": "Pele de Cervalume"
+    },
+    {
+     "id": "carne_cervalume",
+     "nome": "Carne de Cervalume"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "forested mountain",
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south",
+    "snow-forest",
+    "forest-snow coastal ecotone"
+   ],
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "planicie"
+   ],
+   "habitats": [
+    "temperate_forest",
+    "grassland_transition"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "6 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "grasses",
+    "leaves",
+    "young_shoots"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "cromatil": {
+   "nome": "Cromátil",
+   "fonte": "creatures/species/cromatil.json + labs/ia-criaturas/config/eco/especies/cromatil.json",
+   "asset": "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD0.glb",
+    "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD1.glb",
+    "assets/models/creatures/cromatil/cromatil-savanna-animated-v01-LOD2.glb"
+   ],
+   "clipes": 11,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/cromatil/cromatil-real-3d-front-v01.png",
+   "arteConceitual": "assets/models/creatures/cromatil/cromatil-real-3d-three_quarter-v01.png",
+   "aprovacao": "in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 30,
+   "dano": 0,
+   "massaKg": 4,
+   "andarMps": 0.5,
+   "correrMps": 5,
+   "correrMaxS": 12,
+   "visaoMovimentoM": 20,
+   "visaoParadoM": 8,
+   "audicaoM": 15,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_cromatil",
+     "nome": "Pele de Cromátil"
+    },
+    {
+     "id": "carne_cromatil",
+     "nome": "Carne de Cromátil"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "dry_savanna",
+    "rocky_savanna"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "6 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "leaves",
+    "flowers",
+    "buds",
+    "succulent_vegetation"
+   ],
+   "locomocao": "terrestre",
+   "atividade": "diurno",
+   "subsolo": null,
+   "voo": null
+  },
+  "dunlingua": {
+   "nome": "Dunlíngua",
+   "fonte": "creatures/species/dunlingua.json",
+   "asset": "assets/models/creatures/dunlingua/dunlingua-optimized-v03-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/dunlingua/dunlingua-optimized-v03-LOD0.glb",
+    "assets/models/creatures/dunlingua/dunlingua-optimized-v03-LOD1.glb",
+    "assets/models/creatures/dunlingua/dunlingua-optimized-v03-LOD2.glb"
+   ],
+   "clipes": 16,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/dunlingua/dunlingua-optimized-v03-real-3d-front.png",
+   "arteConceitual": "assets/models/creatures/dunlingua/dunlingua-optimized-v03-real-3d-three-quarter.png",
+   "aprovacao": "in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 68,
+   "dano": 0,
+   "massaKg": 100,
+   "andarMps": 2,
+   "correrMps": 6,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 4,
+   "itens": [
+    {
+     "id": "pele_dunlingua",
+     "nome": "Pele de Dunlíngua"
+    },
+    {
+     "id": "carne_dunlingua",
+     "nome": "Carne de Dunlíngua"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "erg_dune_desert",
+    "dunas",
+    "Dunas e Ossada",
+    "Oásis das Dunas",
+    "Mesas e Vale Seco",
+    "Torres de Arenito",
+    "Cânion Secreto",
+    "Arco Desértico",
+    "Arco e Cânion da Transição",
+    "Arco e Ossada Central",
+    "arcos",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "deserto_dunas",
+    "deserto_rochoso"
+   ],
+   "habitats": [
+    "desert",
+    "rocky_desert",
+    "canyons"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 95,
+   "densidadeProvisoria": "4 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "termites"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "escarvao": {
+   "nome": "Escarvão",
+   "fonte": "labs/ia-criaturas/config/eco/especies/escarvao.json",
+   "asset": "assets/models/creatures/escarvao/v02/escarvao_cobre_rig_anim_v02.glb",
+   "lods": [
+    "assets/models/creatures/escarvao/v02/escarvao_cobre_rig_anim_v02.glb"
+   ],
+   "clipes": 18,
+   "ossos": 51,
+   "retrato": "assets/models/creatures/escarvao/v02/previews/escarvao_v02_3_variantes_clipes_GLTF_REAL.png",
+   "arteConceitual": "assets/models/creatures/escarvao/v02/previews/escarvao_v02_cobre_walk_three_quarter_GLTF_REAL.png",
+   "aprovacao": "provisorio",
+   "provisorio": true,
+   "papel": "predador",
+   "hp": 150,
+   "dano": 8,
+   "massaKg": 90,
+   "andarMps": 0.9,
+   "correrMps": 5.6,
+   "correrMaxS": 12,
+   "visaoMovimentoM": 14,
+   "visaoParadoM": 6,
+   "audicaoM": 22,
+   "alcanceAtaqueM": 1.8,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 2,
+   "itens": [
+    {
+     "id": "pele_escarvao",
+     "nome": "Pele de Escarvão"
+    },
+    {
+     "id": "carne_escarvao",
+     "nome": "Carne de Escarvão"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "erg_dune_desert",
+    "dunas",
+    "Dunas e Ossada",
+    "Oásis das Dunas",
+    "Mesas e Vale Seco",
+    "Torres de Arenito",
+    "Cânion Secreto",
+    "Arco Desértico",
+    "Arco e Cânion da Transição",
+    "Arco e Ossada Central",
+    "arcos",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "deserto_dunas",
+    "deserto_rochoso"
+   ],
+   "habitats": [
+    "dunes",
+    "desert",
+    "rocky_desert"
+   ],
+   "raioForrageioM": 450,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "2 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "Predador de pequenos vertebrados e invertebrados das dunas; no laboratório come carniça e a microfauna agregada dos níveis 2/3. Não ataca as espécies grandes."
+   ],
+   "locomocao": "subterraneo_areia",
+   "atividade": "noturno",
+   "subsolo": {
+    "profundidadeMaxM": 1.4,
+    "cruzeiroMps": 0.35,
+    "arranqueMps": 0.6,
+    "mergulhoS": 2.25,
+    "emergenciaS": 1.8,
+    "vibracaoM": 70
+   },
+   "voo": null
+  },
+  "ferrunco": {
+   "nome": "Ferrunco",
+   "fonte": "creatures/species/ferrunco.json + labs/ia-criaturas/config/eco/especies/ferrunco.json",
+   "asset": "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD0.glb",
+    "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD1.glb",
+    "assets/models/creatures/ferrunco/ferrunco-optimized-v03-LOD2.glb"
+   ],
+   "clipes": 16,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/ferrunco/ferrunco-optimized-v03-real-3d-front.png",
+   "arteConceitual": "assets/models/creatures/ferrunco/ferrunco-optimized-v03-real-3d-three-quarter.png",
+   "aprovacao": "in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 320,
+   "dano": 0,
+   "massaKg": 220,
+   "andarMps": 1.5,
+   "correrMps": 4.5,
+   "correrMaxS": 20,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 25,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_ferrunco",
+     "nome": "Pele de Ferrunco"
+    },
+    {
+     "id": "carne_ferrunco",
+     "nome": "Carne de Ferrunco"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "forested mountain",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "true tropical jungle",
+    "tropical swamp",
+    "snow-forest",
+    "forest-snow coastal ecotone"
+   ],
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "selva",
+    "pantano"
+   ],
+   "habitats": [
+    "tropical_forest",
+    "temperate_forest",
+    "forest_edge"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 120,
+   "densidadeProvisoria": "3 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "termites"
+   ],
+   "locomocao": "terrestre",
+   "atividade": "diurno",
+   "subsolo": null,
+   "voo": null
+  },
+  "frutavil": {
+   "nome": "Frutavil",
+   "fonte": "creatures/species/frutavil.json + labs/ia-criaturas/config/eco/especies/frutavil.json",
+   "asset": "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD0.glb",
+    "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD1.glb",
+    "assets/models/creatures/frutavil/frutavil-savanna-animated-v01-LOD2.glb"
+   ],
+   "clipes": 11,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/frutavil/frutavil-real-3d-front-v01.png",
+   "arteConceitual": "assets/models/creatures/frutavil/frutavil-real-3d-three_quarter-v01.png",
+   "aprovacao": "in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 14,
+   "dano": 0,
+   "massaKg": 3,
+   "andarMps": 0.9,
+   "correrMps": 3.4,
+   "correrMaxS": 5,
+   "visaoMovimentoM": 34,
+   "visaoParadoM": 14,
+   "audicaoM": 22,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    3,
+    7
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_frutavil",
+     "nome": "Pele de Frutavil"
+    },
+    {
+     "id": "carne_frutavil",
+     "nome": "Carne de Frutavil"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes",
+    "forest-snow coastal ecotone"
+   ],
+   "classesBioma": [
+    "floresta_temperada",
+    "savana"
+   ],
+   "habitats": [
+    "wooded_savanna",
+    "seasonal_forest_edge"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "6 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "fruit",
+    "soft_seeds",
+    "buds"
+   ],
+   "locomocao": "terrestre",
+   "atividade": "diurno",
+   "subsolo": null,
+   "voo": null
+  },
+  "garruva": {
+   "nome": "Garruva",
+   "fonte": "creatures/species/garruva.json",
+   "asset": "assets/models/creatures/garruva/garruva-savanna-animated-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/garruva/garruva-savanna-animated-v02-LOD0.glb",
+    "assets/models/creatures/garruva/garruva-savanna-animated-v02-LOD1.glb",
+    "assets/models/creatures/garruva/garruva-savanna-animated-v02-LOD2.glb"
+   ],
+   "clipes": 13,
+   "ossos": 17,
+   "retrato": null,
+   "arteConceitual": "assets/models/creatures/garruva/garruva-real-3d-three_quarter-v01.png",
+   "aprovacao": "sem status",
+   "provisorio": true,
+   "papel": "predador",
+   "hp": 120,
+   "dano": 23,
+   "massaKg": 350,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1.6,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 2,
+   "itens": [
+    {
+     "id": "pele_garruva",
+     "nome": "Pele de Garruva"
+    },
+    {
+     "id": "carne_garruva",
+     "nome": "Carne de Garruva"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "open_savanna",
+    "rocky_savanna"
+   ],
+   "raioForrageioM": 450,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "2 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "carrion",
+    "carcass_remains"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "mastelio": {
+   "nome": "Mastélio",
+   "fonte": "creatures/species/mastelio.json",
+   "asset": "assets/models/creatures/mastelio/mastelio-savanna-animated-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/mastelio/mastelio-savanna-animated-v02-LOD0.glb",
+    "assets/models/creatures/mastelio/mastelio-savanna-animated-v02-LOD1.glb",
+    "assets/models/creatures/mastelio/mastelio-savanna-animated-v02-LOD2.glb"
+   ],
+   "clipes": 12,
+   "ossos": 19,
+   "retrato": "assets/models/creatures/mastelio/mastelio-real-3d-front-v01.png",
+   "arteConceitual": "assets/models/creatures/mastelio/mastelio-real-3d-three_quarter-v01.png",
+   "aprovacao": "sem status",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 195,
+   "dano": 0,
+   "massaKg": 975,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_mastelio",
+     "nome": "Pele de Mastélio"
+    },
+    {
+     "id": "carne_mastelio",
+     "nome": "Carne de Mastélio"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "wooded_savanna",
+    "acacia_woodlands"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "fallen_fruits",
+    "large_seed_pods",
+    "soft_leaves"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "pica_termita": {
+   "nome": "Pica-Termita de Crista",
+   "fonte": "creatures/species/pica-termita.json + labs/ia-criaturas/config/eco/especies/pica-termita.json",
+   "asset": "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD0.glb",
+    "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD1.glb",
+    "assets/models/creatures/pica-termita/pica-termita-optimized-v03-LOD2.glb"
+   ],
+   "clipes": 18,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/pica-termita/pica-termita-optimized-v03-real-3d-front.png",
+   "arteConceitual": "assets/models/creatures/pica-termita/pica-termita-optimized-v03-real-3d-three-quarter.png",
+   "aprovacao": "in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 20,
+   "dano": 0,
+   "massaKg": 2,
+   "andarMps": 0.6666666666666666,
+   "correrMps": 2,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 60,
+   "visaoParadoM": 24,
+   "audicaoM": 20,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_pica_termita",
+     "nome": "Pele de Pica-Termita de Crista"
+    },
+    {
+     "id": "carne_pica_termita",
+     "nome": "Carne de Pica-Termita de Crista"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes",
+    "forest-snow coastal ecotone"
+   ],
+   "classesBioma": [
+    "floresta_temperada",
+    "planicie",
+    "savana"
+   ],
+   "habitats": [
+    "grassland",
+    "savanna",
+    "tropical_forest_edge",
+    "temperate_forest_edge"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 65,
+   "densidadeProvisoria": "6 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "termites"
+   ],
+   "locomocao": "voador",
+   "atividade": "diurno",
+   "subsolo": null,
+   "voo": {
+    "velMin": 4,
+    "velCruzeiro": 8,
+    "velMax": 12,
+    "aceleracao": 6,
+    "giroGrausSeg": 110,
+    "subidaMax": 3,
+    "descidaMax": 5,
+    "razaoPlaneio": 6,
+    "altitudeCruzeiroM": 10,
+    "altitudeMaxM": 40,
+    "folgaObstaculoM": 3,
+    "custoBatidoPorSeg": 2.2,
+    "custoPlaneioPorSeg": 0.4,
+    "decolagemSeg": 0.8,
+    "energiaMinDecolar": 25,
+    "energiaPousar": 20,
+    "distanciaVoarM": 18,
+    "distanciaFugaM": 20,
+    "pairar": false
+   }
+  },
+  "raizauro": {
+   "nome": "Raizauro",
+   "fonte": "creatures/species/raizauro.json",
+   "asset": "assets/models/creatures/raizauro/raizauro-savanna-animated-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/raizauro/raizauro-savanna-animated-v02-LOD0.glb",
+    "assets/models/creatures/raizauro/raizauro-savanna-animated-v02-LOD1.glb",
+    "assets/models/creatures/raizauro/raizauro-savanna-animated-v02-LOD2.glb"
+   ],
+   "clipes": 12,
+   "ossos": 17,
+   "retrato": "assets/models/creatures/raizauro/raizauro-real-3d-front-v01.png",
+   "arteConceitual": "assets/models/creatures/raizauro/raizauro-real-3d-three_quarter-v01.png",
+   "aprovacao": "sem status",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 180,
+   "dano": 0,
+   "massaKg": 825,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_raizauro",
+     "nome": "Pele de Raizauro"
+    },
+    {
+     "id": "carne_raizauro",
+     "nome": "Carne de Raizauro"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "dry_savanna",
+    "rocky_savanna"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "roots",
+    "tubers",
+    "succulents"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "rambrel": {
+   "nome": "Rambrél",
+   "fonte": "creatures/species/rambrel.json",
+   "asset": "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD0.glb",
+    "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD1.glb",
+    "assets/models/creatures/rambrel/rambrel-savanna-animated-v03-LOD2.glb"
+   ],
+   "clipes": 11,
+   "ossos": 17,
+   "retrato": "assets/models/creatures/rambrel/rambrel-real-3d-front-lowpoly-v05.png",
+   "arteConceitual": "assets/models/creatures/rambrel/rambrel-real-3d-three_quarter-lowpoly-v05.png",
+   "aprovacao": "animated_3d_asset_in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 103,
+   "dano": 0,
+   "massaKg": 250,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_rambrel",
+     "nome": "Pele de Rambrél"
+    },
+    {
+     "id": "carne_rambrel",
+     "nome": "Carne de Rambrél"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "wooded_savanna"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "acacia_leaves",
+    "buds",
+    "flowers",
+    "fruit"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "rocantraz": {
+   "nome": "Rocantraz",
+   "fonte": "creatures/species/rocantraz.json + labs/ia-criaturas/config/eco/especies/rocantraz.json",
+   "asset": "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD0.glb",
+    "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD1.glb",
+    "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-LOD2.glb"
+   ],
+   "clipes": 12,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-real-3d-front.png",
+   "arteConceitual": "assets/models/creatures/rocantraz/rocantraz-desert-biped-optimized-v05-real-3d-three-quarter.png",
+   "aprovacao": "biped_anatomy_biomechanics_v04_asset",
+   "provisorio": true,
+   "papel": "predador",
+   "hp": 900,
+   "dano": 24,
+   "massaKg": 4000,
+   "andarMps": 2,
+   "correrMps": 9,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 60,
+   "visaoParadoM": 24,
+   "audicaoM": 45,
+   "alcanceAtaqueM": 3.5,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 1,
+   "itens": [
+    {
+     "id": "pele_rocantraz",
+     "nome": "Pele de Rocantraz"
+    },
+    {
+     "id": "carne_rocantraz",
+     "nome": "Carne de Rocantraz"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "forested mountain",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "true tropical jungle",
+    "tropical swamp",
+    "erg_dune_desert",
+    "dunas",
+    "Dunas e Ossada",
+    "Oásis das Dunas",
+    "Mesas e Vale Seco",
+    "Torres de Arenito",
+    "Cânion Secreto",
+    "Arco Desértico",
+    "Arco e Cânion da Transição",
+    "Arco e Ossada Central",
+    "arcos",
+    "Oásis dos Contrafortes",
+    "snow-forest",
+    "forest-snow coastal ecotone"
+   ],
+   "classesBioma": [
+    "floresta_temperada",
+    "montanha_florestada",
+    "selva",
+    "pantano",
+    "deserto_dunas",
+    "deserto_rochoso"
+   ],
+   "habitats": [
+    "temperate_forest",
+    "tropical_forest",
+    "mountains",
+    "desert",
+    "rocky_desert"
+   ],
+   "raioForrageioM": 450,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "1 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "varrisco",
+    "herbívoros grandes da savana (ex.: Arumbar) não estão no cenário; Velsari/Cromátil/Tarruco são pequenos demais para a dieta da ficha"
+   ],
+   "locomocao": "terrestre",
+   "atividade": "diurno",
+   "subsolo": null,
+   "voo": null
+  },
+  "serpaduna": {
+   "nome": "Serpáduna",
+   "fonte": "labs/ia-criaturas/config/eco/especies/serpaduna.json",
+   "asset": "assets/models/creatures/serpaduna/v03/serpaduna_v03_uncoiled_rigged.glb",
+   "lods": [
+    "assets/models/creatures/serpaduna/v03/serpaduna_v03_uncoiled_rigged.glb"
+   ],
+   "clipes": 13,
+   "ossos": 72,
+   "retrato": "assets/models/creatures/serpaduna/v03/previews/serpaduna_v03_3_vistas_reais.png",
+   "arteConceitual": null,
+   "aprovacao": "experimental_v7",
+   "provisorio": true,
+   "papel": "predador",
+   "hp": 420,
+   "dano": 1,
+   "massaKg": 900,
+   "andarMps": 0.8,
+   "correrMps": 4.5,
+   "correrMaxS": 6,
+   "visaoMovimentoM": 18,
+   "visaoParadoM": 7,
+   "audicaoM": 8,
+   "alcanceAtaqueM": 4,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 1,
+   "itens": [
+    {
+     "id": "pele_serpaduna",
+     "nome": "Pele de Serpáduna"
+    },
+    {
+     "id": "carne_serpaduna",
+     "nome": "Carne de Serpáduna"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "erg_dune_desert",
+    "dunas",
+    "Dunas e Ossada",
+    "Oásis das Dunas",
+    "Mesas e Vale Seco",
+    "Torres de Arenito",
+    "Cânion Secreto",
+    "Arco Desértico",
+    "Arco e Cânion da Transição",
+    "Arco e Ossada Central",
+    "arcos",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "deserto_dunas",
+    "deserto_rochoso"
+   ],
+   "habitats": [
+    "dunes",
+    "desert",
+    "rocky_desert"
+   ],
+   "raioForrageioM": 450,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "1 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "velsari",
+    "cromatil",
+    "tarruco",
+    "folhisco",
+    "ficha: ground_vertebrates — recurso agregado nos níveis 2/3 (não individualizado)"
+   ],
+   "locomocao": "terrestre",
+   "atividade": "noturno",
+   "subsolo": null,
+   "voo": null
+  },
+  "serracorion": {
+   "nome": "Serracórion",
+   "fonte": "labs/ia-criaturas/config/eco/especies/serracorion.json",
+   "asset": "assets/models/creatures/serracorion/v03/serracorion-v03-rig-animado-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/serracorion/v03/serracorion-v03-rig-animado-LOD0.glb"
+   ],
+   "clipes": 20,
+   "ossos": 43,
+   "retrato": "assets/models/creatures/serracorion/v03/previews/serracorion-v03-GLB-animado-real-frente.png",
+   "arteConceitual": null,
+   "aprovacao": "provisorio",
+   "provisorio": true,
+   "papel": "predador",
+   "hp": 320,
+   "dano": 12,
+   "massaKg": 1200,
+   "andarMps": 1.1,
+   "correrMps": 7.5,
+   "correrMaxS": 16,
+   "visaoMovimentoM": 22,
+   "visaoParadoM": 9,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 4,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 1,
+   "itens": [
+    {
+     "id": "pele_serracorion",
+     "nome": "Pele de Serracórion"
+    },
+    {
+     "id": "carne_serracorion",
+     "nome": "Carne de Serracórion"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "erg_dune_desert",
+    "dunas",
+    "Dunas e Ossada",
+    "Oásis das Dunas",
+    "Mesas e Vale Seco",
+    "Torres de Arenito",
+    "Cânion Secreto",
+    "Arco Desértico",
+    "Arco e Cânion da Transição",
+    "Arco e Ossada Central",
+    "arcos",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "deserto_dunas",
+    "deserto_rochoso"
+   ],
+   "habitats": [
+    "dunes",
+    "desert"
+   ],
+   "raioForrageioM": 450,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "1 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "arraia-de-areia",
+    "escarvao"
+   ],
+   "locomocao": "subterraneo_areia",
+   "atividade": "crepuscular",
+   "subsolo": {
+    "profundidadeMaxM": 3.2,
+    "cruzeiroMps": 0.5,
+    "arranqueMps": 0.9,
+    "mergulhoS": 4.2,
+    "emergenciaS": 3.9,
+    "vibracaoM": 130
+   },
+   "voo": null
+  },
+  "sevilho": {
+   "nome": "Sevilho",
+   "fonte": "creatures/species/sevilho.json",
+   "asset": "assets/models/creatures/sevilho/sevilho-savanna-faceted-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/sevilho/sevilho-savanna-faceted-v02-LOD0.glb",
+    "assets/models/creatures/sevilho/sevilho-savanna-faceted-v02-LOD1.glb",
+    "assets/models/creatures/sevilho/sevilho-savanna-faceted-v02-LOD2.glb"
+   ],
+   "clipes": 11,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/sevilho/sevilho-real-3d-front-v01.png",
+   "arteConceitual": "assets/models/creatures/sevilho/sevilho-real-3d-three_quarter-v01.png",
+   "aprovacao": "in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 18,
+   "dano": 0,
+   "massaKg": 3,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_sevilho",
+     "nome": "Pele de Sevilho"
+    },
+    {
+     "id": "carne_sevilho",
+     "nome": "Carne de Sevilho"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "open_savanna",
+    "grass_tufts"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "6 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "grass_seeds",
+    "grains",
+    "dry_fruit"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "talvero": {
+   "nome": "Talvero",
+   "fonte": "creatures/species/talvero.json",
+   "asset": "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD0.glb",
+    "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD1.glb",
+    "assets/models/creatures/talvero/talvero-savanna-animated-v05-LOD2.glb"
+   ],
+   "clipes": 10,
+   "ossos": 17,
+   "retrato": "assets/models/creatures/talvero/talvero-real-3d-front-lowpoly-v05.png",
+   "arteConceitual": "assets/models/creatures/talvero/talvero-real-3d-three_quarter-lowpoly-v05.png",
+   "aprovacao": "animated_3d_asset_in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 95,
+   "dano": 0,
+   "massaKg": 210,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_talvero",
+     "nome": "Pele de Talvero"
+    },
+    {
+     "id": "carne_talvero",
+     "nome": "Carne de Talvero"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "savanna_grassland"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "savanna_grasses",
+    "ground_vegetation"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "tarruco": {
+   "nome": "Tarruco",
+   "fonte": "creatures/species/tarruco.json + labs/ia-criaturas/config/eco/especies/tarruco.json",
+   "asset": "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD0.glb",
+    "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD1.glb",
+    "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-LOD2.glb"
+   ],
+   "clipes": 10,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/tarruco/tarruco-savanna-optimized-v02-real-3d-front.png",
+   "arteConceitual": "assets/models/creatures/tarruco/tarruco-real-3d-three-quarter-v01.png",
+   "aprovacao": "redesigned_animated_3d_asset_in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 60,
+   "dano": 0,
+   "massaKg": 12,
+   "andarMps": 0.9,
+   "correrMps": 6.7,
+   "correrMaxS": 20,
+   "visaoMovimentoM": 22,
+   "visaoParadoM": 9,
+   "audicaoM": 28,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_tarruco",
+     "nome": "Pele de Tarruco"
+    },
+    {
+     "id": "carne_tarruco",
+     "nome": "Carne de Tarruco"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "savanna"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "6 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "surface_roots",
+    "new_shoots",
+    "fallen_fruit"
+   ],
+   "locomocao": "terrestre",
+   "atividade": "crepuscular",
+   "subsolo": null,
+   "voo": null
+  },
+  "torvardo": {
+   "nome": "Torvardo",
+   "fonte": "creatures/species/torvardo.json",
+   "asset": "assets/models/creatures/torvardo/torvardo-savanna-animated-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/torvardo/torvardo-savanna-animated-v02-LOD0.glb",
+    "assets/models/creatures/torvardo/torvardo-savanna-animated-v02-LOD1.glb",
+    "assets/models/creatures/torvardo/torvardo-savanna-animated-v02-LOD2.glb"
+   ],
+   "clipes": 12,
+   "ossos": 17,
+   "retrato": "assets/models/creatures/torvardo/torvardo-real-3d-front-v01.png",
+   "arteConceitual": "assets/models/creatures/torvardo/torvardo-real-3d-three_quarter-v01.png",
+   "aprovacao": "sem status",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 232,
+   "dano": 0,
+   "massaKg": 1400,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_torvardo",
+     "nome": "Pele de Torvardo"
+    },
+    {
+     "id": "carne_torvardo",
+     "nome": "Carne de Torvardo"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "open_savanna",
+    "savanna_grassland"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "tall_grasses",
+    "tough_grasses"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "turvagal": {
+   "nome": "Turvagal",
+   "fonte": "creatures/species/turvagal.json",
+   "asset": "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD0.glb",
+    "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD1.glb",
+    "assets/models/creatures/turvagal/turvagal-savanna-animated-v03-LOD2.glb"
+   ],
+   "clipes": 11,
+   "ossos": 17,
+   "retrato": "assets/models/creatures/turvagal/turvagal-real-3d-front-lowpoly-v05.png",
+   "arteConceitual": "assets/models/creatures/turvagal/turvagal-real-3d-three_quarter-lowpoly-v05.png",
+   "aprovacao": "animated_3d_asset_in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 115,
+   "dano": 0,
+   "massaKg": 320,
+   "andarMps": 1.2,
+   "correrMps": 4,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_turvagal",
+     "nome": "Pele de Turvagal"
+    },
+    {
+     "id": "carne_turvagal",
+     "nome": "Carne de Turvagal"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "tropical swamp",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana",
+    "pantano"
+   ],
+   "habitats": [
+    "savanna_riverbank",
+    "seasonal_wetland"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "wet_grasses",
+    "aquatic_vegetation",
+    "riverbank_herbs"
+   ],
+   "locomocao": "terrestre",
+   "atividade": null,
+   "subsolo": null,
+   "voo": null
+  },
+  "varrisco": {
+   "nome": "Varrisco",
+   "fonte": "creatures/species/varrisco.json + labs/ia-criaturas/config/eco/especies/varrisco.json",
+   "asset": "assets/models/creatures/varrisco/v11/varrisco-animated-v11-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/varrisco/v11/varrisco-animated-v11-LOD0.glb"
+   ],
+   "clipes": 55,
+   "ossos": 22,
+   "retrato": "assets/models/creatures/varrisco/v11/previews/faces-de-tras-ocultas-v10-frente.png",
+   "arteConceitual": "assets/models/creatures/varrisco/referencias/varrisco-arte-conceitual.webp",
+   "aprovacao": "asset_in_review_not_integrated",
+   "provisorio": true,
+   "papel": "predador",
+   "hp": 160,
+   "dano": 7,
+   "massaKg": 70,
+   "andarMps": 1.5,
+   "correrMps": 13,
+   "correrMaxS": 14,
+   "visaoMovimentoM": 45,
+   "visaoParadoM": 18,
+   "audicaoM": 35,
+   "alcanceAtaqueM": 3.2,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    2
+   ],
+   "gruposPorHex": 2,
+   "itens": [
+    {
+     "id": "pele_varrisco",
+     "nome": "Pele de Varrisco"
+    },
+    {
+     "id": "carne_varrisco",
+     "nome": "Carne de Varrisco"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "erg_dune_desert",
+    "dunas",
+    "Dunas e Ossada",
+    "Oásis das Dunas",
+    "Mesas e Vale Seco",
+    "Torres de Arenito",
+    "Cânion Secreto",
+    "Arco Desértico",
+    "Arco e Cânion da Transição",
+    "Arco e Ossada Central",
+    "arcos",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana",
+    "deserto_dunas",
+    "deserto_rochoso"
+   ],
+   "habitats": [
+    "savanna",
+    "desert",
+    "rocky_desert"
+   ],
+   "raioForrageioM": 450,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "2 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "small_herbivores",
+    "ground_vertebrates",
+    "vulnerable_medium_herbivores",
+    "opportunistic_carrion"
+   ],
+   "locomocao": "terrestre",
+   "atividade": "crepuscular",
+   "subsolo": null,
+   "voo": null
+  },
+  "velsari": {
+   "nome": "Velsari",
+   "fonte": "creatures/species/velsari.json + labs/ia-criaturas/config/eco/especies/velsari.json",
+   "asset": "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD0.glb",
+   "lods": [
+    "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD0.glb",
+    "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD1.glb",
+    "assets/models/creatures/velsari/velsari-savanna-optimized-v02-LOD2.glb"
+   ],
+   "clipes": 10,
+   "ossos": 0,
+   "retrato": "assets/models/creatures/velsari/velsari-savanna-optimized-v02-real-3d-front.png",
+   "arteConceitual": "assets/models/creatures/velsari/velsari-real-3d-three-quarter-v01.png",
+   "aprovacao": "animated_3d_asset_in_review",
+   "provisorio": true,
+   "papel": "presa",
+   "hp": 100,
+   "dano": 0,
+   "massaKg": 22,
+   "andarMps": 1.3,
+   "correrMps": 12.5,
+   "correrMaxS": 35,
+   "visaoMovimentoM": 38,
+   "visaoParadoM": 15,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    4,
+    10
+   ],
+   "gruposPorHex": 4,
+   "itens": [
+    {
+     "id": "pele_velsari",
+     "nome": "Pele de Velsari"
+    },
+    {
+     "id": "carne_velsari",
+     "nome": "Carne de Velsari"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate golden fantasy savanna",
+    "humid savanna -> elevated jungle rocky ecotone",
+    "Oásis dos Contrafortes"
+   ],
+   "classesBioma": [
+    "savana"
+   ],
+   "habitats": [
+    "savanna"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "4 grupos por hex (provisório, por massa e papel)",
+   "dieta": [
+    "grass",
+    "new_shoots"
+   ],
+   "locomocao": "terrestre",
+   "atividade": "diurno",
+   "subsolo": null,
+   "voo": null
+  }
+ },
+ "spawn": {
+  "provisorio": true,
+  "excluir": [
+   "HV_01"
+  ],
+  "raioSimulacaoDetalhadaM": 1500,
+  "foraDoRaio": "V02: níveis de relevância — perto (todo tick), médio (a cada 3), longe (a cada 15, sem rota detalhada); além disso congelado",
+  "nota": "V04: distribuição por classe de bioma (data/biomas-v04.json); terrestres em célula caminhável seca; subterrâneos só em classes de deserto; voadores pousam em célula caminhável"
+ },
+ "conhecimento": {
+  "confirmado": "aparece só no Bestiário e influencia a IA",
+  "niveis": [
+   "desconhecido",
+   "avistado",
+   "estudado",
+   "dominado"
+  ],
+  "avistamentosParaEstudado": 3,
+  "abatesParaDominado": 1,
+  "efeitoProvisorio": "estudado: Hunter usa o alcance de visão da espécie para se manter fora dela ao se aproximar; dominado: escolhe armadilha contra predador quando tem armadilhas ≥ 3"
+ },
+ "expedicao": {
+  "provisorio": true,
+  "maxHorasSemAbate": 4,
+  "nota": "Expedição sem abate volta após 4 h de jogo, ou quando todos se recuperam de um resgate (provisório)."
+ },
+ "necessidades": {
+  "provisorio": true,
+  "decisao": "IA de criaturas V02 — sem aprovação de balanceamento",
+  "fomeCheiaS": 2400,
+  "sedeCheiaS": 1500,
+  "energiaDuracaoS": 3600,
+  "recuperacaoEnergiaS": 700,
+  "limiarFome": 0.6,
+  "limiarSede": 0.65,
+  "limiarCansaco": 0.25,
+  "buscaAguaRaioM": 260,
+  "carcacaDuracaoS": 1500,
+  "presasDescansamANoite": true,
+  "territorioFator": 2
+ },
+ "relevancia": {
+  "provisorio": true,
+  "pertoM": 450,
+  "medioM": 1500,
+  "longeM": 4500,
+  "passoMedio": 3,
+  "passoLonge": 15,
+  "orcamentoAstarPorTick": 14
+ },
+ "clima": {
+  "provisorio": true,
+  "fonte": "labs/ia-criaturas/src/eco/clima.js (V7) — fatores por intensidade 1; V08 não existe no repositório",
+  "fatores": {
+   "chuva": {
+    "visao": 0.55,
+    "audicao": 0.55,
+    "olfato": 0.5,
+    "locomocao": 0.9,
+    "deltaTemperaturaC": -4,
+    "apagaRastros": true
+   },
+   "tempestade": {
+    "visao": 0.45,
+    "audicao": 0.4,
+    "olfato": 0.45,
+    "locomocao": 0.85,
+    "deltaTemperaturaC": -6,
+    "apagaRastros": true
+   },
+   "areia": {
+    "visao": 0.15,
+    "audicao": 0.5,
+    "olfato": 0.6,
+    "locomocao": 0.8,
+    "deltaTemperaturaC": -2,
+    "apagaRastros": true
+   },
+   "neve": {
+    "visao": 0.6,
+    "audicao": 0.8,
+    "olfato": 0.8,
+    "locomocao": 0.85,
+    "deltaTemperaturaC": -8,
+    "apagaRastros": false
+   },
+   "nevasca": {
+    "visao": 0.3,
+    "audicao": 0.7,
+    "olfato": 0.7,
+    "locomocao": 0.65,
+    "deltaTemperaturaC": -14,
+    "apagaRastros": true
+   }
+  },
+  "noiteVisao": 0.5,
+  "cicloLunarCiclos": 8,
+  "frenteIntervaloS": 900,
+  "frenteVidaS": [
+   1800,
+   5400
+  ],
+  "megatempestadeChance": 0.06,
+  "atualizacaoS": 10
+ },
+ "versaoDados": "v04",
+ "pendentes": [
+  {
+   "id": "branquelope",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  },
+  {
+   "id": "brejaveo",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 24
+  },
+  {
+   "id": "brotarro",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 18
+  },
+  {
+   "id": "casquim",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  },
+  {
+   "id": "caudraco",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 16
+  },
+  {
+   "id": "cipria",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 18
+  },
+  {
+   "id": "clavascarnio",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  },
+  {
+   "id": "cornevio",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 16
+  },
+  {
+   "id": "dodarro",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  },
+  {
+   "id": "fossario",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 16
+  },
+  {
+   "id": "fulgaronte",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 24
+  },
+  {
+   "id": "gelfaro",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  },
+  {
+   "id": "gravarto",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 17
+  },
+  {
+   "id": "lagarto-papagaio",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 24
+  },
+  {
+   "id": "lajurim",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 16
+  },
+  {
+   "id": "nevisco",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  },
+  {
+   "id": "quedravo",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  },
+  {
+   "id": "sirocauro",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 41
+  },
+  {
+   "id": "tufrino",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  },
+  {
+   "id": "tumbira",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 19
+  },
+  {
+   "id": "velufim",
+   "motivo": "GLB animado sem ficha nem config do laboratório (só README): faltam percepção, dieta e habitat",
+   "clipes": 20
+  },
+  {
+   "id": "wyvern-montanha",
+   "motivo": "sem GLB animado publicado (estático ou só fonte)",
+   "ficha": false,
+   "laboratorio": false
+  }
+ ],
+ "meios": {
+  "provisorio": true,
+  "areiaRotulos": [
+   "erg_dune_desert",
+   "dunas",
+   "Dunas e Ossada",
+   "Oásis das Dunas",
+   "Mesas e Vale Seco",
+   "Torres de Arenito",
+   "Cânion Secreto",
+   "Arco Desértico",
+   "Arco e Cânion da Transição",
+   "Arco e Ossada Central",
+   "arcos",
+   "Oásis dos Contrafortes",
+   "praia"
+  ]
+ }
+}
