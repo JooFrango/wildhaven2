@@ -117,6 +117,7 @@ async function main() {
   const perf = new Perf();
   const eco = new EconomicView(document.body, heights);
   let scene3d: Scene3D | null = null;
+  Object.defineProperty(window, "__wildhavenScene", { get: () => scene3d });
   let scene3dLoading: Promise<Scene3D> | null = null;
   let ecoSince = 0;
   const loops = { kind: "none" as "none" | "3d" | "pixel", ecoTimer: 0, ecoNext: 0 };
@@ -134,7 +135,7 @@ async function main() {
       await s.init((stage, frac, label) => loading.stage(stage, frac, label), initial);
       clearTimeout(slow);
       if (!initial) loading.hide();
-      scene3d = s; scene3dLoading = null; (window as any).__wildhavenScene = s; // depuração
+      scene3d = s; scene3dLoading = null;
       ui.setPortrait(s.portraitUrl);
       return s;
     })();
