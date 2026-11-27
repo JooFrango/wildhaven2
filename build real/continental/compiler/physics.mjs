@@ -63,7 +63,7 @@ function rasterTri(tri,x0,z0,nx,nz,res,out){
     if(!Number.isFinite(out[k])||y>out[k])out[k]=y;
   }
 }
-export function compileTile(bytes,{id,centerX,centerZ,res=2,chunkMeters=256,baseY=0,nodeClasses={},treeRules={}}={}) {
+export function compileTile(bytes,{id,centerX,centerZ,res=2,chunkMeters=256,baseY=0,nodeClasses={},nodeClassPatterns=[],treeRules={}}={}) {
   if(typeof id!=="string"||!id||!Number.isFinite(centerX)||!Number.isFinite(centerZ))throw Error("tile ID and world center required");
   if(!Number.isInteger(res)||!Number.isInteger(chunkMeters)||res<=0||chunkMeters<=0||chunkMeters%res!==0
     ||chunkMeters/res>65535||!Number.isFinite(baseY))throw Error("Invalid global grid resolution/chunk settings");
@@ -99,7 +99,7 @@ export function compileTile(bytes,{id,centerX,centerZ,res=2,chunkMeters=256,base
       counts.dynamicTreeInstances=(counts.dynamicTreeInstances??0)+inst.length;
       return;
     }
-    const cat=cats[name]??(name===id?"terrain":null);
+    const cat=cats[name]??(name===id?"terrain":null)??nodeClassPatterns.find(p=>p.re.test(name))?.cls??null;
     if(cat!==null&&!valid.has(cat))throw Error("Invalid node category "+cat+" for "+name);
     if(inst){
       // GPU instances are never silently omitted from PHYSICAL certification:

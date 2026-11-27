@@ -1,0 +1,376 @@
+{
+  "schema": "wildhaven.gameplay.provisorio.v1",
+  "status": "PROVISÓRIO — parâmetros técnicos para a fatia demonstrável. Nenhum valor aqui é regra aprovada; cada bloco cita o item de decisão do diretor (build real/05-roadmap-aceitacao.md, 'Itens para decisão') ou a ficha de espécie de onde veio.",
+  "origemDosValores": {
+    "fichas": "creatures/species/folhisco.json (locomoção, percepção, bando 4–9: 'valores iniciais para testes')",
+    "regrasConfirmadas": "build real/README.md e 05-roadmap: 2 carroças (Chad e Nailon), 6 Hunters por carroça, carroça cobra, Desvio 1 = jogar-se e levantar, Desvio 5 = rolar e esperar 3 s, resgate quando ≥1/3 caídos sem saída ou Hunter sozinho caído, morte permanente, habilidades 1–20 sem nível geral, rastro azul só quando descoberto e interrompido pela água",
+    "inventados": "todo valor marcado provisorio=true abaixo — escolhido por esta build técnica para tornar o ciclo testável"
+  },
+  "economia": {
+    "provisorio": true,
+    "decisao": "item 7 (preço da carroça)",
+    "dinheiroInicial": 500,
+    "carroca": {
+      "base": 40,
+      "porKm": 6
+    }
+  },
+  "carrocas": {
+    "confirmado": "2 carroças, Chad e Nailon, 6 Hunters cada, puxadas por dodos",
+    "capacidade": 6,
+    "lista": [
+      {
+        "id": "chad",
+        "condutor": "Chad"
+      },
+      {
+        "id": "nailon",
+        "condutor": "Nailon"
+      }
+    ],
+    "velocidadeMps": 3.0,
+    "velocidadeProvisoria": "o dodo (Dodarro montaria v02) é blockout estático sem clipe de locomoção; a velocidade não pôde ser extraída",
+    "assetPuxador": "assets/models/creatures/dodarro/dodarro_montaria_v02_blockout.glb (aguardando aprovação artística)",
+    "assetCarroca": "AUSENTE — o cliente mostra um marcador técnico identificado"
+  },
+  "acampamento": {
+    "provisorio": true,
+    "raioClareiraM": 6,
+    "inclinacaoMaxGraus": 12,
+    "curaDescansoHpS": 1.0,
+    "curaCampoHpS": 0.05
+  },
+  "hunters": {
+    "provisorio": true,
+    "decisao": "item 1 (número de Hunters simultâneos)",
+    "visaoM": 60,
+    "lista": [
+      {
+        "id": "hunter-001",
+        "nome": "Hunter 01",
+        "forca": 8,
+        "arma": "espada",
+        "habilidades": {
+          "espada": 4,
+          "desvio": 1,
+          "furtividade": 5,
+          "rastreamento": 6,
+          "armadilhas": 2,
+          "rodeio": 3,
+          "velocidade": 2
+        }
+      },
+      {
+        "id": "hunter-002",
+        "nome": "Hunter 02",
+        "forca": 11,
+        "arma": "espada",
+        "habilidades": {
+          "espada": 7,
+          "desvio": 5,
+          "furtividade": 2,
+          "rastreamento": 3,
+          "armadilhas": 6,
+          "rodeio": 5,
+          "velocidade": 3
+        }
+      },
+      {
+        "id": "hunter-003",
+        "nome": "Hunter 03",
+        "forca": 6,
+        "arma": "espada",
+        "habilidades": {
+          "espada": 2,
+          "desvio": 2,
+          "furtividade": 8,
+          "rastreamento": 9,
+          "armadilhas": 3,
+          "rodeio": 1,
+          "velocidade": 4
+        }
+      },
+      {
+        "id": "hunter-004",
+        "nome": "Hunter 04",
+        "forca": 9,
+        "arma": "espada",
+        "habilidades": {
+          "espada": 5,
+          "desvio": 3,
+          "furtividade": 3,
+          "rastreamento": 4,
+          "armadilhas": 8,
+          "rodeio": 2,
+          "velocidade": 2
+        }
+      },
+      {
+        "id": "hunter-005",
+        "nome": "Hunter 05",
+        "forca": 7,
+        "arma": "espada",
+        "habilidades": {
+          "espada": 3,
+          "desvio": 1,
+          "furtividade": 4,
+          "rastreamento": 5,
+          "armadilhas": 1,
+          "rodeio": 6,
+          "velocidade": 5
+        }
+      },
+      {
+        "id": "hunter-006",
+        "nome": "Hunter 06",
+        "forca": 10,
+        "arma": "espada",
+        "habilidades": {
+          "espada": 6,
+          "desvio": 6,
+          "furtividade": 1,
+          "rastreamento": 2,
+          "armadilhas": 4,
+          "rodeio": 4,
+          "velocidade": 1
+        }
+      }
+    ],
+    "socorristas": [
+      {
+        "id": "chad",
+        "nome": "Chad",
+        "forca": 14,
+        "arma": "espada",
+        "armaduraHp": 120,
+        "habilidades": {
+          "espada": 10,
+          "desvio": 6,
+          "primeiros_socorros": 8
+        }
+      },
+      {
+        "id": "nailon",
+        "nome": "Nailon",
+        "forca": 13,
+        "arma": "espada",
+        "armaduraHp": 120,
+        "habilidades": {
+          "espada": 9,
+          "desvio": 7,
+          "primeiros_socorros": 9
+        }
+      }
+    ],
+    "hpBase": 100,
+    "habilidadesConfirmadas": [
+      "espada",
+      "desvio",
+      "velocidade",
+      "agilidade",
+      "armadilhas",
+      "mineracao",
+      "escalada",
+      "primeiros_socorros",
+      "rodeio",
+      "furtividade",
+      "rastreamento"
+    ],
+    "xpPorNivel": 100,
+    "nivelMax": 20,
+    "velocidadeBonusPorNivel": 0.01,
+    "velocidadeBonusProvisorio": "Velocidade melhora a eficiência: +1% sobre a velocidade extraída do clipe por nível acima de 1 (provisório)"
+  },
+  "combate": {
+    "regraPortada": "dano = 3 + força × 0,65 + ataque da arma; alcance 2,6 m; recarga 1,2 s (game/alpha01/src/combat/combat.ts, paridade por seed)",
+    "armas": {
+      "espada": {
+        "ataque": 6,
+        "bonusPorNivel": 0.5,
+        "provisorio": true
+      }
+    },
+    "caidoAteMorrerS": 600,
+    "caidoProvisorio": "item 3 (janela do Hunter caído): 600 s provisório — 180 s não dava tempo de um socorrista a pé chegar",
+    "desvio": {
+      "chancePorNivel": 0.05,
+      "nivel1": {
+        "acao": "jogar-se no chão e levantar",
+        "duracaoS": 1.4
+      },
+      "nivel5": {
+        "acao": "rolar e esperar 3 s antes de atacar",
+        "duracaoS": 0.9,
+        "esperaAntesDeAtacarS": 3.0
+      }
+    }
+  },
+  "furtividade": {
+    "provisorio": true,
+    "velocidadeAgachadoFator": 0.5,
+    "reducaoDeteccaoPorNivel": 0.04,
+    "distanciaAtaqueRodeioM": 2.4,
+    "chanceDeteccaoPorSegundo": 0.9,
+    "rodeioDistanciaM": 5,
+    "notaDeteccao": "Detecção probabilística por segundo dentro do cone de visão, decrescendo com a distância (provisório); ponto cego traseiro da ficha (Folhisco 60°)."
+  },
+  "armadilhas": {
+    "provisorio": true,
+    "decisao": "item 10 (catálogo de armadilhas)",
+    "tipos": [
+      {
+        "id": "laco",
+        "imobilizaS": [
+          3,
+          6
+        ],
+        "massaMaxKg": 60
+      },
+      {
+        "id": "rede",
+        "imobilizaS": [
+          5,
+          9
+        ],
+        "massaMaxKg": 120
+      }
+    ],
+    "raioDisparoM": 1.6,
+    "gritoAlcanceM": 90,
+    "chanceEvitarBase": 0.25
+  },
+  "rastros": {
+    "provisorio": true,
+    "decisao": "item 9 (persistência dos rastros)",
+    "passoM": 2.0,
+    "maxPorCriatura": 400,
+    "vidaS": 3600,
+    "raioDescobertaM": 7,
+    "chanceBase": 0.04,
+    "chancePorNivel": 0.012
+  },
+  "resgate": {
+    "confirmado": "≥ 1/3 dos Hunters da caçada caídos e os demais sem chance realista, ou Hunter sozinho caído; não garantido; socorrista combate de verdade e pode perder",
+    "fracaoCaidos": 0.3334,
+    "semChanceSe": "soma de HP dos Hunters de pé < HP restante da ameaça (critério provisório)"
+  },
+  "especies": {
+    "folhisco": {
+      "nome": "Folhisco",
+      "fonte": "creatures/species/folhisco.json",
+      "asset": "assets/models/creatures/folhisco/folhisco_animated_v01.glb",
+      "aprovacao": "visual aprovado em 2026-11-06",
+      "papel": "presa",
+      "hp": 14,
+      "dano": 0,
+      "massaKg": 2.5,
+      "andarMps": 1.1,
+      "correrMps": 5.0,
+      "correrMaxS": 6,
+      "visaoMovimentoM": 30,
+      "visaoParadoM": 12,
+      "audicaoM": 20,
+      "grupo": [
+        4,
+        9
+      ],
+      "gruposPorHex": 30,
+      "itens": [
+        {
+          "id": "penas_folhisco",
+          "nome": "Penas de Folhisco"
+        },
+        {
+          "id": "carne_pequena",
+          "nome": "Carne pequena"
+        }
+      ],
+      "itensProvisorios": "item 8 (drops canônicos)",
+      "biomas": [
+        "temperate forest",
+        "temperate forest to grassland",
+        "forested mountain"
+      ],
+      "densidadeProvisoria": "30 bandos de 4–9 por hex de 16,2 km² (~12 aves/km²) — provisório",
+      "raioForrageioM": 60,
+      "pontoCegoTraseiroGraus": 60,
+      "pausaForrageioS": [
+        8,
+        25
+      ],
+      "pausaProvisoria": "Folhisco passa a maior parte do forrageio parado bicando/ciscando (pausas de 8–25 s, provisório)"
+    },
+    "lobrapedra": {
+      "nome": "Lobrapedra",
+      "fonte": "creatures/species/lobrapedra.json (sem percepção/locomoção na ficha)",
+      "asset": "assets/models/creatures/lobrapedra/v02/lobrapedra-animated-v02.glb",
+      "aprovacao": "modeled_candidate (sem aprovação artística)",
+      "papel": "predador",
+      "hp": 95,
+      "dano": 11,
+      "massaKg": 55,
+      "provisorio": true,
+      "andarMps": 1.4,
+      "correrMps": 6.5,
+      "correrMaxS": 20,
+      "visaoMovimentoM": 40,
+      "visaoParadoM": 18,
+      "audicaoM": 60,
+      "alcanceAtaqueM": 2.0,
+      "recargaAtaqueS": 1.6,
+      "grupo": [
+        2,
+        3
+      ],
+      "gruposPorHex": 6,
+      "itens": [
+        {
+          "id": "pele_lobrapedra",
+          "nome": "Pele de Lobrapedra"
+        },
+        {
+          "id": "presas_lobrapedra",
+          "nome": "Presas de Lobrapedra"
+        }
+      ],
+      "itensProvisorios": "item 8 (drops canônicos)",
+      "biomas": [
+        "temperate forest",
+        "forested mountain"
+      ],
+      "raioForrageioM": 300,
+      "pontoCegoTraseiroGraus": 90,
+      "pontoCegoProvisorio": "ficha sem percepção: 90° provisório",
+      "densidadeProvisoria": "6 matilhas de 2–3 por hex, vagueio de 300 m — provisório",
+      "pausaForrageioS": [
+        3,
+        11
+      ]
+    }
+  },
+  "spawn": {
+    "provisorio": true,
+    "excluir": [
+      "HV_01"
+    ],
+    "raioSimulacaoDetalhadaM": 1500,
+    "foraDoRaio": "congelado (simulação estratégica agregada ainda não implementada)"
+  },
+  "conhecimento": {
+    "confirmado": "aparece só no Bestiário e influencia a IA",
+    "niveis": [
+      "desconhecido",
+      "avistado",
+      "estudado",
+      "dominado"
+    ],
+    "avistamentosParaEstudado": 3,
+    "abatesParaDominado": 1,
+    "efeitoProvisorio": "estudado: Hunter usa o alcance de visão da espécie para se manter fora dela ao se aproximar; dominado: escolhe armadilha contra predador quando tem armadilhas ≥ 3"
+  },
+  "expedicao": {
+    "provisorio": true,
+    "maxHorasSemAbate": 4,
+    "nota": "Expedição sem abate volta após 4 h de jogo, ou quando todos se recuperam de um resgate (provisório)."
+  }
+}

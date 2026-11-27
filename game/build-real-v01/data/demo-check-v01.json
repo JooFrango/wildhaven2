@@ -1,0 +1,761 @@
+{
+  "bestiary": {
+    "pages": {
+      "folhisco": {
+        "abates": 1,
+        "avistamentos": 197,
+        "conhecimento": "dominado",
+        "habitats": [
+          "ER_18"
+        ],
+        "itens": [
+          "Penas de Folhisco",
+          "Carne pequena"
+        ],
+        "nome": "Folhisco",
+        "pontos": [
+          [
+            "ER_18",
+            32260.430580079526,
+            -7794.430580079523
+          ],
+          [
+            "ER_18",
+            32287.0,
+            -7742.933708498949
+          ],
+          [
+            "ER_18",
+            32226.98889831497,
+            -7821.011101685031
+          ],
+          [
+            "ER_18",
+            32237.514132280015,
+            -7797.51413228002
+          ],
+          [
+            "ER_18",
+            32272.334248452033,
+            -7764.334248452037
+          ],
+          [
+            "ER_18",
+            32285.0,
+            -7781.83999999998
+          ],
+          [
+            "ER_18",
+            32326.184994757412,
+            -7734.184994757404
+          ],
+          [
+            "ER_18",
+            32407.136854249486,
+            -7737.0
+          ]
+        ],
+        "primeiro_avistamento_tick": 8520,
+        "primeiro_por": "Hunter 02",
+        "species": "folhisco"
+      },
+      "lobrapedra": {
+        "abates": 0,
+        "avistamentos": 17,
+        "conhecimento": "estudado",
+        "habitats": [
+          "ER_18",
+          "ER_19",
+          "ER_24"
+        ],
+        "itens": [
+          "Pele de Lobrapedra",
+          "Presas de Lobrapedra"
+        ],
+        "nome": "Lobrapedra",
+        "pontos": [
+          [
+            "ER_19",
+            32528.825024396025,
+            -7872.825024396023
+          ],
+          [
+            "ER_18",
+            32395.204744622304,
+            -7988.795255377694
+          ],
+          [
+            "ER_18",
+            32298.00186724776,
+            -8144.001867247761
+          ],
+          [
+            "ER_18",
+            32186.13667310197,
+            -8178.136673101969
+          ],
+          [
+            "ER_18",
+            32163.39295956943,
+            -8028.607040430568
+          ],
+          [
+            "ER_19",
+            32553.327160645575,
+            -7721.327160645574
+          ],
+          [
+            "ER_19",
+            32665.084138546306,
+            -7690.915861453695
+          ],
+          [
+            "ER_19",
+            32519.92778510253,
+            -7817.92778510253
+          ]
+        ],
+        "primeiro_avistamento_tick": 54000,
+        "primeiro_por": "Hunter 01",
+        "species": "lobrapedra"
+      }
+    }
+  },
+  "dead": [
+    "Hunter 06"
+  ],
+  "events": [
+    {
+      "kind": "ordem",
+      "t": 0.0,
+      "text": "Ordem: explorar (2 Hunters)",
+      "tick": 0
+    },
+    {
+      "kind": "bestiario",
+      "t": 1704.0,
+      "text": "Hunter 02 avistou Folhisco pela primeira vez: nova página no Bestiário",
+      "tick": 8520
+    },
+    {
+      "kind": "ordem",
+      "t": 1704.0,
+      "text": "Expedição 2201: caçar Folhisco em ER_18 com 3 Hunters, de carroça (custo 52)",
+      "tick": 8520
+    },
+    {
+      "kind": "acampamento",
+      "t": 2400.8,
+      "text": "Carroça de Chad montou acampamento numa clareira em ER_18",
+      "tick": 12004
+    },
+    {
+      "kind": "rastro",
+      "t": 2401.0,
+      "text": "Hunter 04 descobriu pegadas de folhisco: brilham em azul",
+      "tick": 12005
+    },
+    {
+      "kind": "rastro",
+      "t": 2401.0,
+      "text": "Hunter 05 descobriu pegadas de folhisco: brilham em azul",
+      "tick": 12005
+    },
+    {
+      "kind": "estrategia",
+      "t": 2401.0,
+      "text": "Hunter 03 avistou Folhisco e escolheu: aproximação agachada e rodeio (conhecimento: estudado)",
+      "tick": 12005
+    },
+    {
+      "kind": "estrategia",
+      "t": 2401.0,
+      "text": "Hunter 04 avistou Folhisco e escolheu: aproximação agachada e rodeio (conhecimento: estudado)",
+      "tick": 12005
+    },
+    {
+      "kind": "estrategia",
+      "t": 2401.0,
+      "text": "Hunter 05 avistou Folhisco e escolheu: aproximação agachada e rodeio (conhecimento: estudado)",
+      "tick": 12005
+    },
+    {
+      "kind": "vila",
+      "t": 3397.6000000000004,
+      "text": "Hunter 02 chegou à vila",
+      "tick": 16988
+    },
+    {
+      "kind": "vila",
+      "t": 3407.2000000000003,
+      "text": "Hunter 01 chegou à vila",
+      "tick": 17036
+    },
+    {
+      "kind": "rastro",
+      "t": 5634.200000000001,
+      "text": "Hunter 05 descobriu pegadas de folhisco: brilham em azul",
+      "tick": 28171
+    },
+    {
+      "kind": "rastro",
+      "t": 5636.0,
+      "text": "Hunter 04 descobriu pegadas de folhisco: brilham em azul",
+      "tick": 28180
+    },
+    {
+      "kind": "abate",
+      "t": 5700.400000000001,
+      "text": "Hunter 03 abateu Folhisco e recolheu: Penas de Folhisco, Carne pequena",
+      "tick": 28502
+    },
+    {
+      "kind": "acampamento",
+      "t": 5923.200000000001,
+      "text": "Hunter 03 guardou 2 itens no acampamento e descansa",
+      "tick": 29616
+    },
+    {
+      "kind": "expedicao",
+      "t": 5923.200000000001,
+      "text": "Expedição 2201: caçada concluída, retornando à vila",
+      "tick": 29616
+    },
+    {
+      "kind": "vila",
+      "t": 6622.0,
+      "text": "Carroça de Chad voltou à vila",
+      "tick": 33110
+    },
+    {
+      "kind": "ordem",
+      "t": 6622.0,
+      "text": "Ordem: explorar (2 Hunters)",
+      "tick": 33110
+    },
+    {
+      "kind": "bestiario",
+      "t": 10800.0,
+      "text": "Hunter 01 avistou Lobrapedra pela primeira vez: nova página no Bestiário",
+      "tick": 54000
+    },
+    {
+      "kind": "rastro",
+      "t": 10883.400000000001,
+      "text": "Hunter 01: a presa escapou; volta a procurar o rastro",
+      "tick": 54417
+    },
+    {
+      "kind": "combate",
+      "t": 11101.0,
+      "text": "Hunter 02: Desvio: rolou e esperou 3 s antes de atacar",
+      "tick": 55505
+    },
+    {
+      "kind": "ordem",
+      "t": 12292.0,
+      "text": "Expedição 3398: caçar Lobrapedra em ER_19 com 1 Hunters, de carroça (custo 64)",
+      "tick": 61460
+    },
+    {
+      "kind": "acampamento",
+      "t": 13944.6,
+      "text": "Carroça de Nailon montou acampamento numa clareira em ER_18",
+      "tick": 69723
+    },
+    {
+      "kind": "estrategia",
+      "t": 14270.0,
+      "text": "Hunter 06 avistou Lobrapedra e escolheu: aproximação e rodeio com espada (conhecimento: estudado)",
+      "tick": 71350
+    },
+    {
+      "kind": "estrategia",
+      "t": 16647.0,
+      "text": "Hunter 06 avistou Lobrapedra e escolheu: aproximação e rodeio com espada (conhecimento: estudado)",
+      "tick": 83235
+    },
+    {
+      "kind": "combate",
+      "t": 16651.600000000002,
+      "text": "Hunter 06: Desvio: rolou e esperou 3 s antes de atacar",
+      "tick": 83258
+    },
+    {
+      "kind": "ferimento",
+      "t": 16758.0,
+      "text": "Hunter 06 caiu, ferido por lobrapedra",
+      "tick": 83790
+    },
+    {
+      "kind": "resgate",
+      "t": 16758.0,
+      "text": "Situação desesperadora na expedição 3398: Nailon equipou a armadura e partiu para o resgate",
+      "tick": 83790
+    },
+    {
+      "kind": "combate",
+      "t": 16774.0,
+      "text": "Nailon: Desvio: rolou e esperou 3 s antes de atacar",
+      "tick": 83870
+    },
+    {
+      "kind": "combate",
+      "t": 16817.0,
+      "text": "Nailon: Desvio: rolou e esperou 3 s antes de atacar",
+      "tick": 84085
+    },
+    {
+      "kind": "ferimento",
+      "t": 16820.8,
+      "text": "Nailon caiu, ferido por lobrapedra",
+      "tick": 84104
+    },
+    {
+      "kind": "resgate",
+      "t": 16820.8,
+      "text": "O resgate da expedição 3398 fracassou: o socorrista caiu",
+      "tick": 84104
+    },
+    {
+      "kind": "morte",
+      "t": 17358.2,
+      "text": "Hunter 06 morreu: morte permanente",
+      "tick": 86791
+    },
+    {
+      "kind": "expedicao",
+      "t": 17358.2,
+      "text": "Expedição 3398 fracassou: nenhum Hunter sobreviveu",
+      "tick": 86791
+    }
+  ],
+  "expeditions": [
+    {
+      "camp": 2202,
+      "cost": 52.0,
+      "dest": [
+        28931.0,
+        -7416.956854249475
+      ],
+      "dest_tile": "ER_18",
+      "hunt_started_s": 2400.8,
+      "id": 2201,
+      "kills": 1,
+      "members": [
+        "hunter-003",
+        "hunter-004",
+        "hunter-005"
+      ],
+      "rescued": false,
+      "rescuer": null,
+      "species": "folhisco",
+      "started_tick": 8520,
+      "state": "concluida",
+      "threat": null,
+      "transporte": "carroca",
+      "wagon": "chad"
+    },
+    {
+      "camp": 3399,
+      "cost": 64.0,
+      "dest": [
+        32477.872363645634,
+        -7772.127636354365
+      ],
+      "dest_tile": "ER_19",
+      "hunt_started_s": 13944.6,
+      "id": 3398,
+      "kills": 0,
+      "members": [
+        "hunter-006"
+      ],
+      "rescued": false,
+      "rescuer": null,
+      "species": "lobrapedra",
+      "started_tick": 61460,
+      "state": "fracassada",
+      "threat": 2183,
+      "transporte": "carroca",
+      "wagon": "nailon"
+    }
+  ],
+  "hunters": [
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 2,
+      "hp": 100.0,
+      "id": "hunter-001",
+      "name": "Hunter 01",
+      "skills": {
+        "armadilhas": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 1,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 4,
+          "xp": 50.0
+        },
+        "furtividade": {
+          "level": 5,
+          "xp": 0.0
+        },
+        "rastreamento": {
+          "level": 6,
+          "xp": 0.0
+        },
+        "rodeio": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "velocidade": {
+          "level": 2,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 8,
+      "hp": 100.0,
+      "id": "hunter-002",
+      "name": "Hunter 02",
+      "skills": {
+        "armadilhas": {
+          "level": 6,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 5,
+          "xp": 50.0
+        },
+        "espada": {
+          "level": 7,
+          "xp": 40.0
+        },
+        "furtividade": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "rastreamento": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "rodeio": {
+          "level": 5,
+          "xp": 0.0
+        },
+        "velocidade": {
+          "level": 3,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 0,
+      "hp": 100.0,
+      "id": "hunter-003",
+      "name": "Hunter 03",
+      "skills": {
+        "armadilhas": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 2,
+          "xp": 20.0
+        },
+        "furtividade": {
+          "level": 9,
+          "xp": 100.89999999999854
+        },
+        "rastreamento": {
+          "level": 9,
+          "xp": 0.0
+        },
+        "rodeio": {
+          "level": 1,
+          "xp": 20.0
+        },
+        "velocidade": {
+          "level": 4,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 0,
+      "hp": 100.0,
+      "id": "hunter-004",
+      "name": "Hunter 04",
+      "skills": {
+        "armadilhas": {
+          "level": 8,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 5,
+          "xp": 0.0
+        },
+        "furtividade": {
+          "level": 4,
+          "xp": 241.39999999999057
+        },
+        "rastreamento": {
+          "level": 4,
+          "xp": 30.0
+        },
+        "rodeio": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "velocidade": {
+          "level": 2,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "na_vila",
+      "alive": true,
+      "crossings": 0,
+      "hp": 100.0,
+      "id": "hunter-005",
+      "name": "Hunter 05",
+      "skills": {
+        "armadilhas": {
+          "level": 1,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 1,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 3,
+          "xp": 0.0
+        },
+        "furtividade": {
+          "level": 5,
+          "xp": 144.69999999999607
+        },
+        "rastreamento": {
+          "level": 5,
+          "xp": 30.0
+        },
+        "rodeio": {
+          "level": 6,
+          "xp": 0.0
+        },
+        "velocidade": {
+          "level": 5,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "morto",
+      "alive": false,
+      "crossings": 1,
+      "hp": 0.0,
+      "id": "hunter-006",
+      "name": "Hunter 06",
+      "skills": {
+        "armadilhas": {
+          "level": 4,
+          "xp": 0.0
+        },
+        "desvio": {
+          "level": 6,
+          "xp": 25.0
+        },
+        "espada": {
+          "level": 6,
+          "xp": 40.0
+        },
+        "furtividade": {
+          "level": 1,
+          "xp": 2.1000000000000005
+        },
+        "rastreamento": {
+          "level": 2,
+          "xp": 0.0
+        },
+        "rodeio": {
+          "level": 4,
+          "xp": 20.0
+        },
+        "velocidade": {
+          "level": 1,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "conduzindo",
+      "alive": true,
+      "crossings": 0,
+      "hp": 220.0,
+      "id": "chad",
+      "name": "Chad",
+      "skills": {
+        "desvio": {
+          "level": 6,
+          "xp": 0.0
+        },
+        "espada": {
+          "level": 10,
+          "xp": 0.0
+        },
+        "primeiros_socorros": {
+          "level": 8,
+          "xp": 0.0
+        }
+      }
+    },
+    {
+      "activity": "caido",
+      "alive": true,
+      "crossings": 0,
+      "hp": 0.0,
+      "id": "nailon",
+      "name": "Nailon",
+      "skills": {
+        "desvio": {
+          "level": 7,
+          "xp": 150.0
+        },
+        "espada": {
+          "level": 9,
+          "xp": 0.0
+        },
+        "primeiros_socorros": {
+          "level": 9,
+          "xp": 0.0
+        }
+      }
+    }
+  ],
+  "money": 384.0,
+  "schema": "wildhaven.demo-check.v1",
+  "simSeconds": 17358.2,
+  "steps": [
+    {
+      "etapa": "explorar e avistar Folhisco (página nova no Bestiário)",
+      "ok": true,
+      "t": 1704.0,
+      "tick": 8520
+    },
+    {
+      "etapa": "7 Hunters na carroça recusado: Some(\"A carroça leva no máximo 6 Hunters (pedido: 7)\")",
+      "ok": true,
+      "t": 1704.0,
+      "tick": 8520
+    },
+    {
+      "etapa": "ordem Caçar Folhisco de carroça: Ok(\"Expedição 2201: caçar Folhisco em ER_18 com 3 Hunters, de carroça (custo 52)\") (dinheiro 500 → 448)",
+      "ok": true,
+      "t": 1704.0,
+      "tick": 8520
+    },
+    {
+      "etapa": "viagem simulada da carroça e acampamento em clareira",
+      "ok": true,
+      "t": 2400.8,
+      "tick": 12004
+    },
+    {
+      "etapa": "pegadas descobertas (azuis), em t=Some(2401.0)",
+      "ok": true,
+      "t": 5700.400000000001,
+      "tick": 28502
+    },
+    {
+      "etapa": "rastro interrompido pela água, em t=None (só ocorre se a trilha cruzar água)",
+      "ok": true,
+      "t": 5700.400000000001,
+      "tick": 28502
+    },
+    {
+      "etapa": "avistamento do alvo e escolha autônoma de estratégia, em t=Some(2401.0)",
+      "ok": true,
+      "t": 5700.400000000001,
+      "tick": 28502
+    },
+    {
+      "etapa": "abate do alvo (1)",
+      "ok": true,
+      "t": 5700.400000000001,
+      "tick": 28502
+    },
+    {
+      "etapa": "retorno à vila com itens (2 na vila)",
+      "ok": true,
+      "t": 6622.0,
+      "tick": 33110
+    },
+    {
+      "etapa": "explorar e avistar Lobrapedra",
+      "ok": true,
+      "t": 10800.0,
+      "tick": 54000
+    },
+    {
+      "etapa": "ordem Caçar Lobrapedra com Hunter sozinho: Ok(\"Expedição 3398: caçar Lobrapedra em ER_19 com 1 Hunters, de carroça (custo 64)\")",
+      "ok": true,
+      "t": 12292.0,
+      "tick": 61460
+    },
+    {
+      "etapa": "Hunter sozinho: ferimento → resgate/morte, ou abate",
+      "ok": true,
+      "t": 16758.0,
+      "tick": 83790
+    },
+    {
+      "etapa": "expedição do predador encerrada: [\"fracassada\"]",
+      "ok": true,
+      "t": 17358.2,
+      "tick": 86791
+    },
+    {
+      "etapa": "desfecho do predador: [\"Hunter 06 caiu, ferido por lobrapedra\", \"Situação desesperadora na expedição 3398: Nailon equipou a armadura e partiu para o resgate\", \"Nailon caiu, ferido por lobrapedra\", \"O resgate da expedição 3398 fracassou: o socorrista caiu\", \"Hunter 06 morreu: morte permanente\"]",
+      "ok": true,
+      "t": 17358.2,
+      "tick": 86791
+    }
+  ],
+  "streaming": {
+    "cap_bytes": 268435456,
+    "evictions": 0,
+    "hits": 1207842597,
+    "load_errors": 0,
+    "misses": 828,
+    "pinned_chunks": 45,
+    "resident_bytes": 135659520,
+    "resident_chunks": 828
+  },
+  "villageStorage": [
+    "Penas de Folhisco",
+    "Carne pequena"
+  ],
+  "wallSeconds": 243.773052329
+}

@@ -1,0 +1,24 @@
+[package]
+name = "wh-server"
+description = "Servidor autoritativo HTTP/WebSocket do Wildhaven Build Real v01."
+default-run = "wh-server"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+wh-core = { path = "../wh-core" }
+serde.workspace = true
+serde_json.workspace = true
+axum = { version = "0.8", features = ["ws"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal", "fs"] }
+tower-http = { version = "0.6", features = ["fs", "cors"] }
+tokio-postgres = "0.7"
+
+[[bin]]
+name = "wh-server"
+path = "src/main.rs"
+
+[[bin]]
+name = "wh-sim-check"
+path = "src/bin/sim_check.rs"
