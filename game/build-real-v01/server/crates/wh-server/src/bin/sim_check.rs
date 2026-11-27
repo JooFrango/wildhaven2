@@ -44,7 +44,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let root = std::path::PathBuf::from(std::env::var("WH_REPO_ROOT").unwrap_or_else(|_| "../../..".into()));
     let mut w = boot(&root)?;
     let t0 = std::time::Instant::now();
-    let mut rep = if mode == "demo" { demo(&mut w, ticks)? } else { travessia(&mut w, ticks)? };
+    let mut rep = match mode.as_str() {
+        "demo" => demo(&mut w, ticks)?,
+        "retorno" => retorno(&mut w, ticks)?,
+        _ => travessia(&mut w, ticks)?,
+    };
     rep["wallSeconds"] = serde_json::json!(t0.elapsed().as_secs_f64());
     rep["streaming"] = serde_json::to_value(&w.terrain.stats)?;
     std::fs::write(&out, serde_json::to_string_pretty(&rep)?)?;
@@ -187,4 +191,25 @@ fn demo(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::err
         "dead": dead, "expeditions": w.game.expeditions,
         "hunters": w.game.hunters.iter().map(|h| serde_json::json!({"id": h.id, "name": h.name, "alive": h.alive, "hp": h.hp, "activity": h.activity, "skills": h.skills, "crossings": h.mv.crossings.len()})).collect::<Vec<_>>(),
     }))
+}
+
+/// Exploradores andam `ticks`, recebem "recolher" e precisam chegar à vila (navegação longa).
+fn retorno(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
+    let ids: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter").take(4).map(|h| h.id.clone()).collect();
+    w.order(Order::Explorar { hunters: ids.clone() })?;
+    run_until(w, ticks, |_| false);
+    let far: Vec<f64> = w.game.hunters.iter().filter(|h| ids.contains(&h.id)).map(|h| h.mv.dist(w.game.village.0, w.game.village.1)).collect();
+    w.order(Order::Recolher { hunters: ids.clone() })?;
+    let t0 = w.sim_time_s;
+    let ok = run_until(w, ticks * 4, |w| {
+        if std::env::var("WH_DEBUG").is_ok() && w.tick % 2000 == 0 {
+            for h in w.game.hunters.iter().filter(|h| ids.contains(&h.id) && h.activity != Activity::NaVila) {
+                eprintln!("t={:.0} {} {:?} {:?} pos=({:.0},{:.0}) tile={} alvo={:?} rota={}/{} rotaPts={:?} fails={} pf={}", w.sim_time_s, h.name, h.activity, h.state, h.mv.x, h.mv.z, h.mv.tile_id, h.mv.target.map(|(x, z)| (x as i64, z as i64)), h.route_idx, h.route.len(), h.route.iter().map(|(x, z)| (*x as i64, *z as i64)).collect::<Vec<_>>(), h.mv.fails, h.plan_failures);
+            }
+        }
+        w.game.hunters.iter().filter(|h| ids.contains(&h.id) && h.alive).all(|h| h.activity == Activity::NaVila && h.mv.dist(w.game.village.0, w.game.village.1) < 45.0)
+    });
+    let st: Vec<(String, String, i64)> = w.game.hunters.iter().filter(|h| ids.contains(&h.id)).map(|h| (h.name.clone(), format!("{:?}", h.activity), h.mv.dist(w.game.village.0, w.game.village.1) as i64)).collect();
+    println!("retorno: ok={ok} distâncias_ao_recolher={:?} tempo={:.0}s final={:?}", far.iter().map(|d| *d as i64).collect::<Vec<_>>(), w.sim_time_s - t0, st);
+    Ok(serde_json::json!({"schema": "wildhaven.retorno-check.v1", "ok": ok, "distanciasAoRecolher": far, "segundos": w.sim_time_s - t0, "final": st}))
 }

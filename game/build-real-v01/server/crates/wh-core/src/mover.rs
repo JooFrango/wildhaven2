@@ -91,6 +91,22 @@ impl Mover {
                 return true;
             }
         }
+        // contorno: obstáculo côncavo (rio, paredão) bloqueia todos os subobjetivos à frente.
+        // Tenta desvios em leque cada vez mais abertos; a rotação muda a cada falha para não repetir.
+        if d > 3.0 {
+            let base_ang = dz.atan2(dx);
+            let spin = (self.fails % 7) as f64 * 0.37;
+            for (k, deg) in [35.0f64, -35.0, 70.0, -70.0, 105.0, -105.0, 140.0, -140.0, 180.0].iter().enumerate() {
+                let r = if k % 2 == 0 { 60.0 } else { 90.0 };
+                let a = base_ang + deg.to_radians() + spin;
+                let sub = (self.x + a.cos() * r, self.z + a.sin() * r);
+                if let Some(path) = find_path(t, portals, nav, (self.x, self.z), sub) {
+                    self.path = path;
+                    self.path_idx = if self.path.len() > 1 { 1 } else { 0 };
+                    return true;
+                }
+            }
+        }
         false
     }
 
@@ -108,13 +124,22 @@ impl Mover {
         sim_time: f64,
     ) -> Step {
         let Some((gx, gz)) = self.target else { return Step::Arrived };
-        if self.dist(gx, gz) <= arrive_m {
+        // a grade é de 2 m: o centro da célula do alvo pode ficar a até 1,41 m dele
+        let arrive = arrive_m.max(nav.cell * 0.75);
+        if self.dist(gx, gz) <= arrive {
             self.stop();
             return Step::Arrived;
         }
-        if self.path_idx >= self.path.len() && !self.plan(t, portals, nav, subgoal_m) {
-            self.fails += 1;
-            return Step::Blocked;
+        if self.path_idx >= self.path.len() {
+            if !self.plan(t, portals, nav, subgoal_m) {
+                self.fails += 1;
+                return Step::Blocked;
+            }
+            // já na célula do alvo (rota de 1 ponto): chegou
+            if self.path.len() <= 1 && self.dist(gx, gz) <= nav.cell * 1.5 {
+                self.stop();
+                return Step::Arrived;
+            }
         }
         let mut budget = speed * dt;
         let (sx, sz) = (self.x, self.z);
