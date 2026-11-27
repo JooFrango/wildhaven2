@@ -562,6 +562,7 @@ export class Ui {
       const s = l.querySelector("select")!; s.onchange = () => this.d.applySettings({ ...st, [k]: s.value === "true" ? true : s.value === "false" ? false : s.value });
       opts.append(l);
     };
+    sel("unfocusedFps", "Janela fora de foco (FPS do 3D; 0 = sem limite)", ["0", "30", "15"]);
     num("viewDistance", "Distância de visão (m)", 2000, 12000, 500);
     num("terrainErrorPx", "Qualidade do terreno (erro px; menor = melhor)", 1, 8, 0.5);
     num("vegetationDensity", "Densidade de vegetação", 0, 1, 0.05);

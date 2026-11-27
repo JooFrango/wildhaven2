@@ -196,9 +196,14 @@ export class Scene3D {
     };
   }
 
+  private lastDrawn = 0;
   private frame(ui: Ui) {
     if (!this.running) return;
     const S = this.S, tf = performance.now(), camera = this.camera, settings = this.settings;
+    // V04.1: janela visível mas fora de foco (jogador usando outro programa) — limite opcional de quadros (Sistema)
+    const cap = Number(settings.unfocusedFps) || 0;
+    if (cap > 0 && !document.hasFocus() && tf - this.lastDrawn < 1000 / cap - 2) return;
+    this.lastDrawn = tf;
     const dt = Math.min(0.1, this.clock.getDelta());
     const snap = S.snap, prev = S.prev;
     const span = Math.max(1, S.recvAt - S.prevAt), a = Math.min(1, (tf - S.recvAt) / span);
