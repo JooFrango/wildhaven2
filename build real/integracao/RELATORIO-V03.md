@@ -255,4 +255,50 @@ A primeira tentativa foi interrompida aos 11 min por um reinício do contêiner.
 
 ## 10. Resultados finais e pendências
 
-(Atualizado ao fim dos testes.)
+### Duas correções encontradas nos testes longos
+
+**1. Desfoque dos painéis (`backdrop-filter`).** No Econômico, o fundo muda a cada quadro, e o navegador refazia o desfoque de todos os painéis em cada um.
+- O desfoque foi removido só no Econômico. O fundo dos painéis ficou um pouco mais opaco, e a aparência é a mesma.
+- O 3D mantém o desfoque.
+- Resultado: CPU de 17,1% para **9,5%** numa página nova.
+
+**2. Pulso do Hunter caído.** O cartão de um Hunter caído pulsava com uma animação CSS de `box-shadow`. Esse tipo de animação não é composto pela GPU, então o navegador recalculava o estilo e repintava a página **60 vezes por segundo**, furando o teto de 15 FPS do Econômico.
+- Isso explica a subida de 16–19% para 35–66% no teste de 2 h: a CPU subia quando um Hunter caía durante a exploração.
+- Diagnóstico com as métricas do Blink a cada minuto: `bench/diagnostico-economico-tempo.json`. A partir do minuto 10 aparecem 60 recálculos de estilo por segundo, com uma animação ativa.
+- Correção: no Econômico, o pulso é uma classe alternada no ciclo de 4 Hz que a interface já tem, com o mesmo brilho.
+- Resultado com um Hunter caído: de 60 para **2,2** recálculos de estilo por segundo, e de 75 para 18,5 ms de trabalho por segundo.
+
+**Teste refeito** (`bench/longa-economico-30min-final.json`): 30 min no servidor que vinha de 2 h de exploração, o pior estado.
+
+| | Antes (2 h, sem as correções) | Depois (30 min) |
+| --- | ---: | ---: |
+| CPU média do navegador | 38% (16–66%) | **10,3%** (10–12%, estável) |
+| RSS do navegador | 811 → 911 MB | 843 → 851 MB |
+| Heap JS | 5,4 → 19 MB | 5,1 → 5,9 MB |
+| Quadros | 15/s | 15/s |
+| Erros de página | 0 | 0 |
+
+### Metas do pedido
+
+| Meta | Resultado medido | Situação |
+| --- | --- | --- |
+| Econômico ≤ 5% de CPU | **10,3%** no navegador headless, dos quais ~5% são composição pelo SwiftShader (GPU por software), que numa GPU real não pesa na CPU. JS: 0,37 ms por quadro. | Não comprovada neste ambiente. Precisa ser medida no PC do diretor (F3 → Exportar relatório). |
+| Econômico ≤ 400 MB | +100 MB sobre o navegador vazio (745 MB neste ambiente). Heap de ~5 MB. | O RSS total do navegador headless passa de 400 MB **mesmo vazio**. A parte do jogo cabe. |
+| Segundo plano ≤ 2% de CPU | **0,14%** em 2 h, com 0 quadros | Atingida |
+| Segundo plano ≤ 250 MB | Heap de 7,7 MB depois de descartar o 3D. RSS do navegador de 1037 MB. | A parte do jogo cabe. O RSS do navegador é o mesmo de antes. |
+| Simulação sem atraso | Escala efetiva de 0,997–1,000 e 0 passos descartados em todos os testes longos | Atingida |
+
+### Testes executados
+
+- **Rodaram:**
+  - `cargo test`;
+  - demo com 6 sementes;
+  - comparação ao vivo do protocolo incremental: 204 comparações na seção 3 e mais 156 depois das 2 h de exploração (76 sem filtro e 80 com o filtro do Hunter seguido; `bench/wire-ao-vivo-final.txt`), todas sem divergência;
+  - alternância 3D ↔ Econômico;
+  - testes longos de 30 min (3D e Econômico) e de 2 h (oculto e Econômico).
+- **Não rodaram:** 8 h e 24 h. O contêiner foi reiniciado uma vez durante os testes, o que interrompeu os de 2 h, refeitos do zero. Um teste de 8 h só é confiável numa máquina que não reinicia.
+
+### Pendências
+
+- FPS e CPU em GPU real: medir no PC do diretor com o F3.
+- Testes de 8 h e 24 h.

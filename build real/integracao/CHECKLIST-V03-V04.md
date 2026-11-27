@@ -12,18 +12,18 @@ Retomada: leia este arquivo, `git log --oneline -20` na branch `claude/hopeful-n
 - [x] Modo Econômico com regiões em cache, atlas, FPS limitado, sem 3D (`client/src/economic.ts`, `heights.ts`).
 - [x] Segundo plano, laços exclusivos, UI incremental, F3 e relatório exportável.
 - [x] Telas de carregamento originais via `/carregamento/` (iframe, progresso real).
-- [ ] Benchmarks V03 por modo e comparação V02×V03.
-- [ ] Captura visual V02×V03 com a mesma câmera.
-- [ ] Testes: `cargo test`, demo, wire ao vivo, alternância 3D↔Econômico (memória), sementes.
-- [ ] Testes longos: 30 min, 2 h (8 h/24 h conforme infraestrutura).
-- [ ] Workflow `wildhaven-windows-portable-v03.yml`, ZIP publicado e SHA-256 conferido.
-- [ ] `RELATORIO-V03.md`.
+- [x] Benchmarks V03 por modo e comparação V02×V03 (`bench/v0X-modo-*.json`, RELATORIO-V03 §6).
+- [x] Captura visual V02×V03 com a mesma câmera (`evidencias/v03/comparar-v0X-*.png`).
+- [x] Testes: `cargo test`, demo, wire ao vivo, alternância 3D↔Econômico (memória), sementes.
+- [x] Testes longos: 3D 30 min, oculto 2 h, Econômico 2 h e Econômico 30 min refeito após as correções (`bench/longa-*.json`). 8 h e 24 h não rodaram (o contêiner reinicia).
+- [x] Workflow `wildhaven-windows-portable-v03.yml`, ZIP publicado e SHA-256 conferido após download.
+- [x] `RELATORIO-V03.md`.
 
 ## V04 — mundo completo (inicia automaticamente após a V03)
 
-- [ ] Branch própria para a V04 a partir da V03.
-- [ ] Documentos: RELATORIO-V04, CHECKLIST-V04, PENDENCIAS-V04, INVENTARIO-CRIATURAS-V04, AUDITORIA-CONTINENTE-V04, BENCHMARK-V03-V04.
-- [ ] Direção artística aprovada registrada (floresta V02: geometria original, árvores ~16–21 m, mais densidade; não aplicar a mesma altura a todos os biomas).
+- [x] Branch própria para a V04 a partir da V03 (`feat/build-real-v04-mundo-completo`).
+- [ ] Documentos: RELATORIO-V04, CHECKLIST-V04, PENDENCIAS-V04, INVENTARIO-CRIATURAS-V04 e AUDITORIA-CONTINENTE-V04 prontos na branch da V04; falta BENCHMARK-V03-V04.
+- [x] Direção artística aprovada registrada (floresta V02: geometria original, árvores ~16–21 m, mais densidade; não aplicar a mesma altura a todos os biomas).
 
 ## Decisões do diretor registradas
 

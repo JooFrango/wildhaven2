@@ -1,0 +1,4 @@
+== foco=
+{"comparacoes_iguais":76,"divergencias":0,"completosA":1,"deltasA":150,"bytes_por_msg_A":9404}
+== foco=hunter-003
+{"comparacoes_iguais":80,"divergencias":0,"completosA":2,"deltasA":149,"bytes_por_msg_A":2666}
