@@ -7,6 +7,7 @@ import * as THREE from "three";
 import { patchMaterial } from "./atmosphere";
 import type { GraphicsSettings } from "./settings";
 import type { VisualWorld } from "./visual";
+import { MeshBVH, acceleratedRaycast } from "three-mesh-bvh";
 
 const CELL = 12, MAX = 9000;
 function tuft(blades: number, h: number, flower: boolean) {
@@ -65,23 +66,37 @@ export class GrassField {
 
   /** V03: as folhas LOD0 chegam sob demanda; sem a malha ainda, a célula é refeita depois (não fica vazia). */
   private pending = false;
+  // V04.1: o raio contra a malha L0 inteira (~6.300 triângulos por folha, sem estrutura de aceleração) custava
+  // 165–176 ms para montar 16 células num único quadro (`tools/lab` — capim). Agora cada folha L0 ganha uma BVH
+  // (three-mesh-bvh, MIT) na primeira consulta e o raio usa `firstHitOnly`: o MESMO ponto mais próximo que o
+  // raycast padrão devolvia (sem mudança visual), em microssegundos. Vetores e cor reaproveitados (sem lixo).
+  private rayO = new THREE.Vector3(); private rayD = new THREE.Vector3(0, -1, 0); private hits: THREE.Intersection[] = [];
+  private gcol = new THREE.Color(); private gout = { y: 0, nY: 0, col: this.gcol };
+  bvhMs = 0; bvhBuilt = 0;
   private groundAt(x: number, z: number): { y: number; nY: number; col: THREE.Color } | null {
     for (const tv of this.world.tiles.values()) {
       const lx = x - tv.ox, lz = z - tv.oz;
       const e = tv.blocks.get(`${Math.floor(lx / 1024)},${Math.floor(lz / 1024)}`);
       if (!e) continue;
-      const leaf = e.leaves.find(l => l.cat === "terrain" && lx >= l.box.min.x && lx <= l.box.max.x && lz >= l.box.min.z && lz <= l.box.max.z);
+      let leaf = null;
+      for (const l of e.leaves) if (l.cat === "terrain" && lx >= l.box.min.x && lx <= l.box.max.x && lz >= l.box.min.z && lz <= l.box.max.z) { leaf = l; break; }
       if (!leaf) continue;
       const l0 = leaf.l0.mesh;
       if (!l0) { this.pending = true; return null; }
+      const geo = l0.geometry as THREE.BufferGeometry & { boundsTree?: MeshBVH };
+      if (!geo.boundsTree) { const t = performance.now(); geo.boundsTree = new MeshBVH(geo); this.bvhMs += performance.now() - t; this.bvhBuilt++; }
+      if (l0.raycast !== acceleratedRaycast) l0.raycast = acceleratedRaycast;
       tv.group.updateMatrixWorld(true);
-      this.ray.set(new THREE.Vector3(x, leaf.box.max.y + 50, z), new THREE.Vector3(0, -1, 0));
-      const hit = this.ray.intersectObject(l0, false)[0];
+      this.ray.set(this.rayO.set(x, leaf.box.max.y + 50, z), this.rayD);
+      (this.ray as any).firstHitOnly = true;
+      this.hits.length = 0;
+      const hit = this.ray.intersectObject(l0, false, this.hits)[0];
       if (!hit || !hit.face) return null;
       const c = l0.geometry.getAttribute("color");
-      const col = new THREE.Color(1, 1, 1);
+      const col = this.gcol.setRGB(1, 1, 1);
       if (c) { const f = hit.face; col.setRGB((c.getX(f.a) + c.getX(f.b) + c.getX(f.c)) / 3, (c.getY(f.a) + c.getY(f.b) + c.getY(f.c)) / 3, (c.getZ(f.a) + c.getZ(f.b) + c.getZ(f.c)) / 3); }
-      return { y: hit.point.y, nY: hit.face.normal.y, col };
+      this.gout.y = hit.point.y; this.gout.nY = hit.face.normal.y;
+      return this.gout;
     }
     return null;
   }
