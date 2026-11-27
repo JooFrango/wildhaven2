@@ -39,7 +39,7 @@ Os GLBs contêm os modelos detalhados, rochas e arbustos originais, 46.311 tufos
 | Hunter | 14 → 21 | 596.050 → 105.240 |
 | Clareira isolada | 21 → 18 | 969.908 → 126.016 |
 
-Capturas em Chrome headless com SwiftShader, 1.440 × 920. No enquadramento de Hunter, os buffers de geometria e instâncias alcançáveis na cena somaram 30,92 MB no original e 31,77 MB no piloto. O heap JS do visualizador carregando ambos os mundos ficou entre 95 e 100 MB nas amostras. A contagem de buffers exclui overhead do driver, caches e memória do processo. O custo de GPU em hardware dedicado requer medição separada. [Métricas por câmera](review/render.json)
+Capturas em Chrome headless com SwiftShader, 1.440 × 920. No enquadramento de Hunter, os buffers de geometria e instâncias alcançáveis na cena somaram 30,92 MB no original e 31,77 MB no piloto. O heap JS do visualizador carregando ambos os mundos ficou entre 95 e 175 MB nas amostras. A contagem de buffers exclui overhead do driver, caches e memória do processo. O custo de GPU em hardware dedicado requer medição separada. [Métricas por câmera](review/render.json)
 
 ## Física e reprodução
 
