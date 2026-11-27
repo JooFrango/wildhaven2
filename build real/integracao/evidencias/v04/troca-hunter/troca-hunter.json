@@ -1,0 +1,94 @@
+{
+ "alvo": "hunter-004",
+ "hexAlvo": "ER_28",
+ "telaAbriu": false,
+ "telaFechouEmS": null,
+ "prontoEmS": 7.643,
+ "amostras": [
+  {
+   "s": 0.902,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 0,
+   "desenhados": 12
+  },
+  {
+   "s": 1.71,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 0,
+   "desenhados": 12
+  },
+  {
+   "s": 2.398,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 0,
+   "desenhados": 12
+  },
+  {
+   "s": 3.078,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 0,
+   "desenhados": 12
+  },
+  {
+   "s": 3.596,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 0,
+   "desenhados": 12
+  },
+  {
+   "s": 4.221,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 50,
+   "desenhados": 4
+  },
+  {
+   "s": 4.838,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 50,
+   "desenhados": 4
+  },
+  {
+   "s": 5.401,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 50,
+   "desenhados": 4
+  },
+  {
+   "s": 6.014,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 50,
+   "desenhados": 4
+  },
+  {
+   "s": 6.569,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 50,
+   "desenhados": 4
+  },
+  {
+   "s": 7.088,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 50,
+   "desenhados": 4
+  },
+  {
+   "s": 7.643,
+   "tela": false,
+   "travadoMs": 0,
+   "fila": 0,
+   "desenhados": 20
+  }
+ ],
+ "errosPagina": []
+}

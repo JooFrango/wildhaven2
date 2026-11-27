@@ -30,6 +30,7 @@ const ATIV: Record<string, string> = {
 };
 const CLIMA: Record<string, string> = { limpo: "Céu limpo", nublado: "Nublado", chuva: "Chuva", tempestade: "Tempestade", neve: "Neve", nevasca: "Nevasca", areia: "Tempestade de areia" };
 const CONHEC: Record<string, string> = { avistado: "Avistado", estudado: "Estudado", dominado: "Dominado" };
+import { BIOMA_ROTULO_PT } from "./biomas-pt";
 const BIOMA_PT: Record<string, string> = {
   "temperate forest": "Floresta Temperada", "forested mountain": "Montanha Florestada", "true tropical jungle": "Selva Tropical", "tropical swamp": "Pântano Tropical",
   erg_dune_desert: "Mar de Dunas", "mountain barrier": "Barreira Montanhosa", mountain_second_row: "Contraforte", glacial: "Geleira", praia: "Praia", falesia: "Falésia",
@@ -236,7 +237,7 @@ export class Ui {
     const w = (s.game as any).weather?.[h.id];
     const dir = w ? ["Norte", "Nordeste", "Leste", "Sudeste", "Sul", "Sudoeste", "Oeste", "Noroeste"][Math.round(((Math.atan2(w.wind[0], -w.wind[1]) * 180) / Math.PI + 360) % 360 / 45) % 8] : "—";
     const forca = w ? Math.hypot(w.wind[0], w.wind[1]) : 0;
-    this.html(this.refs.local, `<div class="b">${ICON.folha}<b>${esc(BIOMA_PT[t?.biome ?? ""] ?? t?.biome ?? "—")}</b><span>— ${h.tile_id}</span></div>
+    this.html(this.refs.local, `<div class="b">${ICON.folha}<b>${esc(BIOMA_PT[t?.biome ?? ""] ?? BIOMA_ROTULO_PT[t?.biome ?? ""] ?? t?.biome ?? "—")}</b><span>— ${h.tile_id}</span></div>
       <div class="c">${ICON.temp}<span>${w ? Math.round(w.temperatureC) + "°C" : "—"}</span>${ICON.vento}<span>Vento: ${dir} (${forca < 0.7 ? "fraco" : forca < 1.5 ? "moderado" : "forte"})</span></div>
       <div class="c">${w ? weatherIcon(w.kind, s.clock.phase === "night") : ""}<span>${w ? CLIMA[w.kind] ?? w.kind : ""}${w && w.intensity > 0.05 ? ` · ${(w.intensity * 100).toFixed(0)}%` : ""}${w && w.visionFactor < 0.95 ? ` · visão ×${w.visionFactor.toFixed(2)}` : ""}</span></div>`);
   }
@@ -361,7 +362,7 @@ export class Ui {
         <div class="num">${p.avistamentos} avistamentos · ${p.abates} abates · 1º por ${esc(p.primeiro_por)}</div></div></div>
         <p class="desc">${esc(descricao(sp, p))}</p>
         <div class="cols"><div><h4>Itens obtíveis</h4>${p.itens.map(i => `<div class="it">${itemIcon(i)}<span>${esc(i)}</span></div>`).join("") || "<i>—</i>"}<div class="prov">itens provisórios (decisão 8)</div></div>
-        <div><h4>Biomas de ocorrência</h4>${(sp.biomas ?? p.habitats ?? []).map((b: string) => `<div class="it">${ICON.folha}<span>${esc(BIOMA_PT[b] ?? b)}</span></div>`).join("")}</div></div>
+        <div><h4>Biomas de ocorrência</h4>${(sp.biomas ?? p.habitats ?? []).map((b: string) => `<div class="it">${ICON.folha}<span>${esc(BIOMA_PT[b] ?? BIOMA_ROTULO_PT[b] ?? b)}</span></div>`).join("")}</div></div>
         <h4>Mapa de ocorrência</h4><canvas class="mapinha" width="520" height="360"></canvas><p class="prov">Destacados: só os hexes onde seus Hunters já viram a espécie (descoberta progressiva). Pontos vermelhos: últimos avistamentos.</p>
         <div class="leg"><span class="h"></span>habitat · <span class="p"></span>avistamentos</div>`;
       // V04: só o que o jogador CONHECE — hexes onde Hunters já viram a espécie (não os biomas internos do servidor)
@@ -464,7 +465,7 @@ export class Ui {
     const h = this.sel(); if (!h) return;
     // V04: estimativa antes da ordem (saltos, distância, duração), viagem em grupo e cancelamento
     const livres = s.hunters.filter(x => x.alive && x.role === "hunter" && x.id !== h.id && x.expedition == null && (x.activity === "na_vila" || x.activity === "patrulhando") && Math.hypot(x.x - h.x, x.z - h.z) < 150);
-    const dlg = el("div", "dialogo painel", `<h3>${ICON.viajar} Viajar até ${t.id}</h3><p>${esc(BIOMA_PT[t.biome] ?? t.biome)}. ${esc(h.name)} vai a pé pelos portais validados e explora a região ao chegar.</p><p class="estimativa">Calculando a rota…</p>${livres.length ? `<label class="grupo"><input type="checkbox"> Levar também ${livres.length} Hunter(s) disponíveis aqui (${livres.map(x => esc(x.name)).join(", ")})</label>` : ""}<div class="bt"></div>`);
+    const dlg = el("div", "dialogo painel", `<h3>${ICON.viajar} Viajar até ${t.id}</h3><p>${esc(BIOMA_PT[t.biome] ?? BIOMA_ROTULO_PT[t.biome] ?? t.biome)}. ${esc(h.name)} vai a pé pelos portais validados e explora a região ao chegar.</p><p class="estimativa">Calculando a rota…</p>${livres.length ? `<label class="grupo"><input type="checkbox"> Levar também ${livres.length} Hunter(s) disponíveis aqui (${livres.map(x => esc(x.name)).join(", ")})</label>` : ""}<div class="bt"></div>`);
     const ok = el("button", "cta", "Viajar"), no = el("button", "", "Fechar");
     fetch(`/api/v1/rota?hunter=${encodeURIComponent(h.id)}&tile=${encodeURIComponent(t.id)}`).then(r => r.json()).then(j => {
       const est = dlg.querySelector(".estimativa")!;
