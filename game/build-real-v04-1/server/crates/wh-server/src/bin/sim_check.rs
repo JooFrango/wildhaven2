@@ -354,6 +354,20 @@ fn retorno(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::
 
 /// V04: todos os Hunters exploram por `ticks` (como o teste longo do servidor) e, a cada 3000 ticks, registra a
 /// população e o custo médio de cada fase do passo (geração, visões, laço de criaturas, pós-processo, resto).
+/// V04.1: resumo bit a bit do estado final (criaturas, Hunters, RNG) para provar que otimizações não mudam a
+/// simulação: mesma semente + mesmos ticks ⇒ mesmo digesto.
+fn digest(w: &World) -> String {
+    let mut h: u64 = 0xcbf29ce484222325;
+    let mut put = |b: &[u8]| { for x in b { h ^= *x as u64; h = h.wrapping_mul(0x100000001b3); } };
+    for c in &w.game.creatures {
+        put(&c.id.to_le_bytes()); put(c.species.as_bytes()); put(&c.mv.x.to_bits().to_le_bytes()); put(&c.mv.z.to_bits().to_le_bytes());
+        put(&c.hp.to_bits().to_le_bytes()); put(&[c.alive as u8]); put(c.state.as_bytes());
+    }
+    for hu in &w.game.hunters { put(hu.id.as_bytes()); put(&hu.mv.x.to_bits().to_le_bytes()); put(&hu.mv.z.to_bits().to_le_bytes()); put(&hu.hp.to_bits().to_le_bytes()); put(format!("{:?}", hu.activity).as_bytes()); }
+    put(&w.game.rng.to_le_bytes());
+    format!("{h:016x} criaturas={} hunters={}", w.game.creatures.len(), w.game.hunters.len())
+}
+
 fn exploracao_longa(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
     let ids: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter").map(|h| h.id.clone()).collect();
     w.order(Order::Explorar { hunters: ids })?;
@@ -373,5 +387,5 @@ fn exploracao_longa(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<
             if !livres.is_empty() { let _ = w.order(Order::Explorar { hunters: livres }); }
         }
     }
-    Ok(serde_json::json!({"modo": "exploracao-longa", "ticks": ticks, "amostras": linhas}))
+    Ok(serde_json::json!({"modo": "exploracao-longa", "ticks": ticks, "amostras": linhas, "digestoFinal": digest(w)}))
 }

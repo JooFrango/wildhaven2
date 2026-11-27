@@ -520,7 +520,14 @@ impl GameState {
         let mut hgrid: HashMap<(i32, i32), Vec<usize>> = HashMap::new();
         for (i, h) in views.iter().enumerate() { hgrid.entry(key(h.x, h.z)).or_default().push(i); }
         let sp_names: HashMap<&str, std::sync::Arc<str>> = ctx.data.especies.keys().map(|k| (k.as_str(), std::sync::Arc::from(k.as_str()))).collect();
-        let cviews: Vec<CreatureView> = self.creatures.iter().map(|c| {
+        // V04.1 (ECO-01): distância ao ator mais próximo calculada UMA vez por criatura. Criaturas além de
+        // `longe_m` + alcance da percepção (vizinhança de 2 células de 128 m: no máximo 3·128·√2 ≈ 543 m) não podem
+        // ser vistas por nenhuma criatura ativa nem processadas neste tick: ficam fora das visões e da grade.
+        // Mesmo resultado bit a bit (mesmos vizinhos, na mesma ordem); antes, TODAS as criaturas já geradas no
+        // continente entravam nas visões e na grade a cada tick, inclusive as congeladas longe de todos.
+        let halo = ctx.data.relevancia.longe_m + 3.0 * CELL * std::f64::consts::SQRT_2 + 1.0;
+        let dmins: Vec<f64> = self.creatures.iter().map(|c| actors.iter().map(|a| d2(*a, (c.mv.x, c.mv.z))).fold(f64::MAX, f64::min)).collect();
+        let cviews: Vec<CreatureView> = self.creatures.iter().zip(dmins.iter()).filter(|(_, d)| **d <= halo).map(|(c, _)| {
             let sp = &ctx.data.especies[&c.species];
             CreatureView { id: c.id, species: sp_names.get(c.species.as_str()).cloned().unwrap_or_else(|| std::sync::Arc::from(c.species.as_str())), group: c.group, x: c.mv.x, z: c.mv.z, alive: c.alive, carcass: !c.alive && c.carcass_since_s.is_some(), prey: sp.papel != "predador", mass: sp.massa_kg, home: c.home }
         }).collect();
@@ -543,7 +550,7 @@ impl GameState {
         let _t_views = _ts.elapsed().as_secs_f64() * 1000.0 - _spawn_ms;
         for ci in 0..self.creatures.len() {
             let (cx, cz) = (self.creatures[ci].mv.x, self.creatures[ci].mv.z);
-            let dmin = actors.iter().map(|a| d2(*a, (cx, cz))).fold(f64::MAX, f64::min);
+            let dmin = dmins[ci];
             // níveis de relevância: perto = todo tick; médio = a cada N; longe = só necessidades; além = congelada
             let (level, every) = if dmin <= rel.perto_m { (0u8, 1u64) } else if dmin <= rel.medio_m { (1, rel.passo_medio.max(1)) } else if dmin <= rel.longe_m { (2, rel.passo_longe.max(1)) } else { m.frozen += 1; continue };
             match level { 0 => m.near += 1, 1 => m.mid += 1, _ => m.far += 1 }
