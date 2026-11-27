@@ -60,7 +60,7 @@ impl Config {
             clock_epoch_ms: env("WH_CLOCK_EPOCH_MS").and_then(|v| v.parse().ok()),
             time_scale: env("WH_TIME_SCALE").and_then(|v| v.parse().ok()).unwrap_or(1).clamp(1, 50),
             allow_uncertified: env("WH_ALLOW_UNCERTIFIED").as_deref() == Some("1"),
-            cache_bytes: env("WH_CACHE_MB").and_then(|v| v.parse::<usize>().ok()).unwrap_or(256) * 1024 * 1024,
+            cache_bytes: env("WH_CACHE_MB").and_then(|v| v.parse::<usize>().ok()).unwrap_or(128) * 1024 * 1024, // V04.2: 128 como o portátil (experimento: 256→128 MB = RSS 321→190 MB, +0,7% no passo)
             database_url: env("DATABASE_URL"),
             repo_root,
             terrain_paths,

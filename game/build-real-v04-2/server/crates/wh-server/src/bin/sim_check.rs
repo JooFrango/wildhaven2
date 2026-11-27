@@ -35,7 +35,9 @@ fn boot(root: &std::path::Path) -> Result<World, Box<dyn std::error::Error>> {
     if let Some(g) = std::env::var("WH_SPAWN_GRUPOS").ok().and_then(|v| v.parse::<u32>().ok()) {
         data.relevancia.orcamento_spawn_grupos = if g == 0 { u32::MAX } else { g };
     }
-    let mut terrain = TerrainStore::new(continent, physics_dir, allowed, 256 * 1024 * 1024);
+    // V04.2: WH_CACHE_MB também no sim_check (experimento de tamanho do cache físico)
+    let cache_mb: usize = std::env::var("WH_CACHE_MB").ok().and_then(|v| v.parse().ok()).unwrap_or(256);
+    let mut terrain = TerrainStore::new(continent, physics_dir, allowed, cache_mb * 1024 * 1024);
     let game = GameState::new(&data, (s["x"].as_f64().unwrap(), s["z"].as_f64().unwrap()), s["tile"].as_str().unwrap(), walk, std::env::var("WH_SEED").ok().and_then(|v| v.parse().ok()).unwrap_or(spawn["seed"].as_u64().unwrap() as u32), &mut terrain);
     Ok(World::new(WorldClock::new(0), terrain, portals, data, game))
 }
@@ -442,5 +444,5 @@ fn exploracao_longa(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<
             if !livres.is_empty() { let _ = w.order(Order::Explorar { hunters: livres }); }
         }
     }
-    Ok(serde_json::json!({"modo": "exploracao-longa", "ticks": ticks, "amostras": linhas, "digestoFinal": digest(w)}))
+    Ok(serde_json::json!({"modo": "exploracao-longa", "ticks": ticks, "amostras": linhas, "digestoFinal": digest(w), "rssFinalMB": rss_mb()}))
 }
