@@ -252,9 +252,10 @@ A primeira tentativa foi interrompida aos 11 min por um reinício do contêiner.
   - requisição Range retornando 206;
   - telas de carregamento e modelos.
 - **ZIP:** [Wildhaven-Windows-portatil-v03.zip](https://github.com/JooFrango/wildhaven2/releases/download/build-real-v03-portatil/Wildhaven-Windows-portatil-v03.zip).
-  - Versão final: commit `54942bf`, execução 7 do workflow (verde).
-  - **204.252.027 bytes**, SHA-256 `0f2da336fdd79ea49cb3365acb65306e7244fa467620c2870387b4c1681963ce`.
-  - Baixei de novo direto do GitHub: o SHA-256 confere com o arquivo `.sha256` do lançamento, e o pacote traz as duas correções do Econômico.
+  - Versão final: commit `a5ef2b0`, execução 8 do workflow (verde).
+  - **204.252.025 bytes**, SHA-256 `6a4a8afcf6afb269ebd2ae28ae609519aafcec749ad1116a6ae00988fbed31e8`.
+  - Baixei de novo direto do GitHub: o SHA-256 confere com o arquivo `.sha256` do lançamento.
+  - O pacote traz as duas correções do Econômico e a correção da tela "Carregando terrenos da região", que nunca se fechava porque cada snapshot zerava o motivo dela. Esse defeito foi achado nas capturas da V04.
 
 ## 10. Resultados finais e pendências
 
