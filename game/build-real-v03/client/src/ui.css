@@ -102,3 +102,6 @@ h4{margin:.9em 0 .35em;color:var(--ouro);font-size:.95em}
 /* V03: no Modo Econômico o desfoque (backdrop-filter) refazia o blur a cada quadro do pixel art — ~45% da CPU
    do modo (medido: 17,1% → 9,5%). Mesma aparência com fundo um pouco mais opaco, sem desfoque. No 3D fica o blur. */
 body.economico .painel{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(180deg,rgba(34,26,18,.94),rgba(22,17,12,.9))}
+/* Econômico: o pulso do Hunter caído (animação de box-shadow, não composta) fazia a página recalcular estilo e repintar a 60 Hz,
+   furando o teto de 12/15/20 FPS. Aqui ele pisca pela classe .pulso, trocada no ciclo de 4 Hz da interface: mesmo brilho, 2 trocas/s. */
+body.economico .hcard.caido{animation:none}body.economico .hcard.caido.pulso{box-shadow:0 0 10px var(--erro)}

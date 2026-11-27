@@ -275,7 +275,7 @@ export class Ui {
         const id = x.id; r.onclick = () => this.pick(id); r.title = x.name;
         list.append(r); this.rows.set(x.id, r);
       }
-      this.cls(r, "hcard" + (x.id === this.selected ? " sel" : "") + (x.alive ? "" : " morto") + (x.role === "socorrista" ? " socorrista" : "") + (x.activity === "caido" ? " caido" : ""));
+      this.cls(r, "hcard" + (x.id === this.selected ? " sel" : "") + (x.alive ? "" : " morto") + (x.role === "socorrista" ? " socorrista" : "") + (x.activity === "caido" ? " caido" + (Math.floor(performance.now() / 500) % 2 ? " pulso" : "") : ""));
       const img = r.querySelector("img") as HTMLImageElement; if (this.portraitUrl && img.src !== this.portraitUrl) img.src = this.portraitUrl;
       this.text(r.querySelector(".n")!, String(i + 1).padStart(2, "0"));
       this.html(r.querySelector(".st")!, x.alive ? (x.role === "socorrista" ? ICON.cruz : x.activity === "combatendo" ? ICON.cacar : x.activity === "na_vila" ? ICON.vila : ICON.rastrear) : ICON.fechar);

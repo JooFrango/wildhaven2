@@ -238,7 +238,7 @@ A primeira tentativa foi interrompida aos 11 min por um reinício do contêiner.
 
 - **Aba oculta:** nenhum quadro desenhado em 2 h. Só os 17 quadros de antes de esconder a aba.
 - **Simulação:** escala efetiva entre 0,997 e 1,000 nos três servidores, com dívida de passos sempre 0.
-- **Econômico:** a CPU ficou em 16–19% na primeira meia hora e depois subiu para 35–66%. A investigação está na seção 10.
+- **Econômico:** a CPU ficou em 16–19% na primeira meia hora e depois subiu para 35–66%. A causa foi achada e corrigida (seção 10). O teste foi refeito com a correção.
 
 ## 9. Distribuição
 
