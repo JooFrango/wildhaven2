@@ -1,0 +1,1914 @@
+{
+ "schema": "wildhaven.visual.horizon.v1",
+ "file": "horizonte-272-v01.glb",
+ "bytes": 9809356,
+ "sha256": "a227634cd601c359750e1ef65242de2794a26d5c3f1765e0a8f224ac3c9450ac",
+ "tiles": [
+  {
+   "id": "C",
+   "x": 0,
+   "z": 0,
+   "biome": "Arco e Ossada Central",
+   "tris": 11073
+  },
+  {
+   "id": "NW",
+   "x": -2165.0635094610966,
+   "z": -3750,
+   "biome": "Mesas e Vale Seco",
+   "tris": 1028
+  },
+  {
+   "id": "NE",
+   "x": 2165.0635094610966,
+   "z": -3750,
+   "biome": "Torres de Arenito",
+   "tris": 1350
+  },
+  {
+   "id": "E",
+   "x": 4330.127018922193,
+   "z": 0,
+   "biome": "Dunas e Ossada",
+   "tris": 1028
+  },
+  {
+   "id": "SE",
+   "x": 2165.0635094610966,
+   "z": 3750,
+   "biome": "Oásis das Dunas",
+   "tris": 1536
+  },
+  {
+   "id": "SW",
+   "x": -2165.0635094610966,
+   "z": 3750,
+   "biome": "Cânion Secreto",
+   "tris": 1350
+  },
+  {
+   "id": "W",
+   "x": -4330.127018922193,
+   "z": 0,
+   "biome": "Arco Desértico",
+   "tris": 1350
+  },
+  {
+   "id": "X3",
+   "x": 6495.190528383289,
+   "z": -3750,
+   "biome": "Arco e Cânion da Transição",
+   "tris": 1650
+  },
+  {
+   "id": "X6",
+   "x": 8660.254037844386,
+   "z": 0,
+   "biome": "Maciço e Vales do Leste",
+   "tris": 2412
+  },
+  {
+   "id": "X7",
+   "x": 6495.190528383289,
+   "z": 3750,
+   "biome": "Oásis dos Contrafortes",
+   "tris": 1838
+  },
+  {
+   "id": "F_N",
+   "x": 10825.317547305483,
+   "z": -3750,
+   "biome": "temperate forest",
+   "tris": 1546
+  },
+  {
+   "id": "F_E",
+   "x": 12990.381056766579,
+   "z": 0,
+   "biome": "temperate forest",
+   "tris": 1688
+  },
+  {
+   "id": "F_S",
+   "x": 10825.317547305483,
+   "z": 3750,
+   "biome": "temperate forest",
+   "tris": 1546
+  },
+  {
+   "id": "F_E2",
+   "x": 17320.508075688773,
+   "z": 0,
+   "biome": "temperate forest",
+   "tris": 1546
+  },
+  {
+   "id": "F_NE",
+   "x": 15155.444566227676,
+   "z": -3750,
+   "biome": "temperate forest",
+   "tris": 1546
+  },
+  {
+   "id": "F_SE",
+   "x": 15155.444566227676,
+   "z": 3750,
+   "biome": "temperate forest",
+   "tris": 1546
+  },
+  {
+   "id": "F_S2",
+   "x": 12990.381056766579,
+   "z": 7500,
+   "biome": "temperate forest to grassland",
+   "tris": 1546
+  },
+  {
+   "id": "F_E3",
+   "x": 21650.635094610967,
+   "z": 0,
+   "biome": "temperate forest to grassland",
+   "tris": 1546
+  },
+  {
+   "id": "F_P_E",
+   "x": 17320.508075688773,
+   "z": 7500,
+   "biome": "temperate forest -> open plains",
+   "tris": 1546
+  },
+  {
+   "id": "F_P_R",
+   "x": 19485.571585149868,
+   "z": 3750,
+   "biome": "temperate forest -> open plains",
+   "tris": 1546
+  },
+  {
+   "id": "PL_NW",
+   "x": 15155.444566227676,
+   "z": 11250,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_NE",
+   "x": 19485.571585149868,
+   "z": 11250,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_SW",
+   "x": 12990.381056766579,
+   "z": 15000,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_S",
+   "x": 17320.508075688773,
+   "z": 15000,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_SE",
+   "x": 21650.635094610967,
+   "z": 15000,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_E_W",
+   "x": 21650.635094610967,
+   "z": 7500,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_E_N",
+   "x": 23815.698604072062,
+   "z": 3750,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_E_E",
+   "x": 25980.762113533157,
+   "z": 7500,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_E_S",
+   "x": 23815.698604072062,
+   "z": 11250,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "PL_E_SE",
+   "x": 25980.762113533157,
+   "z": 15000,
+   "biome": "entirely temperate plains (no transition)",
+   "tris": 1546
+  },
+  {
+   "id": "SV_W",
+   "x": 10825.317547305483,
+   "z": 18750,
+   "biome": "temperate prairie north of river + golden fantasy savanna south",
+   "tris": 1780
+  },
+  {
+   "id": "SV_CW",
+   "x": 15155.444566227676,
+   "z": 18750,
+   "biome": "temperate prairie north of river + golden fantasy savanna south",
+   "tris": 1780
+  },
+  {
+   "id": "SV_C",
+   "x": 19485.571585149868,
+   "z": 18750,
+   "biome": "temperate prairie north of river + golden fantasy savanna south",
+   "tris": 1782
+  },
+  {
+   "id": "SV_CE",
+   "x": 23815.698604072062,
+   "z": 18750,
+   "biome": "temperate prairie north of river + golden fantasy savanna south",
+   "tris": 1780
+  },
+  {
+   "id": "SV_E",
+   "x": 28145.825622994256,
+   "z": 18750,
+   "biome": "temperate prairie north of river + golden fantasy savanna south",
+   "tris": 1780
+  },
+  {
+   "id": "SV2_W",
+   "x": 12990.381056766579,
+   "z": 22500,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV2_CW",
+   "x": 17320.508075688773,
+   "z": 22500,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV2_C",
+   "x": 21650.635094610967,
+   "z": 22500,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV2_CE",
+   "x": 25980.762113533157,
+   "z": 22500,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV2_E",
+   "x": 30310.88913245535,
+   "z": 22500,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV3_W",
+   "x": 15155.444566227676,
+   "z": 26250,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV3_CW",
+   "x": 19485.571585149868,
+   "z": 26250,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV3_CE",
+   "x": 23815.698604072062,
+   "z": 26250,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV3_E",
+   "x": 28145.825622994256,
+   "z": 26250,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV4_CW",
+   "x": 17320.508075688773,
+   "z": 30000,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV4_C",
+   "x": 21650.635094610967,
+   "z": 30000,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1690
+  },
+  {
+   "id": "SV4_CE",
+   "x": 25980.762113533157,
+   "z": 30000,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV4_W",
+   "x": 12990.381056766579,
+   "z": 30000,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "SV4_E",
+   "x": 30310.88913245535,
+   "z": 30000,
+   "biome": "temperate golden fantasy savanna",
+   "tris": 1546
+  },
+  {
+   "id": "TR_CW",
+   "x": 19485.571585149868,
+   "z": 33750,
+   "biome": "humid savanna -> elevated jungle rocky ecotone",
+   "tris": 1546
+  },
+  {
+   "id": "TR_CE",
+   "x": 23815.698604072062,
+   "z": 33750,
+   "biome": "humid savanna -> elevated jungle rocky ecotone",
+   "tris": 1546
+  },
+  {
+   "id": "TR_W",
+   "x": 15155.444566227676,
+   "z": 33750,
+   "biome": "humid savanna -> elevated jungle rocky ecotone",
+   "tris": 1546
+  },
+  {
+   "id": "TR_E",
+   "x": 28145.825622994256,
+   "z": 33750,
+   "biome": "humid savanna -> elevated jungle rocky ecotone",
+   "tris": 1546
+  },
+  {
+   "id": "J_CW",
+   "x": 17320.508075688773,
+   "z": 37500,
+   "biome": "true tropical jungle",
+   "tris": 1546
+  },
+  {
+   "id": "J_C",
+   "x": 21650.635094610967,
+   "z": 37500,
+   "biome": "true tropical jungle",
+   "tris": 1546
+  },
+  {
+   "id": "J_CE",
+   "x": 25980.762113533157,
+   "z": 37500,
+   "biome": "true tropical jungle",
+   "tris": 1546
+  },
+  {
+   "id": "J_W",
+   "x": 12990.381056766579,
+   "z": 37500,
+   "biome": "true tropical jungle",
+   "tris": 1546
+  },
+  {
+   "id": "J_E",
+   "x": 30310.88913245535,
+   "z": 37500,
+   "biome": "true tropical jungle",
+   "tris": 1546
+  },
+  {
+   "id": "MW_01",
+   "x": 8660.254037844386,
+   "z": 7500,
+   "biome": "mountain barrier",
+   "tris": 2808
+  },
+  {
+   "id": "MW_02",
+   "x": 10825.317547305483,
+   "z": 11250,
+   "biome": "mountain barrier",
+   "tris": 2134
+  },
+  {
+   "id": "MW_03",
+   "x": 8660.254037844386,
+   "z": 15000,
+   "biome": "mountain barrier",
+   "tris": 2360
+  },
+  {
+   "id": "MW_04",
+   "x": 6495.190528383289,
+   "z": 18750,
+   "biome": "mountain barrier",
+   "tris": 2752
+  },
+  {
+   "id": "MW_05",
+   "x": 8660.254037844386,
+   "z": 22500,
+   "biome": "mountain barrier",
+   "tris": 2718
+  },
+  {
+   "id": "MW_06",
+   "x": 10825.317547305483,
+   "z": 26250,
+   "biome": "mountain barrier",
+   "tris": 1934
+  },
+  {
+   "id": "MW_07",
+   "x": 8660.254037844386,
+   "z": 30000,
+   "biome": "mountain barrier",
+   "tris": 3128
+  },
+  {
+   "id": "MW_08",
+   "x": 10825.317547305483,
+   "z": 33750,
+   "biome": "mountain barrier",
+   "tris": 2236
+  },
+  {
+   "id": "MN2_01",
+   "x": 4330.127018922193,
+   "z": 7500,
+   "biome": "mountain_second_row",
+   "tris": 2658
+  },
+  {
+   "id": "MN2_02",
+   "x": 6495.190528383289,
+   "z": 11250,
+   "biome": "mountain_second_row",
+   "tris": 2908
+  },
+  {
+   "id": "MN2_03",
+   "x": 4330.127018922193,
+   "z": 15000,
+   "biome": "mountain_second_row",
+   "tris": 2536
+  },
+  {
+   "id": "MN2_04",
+   "x": 2165.0635094610966,
+   "z": 18750,
+   "biome": "mountain_second_row",
+   "tris": 2212
+  },
+  {
+   "id": "MN2_05",
+   "x": 4330.127018922193,
+   "z": 22500,
+   "biome": "mountain_second_row",
+   "tris": 2694
+  },
+  {
+   "id": "MN2_06",
+   "x": 6495.190528383289,
+   "z": 26250,
+   "biome": "mountain_second_row",
+   "tris": 3120
+  },
+  {
+   "id": "MN2_07",
+   "x": 4330.127018922193,
+   "z": 30000,
+   "biome": "mountain_second_row",
+   "tris": 1880
+  },
+  {
+   "id": "MN2_08",
+   "x": 6495.190528383289,
+   "z": 33750,
+   "biome": "mountain_second_row",
+   "tris": 2882
+  },
+  {
+   "id": "DN_01",
+   "x": -6495.190528383289,
+   "z": -11250,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_02",
+   "x": -2165.0635094610966,
+   "z": -11250,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_03",
+   "x": 2165.0635094610966,
+   "z": -11250,
+   "biome": "erg_dune_desert",
+   "tris": 884
+  },
+  {
+   "id": "DN_04",
+   "x": -8660.254037844386,
+   "z": -7500,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_05",
+   "x": -4330.127018922193,
+   "z": -7500,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_06",
+   "x": 0,
+   "z": -7500,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_07",
+   "x": -10825.317547305483,
+   "z": -3750,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_08",
+   "x": -6495.190528383289,
+   "z": -3750,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_09",
+   "x": -12990.381056766579,
+   "z": 0,
+   "biome": "erg_dune_desert",
+   "tris": 800
+  },
+  {
+   "id": "DN_10",
+   "x": -8660.254037844386,
+   "z": 0,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_11",
+   "x": -10825.317547305483,
+   "z": 3750,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_12",
+   "x": -6495.190528383289,
+   "z": 3750,
+   "biome": "erg_dune_desert",
+   "tris": 714
+  },
+  {
+   "id": "DN_13",
+   "x": -12990.381056766579,
+   "z": 7500,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_14",
+   "x": -8660.254037844386,
+   "z": 7500,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_15",
+   "x": -4330.127018922193,
+   "z": 7500,
+   "biome": "erg_dune_desert",
+   "tris": 966
+  },
+  {
+   "id": "DN_16",
+   "x": 0,
+   "z": 7500,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_17",
+   "x": -10825.317547305483,
+   "z": 11250,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_18",
+   "x": -6495.190528383289,
+   "z": 11250,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_19",
+   "x": -2165.0635094610966,
+   "z": 11250,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_20",
+   "x": 2165.0635094610966,
+   "z": 11250,
+   "biome": "erg_dune_desert",
+   "tris": 812
+  },
+  {
+   "id": "DN_21",
+   "x": -8660.254037844386,
+   "z": 15000,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_22",
+   "x": -4330.127018922193,
+   "z": 15000,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_23",
+   "x": 0,
+   "z": 15000,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "DN_24",
+   "x": -6495.190528383289,
+   "z": 18750,
+   "biome": "erg_dune_desert",
+   "tris": 800
+  },
+  {
+   "id": "DN_25",
+   "x": -2165.0635094610966,
+   "z": 18750,
+   "biome": "erg_dune_desert",
+   "tris": 712
+  },
+  {
+   "id": "FX_01",
+   "x": 8660.254037844386,
+   "z": -22500,
+   "biome": "temperate forest",
+   "tris": 440
+  },
+  {
+   "id": "FX_02",
+   "x": 12990.381056766579,
+   "z": -22500,
+   "biome": "temperate forest",
+   "tris": 440
+  },
+  {
+   "id": "FX_03",
+   "x": 17320.508075688773,
+   "z": -22500,
+   "biome": "temperate forest",
+   "tris": 440
+  },
+  {
+   "id": "FX_04",
+   "x": 6495.190528383289,
+   "z": -18750,
+   "biome": "temperate forest",
+   "tris": 438
+  },
+  {
+   "id": "FX_05",
+   "x": 10825.317547305483,
+   "z": -18750,
+   "biome": "temperate forest",
+   "tris": 444
+  },
+  {
+   "id": "FX_06",
+   "x": 15155.444566227676,
+   "z": -18750,
+   "biome": "temperate forest",
+   "tris": 446
+  },
+  {
+   "id": "FX_07",
+   "x": 19485.571585149868,
+   "z": -18750,
+   "biome": "temperate forest",
+   "tris": 438
+  },
+  {
+   "id": "FX_08",
+   "x": 8660.254037844386,
+   "z": -15000,
+   "biome": "temperate forest",
+   "tris": 444
+  },
+  {
+   "id": "FX_09",
+   "x": 12990.381056766579,
+   "z": -15000,
+   "biome": "temperate forest",
+   "tris": 444
+  },
+  {
+   "id": "FX_10",
+   "x": 17320.508075688773,
+   "z": -15000,
+   "biome": "temperate forest",
+   "tris": 444
+  },
+  {
+   "id": "FX_11",
+   "x": 21650.635094610967,
+   "z": -15000,
+   "biome": "temperate forest",
+   "tris": 438
+  },
+  {
+   "id": "FX_12",
+   "x": 6495.190528383289,
+   "z": -11250,
+   "biome": "temperate forest",
+   "tris": 480
+  },
+  {
+   "id": "FX_13",
+   "x": 10825.317547305483,
+   "z": -11250,
+   "biome": "temperate forest",
+   "tris": 446
+  },
+  {
+   "id": "FX_14",
+   "x": 15155.444566227676,
+   "z": -11250,
+   "biome": "temperate forest",
+   "tris": 438
+  },
+  {
+   "id": "FX_15",
+   "x": 19485.571585149868,
+   "z": -11250,
+   "biome": "temperate forest",
+   "tris": 436
+  },
+  {
+   "id": "FX_16",
+   "x": 23815.698604072062,
+   "z": -11250,
+   "biome": "temperate forest",
+   "tris": 440
+  },
+  {
+   "id": "FX_17",
+   "x": 12990.381056766579,
+   "z": -7500,
+   "biome": "temperate forest",
+   "tris": 480
+  },
+  {
+   "id": "FX_18",
+   "x": 17320.508075688773,
+   "z": -7500,
+   "biome": "temperate forest",
+   "tris": 476
+  },
+  {
+   "id": "FX_19",
+   "x": 21650.635094610967,
+   "z": -7500,
+   "biome": "temperate forest",
+   "tris": 436
+  },
+  {
+   "id": "FX_20",
+   "x": 25980.762113533157,
+   "z": -7500,
+   "biome": "temperate forest",
+   "tris": 440
+  },
+  {
+   "id": "FX_21",
+   "x": 19485.571585149868,
+   "z": -3750,
+   "biome": "temperate forest",
+   "tris": 560
+  },
+  {
+   "id": "ER_01",
+   "x": 12990.381056766579,
+   "z": -30000,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_02",
+   "x": 17320.508075688773,
+   "z": -30000,
+   "biome": "forested mountain",
+   "tris": 1684
+  },
+  {
+   "id": "ER_03",
+   "x": 21650.635094610967,
+   "z": -30000,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_04",
+   "x": 15155.444566227676,
+   "z": -26250,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_05",
+   "x": 19485.571585149868,
+   "z": -26250,
+   "biome": "forested mountain",
+   "tris": 2040
+  },
+  {
+   "id": "ER_06",
+   "x": 23815.698604072062,
+   "z": -26250,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_07",
+   "x": 21650.635094610967,
+   "z": -22500,
+   "biome": "forested mountain",
+   "tris": 1784
+  },
+  {
+   "id": "ER_08",
+   "x": 25980.762113533157,
+   "z": -22500,
+   "biome": "forested mountain",
+   "tris": 2158
+  },
+  {
+   "id": "ER_09",
+   "x": 23815.698604072062,
+   "z": -18750,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_10",
+   "x": 28145.825622994256,
+   "z": -18750,
+   "biome": "forested mountain",
+   "tris": 2198
+  },
+  {
+   "id": "ER_11",
+   "x": 32475.95264191645,
+   "z": -18750,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_12",
+   "x": 25980.762113533157,
+   "z": -15000,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_13",
+   "x": 30310.88913245535,
+   "z": -15000,
+   "biome": "forested mountain",
+   "tris": 1956
+  },
+  {
+   "id": "ER_14",
+   "x": 34641.016151377546,
+   "z": -15000,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_15",
+   "x": 28145.825622994256,
+   "z": -11250,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_16",
+   "x": 32475.95264191645,
+   "z": -11250,
+   "biome": "forested mountain",
+   "tris": 2390
+  },
+  {
+   "id": "ER_17",
+   "x": 36806.079660838644,
+   "z": -11250,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_18",
+   "x": 30310.88913245535,
+   "z": -7500,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_19",
+   "x": 34641.016151377546,
+   "z": -7500,
+   "biome": "forested mountain",
+   "tris": 2638
+  },
+  {
+   "id": "ER_20",
+   "x": 38971.143170299736,
+   "z": -7500,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_21",
+   "x": 23815.698604072062,
+   "z": -3750,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_22",
+   "x": 32475.95264191645,
+   "z": -3750,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_23",
+   "x": 36806.079660838644,
+   "z": -3750,
+   "biome": "forested mountain",
+   "tris": 2004
+  },
+  {
+   "id": "ER_24",
+   "x": 25980.762113533157,
+   "z": 0,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_25",
+   "x": 30310.88913245535,
+   "z": 0,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_26",
+   "x": 34641.016151377546,
+   "z": 0,
+   "biome": "forested mountain",
+   "tris": 2104
+  },
+  {
+   "id": "ER_27",
+   "x": 28145.825622994256,
+   "z": 3750,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "ER_28",
+   "x": 32475.95264191645,
+   "z": 3750,
+   "biome": "forested mountain",
+   "tris": 1862
+  },
+  {
+   "id": "ER_29",
+   "x": 36806.079660838644,
+   "z": 3750,
+   "biome": "forested mountain",
+   "tris": 1476
+  },
+  {
+   "id": "WG_01",
+   "x": -8660.254037844386,
+   "z": -22500,
+   "biome": "snow-forest",
+   "tris": 1006
+  },
+  {
+   "id": "WG_02",
+   "x": -4330.127018922193,
+   "z": -22500,
+   "biome": "snow-forest",
+   "tris": 760
+  },
+  {
+   "id": "WG_03",
+   "x": 0,
+   "z": -22500,
+   "biome": "snow-forest",
+   "tris": 906
+  },
+  {
+   "id": "WG_04",
+   "x": 4330.127018922193,
+   "z": -22500,
+   "biome": "snow-forest",
+   "tris": 720
+  },
+  {
+   "id": "WG_05",
+   "x": -10825.317547305483,
+   "z": -26250,
+   "biome": "mountain-ice-canyon",
+   "tris": 3636
+  },
+  {
+   "id": "WG_06",
+   "x": -6495.190528383289,
+   "z": -26250,
+   "biome": "mountain-ice-canyon",
+   "tris": 3722
+  },
+  {
+   "id": "WG_07",
+   "x": -2165.0635094610966,
+   "z": -26250,
+   "biome": "mountain-ice-canyon",
+   "tris": 934
+  },
+  {
+   "id": "WG_08",
+   "x": 2165.0635094610966,
+   "z": -26250,
+   "biome": "mountain-ice-canyon",
+   "tris": 4182
+  },
+  {
+   "id": "WG_09",
+   "x": 6495.190528383289,
+   "z": -26250,
+   "biome": "mountain-ice-canyon",
+   "tris": 3042
+  },
+  {
+   "id": "WG_10",
+   "x": -8660.254037844386,
+   "z": -30000,
+   "biome": "coastal-ice-shelf",
+   "tris": 5098
+  },
+  {
+   "id": "WG_11",
+   "x": -4330.127018922193,
+   "z": -30000,
+   "biome": "coastal-ice-shelf",
+   "tris": 3578
+  },
+  {
+   "id": "WG_12",
+   "x": 0,
+   "z": -30000,
+   "biome": "coastal-ice-shelf",
+   "tris": 1832
+  },
+  {
+   "id": "WG_13",
+   "x": 4330.127018922193,
+   "z": -30000,
+   "biome": "coastal-ice-shelf",
+   "tris": 3038
+  },
+  {
+   "id": "WG_14",
+   "x": 8660.254037844386,
+   "z": -30000,
+   "biome": "coastal-ice-shelf",
+   "tris": 4816
+  },
+  {
+   "id": "WG_15",
+   "x": -10825.317547305483,
+   "z": -33750,
+   "biome": "iceberg-sea",
+   "tris": 3512
+  },
+  {
+   "id": "WG_16",
+   "x": -6495.190528383289,
+   "z": -33750,
+   "biome": "iceberg-sea",
+   "tris": 3120
+  },
+  {
+   "id": "WG_17",
+   "x": -2165.0635094610966,
+   "z": -33750,
+   "biome": "iceberg-sea",
+   "tris": 3345
+  },
+  {
+   "id": "WG_18",
+   "x": 2165.0635094610966,
+   "z": -33750,
+   "biome": "iceberg-sea",
+   "tris": 3523
+  },
+  {
+   "id": "WG_19",
+   "x": -8660.254037844386,
+   "z": -37500,
+   "biome": "iceberg-sea",
+   "tris": 3424
+  },
+  {
+   "id": "WG_20",
+   "x": -4330.127018922193,
+   "z": -37500,
+   "biome": "iceberg-sea",
+   "tris": 3416
+  },
+  {
+   "id": "EC_01",
+   "x": 10825.317547305483,
+   "z": -26250,
+   "biome": "forest-snow coastal ecotone",
+   "tris": 2756
+  },
+  {
+   "id": "HV_01",
+   "x": 28145.825622994256,
+   "z": -3750,
+   "biome": "temperate forest",
+   "tris": 876
+  },
+  {
+   "id": "JS_-3_10",
+   "x": 8660.254037844386,
+   "z": 37500,
+   "biome": "true tropical jungle",
+   "tris": 1024
+  },
+  {
+   "id": "PT_+3_10",
+   "x": 34641.016151377546,
+   "z": 37500,
+   "biome": "tropical swamp",
+   "tris": 1149
+  },
+  {
+   "id": "JS_-3_11",
+   "x": 10825.317547305483,
+   "z": 41250,
+   "biome": "true tropical jungle",
+   "tris": 598
+  },
+  {
+   "id": "JS_-2_11",
+   "x": 15155.444566227676,
+   "z": 41250,
+   "biome": "true tropical jungle",
+   "tris": 624
+  },
+  {
+   "id": "JS_-1_11",
+   "x": 19485.571585149868,
+   "z": 41250,
+   "biome": "true tropical jungle",
+   "tris": 624
+  },
+  {
+   "id": "JS_+0_11",
+   "x": 23815.698604072062,
+   "z": 41250,
+   "biome": "true tropical jungle",
+   "tris": 596
+  },
+  {
+   "id": "JS_+1_11",
+   "x": 28145.825622994256,
+   "z": 41250,
+   "biome": "true tropical jungle",
+   "tris": 638
+  },
+  {
+   "id": "PT_+2_11",
+   "x": 32475.95264191645,
+   "z": 41250,
+   "biome": "tropical swamp",
+   "tris": 1071
+  },
+  {
+   "id": "PT_+3_11",
+   "x": 36806.079660838644,
+   "z": 41250,
+   "biome": "tropical swamp",
+   "tris": 1290
+  },
+  {
+   "id": "JS_-3_12",
+   "x": 12990.381056766579,
+   "z": 45000,
+   "biome": "true tropical jungle",
+   "tris": 586
+  },
+  {
+   "id": "JS_-2_12",
+   "x": 17320.508075688773,
+   "z": 45000,
+   "biome": "true tropical jungle",
+   "tris": 596
+  },
+  {
+   "id": "JS_-1_12",
+   "x": 21650.635094610967,
+   "z": 45000,
+   "biome": "true tropical jungle",
+   "tris": 610
+  },
+  {
+   "id": "JS_+0_12",
+   "x": 25980.762113533157,
+   "z": 45000,
+   "biome": "true tropical jungle",
+   "tris": 612
+  },
+  {
+   "id": "JS_+1_12",
+   "x": 30310.88913245535,
+   "z": 45000,
+   "biome": "true tropical jungle",
+   "tris": 610
+  },
+  {
+   "id": "PT_+2_12",
+   "x": 34641.016151377546,
+   "z": 45000,
+   "biome": "tropical swamp",
+   "tris": 1115
+  },
+  {
+   "id": "PT_+3_12",
+   "x": 38971.143170299736,
+   "z": 45000,
+   "biome": "tropical swamp",
+   "tris": 1220
+  },
+  {
+   "id": "JS_-3_13",
+   "x": 15155.444566227676,
+   "z": 48750,
+   "biome": "true tropical jungle",
+   "tris": 612
+  },
+  {
+   "id": "JS_-2_13",
+   "x": 19485.571585149868,
+   "z": 48750,
+   "biome": "true tropical jungle",
+   "tris": 594
+  },
+  {
+   "id": "JS_-1_13",
+   "x": 23815.698604072062,
+   "z": 48750,
+   "biome": "true tropical jungle",
+   "tris": 618
+  },
+  {
+   "id": "JS_+0_13",
+   "x": 28145.825622994256,
+   "z": 48750,
+   "biome": "true tropical jungle",
+   "tris": 652
+  },
+  {
+   "id": "JS_+1_13",
+   "x": 32475.95264191645,
+   "z": 48750,
+   "biome": "true tropical jungle",
+   "tris": 624
+  },
+  {
+   "id": "PT_+2_13",
+   "x": 36806.079660838644,
+   "z": 48750,
+   "biome": "tropical swamp",
+   "tris": 1328
+  },
+  {
+   "id": "PT_+3_13",
+   "x": 41136.206679760835,
+   "z": 48750,
+   "biome": "tropical swamp",
+   "tris": 1239
+  },
+  {
+   "id": "JS_-1_14",
+   "x": 25980.762113533157,
+   "z": 52500,
+   "biome": "true tropical jungle",
+   "tris": 602
+  },
+  {
+   "id": "costa_+03_-11",
+   "x": -10825.317547305483,
+   "z": -41250,
+   "biome": "glacial",
+   "tris": 1076
+  },
+  {
+   "id": "costa_+04_-11",
+   "x": -6495.190528383289,
+   "z": -41250,
+   "biome": "glacial",
+   "tris": 1192
+  },
+  {
+   "id": "costa_+05_-11",
+   "x": -2165.0635094610966,
+   "z": -41250,
+   "biome": "glacial",
+   "tris": 1108
+  },
+  {
+   "id": "costa_+02_-10",
+   "x": -12990.381056766579,
+   "z": -37500,
+   "biome": "glacial",
+   "tris": 1176
+  },
+  {
+   "id": "costa_+05_-10",
+   "x": 0,
+   "z": -37500,
+   "biome": "glacial",
+   "tris": 1358
+  },
+  {
+   "id": "costa_+06_-10",
+   "x": 4330.127018922193,
+   "z": -37500,
+   "biome": "glacial",
+   "tris": 1042
+  },
+  {
+   "id": "costa_+01_-09",
+   "x": -15155.444566227676,
+   "z": -33750,
+   "biome": "glacial",
+   "tris": 1020
+  },
+  {
+   "id": "costa_+06_-09",
+   "x": 6495.190528383289,
+   "z": -33750,
+   "biome": "glacial",
+   "tris": 1514
+  },
+  {
+   "id": "costa_+07_-09",
+   "x": 10825.317547305483,
+   "z": -33750,
+   "biome": "glacial",
+   "tris": 1124
+  },
+  {
+   "id": "costa_+08_-09",
+   "x": 15155.444566227676,
+   "z": -33750,
+   "biome": "praia",
+   "tris": 916
+  },
+  {
+   "id": "costa_+09_-09",
+   "x": 19485.571585149868,
+   "z": -33750,
+   "biome": "praia",
+   "tris": 898
+  },
+  {
+   "id": "costa_+10_-09",
+   "x": 23815.698604072062,
+   "z": -33750,
+   "biome": "praia",
+   "tris": 696
+  },
+  {
+   "id": "costa_+01_-08",
+   "x": -12990.381056766579,
+   "z": -30000,
+   "biome": "glacial",
+   "tris": 1286
+  },
+  {
+   "id": "costa_+10_-08",
+   "x": 25980.762113533157,
+   "z": -30000,
+   "biome": "praia",
+   "tris": 876
+  },
+  {
+   "id": "glacial",
+   "x": -15155.444566227676,
+   "z": -26250,
+   "biome": "glacial",
+   "tris": 4378
+  },
+  {
+   "id": "costa_+10_-07",
+   "x": 28145.825622994256,
+   "z": -26250,
+   "biome": "praia",
+   "tris": 908
+  },
+  {
+   "id": "costa_+00_-06",
+   "x": -12990.381056766579,
+   "z": -22500,
+   "biome": "glacial",
+   "tris": 1292
+  },
+  {
+   "id": "costa_+10_-06",
+   "x": 30310.88913245535,
+   "z": -22500,
+   "biome": "praia",
+   "tris": 1004
+  },
+  {
+   "id": "costa_+11_-06",
+   "x": 34641.016151377546,
+   "z": -22500,
+   "biome": "falesia",
+   "tris": 988
+  },
+  {
+   "id": "costa_+00_-05",
+   "x": -10825.317547305483,
+   "z": -18750,
+   "biome": "glacial",
+   "tris": 990
+  },
+  {
+   "id": "costa_+01_-05",
+   "x": -6495.190528383289,
+   "z": -18750,
+   "biome": "glacial",
+   "tris": 1156
+  },
+  {
+   "id": "costa_+02_-05",
+   "x": -2165.0635094610966,
+   "z": -18750,
+   "biome": "glacial",
+   "tris": 1216
+  },
+  {
+   "id": "costa_+03_-05",
+   "x": 2165.0635094610966,
+   "z": -18750,
+   "biome": "praia",
+   "tris": 1056
+  },
+  {
+   "id": "costa_+11_-05",
+   "x": 36806.079660838644,
+   "z": -18750,
+   "biome": "falesia",
+   "tris": 1136
+  },
+  {
+   "id": "costa_+00_-04",
+   "x": -8660.254037844386,
+   "z": -15000,
+   "biome": "dunas",
+   "tris": 700
+  },
+  {
+   "id": "costa_+01_-04",
+   "x": -4330.127018922193,
+   "z": -15000,
+   "biome": "dunas",
+   "tris": 852
+  },
+  {
+   "id": "costa_+02_-04",
+   "x": 0,
+   "z": -15000,
+   "biome": "dunas",
+   "tris": 800
+  },
+  {
+   "id": "costa_+03_-04",
+   "x": 4330.127018922193,
+   "z": -15000,
+   "biome": "praia",
+   "tris": 1128
+  },
+  {
+   "id": "costa_+11_-04",
+   "x": 38971.143170299736,
+   "z": -15000,
+   "biome": "falesia",
+   "tris": 1056
+  },
+  {
+   "id": "costa_-01_-03",
+   "x": -10825.317547305483,
+   "z": -11250,
+   "biome": "dunas",
+   "tris": 802
+  },
+  {
+   "id": "costa_+11_-03",
+   "x": 41136.206679760835,
+   "z": -11250,
+   "biome": "falesia",
+   "tris": 1114
+  },
+  {
+   "id": "costa_-02_-02",
+   "x": -12990.381056766579,
+   "z": -7500,
+   "biome": "dunas",
+   "tris": 860
+  },
+  {
+   "id": "costa_+11_-02",
+   "x": 43301.270189221934,
+   "z": -7500,
+   "biome": "falesia",
+   "tris": 1028
+  },
+  {
+   "id": "costa_-03_-01",
+   "x": -15155.444566227676,
+   "z": -3750,
+   "biome": "dunas",
+   "tris": 842
+  },
+  {
+   "id": "costa_+10_-01",
+   "x": 41136.206679760835,
+   "z": -3750,
+   "biome": "falesia",
+   "tris": 1060
+  },
+  {
+   "id": "dunas",
+   "x": -17320.508075688773,
+   "z": 0,
+   "biome": "dunas",
+   "tris": 856
+  },
+  {
+   "id": "costa_+09_+00",
+   "x": 38971.143170299736,
+   "z": 0,
+   "biome": "falesia",
+   "tris": 1046
+  },
+  {
+   "id": "costa_-04_+01",
+   "x": -15155.444566227676,
+   "z": 3750,
+   "biome": "dunas",
+   "tris": 986
+  },
+  {
+   "id": "costa_+09_+01",
+   "x": 41136.206679760835,
+   "z": 3750,
+   "biome": "falesia",
+   "tris": 966
+  },
+  {
+   "id": "costa_-05_+02",
+   "x": -17320.508075688773,
+   "z": 7500,
+   "biome": "dunas",
+   "tris": 764
+  },
+  {
+   "id": "costa_+06_+02",
+   "x": 30310.88913245535,
+   "z": 7500,
+   "biome": "praia",
+   "tris": 1052
+  },
+  {
+   "id": "costa_+07_+02",
+   "x": 34641.016151377546,
+   "z": 7500,
+   "biome": "falesia",
+   "tris": 988
+  },
+  {
+   "id": "costa_+08_+02",
+   "x": 38971.143170299736,
+   "z": 7500,
+   "biome": "falesia",
+   "tris": 988
+  },
+  {
+   "id": "costa_-05_+03",
+   "x": -15155.444566227676,
+   "z": 11250,
+   "biome": "dunas",
+   "tris": 800
+  },
+  {
+   "id": "praia",
+   "x": 28145.825622994256,
+   "z": 11250,
+   "biome": "praia",
+   "tris": 934
+  },
+  {
+   "id": "costa_-05_+04",
+   "x": -12990.381056766579,
+   "z": 15000,
+   "biome": "dunas",
+   "tris": 874
+  },
+  {
+   "id": "costa_+05_+04",
+   "x": 30310.88913245535,
+   "z": 15000,
+   "biome": "praia",
+   "tris": 852
+  },
+  {
+   "id": "costa_-05_+05",
+   "x": -10825.317547305483,
+   "z": 18750,
+   "biome": "dunas",
+   "tris": 896
+  },
+  {
+   "id": "costa_+05_+05",
+   "x": 32475.95264191645,
+   "z": 18750,
+   "biome": "arcos",
+   "tris": 1254
+  },
+  {
+   "id": "costa_-05_+06",
+   "x": -8660.254037844386,
+   "z": 22500,
+   "biome": "dunas",
+   "tris": 768
+  },
+  {
+   "id": "costa_-04_+06",
+   "x": -4330.127018922193,
+   "z": 22500,
+   "biome": "dunas",
+   "tris": 962
+  },
+  {
+   "id": "costa_-03_+06",
+   "x": 0,
+   "z": 22500,
+   "biome": "dunas",
+   "tris": 1032
+  },
+  {
+   "id": "arcos",
+   "x": 34641.016151377546,
+   "z": 22500,
+   "biome": "arcos",
+   "tris": 1258
+  },
+  {
+   "id": "costa_-03_+07",
+   "x": 2165.0635094610966,
+   "z": 26250,
+   "biome": "dunas",
+   "tris": 1170
+  },
+  {
+   "id": "costa_+04_+07",
+   "x": 32475.95264191645,
+   "z": 26250,
+   "biome": "arcos",
+   "tris": 926
+  },
+  {
+   "id": "costa_-04_+08",
+   "x": 0,
+   "z": 30000,
+   "biome": "dunas",
+   "tris": 754
+  },
+  {
+   "id": "costa_+04_+08",
+   "x": 34641.016151377546,
+   "z": 30000,
+   "biome": "arcos",
+   "tris": 762
+  },
+  {
+   "id": "costa_-04_+09",
+   "x": 2165.0635094610966,
+   "z": 33750,
+   "biome": "dunas",
+   "tris": 996
+  },
+  {
+   "id": "costa_+03_+09",
+   "x": 32475.95264191645,
+   "z": 33750,
+   "biome": "falesia",
+   "tris": 866
+  },
+  {
+   "id": "costa_+04_+09",
+   "x": 36806.079660838644,
+   "z": 33750,
+   "biome": "falesia",
+   "tris": 1048
+  },
+  {
+   "id": "costa_-04_+10",
+   "x": 4330.127018922193,
+   "z": 37500,
+   "biome": "dunas",
+   "tris": 1218
+  },
+  {
+   "id": "costa_+04_+10",
+   "x": 38971.143170299736,
+   "z": 37500,
+   "biome": "falesia",
+   "tris": 1064
+  },
+  {
+   "id": "costa_-04_+11",
+   "x": 6495.190528383289,
+   "z": 41250,
+   "biome": "falesia",
+   "tris": 1076
+  },
+  {
+   "id": "costa_+04_+11",
+   "x": 41136.206679760835,
+   "z": 41250,
+   "biome": "falesia",
+   "tris": 1044
+  },
+  {
+   "id": "costa_-04_+12",
+   "x": 8660.254037844386,
+   "z": 45000,
+   "biome": "falesia",
+   "tris": 1096
+  },
+  {
+   "id": "costa_+04_+12",
+   "x": 43301.270189221934,
+   "z": 45000,
+   "biome": "falesia",
+   "tris": 1134
+  },
+  {
+   "id": "falesia",
+   "x": 10825.317547305483,
+   "z": 48750,
+   "biome": "falesia",
+   "tris": 1666
+  },
+  {
+   "id": "costa_+04_+13",
+   "x": 45466.333698683025,
+   "z": 48750,
+   "biome": "falesia",
+   "tris": 1094
+  },
+  {
+   "id": "costa_-04_+14",
+   "x": 12990.381056766579,
+   "z": 52500,
+   "biome": "falesia",
+   "tris": 1170
+  },
+  {
+   "id": "costa_-03_+14",
+   "x": 17320.508075688773,
+   "z": 52500,
+   "biome": "falesia",
+   "tris": 1044
+  },
+  {
+   "id": "costa_-02_+14",
+   "x": 21650.635094610967,
+   "z": 52500,
+   "biome": "falesia",
+   "tris": 1074
+  },
+  {
+   "id": "costa_+00_+14",
+   "x": 30310.88913245535,
+   "z": 52500,
+   "biome": "falesia",
+   "tris": 1014
+  },
+  {
+   "id": "costa_+01_+14",
+   "x": 34641.016151377546,
+   "z": 52500,
+   "biome": "falesia",
+   "tris": 1094
+  },
+  {
+   "id": "costa_+02_+14",
+   "x": 38971.143170299736,
+   "z": 52500,
+   "biome": "falesia",
+   "tris": 1156
+  },
+  {
+   "id": "costa_+03_+14",
+   "x": 43301.270189221934,
+   "z": 52500,
+   "biome": "falesia",
+   "tris": 1110
+  },
+  {
+   "id": "costa_-02_+15",
+   "x": 23815.698604072062,
+   "z": 56250,
+   "biome": "falesia",
+   "tris": 1096
+  },
+  {
+   "id": "costa_-01_+15",
+   "x": 28145.825622994256,
+   "z": 56250,
+   "biome": "falesia",
+   "tris": 1080
+  }
+ ],
+ "totalTris": 381769,
+ "note": "Derivado dos GLBs originais (não alterados). Só apresentação: o servidor não usa."
+}
