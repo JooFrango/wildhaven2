@@ -53,6 +53,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "retorno" => retorno(&mut w, ticks)?,
         "continente" => continente(&mut w, ticks, std::env::var("WH_DESTINO").ok())?,
         "caca-bioma" => caca_bioma(&mut w, ticks)?,
+        "exploracao-longa" => exploracao_longa(&mut w, ticks)?,
         _ => travessia(&mut w, ticks)?,
     };
     rep["wallSeconds"] = serde_json::json!(t0.elapsed().as_secs_f64());
@@ -349,4 +350,28 @@ fn retorno(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::
     let st: Vec<(String, String, i64)> = w.game.hunters.iter().filter(|h| ids.contains(&h.id)).map(|h| (h.name.clone(), format!("{:?}", h.activity), h.mv.dist(w.game.village.0, w.game.village.1) as i64)).collect();
     println!("retorno: ok={ok} distâncias_ao_recolher={:?} tempo={:.0}s final={:?}", far.iter().map(|d| *d as i64).collect::<Vec<_>>(), w.sim_time_s - t0, st);
     Ok(serde_json::json!({"schema": "wildhaven.retorno-check.v1", "ok": ok, "distanciasAoRecolher": far, "segundos": w.sim_time_s - t0, "final": st}))
+}
+
+/// V04: todos os Hunters exploram por `ticks` (como o teste longo do servidor) e, a cada 3000 ticks, registra a
+/// população e o custo médio de cada fase do passo (geração, visões, laço de criaturas, pós-processo, resto).
+fn exploracao_longa(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
+    let ids: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter").map(|h| h.id.clone()).collect();
+    w.order(Order::Explorar { hunters: ids })?;
+    w.game.prof_on = true;
+    let mut linhas = vec![];
+    let t0 = std::time::Instant::now();
+    for t in 1..=ticks {
+        w.step();
+        if t % 3000 == 0 {
+            let p = w.game.prof; let n = p[5].max(1.0); let m = &w.game.metrics;
+            let l = serde_json::json!({"tick": t, "simH": t as f64 * 0.2 / 3600.0, "criaturas": m.creatures_total, "perto": m.near, "medio": m.mid, "longe": m.far, "congeladas": m.frozen,
+                "msGeracao": p[0] / n, "msVisoes": p[1] / n, "msLaco": p[2] / n, "msPos": p[3] / n, "msResto": p[4] / n, "msTotal": (p[0] + p[1] + p[2] + p[3] + p[4]) / n, "paredeS": t0.elapsed().as_secs_f64()});
+            println!("{l}");
+            linhas.push(l);
+            w.game.prof = [0.0; 6];
+            let livres: Vec<String> = w.game.hunters.iter().filter(|h| h.alive && h.role == "hunter" && h.activity == wh_core::hunter::Activity::NaVila).map(|h| h.id.clone()).collect();
+            if !livres.is_empty() { let _ = w.order(Order::Explorar { hunters: livres }); }
+        }
+    }
+    Ok(serde_json::json!({"modo": "exploracao-longa", "ticks": ticks, "amostras": linhas}))
 }

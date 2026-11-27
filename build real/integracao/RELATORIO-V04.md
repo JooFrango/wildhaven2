@@ -112,10 +112,41 @@ O resgate e a morte permanente continuam ativos: houve mortes no caminho.
 - **Teste local:** ordem para ER_19, ausente; baixou 19 MB, conferiu, liberou e a viagem começou.
 - **CI Windows:** o mesmo teste passou no runner, sem Rust ou Node no PATH.
 
-## 7. Desempenho e testes
+## 7. Cliente no navegador: o que as capturas revelaram
 
-Ver `BENCHMARK-V03-V04.md`, que é preenchido ao fim das medições.
+As capturas reais por bioma (`tools/capturas-biomas.mjs`, `evidencias/v04/biomas/`) revelaram **três defeitos**, todos corrigidos.
 
-## 8. Pendências
+1. **Relevo preto em 50 hexes**: planícies, savanas, selva, transição e deserto central.
+   - **Causa:** 50 dos 272 GLBs **originais** não têm o atributo `NORMAL` (por exemplo, `pl_nw_v12.glb` só tem `POSITION` e `COLOR_0`). O glTF manda o cliente usar normais planas nesse caso. Sem elas, a iluminação dava zero.
+   - **Correção:** variante de material com `flatShading`, que é o facetado do próprio asset. O detalhe procedural de solo passou a medir a inclinação pelas derivadas da posição; antes, todo o relevo virava "encosta de pedra" cinza.
+   - A geometria não foi alterada. Os hexes com normais, como a floresta aprovada da V02, não mudam.
+2. **A tela "Carregando terrenos da região" nunca se fechava.**
+   - Cada snapshot zerava o motivo da tela. Ela abre quando o Hunter seguido entra num hex sem relevo pronto, por exemplo depois de uma viagem ou ao trocar para um Hunter distante.
+   - **Também corrigido na V03**, cujo ZIP foi republicado.
+3. **Bestiário e mapa com rótulos crus do manifesto** em inglês (por exemplo, "temperate forest to grassland"). Agora mostram o nome da classe de bioma em português (`client/src/biomas-pt.ts`, gerado de `data/biomas-v04.json`).
+
+**Evidências** (renderização por software):
+
+| O que | Resultado | Arquivo |
+| --- | --- | --- |
+| 16 hexes de 13 classes de bioma, com a mesma câmera, ângulo e hora | Relevo e vegetação dos GLBs originais, carregados por streaming em 12–40 s cada | `evidencias/v04/biomas/mosaico-biomas.png`, `capturas.json` |
+| Troca para o Hunter 04, em ER_28 | Região pronta em 7,6 s, sem erros | `evidencias/v04/troca-hunter/` |
+| Bestiário | Espécies novas da V04 (Carniroca, Cavoru, Cervalume, Ferrunco…) e mapa de ocorrência só com os hexes conhecidos | `evidencias/v04/interface/bestiario.png` |
+| Mapa | Véu sobre os hexes não descobertos e rota desenhada de uma viagem em grupo HV_01 → X3 (5 saltos, 21,6 km, ~5,1 h estimadas) | `evidencias/v04/interface/mapa*.png` |
+
+- **Limitação das capturas:** em MW_01 (montanha) e WG_10 (plataforma de gelo), o centro do hex é um cume, e a colisão da câmera com o relevo a mantém perto da encosta. Essas duas imagens são vistas próximas.
+- **Comparação com a floresta aprovada da V02:** HV_01 e ER_18 não mudaram, porque têm normais. A comparação visual dos outros biomas cabe ao diretor (pendência D2).
+
+## 8. Desempenho e testes
+
+Ver `BENCHMARK-V03-V04.md`.
+
+- **Mesma cena (vila, perfil Baixo):** a V04 mantém a V03.
+  - CPU: 3D 334% → 333%, Econômico 11,6% → 12,2%, oculto 4,5% → 4,6%;
+  - quadros desenhados com a aba oculta: 0 → 0;
+  - WebSocket: 7,9 → 9,1 KB/s no 3D.
+- **Simulação do continente por horas** (`wh-sim-check exploracao-longa`): o custo do passo cresce de forma **linear** com a população, cerca de 0,7 ms por mil criaturas, sem explosão.
+
+## 9. Pendências
 
 Ver `PENDENCIAS-V04.md`.

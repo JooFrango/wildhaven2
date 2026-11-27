@@ -41,12 +41,8 @@ Para regenerar, rode os passos do workflow `wildhaven-windows-portable-v04.yml`.
 ## Em andamento ou a fazer
 
 - [ ] CI V04 (workflow do continente completo) verde, com ZIP base e release `build-real-v04-hexes` publicados e SHA-256 conferido após download.
-- [ ] Cliente no navegador com o continente:
-  - capturas reais por bioma;
-  - troca entre Hunters distantes;
-  - Bestiário com as espécies novas;
-  - mapa com rotas.
-- [ ] Benchmark V03 × V04 na mesma cena (`BENCHMARK-V03-V04.md`).
+- [x] Cliente no navegador com o continente: capturas reais de 16 hexes (13 classes), troca para Hunter distante, Bestiário com espécies novas e mapa com rota (`evidencias/v04/`). Três defeitos achados e corrigidos (RELATORIO-V04 §7).
+- [x] Benchmark V03 × V04 na mesma cena (`BENCHMARK-V03-V04.md`).
 - [ ] Testes longos da V04 (Econômico, oculto, 3D), mais 8 h e 24 h se a infraestrutura permitir.
-- [ ] Caçada fora da floresta temperada (savana ou deserto) na simulação.
-- [ ] `RELATORIO-V04.md`.
+- [x] Caçada fora da floresta temperada: Serpáduna abatida no deserto X3 (`bench/caca-deserto.json`).
+- [x] `RELATORIO-V04.md` (atualizado a cada etapa).

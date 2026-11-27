@@ -111,6 +111,11 @@ pub struct GameState {
     pub event_seq: u64,
     pub rng: u32,
     pub traps: Vec<Trap>,
+    /// Perfil por fase (só diagnóstico; `prof_on` liga): geração, visões, laço de criaturas, pós, resto, ticks.
+    #[serde(skip)]
+    pub prof_on: bool,
+    #[serde(skip)]
+    pub prof: [f64; 6],
     #[serde(skip)]
     pub creatures: Vec<Creature>,
     #[serde(skip)]
@@ -535,6 +540,7 @@ impl GameState {
         let mut budget = rel.orcamento_astar_por_tick;
         let mut m = TickMetrics { astar_budget: budget, prey_kills: self.metrics.prey_kills, tick_ms_max: self.metrics.tick_ms_max, spawn_queue: self.metrics.spawn_queue, spawn_waits: self.metrics.spawn_waits, spawn_ticks_max: self.metrics.spawn_ticks_max, ..Default::default() };
         m.creatures_total = self.creatures.len();
+        let _t_views = _ts.elapsed().as_secs_f64() * 1000.0 - _spawn_ms;
         for ci in 0..self.creatures.len() {
             let (cx, cz) = (self.creatures[ci].mv.x, self.creatures[ci].mv.z);
             let dmin = actors.iter().map(|a| d2(*a, (cx, cz))).fold(f64::MAX, f64::min);
@@ -558,6 +564,7 @@ impl GameState {
             if budget == 0 && self.creatures[ci].mv.target.is_some() && self.creatures[ci].mv.path_idx >= self.creatures[ci].mv.path.len() { m.astar_deferred += 1; }
         }
         self.rng = rng.state;
+        let _t_loop = _ts.elapsed().as_secs_f64() * 1000.0 - _spawn_ms - _t_views;
         // predação entre espécies: dano, morte, carcaça
         for pa in prey_attacks {
             let Some(ti) = self.creatures.iter().position(|c| c.id == pa.to && c.alive) else { continue };
@@ -608,6 +615,9 @@ impl GameState {
         self.check_deaths(ctx);
         self.step_expeditions(ctx);
         let _tot = _ts.elapsed().as_secs_f64() * 1000.0;
+        if self.prof_on {
+            let a = &mut self.prof; a[0] += _spawn_ms; a[1] += _t_views; a[2] += _t_loop; a[3] += _creat_ms - _t_views - _t_loop; a[4] += _tot - _spawn_ms - _creat_ms; a[5] += 1.0;
+        }
         if std::env::var("WH_PROF").is_ok() && _tot > 20.0 { eprintln!("[prof] tick {} total {_tot:.1} spawn {_spawn_ms:.1} criaturas {_creat_ms:.1} resto {:.1}", ctx.tick, _tot - _spawn_ms - _creat_ms); }
     }
 
