@@ -164,10 +164,12 @@ async function main() {
     stopLoops();
     if (document.hidden) { perf.mode = "suspenso"; return; }
     if (economic) {
+      document.body.classList.add("economico");
       loops.kind = "pixel"; perf.mode = "pixel"; perf.targetMs = ecoInterval(); perf.pause(); loops.ecoNext = performance.now();
       view.hidden = true; eco.canvas.hidden = false;
       ecoTick();
     } else if (scene3d) {
+      document.body.classList.remove("economico");
       loops.kind = "3d"; perf.mode = "3d"; perf.targetMs = 1000 / 60; perf.pause();
       view.hidden = false; eco.canvas.hidden = true;
       scene3d.startLoop(() => ui);
