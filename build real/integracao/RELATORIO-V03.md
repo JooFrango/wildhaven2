@@ -252,6 +252,9 @@ A primeira tentativa foi interrompida aos 11 min por um reinício do contêiner.
   - requisição Range retornando 206;
   - telas de carregamento e modelos.
 - **ZIP:** [Wildhaven-Windows-portatil-v03.zip](https://github.com/JooFrango/wildhaven2/releases/download/build-real-v03-portatil/Wildhaven-Windows-portatil-v03.zip).
+  - Versão final: commit `54942bf`, execução 7 do workflow (verde).
+  - **204.252.027 bytes**, SHA-256 `0f2da336fdd79ea49cb3365acb65306e7244fa467620c2870387b4c1681963ce`.
+  - Baixei de novo direto do GitHub: o SHA-256 confere com o arquivo `.sha256` do lançamento, e o pacote traz as duas correções do Econômico.
 
 ## 10. Resultados finais e pendências
 
