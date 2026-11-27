@@ -1,0 +1,1063 @@
+{
+ "schema": "wildhaven.gameplay.provisorio.v1",
+ "status": "PROVISÓRIO V02 — derivado da v01 + fichas de creatures/species; nenhum número é regra aprovada",
+ "origemDosValores": {
+  "fichas": "creatures/species/folhisco.json (locomoção, percepção, bando 4–9: 'valores iniciais para testes')",
+  "regrasConfirmadas": "build real/README.md e 05-roadmap: 2 carroças (Chad e Nailon), 6 Hunters por carroça, carroça cobra, Desvio 1 = jogar-se e levantar, Desvio 5 = rolar e esperar 3 s, resgate quando ≥1/3 caídos sem saída ou Hunter sozinho caído, morte permanente, habilidades 1–20 sem nível geral, rastro azul só quando descoberto e interrompido pela água",
+  "inventados": "todo valor marcado provisorio=true abaixo — escolhido por esta build técnica para tornar o ciclo testável",
+  "v02": "tools/gerar-gameplay-v02.mjs (fichas: percepção/locomoção/massa; fórmulas provisórias: hp, dano, itens, densidade)"
+ },
+ "economia": {
+  "provisorio": true,
+  "decisao": "item 7 (preço da carroça)",
+  "dinheiroInicial": 500,
+  "carroca": {
+   "base": 40,
+   "porKm": 6
+  }
+ },
+ "carrocas": {
+  "confirmado": "2 carroças, Chad e Nailon, 6 Hunters cada, puxadas por dodos",
+  "capacidade": 6,
+  "lista": [
+   {
+    "id": "chad",
+    "condutor": "Chad"
+   },
+   {
+    "id": "nailon",
+    "condutor": "Nailon"
+   }
+  ],
+  "velocidadeMps": 3,
+  "velocidadeProvisoria": "o dodo (Dodarro montaria v02) é blockout estático sem clipe de locomoção; a velocidade não pôde ser extraída",
+  "assetPuxador": "assets/models/creatures/dodarro/dodarro_montaria_v02_blockout.glb (aguardando aprovação artística)",
+  "assetCarroca": "AUSENTE — o cliente mostra um marcador técnico identificado"
+ },
+ "acampamento": {
+  "provisorio": true,
+  "raioClareiraM": 6,
+  "inclinacaoMaxGraus": 12,
+  "curaDescansoHpS": 1,
+  "curaCampoHpS": 0.05
+ },
+ "hunters": {
+  "provisorio": true,
+  "decisao": "item 1 (número de Hunters simultâneos)",
+  "visaoM": 60,
+  "lista": [
+   {
+    "id": "hunter-001",
+    "nome": "Hunter 01",
+    "forca": 8,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 4,
+     "desvio": 1,
+     "furtividade": 5,
+     "rastreamento": 6,
+     "armadilhas": 2,
+     "rodeio": 3,
+     "velocidade": 2
+    }
+   },
+   {
+    "id": "hunter-002",
+    "nome": "Hunter 02",
+    "forca": 11,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 7,
+     "desvio": 5,
+     "furtividade": 2,
+     "rastreamento": 3,
+     "armadilhas": 6,
+     "rodeio": 5,
+     "velocidade": 3
+    }
+   },
+   {
+    "id": "hunter-003",
+    "nome": "Hunter 03",
+    "forca": 6,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 2,
+     "desvio": 2,
+     "furtividade": 8,
+     "rastreamento": 9,
+     "armadilhas": 3,
+     "rodeio": 1,
+     "velocidade": 4
+    }
+   },
+   {
+    "id": "hunter-004",
+    "nome": "Hunter 04",
+    "forca": 9,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 5,
+     "desvio": 3,
+     "furtividade": 3,
+     "rastreamento": 4,
+     "armadilhas": 8,
+     "rodeio": 2,
+     "velocidade": 2
+    }
+   },
+   {
+    "id": "hunter-005",
+    "nome": "Hunter 05",
+    "forca": 7,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 3,
+     "desvio": 1,
+     "furtividade": 4,
+     "rastreamento": 5,
+     "armadilhas": 1,
+     "rodeio": 6,
+     "velocidade": 5
+    }
+   },
+   {
+    "id": "hunter-006",
+    "nome": "Hunter 06",
+    "forca": 10,
+    "arma": "espada",
+    "habilidades": {
+     "espada": 6,
+     "desvio": 6,
+     "furtividade": 1,
+     "rastreamento": 2,
+     "armadilhas": 4,
+     "rodeio": 4,
+     "velocidade": 1
+    }
+   }
+  ],
+  "socorristas": [
+   {
+    "id": "chad",
+    "nome": "Chad",
+    "forca": 14,
+    "arma": "espada",
+    "armaduraHp": 120,
+    "habilidades": {
+     "espada": 10,
+     "desvio": 6,
+     "primeiros_socorros": 8
+    }
+   },
+   {
+    "id": "nailon",
+    "nome": "Nailon",
+    "forca": 13,
+    "arma": "espada",
+    "armaduraHp": 120,
+    "habilidades": {
+     "espada": 9,
+     "desvio": 7,
+     "primeiros_socorros": 9
+    }
+   }
+  ],
+  "hpBase": 100,
+  "habilidadesConfirmadas": [
+   "espada",
+   "desvio",
+   "velocidade",
+   "agilidade",
+   "armadilhas",
+   "mineracao",
+   "escalada",
+   "primeiros_socorros",
+   "rodeio",
+   "furtividade",
+   "rastreamento"
+  ],
+  "xpPorNivel": 100,
+  "nivelMax": 20,
+  "velocidadeBonusPorNivel": 0.01,
+  "velocidadeBonusProvisorio": "Velocidade melhora a eficiência: +1% sobre a velocidade extraída do clipe por nível acima de 1 (provisório)"
+ },
+ "combate": {
+  "regraPortada": "dano = 3 + força × 0,65 + ataque da arma; alcance 2,6 m; recarga 1,2 s (game/alpha01/src/combat/combat.ts, paridade por seed)",
+  "armas": {
+   "espada": {
+    "ataque": 6,
+    "bonusPorNivel": 0.5,
+    "provisorio": true
+   },
+   "lanca": {
+    "ataque": 5,
+    "bonusPorNivel": 0.45,
+    "alcanceM": 2.6,
+    "provisorio": true
+   },
+   "espadao": {
+    "ataque": 8.5,
+    "bonusPorNivel": 0.6,
+    "alcanceM": 2.2,
+    "provisorio": true
+   }
+  },
+  "caidoAteMorrerS": 600,
+  "caidoProvisorio": "item 3 (janela do Hunter caído): 600 s provisório — 180 s não dava tempo de um socorrista a pé chegar",
+  "desvio": {
+   "chancePorNivel": 0.05,
+   "nivel1": {
+    "acao": "jogar-se no chão e levantar",
+    "duracaoS": 1.4
+   },
+   "nivel5": {
+    "acao": "rolar e esperar 3 s antes de atacar",
+    "duracaoS": 0.9,
+    "esperaAntesDeAtacarS": 3
+   }
+  },
+  "armasNota": "lança e espadão: PROVISÓRIOS (existem clipes spear_*/greatsword_* no hunter_pve_v01); ataque/bonus sem aprovação"
+ },
+ "furtividade": {
+  "provisorio": true,
+  "velocidadeAgachadoFator": 0.5,
+  "reducaoDeteccaoPorNivel": 0.04,
+  "distanciaAtaqueRodeioM": 2.4,
+  "chanceDeteccaoPorSegundo": 0.9,
+  "rodeioDistanciaM": 5,
+  "notaDeteccao": "Detecção probabilística por segundo dentro do cone de visão, decrescendo com a distância (provisório); ponto cego traseiro da ficha (Folhisco 60°)."
+ },
+ "armadilhas": {
+  "provisorio": true,
+  "decisao": "item 10 (catálogo de armadilhas) — nomes V02 do diretor; valores herdados da v01 (laco→laco_de_raiz, rede→presa_de_ferro)",
+  "tipos": [
+   {
+    "id": "laco_de_raiz",
+    "nome": "Laço de Raiz",
+    "imobilizaS": [
+     3,
+     6
+    ],
+    "massaMaxKg": 60
+   },
+   {
+    "id": "presa_de_ferro",
+    "nome": "Presa de Ferro",
+    "imobilizaS": [
+     5,
+     9
+    ],
+    "massaMaxKg": 120
+   }
+  ],
+  "raioDisparoM": 1.6,
+  "gritoAlcanceM": 90,
+  "chanceEvitarBase": 0.25
+ },
+ "rastros": {
+  "provisorio": true,
+  "decisao": "item 9 (persistência dos rastros)",
+  "passoM": 2,
+  "maxPorCriatura": 400,
+  "vidaS": 3600,
+  "raioDescobertaM": 7,
+  "chanceBase": 0.04,
+  "chancePorNivel": 0.012
+ },
+ "resgate": {
+  "confirmado": "≥ 1/3 dos Hunters da caçada caídos e os demais sem chance realista, ou Hunter sozinho caído; não garantido; socorrista combate de verdade e pode perder",
+  "fracaoCaidos": 0.3334,
+  "semChanceSe": "soma de HP dos Hunters de pé < HP restante da ameaça (critério provisório)"
+ },
+ "especies": {
+  "folhisco": {
+   "nome": "Folhisco",
+   "fonte": "creatures/species/folhisco.json",
+   "asset": "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb",
+   "aprovacao": "visual aprovado em 2026-11-06",
+   "papel": "presa",
+   "hp": 14,
+   "dano": 0,
+   "massaKg": 2.5,
+   "andarMps": 1.1,
+   "correrMps": 5,
+   "correrMaxS": 6,
+   "visaoMovimentoM": 30,
+   "visaoParadoM": 12,
+   "audicaoM": 20,
+   "grupo": [
+    4,
+    9
+   ],
+   "gruposPorHex": 30,
+   "itens": [
+    {
+     "id": "penas_folhisco",
+     "nome": "Penas de Folhisco"
+    },
+    {
+     "id": "carne_pequena",
+     "nome": "Carne pequena"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "temperate forest to grassland",
+    "forested mountain"
+   ],
+   "densidadeProvisoria": "30 bandos de 4–9 por hex de 16,2 km² (~12 aves/km²) — provisório",
+   "raioForrageioM": 60,
+   "pontoCegoTraseiroGraus": 60,
+   "lods": [
+    "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD0.glb",
+    "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD1.glb",
+    "assets/models/creatures/folhisco/folhisco-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/folhisco/folhisco-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.35–0.45 m · 2–3 kg",
+    "social": "small_flock",
+    "dieta": [
+     "seeds",
+     "sprouts",
+     "young_leaves",
+     "berries",
+     "fallen_fruit"
+    ],
+    "comportamentos": [
+     "scratch_for_seeds",
+     "forage",
+     "drink",
+     "rest",
+     "preen",
+     "lookout",
+     "freeze",
+     "scan",
+     "alarm_call",
+     "flee_to_cover"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_edge",
+     "low_shrubland"
+    ],
+    "status": "proposal"
+   }
+  },
+  "lobrapedra": {
+   "nome": "Lobrapedra",
+   "fonte": "creatures/species/lobrapedra.json (sem percepção/locomoção na ficha)",
+   "asset": "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD0.glb",
+   "aprovacao": "modeled_candidate (sem aprovação artística)",
+   "papel": "predador",
+   "hp": 95,
+   "dano": 11,
+   "massaKg": 55,
+   "provisorio": true,
+   "andarMps": 1.4,
+   "correrMps": 6.5,
+   "correrMaxS": 20,
+   "visaoMovimentoM": 40,
+   "visaoParadoM": 18,
+   "audicaoM": 60,
+   "alcanceAtaqueM": 2,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    3
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_lobrapedra",
+     "nome": "Pele de Lobrapedra"
+    },
+    {
+     "id": "presas_lobrapedra",
+     "nome": "Presas de Lobrapedra"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain"
+   ],
+   "raioForrageioM": 300,
+   "pontoCegoTraseiroGraus": 90,
+   "pontoCegoProvisorio": "ficha sem percepção: 90° provisório",
+   "densidadeProvisoria": "6 matilhas de 2–3 por hex, vagueio de 300 m — provisório",
+   "lods": [
+    "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD0.glb",
+    "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD1.glb",
+    "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/lobrapedra/v02/lobrapedra-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": null,
+    "social": "pack",
+    "dieta": [
+     "small_mammals",
+     "cervalume"
+    ],
+    "comportamentos": [
+     "patrol",
+     "track",
+     "stalk",
+     "chase",
+     "attack",
+     "retreat",
+     "rest",
+     "drink"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "rocky_forest_edge"
+    ],
+    "status": "modeled_candidate"
+   }
+  },
+  "silvarano": {
+   "nome": "Silvarano",
+   "fonte": "creatures/species/silvarano.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD0.glb",
+   "aprovacao": "proposal",
+   "papel": "presa",
+   "hp": 79,
+   "dano": 0,
+   "massaKg": 140,
+   "provisorio": true,
+   "andarMps": 1.4,
+   "correrMps": 11,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 45,
+   "visaoParadoM": 18,
+   "audicaoM": 38,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 4,
+   "itens": [
+    {
+     "id": "pele_silvarano",
+     "nome": "Pele de Silvarano"
+    },
+    {
+     "id": "carne_silvarano",
+     "nome": "Carne de Silvarano"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain",
+    "true tropical jungle",
+    "temperate forest to grassland",
+    "temperate forest -> open plains"
+   ],
+   "raioForrageioM": 220,
+   "pontoCegoTraseiroGraus": 70,
+   "densidadeProvisoria": "4 grupos por hex (provisório)",
+   "dieta": [
+    "broad_leaves",
+    "soft_shoots",
+    "ferns",
+    "flowers",
+    "fallen_fruit",
+    "tender_bark"
+   ],
+   "lods": [
+    "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD0.glb",
+    "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD1.glb",
+    "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/silvarano/silvarano-temperate-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "1.15–1.35 m · 110–170 kg",
+    "social": "small_social_group",
+    "dieta": [
+     "broad_leaves",
+     "soft_shoots",
+     "ferns",
+     "flowers",
+     "fallen_fruit",
+     "tender_bark"
+    ],
+    "comportamentos": [
+     "browse_leaves",
+     "forage_fallen_fruit",
+     "drink",
+     "rest",
+     "thermoregulate",
+     "scan",
+     "freeze",
+     "alarm_call",
+     "flee_zigzag",
+     "regroup"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "tropical_rainforest",
+     "temperate_forest_edge",
+     "tropical_forest_clearing",
+     "riparian_forest"
+    ],
+    "status": "proposal"
+   }
+  },
+  "cavoru": {
+   "nome": "Cavoru",
+   "fonte": "creatures/species/cavoru.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD0.glb",
+   "aprovacao": "in_review",
+   "papel": "presa",
+   "hp": 63,
+   "dano": 0,
+   "massaKg": 83,
+   "provisorio": true,
+   "andarMps": 1.05,
+   "correrMps": 7.4,
+   "correrMaxS": 6,
+   "visaoMovimentoM": 33,
+   "visaoParadoM": 13,
+   "audicaoM": 40,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 5,
+   "itens": [
+    {
+     "id": "pele_cavoru",
+     "nome": "Pele de Cavoru"
+    },
+    {
+     "id": "carne_cavoru",
+     "nome": "Carne de Cavoru"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south"
+   ],
+   "raioForrageioM": 200,
+   "pontoCegoTraseiroGraus": 75,
+   "densidadeProvisoria": "5 grupos por hex (provisório)",
+   "dieta": [
+    "grass",
+    "young_shoots",
+    "tubers",
+    "bulbs",
+    "roots",
+    "fallen_fruit",
+    "herbs"
+   ],
+   "lods": [
+    "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD0.glb",
+    "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD1.glb",
+    "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/cavoru/cavoru-forest-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.67–0.9 m · 58–108 kg",
+    "social": "small_family_group",
+    "dieta": [
+     "grass",
+     "young_shoots",
+     "tubers",
+     "bulbs",
+     "roots",
+     "fallen_fruit"
+    ],
+    "comportamentos": [
+     "idle",
+     "graze",
+     "sniff_ground",
+     "dig_shallow",
+     "pull_tuber",
+     "chew",
+     "drink",
+     "walk",
+     "trot",
+     "short_sprint"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_edge",
+     "temperate_grassland",
+     "grassland_shrubland",
+     "riparian_meadow"
+    ],
+    "status": "in_review"
+   }
+  },
+  "torvalho": {
+   "nome": "Torvalho",
+   "fonte": "creatures/species/torvalho.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD0.glb",
+   "aprovacao": "proposal",
+   "papel": "presa",
+   "hp": 161,
+   "dano": 0,
+   "massaKg": 650,
+   "provisorio": true,
+   "andarMps": 1,
+   "correrMps": 8.5,
+   "correrMaxS": 8,
+   "visaoMovimentoM": 38,
+   "visaoParadoM": 16,
+   "audicaoM": 35,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_torvalho",
+     "nome": "Pele de Torvalho"
+    },
+    {
+     "id": "carne_torvalho",
+     "nome": "Carne de Torvalho"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south",
+    "temperate forest",
+    "temperate forest to grassland",
+    "temperate forest -> open plains"
+   ],
+   "raioForrageioM": 320,
+   "pontoCegoTraseiroGraus": 60,
+   "densidadeProvisoria": "3 grupos por hex (provisório)",
+   "dieta": [
+    "grasses",
+    "sedges",
+    "herbaceous_plants",
+    "fallen_leaves",
+    "young_shoots"
+   ],
+   "lods": [
+    "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD0.glb",
+    "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD1.glb",
+    "assets/models/creatures/torvalho/torvalho-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/torvalho/torvalho-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "1.55–1.9 m · 480–820 kg",
+    "social": "defensive_herd",
+    "dieta": [
+     "grasses",
+     "sedges",
+     "herbaceous_plants",
+     "fallen_leaves",
+     "young_shoots"
+    ],
+    "comportamentos": [
+     "graze",
+     "ruminate",
+     "drink",
+     "rest",
+     "rub_horns",
+     "dust_bath",
+     "sniff_air",
+     "watch",
+     "alarm_snort",
+     "group_defense"
+    ],
+    "habitats": [
+     "temperate_grassland",
+     "temperate_forest_edge",
+     "woodland_clearing",
+     "temperate_riparian_meadow"
+    ],
+    "status": "proposal"
+   }
+  },
+  "tufrilo": {
+   "nome": "Tufrilo",
+   "fonte": "creatures/species/tufrilo.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD0.glb",
+   "aprovacao": "in_review",
+   "papel": "presa",
+   "hp": 19,
+   "dano": 0,
+   "massaKg": 4,
+   "provisorio": true,
+   "andarMps": 0.68,
+   "correrMps": 5.1,
+   "correrMaxS": 5,
+   "visaoMovimentoM": 19,
+   "visaoParadoM": 7,
+   "audicaoM": 30,
+   "alcanceAtaqueM": 1,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    2,
+    4
+   ],
+   "gruposPorHex": 6,
+   "itens": [
+    {
+     "id": "pele_tufrilo",
+     "nome": "Pele de Tufrilo"
+    },
+    {
+     "id": "carne_tufrilo",
+     "nome": "Carne de Tufrilo"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain",
+    "temperate forest to grassland",
+    "temperate forest -> open plains"
+   ],
+   "raioForrageioM": 120,
+   "pontoCegoTraseiroGraus": 85,
+   "densidadeProvisoria": "6 grupos por hex (provisório)",
+   "dieta": [
+    "seeds",
+    "sprouts",
+    "young_leaves",
+    "berries",
+    "fallen_fruit",
+    "soft_herbs"
+   ],
+   "lods": [
+    "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD0.glb",
+    "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD1.glb",
+    "assets/models/creatures/tufrilo/tufrilo-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/tufrilo/tufrilo-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.18–0.27 m · 2–5 kg",
+    "social": "small_family_group",
+    "dieta": [
+     "seeds",
+     "sprouts",
+     "young_leaves",
+     "berries",
+     "fallen_fruit",
+     "soft_herbs"
+    ],
+    "comportamentos": [
+     "idle",
+     "walk",
+     "hop",
+     "bound",
+     "sprint",
+     "sniff",
+     "forage",
+     "nibble",
+     "collect_seed",
+     "stash_seed"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_edge",
+     "shrubland",
+     "grassland_transition"
+    ],
+    "status": "in_review"
+   }
+  },
+  "nharuk": {
+   "nome": "Nharuk",
+   "fonte": "creatures/species/nharuk.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD0.glb",
+   "aprovacao": "in_review",
+   "papel": "predador",
+   "hp": 62,
+   "dano": 12,
+   "massaKg": 80,
+   "provisorio": true,
+   "andarMps": 1.25,
+   "correrMps": 12.5,
+   "correrMaxS": 7,
+   "visaoMovimentoM": 48,
+   "visaoParadoM": 21,
+   "audicaoM": 42,
+   "alcanceAtaqueM": 1.6320000000000001,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 2,
+   "itens": [
+    {
+     "id": "pele_nharuk",
+     "nome": "Pele de Nharuk"
+    },
+    {
+     "id": "carne_nharuk",
+     "nome": "Carne de Nharuk"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "true tropical jungle",
+    "temperate forest",
+    "forested mountain",
+    "temperate forest to grassland",
+    "temperate forest -> open plains",
+    "entirely temperate plains (no transition)",
+    "temperate prairie north of river + golden fantasy savanna south"
+   ],
+   "raioForrageioM": 600,
+   "pontoCegoTraseiroGraus": 155,
+   "densidadeProvisoria": "2 grupos por hex (provisório)",
+   "dieta": [
+    "small_herbivores",
+    "ground_birds",
+    "folhisco",
+    "juvenile_silvarano_opportunistic",
+    "unprotected_torvalho_calf_rare",
+    "small_reptiles",
+    "fresh_carrion"
+   ],
+   "lods": [
+    "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD0.glb",
+    "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD1.glb",
+    "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/nharuk/v02/nharuk-temperate-plains-optimized-v03-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.62–1.02 m · 35–125 kg",
+    "social": "solitary",
+    "dieta": [
+     "small_herbivores",
+     "ground_birds",
+     "folhisco",
+     "juvenile_silvarano_opportunistic",
+     "unprotected_torvalho_calf_rare",
+     "small_reptiles"
+    ],
+    "comportamentos": [
+     "rest",
+     "patrol",
+     "inspect_scent",
+     "listen",
+     "select_prey",
+     "stalk",
+     "ambush",
+     "pounce",
+     "attack",
+     "short_chase"
+    ],
+    "habitats": [
+     "tropical_rainforest",
+     "tropical_rainforest_understory",
+     "temperate_forest",
+     "temperate_forest_edge",
+     "temperate_grassland",
+     "riparian_meadow"
+    ],
+    "status": "in_review"
+   }
+  },
+  "boscaranha": {
+   "nome": "Boscaranha",
+   "fonte": "creatures/species/boscaranha.json (percepção, locomoção e massa da ficha)",
+   "asset": "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD0.glb",
+   "aprovacao": "in_review",
+   "papel": "predador",
+   "hp": 34,
+   "dano": 7,
+   "massaKg": 19,
+   "provisorio": true,
+   "andarMps": 0.75,
+   "correrMps": 4.7,
+   "correrMaxS": 2,
+   "visaoMovimentoM": 15,
+   "visaoParadoM": 6,
+   "audicaoM": 4,
+   "alcanceAtaqueM": 1.2,
+   "recargaAtaqueS": 1.6,
+   "grupo": [
+    1,
+    1
+   ],
+   "gruposPorHex": 3,
+   "itens": [
+    {
+     "id": "pele_boscaranha",
+     "nome": "Pele de Boscaranha"
+    },
+    {
+     "id": "carne_boscaranha",
+     "nome": "Carne de Boscaranha"
+    }
+   ],
+   "itensProvisorios": "item 8 (drops canônicos)",
+   "biomas": [
+    "temperate forest",
+    "forested mountain"
+   ],
+   "raioForrageioM": 140,
+   "pontoCegoTraseiroGraus": 100,
+   "densidadeProvisoria": "3 grupos por hex (provisório)",
+   "dieta": [
+    "folhisco",
+    "small_vertebrates",
+    "large_invertebrates"
+   ],
+   "lods": [
+    "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD0.glb",
+    "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD1.glb",
+    "assets/models/creatures/boscaranha/boscaranha-optimized-v02-LOD2.glb"
+   ],
+   "retrato": "assets/models/creatures/boscaranha/boscaranha-optimized-v02-real-3d-three-quarter.png",
+   "ficha": {
+    "porte": "0.38–0.6 m · 12–26 kg",
+    "social": "solitary",
+    "dieta": [
+     "folhisco",
+     "small_vertebrates",
+     "large_invertebrates"
+    ],
+    "comportamentos": [
+     "idle",
+     "walk",
+     "scuttle",
+     "sprint",
+     "stalk",
+     "ambush",
+     "sense_vibrations",
+     "vigilance",
+     "pounce",
+     "bite"
+    ],
+    "habitats": [
+     "temperate_forest",
+     "temperate_forest_understory",
+     "fallen_trunk",
+     "mossy_root_system"
+    ],
+    "status": "in_review"
+   }
+  }
+ },
+ "spawn": {
+  "provisorio": true,
+  "excluir": [
+   "HV_01"
+  ],
+  "raioSimulacaoDetalhadaM": 1500,
+  "foraDoRaio": "V02: níveis de relevância — perto (todo tick), médio (a cada 3), longe (a cada 15, sem rota detalhada); além disso congelado"
+ },
+ "conhecimento": {
+  "confirmado": "aparece só no Bestiário e influencia a IA",
+  "niveis": [
+   "desconhecido",
+   "avistado",
+   "estudado",
+   "dominado"
+  ],
+  "avistamentosParaEstudado": 3,
+  "abatesParaDominado": 1,
+  "efeitoProvisorio": "estudado: Hunter usa o alcance de visão da espécie para se manter fora dela ao se aproximar; dominado: escolhe armadilha contra predador quando tem armadilhas ≥ 3"
+ },
+ "expedicao": {
+  "provisorio": true,
+  "maxHorasSemAbate": 4,
+  "nota": "Expedição sem abate volta após 4 h de jogo, ou quando todos se recuperam de um resgate (provisório)."
+ },
+ "necessidades": {
+  "provisorio": true,
+  "decisao": "IA de criaturas V02 — sem aprovação de balanceamento",
+  "fomeCheiaS": 2400,
+  "sedeCheiaS": 1500,
+  "energiaDuracaoS": 3600,
+  "recuperacaoEnergiaS": 700,
+  "limiarFome": 0.6,
+  "limiarSede": 0.65,
+  "limiarCansaco": 0.25,
+  "buscaAguaRaioM": 260,
+  "carcacaDuracaoS": 1500,
+  "presasDescansamANoite": true,
+  "territorioFator": 2
+ },
+ "relevancia": {
+  "provisorio": true,
+  "pertoM": 450,
+  "medioM": 1500,
+  "longeM": 4500,
+  "passoMedio": 3,
+  "passoLonge": 15,
+  "orcamentoAstarPorTick": 14
+ },
+ "clima": {
+  "provisorio": true,
+  "fonte": "labs/ia-criaturas/src/eco/clima.js (V7) — fatores por intensidade 1; V08 não existe no repositório",
+  "fatores": {
+   "chuva": {
+    "visao": 0.55,
+    "audicao": 0.55,
+    "olfato": 0.5,
+    "locomocao": 0.9,
+    "deltaTemperaturaC": -4,
+    "apagaRastros": true
+   },
+   "tempestade": {
+    "visao": 0.45,
+    "audicao": 0.4,
+    "olfato": 0.45,
+    "locomocao": 0.85,
+    "deltaTemperaturaC": -6,
+    "apagaRastros": true
+   },
+   "areia": {
+    "visao": 0.15,
+    "audicao": 0.5,
+    "olfato": 0.6,
+    "locomocao": 0.8,
+    "deltaTemperaturaC": -2,
+    "apagaRastros": true
+   },
+   "neve": {
+    "visao": 0.6,
+    "audicao": 0.8,
+    "olfato": 0.8,
+    "locomocao": 0.85,
+    "deltaTemperaturaC": -8,
+    "apagaRastros": false
+   },
+   "nevasca": {
+    "visao": 0.3,
+    "audicao": 0.7,
+    "olfato": 0.7,
+    "locomocao": 0.65,
+    "deltaTemperaturaC": -14,
+    "apagaRastros": true
+   }
+  },
+  "noiteVisao": 0.5,
+  "cicloLunarCiclos": 8,
+  "frenteIntervaloS": 900,
+  "frenteVidaS": [
+   1800,
+   5400
+  ],
+  "megatempestadeChance": 0.06,
+  "atualizacaoS": 10
+ }
+}

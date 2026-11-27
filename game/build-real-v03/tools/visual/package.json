@@ -1,0 +1,13 @@
+{
+  "name": "wildhaven-build-real-v03-visual-pipeline",
+  "private": true,
+  "type": "module",
+  "description": "Pipeline offline de chunks visuais, LOD, vegetação instanciada e horizonte (não altera a física)",
+  "dependencies": {
+    "@gltf-transform/core": "4.2.1",
+    "@gltf-transform/extensions": "4.2.1",
+    "@gltf-transform/functions": "4.2.1",
+    "meshoptimizer": "0.22.0",
+    "pngjs": "7.0.0"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "schema": "wildhaven.bench.cliente.v1",
+  "url": "http://127.0.0.1:8790/?perfil=baixo",
+  "modo": "oculto",
+  "visibilityState": "hidden",
+  "segundos": 60.008,
+  "carregamento_s": 6.713,
+  "renderer": "Chromium headless + SwiftShader (software) — CPU do 3D inclui rasterização por software; não representa GPU real",
+  "cpu_navegador_pct_nucleo": 38.14491401146513,
+  "cpu_servidor_pct_nucleo": 0.5499266764431409,
+  "rss_navegador_mb": 1566.015625,
+  "rss_servidor_mb": 72.19921875,
+  "heap_js_mb": 205.08632946014404,
+  "raf": {
+    "quadros": 59,
+    "por_s": 0.9832022397013731,
+    "p50_ms": 1016.6000000000058,
+    "p95_ms": 1016.7000000000044,
+    "p99_ms": 1016.7000000000044,
+    "max_ms": 1016.7000000000044,
+    "low1_fps": 0.9835743090390436,
+    "travamentos_50ms": 59,
+    "travamentos_100ms": 59
+  },
+  "quadros_desenhados_jogo": null,
+  "long_tasks": 59,
+  "long_tasks_ms": 6474,
+  "ws": {
+    "bytes_por_s": 111536.74510065324,
+    "msgs_por_s": 4.999333422210372
+  },
+  "perf_jogo": {
+    "mode": "3d",
+    "fps": 4.261303106489972,
+    "low1": 0.9774852562640958,
+    "frameMs": 234.6699999999996,
+    "cpuMs": 7.153939393943062,
+    "gpuMs": null,
+    "gpuTimer": false,
+    "drawCalls": 116,
+    "triangles": 299414,
+    "geometries": 100,
+    "textures": 25,
+    "heapMB": 202.69896602630615,
+    "vramEstMB": 360.4296533203126,
+    "loadSeconds": 1.1057000000001862,
+    "resScale": 0.5,
+    "culling": {
+      "world": {
+        "tiles": 7,
+        "leavesDrawn": 7,
+        "blocksDrawn": 1,
+        "tilesAsOne": 2,
+        "frustumCulled": 84,
+        "distanceCulled": 0,
+        "occlusionCulled": 0,
+        "horizonHidden": 7,
+        "loading": 0,
+        "bytes": 56683356
+      },
+      "veg": {
+        "candidates": 601,
+        "drawn": 290,
+        "perLod": [
+          0,
+          2,
+          18,
+          270
+        ],
+        "cellsFrustum": 113,
+        "cellsDistance": 1622,
+        "cellsOcclusion": 0,
+        "drawCallsMax": 17,
+        "updateMs": 0.2999999998137355
+      },
+      "actors": {
+        "mixersUpdated": 6,
+        "mixersSkipped": 4,
+        "actorsCulled": 4,
+        "creatureLods": [
+          0,
+          0,
+          0
+        ]
+      },
+      "grass": {
+        "tufts": 309,
+        "flowers": 46,
+        "cells": 69,
+        "ms": 0.09999999986030161
+      }
+    }
+  },
+  "serie": [
+    {
+      "t": 5,
+      "cpuNavegadorPct": 39.19216156768646,
+      "cpuServidorPct": 0.39992001599680066,
+      "rssNavegadorMB": 1547.38671875
+    },
+    {
+      "t": 10,
+      "cpuNavegadorPct": 37.8,
+      "cpuServidorPct": 0.8,
+      "rssNavegadorMB": 1550.0234375
+    },
+    {
+      "t": 15,
+      "cpuNavegadorPct": 38,
+      "cpuServidorPct": 0.4,
+      "rssNavegadorMB": 1553.921875
+    },
+    {
+      "t": 20,
+      "cpuNavegadorPct": 38.800000000000004,
+      "cpuServidorPct": 0.6,
+      "rssNavegadorMB": 1557.06640625
+    },
+    {
+      "t": 25,
+      "cpuNavegadorPct": 39.59208158368326,
+      "cpuServidorPct": 0.5998800239952009,
+      "rssNavegadorMB": 1560.08984375
+    },
+    {
+      "t": 30,
+      "cpuNavegadorPct": 39,
+      "cpuServidorPct": 0.4,
+      "rssNavegadorMB": 1562.23046875
+    },
+    {
+      "t": 35,
+      "cpuNavegadorPct": 39.6,
+      "cpuServidorPct": 0.8,
+      "rssNavegadorMB": 1559.68359375
+    },
+    {
+      "t": 40,
+      "cpuNavegadorPct": 34.599999999999994,
+      "cpuServidorPct": 0.2,
+      "rssNavegadorMB": 1560.41015625
+    },
+    {
+      "t": 45,
+      "cpuNavegadorPct": 35.392921415716856,
+      "cpuServidorPct": 0.7998400319936013,
+      "rssNavegadorMB": 1561.609375
+    },
+    {
+      "t": 50,
+      "cpuNavegadorPct": 38.99220155968806,
+      "cpuServidorPct": 0.39992001599680066,
+      "rssNavegadorMB": 1562.546875
+    },
+    {
+      "t": 55,
+      "cpuNavegadorPct": 39.4,
+      "cpuServidorPct": 0.6,
+      "rssNavegadorMB": 1563.09765625
+    },
+    {
+      "t": 60,
+      "cpuNavegadorPct": 37.4,
+      "cpuServidorPct": 0.6,
+      "rssNavegadorMB": 1565.93359375
+    }
+  ],
+  "logs": [
+    "warning: [.WebGL-0x1c2c00344e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x1c2c00344e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x1c2c00344e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x1c2c00344e00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+  ]
+}

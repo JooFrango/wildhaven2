@@ -1,0 +1,12 @@
+[package]
+name = "wh-core"
+description = "Núcleo autoritativo do Wildhaven Build Real v01: relógio global, terreno WHP1, regiões, IA de Hunter."
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+flate2.workspace = true
+sha2.workspace = true
