@@ -23,6 +23,7 @@ export class Perf {
   private ext: any = null;
   private queries: { q: WebGLQuery; t: number }[] = [];
   private gpuMs: number | null = null;
+  private measuringGpu = false;
   private culling: any = null;
   private renderer: THREE.WebGLRenderer | null = null;
   private vramMB: number | null = null;
@@ -32,6 +33,8 @@ export class Perf {
   public: Record<string, unknown> = {};
   extra: () => Record<string, unknown> = () => ({});
   attach(renderer: THREE.WebGLRenderer | null) {
+    for (const { q } of this.queries) this.gl?.deleteQuery(q);
+    this.measuringGpu = false;
     this.renderer = renderer; this.queries = []; this.gpuMs = null;
     this.gl = renderer ? (renderer.getContext() as WebGL2RenderingContext) : null;
     this.ext = this.gl ? this.gl.getExtension("EXT_disjoint_timer_query_webgl2") : null;
@@ -39,10 +42,15 @@ export class Perf {
   }
   beginGpu() {
     if (!this.ext || !this.gl || this.queries.length > 4) return;
-    const q = this.gl.createQuery()!; this.gl.beginQuery(this.ext.TIME_ELAPSED_EXT, q); this.queries.push({ q, t: performance.now() });
+    const q = this.gl.createQuery();
+    if (!q) return;
+    this.gl.beginQuery(this.ext.TIME_ELAPSED_EXT, q);
+    this.measuringGpu = true;
+    this.queries.push({ q, t: performance.now() });
   }
   endGpu() {
-    if (!this.ext || !this.gl || !this.queries.length) return;
+    if (!this.measuringGpu || !this.gl) return;
+    this.measuringGpu = false;
     this.gl.endQuery(this.ext.TIME_ELAPSED_EXT);
   }
   private pollGpu() {
