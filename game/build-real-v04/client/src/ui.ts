@@ -362,9 +362,10 @@ export class Ui {
         <p class="desc">${esc(descricao(sp, p))}</p>
         <div class="cols"><div><h4>Itens obtíveis</h4>${p.itens.map(i => `<div class="it">${itemIcon(i)}<span>${esc(i)}</span></div>`).join("") || "<i>—</i>"}<div class="prov">itens provisórios (decisão 8)</div></div>
         <div><h4>Biomas de ocorrência</h4>${(sp.biomas ?? p.habitats ?? []).map((b: string) => `<div class="it">${ICON.folha}<span>${esc(BIOMA_PT[b] ?? b)}</span></div>`).join("")}</div></div>
-        <h4>Mapa de ocorrência</h4><canvas class="mapinha" width="520" height="360"></canvas>
+        <h4>Mapa de ocorrência</h4><canvas class="mapinha" width="520" height="360"></canvas><p class="prov">Destacados: só os hexes onde seus Hunters já viram a espécie (descoberta progressiva). Pontos vermelhos: últimos avistamentos.</p>
         <div class="leg"><span class="h"></span>habitat · <span class="p"></span>avistamentos</div>`;
-      this.drawMap(ficha.querySelector("canvas")!, s, { habitat: sp.biomas ?? [], points: p.pontos });
+      // V04: só o que o jogador CONHECE — hexes onde Hunters já viram a espécie (não os biomas internos do servidor)
+      this.drawMap(ficha.querySelector("canvas")!, s, { habitat: [], known: (p as any).habitats ?? [], points: p.pontos });
       const go = el("button", "cta", `${ICON.cacar}<span>Caçar</span>`); go.onclick = () => this.huntDialog(p, s);
       ficha.querySelector(".cab > div")!.append(go);
     };
@@ -405,7 +406,7 @@ export class Ui {
   }
 
   /** Mapa hexagonal do continente: biomas, clima, Hunters, carroças e destinos; clicar num hex = Viajar. */
-  private drawMap(cv: HTMLCanvasElement, s: SnapshotFull, opt: { habitat?: string[]; points?: [string, number, number][]; travel?: boolean } = {}) {
+  private drawMap(cv: HTMLCanvasElement, s: SnapshotFull, opt: { habitat?: string[]; known?: string[]; points?: [string, number, number][]; travel?: boolean } = {}) {
     const g = cv.getContext("2d")!, tiles = this.d.continent.tiles;
     const xs = tiles.map(t => t.x), zs = tiles.map(t => t.z);
     const [x0, x1, z0, z1] = [Math.min(...xs) - 3000, Math.max(...xs) + 3000, Math.min(...zs) - 3000, Math.max(...zs) + 3000];
@@ -420,10 +421,11 @@ export class Ui {
       g.beginPath(); for (let i = 0; i < 6; i++) { const a = Math.PI / 6 + (i * Math.PI) / 3; g.lineTo(x + Math.cos(a) * r, y + Math.sin(a) * r); } g.closePath();
       g.fillStyle = col(t.biome); g.fill();
       if (opt.habitat?.length && opt.habitat.includes(t.biome)) { g.fillStyle = "rgba(240,190,80,0.45)"; g.fill(); }
+      if (opt.known?.includes(t.id)) { g.fillStyle = "rgba(240,190,80,0.55)"; g.fill(); g.strokeStyle = "#f2c14e"; g.lineWidth = 1.4; g.stroke(); }
       if (t.status && !/certif/.test(String(t.status))) { g.fillStyle = "rgba(0,0,0,0.25)"; g.fill(); }
       // V04: hexes ainda não percorridos por nenhum Hunter ficam velados (o bioma do mapa continua legível)
       const desc: string[] | undefined = (s.game as any).descobertos;
-      if (desc && !opt.habitat && !desc.includes(t.id)) { g.fillStyle = "rgba(8,14,20,0.38)"; g.fill(); }
+      if (desc && !opt.known && !desc.includes(t.id)) { g.fillStyle = "rgba(8,14,20,0.38)"; g.fill(); }
       g.strokeStyle = "rgba(0,0,0,0.25)"; g.lineWidth = 0.6; g.stroke();
       const n: any = nodes.get(t.id);
       if (n && n[1] !== "limpo" && n[1] !== "nublado" && !opt.habitat) { g.fillStyle = n[1] === "areia" ? "rgba(214,150,70,0.55)" : n[1].startsWith("nev") || n[1] === "neve" ? "rgba(255,255,255,0.6)" : "rgba(70,120,200,0.5)"; g.beginPath(); g.arc(x, y, r * 0.45, 0, Math.PI * 2); g.fill(); }
