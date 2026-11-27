@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "wildhaven.snapshot.v1",
+  "title": "Snapshot autoritativo do mundo (servidor → cliente)",
+  "type": "object",
+  "required": ["schema", "tick", "sim_time_s", "clock", "hunters", "streaming", "window"],
+  "properties": {
+    "schema": {"const": "wildhaven.snapshot.v1"},
+    "tick": {"type": "integer", "minimum": 0},
+    "sim_time_s": {"type": "number", "description": "tick × 0,2 s"},
+    "clock": {"$ref": "#/$defs/clock"},
+    "hunters": {"type": "array", "items": {"$ref": "#/$defs/hunter"}},
+    "streaming": {"$ref": "#/$defs/streaming"},
+    "window": {"type": "array", "description": "chunks WHP1 pinned pelas janelas dos Hunters (não da câmera)",
+      "items": {"type": "object", "required": ["tile", "ix", "iz"],
+        "properties": {"tile": {"type": "string"}, "ix": {"type": "integer"}, "iz": {"type": "integer"}}}}
+  },
+  "$defs": {
+    "clock": {
+      "type": "object",
+      "required": ["epoch_ms", "now_ms", "cycle", "phase", "phase_elapsed_s", "phase_remaining_s", "cycle_fraction"],
+      "properties": {
+        "epoch_ms": {"type": "integer"}, "now_ms": {"type": "integer"}, "cycle": {"type": "integer"},
+        "phase": {"enum": ["day", "night"], "description": "dia 7.200 s, noite 2.400 s (ciclo 9.600 s)"},
+        "phase_elapsed_s": {"type": "number"}, "phase_remaining_s": {"type": "number"},
+        "cycle_fraction": {"type": "number", "minimum": 0, "exclusiveMaximum": 1}
+      }
+    },
+    "hunter": {
+      "type": "object",
+      "required": ["id", "name", "x", "y", "z", "heading", "tile_id", "state", "clip", "speed_mps", "goal",
+        "rest_until_s", "crossings", "distance_walked_m", "plan_failures", "rng_state"],
+      "properties": {
+        "id": {"type": "string"}, "name": {"type": "string"},
+        "x": {"type": "number", "description": "posição GLOBAL (m), preservada na troca de hex"},
+        "y": {"type": "number"}, "z": {"type": "number"}, "heading": {"type": "number"},
+        "tile_id": {"type": "string"},
+        "state": {"enum": ["planejando", "caminhando", "descansando", "sem_rota"]},
+        "clip": {"type": "string"}, "speed_mps": {"type": "number", "description": "extraída do clipe Walking"},
+        "goal": {"type": ["object", "null"], "required": ["tile", "x", "z"]},
+        "rest_until_s": {"type": "number"},
+        "crossings": {"type": "array", "items": {"type": "object",
+          "required": ["tick", "sim_time_s", "from", "to", "x", "z", "step_m"]}},
+        "distance_walked_m": {"type": "number"}, "plan_failures": {"type": "integer"}, "rng_state": {"type": "integer"}
+      }
+    },
+    "streaming": {
+      "type": "object",
+      "required": ["resident_chunks", "resident_bytes", "cap_bytes", "pinned_chunks", "hits", "misses", "evictions", "load_errors"]
+    }
+  }
+}
