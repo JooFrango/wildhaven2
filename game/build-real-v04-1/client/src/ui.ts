@@ -22,6 +22,8 @@ export interface UiDeps {
   exportReport?: () => void;
   /** V04.1: segundo plano manual (o mesmo de Shift+F8). */
   setBackground?: (on: boolean) => void;
+  /** V04.1: grava N s de quadros e baixa o JSON com picos e causas. */
+  recordFrames?: (seconds: number) => boolean;
 }
 
 const ATIV: Record<string, string> = {
@@ -626,7 +628,9 @@ export class Ui {
       for (const n of [1, 2, 3, 4]) { const b = el("button", "", `F${n}`); b.onclick = () => this.d.setVillagePhase?.(n); fz.append(b); }
       const ex = el("div", "devbt", "<span>Desempenho:</span>");
       const eb = el("button", "", "Exportar relatório (JSON)"); eb.onclick = () => { this.d.exportReport?.(); this.toast("Relatório de desempenho exportado (JSON).", "ok"); };
-      ex.append(eb);
+      const gb = el("button", "", "Gravar quadros (60 s)"); gb.title = "Grava cada quadro por 60 s (picos e causas: shaders, envios, relevo, atores, tarefas longas) e baixa um JSON";
+      gb.onclick = () => { const ok = this.d.recordFrames?.(60); this.toast(ok ? "Gravando 60 s de quadros… o JSON será baixado ao fim." : "Gravação de quadros só no modo 3D.", ok ? "ok" : "erro"); };
+      ex.append(eb, gb);
       this.dev.append(bt, fz, ex);
     }
     this.devRows.forEach(([, fn], i) => this.text(this.devCells[i], fn(p, m, sv)));

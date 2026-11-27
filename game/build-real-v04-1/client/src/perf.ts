@@ -23,6 +23,8 @@ export class Perf {
   private ext: any = null;
   private queries: { q: WebGLQuery; t: number }[] = [];
   private gpuMs: number | null = null;
+  /** V04.1: último tempo de GPU medido, sem média (gravador de quadros). */
+  gpuRaw: number | null = null;
   private measuringGpu = false;
   private culling: any = null;
   private renderer: THREE.WebGLRenderer | null = null;
@@ -60,7 +62,7 @@ export class Perf {
       const { q } = this.queries[0];
       if (!this.gl.getQueryParameter(q, this.gl.QUERY_RESULT_AVAILABLE)) break;
       const ns = this.gl.getQueryParameter(q, this.gl.QUERY_RESULT);
-      if (!disjoint) this.gpuMs = this.gpuMs === null ? ns / 1e6 : this.gpuMs * 0.9 + (ns / 1e6) * 0.1;
+      if (!disjoint) { this.gpuRaw = ns / 1e6; this.gpuMs = this.gpuMs === null ? ns / 1e6 : this.gpuMs * 0.9 + (ns / 1e6) * 0.1; }
       this.gl.deleteQuery(q); this.queries.shift();
     }
   }

@@ -251,6 +251,12 @@ async function main() {
     setVillagePhase: n => { scene3d?.village.load(n).then(() => ui.toast(`Vila: fase ${n} (apresentação; regra econômica pendente)`)).catch(() => {}); },
     focusVillage: () => { cam.focusOn(); const v = S.snap.hunters.find(h => h.activity === "na_vila"); if (v) { S.follow = v.id; focusId = v.id; send({ foco: v.id }); ui.selected = v.id; scene3d?.actors.setSelected(v.id); } },
     setBackground: on => setManualBackground(on),
+    recordFrames: (seconds: number) => {
+      if (!scene3d || loops.kind !== "3d" || scene3d.recorder.active) return false;
+      scene3d.recorder.start(seconds, r => downloadJson(`wildhaven-quadros-${new Date().toISOString().replace(/[:.]/g, "-")}.json`,
+        buildReport(perf, (S.snap as any).server ?? null, settings, { gravacaoDeQuadros: r, preCompilacaoShadersMs: scene3d?.shaderPrewarmMs ?? null, portaoDeLuzes: scene3d?.lightGate.stats ?? null })));
+      return true;
+    },
     exportReport: () => downloadJson(`wildhaven-desempenho-${new Date().toISOString().replace(/[:.]/g, "-")}.json`, buildReport(perf, (S.snap as any).server ?? null, settings, { rede: wireStats(), carregamento_s: perf.loadSeconds })),
   });
   ui.selected = S.follow;
@@ -316,6 +322,7 @@ async function main() {
   (window as any).__wildhavenPerf = perf.public;
   perf.publish();
 
+  (window as any).__wildhavenGravar = (seconds = 60) => new Promise(res => { if (!scene3d || loops.kind !== "3d") return res(null); scene3d.recorder.start(seconds, res); }); // laboratório
   (window as any).__wildhavenDbg = () => ({ motivo: loading.reason, visivel: loading.visible, laco: loops.kind, economico: economic, oculto: background(), cena: !!scene3d, quadros: perf.framesDrawn }); // depuração (quadros: contador ao vivo, não o publicado a cada 30)
   // carregamentos prolongados de região (ex.: Hunter seguido chega a um hex sem relevo pronto): tela de carregamento
   setInterval(() => {
