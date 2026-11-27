@@ -1,0 +1,293 @@
+{
+  "label": "V02 perto",
+  "url": "http://127.0.0.1:8791/?cam=14,18,40",
+  "renderer": "Chromium headless + SwiftShader (software) — FPS não representa GPU",
+  "viewport": "1280x720@1",
+  "last": {
+    "t": 26.216,
+    "mode": "3d",
+    "fps": 4.762755253914389,
+    "low1": 1.0804970286331712,
+    "frameMs": 209.9625,
+    "cpuMs": 9.92916666685293,
+    "gpuMs": null,
+    "gpuTimer": false,
+    "drawCalls": 162,
+    "triangles": 323892,
+    "geometries": 91,
+    "textures": 25,
+    "heapMB": 227.92816162109375,
+    "vramEstMB": 359.9525033569337,
+    "loadSeconds": 0.8598999999985099,
+    "resScale": 0.5000000000000001,
+    "culling": {
+      "world": {
+        "tiles": 7,
+        "leavesDrawn": 4,
+        "blocksDrawn": 0,
+        "tilesAsOne": 1,
+        "frustumCulled": 89,
+        "distanceCulled": 0,
+        "occlusionCulled": 0,
+        "horizonHidden": 7,
+        "loading": 0,
+        "bytes": 56683356
+      },
+      "veg": {
+        "candidates": 244,
+        "drawn": 195,
+        "perLod": [
+          0,
+          3,
+          68,
+          124
+        ],
+        "cellsFrustum": 276,
+        "cellsDistance": 1463,
+        "cellsOcclusion": 0,
+        "drawCallsMax": 19,
+        "updateMs": 0.30000000074505806
+      },
+      "actors": {
+        "mixersUpdated": 8,
+        "mixersSkipped": 4,
+        "actorsCulled": 0
+      }
+    }
+  },
+  "maxDrawCalls": 162,
+  "maxTriangles": 323892,
+  "samples": [
+    {
+      "t": 5.8
+    },
+    {
+      "t": 10.884,
+      "mode": "3d",
+      "fps": 3.3771613832855856,
+      "low1": 1.0804970286331712,
+      "frameMs": 296.10666666664184,
+      "cpuMs": 23.60333333350718,
+      "gpuMs": null,
+      "gpuTimer": false,
+      "drawCalls": 162,
+      "triangles": 323892,
+      "geometries": 91,
+      "textures": 25,
+      "heapMB": 227.92816162109375,
+      "vramEstMB": 359.9525033569337,
+      "loadSeconds": 0.8598999999985099,
+      "resScale": 0.5000000000000001,
+      "culling": {
+        "world": {
+          "tiles": 7,
+          "leavesDrawn": 4,
+          "blocksDrawn": 0,
+          "tilesAsOne": 1,
+          "frustumCulled": 89,
+          "distanceCulled": 0,
+          "occlusionCulled": 0,
+          "horizonHidden": 7,
+          "loading": 1,
+          "bytes": 56683356
+        },
+        "veg": {
+          "candidates": 244,
+          "drawn": 195,
+          "perLod": [
+            0,
+            3,
+            68,
+            124
+          ],
+          "cellsFrustum": 276,
+          "cellsDistance": 1463,
+          "cellsOcclusion": 0,
+          "drawCallsMax": 19,
+          "updateMs": 0.30000000074505806
+        },
+        "actors": {
+          "mixersUpdated": 10,
+          "mixersSkipped": 2,
+          "actorsCulled": 0
+        }
+      }
+    },
+    {
+      "t": 15.99,
+      "mode": "3d",
+      "fps": 4.1578600880080385,
+      "low1": 1.0804970286331712,
+      "frameMs": 240.50833333333333,
+      "cpuMs": 14.73333333345751,
+      "gpuMs": null,
+      "gpuTimer": false,
+      "drawCalls": 162,
+      "triangles": 323892,
+      "geometries": 91,
+      "textures": 25,
+      "heapMB": 227.92816162109375,
+      "vramEstMB": 359.9525033569337,
+      "loadSeconds": 0.8598999999985099,
+      "resScale": 0.5000000000000001,
+      "culling": {
+        "world": {
+          "tiles": 7,
+          "leavesDrawn": 4,
+          "blocksDrawn": 0,
+          "tilesAsOne": 1,
+          "frustumCulled": 89,
+          "distanceCulled": 0,
+          "occlusionCulled": 0,
+          "horizonHidden": 7,
+          "loading": 0,
+          "bytes": 56683356
+        },
+        "veg": {
+          "candidates": 244,
+          "drawn": 195,
+          "perLod": [
+            0,
+            3,
+            68,
+            124
+          ],
+          "cellsFrustum": 276,
+          "cellsDistance": 1463,
+          "cellsOcclusion": 0,
+          "drawCallsMax": 19,
+          "updateMs": 0.19999999925494194
+        },
+        "actors": {
+          "mixersUpdated": 10,
+          "mixersSkipped": 2,
+          "actorsCulled": 0
+        }
+      }
+    },
+    {
+      "t": 21.043,
+      "mode": "3d",
+      "fps": 4.530558617877245,
+      "low1": 1.0804970286331712,
+      "frameMs": 220.7233333333499,
+      "cpuMs": 11.523333333432674,
+      "gpuMs": null,
+      "gpuTimer": false,
+      "drawCalls": 162,
+      "triangles": 323892,
+      "geometries": 91,
+      "textures": 25,
+      "heapMB": 227.92816162109375,
+      "vramEstMB": 359.9525033569337,
+      "loadSeconds": 0.8598999999985099,
+      "resScale": 0.5000000000000001,
+      "culling": {
+        "world": {
+          "tiles": 7,
+          "leavesDrawn": 4,
+          "blocksDrawn": 0,
+          "tilesAsOne": 1,
+          "frustumCulled": 89,
+          "distanceCulled": 0,
+          "occlusionCulled": 0,
+          "horizonHidden": 7,
+          "loading": 0,
+          "bytes": 56683356
+        },
+        "veg": {
+          "candidates": 244,
+          "drawn": 195,
+          "perLod": [
+            0,
+            3,
+            68,
+            124
+          ],
+          "cellsFrustum": 276,
+          "cellsDistance": 1463,
+          "cellsOcclusion": 0,
+          "drawCallsMax": 19,
+          "updateMs": 0.19999999925494194
+        },
+        "actors": {
+          "mixersUpdated": 10,
+          "mixersSkipped": 2,
+          "actorsCulled": 0
+        }
+      }
+    },
+    {
+      "t": 26.216,
+      "mode": "3d",
+      "fps": 4.762755253914389,
+      "low1": 1.0804970286331712,
+      "frameMs": 209.9625,
+      "cpuMs": 9.92916666685293,
+      "gpuMs": null,
+      "gpuTimer": false,
+      "drawCalls": 162,
+      "triangles": 323892,
+      "geometries": 91,
+      "textures": 25,
+      "heapMB": 227.92816162109375,
+      "vramEstMB": 359.9525033569337,
+      "loadSeconds": 0.8598999999985099,
+      "resScale": 0.5000000000000001,
+      "culling": {
+        "world": {
+          "tiles": 7,
+          "leavesDrawn": 4,
+          "blocksDrawn": 0,
+          "tilesAsOne": 1,
+          "frustumCulled": 89,
+          "distanceCulled": 0,
+          "occlusionCulled": 0,
+          "horizonHidden": 7,
+          "loading": 0,
+          "bytes": 56683356
+        },
+        "veg": {
+          "candidates": 244,
+          "drawn": 195,
+          "perLod": [
+            0,
+            3,
+            68,
+            124
+          ],
+          "cellsFrustum": 276,
+          "cellsDistance": 1463,
+          "cellsOcclusion": 0,
+          "drawCallsMax": 19,
+          "updateMs": 0.30000000074505806
+        },
+        "actors": {
+          "mixersUpdated": 8,
+          "mixersSkipped": 4,
+          "actorsCulled": 0
+        }
+      }
+    }
+  ],
+  "logs": [
+    "warning: [.WebGL-0x353c003b4800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "warning: [.WebGL-0x353c003b4800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x353c003b4800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x353c003b4800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "screenshot": "../bench/v02-dev-perto.png"
+}

@@ -87,6 +87,13 @@ pub struct Hunter {
     pub busy_until_s: f64,
     pub no_attack_until_s: f64,
     pub last_action: String,
+    /// Último gesto de combate para o apresentador animar (golpe_leve, golpe_pesado, desvio_1,
+    /// desvio_5, atingido, armadilha). Só apresentação: a regra já foi resolvida no servidor.
+    #[serde(default)]
+    pub anim: String,
+    /// Instante de simulação (s) em que `anim` começou.
+    #[serde(default)]
+    pub anim_t: f64,
     pub carried_by: Option<String>,
     pub wagon: Option<String>,
     #[serde(skip)]
@@ -138,6 +145,8 @@ impl Hunter {
             busy_until_s: 0.0,
             no_attack_until_s: 0.0,
             last_action: String::new(),
+            anim: String::new(),
+            anim_t: 0.0,
             carried_by: None,
             wagon: None,
             track: None,

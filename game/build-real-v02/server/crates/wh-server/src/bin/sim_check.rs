@@ -28,7 +28,7 @@ fn boot(root: &std::path::Path) -> Result<World, Box<dyn std::error::Error>> {
     let allowed: HashSet<String> = portals.certified.iter().filter(|t| physics_dir.join(format!("{t}-physics-v01")).join("index.json").is_file()).cloned().collect();
     let speeds: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v02/data/hunter-workshop-clip-speeds.json"))?)?;
     let walk = speeds["clips"].as_array().unwrap().iter().find(|c| c["name"] == "Walking").unwrap()["speedMetersPerSecond"].as_f64().unwrap();
-    let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v02/data/spawn-v01.json"))?)?;
+    let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v02/data/spawn-v02.json"))?)?;
     let s = &spawn["hunters"][0];
     let data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v02/data/gameplay-provisorio-v01.json"))?)?;
     let mut terrain = TerrainStore::new(continent, physics_dir, allowed, 256 * 1024 * 1024);

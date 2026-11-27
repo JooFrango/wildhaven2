@@ -507,10 +507,14 @@ impl GameState {
                 h.busy_until_s = ctx.now + cfg.nivel5.duracao_s;
                 h.no_attack_until_s = ctx.now + cfg.nivel5.duracao_s + cfg.nivel5.espera_antes_de_atacar_s;
                 h.last_action = "Desvio: rolou e esperou 3 s antes de atacar".into();
+                h.anim = "desvio_5".into();
+                h.anim_t = ctx.now;
             } else {
                 h.busy_until_s = ctx.now + cfg.nivel1.duracao_s;
                 h.no_attack_until_s = h.busy_until_s;
                 h.last_action = "Desvio: jogou-se no chão e levantou".into();
+                h.anim = "desvio_1".into();
+                h.anim_t = ctx.now;
             }
             let up = h.practice("desvio", 25.0, ctx.data.hunters.xp_por_nivel, ctx.data.hunters.nivel_max);
             let txt = format!("{name}: {}", h.last_action);
@@ -525,6 +529,8 @@ impl GameState {
             return;
         }
         h.hp = (h.hp - a.damage).max(0.0);
+        h.anim = "atingido".into();
+        h.anim_t = ctx.now;
         if h.hp <= 0.0 {
             h.activity = Activity::Caido;
             h.downed_since_s = Some(ctx.now);
@@ -558,6 +564,11 @@ impl GameState {
         }
         self.hunters[hi].cooldown_s = sh.cooldown;
         self.creatures[ci].hp = sc.hp;
+        {
+            let h = &mut self.hunters[hi];
+            h.anim = if ctx.tick % 3 == 0 { "golpe_pesado".into() } else { "golpe_leve".into() };
+            h.anim_t = ctx.now;
+        }
         let up = {
             let h = &mut self.hunters[hi];
             let k = h.arma.clone();

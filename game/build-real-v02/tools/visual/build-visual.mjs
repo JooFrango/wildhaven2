@@ -449,7 +449,9 @@ function densify(tileId, inst, factors, ras) {
   const blocked = (x, z) => excl.some(e => Math.hypot(x - e.x, z - e.z) < e.raioM);
   for (const o of inst) {
     const f = factors[o.fam]?.fator ?? 1, rule = familyRule(o.fam, o.kind);
-    const base = { ...o, scale: o.scale * f, rank: hash01(tileId, "r", o.x, o.z), origem: 1 };
+    // altura final limitada a [0,5; 1,8] × alvo: evita mudas de 1 m onde o original já era pequeno
+    const clampH = h => rule.alvo && o.kind !== "rock" ? Math.min(rule.alvo * 1.8, Math.max(rule.alvo * 0.5, h)) : h;
+    const base = { ...o, scale: o.scale * f * (clampH(o.h * f) / Math.max(1e-6, o.h * f)), rank: hash01(tileId, "r", o.x, o.z), origem: 1 };
     out.push(base);
     if (!rule.preencher || f >= 1) continue;
     const want = Math.min(rule.max, Math.round(rule.preencher / (f * f)) - 1);
@@ -468,7 +470,8 @@ function densify(tileId, inst, factors, ras) {
       const pr = pp[Math.floor(rnd() * pp.length)] ?? protos[o.proto];
       if (!(pr.height > 0.05)) continue;
       const jit = 0.8 + rnd() * 0.35;
-      out.push({ ...o, x, y: y - 0.15, z, yaw: rnd() * Math.PI * 2, proto: pr.id, scale: (o.h / pr.height) * f * jit, tint: o.tint.map(c => c * (0.94 + rnd() * 0.12)), rank: rnd(), origem: 0 });
+      const hh = clampH(o.h * f * jit);
+      out.push({ ...o, x, y: y - 0.15, z, yaw: rnd() * Math.PI * 2, proto: pr.id, scale: hh / pr.height, tint: o.tint.map(c => c * (0.94 + rnd() * 0.12)), rank: rnd(), origem: 0 });
     }
   }
   // em hexes "fundidos" (sem raster de terreno próprio) o y original é mantido

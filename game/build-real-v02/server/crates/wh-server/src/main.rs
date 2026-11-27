@@ -174,6 +174,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/glb/terrain/{tile}", get(terrain_glb))
         .route_service("/glb/hunter.glb", ServeFile::new(&cfg.hunter_glb))
         .nest_service("/physics", ServeDir::new(&cfg.physics_dir))
+        // V02: chunks visuais/LOD/vegetação (gerados pelo pipeline), horizonte e assets da V02,
+        // vila (fases) e modelos animados dos laboratórios — somente leitura
+        .nest_service("/visual", ServeDir::new(&cfg.visual_dir).precompressed_gzip())
+        .nest_service("/v02", ServeDir::new(cfg.repo_root.join("game/build-real-v02/assets")))
+        .nest_service("/world", ServeDir::new(cfg.repo_root.join("world")))
+        .nest_service("/labs", ServeDir::new(cfg.repo_root.join("labs")))
         .fallback_service(client)
         .with_state(state);
     let listener = tokio::net::TcpListener::bind(&cfg.bind).await?;

@@ -1,0 +1,7 @@
+html,body{margin:0;height:100%;overflow:hidden;background:#0b0d10;color:#efe6d2;font:14px/1.35 system-ui,sans-serif}
+#view{position:fixed;inset:0}
+canvas.pixel{position:fixed;inset:0;width:100vw;height:100vh;image-rendering:pixelated;z-index:0}
+#carregando{position:fixed;inset:0;z-index:50;display:grid;place-content:center;justify-items:center;gap:10px;background:radial-gradient(#1d241c,#07090a);transition:opacity .8s}
+#carregando.fim{opacity:0;pointer-events:none}
+#carregando .logo{font-size:44px;letter-spacing:.12em;font-weight:700;color:#e9d3a0}
+#carregando .barra{width:340px;height:6px;background:#2a2e2a;border-radius:3px;overflow:hidden}#carregando .barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,#b07a32,#f0c46a);transition:width .4s}
