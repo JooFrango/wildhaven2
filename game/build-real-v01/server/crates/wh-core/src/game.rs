@@ -712,7 +712,18 @@ impl GameState {
             }
             Activity::Patrulhando => {
                 let h = &mut self.hunters[i];
+                if h.mv.target.is_none() && ctx.now >= h.rest_until_s && h.patrol_interior_next {
+                    // explora o interior do hex atual (os bandos vivem por todo o hex, não só nas bordas)
+                    h.patrol_interior_next = false;
+                    if let Some(t) = ctx.t.continent.tile(&h.mv.tile_id).cloned() {
+                        let c = crate::hex::center_of(crate::hex::axial_of(t.x, t.z).0, crate::hex::axial_of(t.x, t.z).1);
+                        let a = h.rng() * std::f64::consts::TAU;
+                        let r = h.rng().sqrt() * 1600.0;
+                        h.mv.go_to(c.0 + a.cos() * r, c.1 + a.sin() * r, 1.0);
+                    }
+                }
                 if h.mv.target.is_none() && ctx.now >= h.rest_until_s {
+                    h.patrol_interior_next = true;
                     let opts: Vec<(String, f64, f64)> = ctx
                         .portals
                         .neighbors_with_portals(&h.mv.tile_id)

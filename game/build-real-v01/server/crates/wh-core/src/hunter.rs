@@ -103,6 +103,9 @@ pub struct Hunter {
     /// Fase final da aproximação (a ≤10 m vai direto, sem rodeio).
     #[serde(skip)]
     pub approach_final: bool,
+    /// Patrulha alterna: interior do hex atual ↔ próximo portal.
+    #[serde(skip)]
+    pub patrol_interior_next: bool,
 }
 
 impl Hunter {
@@ -143,6 +146,7 @@ impl Hunter {
             trap_wait_until_s: 0.0,
             ignore: Default::default(),
             approach_final: false,
+            patrol_interior_next: false,
         }
     }
 
