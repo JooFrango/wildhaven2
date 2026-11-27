@@ -76,6 +76,8 @@ const GESTURES: Record<string, string> = {
 };
 
 export interface Actor {
+  released?: boolean;
+  replacement?: Actor;
   obj: THREE.Object3D; mixer: THREE.AnimationMixer; actions: Map<string, THREE.AnimationAction>; base?: string; gesture?: { name: string; t: number };
   crouch?: THREE.AnimationAction; lastPos: THREE.Vector3; speed: number; box: THREE.Box3; ready: boolean; kind: string; accum: number; label?: string;
   lod?: number; swapping?: boolean;
@@ -141,6 +143,7 @@ export class Actors {
   private spawn(url: string, kind: string, onReady: (a: Actor) => void, extraClips: (root: THREE.Object3D) => THREE.AnimationClip[] = () => []) {
     const a: Actor = { obj: new THREE.Group(), mixer: new THREE.AnimationMixer(new THREE.Group()), actions: new Map(), lastPos: new THREE.Vector3(), speed: 0, box: new THREE.Box3(), ready: false, kind, accum: 0 };
     this.template(url).then(g => {
+      if (a.released) return;
       const obj = skeletonClone(g.scene);
       obj.traverse(o => {
         const sm = o as THREE.SkinnedMesh;
@@ -275,7 +278,7 @@ export class Actors {
           n.lod = want;
           this.creatures.set(c.id, n);
         });
-        void nu;
+        old.replacement = nu;
         continue;
       }
       const p = prevC.get(c.id) ?? c;
@@ -303,6 +306,8 @@ export class Actors {
 
   /** Libera o ator: para as ações e o mixer (o esqueleto clonado deixa de ser referenciado). */
   private release(id: number, a: Actor) {
+    a.released = true;
+    if (a.replacement) a.replacement.released = true;
     a.obj.removeFromParent();
     a.mixer.stopAllAction();
     a.mixer.uncacheRoot(a.obj);
