@@ -195,3 +195,51 @@ fn equip_order_validates_weapon_and_place_v02() {
     assert!(w.order(Order::Equipar { hunter: id.clone(), arma: "lanca".into() }).is_ok());
     assert_eq!(w.game.hunters.iter().find(|h| h.id == id).unwrap().arma, "lanca");
 }
+
+// ---------------------------------------------------------------- V04: meios de locomoção (voo e subsolo)
+
+#[test]
+fn flyer_takes_off_cruises_and_lands_without_ground_astar_v04() {
+    let mut w = fixture_world_with("voo", "gameplay-provisorio-v04.json");
+    let sp = w.data.especies["carniroca"].clone();
+    let voo = sp.voo.clone().expect("carniroca tem perfil de voo do laboratório");
+    let mut c = wh_core::creature::Creature::spawn(1, "carniroca", &sp, 1, -300.0, 0.0, "A");
+    c.energia = 1.0;
+    c.mv.snap_y(&mut w.terrain);
+    c.mv.go_to(300.0, 0.0, 2.0);
+    let (mut voou, mut alt_max, mut pousou_em) = (false, 0.0f64, None);
+    for i in 0..2000 {
+        let no_ar = wh_core::meio::step_voo(&mut c, &voo, &mut w.terrain, 0.2, false);
+        if no_ar { voou = true; }
+        alt_max = alt_max.max(c.alt);
+        if voou && c.meio == "solo" { pousou_em = Some(i); break; }
+    }
+    assert!(voou, "decolou para um destino a 600 m (> distanciaVoarM)");
+    assert!(alt_max >= voo.altitude_cruzeiro_m, "alcançou a altitude de cruzeiro: {alt_max}");
+    assert!(pousou_em.is_some(), "pousou no destino");
+    assert!(c.mv.dist(300.0, 0.0) < 10.0, "pousou perto do destino: {}", c.mv.dist(300.0, 0.0));
+    assert_eq!(c.alt, 0.0);
+    assert!(c.energia < 1.0, "voar gasta energia");
+}
+
+#[test]
+fn burrower_submerges_on_sand_emerges_to_strike_and_surfaces_off_sand_v04() {
+    let w = fixture_world_with("subsolo", "gameplay-provisorio-v04.json");
+    let sp = w.data.especies["serracorion"].clone();
+    let sub = sp.subsolo.clone().expect("serracorion tem perfil de subsolo do laboratório");
+    let mut c = wh_core::creature::Creature::spawn(2, "serracorion", &sp, 2, 0.0, 0.0, "A");
+    // na areia, sem alvo: submerge depois do tempo de emergência
+    let mut t = 0.0;
+    for _ in 0..200 { t += 0.2; wh_core::meio::step_subsolo(&mut c, &sub, true, false, false, t, sp.andar_mps); }
+    assert_eq!(c.meio, "areia");
+    assert!(c.alt < 0.0, "submersa fica abaixo do chão (visual)");
+    // alvo ao alcance de bote: emerge
+    let v = wh_core::meio::step_subsolo(&mut c, &sub, true, true, true, t, sp.andar_mps);
+    assert_eq!(c.meio, "solo");
+    assert_eq!(c.clip, "breach");
+    assert!(v > 0.0);
+    // fora da areia nunca fica submersa
+    let mut c2 = wh_core::creature::Creature::spawn(3, "serracorion", &sp, 3, 0.0, 0.0, "A");
+    for _ in 0..200 { t += 0.2; wh_core::meio::step_subsolo(&mut c2, &sub, false, false, false, t, sp.andar_mps); }
+    assert_eq!(c2.meio, "solo");
+}

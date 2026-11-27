@@ -99,3 +99,6 @@ h4{margin:.9em 0 .35em;color:var(--ouro);font-size:.95em}
 .devbt{display:flex;gap:.3em;flex-wrap:wrap;align-items:center;margin-top:.4em}
 @media (max-width:1100px){.hunters{max-width:24vw}.feed{display:none}.expedicao{width:14em}}
 #tela-carregamento{position:fixed;inset:0;width:100vw;height:100vh;border:0;z-index:50;background:#151b1a;transition:opacity .6s}#tela-carregamento.fim{opacity:0;pointer-events:none}
+/* V03: no Modo Econômico o desfoque (backdrop-filter) refazia o blur a cada quadro do pixel art — ~45% da CPU
+   do modo (medido: 17,1% → 9,5%). Mesma aparência com fundo um pouco mais opaco, sem desfoque. No 3D fica o blur. */
+body.economico .painel{backdrop-filter:none;-webkit-backdrop-filter:none;background:linear-gradient(180deg,rgba(34,26,18,.94),rgba(22,17,12,.9))}

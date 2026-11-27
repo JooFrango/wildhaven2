@@ -52,6 +52,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "demo" => demo(&mut w, ticks)?,
         "retorno" => retorno(&mut w, ticks)?,
         "continente" => continente(&mut w, ticks, std::env::var("WH_DESTINO").ok())?,
+        "caca-bioma" => caca_bioma(&mut w, ticks)?,
         _ => travessia(&mut w, ticks)?,
     };
     rep["wallSeconds"] = serde_json::json!(t0.elapsed().as_secs_f64());
@@ -182,6 +183,43 @@ fn continente(w: &mut World, ticks: u64, destino: Option<String>) -> Result<serd
         "atividadeFinal": format!("{:?}", h.activity), "vivo": h.alive, "hp": h.hp,
         "eventos": w.game.events.iter().rev().take(40).map(|e| format!("{:.0}s {} {}", e.t, e.kind, e.text)).collect::<Vec<_>>(),
     }))
+}
+
+/// V04: caçada FORA da floresta temperada. O grupo viaja até o deserto, avista uma espécie do deserto
+/// (página nova no Bestiário), volta à vila e recebe a ordem Caçar de carroça para essa espécie; a expedição
+/// viaja, acampa, rastreia e combate (fluxo completo, com resgate/morte permanente se acontecer).
+fn caca_bioma(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
+    let mut steps = vec![];
+    let ida = continente(w, ticks, std::env::var("WH_DESTINO").ok())?;
+    let chegou = ida["chegouNoTick"].is_number();
+    note(&mut steps, w, &format!("viagem em grupo até {} ({})", ida["destino"], ida["destinoBioma"]), chegou);
+    let areia = w.data.meios.areia_rotulos.clone();
+    let deserto = |w: &World| -> Option<String> {
+        // espécie EXCLUSIVA de biomas de areia (deserto/dunas), nunca uma generalista de floresta/savana
+        w.game.bestiary.pages.keys().find(|sp| w.data.especies.get(*sp).map(|e| !e.biomas.is_empty() && e.biomas.iter().all(|b| areia.contains(b))).unwrap_or(false)).cloned()
+    };
+    let viu = run_until(w, 60_000, |w| deserto(w).is_some());
+    let especie = deserto(w);
+    note(&mut steps, w, &format!("espécie do deserto no Bestiário: {especie:?}"), viu);
+    let vivos: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter" && h.alive).map(|h| h.id.clone()).collect();
+    let _ = w.order(Order::Recolher { hunters: vivos.clone() });
+    let voltou = run_until(w, 300_000, |w| w.game.hunters.iter().filter(|h| vivos.contains(&h.id) && h.alive && h.activity == Activity::NaVila).count() >= 2.min(vivos.len()) && w.game.hunters.iter().filter(|h| vivos.contains(&h.id) && h.alive).all(|h| h.activity == Activity::NaVila || h.mv.tile_id == h.mv.tile_id && h.activity == Activity::VoltandoVila && false || h.activity == Activity::NaVila));
+    note(&mut steps, w, "grupo de volta à vila (Recolher)", voltou);
+    let Some(sp) = especie else {
+        return Ok(serde_json::json!({"schema": "wildhaven.sim-check.caca-bioma.v1", "etapas": steps, "ida": ida}));
+    };
+    let time: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter" && h.alive && h.activity == Activity::NaVila).map(|h| h.id.clone()).take(6).collect();
+    let wagon = w.game.wagons.first().map(|x| x.id.clone());
+    let r = w.order(Order::Cacar { species: sp.clone(), hunters: time.clone(), transporte: "carroca".into(), carroca: wagon });
+    note(&mut steps, w, &format!("ordem Caçar {sp} de carroça com {} Hunters: {r:?}", time.len()), r.is_ok());
+    let exp_id = w.game.expeditions.last().map(|e| e.id);
+    let fim = run_until(w, 400_000, |w| w.game.expeditions.iter().find(|e| Some(e.id) == exp_id).map(|e| e.state == "concluida" || e.state.starts_with("fracass")).unwrap_or(true));
+    let e = w.game.expeditions.iter().find(|e| Some(e.id) == exp_id);
+    note(&mut steps, w, &format!("expedição encerrada: {:?} — destino {:?}, abates {:?}", e.map(|e| e.state.clone()), e.map(|e| e.dest_tile.clone()), e.map(|e| e.kills)), fim);
+    let ev: Vec<String> = w.game.events.iter().rev().take(60).map(|e| format!("{:.0}s {} {}", e.t, e.kind, e.text)).collect();
+    println!("[caca-bioma] {}", ev.iter().take(12).cloned().collect::<Vec<_>>().join(" | "));
+    Ok(serde_json::json!({"schema": "wildhaven.sim-check.caca-bioma.v1", "especie": sp, "etapas": steps, "expedicao": e, "eventos": ev,
+        "mortos": w.game.hunters.iter().filter(|h| !h.alive).map(|h| h.name.clone()).collect::<Vec<_>>(), "ida": ida}))
 }
 
 fn run_until(w: &mut World, max: u64, mut done: impl FnMut(&World) -> bool) -> bool {
