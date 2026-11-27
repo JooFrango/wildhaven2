@@ -149,7 +149,7 @@ export function buildReport(perf: Perf, server: unknown, settings: unknown, extr
     (gl?.getExtension("WEBGL_lose_context") as any)?.loseContext?.();
   } catch { /* sem WebGL */ }
   return {
-    schema: "wildhaven.relatorio.desempenho.v04",
+    schema: "wildhaven.relatorio.desempenho.v04-1",
     geradoEm: new Date().toISOString(),
     ambiente: { userAgent: navigator.userAgent, nucleos: navigator.hardwareConcurrency, memoriaGB: (navigator as any).deviceMemory ?? null, gpu, tela: `${screen.width}x${screen.height}@${devicePixelRatio}`, janela: `${innerWidth}x${innerHeight}`, visibilidade: document.visibilityState },
     configuracao: settings,
