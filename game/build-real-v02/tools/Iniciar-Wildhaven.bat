@@ -1,10 +1,10 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-title Wildhaven - Build Real v01
+title Wildhaven - Build Real V02
 set "WH_REPO_ROOT=%CD%"
 set "WH_BIND=127.0.0.1:8787"
-if not defined WH_TIME_SCALE set "WH_TIME_SCALE=20"
+if not defined WH_TIME_SCALE set "WH_TIME_SCALE=1"
 if not defined WH_CACHE_MB set "WH_CACHE_MB=128"
 if not exist "%~dp0wh-server.exe" (
   echo ERRO: wh-server.exe ausente. Extraia o pacote completo.

@@ -258,7 +258,12 @@ pub fn step_creature(
     let resting = c.state == "descansando" || c.state == "dormindo";
     c.fome = (c.fome + dt / nec.fome_cheia_s).min(1.2);
     c.sede = (c.sede + dt / nec.sede_cheia_s).min(1.2);
-    if resting { c.energia = (c.energia + dt / nec.recuperacao_energia_s).min(1.0); } else { c.energia = (c.energia - dt / nec.energia_duracao_s).max(0.0); }
+    if resting {
+        c.energia = (c.energia + dt / nec.recuperacao_energia_s).min(1.0);
+        c.hp = (c.hp + c.hp_max * 0.002 * dt).min(c.hp_max); // recuperação em repouso (provisório)
+    } else {
+        c.energia = (c.energia - dt / nec.energia_duracao_s).max(0.0);
+    }
     if now < c.immobilized_until_s {
         c.state = "imobilizada".into();
         c.clip = "idle".into();
@@ -273,9 +278,10 @@ pub fn step_creature(
     }
     let stealth_red = data.furtividade.reducao_deteccao_por_nivel;
     let p_s = data.furtividade.chance_deteccao_por_segundo;
-    let reach = sp.visao_movimento_m.max(sp.audicao_m * 1.25);
-    // ameaça já confirmada continua acompanhada enquanto estiver perto (sem rolar de novo)
-    let mut seen: Option<&HunterView> = c.target_hunter.as_ref().and_then(|id| hunters.iter().find(|h| &h.id == id && h.hp > 0.0 && c.mv.dist(h.x, h.z) <= reach));
+    // acompanhar ameaça já confirmada: mesmo alcance da V01; detectar nova: inclui o olfato (a favor do vento)
+    let keep = sp.visao_movimento_m.max(sp.audicao_m);
+    let reach = keep.max(sp.audicao_m * 1.25 * eff.olfato);
+    let mut seen: Option<&HunterView> = c.target_hunter.as_ref().and_then(|id| hunters.iter().find(|h| &h.id == id && h.hp > 0.0 && c.mv.dist(h.x, h.z) <= keep));
     if seen.is_none() {
         seen = hunters
             .iter()
