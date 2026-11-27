@@ -131,7 +131,7 @@ export class VisualWorld {
     for (const n of tv.nodes) this.unload(n);
     for (const m of [...tv.materials, ...tv.variants.values()]) { for (const v of Object.values(m)) if ((v as THREE.Texture)?.isTexture) (v as THREE.Texture).dispose(); m.dispose(); }
     tv.group.removeFromParent();
-    this.tiles.delete(id);
+    this.tiles.delete(id); this.heights.unpin(id);
     this.horizon?.setHidden(id, false);
     this.dirty = true;
   }
@@ -169,7 +169,7 @@ export class VisualWorld {
     for (const e of tv.blocks.values()) { tv.box.union(e.box); e.wbox.copy(e.box).translate(tv.group.position); }
     tv.wbox.copy(tv.box).translate(tv.group.position);
     if (this.tiles.has(id)) return;
-    this.tiles.set(id, tv);
+    this.tiles.set(id, tv); this.heights.pin(id); // V04.1 (RAM-02): relevo 3D carregado prende a grade de alturas
     this.group.add(tv.group);
     this.dirty = true;
   }

@@ -178,7 +178,14 @@ async function main() {
     const fh = S.snap.hunters.find(h => h.id === S.follow) ?? S.snap.hunters[0];
     if (fh) {
       // relevo compacto do hex do Hunter e vizinhos (sem GLB)
-      if (tf - ecoStreamAt > 1000) { ecoStreamAt = tf; for (const t of heights.near(fh.x - origin.x, fh.z - origin.z, 4200)) heights.load(t.id); const t = continent.tiles.find(x => x.id === fh.tile_id); if (t) eco.biomeKey = paletteKey(t.biome); }
+      if (tf - ecoStreamAt > 1000) {
+        ecoStreamAt = tf;
+        // V04.1 (RAM-02): a vista do Econômico prende as grades dos hexes a até 4,2 km; as demais podem ser descartadas
+        const want = new Set(heights.near(fh.x - origin.x, fh.z - origin.z, 4200).map(t => t.id));
+        for (const id of ecoPins) if (!want.has(id)) { heights.unpin(id); ecoPins.delete(id); }
+        for (const id of want) { if (!ecoPins.has(id)) { heights.pin(id); ecoPins.add(id); } heights.load(id); }
+        const t = continent.tiles.find(x => x.id === fh.tile_id); if (t) eco.biomeKey = paletteKey(t.biome);
+      }
       if (eco.draw(S.snap, { x: fh.x, z: fh.z }, tf, origin, fh.id, 0)) perf.frame(performance.now() - tf, null);
     }
     // descarte do 3D após 60 s contínuos no Econômico
@@ -187,6 +194,7 @@ async function main() {
     loops.ecoTimer = window.setTimeout(ecoTick, Math.max(0, loops.ecoNext - performance.now()));
   };
   let ecoStreamAt = 0;
+  const ecoPins = new Set<string>();
   const startLoop = () => {
     stopLoops();
     if (background()) { perf.mode = "suspenso"; return; }
