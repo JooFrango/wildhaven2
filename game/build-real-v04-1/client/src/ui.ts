@@ -92,7 +92,7 @@ export class Ui {
   private build() {
     const R = this.root;
     R.innerHTML = "";
-    const logo = el("div", "logo", `<span class="garra">${ICON.cacar}</span><b>WILDHAVEN</b><i>Build Real V04</i>`);
+    const logo = el("div", "logo", `<span class="garra">${ICON.cacar}</span><b>WILDHAVEN</b><i>Build Real V04.1</i>`);
     const menu = el("nav", "menu painel");
     const items: [string, string, string][] = [
       ["explorar", "Explorar", "Hunters na vila saem para explorar (autônomos)"], ["cacar", "Caçar", "Abrir o Bestiário e escolher a presa"],

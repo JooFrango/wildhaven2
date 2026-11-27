@@ -21,16 +21,16 @@ use wh_core::terrain::TerrainStore;
 
 fn boot(root: &std::path::Path) -> Result<World, Box<dyn std::error::Error>> {
     let manifest: Manifest = serde_json::from_slice(&std::fs::read(root.join("build real/continental/data/continent-272.manifest.json"))?)?;
-    let report: PortalReport = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v04/data/relatorio-continental-272-v04.json"))?)?;
+    let report: PortalReport = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v04-1/data/relatorio-continental-272-v04.json"))?)?;
     let portals = PortalIndex::from_report(report)?;
     let continent = Arc::new(Continent::from_manifest(manifest)?);
     let physics_dir = root.join(".generated/physics-272-v04");
     let allowed: HashSet<String> = portals.certified.iter().filter(|t| physics_dir.join(format!("{t}-physics-v01")).join("index.json").is_file()).cloned().collect();
-    let speeds: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v04/data/hunter-workshop-clip-speeds.json"))?)?;
+    let speeds: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v04-1/data/hunter-workshop-clip-speeds.json"))?)?;
     let walk = speeds["clips"].as_array().unwrap().iter().find(|c| c["name"] == "Walking").unwrap()["speedMetersPerSecond"].as_f64().unwrap();
-    let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v04/data/spawn-v02.json"))?)?;
+    let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v04-1/data/spawn-v02.json"))?)?;
     let s = &spawn["hunters"][0];
-    let mut data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v04/data/gameplay-provisorio-v04.json"))?)?;
+    let mut data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v04-1/data/gameplay-provisorio-v04.json"))?)?;
     // V03: WH_SPAWN_GRUPOS=0 reproduz a geração da V02 (hex inteiro num único tick) para comparação exata
     if let Some(g) = std::env::var("WH_SPAWN_GRUPOS").ok().and_then(|v| v.parse::<u32>().ok()) {
         data.relevancia.orcamento_spawn_grupos = if g == 0 { u32::MAX } else { g };
