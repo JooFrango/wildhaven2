@@ -1,0 +1,232 @@
+{
+ "url": "http://127.0.0.1:8894/?perfil=medio",
+ "segundos": 40.4,
+ "quadros": 180,
+ "perf": {
+  "fps": 3.704594212784077,
+  "drawCalls": 208,
+  "triangles": 392473,
+  "heapMB": 297.4872703552246,
+  "mode": "3d",
+  "resScale": 0.5000000000000001
+ },
+ "heapInicialMB": 42.3,
+ "alocadoMB": 67.1,
+ "MBporS": 1.66,
+ "KBporQuadro": 381.5,
+ "gc": {
+  "MinorGC": {
+   "n": 46,
+   "ms": 36.9,
+   "maxMs": 2
+  },
+  "V8.GCScavenger": {
+   "n": 46,
+   "ms": 30.2,
+   "maxMs": 1.9
+  },
+  "V8.GC_SCAVENGER": {
+   "n": 46,
+   "ms": 28.8,
+   "maxMs": 1.9
+  },
+  "MajorGC": {
+   "n": 1,
+   "ms": 15.4,
+   "maxMs": 15.4
+  },
+  "V8.GCCompactor": {
+   "n": 1,
+   "ms": 15.1,
+   "maxMs": 15.1
+  },
+  "V8.GC_MARK_COMPACTOR": {
+   "n": 1,
+   "ms": 15.1,
+   "maxMs": 15.1
+  }
+ },
+ "topAlocacoes": [
+  {
+   "fn": "update scene3d-BP3CrR-M.js:2:8522",
+   "MB": 13.73,
+   "KBporQuadro": 78.1,
+   "pct": 20.5
+  },
+  {
+   "fn": "m index-Bye2ZMZ8.js:3895:2350",
+   "MB": 7.47,
+   "KBporQuadro": 42.5,
+   "pct": 11.1
+  },
+  {
+   "fn": "update scene3d-BP3CrR-M.js:32:53579",
+   "MB": 6.37,
+   "KBporQuadro": 36.3,
+   "pct": 9.5
+  },
+  {
+   "fn": "J0 index-Bye2ZMZ8.js:3844:8086",
+   "MB": 3.54,
+   "KBporQuadro": 20.1,
+   "pct": 5.3
+  },
+  {
+   "fn": "evict scene3d-BP3CrR-M.js:2:7004",
+   "MB": 3.47,
+   "KBporQuadro": 19.8,
+   "pct": 5.2
+  },
+  {
+   "fn": "m scene3d-BP3CrR-M.js:2:9645",
+   "MB": 2.71,
+   "KBporQuadro": 15.4,
+   "pct": 4
+  },
+  {
+   "fn": "makeCell scene3d-BP3CrR-M.js:32:53077",
+   "MB": 2.02,
+   "KBporQuadro": 11.5,
+   "pct": 3
+  },
+  {
+   "fn": "Cs index-Bye2ZMZ8.js:4079:13015",
+   "MB": 1.91,
+   "KBporQuadro": 10.8,
+   "pct": 2.8
+  },
+  {
+   "fn": "hypot :0:0",
+   "MB": 1.85,
+   "KBporQuadro": 10.5,
+   "pct": 2.8
+  },
+  {
+   "fn": "join :0:0",
+   "MB": 1.83,
+   "KBporQuadro": 10.4,
+   "pct": 2.7
+  },
+  {
+   "fn": "(anônima) index-Bye2ZMZ8.js:4079:11498",
+   "MB": 1.78,
+   "KBporQuadro": 10.1,
+   "pct": 2.7
+  },
+  {
+   "fn": "stream scene3d-BP3CrR-M.js:2:2005",
+   "MB": 1.74,
+   "KBporQuadro": 9.9,
+   "pct": 2.6
+  },
+  {
+   "fn": "evaluate index-Bye2ZMZ8.js:40:62151",
+   "MB": 1.51,
+   "KBporQuadro": 8.6,
+   "pct": 2.3
+  },
+  {
+   "fn": "groundAt scene3d-BP3CrR-M.js:32:52048",
+   "MB": 1.49,
+   "KBporQuadro": 8.5,
+   "pct": 2.2
+  },
+  {
+   "fn": "j0 index-Bye2ZMZ8.js:3844:7108",
+   "MB": 1.28,
+   "KBporQuadro": 7.3,
+   "pct": 1.9
+  },
+  {
+   "fn": "b index-Bye2ZMZ8.js:3895:8731",
+   "MB": 1.16,
+   "KBporQuadro": 6.6,
+   "pct": 1.7
+  },
+  {
+   "fn": "values :0:0",
+   "MB": 1.02,
+   "KBporQuadro": 5.8,
+   "pct": 1.5
+  },
+  {
+   "fn": "Hr index-Bye2ZMZ8.js:4051:4741",
+   "MB": 0.9,
+   "KBporQuadro": 5.1,
+   "pct": 1.3
+  },
+  {
+   "fn": "add :0:0",
+   "MB": 0.72,
+   "KBporQuadro": 4.1,
+   "pct": 1.1
+  },
+  {
+   "fn": "subarray :0:0",
+   "MB": 0.67,
+   "KBporQuadro": 3.8,
+   "pct": 1
+  },
+  {
+   "fn": "entries :0:0",
+   "MB": 0.64,
+   "KBporQuadro": 3.6,
+   "pct": 0.9
+  },
+  {
+   "fn": "cx index-Bye2ZMZ8.js:3895:12173",
+   "MB": 0.58,
+   "KBporQuadro": 3.3,
+   "pct": 0.9
+  },
+  {
+   "fn": "Z0 index-Bye2ZMZ8.js:3844:7883",
+   "MB": 0.41,
+   "KBporQuadro": 2.3,
+   "pct": 0.6
+  },
+  {
+   "fn": "receive index-Bye2ZMZ8.js:4079:13947",
+   "MB": 0.38,
+   "KBporQuadro": 2.2,
+   "pct": 0.6
+  },
+  {
+   "fn": "html index-Bye2ZMZ8.js:4051:97100",
+   "MB": 0.37,
+   "KBporQuadro": 2.1,
+   "pct": 0.6
+  },
+  {
+   "fn": "sort :0:0",
+   "MB": 0.35,
+   "KBporQuadro": 2,
+   "pct": 0.5
+  },
+  {
+   "fn": "find index-Bye2ZMZ8.js:4051:7122",
+   "MB": 0.31,
+   "KBporQuadro": 1.8,
+   "pct": 0.5
+  },
+  {
+   "fn": "avg index-Bye2ZMZ8.js:4079:9630",
+   "MB": 0.29,
+   "KBporQuadro": 1.7,
+   "pct": 0.4
+  },
+  {
+   "fn": "finish scene3d-BP3CrR-M.js:4:6428",
+   "MB": 0.29,
+   "KBporQuadro": 1.6,
+   "pct": 0.4
+  },
+  {
+   "fn": "rd index-Bye2ZMZ8.js:3947:48011",
+   "MB": 0.24,
+   "KBporQuadro": 1.4,
+   "pct": 0.4
+  }
+ ],
+ "errosPagina": []
+}

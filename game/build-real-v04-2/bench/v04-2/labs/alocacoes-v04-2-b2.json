@@ -1,0 +1,242 @@
+{
+ "url": "http://127.0.0.1:8872/?perfil=medio",
+ "segundos": 20.3,
+ "quadros": 60,
+ "perf": {
+  "fps": 3.2469711563751757,
+  "drawCalls": 134,
+  "triangles": 375892,
+  "heapMB": 291.2343587875366,
+  "mode": "3d",
+  "resScale": 0.5000000000000001
+ },
+ "heapInicialMB": 68.9,
+ "alocadoMB": 21.4,
+ "MBporS": 1.06,
+ "KBporQuadro": 365.2,
+ "gc": {
+  "V8.GCIncrementalMarking": {
+   "n": 7,
+   "ms": 4.2,
+   "maxMs": 3.7
+  },
+  "V8.GC_MC_INCREMENTAL": {
+   "n": 7,
+   "ms": 4.1,
+   "maxMs": 3.7
+  },
+  "MajorGC": {
+   "n": 2,
+   "ms": 40.4,
+   "maxMs": 21.2
+  },
+  "V8.GC_MARK_COMPACTOR": {
+   "n": 2,
+   "ms": 40,
+   "maxMs": 21
+  },
+  "MinorGC": {
+   "n": 21,
+   "ms": 15.8,
+   "maxMs": 1.5
+  },
+  "V8.GCScavenger": {
+   "n": 21,
+   "ms": 12.5,
+   "maxMs": 1.3
+  },
+  "V8.GC_SCAVENGER": {
+   "n": 21,
+   "ms": 11.4,
+   "maxMs": 1.3
+  },
+  "V8.GCCompactor": {
+   "n": 1,
+   "ms": 19,
+   "maxMs": 19
+  }
+ },
+ "topAlocacoes": [
+  {
+   "fn": "update scene3d-Bq9VD45W.js:32:53602",
+   "MB": 2.07,
+   "KBporQuadro": 35.3,
+   "pct": 9.7
+  },
+  {
+   "fn": "update scene3d-Bq9VD45W.js:2:9354",
+   "MB": 1.9,
+   "KBporQuadro": 32.4,
+   "pct": 8.9
+  },
+  {
+   "fn": "x GLTFLoader-DHZYMV7L.js:3895:2354",
+   "MB": 1.71,
+   "KBporQuadro": 29.1,
+   "pct": 8
+  },
+  {
+   "fn": "update scene3d-Bq9VD45W.js:4:4330",
+   "MB": 1.22,
+   "KBporQuadro": 20.9,
+   "pct": 5.7
+  },
+  {
+   "fn": "(anônima) main-G7Fv9Bcw.js:136:11481",
+   "MB": 1.18,
+   "KBporQuadro": 20.2,
+   "pct": 5.5
+  },
+  {
+   "fn": "next :0:0",
+   "MB": 1.18,
+   "KBporQuadro": 20.2,
+   "pct": 5.5
+  },
+  {
+   "fn": "m scene3d-Bq9VD45W.js:2:10477",
+   "MB": 1.03,
+   "KBporQuadro": 17.5,
+   "pct": 4.8
+  },
+  {
+   "fn": "stream scene3d-Bq9VD45W.js:2:2120",
+   "MB": 0.77,
+   "KBporQuadro": 13.1,
+   "pct": 3.6
+  },
+  {
+   "fn": "makeCell scene3d-Bq9VD45W.js:32:53100",
+   "MB": 0.75,
+   "KBporQuadro": 12.8,
+   "pct": 3.5
+  },
+  {
+   "fn": "hypot :0:0",
+   "MB": 0.74,
+   "KBporQuadro": 12.7,
+   "pct": 3.5
+  },
+  {
+   "fn": "Se main-G7Fv9Bcw.js:136:13015",
+   "MB": 0.74,
+   "KBporQuadro": 12.6,
+   "pct": 3.5
+  },
+  {
+   "fn": "o_ GLTFLoader-DHZYMV7L.js:3844:8085",
+   "MB": 0.74,
+   "KBporQuadro": 12.6,
+   "pct": 3.4
+  },
+  {
+   "fn": "groundAt scene3d-Bq9VD45W.js:32:52071",
+   "MB": 0.61,
+   "KBporQuadro": 10.4,
+   "pct": 2.9
+  },
+  {
+   "fn": "evaluate GLTFLoader-DHZYMV7L.js:40:119274",
+   "MB": 0.5,
+   "KBporQuadro": 8.5,
+   "pct": 2.3
+  },
+  {
+   "fn": "i_ GLTFLoader-DHZYMV7L.js:3844:7107",
+   "MB": 0.46,
+   "KBporQuadro": 7.9,
+   "pct": 2.2
+  },
+  {
+   "fn": "Ee main-G7Fv9Bcw.js:106:4596",
+   "MB": 0.44,
+   "KBporQuadro": 7.5,
+   "pct": 2.1
+  },
+  {
+   "fn": "evict scene3d-Bq9VD45W.js:2:7836",
+   "MB": 0.44,
+   "KBporQuadro": 7.5,
+   "pct": 2
+  },
+  {
+   "fn": "values :0:0",
+   "MB": 0.39,
+   "KBporQuadro": 6.7,
+   "pct": 1.8
+  },
+  {
+   "fn": "v GLTFLoader-DHZYMV7L.js:3895:8741",
+   "MB": 0.38,
+   "KBporQuadro": 6.4,
+   "pct": 1.8
+  },
+  {
+   "fn": "add :0:0",
+   "MB": 0.29,
+   "KBporQuadro": 5,
+   "pct": 1.4
+  },
+  {
+   "fn": "join :0:0",
+   "MB": 0.29,
+   "KBporQuadro": 5,
+   "pct": 1.4
+  },
+  {
+   "fn": "entries :0:0",
+   "MB": 0.29,
+   "KBporQuadro": 4.9,
+   "pct": 1.4
+  },
+  {
+   "fn": "sync main-G7Fv9Bcw.js:108:4336",
+   "MB": 0.21,
+   "KBporQuadro": 3.5,
+   "pct": 1
+  },
+  {
+   "fn": "subarray :0:0",
+   "MB": 0.18,
+   "KBporQuadro": 3.2,
+   "pct": 0.9
+  },
+  {
+   "fn": "html main-G7Fv9Bcw.js:108:40816",
+   "MB": 0.18,
+   "KBporQuadro": 3,
+   "pct": 0.8
+  },
+  {
+   "fn": "sort :0:0",
+   "MB": 0.15,
+   "KBporQuadro": 2.6,
+   "pct": 0.7
+  },
+  {
+   "fn": "find main-G7Fv9Bcw.js:106:6977",
+   "MB": 0.15,
+   "KBporQuadro": 2.5,
+   "pct": 0.7
+  },
+  {
+   "fn": "gv GLTFLoader-DHZYMV7L.js:3895:12183",
+   "MB": 0.15,
+   "KBporQuadro": 2.5,
+   "pct": 0.7
+  },
+  {
+   "fn": "receive main-G7Fv9Bcw.js:136:13947",
+   "MB": 0.14,
+   "KBporQuadro": 2.3,
+   "pct": 0.6
+  },
+  {
+   "fn": "distanceToPoint GLTFLoader-DHZYMV7L.js:1:50123",
+   "MB": 0.13,
+   "KBporQuadro": 2.3,
+   "pct": 0.6
+  }
+ ],
+ "errosPagina": []
+}

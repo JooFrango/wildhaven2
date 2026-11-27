@@ -77,6 +77,8 @@ export class GrassField {
   private groundAt(x: number, z: number): { y: number; nY: number; col: THREE.Color } | null {
     for (const tv of this.world.tiles.values()) {
       const lx = x - tv.ox, lz = z - tv.oz;
+      // V04.2: fora da extensão das folhas de relevo deste hex nenhuma folha casaria; evita a chave em string por hex
+      const tb = tv.tbox; if (lx < tb.min.x || lx > tb.max.x || lz < tb.min.z || lz > tb.max.z) continue;
       const e = tv.blocks.get(`${Math.floor(lx / 1024)},${Math.floor(lz / 1024)}`);
       if (!e) continue;
       let leaf = null;
@@ -87,7 +89,7 @@ export class GrassField {
       const geo = l0.geometry as THREE.BufferGeometry & { boundsTree?: MeshBVH };
       if (!geo.boundsTree) { const t = performance.now(); geo.boundsTree = new MeshBVH(geo); this.bvhMs += performance.now() - t; this.bvhBuilt++; }
       if (l0.raycast !== acceleratedRaycast) l0.raycast = acceleratedRaycast;
-      tv.group.updateMatrixWorld(true);
+      l0.updateWorldMatrix(true, false); // V04.2: só a folha e os pais (antes: o hex inteiro, filhos incluídos, a cada amostra)
       this.ray.set(this.rayO.set(x, leaf.box.max.y + 50, z), this.rayD);
       (this.ray as any).firstHitOnly = true;
       this.hits.length = 0;
@@ -116,8 +118,7 @@ export class GrassField {
       // terra/caminho (vermelho > verde) e chão muito claro (areia/neve) ficam sem capim
       if (c.r > c.g * 1.05 || c.r + c.g + c.b > 2.2) continue;
       const flower = rnd() < 0.14;
-      const tint = [c.r * 1.25 + 0.04, c.g * 1.3 + 0.05, c.b * 1.1];
-      items.push(x, g.y - 0.03, z, rnd() * Math.PI * 2, 0.7 + rnd() * 0.8, ...tint, flower ? 1 : 0);
+      items.push(x, g.y - 0.03, z, rnd() * Math.PI * 2, 0.7 + rnd() * 0.8, c.r * 1.25 + 0.04, c.g * 1.3 + 0.05, c.b * 1.1, flower ? 1 : 0);
     }
     if (this.pending) return null;
     return { k: `${ci},${cj}`, items: Float32Array.from(items) };

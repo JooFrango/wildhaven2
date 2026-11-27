@@ -1,0 +1,55 @@
+{
+ "url": "http://127.0.0.1:8895/?perfil=medio",
+ "heapV8AposGC_MB": 41.4,
+ "geometrias": 341,
+ "geometriasDuplicadasPorConteudo": 43,
+ "bytesDuplicadosCPU_MB": 1.21,
+ "verticesNaCPU_MB": 67.5,
+ "verticesSoNaGPU_MB": 0,
+ "porGrupo": {
+  "outros": {
+   "geometrias": 25,
+   "cpuMB": 1.14,
+   "soGpuMB": 0
+  },
+  "horizonte": {
+   "geometrias": 30,
+   "cpuMB": 13.59,
+   "soGpuMB": 0
+  },
+  "relevo-hex": {
+   "geometrias": 74,
+   "cpuMB": 37.1,
+   "soGpuMB": 0
+  },
+  "vegetacao-instanciada": {
+   "geometrias": 196,
+   "cpuMB": 10.56,
+   "soGpuMB": 0
+  },
+  "vila": {
+   "geometrias": 15,
+   "cpuMB": 5.1,
+   "soGpuMB": 0
+  },
+  "modelo-animado": {
+   "geometrias": 1,
+   "cpuMB": 0.04,
+   "soGpuMB": 0
+  }
+ },
+ "atributosSemUso": {
+  "uv": 10
+ },
+ "materiais": 48,
+ "materiaisIdenticos": 13,
+ "texturas": 34,
+ "texturasIdenticas": 29,
+ "performanceMemoryMB": 295,
+ "relevoCpuLiberados": null,
+ "programas": 78,
+ "rendererInfo": {
+  "geometries": 117,
+  "textures": 28
+ }
+}

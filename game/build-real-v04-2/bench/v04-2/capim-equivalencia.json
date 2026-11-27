@@ -1,0 +1,9 @@
+{
+ "url": "http://127.0.0.1:8881/?perfil=medio",
+ "pontos": 3000,
+ "iguais": 1117,
+ "diferentes": 0,
+ "nulosAmbos": 90,
+ "pendentes": 1883,
+ "exemplosDiferentes": []
+}

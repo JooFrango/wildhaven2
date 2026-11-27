@@ -1,0 +1,232 @@
+{
+ "url": "http://127.0.0.1:8871/?perfil=medio",
+ "segundos": 20.3,
+ "quadros": 90,
+ "perf": {
+  "fps": 3.1739333190300303,
+  "drawCalls": 134,
+  "triangles": 375316,
+  "heapMB": 290.9919385910034,
+  "mode": "3d",
+  "resScale": 0.5000000000000001
+ },
+ "heapInicialMB": 42.6,
+ "alocadoMB": 21.8,
+ "MBporS": 1.08,
+ "KBporQuadro": 248.4,
+ "gc": {
+  "MinorGC": {
+   "n": 23,
+   "ms": 21.3,
+   "maxMs": 6.3
+  },
+  "V8.GCScavenger": {
+   "n": 23,
+   "ms": 18.2,
+   "maxMs": 6.2
+  },
+  "V8.GC_SCAVENGER": {
+   "n": 23,
+   "ms": 17.3,
+   "maxMs": 6.2
+  },
+  "MajorGC": {
+   "n": 1,
+   "ms": 15.5,
+   "maxMs": 15.5
+  },
+  "V8.GCCompactor": {
+   "n": 1,
+   "ms": 15.3,
+   "maxMs": 15.3
+  },
+  "V8.GC_MARK_COMPACTOR": {
+   "n": 1,
+   "ms": 15.2,
+   "maxMs": 15.2
+  }
+ },
+ "topAlocacoes": [
+  {
+   "fn": "update scene3d-Bq9VD45W.js:2:9354",
+   "MB": 2.1,
+   "KBporQuadro": 23.9,
+   "pct": 9.6
+  },
+  {
+   "fn": "update scene3d-Bq9VD45W.js:32:53602",
+   "MB": 1.77,
+   "KBporQuadro": 20.2,
+   "pct": 8.1
+  },
+  {
+   "fn": "(anônima) main-G7Fv9Bcw.js:136:11481",
+   "MB": 1.75,
+   "KBporQuadro": 19.9,
+   "pct": 8
+  },
+  {
+   "fn": "x GLTFLoader-DHZYMV7L.js:3895:2354",
+   "MB": 1.72,
+   "KBporQuadro": 19.6,
+   "pct": 7.9
+  },
+  {
+   "fn": "m scene3d-Bq9VD45W.js:2:10477",
+   "MB": 1.39,
+   "KBporQuadro": 15.8,
+   "pct": 6.4
+  },
+  {
+   "fn": "update scene3d-Bq9VD45W.js:4:4330",
+   "MB": 1.17,
+   "KBporQuadro": 13.3,
+   "pct": 5.3
+  },
+  {
+   "fn": "stream scene3d-Bq9VD45W.js:2:2120",
+   "MB": 0.88,
+   "KBporQuadro": 10.1,
+   "pct": 4.1
+  },
+  {
+   "fn": "next :0:0",
+   "MB": 0.76,
+   "KBporQuadro": 8.6,
+   "pct": 3.5
+  },
+  {
+   "fn": "makeCell scene3d-Bq9VD45W.js:32:53100",
+   "MB": 0.75,
+   "KBporQuadro": 8.5,
+   "pct": 3.4
+  },
+  {
+   "fn": "hypot :0:0",
+   "MB": 0.74,
+   "KBporQuadro": 8.4,
+   "pct": 3.4
+  },
+  {
+   "fn": "o_ GLTFLoader-DHZYMV7L.js:3844:8085",
+   "MB": 0.7,
+   "KBporQuadro": 7.9,
+   "pct": 3.2
+  },
+  {
+   "fn": "groundAt scene3d-Bq9VD45W.js:32:52071",
+   "MB": 0.61,
+   "KBporQuadro": 6.9,
+   "pct": 2.8
+  },
+  {
+   "fn": "evaluate GLTFLoader-DHZYMV7L.js:40:119274",
+   "MB": 0.57,
+   "KBporQuadro": 6.5,
+   "pct": 2.6
+  },
+  {
+   "fn": "values :0:0",
+   "MB": 0.52,
+   "KBporQuadro": 5.9,
+   "pct": 2.4
+  },
+  {
+   "fn": "evict scene3d-Bq9VD45W.js:2:7836",
+   "MB": 0.51,
+   "KBporQuadro": 5.8,
+   "pct": 2.3
+  },
+  {
+   "fn": "Se main-G7Fv9Bcw.js:136:13015",
+   "MB": 0.5,
+   "KBporQuadro": 5.7,
+   "pct": 2.3
+  },
+  {
+   "fn": "Ee main-G7Fv9Bcw.js:106:4596",
+   "MB": 0.45,
+   "KBporQuadro": 5.1,
+   "pct": 2.1
+  },
+  {
+   "fn": "i_ GLTFLoader-DHZYMV7L.js:3844:7107",
+   "MB": 0.44,
+   "KBporQuadro": 5,
+   "pct": 2
+  },
+  {
+   "fn": "entries :0:0",
+   "MB": 0.33,
+   "KBporQuadro": 3.7,
+   "pct": 1.5
+  },
+  {
+   "fn": "join :0:0",
+   "MB": 0.31,
+   "KBporQuadro": 3.5,
+   "pct": 1.4
+  },
+  {
+   "fn": "add :0:0",
+   "MB": 0.3,
+   "KBporQuadro": 3.4,
+   "pct": 1.4
+  },
+  {
+   "fn": "v GLTFLoader-DHZYMV7L.js:3895:8741",
+   "MB": 0.29,
+   "KBporQuadro": 3.3,
+   "pct": 1.3
+  },
+  {
+   "fn": "subarray :0:0",
+   "MB": 0.25,
+   "KBporQuadro": 2.9,
+   "pct": 1.2
+  },
+  {
+   "fn": "html main-G7Fv9Bcw.js:108:40816",
+   "MB": 0.21,
+   "KBporQuadro": 2.3,
+   "pct": 0.9
+  },
+  {
+   "fn": "Et GLTFLoader-DHZYMV7L.js:3844:6651",
+   "MB": 0.19,
+   "KBporQuadro": 2.2,
+   "pct": 0.9
+  },
+  {
+   "fn": "sort :0:0",
+   "MB": 0.16,
+   "KBporQuadro": 1.8,
+   "pct": 0.7
+  },
+  {
+   "fn": "sync main-G7Fv9Bcw.js:108:4336",
+   "MB": 0.16,
+   "KBporQuadro": 1.8,
+   "pct": 0.7
+  },
+  {
+   "fn": "distanceToPoint GLTFLoader-DHZYMV7L.js:1:50123",
+   "MB": 0.14,
+   "KBporQuadro": 1.6,
+   "pct": 0.7
+  },
+  {
+   "fn": "find main-G7Fv9Bcw.js:106:6977",
+   "MB": 0.13,
+   "KBporQuadro": 1.5,
+   "pct": 0.6
+  },
+  {
+   "fn": "receive main-G7Fv9Bcw.js:136:13947",
+   "MB": 0.13,
+   "KBporQuadro": 1.4,
+   "pct": 0.6
+  }
+ ],
+ "errosPagina": []
+}

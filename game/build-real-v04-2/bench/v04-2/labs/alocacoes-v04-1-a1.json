@@ -1,0 +1,232 @@
+{
+ "url": "http://127.0.0.1:8863/?perfil=medio",
+ "segundos": 20.3,
+ "quadros": 90,
+ "perf": {
+  "fps": 3.256369021197369,
+  "drawCalls": 134,
+  "triangles": 375316,
+  "heapMB": 296.095419883728,
+  "mode": "3d",
+  "resScale": 0.5000000000000001
+ },
+ "heapInicialMB": 42.5,
+ "alocadoMB": 21.4,
+ "MBporS": 1.06,
+ "KBporQuadro": 243.6,
+ "gc": {
+  "MinorGC": {
+   "n": 22,
+   "ms": 14.5,
+   "maxMs": 1.8
+  },
+  "V8.GCScavenger": {
+   "n": 22,
+   "ms": 11.5,
+   "maxMs": 1.6
+  },
+  "V8.GC_SCAVENGER": {
+   "n": 22,
+   "ms": 10.8,
+   "maxMs": 1.6
+  },
+  "MajorGC": {
+   "n": 1,
+   "ms": 16.6,
+   "maxMs": 16.6
+  },
+  "V8.GCCompactor": {
+   "n": 1,
+   "ms": 16.3,
+   "maxMs": 16.3
+  },
+  "V8.GC_MARK_COMPACTOR": {
+   "n": 1,
+   "ms": 16.3,
+   "maxMs": 16.3
+  }
+ },
+ "topAlocacoes": [
+  {
+   "fn": "update scene3d-BP3CrR-M.js:32:53579",
+   "MB": 1.9,
+   "KBporQuadro": 21.6,
+   "pct": 8.9
+  },
+  {
+   "fn": "m index-Bye2ZMZ8.js:3895:2350",
+   "MB": 1.72,
+   "KBporQuadro": 19.6,
+   "pct": 8
+  },
+  {
+   "fn": "update scene3d-BP3CrR-M.js:2:8522",
+   "MB": 1.63,
+   "KBporQuadro": 18.5,
+   "pct": 7.6
+  },
+  {
+   "fn": "(anônima) index-Bye2ZMZ8.js:4079:11498",
+   "MB": 1.57,
+   "KBporQuadro": 17.9,
+   "pct": 7.3
+  },
+  {
+   "fn": "update scene3d-BP3CrR-M.js:4:4330",
+   "MB": 1.22,
+   "KBporQuadro": 13.9,
+   "pct": 5.7
+  },
+  {
+   "fn": "stream scene3d-BP3CrR-M.js:2:2005",
+   "MB": 0.89,
+   "KBporQuadro": 10.1,
+   "pct": 4.1
+  },
+  {
+   "fn": "next :0:0",
+   "MB": 0.87,
+   "KBporQuadro": 9.9,
+   "pct": 4.1
+  },
+  {
+   "fn": "m scene3d-BP3CrR-M.js:2:9645",
+   "MB": 0.83,
+   "KBporQuadro": 9.4,
+   "pct": 3.9
+  },
+  {
+   "fn": "makeCell scene3d-BP3CrR-M.js:32:53077",
+   "MB": 0.76,
+   "KBporQuadro": 8.6,
+   "pct": 3.5
+  },
+  {
+   "fn": "hypot :0:0",
+   "MB": 0.69,
+   "KBporQuadro": 7.8,
+   "pct": 3.2
+  },
+  {
+   "fn": "J0 index-Bye2ZMZ8.js:3844:8086",
+   "MB": 0.67,
+   "KBporQuadro": 7.6,
+   "pct": 3.1
+  },
+  {
+   "fn": "groundAt scene3d-BP3CrR-M.js:32:52048",
+   "MB": 0.62,
+   "KBporQuadro": 7,
+   "pct": 2.9
+  },
+  {
+   "fn": "values :0:0",
+   "MB": 0.54,
+   "KBporQuadro": 6.1,
+   "pct": 2.5
+  },
+  {
+   "fn": "evict scene3d-BP3CrR-M.js:2:7004",
+   "MB": 0.51,
+   "KBporQuadro": 5.8,
+   "pct": 2.4
+  },
+  {
+   "fn": "evaluate index-Bye2ZMZ8.js:40:62151",
+   "MB": 0.51,
+   "KBporQuadro": 5.8,
+   "pct": 2.4
+  },
+  {
+   "fn": "Cs index-Bye2ZMZ8.js:4079:13015",
+   "MB": 0.5,
+   "KBporQuadro": 5.7,
+   "pct": 2.3
+  },
+  {
+   "fn": "j0 index-Bye2ZMZ8.js:3844:7108",
+   "MB": 0.49,
+   "KBporQuadro": 5.6,
+   "pct": 2.3
+  },
+  {
+   "fn": "join :0:0",
+   "MB": 0.45,
+   "KBporQuadro": 5.1,
+   "pct": 2.1
+  },
+  {
+   "fn": "Hr index-Bye2ZMZ8.js:4051:4741",
+   "MB": 0.45,
+   "KBporQuadro": 5.1,
+   "pct": 2.1
+  },
+  {
+   "fn": "b index-Bye2ZMZ8.js:3895:8731",
+   "MB": 0.31,
+   "KBporQuadro": 3.5,
+   "pct": 1.5
+  },
+  {
+   "fn": "add :0:0",
+   "MB": 0.31,
+   "KBporQuadro": 3.5,
+   "pct": 1.4
+  },
+  {
+   "fn": "entries :0:0",
+   "MB": 0.3,
+   "KBporQuadro": 3.4,
+   "pct": 1.4
+  },
+  {
+   "fn": "sync index-Bye2ZMZ8.js:4051:60707",
+   "MB": 0.19,
+   "KBporQuadro": 2.2,
+   "pct": 0.9
+  },
+  {
+   "fn": "cx index-Bye2ZMZ8.js:3895:12173",
+   "MB": 0.17,
+   "KBporQuadro": 1.9,
+   "pct": 0.8
+  },
+  {
+   "fn": "update index-Bye2ZMZ8.js:4051:1465",
+   "MB": 0.15,
+   "KBporQuadro": 1.7,
+   "pct": 0.7
+  },
+  {
+   "fn": "sort :0:0",
+   "MB": 0.14,
+   "KBporQuadro": 1.6,
+   "pct": 0.7
+  },
+  {
+   "fn": "html index-Bye2ZMZ8.js:4051:97100",
+   "MB": 0.14,
+   "KBporQuadro": 1.6,
+   "pct": 0.6
+  },
+  {
+   "fn": "subarray :0:0",
+   "MB": 0.14,
+   "KBporQuadro": 1.6,
+   "pct": 0.6
+  },
+  {
+   "fn": "distanceToPoint index-Bye2ZMZ8.js:1:48913",
+   "MB": 0.13,
+   "KBporQuadro": 1.5,
+   "pct": 0.6
+  },
+  {
+   "fn": "wt index-Bye2ZMZ8.js:3844:6652",
+   "MB": 0.13,
+   "KBporQuadro": 1.5,
+   "pct": 0.6
+  }
+ ],
+ "errosPagina": []
+}

@@ -1,0 +1,232 @@
+{
+ "url": "http://127.0.0.1:8892/?perfil=medio",
+ "segundos": 40.5,
+ "quadros": 150,
+ "perf": {
+  "fps": 3.3945627153200277,
+  "drawCalls": 206,
+  "triangles": 389638,
+  "heapMB": 292.4989290237427,
+  "mode": "3d",
+  "resScale": 0.5000000000000001
+ },
+ "heapInicialMB": 42.9,
+ "alocadoMB": 56.9,
+ "MBporS": 1.4,
+ "KBporQuadro": 388.5,
+ "gc": {
+  "MinorGC": {
+   "n": 48,
+   "ms": 42.3,
+   "maxMs": 4.1
+  },
+  "V8.GCScavenger": {
+   "n": 48,
+   "ms": 34.4,
+   "maxMs": 3.9
+  },
+  "V8.GC_SCAVENGER": {
+   "n": 48,
+   "ms": 31.3,
+   "maxMs": 3.9
+  },
+  "MajorGC": {
+   "n": 1,
+   "ms": 25.1,
+   "maxMs": 25.1
+  },
+  "V8.GCCompactor": {
+   "n": 1,
+   "ms": 24.8,
+   "maxMs": 24.8
+  },
+  "V8.GC_MARK_COMPACTOR": {
+   "n": 1,
+   "ms": 24.8,
+   "maxMs": 24.8
+  }
+ },
+ "topAlocacoes": [
+  {
+   "fn": "update scene3d-DUd_I9IL.js:2:9964",
+   "MB": 12.64,
+   "KBporQuadro": 86.3,
+   "pct": 22.2
+  },
+  {
+   "fn": "x GLTFLoader-DHZYMV7L.js:3895:2354",
+   "MB": 6.93,
+   "KBporQuadro": 47.3,
+   "pct": 12.2
+  },
+  {
+   "fn": "update scene3d-DUd_I9IL.js:32:53657",
+   "MB": 5.97,
+   "KBporQuadro": 40.8,
+   "pct": 10.5
+  },
+  {
+   "fn": "o_ GLTFLoader-DHZYMV7L.js:3844:8085",
+   "MB": 3.3,
+   "KBporQuadro": 22.5,
+   "pct": 5.8
+  },
+  {
+   "fn": "evict scene3d-DUd_I9IL.js:2:8026",
+   "MB": 3.27,
+   "KBporQuadro": 22.3,
+   "pct": 5.8
+  },
+  {
+   "fn": "stream scene3d-DUd_I9IL.js:2:2256",
+   "MB": 1.8,
+   "KBporQuadro": 12.3,
+   "pct": 3.2
+  },
+  {
+   "fn": "hypot :0:0",
+   "MB": 1.74,
+   "KBporQuadro": 11.9,
+   "pct": 3.1
+  },
+  {
+   "fn": "$e main-CR0e6qzS.js:136:13102",
+   "MB": 1.74,
+   "KBporQuadro": 11.9,
+   "pct": 3.1
+  },
+  {
+   "fn": "evaluate GLTFLoader-DHZYMV7L.js:40:119274",
+   "MB": 1.51,
+   "KBporQuadro": 10.3,
+   "pct": 2.7
+  },
+  {
+   "fn": "makeCell scene3d-DUd_I9IL.js:32:53164",
+   "MB": 1.4,
+   "KBporQuadro": 9.5,
+   "pct": 2.5
+  },
+  {
+   "fn": "groundAt scene3d-DUd_I9IL.js:32:52068",
+   "MB": 1.38,
+   "KBporQuadro": 9.4,
+   "pct": 2.4
+  },
+  {
+   "fn": "i_ GLTFLoader-DHZYMV7L.js:3844:7107",
+   "MB": 1.37,
+   "KBporQuadro": 9.3,
+   "pct": 2.4
+  },
+  {
+   "fn": "join :0:0",
+   "MB": 1.22,
+   "KBporQuadro": 8.3,
+   "pct": 2.1
+  },
+  {
+   "fn": "v GLTFLoader-DHZYMV7L.js:3895:8741",
+   "MB": 1.09,
+   "KBporQuadro": 7.4,
+   "pct": 1.9
+  },
+  {
+   "fn": "Te main-CR0e6qzS.js:106:4596",
+   "MB": 0.88,
+   "KBporQuadro": 6,
+   "pct": 1.5
+  },
+  {
+   "fn": "entries :0:0",
+   "MB": 0.65,
+   "KBporQuadro": 4.4,
+   "pct": 1.1
+  },
+  {
+   "fn": "add :0:0",
+   "MB": 0.57,
+   "KBporQuadro": 3.9,
+   "pct": 1
+  },
+  {
+   "fn": "gv GLTFLoader-DHZYMV7L.js:3895:12183",
+   "MB": 0.48,
+   "KBporQuadro": 3.3,
+   "pct": 0.8
+  },
+  {
+   "fn": "a_ GLTFLoader-DHZYMV7L.js:3844:7882",
+   "MB": 0.43,
+   "KBporQuadro": 3,
+   "pct": 0.8
+  },
+  {
+   "fn": "update scene3d-DUd_I9IL.js:4:4376",
+   "MB": 0.42,
+   "KBporQuadro": 2.9,
+   "pct": 0.7
+  },
+  {
+   "fn": "avg main-CR0e6qzS.js:136:9613",
+   "MB": 0.36,
+   "KBporQuadro": 2.4,
+   "pct": 0.6
+  },
+  {
+   "fn": "distanceToSquared GLTFLoader-DHZYMV7L.js:1:23237",
+   "MB": 0.35,
+   "KBporQuadro": 2.4,
+   "pct": 0.6
+  },
+  {
+   "fn": "sort :0:0",
+   "MB": 0.32,
+   "KBporQuadro": 2.2,
+   "pct": 0.6
+  },
+  {
+   "fn": "next :0:0",
+   "MB": 0.31,
+   "KBporQuadro": 2.1,
+   "pct": 0.5
+  },
+  {
+   "fn": "find main-CR0e6qzS.js:106:6977",
+   "MB": 0.31,
+   "KBporQuadro": 2.1,
+   "pct": 0.5
+  },
+  {
+   "fn": "receive main-CR0e6qzS.js:136:14034",
+   "MB": 0.29,
+   "KBporQuadro": 2,
+   "pct": 0.5
+  },
+  {
+   "fn": "html main-CR0e6qzS.js:108:40812",
+   "MB": 0.28,
+   "KBporQuadro": 1.9,
+   "pct": 0.5
+  },
+  {
+   "fn": "dd GLTFLoader-DHZYMV7L.js:3947:48033",
+   "MB": 0.24,
+   "KBporQuadro": 1.6,
+   "pct": 0.4
+  },
+  {
+   "fn": "paintBar main-CR0e6qzS.js:117:250",
+   "MB": 0.23,
+   "KBporQuadro": 1.6,
+   "pct": 0.4
+  },
+  {
+   "fn": "Et GLTFLoader-DHZYMV7L.js:3844:6651",
+   "MB": 0.23,
+   "KBporQuadro": 1.6,
+   "pct": 0.4
+  }
+ ],
+ "errosPagina": []
+}

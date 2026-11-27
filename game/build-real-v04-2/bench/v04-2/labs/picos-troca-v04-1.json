@@ -1,0 +1,152 @@
+{
+ "cenario": "troca",
+ "url": "http://127.0.0.1:8881/?perfil=medio",
+ "segundos": 40,
+ "relogio": {
+  "cycle": 0,
+  "cycle_fraction": 0.0066044791666666665,
+  "epoch_ms": 1795816650107,
+  "now_ms": 1795816713510,
+  "phase": "day",
+  "phase_elapsed_s": 63.403,
+  "phase_remaining_s": 7136.597
+ },
+ "quadros": 169,
+ "mediaFps": 4.24,
+ "intervalos": {
+  "p50": 231.39999999850988,
+  "p95": 315.69999999925494,
+  "p99": 344.69999999925494,
+  "max": 365.5
+ },
+ "limiarPico": 578,
+ "picos": 0,
+ "porCausa": {},
+ "totaisDeEventos": {
+  "prog": 1,
+  "geo": 3,
+  "tex": 0,
+  "nodes": 1,
+  "created": 0
+ },
+ "quadrosComEvento": 9,
+ "eventos": [
+  {
+   "s": 7.84,
+   "intervaloMs": 285,
+   "xMediana": 1.23,
+   "cpuFrameMs": 15.3,
+   "d": {
+    "prog": 1
+   }
+  },
+  {
+   "s": 12.64,
+   "intervaloMs": 211,
+   "xMediana": 0.91,
+   "cpuFrameMs": 6.3,
+   "d": {
+    "nodes": -21
+   }
+  },
+  {
+   "s": 13.3,
+   "intervaloMs": 204,
+   "xMediana": 0.88,
+   "cpuFrameMs": 7.4,
+   "d": {
+    "geo": 1
+   }
+  },
+  {
+   "s": 13.69,
+   "intervaloMs": 193,
+   "xMediana": 0.84,
+   "cpuFrameMs": 4.1,
+   "d": {
+    "nodes": -5
+   }
+  },
+  {
+   "s": 13.87,
+   "intervaloMs": 177,
+   "xMediana": 0.77,
+   "cpuFrameMs": 4.3,
+   "d": {
+    "geo": 1
+   }
+  },
+  {
+   "s": 18.83,
+   "intervaloMs": 211,
+   "xMediana": 0.91,
+   "cpuFrameMs": 12.9,
+   "d": {
+    "geo": -1,
+    "nodes": -1
+   }
+  },
+  {
+   "s": 19.99,
+   "intervaloMs": 227,
+   "xMediana": 0.98,
+   "cpuFrameMs": 5.2,
+   "d": {
+    "geo": -2,
+    "nodes": -2
+   }
+  },
+  {
+   "s": 26.15,
+   "intervaloMs": 237,
+   "xMediana": 1.02,
+   "cpuFrameMs": 4,
+   "d": {
+    "geo": -1,
+    "nodes": -1
+   }
+  },
+  {
+   "s": 38.14,
+   "intervaloMs": 252,
+   "xMediana": 1.09,
+   "cpuFrameMs": 11.7,
+   "d": {
+    "geo": 1,
+    "nodes": 1
+   }
+  }
+ ],
+ "acoes": [
+  {
+   "s": 0.312,
+   "a": "troca hunter-001"
+  },
+  {
+   "s": 6.618,
+   "a": "troca hunter-002"
+  },
+  {
+   "s": 12.641,
+   "a": "troca hunter-003"
+  },
+  {
+   "s": 18.839,
+   "a": "troca hunter-004"
+  },
+  {
+   "s": 24.961,
+   "a": "troca hunter-005"
+  },
+  {
+   "s": 31.013,
+   "a": "troca hunter-006"
+  },
+  {
+   "s": 37.073,
+   "a": "troca hunter-001"
+  }
+ ],
+ "detalhe": [],
+ "errosPagina": []
+}

@@ -125,20 +125,35 @@ export class Perf {
   }
 }
 
-/** VRAM estimada: bytes dos atributos/índices das geometrias e das texturas vivas na cena. */
+/** VRAM estimada: bytes dos atributos/índices das geometrias e das texturas vivas na cena.
+ * V04.2: mesma soma, sem alocar por objeto (antes: array espalhado de atributos e `Object.values` de cada material a cada
+ * 5 s, em toda a cena); o conjunto de vistos é reaproveitado. */
+const vramSeen = new Set<unknown>();
+let vramBytes = 0;
+const vramAdd = (a: THREE.BufferAttribute | THREE.InterleavedBufferAttribute | null) => {
+  if (a && !vramSeen.has(a)) { vramSeen.add(a); vramBytes += ((a as THREE.BufferAttribute).array as ArrayBufferView | null)?.byteLength ?? (a as any).__whBytes ?? 0; }
+};
+const vramMat = (mat: THREE.Material) => {
+  const o = mat as unknown as Record<string, unknown>;
+  for (const k in o) {
+    const t = o[k] as THREE.Texture | undefined;
+    if (t?.isTexture && !vramSeen.has(t)) { vramSeen.add(t); const img = t.image as { width?: number; height?: number }; if (img?.width) vramBytes += img.width * img.height! * 4 * 1.33; }
+  }
+};
+const vramVisit = (o: THREE.Object3D) => {
+  const m = o as THREE.Mesh; if (!m.isMesh || !m.geometry) return;
+  const at = m.geometry.attributes;
+  for (const k in at) vramAdd(at[k] as THREE.BufferAttribute);
+  vramAdd(m.geometry.index);
+  if (Array.isArray(m.material)) { for (const mt of m.material) vramMat(mt); } else if (m.material) vramMat(m.material);
+};
 function estimateVram(r: THREE.WebGLRenderer) {
   const scene = (r as any).__whScene as THREE.Scene | undefined;
   if (!scene) return null;
-  const seen = new Set<unknown>(); let bytes = 0;
-  scene.traverse(o => {
-    const m = o as THREE.Mesh; if (!m.isMesh || !m.geometry) return;
-    for (const a of [...Object.values(m.geometry.attributes), m.geometry.index]) if (a && !seen.has(a)) { seen.add(a); bytes += ((a as THREE.BufferAttribute).array as ArrayBufferView | null)?.byteLength ?? (a as any).__whBytes ?? 0; }
-    for (const mat of Array.isArray(m.material) ? m.material : [m.material]) for (const v of Object.values(mat)) {
-      const t = v as THREE.Texture;
-      if (t?.isTexture && !seen.has(t)) { seen.add(t); const img = t.image as { width?: number; height?: number }; if (img?.width) bytes += img.width * img.height! * 4 * 1.33; }
-    }
-  });
-  return bytes / 1048576;
+  vramSeen.clear(); vramBytes = 0;
+  scene.traverse(vramVisit);
+  vramSeen.clear();
+  return vramBytes / 1048576;
 }
 
 /** Relatório de desempenho exportável (o diretor envia o JSON gerado no próprio computador). */

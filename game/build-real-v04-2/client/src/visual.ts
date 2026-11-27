@@ -38,12 +38,17 @@ class NodeRes {
   get ready() { return this.state === "ready" && !!this.mesh; }
 }
 interface LeafE { cat: string; box: THREE.Box3; l0: NodeRes; l1: NodeRes; err1: number; lod: number; wbox?: THREE.Box3 }
-interface BlockE { box: THREE.Box3; parts: { cat: string; node: NodeRes; err: number }[]; leaves: LeafE[]; err: number; wbox: THREE.Box3 }
+interface BlockE { box: THREE.Box3; parts: { cat: string; node: NodeRes; err: number }[]; leaves: LeafE[]; err: number; wbox: THREE.Box3; /** V04.2: plano do quadro (0 off, 1 bloco, 2 folhas), sem array de objetos por quadro */ mode?: 0 | 1 | 2 }
+/** V04.2: "todos prontos" sem closure por chamada */
+const allNodesReady = (a: { node: NodeRes }[]) => { for (const x of a) if (!x.node.ready) return false; return true; };
+const showNode = (n: NodeRes, on: boolean) => { if (n.mesh) { n.mesh.visible = on; if (on) n.drawnOnce = true; } };
 
 export class TileVis {
   readonly group = new THREE.Group();
   box = new THREE.Box3();
   wbox = new THREE.Box3();
+  /** V04.2: extensão das folhas de relevo (local), para o capim descartar o hex sem montar chave de bloco */
+  tbox = new THREE.Box3();
   blocks = new Map<string, BlockE>();
   tile3: { cat: string; node: NodeRes; err: number }[] = [];
   nodes: NodeRes[] = [];
@@ -173,7 +178,8 @@ export class VisualWorld {
       const l0 = node(l.lods[0].node, l.cat), l1 = node(l.lods[1].node, l.cat);
       if (!l0 || !l1) continue;
       l0.keepCpu = l.cat === "terrain";
-      e.leaves.push({ cat: l.cat, box: box(l.b), l0, l1, err1: l.lods[1].err, lod: -1 });
+      const lb = box(l.b); if (l.cat === "terrain") tv.tbox.union(lb);
+      e.leaves.push({ cat: l.cat, box: lb, l0, l1, err1: l.lods[1].err, lod: -1 });
     }
     for (const t3 of j.tile3) { const n = node(t3.node, t3.cat); if (n) { tv.tile3.push({ cat: t3.cat, node: n, err: t3.err }); tv.err3 = Math.max(tv.err3, t3.err); } }
     for (const e of tv.blocks.values()) { tv.box.union(e.box); e.wbox.copy(e.box).translate(tv.group.position); }
@@ -328,6 +334,10 @@ export class VisualWorld {
     if (this.occl.size > 20000) this.occl.clear();
   }
 
+  private prio(b: THREE.Box3, cam: THREE.Vector3) { return Math.min(b.distanceToPoint(this.focus), b.distanceToPoint(this.ahead), b.distanceToPoint(cam)); }
+  private hideTile(tv: TileVis) { for (const t of tv.tile3) showNode(t.node, false); for (const e of tv.blocks.values()) { for (const p of e.parts) showNode(p.node, false); for (const l of e.leaves) { showNode(l.l0, false); showNode(l.l1, false); } } }
+  private showTile(tv: TileVis, tileReady: boolean) { this.hideTile(tv); for (const t of tv.tile3) showNode(t.node, true); this.horizon?.setHidden(tv.id, tileReady); if (!tileReady) for (const t of tv.tile3) showNode(t.node, false); }
+
   /** Seleção por quadro (mesmas regras da V02) + pedidos de carregamento + fallback sem buracos. */
   update(camera: THREE.PerspectiveCamera, viewportH: number) {
     this.now = performance.now();
@@ -338,45 +348,41 @@ export class VisualWorld {
     if (!moved && !this.dirty && !this.occlQueue.length) { s.updatesSkipped++; this.pump(); return; }
     if (moved) this.camGen++;
     this.lastCamPos.copy(camera.position); this.lastCamQ.copy(camera.quaternion); this.dirty = false;
-    Object.assign(s, { tiles: this.tiles.size, leavesDrawn: 0, blocksDrawn: 0, tilesAsOne: 0, frustumCulled: 0, distanceCulled: 0, occlusionCulled: 0, bytes: this.stats.loadedBytes, fallbacks: 0 });
+    // V04.2: sem objetos/closures por hex por quadro (antes: Object.assign com literal, hide/showTile/prio por hex e um
+    // array `plan` de objetos por hex). Mesmas regras e mesma ordem de decisão.
+    s.tiles = this.tiles.size; s.leavesDrawn = 0; s.blocksDrawn = 0; s.tilesAsOne = 0; s.frustumCulled = 0; s.distanceCulled = 0; s.occlusionCulled = 0; s.bytes = this.stats.loadedBytes; s.fallbacks = 0;
     this.projView.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
     this.frustum.setFromProjectionMatrix(this.projView);
     const K = viewportH / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
     const tau = this.settings.terrainErrorPx;
     const cam = camera.position, vd = this.settings.viewDistance || 6000;
     const rockMax = Math.min(vd, 3500);
-    const wb = this.wb;
-    const prio = (b: THREE.Box3) => Math.min(b.distanceToPoint(this.focus), b.distanceToPoint(this.ahead), b.distanceToPoint(cam));
-    const show = (n: NodeRes, on: boolean) => { if (n.mesh) { n.mesh.visible = on; if (on) n.drawnOnce = true; } };
+    const show = showNode;
     for (const tv of this.tiles.values()) {
       const dT = tv.wbox.distanceToPoint(cam);
-      const hide = () => { for (const t of tv.tile3) show(t.node, false); for (const e of tv.blocks.values()) { for (const p of e.parts) show(p.node, false); for (const l of e.leaves) { show(l.l0, false); show(l.l1, false); } } };
-      if (dT > vd) { hide(); s.distanceCulled++; tv.level = "hidden"; this.horizon?.setHidden(tv.id, false); continue; }
+      if (dT > vd) { this.hideTile(tv); s.distanceCulled++; tv.level = "hidden"; this.horizon?.setHidden(tv.id, false); continue; }
       // o hex inteiro (LOD3) é sempre pedido para os hexes no alcance: é o fallback sem buracos
-      for (const t of tv.tile3) this.want(t.node, prio(tv.wbox) + 4000);
-      const tileReady = tv.tile3.length > 0 && tv.tile3.every(t => t.node.ready);
-      if (!this.frustum.intersectsBox(tv.wbox)) { hide(); s.frustumCulled++; tv.level = "hidden"; this.horizon?.setHidden(tv.id, tileReady); continue; }
+      if (tv.tile3.length) { const pr = this.prio(tv.wbox, cam) + 4000; for (const t of tv.tile3) this.want(t.node, pr); }
+      const tileReady = tv.tile3.length > 0 && allNodesReady(tv.tile3);
+      if (!this.frustum.intersectsBox(tv.wbox)) { this.hideTile(tv); s.frustumCulled++; tv.level = "hidden"; this.horizon?.setHidden(tv.id, tileReady); continue; }
       const useTile = tv.tile3.length > 0 && dT > 600 && (tv.err3 * K) / dT < tau * (tv.level === "tile" ? 1.25 : 1);
-      const showTile = () => { hide(); for (const t of tv.tile3) show(t.node, true); this.horizon?.setHidden(tv.id, tileReady); if (!tileReady) for (const t of tv.tile3) show(t.node, false); };
-      if (useTile) { showTile(); tv.level = "tile"; s.tilesAsOne++; continue; }
+      if (useTile) { this.showTile(tv, tileReady); tv.level = "tile"; s.tilesAsOne++; continue; }
       // modo blocos: decide cada bloco; se algum bloco visível não tiver NADA pronto, o hex inteiro vira fallback
       let blockMissing = false;
-      const plan: { e: BlockE; mode: "off" | "block" | "leaves" }[] = [];
       for (const e of tv.blocks.values()) {
         const dB = e.wbox.distanceToPoint(cam);
         if (!this.frustum.intersectsBox(e.wbox)) {
-          plan.push({ e, mode: "off" }); s.frustumCulled++;
+          e.mode = 0; s.frustumCulled++;
           // pré-carga preventiva: blocos próximos fora da tela (girar a câmera não deve travar nem mostrar buracos);
           // perto, também as folhas LOD1 (o giro mostra folhas, não o bloco grosso)
-          if (dB < 700) for (const p of e.parts) this.want(p.node, prio(e.wbox) + 2500);
-          if (dB < 450) for (const l of e.leaves) this.want(l.l1, prio(e.wbox) + 3000);
+          if (dB < 700) { const pr = this.prio(e.wbox, cam); for (const p of e.parts) this.want(p.node, pr + 2500); if (dB < 450) for (const l of e.leaves) this.want(l.l1, pr + 3000); }
           continue;
         }
-        if (dB > 900 && this.occlusionTest(e, e.wbox)) { plan.push({ e, mode: "off" }); s.occlusionCulled++; continue; }
-        for (const p of e.parts) this.want(p.node, prio(e.wbox) + 1000);
+        if (dB > 900 && this.occlusionTest(e, e.wbox)) { e.mode = 0; s.occlusionCulled++; continue; }
+        if (e.parts.length) { const pr = this.prio(e.wbox, cam) + 1000; for (const p of e.parts) this.want(p.node, pr); }
         const blockOk = dB > 350 && (e.err * K) / Math.max(1, dB) < tau;
-        const partsReady = e.parts.every(p => p.node.ready);
-        if (blockOk) { plan.push({ e, mode: "block" }); if (!partsReady) blockMissing = true; continue; }
+        const partsReady = allNodesReady(e.parts);
+        if (blockOk) { e.mode = 1; if (!partsReady) blockMissing = true; continue; }
         // folhas: pede o LOD escolhido; se faltar alguma folha visível, o bloco inteiro fica no nível de bloco
         let leavesReady = true;
         for (const l of e.leaves) {
@@ -387,20 +393,21 @@ export class VisualWorld {
           if (dL > 500 && this.occlusionTest(l, wb)) continue;
           const want1 = (l.err1 * K) / Math.max(1, dL) < tau * (l.lod === 1 ? 1.2 : 1);
           const n = want1 ? l.l1 : l.l0;
-          this.want(n, prio(wb));
+          this.want(n, this.prio(wb, cam));
           if (!n.ready && !(want1 ? false : l.l1.ready)) leavesReady = false;
         }
-        if (leavesReady) plan.push({ e, mode: "leaves" });
-        else { plan.push({ e, mode: "block" }); s.fallbacks++; if (!partsReady) blockMissing = true; }
+        if (leavesReady) e.mode = 2;
+        else { e.mode = 1; s.fallbacks++; if (!partsReady) blockMissing = true; }
       }
-      if (blockMissing && tileReady) { showTile(); tv.level = "tile"; s.tilesAsOne++; s.fallbacks++; continue; }
+      if (blockMissing && tileReady) { this.showTile(tv, tileReady); tv.level = "tile"; s.tilesAsOne++; s.fallbacks++; continue; }
       tv.level = "blocks";
       this.horizon?.setHidden(tv.id, true);
       for (const t of tv.tile3) show(t.node, false);
-      for (const { e, mode } of plan) {
-        if (mode === "off") { for (const p of e.parts) show(p.node, false); for (const l of e.leaves) { show(l.l0, false); show(l.l1, false); } continue; }
+      for (const e of tv.blocks.values()) {
+        const mode = e.mode ?? 0;
+        if (mode === 0) { for (const p of e.parts) show(p.node, false); for (const l of e.leaves) { show(l.l0, false); show(l.l1, false); } continue; }
         const dB = e.wbox.distanceToPoint(cam);
-        if (mode === "block") {
+        if (mode === 1) {
           for (const l of e.leaves) { show(l.l0, false); show(l.l1, false); }
           for (const p of e.parts) { const far = p.cat === "rock" && dB > rockMax; show(p.node, !far); if (far) s.distanceCulled++; }
           s.blocksDrawn++;
@@ -427,7 +434,7 @@ export class VisualWorld {
     if (this.now - this.evictT > 1000) { this.evictT = this.now; this.evict(); }
     let total = 0, ram = 0, vram = 0, drawn = 0;
     for (const tv of this.tiles.values()) for (const n of tv.nodes) { total++; if (n.mesh) { ram++; if (n.drawnOnce) vram++; if (n.mesh.visible) drawn++; } }
-    Object.assign(s, { nodesTotal: total, nodesRam: ram, nodesVram: vram, nodesDrawn: drawn, nodesHidden: ram - drawn, queue: this.queue.length, inflight: this.inflight, bytes: this.stats.loadedBytes });
+    s.nodesTotal = total; s.nodesRam = ram; s.nodesVram = vram; s.nodesDrawn = drawn; s.nodesHidden = ram - drawn; s.queue = this.queue.length; s.inflight = this.inflight; s.bytes = this.stats.loadedBytes;
     this.onProgress?.(ram, ram + this.queue.length + this.inflight);
   }
 

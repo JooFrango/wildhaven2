@@ -21,6 +21,8 @@ const MAXI = [6000, 9000, 14000, 26000];
 
 export interface VegStats { candidates: number; drawn: number; perLod: number[]; cellsFrustum: number; cellsDistance: number; cellsOcclusion: number; drawCallsMax: number; updateMs: number }
 
+const LOD_PX_ALTO = [150, 60, 18], LOD_PX_MEDIO = [190, 80, 24], LOD_PX_BAIXO = [260, 110, 34];
+
 export class Vegetation {
   readonly group = new THREE.Group();
   private protos: ProtoJ[] = [];
@@ -125,7 +127,7 @@ export class Vegetation {
     const t0 = performance.now();
     this.lastCam.copy(camera.position); this.lastDir.copy(dir); this.lastUpdate = now; this.dirty = false;
     let fading = false;
-    const st = this.stats; st.candidates = 0; st.drawn = 0; st.perLod = [0, 0, 0, 0]; st.cellsFrustum = 0; st.cellsDistance = 0; st.cellsOcclusion = 0; st.drawCallsMax = 0;
+    const st = this.stats; st.candidates = 0; st.drawn = 0; st.perLod[0] = st.perLod[1] = st.perLod[2] = st.perLod[3] = 0; st.cellsFrustum = 0; st.cellsDistance = 0; st.cellsOcclusion = 0; st.drawCallsMax = 0;
     for (const row of this.meshes) for (const im of row ?? []) if (im) im.count = 0;
     const set = this.settings;
     if (set.vegetationDensity <= 0) { this.finish(t0); return; }
@@ -134,7 +136,7 @@ export class Vegetation {
     const K = viewportH / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2));
     const cam = camera.position, treeMax = set.treeDistance, smallMax = set.smallDistance;
     // limiares de LOD por tamanho projetado (px de altura na tela)
-    const lodPx = set.profile === "alto" ? [150, 60, 18] : set.profile === "medio" ? [190, 80, 24] : [260, 110, 34];
+    const lodPx = set.profile === "alto" ? LOD_PX_ALTO : set.profile === "medio" ? LOD_PX_MEDIO : LOD_PX_BAIXO;
     const minPx = set.profile === "alto" ? 1.2 : 2;
     for (const tv of this.tiles.values()) {
       const F = tv.F, D = tv.data;
@@ -168,8 +170,11 @@ export class Vegetation {
           if (appear < 1) fading = true;
           const fade = Math.min(edge, Math.min(1, appear));
           const k = im.count++;
-          im.instanceMatrix.array.set(tv.mats.subarray(n * 16, n * 16 + 16), k * 16);
-          (im.instanceColor!.array as Float32Array).set(tv.cols.subarray(n * 3, n * 3 + 3), k * 3);
+          // V04.2: cópia direta (antes: duas `subarray` = dois objetos TypedArray por instância desenhada)
+          const ma = im.instanceMatrix.array as Float32Array, mo = k * 16, mi = n * 16, src = tv.mats;
+          for (let q = 0; q < 16; q++) ma[mo + q] = src[mi + q];
+          const ca = im.instanceColor!.array as Float32Array, co = k * 3, ci = n * 3, cs = tv.cols;
+          ca[co] = cs[ci]; ca[co + 1] = cs[ci + 1]; ca[co + 2] = cs[ci + 2];
           this.fades[proto.id][lod].setX(k, fade);
           st.drawn++; st.perLod[lod]++;
         }
@@ -180,11 +185,11 @@ export class Vegetation {
   }
 
   private finish(t0: number) {
-    for (const [pid, row] of this.meshes.entries()) for (const [lod, im] of (row ?? []).entries()) {
-      if (!im) continue;
+    for (let pid = 0; pid < this.meshes.length; pid++) { const row = this.meshes[pid]; if (!row) continue; for (let lod = 0; lod < row.length; lod++) {
+      const im = row[lod]; if (!im) continue;
       im.visible = im.count > 0;
       if (im.count) { this.stats.drawCallsMax++; im.instanceMatrix.needsUpdate = true; im.instanceColor!.needsUpdate = true; this.fades[pid][lod].needsUpdate = true; im.instanceMatrix.clearUpdateRanges(); im.instanceMatrix.addUpdateRange(0, im.count * 16); }
-    }
+    } }
     this.stats.updateMs = performance.now() - t0;
   }
 }

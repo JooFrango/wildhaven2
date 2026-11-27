@@ -1,0 +1,23 @@
+{
+ "url": "http://127.0.0.1:8874/?perfil=medio",
+ "heapV8AposGC_MB": 41.4,
+ "geometrias": 341,
+ "geometriasDuplicadasPorConteudo": 43,
+ "bytesDuplicadosCPU_MB": 1.21,
+ "verticesNaCPU_MB": 67.5,
+ "verticesSoNaGPU_MB": 0,
+ "atributosSemUso": {
+  "uv": 10
+ },
+ "materiais": 48,
+ "materiaisIdenticos": 13,
+ "texturas": 34,
+ "texturasIdenticas": 29,
+ "performanceMemoryMB": 295.6,
+ "relevoCpuLiberados": null,
+ "programas": 78,
+ "rendererInfo": {
+  "geometries": 117,
+  "textures": 28
+ }
+}

@@ -32,7 +32,8 @@ const r = await p.evaluate(() => {
       if (g.attributes.uv && !usesMap) unused.push("uv"); if (g.attributes.tangent && !ms.some(m => m?.normalMap)) unused.push("tangent");
       if (g.attributes.color && !ms.some(m => m?.vertexColors)) unused.push("color");
       const key = Object.entries(g.attributes).map(([k, a]) => k + "=" + hashArr(a.array)).join("|") + "|i=" + hashArr(g.index?.array);
-      geos.set(g, { key, cpu, gpuOnly, unused, nome: o.name });
+      let grupo = o.isInstancedMesh ? "vegetacao-instanciada" : o.isSkinnedMesh ? "modelo-animado" : ""; if (!grupo) { let q = o; while (q && !grupo) { const n = q.name ?? ""; if (n.startsWith("hex:")) grupo = "relevo-hex"; else if (/vila|village/i.test(n)) grupo = "vila"; else if (/horiz/i.test(n)) grupo = "horizonte"; q = q.parent; } } if (!grupo) grupo = o.parent ? "outros" : "modelos-carregados";
+      geos.set(g, { key, cpu, gpuOnly, unused, nome: o.name, grupo });
     }
     for (const m of (Array.isArray(o.material) ? o.material : [o.material])) {
       if (!m || mats.has(m)) continue;
@@ -42,13 +43,14 @@ const r = await p.evaluate(() => {
     }
   });
   const dup = m => { const c = new Map(); for (const k of m.values()) { const kk = typeof k === "string" ? k : k.key; c.set(kk, (c.get(kk) ?? 0) + 1); } return [...c.values()].filter(n => n > 1).reduce((s, n) => s + n - 1, 0); };
-  let cpu = 0, gpuOnly = 0; const unused = {}; const dupBytes = new Map();
-  for (const g of geos.values()) { cpu += g.cpu; gpuOnly += g.gpuOnly; for (const u of g.unused) unused[u] = (unused[u] ?? 0) + 1; }
+  let cpu = 0, gpuOnly = 0; const unused = {}; const dupBytes = new Map(); const porGrupo = {};
+  for (const g of geos.values()) { cpu += g.cpu; gpuOnly += g.gpuOnly; for (const u of g.unused) unused[u] = (unused[u] ?? 0) + 1; const pg = (porGrupo[g.grupo] ??= { geometrias: 0, cpuMB: 0, soGpuMB: 0 }); pg.geometrias++; pg.cpuMB += g.cpu / 1048576; pg.soGpuMB += g.gpuOnly / 1048576; }
+  for (const v of Object.values(porGrupo)) { v.cpuMB = +v.cpuMB.toFixed(2); v.soGpuMB = +v.soGpuMB.toFixed(2); }
   const seenKey = new Set(); let bytesDuplicados = 0;
   for (const g of geos.values()) { if (g.key.includes("sem-array")) continue; if (seenKey.has(g.key)) bytesDuplicados += g.cpu; else seenKey.add(g.key); }
   const pm = performance.memory;
   return { geometrias: geos.size, geometriasDuplicadasPorConteudo: dup(new Map([...geos].map(([k, v]) => [k, v.key]))), bytesDuplicadosCPU_MB: +(bytesDuplicados / 1048576).toFixed(2),
-    verticesNaCPU_MB: +(cpu / 1048576).toFixed(1), verticesSoNaGPU_MB: +(gpuOnly / 1048576).toFixed(1), atributosSemUso: unused,
+    verticesNaCPU_MB: +(cpu / 1048576).toFixed(1), verticesSoNaGPU_MB: +(gpuOnly / 1048576).toFixed(1), porGrupo, atributosSemUso: unused,
     materiais: mats.size, materiaisIdenticos: dup(mats), texturas: texs.size, texturasIdenticas: dup(texs),
     performanceMemoryMB: pm ? +(pm.usedJSHeapSize / 1048576).toFixed(1) : null, relevoCpuLiberados: s.world.stats.cpuLiberados ?? null,
     programas: s.renderer.info.programs.length, rendererInfo: { ...s.renderer.info.memory } };
