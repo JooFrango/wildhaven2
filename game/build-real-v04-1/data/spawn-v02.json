@@ -1,0 +1,10 @@
+{
+  "schema": "wildhaven.spawn.v1",
+  "worldId": "auralis-v02",
+  "seed": 20261126,
+  "rationale": "V02: os Hunters vivem na Vila dos Hunters. Ponto 'start' de world/hunters-village-v01/navigation.json (praça, local -13, 23) convertido para coordenadas continentais com a translação horizontal do hex HV_01 (28145.825623, −3750).",
+  "note": "Na V01 o spawn técnico ficava a ~1,7 km do centro da vila (portal HV_01→ER_18), fora das construções.",
+  "hunters": [
+    { "id": "hunter-001", "name": "Hunter 01", "tile": "HV_01", "x": 28132.83, "z": -3727.0, "groundY": 921.5, "asset": "labs/hunters/assets/hunter-pve-v01/hunter_pve_v01.glb" }
+  ]
+}

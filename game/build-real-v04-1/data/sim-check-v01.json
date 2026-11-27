@@ -1,0 +1,104 @@
+{
+  "hunter": {
+    "activity": "patrulhando",
+    "alive": true,
+    "arma": "espada",
+    "busy_until_s": 0.0,
+    "carried_by": null,
+    "clip": "Walking",
+    "cooldown_s": 0.0,
+    "crossings": [
+      {
+        "from": "HV_01",
+        "sim_time_s": 3789.0,
+        "step_m": 0.23700660000100757,
+        "tick": 18945,
+        "to": "ER_24",
+        "x": 27064.213928620233,
+        "z": -1874.2139286202364
+      }
+    ],
+    "crouched": false,
+    "distance_walked_m": 7077.818858587177,
+    "downed_since_s": null,
+    "expedition": null,
+    "forca": 8.0,
+    "goal": {
+      "tile": "PL_E_N",
+      "x": 24882.359810390797,
+      "z": 1900.4806526416858
+    },
+    "heading": 0.0,
+    "hp": 100.0,
+    "hp_max": 100.0,
+    "id": "hunter-001",
+    "inventory": [],
+    "last_action": "",
+    "name": "Hunter 01",
+    "no_attack_until_s": 0.0,
+    "plan_failures": 0,
+    "rest_until_s": 5992.012590331212,
+    "rng_state": 3785402154,
+    "role": "hunter",
+    "skills": {
+      "armadilhas": {
+        "level": 2,
+        "xp": 0.0
+      },
+      "desvio": {
+        "level": 1,
+        "xp": 0.0
+      },
+      "espada": {
+        "level": 4,
+        "xp": 0.0
+      },
+      "furtividade": {
+        "level": 5,
+        "xp": 0.0
+      },
+      "rastreamento": {
+        "level": 6,
+        "xp": 0.0
+      },
+      "rodeio": {
+        "level": 3,
+        "xp": 0.0
+      },
+      "velocidade": {
+        "level": 2,
+        "xp": 0.0
+      }
+    },
+    "speed_mps": 1.1733,
+    "state": "caminhando",
+    "target_creature": null,
+    "tile_id": "ER_24",
+    "wagon": null,
+    "x": 25255.0,
+    "y": 910.2041019287109,
+    "z": -38.53040422161969
+  },
+  "maxAllowedStepMeters": 0.237006601,
+  "maxStepMeters": 0.23700660000132912,
+  "mode": "travessia",
+  "residencyConsistent": true,
+  "schema": "wildhaven.sim-check.v2",
+  "simSeconds": 6000.0,
+  "stepSeconds": 0.2,
+  "streaming": {
+    "cap_bytes": 268435456,
+    "evictions": 0,
+    "hits": 146609192,
+    "load_errors": 0,
+    "misses": 454,
+    "pinned_chunks": 32,
+    "resident_bytes": 74383360,
+    "resident_chunks": 454
+  },
+  "ticks": 30000,
+  "ticksWithoutCompiledGround": 0,
+  "tileByPositionNow": "ER_24",
+  "walkSpeedMps": 1.185033,
+  "wallSeconds": 29.892613993
+}
