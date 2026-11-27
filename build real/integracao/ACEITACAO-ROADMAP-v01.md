@@ -7,7 +7,7 @@ nenhum deles é regra aprovada.
 
 Evidências:
 - **(T)** testes automatizados: `cargo test` e `node --test`.
-- **(D)** `wh-sim-check demo`, a expedição roteirizada sobre o terreno real. Resultado em [`demo-check-v01.json`](../../game/build-real-v01/data/demo-check-v01.json).
+- **(D)** `wh-sim-check demo`, a expedição roteirizada sobre o terreno real. Resultado em [`demo-check-v01.json`](../../game/build-real-v01/data/demo-check-v01.json): **14/14 etapas OK** (commit `fee36d2`, 17.358 s de jogo). Folhisco abatido em 5.700 s, retorno com itens em 6.622 s. Hunter sozinho contra Lobrapedra: caiu, Nailon partiu para o resgate, também caiu, e o Hunter teve morte permanente.
 - **(N)** roteiro no navegador headless por cliques. Capturas em [`evidencias/`](evidencias/).
 
 | # | Item do roadmap | Status | Evidência / observação |
