@@ -106,6 +106,9 @@ pub struct Hunter {
     /// Patrulha alterna: interior do hex atual ↔ próximo portal.
     #[serde(skip)]
     pub patrol_interior_next: bool,
+    /// Início de uma perseguição sem alcance (alvo fugindo a > 30 m).
+    #[serde(skip)]
+    pub chase_since_s: Option<f64>,
 }
 
 impl Hunter {
@@ -147,6 +150,7 @@ impl Hunter {
             ignore: Default::default(),
             approach_final: false,
             patrol_interior_next: false,
+            chase_since_s: None,
         }
     }
 

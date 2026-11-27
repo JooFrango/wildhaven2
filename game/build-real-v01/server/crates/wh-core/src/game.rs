@@ -857,12 +857,48 @@ impl GameState {
                 };
                 let sp = &data.especies[&species];
                 let know = self.bestiary.level(&species);
+                let fleeing = self.creatures.iter().find(|x| x.id == cid).map(|x| x.state == "fugindo").unwrap_or(false);
+                // só o mais furtivo da expedição faz a aproximação final; os outros aguardam a 20 m
+                let me = (self.hunters[i].skill("furtividade"), self.hunters[i].id.clone());
+                let leader = self.hunters.iter().filter(|o| o.standing() && o.expedition == self.hunters[i].expedition && o.target_creature == Some(cid) && o.activity == Activity::Aproximando)
+                    .map(|o| (o.skill("furtividade"), o.id.clone())).max().map(|(_, id)| id);
+                let is_leader = leader.as_deref().map(|l| l == me.1).unwrap_or(true);
                 let h = &mut self.hunters[i];
+                if act == Activity::Aproximando && (fleeing || (!is_leader && h.mv.dist(cx, cz) <= 20.0)) {
+                    // a presa está fugindo (ou outro faz a aproximação): para, agachado, e espera
+                    h.mv.stop();
+                    h.crouched = true;
+                    h.approach_final = false;
+                    h.state = HunterState::Descansando;
+                    h.clip = "Idle".into();
+                    if h.mv.dist(cx, cz) > data.hunters.visao_m * 1.5 {
+                        h.target_creature = None;
+                        h.crouched = false;
+                        h.activity = Activity::Procurando;
+                    }
+                    return;
+                }
                 if ctx.now < h.busy_until_s {
                     h.clip = "Idle".into();
                     return;
                 }
                 let d = h.mv.dist(cx, cz);
+                // perseguição sem alcance (alvo fugindo a > 30 m por 60 s): desiste e volta a rastrear
+                if fleeing && d > 30.0 {
+                    let since = *h.chase_since_s.get_or_insert(ctx.now);
+                    if ctx.now - since > 60.0 {
+                        h.chase_since_s = None;
+                        h.ignore.insert(cid, ctx.now + 120.0);
+                        h.target_creature = None;
+                        h.crouched = false;
+                        h.activity = if h.expedition.is_some() { Activity::Procurando } else { Activity::NaVila };
+                        let name = h.name.clone();
+                        self.event(ctx.tick, ctx.now, "rastro", format!("{name}: a presa escapou; volta a procurar o rastro"));
+                        return;
+                    }
+                } else {
+                    h.chase_since_s = None;
+                }
                 if d > data.hunters.visao_m * 1.5 {
                     h.target_creature = None;
                     h.crouched = false;
@@ -871,7 +907,7 @@ impl GameState {
                 }
                 if act == Activity::Aproximando {
                     // conhecimento "estudado" ou mais: agacha antes de entrar no alcance de visão da espécie
-                    let crouch_from = if know >= 2 { sp.visao_movimento_m * 1.3 } else { 25.0 };
+                    let crouch_from = if know >= 2 { sp.visao_movimento_m * 1.1 } else { 25.0 };
                     h.crouched = d <= crouch_from;
                     if h.crouched {
                         speed = walk * data.furtividade.velocidade_agachado_fator;
@@ -896,7 +932,7 @@ impl GameState {
                     h.approach_final = true;
                 }
                 let final_phase = h.approach_final;
-                let (gx, gz) = if act == Activity::Aproximando && !final_phase && h.mv.dist(bx, bz) > 1.5 { (bx, bz) } else { (cx, cz) };
+                let (gx, gz) = if act == Activity::Aproximando && !final_phase && d <= 25.0 && h.mv.dist(bx, bz) > 1.5 { (bx, bz) } else { (cx, cz) };
                 if d > 2.0 {
                     h.mv.go_to(gx, gz, 1.5);
                     moved = true;
@@ -1223,7 +1259,7 @@ impl GameState {
             let rested = alive.iter().all(|m| m.2 == Activity::Descansando && m.3 >= m.4 * 0.8);
             let timed_out = e.state == "cacando" && ctx.now - e.hunt_started_s > ctx.data.expedicao.max_horas_sem_abate * 3600.0;
             let any_down = alive.iter().any(|m| matches!(m.2, Activity::Caido | Activity::Carregado));
-            if timed_out && e.kills == 0 && !any_down && e.rescuer.is_none() {
+            if timed_out && e.kills == 0 && !e.rescued && !any_down && e.rescuer.is_none() {
                 // desiste: todos os de pé voltam ao acampamento para retornar
                 let ids: Vec<String> = alive.iter().map(|m| m.0.clone()).collect();
                 for h in self.hunters.iter_mut().filter(|h| ids.contains(&h.id) && h.standing() && h.activity != Activity::Descansando) {

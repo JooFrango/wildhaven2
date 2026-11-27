@@ -293,7 +293,12 @@
       ],
       "densidadeProvisoria": "30 bandos de 4–9 por hex de 16,2 km² (~12 aves/km²) — provisório",
       "raioForrageioM": 60,
-      "pontoCegoTraseiroGraus": 60
+      "pontoCegoTraseiroGraus": 60,
+      "pausaForrageioS": [
+        8,
+        25
+      ],
+      "pausaProvisoria": "Folhisco passa a maior parte do forrageio parado bicando/ciscando (pausas de 8–25 s, provisório)"
     },
     "lobrapedra": {
       "nome": "Lobrapedra",
@@ -336,7 +341,11 @@
       "raioForrageioM": 300,
       "pontoCegoTraseiroGraus": 90,
       "pontoCegoProvisorio": "ficha sem percepção: 90° provisório",
-      "densidadeProvisoria": "6 matilhas de 2–3 por hex, vagueio de 300 m — provisório"
+      "densidadeProvisoria": "6 matilhas de 2–3 por hex, vagueio de 300 m — provisório",
+      "pausaForrageioS": [
+        3,
+        11
+      ]
     }
   },
   "spawn": {

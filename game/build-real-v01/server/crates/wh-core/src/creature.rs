@@ -118,7 +118,8 @@ pub fn detects(t: &mut TerrainStore, c: &Creature, sp: &Species, h: &HunterView,
     if heard {
         return true;
     }
-    let mut vision = if h.moving { sp.visao_movimento_m } else { sp.visao_parado_m };
+    // agachado e lento conta como alvo "parado" para a visão (ficha: detectStillTargetM)
+    let mut vision = if h.moving && !h.crouched { sp.visao_movimento_m } else { sp.visao_parado_m };
     if h.crouched {
         vision *= (1.0 - stealth_red * h.stealth as f64).max(0.2);
     }
@@ -172,7 +173,16 @@ pub fn step_creature(
     let stealth_red = data.furtividade.reducao_deteccao_por_nivel;
     let p_s = data.furtividade.chance_deteccao_por_segundo;
     // ameaça já confirmada continua acompanhada enquanto estiver perto (sem rolar de novo)
-    let mut seen: Option<&HunterView> = c.target_hunter.as_ref().and_then(|id| hunters.iter().find(|h| &h.id == id && h.hp > 0.0 && c.mv.dist(h.x, h.z) <= sp.visao_movimento_m.max(sp.audicao_m)));
+    // predador mantém a presa confirmada; a presa só reage a nova detecção
+    let mut seen: Option<&HunterView> = if sp.papel == "predador" {
+        c.target_hunter.as_ref().and_then(|id| hunters.iter().find(|h| &h.id == id && h.hp > 0.0 && c.mv.dist(h.x, h.z) <= sp.visao_movimento_m.max(sp.audicao_m)))
+    } else {
+        None
+    };
+    if sp.papel != "predador" && c.state == "fugindo" && c.mv.target.is_some() {
+        // já fugindo: termina a fuga antes de reavaliar
+        seen = None;
+    }
     if seen.is_none() {
         seen = hunters
             .iter()
@@ -217,6 +227,11 @@ pub fn step_creature(
                 c.sprint_left_s -= dt;
             }
         }
+    } else if sp.papel != "predador" && c.state == "fugindo" && c.mv.target.is_some() {
+        if c.sprint_left_s > 0.0 {
+            speed = sp.correr_mps;
+            c.sprint_left_s -= dt;
+        }
     } else {
         c.sprint_left_s = (c.sprint_left_s + dt * 0.5).min(sp.correr_max_s);
         c.target_hunter = None;
@@ -250,7 +265,8 @@ pub fn step_creature(
     let small_nav = NavParams { max_expansions: 20_000, margin_m: 24.0, ..*nav };
     match c.mv.advance(t, portals, &small_nav, speed, dt, 1.0, 40.0, tick, now) {
         Step::Arrived => {
-            c.idle_until_s = now + 3.0 + rng.next_f64() * 8.0;
+            let (p0, p1) = sp.pausa_forrageio_s;
+            c.idle_until_s = now + p0 + rng.next_f64() * (p1 - p0);
             if c.state == "fugindo" {
                 c.home = (c.mv.x, c.mv.z);
             }

@@ -33,8 +33,13 @@ pub struct Species {
     pub raio_forrageio_m: f64,
     #[serde(default)]
     pub ponto_cego_traseiro_graus: f64,
+    #[serde(default = "d_pausa")]
+    pub pausa_forrageio_s: (f64, f64),
     pub itens: Vec<Item>,
     pub biomas: Vec<String>,
+}
+fn d_pausa() -> (f64, f64) {
+    (3.0, 11.0)
 }
 fn d_alcance() -> f64 {
     1.5
