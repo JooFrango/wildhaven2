@@ -226,7 +226,19 @@ Teste `tools/test/alternancia-memoria.mjs`, 5 ciclos de 25 s em 3D e 70 s no Eco
 
 ## 8. Testes de longa duração
 
-Ver a seção 10. Os números são preenchidos ao fim de cada teste, com arquivos em `bench/longa-*.json`.
+`tools/test/longa-duracao.mjs` abre um navegador num modo e, a cada minuto, grava CPU e RSS do navegador e do servidor, heap, quadros, travamentos, tráfego do WebSocket e as métricas do servidor. Os 8 Hunters exploram o tempo todo. O servidor roda em modo leve (os 7 hexes do ZIP).
+
+A primeira tentativa foi interrompida aos 11 min por um reinício do contêiner. Os registros estão em `bench/longa-*-interrompido-11min.json`. Os testes foram refeitos do zero.
+
+| Teste | Duração | CPU média do navegador | RSS do navegador | Heap JS | Servidor | Erros |
+| --- | --- | ---: | --- | --- | --- | ---: |
+| 3D, perfil Baixo | 30 min | 274% (SwiftShader) | 1315 → 1337 MB | estável | CPU 1,5%, RSS 112 MB, 0 passos descartados | 0 |
+| Aba oculta | **2 h** | **0,14%** (máx. 0,3%) | 1253 → 1037 MB | 167 → 7,7 MB (3D descartado aos 60 s) | CPU 2,6%, RSS 195 MB, 0 descartados | 0 |
+| Econômico | **2 h** | 38% (16–66%, ver abaixo) | 811 → 911 MB | 5,4 → 19 MB | CPU 3,2%, RSS 196 MB, 0 descartados | 0 |
+
+- **Aba oculta:** nenhum quadro desenhado em 2 h. Só os 17 quadros de antes de esconder a aba.
+- **Simulação:** escala efetiva entre 0,997 e 1,000 nos três servidores, com dívida de passos sempre 0.
+- **Econômico:** a CPU ficou em 16–19% na primeira meia hora e depois subiu para 35–66%. A investigação está na seção 10.
 
 ## 9. Distribuição
 
