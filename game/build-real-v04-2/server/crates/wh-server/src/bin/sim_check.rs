@@ -54,6 +54,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "continente" => continente(&mut w, ticks, std::env::var("WH_DESTINO").ok())?,
         "caca-bioma" => caca_bioma(&mut w, ticks)?,
         "exploracao-longa" => exploracao_longa(&mut w, ticks)?,
+        "escala" => escala(&mut w, ticks)?,
         _ => travessia(&mut w, ticks)?,
     };
     rep["wallSeconds"] = serde_json::json!(t0.elapsed().as_secs_f64());
@@ -368,6 +369,60 @@ fn digest(w: &World) -> String {
     format!("{h:016x} criaturas={} hunters={}", w.game.creatures.len(), w.game.hunters.len())
 }
 
+fn rss_mb() -> f64 {
+    std::fs::read_to_string("/proc/self/status").ok().and_then(|s| s.lines().find(|l| l.starts_with("VmRSS:")).and_then(|l| l.split_whitespace().nth(1)).and_then(|v| v.parse::<f64>().ok())).unwrap_or(0.0) / 1024.0
+}
+
+/// V04.2 — teste de escalabilidade (CARGA EXPERIMENTAL, não muda a população do jogo): explora `ticks` passos para
+/// obter a distribuição ecológica real, depois monta cargas de 1.000 / 5.000 / 10.000 / 20.000 criaturas (subconjunto
+/// ou cópias com 1–6 m de deslocamento — adensa os hexes visitados, pior caso para a percepção) e mede, com os
+/// Hunters na vila ou espalhados pelo continente, o custo por fase do passo, os níveis de relevância, a RAM do
+/// processo e a serialização do instantâneo publicado e da persistência.
+fn escala(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
+    let ids: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter").map(|h| h.id.clone()).collect();
+    w.order(Order::Explorar { hunters: ids.clone() })?;
+    for t in 1..=ticks { w.step(); if t % 3000 == 0 { let livres: Vec<String> = w.game.hunters.iter().filter(|h| h.alive && h.role == "hunter" && h.activity == Activity::NaVila).map(|h| h.id.clone()).collect(); if !livres.is_empty() { let _ = w.order(Order::Explorar { hunters: livres }); } } }
+    let base = w.game.creatures.clone();
+    let vila: Vec<(f64, f64, f64, String)> = w.game.hunters.iter().map(|h| (h.mv.x, h.mv.y, h.mv.z, h.mv.tile_id.clone())).collect();
+    let mut out = vec![];
+    let alvos: Vec<usize> = std::env::var("WH_ESCALA").ok().map(|v| v.split(',').filter_map(|x| x.parse().ok()).collect()).unwrap_or(vec![1000, 5000, 10000, 20000]);
+    let medir = std::env::var("WH_ESCALA_TICKS").ok().and_then(|v| v.parse().ok()).unwrap_or(900u64);
+    for &n in &alvos {
+        for cenario in ["vila", "espalhados"] {
+            // população: subconjunto ou cópias deslocadas (ids novos)
+            let mut cs: Vec<wh_core::creature::Creature> = base.iter().filter(|c| c.alive).take(n).cloned().collect();
+            let mut k = 0usize; let mut next = w.game.next_id + 1_000_000;
+            while cs.len() < n { let mut c = base[k % base.len()].clone(); if !c.alive { k += 1; continue; } let off = 1.0 + (k % 6) as f64; c.id = next; next += 1; c.mv.x += off; c.mv.z -= off; c.mv.path.clear(); c.mv.target = None; cs.push(c); k += 1; }
+            w.game.creatures = cs;
+            // Hunters: na vila (posição do fim da exploração para quem estava lá; demais voltam ao ponto inicial) ou
+            // espalhados sobre posições reais de criaturas em hexes diferentes (chão válido)
+            let mut tiles_vistos = std::collections::BTreeSet::new();
+            let lugares: Vec<(f64, f64, f64, String)> = base.iter().filter(|c| tiles_vistos.insert(c.mv.tile_id.clone())).map(|c| (c.mv.x, c.mv.y, c.mv.z, c.mv.tile_id.clone())).collect();
+            for (i, h) in w.game.hunters.iter_mut().enumerate() {
+                let (x, y, z, t) = if cenario == "vila" { vila[0].clone() } else { lugares[(i * lugares.len().max(1) / 8).min(lugares.len().saturating_sub(1))].clone() };
+                h.mv.x = x + i as f64 * 2.0; h.mv.y = y; h.mv.z = z; h.mv.tile_id = t; h.mv.path.clear(); h.mv.target = None; h.route.clear(); h.route_idx = 0;
+            }
+            for _ in 0..50 { w.step(); }
+            w.game.prof_on = true; w.game.prof = [0.0; 8];
+            let t0 = std::time::Instant::now();
+            for _ in 0..medir { w.step(); }
+            let parede = t0.elapsed().as_secs_f64();
+            let p = w.game.prof; let nn = p[5].max(1.0); let m = &w.game.metrics;
+            // serialização do instantâneo publicado (o que o servidor faz a cada 200 ms) e da persistência (a cada 10 s)
+            let ts = std::time::Instant::now(); let mut bytes = 0; for _ in 0..10 { bytes = serde_json::to_string(&w.snapshot(0)).map(|s| s.len()).unwrap_or(0); } let snap_ms = ts.elapsed().as_secs_f64() * 100.0;
+            let tp = std::time::Instant::now(); let pb = serde_json::to_string(&w.game).map(|s| s.len()).unwrap_or(0); let pers_ms = tp.elapsed().as_secs_f64() * 1000.0;
+            let l = serde_json::json!({"criaturas": w.game.creatures.len(), "cenario": cenario, "perto": m.near, "medio": m.mid, "longe": m.far, "congeladas": m.frozen,
+                "msPorPasso": {"climaEAreia": p[6] / nn, "stepCreature": p[7] / nn, "geracao": p[0] / nn, "visoes": p[1] / nn, "laco": p[2] / nn, "pos": p[3] / nn, "resto": p[4] / nn, "total": (p[0] + p[1] + p[2] + p[3] + p[4]) / nn},
+                "paredePorPassoMs": parede * 1000.0 / medir as f64, "cpuPctNucleoEmX1": parede * 1000.0 / medir as f64 * 5.0 / 10.0,
+                "instantaneo": {"bytes": bytes, "ms": snap_ms}, "persistencia": {"bytes": pb, "ms": pers_ms}, "rssMB": rss_mb()});
+            println!("{l}");
+            out.push(l);
+            w.game.prof_on = false;
+        }
+    }
+    Ok(serde_json::json!({"modo": "escala", "ticksExploracao": ticks, "baseCriaturas": base.len(), "nota": "carga experimental; cópias adensam os hexes visitados (pior caso de percepção)", "amostras": out}))
+}
+
 fn exploracao_longa(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
     let ids: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter").map(|h| h.id.clone()).collect();
     w.order(Order::Explorar { hunters: ids })?;
@@ -382,7 +437,7 @@ fn exploracao_longa(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<
                 "msGeracao": p[0] / n, "msVisoes": p[1] / n, "msLaco": p[2] / n, "msPos": p[3] / n, "msResto": p[4] / n, "msTotal": (p[0] + p[1] + p[2] + p[3] + p[4]) / n, "paredeS": t0.elapsed().as_secs_f64()});
             println!("{l}");
             linhas.push(l);
-            w.game.prof = [0.0; 6];
+            w.game.prof = [0.0; 8];
             let livres: Vec<String> = w.game.hunters.iter().filter(|h| h.alive && h.role == "hunter" && h.activity == wh_core::hunter::Activity::NaVila).map(|h| h.id.clone()).collect();
             if !livres.is_empty() { let _ = w.order(Order::Explorar { hunters: livres }); }
         }

@@ -115,7 +115,14 @@ pub struct GameState {
     #[serde(skip)]
     pub prof_on: bool,
     #[serde(skip)]
-    pub prof: [f64; 6],
+    pub prof: [f64; 8],
+    /// V04.2: memória das grades espaciais reaproveitada entre passos.
+    #[serde(skip)]
+    pub hgrid_buf: FlatGrid,
+    #[serde(skip)]
+    pub cgrid_buf: FlatGrid,
+    #[serde(skip)]
+    pub areia_cache: HashMap<String, bool>,
     #[serde(skip)]
     pub creatures: Vec<Creature>,
     #[serde(skip)]
@@ -246,6 +253,41 @@ pub struct Ctx<'a> {
     pub night: bool,
     pub phase_frac: f64,
     pub moon: f64,
+}
+
+/// V04.2: grade espacial plana — índices ordenados por célula (ordem crescente dentro da célula, a mesma da
+/// grade anterior de `HashMap<célula, Vec>`) e um intervalo por célula. Sem um `Vec` novo por célula por passo.
+#[derive(Default, Debug, Clone)]
+pub struct FlatGrid { keys: Vec<((i32, i32), usize)>, flat: Vec<usize>, ranges: HashMap<(i32, i32), (u32, u32), CellHash> }
+
+/// V04.2: hash multiplicativo para chaves de célula (i32, i32). O mapa só é consultado (nunca percorrido), então o
+/// resultado não depende do hash; o SipHash padrão (resistente a ataques) era o custo dominante das 25 consultas
+/// por criatura processada.
+#[derive(Default, Debug, Clone, Copy)]
+pub struct CellHash;
+impl std::hash::BuildHasher for CellHash { type Hasher = CellHasher; fn build_hasher(&self) -> CellHasher { CellHasher(0) } }
+pub struct CellHasher(u64);
+impl std::hash::Hasher for CellHasher {
+    fn finish(&self) -> u64 { self.0 }
+    fn write(&mut self, b: &[u8]) { for &x in b { self.0 = (self.0.rotate_left(5) ^ x as u64).wrapping_mul(0x517c_c1b7_2722_0a95); } }
+    fn write_i32(&mut self, v: i32) { self.0 = (self.0.rotate_left(5) ^ (v as u32 as u64)).wrapping_mul(0x517c_c1b7_2722_0a95); }
+}
+impl FlatGrid {
+    fn build(&mut self, cells: impl Iterator<Item = (i32, i32)>) {
+        self.keys.clear(); self.flat.clear(); self.ranges.clear();
+        self.keys.extend(cells.enumerate().map(|(i, k)| (k, i)));
+        self.keys.sort_unstable(); // (célula, índice): índices crescentes dentro de cada célula
+        let mut i = 0;
+        while i < self.keys.len() {
+            let k = self.keys[i].0; let start = i;
+            while i < self.keys.len() && self.keys[i].0 == k { self.flat.push(self.keys[i].1); i += 1; }
+            self.ranges.insert(k, (start as u32, i as u32));
+        }
+    }
+    fn near(&self, ci: i32, cj: i32, r: i32, out: &mut Vec<usize>) {
+        out.clear();
+        for di in -r..=r { for dj in -r..=r { if let Some(&(a, b)) = self.ranges.get(&(ci + di, cj + dj)) { out.extend_from_slice(&self.flat[a as usize..b as usize]); } } }
+    }
 }
 
 fn d2(a: (f64, f64), b: (f64, f64)) -> f64 {
@@ -517,8 +559,8 @@ impl GameState {
         // grade espacial (células de 128 m) para percepção eficiente: cada criatura só olha vizinhos
         const CELL: f64 = 128.0;
         let key = |x: f64, z: f64| ((x / CELL).floor() as i32, (z / CELL).floor() as i32);
-        let mut hgrid: HashMap<(i32, i32), Vec<usize>> = HashMap::new();
-        for (i, h) in views.iter().enumerate() { hgrid.entry(key(h.x, h.z)).or_default().push(i); }
+        let mut hgrid = std::mem::take(&mut self.hgrid_buf);
+        hgrid.build(views.iter().map(|h| key(h.x, h.z)));
         let sp_names: HashMap<&str, std::sync::Arc<str>> = ctx.data.especies.keys().map(|k| (k.as_str(), std::sync::Arc::from(k.as_str()))).collect();
         // V04.1 (ECO-01): distância ao ator mais próximo calculada UMA vez por criatura. Criaturas além de
         // `longe_m` + alcance da percepção (vizinhança de 2 células de 128 m: no máximo 3·128·√2 ≈ 543 m) não podem
@@ -526,20 +568,21 @@ impl GameState {
         // Mesmo resultado bit a bit (mesmos vizinhos, na mesma ordem); antes, TODAS as criaturas já geradas no
         // continente entravam nas visões e na grade a cada tick, inclusive as congeladas longe de todos.
         let halo = ctx.data.relevancia.longe_m + 3.0 * CELL * std::f64::consts::SQRT_2 + 1.0;
-        let dmins: Vec<f64> = self.creatures.iter().map(|c| actors.iter().map(|a| d2(*a, (c.mv.x, c.mv.z))).fold(f64::MAX, f64::min)).collect();
+        // V04.2: mínimo das distâncias AO QUADRADO e uma raiz só — a raiz é monótona e arredondada corretamente, então
+        // sqrt(min(d²)) é exatamente o mesmo número que min(sqrt(d²)) (digesto idêntico), com 1 raiz em vez de uma por ator
+        let dmins: Vec<f64> = self.creatures.iter().map(|c| actors.iter().map(|a| (a.0 - c.mv.x).powi(2) + (a.1 - c.mv.z).powi(2)).fold(f64::MAX, f64::min).sqrt()).collect();
+        // V04.2: uma consulta por criatura (nome → Arc, presa?, massa) com hash rápido; antes duas consultas SipHash
+        let sp_info: HashMap<&str, (std::sync::Arc<str>, bool, f64), CellHash> = ctx.data.especies.iter().map(|(k, sp)| (k.as_str(), (sp_names[k.as_str()].clone(), sp.papel != "predador", sp.massa_kg))).collect();
         let cviews: Vec<CreatureView> = self.creatures.iter().zip(dmins.iter()).filter(|(_, d)| **d <= halo).map(|(c, _)| {
-            let sp = &ctx.data.especies[&c.species];
-            CreatureView { id: c.id, species: sp_names.get(c.species.as_str()).cloned().unwrap_or_else(|| std::sync::Arc::from(c.species.as_str())), group: c.group, x: c.mv.x, z: c.mv.z, alive: c.alive, carcass: !c.alive && c.carcass_since_s.is_some(), prey: sp.papel != "predador", mass: sp.massa_kg, home: c.home }
+            let (name, prey, mass) = sp_info.get(c.species.as_str()).cloned().unwrap_or_else(|| { let sp = &ctx.data.especies[&c.species]; (std::sync::Arc::from(c.species.as_str()), sp.papel != "predador", sp.massa_kg) });
+            CreatureView { id: c.id, species: name, group: c.group, x: c.mv.x, z: c.mv.z, alive: c.alive, carcass: !c.alive && c.carcass_since_s.is_some(), prey, mass, home: c.home }
         }).collect();
-        let mut cgrid: HashMap<(i32, i32), Vec<usize>> = HashMap::new();
-        for (i, c) in cviews.iter().enumerate() { cgrid.entry(key(c.x, c.z)).or_default().push(i); }
-        let near_of = |grid: &HashMap<(i32, i32), Vec<usize>>, x: f64, z: f64, r: i32, out: &mut Vec<usize>| {
-            let (ci, cj) = key(x, z);
-            out.clear();
-            for di in -r..=r { for dj in -r..=r { if let Some(v) = grid.get(&(ci + di, cj + dj)) { out.extend_from_slice(v); } } }
-        };
+        let mut cgrid = std::mem::take(&mut self.cgrid_buf);
+        cgrid.build(cviews.iter().map(|c| key(c.x, c.z)));
+        let near_of = |grid: &FlatGrid, x: f64, z: f64, r: i32, out: &mut Vec<usize>| { let (ci, cj) = key(x, z); grid.near(ci, cj, r, out); };
         // V03: buffers reaproveitados entre criaturas (antes: 3 vetores novos por criatura por tick)
-        let (mut idx_buf, mut hv, mut ov): (Vec<usize>, Vec<HunterView>, Vec<CreatureView>) = (vec![], vec![], vec![]);
+        // V04.2: vizinhos por REFERÊNCIA (antes: cópias — String do id do Hunter e Arc da espécie por vizinho por tick)
+        let (mut idx_buf, mut hv, mut ov): (Vec<usize>, Vec<&HunterView>, Vec<&CreatureView>) = (vec![], vec![], vec![]);
         let rel = &ctx.data.relevancia;
         let mut attacks: Vec<AttackRequest> = vec![];
         let mut prey_attacks: Vec<PreyAttack> = vec![];
@@ -557,20 +600,27 @@ impl GameState {
             if (ctx.tick + self.creatures[ci].id) % every != 0 { continue; }
             near_of(&hgrid, cx, cz, 1, &mut idx_buf);
             hv.clear();
-            hv.extend(idx_buf.iter().map(|&i| views[i].clone()));
+            hv.extend(idx_buf.iter().map(|&i| &views[i]));
             near_of(&cgrid, cx, cz, 2, &mut idx_buf);
             ov.clear();
             let my_id = self.creatures[ci].id;
-            ov.extend(idx_buf.iter().filter(|&&i| cviews[i].id != my_id).map(|&i| cviews[i].clone()));
+            ov.extend(idx_buf.iter().filter(|&&i| cviews[i].id != my_id).map(|&i| &cviews[i]));
+            let t_env = if self.prof_on { Some(std::time::Instant::now()) } else { None };
             let eff = self.climate.effects(cx, cz, ctx.night, &ccfg);
-            let areia = ctx.t.continent.tile(&self.creatures[ci].mv.tile_id).map(|ti| ctx.data.meios.areia_rotulos.iter().any(|r| r == &ti.biome)).unwrap_or(false);
+            // V04.2: "o hex é de areia" calculado uma vez por hex (antes: busca do hex + comparação de textos por criatura)
+            let tid = &self.creatures[ci].mv.tile_id;
+            let areia = match self.areia_cache.get(tid) { Some(&a) => a, None => { let a = ctx.t.continent.tile(tid).map(|ti| ctx.data.meios.areia_rotulos.iter().any(|r| r == &ti.biome)).unwrap_or(false); self.areia_cache.insert(tid.clone(), a); a } };
+            if let Some(t) = t_env { self.prof[6] += t.elapsed().as_secs_f64() * 1000.0; }
+            let t_sc = if self.prof_on { Some(std::time::Instant::now()) } else { None };
             let env = StepEnv { data: ctx.data, nec: &ctx.data.necessidades, dt: ctx.dt * every as f64, tick: ctx.tick, now: ctx.now, night: ctx.night, level, areia };
             let before = budget;
             step_creature(&mut self.creatures[ci], &env, &eff, ctx.t, ctx.portals, ctx.nav, &hv, &ov, &self.shouts, &mut self.tracks, &mut rng, &mut budget, &mut attacks, &mut prey_attacks);
+            if let Some(t) = t_sc { self.prof[7] += t.elapsed().as_secs_f64() * 1000.0; }
             m.astar_used += before - budget;
             if budget == 0 && self.creatures[ci].mv.target.is_some() && self.creatures[ci].mv.path_idx >= self.creatures[ci].mv.path.len() { m.astar_deferred += 1; }
         }
         self.rng = rng.state;
+        self.hgrid_buf = hgrid; self.cgrid_buf = cgrid;
         let _t_loop = _ts.elapsed().as_secs_f64() * 1000.0 - _spawn_ms - _t_views;
         // predação entre espécies: dano, morte, carcaça
         for pa in prey_attacks {

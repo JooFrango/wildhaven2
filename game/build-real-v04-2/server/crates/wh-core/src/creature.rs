@@ -21,8 +21,8 @@ pub struct Creature {
     pub mv: Mover,
     pub hp: f64,
     pub hp_max: f64,
-    pub state: String,
-    pub clip: String,
+    pub state: std::borrow::Cow<'static, str>,
+    pub clip: std::borrow::Cow<'static, str>,
     pub group: u64,
     #[serde(skip)]
     pub home: (f64, f64),
@@ -226,7 +226,7 @@ pub struct StepEnv<'a> {
     pub areia: bool,
 }
 
-fn pick_clip(sp_role_pred: bool, what: &str) -> String {
+fn pick_clip(sp_role_pred: bool, what: &str) -> std::borrow::Cow<'static, str> {
     match what {
         "comer" => if sp_role_pred { "feed" } else { "eat" },
         "beber" => "drink",
@@ -246,8 +246,8 @@ pub fn step_creature(
     t: &mut TerrainStore,
     portals: &PortalIndex,
     nav: &NavParams,
-    hunters: &[HunterView],
-    others: &[CreatureView],
+    hunters: &[&HunterView],
+    others: &[&CreatureView],
     shouts: &[Shout],
     tracks: &mut Tracks,
     rng: &mut XorShift32,
@@ -293,12 +293,12 @@ pub fn step_creature(
     // acompanhar ameaça já confirmada: mesmo alcance da V01; detectar nova: inclui o olfato (a favor do vento)
     let keep = sp.visao_movimento_m.max(sp.audicao_m);
     let reach = keep.max(sp.audicao_m * 1.25 * eff.olfato);
-    let mut seen: Option<&HunterView> = c.target_hunter.as_ref().and_then(|id| hunters.iter().find(|h| &h.id == id && h.hp > 0.0 && c.mv.dist(h.x, h.z) <= keep));
+    let mut seen: Option<&HunterView> = c.target_hunter.as_ref().and_then(|id| hunters.iter().find(|h| &h.id == id && h.hp > 0.0 && c.mv.dist(h.x, h.z) <= keep).copied());
     // V04: submersa na areia não enxerga; percebe pela VIBRAÇÃO dos passos (agachado vibra bem menos)
     let submersa = c.meio == crate::meio::MEIO_AREIA;
     if submersa {
         let vib = sp.subsolo.as_ref().map(|s| s.vibracao_m).unwrap_or(sp.audicao_m);
-        seen = hunters.iter().filter(|h| h.hp > 0.0 && c.mv.dist(h.x, h.z) <= if h.moving && !h.crouched { vib } else { vib * 0.25 }).min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap());
+        seen = hunters.iter().filter(|h| h.hp > 0.0 && c.mv.dist(h.x, h.z) <= if h.moving && !h.crouched { vib } else { vib * 0.25 }).min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap()).copied();
     }
     if seen.is_none() && !submersa {
         seen = hunters
@@ -308,11 +308,12 @@ pub fn step_creature(
                 let roll = rng.next_f64();
                 detects(t, c, sp, h, stealth_red, p_s, dt, roll, eff)
             })
-            .min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap());
+            .min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap())
+            .copied();
     }
     // presas também fogem de predadores de outras espécies que estejam perto e à vista
     let predator_near = if !predator {
-        others.iter().filter(|o| o.alive && !o.prey && *o.species != *c.species && c.mv.dist(o.x, o.z) < sp.visao_movimento_m * eff.visao * 0.8).min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap()).cloned()
+        others.iter().filter(|o| o.alive && !o.prey && *o.species != *c.species && c.mv.dist(o.x, o.z) < sp.visao_movimento_m * eff.visao * 0.8).min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap()).map(|o| (*o).clone())
     } else { None };
     let low_hp = c.hp < c.hp_max * 0.25;
     let mut speed = sp.andar_mps;
@@ -438,12 +439,12 @@ fn flee_from(c: &mut Creature, x: f64, z: f64) {
 /// Comportamento sem ameaça: descanso, água, alimentação (pasto ou predação/carniça),
 /// território, coesão do bando e exploração. Retorna false quando a criatura está parada numa ação.
 #[allow(clippy::too_many_arguments)]
-fn decide_needs(c: &mut Creature, sp: &Species, predator: bool, env: &StepEnv, eff: &Effects, t: &mut TerrainStore, others: &[CreatureView], rng: &mut XorShift32, speed: &mut f64, prey_attacks: &mut Vec<PreyAttack>) -> bool {
+fn decide_needs(c: &mut Creature, sp: &Species, predator: bool, env: &StepEnv, eff: &Effects, t: &mut TerrainStore, others: &[&CreatureView], rng: &mut XorShift32, speed: &mut f64, prey_attacks: &mut Vec<PreyAttack>) -> bool {
     let (nec, now, dt) = (env.nec, env.now, env.dt);
     // ação temporária em curso
     if now < c.busy_until_s {
         c.mv.stop();
-        let what = match c.state.as_str() { "bebendo" => "beber", "alimentando" => "comer", "dormindo" => "dormir", "descansando" => "descansar", "territorial" => "encarar", _ => "idle" };
+        let what = match &*c.state { "bebendo" => "beber", "alimentando" => "comer", "dormindo" => "dormir", "descansando" => "descansar", "territorial" => "encarar", _ => "idle" };
         c.clip = pick_clip(predator, what);
         if c.state == "bebendo" { c.sede = (c.sede - dt / 8.0).max(0.0); }
         if c.state == "alimentando" { c.fome = (c.fome - dt / if predator { 30.0 } else { 18.0 }).max(0.0); }

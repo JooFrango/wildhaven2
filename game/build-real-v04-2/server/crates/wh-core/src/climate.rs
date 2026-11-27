@@ -104,6 +104,46 @@ pub struct Climate {
     pub last_update_s: f64,
     pub next_id: u32,
     pub prevailing: (f64, f64),
+    /// V04.2: índice espacial dos nós (posições fixas), montado na primeira consulta; não é persistido.
+    #[serde(skip)]
+    pub grid: std::sync::OnceLock<NodeGrid>,
+}
+
+/// V04.2: grade de nós de clima para achar os 3 mais próximos sem varrer o continente inteiro a cada consulta.
+#[derive(Debug, Clone, Default)]
+pub struct NodeGrid { cell: f64, x0: f64, z0: f64, nx: i32, nz: i32, cells: Vec<Vec<u32>> }
+impl NodeGrid {
+    fn build(nodes: &[Node]) -> Self {
+        let cell = 5000.0;
+        let (mut x0, mut z0, mut x1, mut z1) = (f64::MAX, f64::MAX, f64::MIN, f64::MIN);
+        for n in nodes { x0 = x0.min(n.x); z0 = z0.min(n.z); x1 = x1.max(n.x); z1 = z1.max(n.z); }
+        let nx = (((x1 - x0) / cell).floor() as i32 + 1).max(1); let nz = (((z1 - z0) / cell).floor() as i32 + 1).max(1);
+        let mut cells = vec![Vec::new(); (nx * nz) as usize];
+        for (i, n) in nodes.iter().enumerate() { let ci = ((n.x - x0) / cell).floor() as i32; let cj = ((n.z - z0) / cell).floor() as i32; cells[(cj * nx + ci) as usize].push(i as u32); }
+        Self { cell, x0, z0, nx, nz, cells }
+    }
+    /// Os 3 nós mais próximos com a MESMA regra de atualização da busca completa, visitando anéis de células até que
+    /// nenhum nó fora deles possa ser mais próximo que o 3º colocado.
+    fn best3(&self, nodes: &[Node], x: f64, z: f64) -> [(f64, usize); 3] {
+        let mut best: [(f64, usize); 3] = [(f64::MAX, 0); 3];
+        let ci = ((x - self.x0) / self.cell).floor() as i32; let cj = ((z - self.z0) / self.cell).floor() as i32;
+        let kmax = self.nx.max(self.nz) + ci.abs().max(cj.abs()) + 1;
+        for k in 0..=kmax {
+            for dj in -k..=k { for di in -k..=k {
+                if di.abs() != k && dj.abs() != k { continue; }
+                let (a, b) = (ci + di, cj + dj);
+                if a < 0 || b < 0 || a >= self.nx || b >= self.nz { continue; }
+                for &i in &self.cells[(b * self.nx + a) as usize] {
+                    let n = &nodes[i as usize]; let d = d2(n.x, n.z, x, z);
+                    if d < best[2].0 { best[2] = (d, i as usize); best.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap()); }
+                }
+            } }
+            // nós em anéis > k estão a pelo menos k·célula do ponto (em algum eixo)
+            let lim = k as f64 * self.cell;
+            if best[2].0 < f64::MAX && best[2].0 < lim * lim { break; }
+        }
+        best
+    }
 }
 
 /// Fatores de percepção/locomoção numa posição (1 = sem efeito), já com noite.
@@ -136,7 +176,7 @@ impl Climate {
             .map(|(id, x, z, b)| Node { id: id.clone(), x: *x, z: *z, class: BiomeClass::of(b), mountain: b.contains("mountain") || b.contains("Maciço") })
             .collect::<Vec<_>>();
         let n = nodes.len();
-        Self { nodes, local: vec![Local::default(); n], fronts: vec![], rng: seed.max(1) ^ 0x9e37_79b9, next_front_s: 30.0, last_update_s: -1e9, next_id: 1, prevailing: (1.0, 0.25) }
+        Self { nodes, local: vec![Local::default(); n], fronts: vec![], rng: seed.max(1) ^ 0x9e37_79b9, grid: Default::default(), next_front_s: 30.0, last_update_s: -1e9, next_id: 1, prevailing: (1.0, 0.25) }
     }
 
     fn day_temp_offset(amp: f64, phase_day: bool, phase_frac: f64) -> f64 {
@@ -223,33 +263,39 @@ impl Climate {
     /// Clima numa posição: interpolação dos 3 nós mais próximos (sem fronteira hexagonal visível).
     pub fn at(&self, x: f64, z: f64) -> Local {
         if self.nodes.is_empty() { return Local { kind: "limpo".into(), cloud: 0.2, ..Default::default() }; }
-        let mut best: [(f64, usize); 3] = [(f64::MAX, 0); 3];
-        for (i, n) in self.nodes.iter().enumerate() {
-            let d = d2(n.x, n.z, x, z);
-            if d < best[2].0 { best[2] = (d, i); best.sort_by(|a, b| a.0.partial_cmp(&b.0).unwrap()); }
-        }
+        let (mut out, kind) = self.at_ref(x, z);
+        out.kind = kind.to_string();
+        out
+    }
+    /// V04.2: mesma mistura dos 3 nós mais próximos de `at`, sem alocar (o tipo de clima volta como `&str`).
+    fn at_ref(&self, x: f64, z: f64) -> (Local, &str) {
+        let best = self.grid.get_or_init(|| NodeGrid::build(&self.nodes)).best3(&self.nodes, x, z);
         let mut wsum = 0.0;
         let mut out = Local::default();
-        let mut kinds: Vec<(f64, &str)> = vec![];
+        let (mut kw, mut kind) = (f64::MIN, "limpo");
         for (d, i) in best.iter().filter(|(d, _)| *d < f64::MAX) {
             let w = 1.0 / (d.sqrt() + 200.0);
             let l = &self.local[*i];
             wsum += w;
             out.intensity += l.intensity * w; out.cloud += l.cloud * w; out.temperature_c += l.temperature_c * w;
             out.wind.0 += l.wind.0 * w; out.wind.1 += l.wind.1 * w; out.aurora += l.aurora * w;
-            kinds.push((w * (0.2 + l.intensity), l.kind.as_str()));
+            // = primeiro do sort estável decrescente: o maior peso, o mais antigo nos empates
+            let kwi = w * (0.2 + l.intensity);
+            if kwi > kw { kw = kwi; kind = l.kind.as_str(); }
         }
         if wsum > 0.0 { out.intensity /= wsum; out.cloud /= wsum; out.temperature_c /= wsum; out.wind.0 /= wsum; out.wind.1 /= wsum; out.aurora /= wsum; }
-        kinds.sort_by(|a, b| b.0.partial_cmp(&a.0).unwrap());
-        out.kind = kinds.first().map(|k| k.1.to_string()).unwrap_or_else(|| "limpo".into());
-        out
+        (out, kind)
     }
 
     /// Fatores para a IA (mesma fonte que o cliente desenha — não existe tempestade "só da câmera").
     pub fn effects(&self, x: f64, z: f64, night: bool, cfg: &ClimateCfg) -> Effects {
-        let l = self.at(x, z);
+        if self.nodes.is_empty() { return self.effects_from(Local { kind: "limpo".into(), cloud: 0.2, ..Default::default() }, "limpo", night, cfg); }
+        let (l, kind) = self.at_ref(x, z);
+        self.effects_from(l, kind, night, cfg)
+    }
+    fn effects_from(&self, l: Local, kind: &str, night: bool, cfg: &ClimateCfg) -> Effects {
         let mut e = Effects { wind: l.wind, ..Default::default() };
-        if let Some(f) = cfg.fatores.get(&l.kind) {
+        if let Some(f) = cfg.fatores.get(kind) {
             let i = l.intensity;
             e.visao = 1.0 + (f.visao - 1.0) * i;
             e.audicao = 1.0 + (f.audicao - 1.0) * i;

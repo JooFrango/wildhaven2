@@ -1,0 +1,254 @@
+{
+  "amostras": [
+    {
+      "cenario": "vila",
+      "congeladas": 541,
+      "cpuPctNucleoEmX1": 0.05969519888888889,
+      "criaturas": 1000,
+      "instantaneo": {
+        "bytes": 36312,
+        "ms": 0.1720344
+      },
+      "longe": 459,
+      "medio": 0,
+      "msPorPasso": {
+        "climaEAreia": 0.006784862222222234,
+        "geracao": 0.011457076666666666,
+        "laco": 0.023991746666666675,
+        "pos": 0.0007094611111111104,
+        "resto": 0.01092745555555555,
+        "stepCreature": 0.0030990888888888534,
+        "total": 0.10623524888888884,
+        "visoes": 0.059149508888888834
+      },
+      "paredePorPassoMs": 0.11939039777777778,
+      "persistencia": {
+        "bytes": 80553,
+        "ms": 0.14524199999999998
+      },
+      "perto": 0,
+      "rssMB": 321.79296875
+    },
+    {
+      "cenario": "espalhados",
+      "congeladas": 923,
+      "cpuPctNucleoEmX1": 0.5088955549999999,
+      "criaturas": 2260,
+      "instantaneo": {
+        "bytes": 105180,
+        "ms": 0.3031262
+      },
+      "longe": 1168,
+      "medio": 152,
+      "msPorPasso": {
+        "climaEAreia": 0.05150304444444515,
+        "geracao": 0.2190478688888887,
+        "laco": 0.46197454666666615,
+        "pos": 0.004044944444444442,
+        "resto": 0.0422099855555556,
+        "stepCreature": 0.346619071111111,
+        "total": 0.9816758433333328,
+        "visoes": 0.25439849777777784
+      },
+      "paredePorPassoMs": 1.0177911099999999,
+      "persistencia": {
+        "bytes": 81915,
+        "ms": 0.133538
+      },
+      "perto": 17,
+      "rssMB": 322.765625
+    },
+    {
+      "cenario": "vila",
+      "congeladas": 3869,
+      "cpuPctNucleoEmX1": 0.2496242222222222,
+      "criaturas": 5000,
+      "instantaneo": {
+        "bytes": 46650,
+        "ms": 0.225142
+      },
+      "longe": 1107,
+      "medio": 22,
+      "msPorPasso": {
+        "climaEAreia": 0.02575443,
+        "geracao": 0.021631781111111126,
+        "laco": 0.1381844988888889,
+        "pos": 0.011983389999999993,
+        "resto": 0.022733877777777797,
+        "stepCreature": 0.070161444444444,
+        "total": 0.4745627777777778,
+        "visoes": 0.28002923
+      },
+      "paredePorPassoMs": 0.49924844444444444,
+      "persistencia": {
+        "bytes": 81940,
+        "ms": 0.13882
+      },
+      "perto": 2,
+      "rssMB": 325.17578125
+    },
+    {
+      "cenario": "espalhados",
+      "congeladas": 1734,
+      "cpuPctNucleoEmX1": 0.8215862911111109,
+      "criaturas": 5000,
+      "instantaneo": {
+        "bytes": 204245,
+        "ms": 0.5763158
+      },
+      "longe": 2842,
+      "medio": 381,
+      "msPorPasso": {
+        "climaEAreia": 0.13609527666667315,
+        "geracao": 0.03679533444444446,
+        "laco": 0.8808575866666647,
+        "pos": 0.015170217777777792,
+        "resto": 0.045521426666666656,
+        "stepCreature": 0.5529824366666987,
+        "total": 1.593104595555553,
+        "visoes": 0.6147600299999995
+      },
+      "paredePorPassoMs": 1.643172582222222,
+      "persistencia": {
+        "bytes": 82615,
+        "ms": 0.162618
+      },
+      "perto": 43,
+      "rssMB": 327.7734375
+    },
+    {
+      "cenario": "vila",
+      "congeladas": 7741,
+      "cpuPctNucleoEmX1": 0.4776045777777778,
+      "criaturas": 10000,
+      "instantaneo": {
+        "bytes": 56729,
+        "ms": 0.26693659999999997
+      },
+      "longe": 2212,
+      "medio": 39,
+      "msPorPasso": {
+        "climaEAreia": 0.051648440000000434,
+        "geracao": 0.023701868888888897,
+        "laco": 0.24619471555555553,
+        "pos": 0.033037231111111155,
+        "resto": 0.05780364888888896,
+        "stepCreature": 0.1001169188888889,
+        "total": 0.9198679155555566,
+        "visoes": 0.5591304511111119
+      },
+      "paredePorPassoMs": 0.9552091555555555,
+      "persistencia": {
+        "bytes": 82430,
+        "ms": 0.14135299999999998
+      },
+      "perto": 8,
+      "rssMB": 326.2890625
+    },
+    {
+      "cenario": "espalhados",
+      "congeladas": 3483,
+      "cpuPctNucleoEmX1": 1.4265495555555556,
+      "criaturas": 10000,
+      "instantaneo": {
+        "bytes": 350700,
+        "ms": 0.9004715999999999
+      },
+      "longe": 5723,
+      "medio": 702,
+      "msPorPasso": {
+        "climaEAreia": 0.25454814555551747,
+        "geracao": 0.042292817777777804,
+        "laco": 1.555595004444444,
+        "pos": 0.036825453333333334,
+        "resto": 0.062175170000000106,
+        "stepCreature": 0.8996972522222629,
+        "total": 2.7861392811111094,
+        "visoes": 1.0892508355555548
+      },
+      "paredePorPassoMs": 2.8530991111111113,
+      "persistencia": {
+        "bytes": 84290,
+        "ms": 0.176711
+      },
+      "perto": 92,
+      "rssMB": 329.73046875
+    },
+    {
+      "cenario": "vila",
+      "congeladas": 15402,
+      "cpuPctNucleoEmX1": 1.0842148227777777,
+      "criaturas": 20000,
+      "instantaneo": {
+        "bytes": 77258,
+        "ms": 0.6652764999999999
+      },
+      "longe": 4502,
+      "medio": 81,
+      "msPorPasso": {
+        "climaEAreia": 0.13008703111111483,
+        "geracao": 0.032850522222222255,
+        "laco": 0.5805182277777775,
+        "pos": 0.08077983111111116,
+        "resto": 0.15483450555555558,
+        "stepCreature": 0.19562523111111496,
+        "total": 2.1039457511111106,
+        "visoes": 1.254962664444444
+      },
+      "paredePorPassoMs": 2.1684296455555554,
+      "persistencia": {
+        "bytes": 83613,
+        "ms": 0.13916699999999999
+      },
+      "perto": 15,
+      "rssMB": 338.47265625
+    },
+    {
+      "cenario": "espalhados",
+      "congeladas": 7041,
+      "cpuPctNucleoEmX1": 3.4575565277777778,
+      "criaturas": 20000,
+      "instantaneo": {
+        "bytes": 659922,
+        "ms": 1.6416382
+      },
+      "longe": 11366,
+      "medio": 1386,
+      "msPorPasso": {
+        "climaEAreia": 0.5336552000000112,
+        "geracao": 0.05194622555555549,
+        "laco": 4.172042504444443,
+        "pos": 0.08823513000000004,
+        "resto": 0.16208612555555554,
+        "stepCreature": 2.6012403800000645,
+        "total": 6.791494808888889,
+        "visoes": 2.317184823333334
+      },
+      "paredePorPassoMs": 6.9151130555555556,
+      "persistencia": {
+        "bytes": 84464,
+        "ms": 0.158852
+      },
+      "perto": 207,
+      "rssMB": 338.85546875
+    }
+  ],
+  "baseCriaturas": 4822,
+  "modo": "escala",
+  "nota": "carga experimental; cópias adensam os hexes visitados (pior caso de percepção)",
+  "streaming": {
+    "cap_bytes": 268435456,
+    "evictions": 8130,
+    "hits": 623791223,
+    "inflight": 0,
+    "load_errors": 0,
+    "misses": 9768,
+    "pinned_chunks": 77,
+    "prefetched": 0,
+    "resident_bytes": 268369920,
+    "resident_chunks": 1638,
+    "sync_loads": 9768
+  },
+  "ticksExploracao": 60000,
+  "wallSeconds": 142.015530927
+}
