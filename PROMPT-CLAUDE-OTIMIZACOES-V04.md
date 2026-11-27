@@ -1,0 +1,13 @@
+# Integração seletiva da auditoria V04
+
+A base da auditoria é a2b11e7 na branch feat/build-real-v04-mundo-completo. Compare sua versão atual com a base e aplique as mudanças em branch própria. Preserve os assets aprovados, o protocolo e todas as regras da simulação.
+
+1. Priorize MEM-01. Em main.ts, faça a depuração consultar a variável corrente scene3d por getter. Atribuir uma referência apenas na inicialização mantém toda a cena viva após dispose. Reproduza 3D → Econômico por 70 s com performance-lab, colete o heap e confira activeScene=false e debugScene=false. O ensaio pós-GC reduziu backingStorageSize de 223.951.774 a 3.091.139 bytes. Commit 9383696.
+2. Aplique ACT-01 em actors.ts. Marque o ator liberado e sua substituição pendente. Quando uma Promise resolve, consulte a marca antes de clonar ou anexar o objeto. Teste cancelamento pelo laboratório. Resultado esperado: orphanChildren=0 e registered=false. Acrescente ensaio específico para mudança de LOD durante troca de região. Commit cf7425f.
+3. Integre GP-01 em perf.ts. Somente encerrar a consulta GPU que começou naquele quadro. Limpe consultas pendentes ao trocar o renderizador. Execute node tools/test/gpu-timer.mjs. O teste exige cinco inícios, cinco finais e cinco liberações. Commit b0ce0a5.
+4. Avalie BG-01 no commit ad94066. Shift+F8 usa as mesmas rotinas de suspensão e retomada da aba oculta e preserva o servidor. O laboratório verifica ausência de quadros e retorno ao 3D. Valide também conexão lenta, troca de modo durante init, reconexão, eventos importantes e retorno após mais de um minuto.
+5. Para comparar, use o mesmo Chrome, máquina, qualidade, câmera e política de cache. Repita e intercale A/B, capture o tick, clima, conjunto de entidades e resolução efetiva. Os screenshots desta auditoria ilustram a vila em estados próximos. Não use diferenças de FPS de uma única janela curta como ganho.
+6. Para streaming, instrumente bytes por espécie/LOD e trabalho concluído após sair do foco. Para o servidor, cronometre atualização física, construção do snapshot, diff por cliente e serialização da persistência. A grade de percepção inclui congeladas. Qualquer separação regional precisa preservar interações de borda, IDs, relógios, carcaças, pegadas e RNG.
+7. Use o índice de evidências em AUDITORIA-PERFORMANCE-V04.md. O soak do repositório registra 192,17 minutos. Ainda é necessário testar as durações solicitadas e as metas de RAM total, GPU e CPU em carga concorrente.
+
+As correções de código estão em commits separados. O laboratório e os arquivos de evidência podem ser incorporados separadamente. Não misture a integração da referência global com uma troca de tecnologia gráfica ou política de LOD.

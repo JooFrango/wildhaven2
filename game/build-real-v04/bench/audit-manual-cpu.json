@@ -1,0 +1,457 @@
+{
+  "scenario": "manual",
+  "url": "http://127.0.0.1:18875",
+  "disabled": [],
+  "seconds": 10,
+  "cpu": "11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz",
+  "logical": 8,
+  "ramBytes": 21184159744,
+  "samples": [
+    {
+      "ms": 1005,
+      "wsBytes": 1114,
+      "wsMessages": 1,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 307.968789100647,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.094392776489258,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 2021,
+      "wsBytes": 1114,
+      "wsMessages": 1,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 310.34584522247314,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 3036,
+      "wsBytes": 1114,
+      "wsMessages": 1,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 310.34584522247314,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 4039,
+      "wsBytes": 1114,
+      "wsMessages": 1,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 310.3530435562134,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 5053,
+      "wsBytes": 2462,
+      "wsMessages": 2,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 310.3530435562134,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 6069,
+      "wsBytes": 2462,
+      "wsMessages": 2,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 311.4466438293457,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 7072,
+      "wsBytes": 2462,
+      "wsMessages": 2,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 311.4466438293457,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 8076,
+      "wsBytes": 2462,
+      "wsMessages": 2,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 311.45288467407227,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 9089,
+      "wsBytes": 2462,
+      "wsMessages": 2,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 311.45288467407227,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    },
+    {
+      "ms": 10104,
+      "wsBytes": 17659,
+      "wsMessages": 3,
+      "longTasks": [],
+      "mode": "suspenso",
+      "frames": 4,
+      "gpuMs": 38.85537213,
+      "drawCalls": 104,
+      "triangles": 107315,
+      "heapMB": 311.45911026000977,
+      "stream": {
+        "relevo": {
+          "nos": 8802,
+          "emRAM": 59,
+          "emVRAM": 46,
+          "desenhados": 6,
+          "ocultos": 53,
+          "descartados": 0,
+          "cancelados": 0,
+          "fila": 5,
+          "baixando": 6,
+          "fallbacks": 3,
+          "MB": 25.370166778564453,
+          "atualizacoesPuladas": 0
+        },
+        "criaturas": {
+          "simuladas": 0,
+          "criadas": 0,
+          "naoCriadas": 0,
+          "liberadas": 0,
+          "visiveis": 0
+        },
+        "vegetacaoMB": 24.0693359375
+      },
+      "debugScene": true,
+      "activeScene": true,
+      "intervals": []
+    }
+  ],
+  "errors": [],
+  "browser": "Chrome/158.0.8127.88",
+  "readyMs": 2010,
+  "renderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x00009A49) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "processes": [
+    {
+      "id": 8488,
+      "type": "browser",
+      "cpuPctCore": 0.7018406729341757,
+      "cpuPctMachine": 0.08773008411677197
+    },
+    {
+      "id": 16896,
+      "type": "renderer",
+      "cpuPctCore": 0.012380009896091065,
+      "cpuPctMachine": 0.0015475012370113831
+    },
+    {
+      "id": 3944,
+      "type": "renderer",
+      "cpuPctCore": 0.007728847105393133,
+      "cpuPctMachine": 0.0009661058881741416
+    },
+    {
+      "id": 27248,
+      "type": "renderer",
+      "cpuPctCore": 2.4724987629886215,
+      "cpuPctMachine": 0.3090623453735777
+    },
+    {
+      "id": 24520,
+      "type": "renderer",
+      "cpuPctCore": 0.0019099455714992452,
+      "cpuPctMachine": 0.00023874319643740565
+    },
+    {
+      "id": 22696,
+      "type": "GPU",
+      "cpuPctCore": 0.12100940128642497,
+      "cpuPctMachine": 0.015126175160803121
+    },
+    {
+      "id": 11212,
+      "type": "network.mojom.NetworkService",
+      "cpuPctCore": 0.02200890648193967,
+      "cpuPctMachine": 0.002751113310242459
+    },
+    {
+      "id": 18088,
+      "type": "storage.mojom.StorageService",
+      "cpuPctCore": 0.005680356259277498,
+      "cpuPctMachine": 0.0007100445324096873
+    }
+  ],
+  "processSetStable": true,
+  "resumed": true
+}
