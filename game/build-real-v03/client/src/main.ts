@@ -95,8 +95,9 @@ async function main() {
     // mapas do quadro anterior montados UMA vez por mensagem (a V02 montava a cada quadro)
     S.prevH = new Map(S.prev.hunters.map(h => [h.id, h as HunterFull]));
     S.prevC = new Map(S.prev.game.creatures.map(c => [c.id, c as CreatureSnap]));
-    if (!net.connected || loading.reason === "sessao") loading.hide();
-    loading.reason = "";
+    // só a tela da sessão termina com a chegada de dados; a de região espera o relevo (antes o motivo era zerado
+    // a cada mensagem e a tela "Carregando terrenos da região" nunca mais se fechava)
+    if (loading.reason === "sessao") { loading.hide(); loading.reason = ""; }
   };
   const currentBiome = () => { const fh = S.snap.hunters.find(h => h.id === S.follow); return continent.tiles.find(t => t.id === fh?.tile_id)?.biome ?? ""; };
   loading.remember(currentBiome());
