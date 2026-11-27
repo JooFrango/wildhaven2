@@ -135,7 +135,7 @@ fn continente(w: &mut World, ticks: u64, destino: Option<String>) -> Result<serd
         // acompanha o primeiro Hunter do grupo ainda vivo
         let h = w.game.hunters.iter().find(|h| grupo.contains(&h.id) && h.alive).unwrap_or_else(|| w.game.hunters.iter().find(|h| h.id == id).unwrap());
         if h.id != id { last = (h.mv.x, h.mv.z); }
-        let id = h.id.clone();
+        let _id_atual = h.id.clone();
         let (x, z) = (h.mv.x, h.mv.z);
         max_step = max_step.max(((x - last.0).powi(2) + (z - last.1).powi(2)).sqrt());
         last = (x, z);

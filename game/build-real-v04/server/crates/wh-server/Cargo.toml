@@ -14,6 +14,9 @@ axum = { version = "0.8", features = ["ws"] }
 tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal", "fs"] }
 tower-http = { version = "0.6", features = ["fs", "cors"] }
 tokio-postgres = "0.7"
+ureq = { version = "2.12.1", default-features = false, features = ["tls"] }
+zip = { version = "2.2.2", default-features = false, features = ["deflate"] }
+sha2 = "0.10"
 
 [[bin]]
 name = "wh-server"

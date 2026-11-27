@@ -117,6 +117,7 @@ pub struct TerrainStore {
     /// Posições usadas no último cálculo de janelas (recalcula só quando algum ator anda > 16 m).
     last_window_pos: Vec<(f64, f64)>,
     last_window_keys: Vec<ChunkKey>,
+    routable_extra: HashSet<String>,
 }
 
 impl TerrainStore {
@@ -134,6 +135,7 @@ impl TerrainStore {
             last: None,
             last_window_pos: vec![],
             last_window_keys: vec![],
+            routable_extra: HashSet::new(),
         }
     }
 
@@ -209,6 +211,19 @@ impl TerrainStore {
 
     pub fn is_allowed(&self, tile: &str) -> bool {
         self.allowed_tiles.contains(tile)
+    }
+    /// V04: hex certificado para rotas, ainda que o pacote local não tenha chegado (distribuição modular).
+    pub fn is_routable(&self, tile: &str) -> bool {
+        self.allowed_tiles.contains(tile) || self.routable_extra.contains(tile)
+    }
+    pub fn set_routable_extra(&mut self, tiles: HashSet<String>) {
+        self.routable_extra = tiles;
+    }
+    /// V04: o pacote do hex chegou ao cache local — passa a ser simulado (física disponível).
+    pub fn make_present(&mut self, tile: &str) {
+        self.routable_extra.remove(tile);
+        self.allowed_tiles.insert(tile.to_string());
+        self.metas.remove(tile);
     }
 
     fn meta(&mut self, tile: &str) -> Option<&TileMeta> {

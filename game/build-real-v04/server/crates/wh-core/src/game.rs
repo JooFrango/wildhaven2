@@ -1856,7 +1856,7 @@ pub fn find_clearing(t: &mut TerrainStore, near: (f64, f64), radius: f64, max_sl
 /// duração na velocidade de caminhada do Hunter (tempo de simulação; sem contar descansos e combates).
 pub fn estimate_trip(t: &mut TerrainStore, portals: &PortalIndex, h: &Hunter, tile: &str) -> Result<serde_json::Value, String> {
     let info = t.continent.tile(tile).cloned().ok_or(format!("Hex desconhecido: {tile}"))?;
-    if !t.is_allowed(tile) {
+    if !t.is_routable(tile) {
         return Err(format!("{tile} não está certificado para travessia nesta build"));
     }
     let c = crate::hex::center_of(crate::hex::axial_of(info.x, info.z).0, crate::hex::axial_of(info.x, info.z).1);
@@ -1870,7 +1870,8 @@ pub fn estimate_trip(t: &mut TerrainStore, portals: &PortalIndex, h: &Hunter, ti
         if let Some(id) = t.tile_id_at(q.0, q.1) { if hexes.last() != Some(&id) { hexes.push(id); } }
     }
     let speed = h.speed_mps.max(0.1);
-    Ok(serde_json::json!({"ok": true, "destino": tile, "bioma": info.biome, "saltos": hexes.len().saturating_sub(1), "hexes": hexes, "distanciaM": d, "duracaoS": d / speed, "velocidadeMps": speed, "nota": "linha de portais; o caminho real contorna obstáculos e é mais longo; sem descansos/combates"}))
+    let ausentes: Vec<&String> = hexes.iter().filter(|x| !t.is_allowed(x)).collect();
+    Ok(serde_json::json!({"ok": true, "hexesAusentes": ausentes, "destino": tile, "bioma": info.biome, "saltos": hexes.len().saturating_sub(1), "hexes": hexes, "distanciaM": d, "duracaoS": d / speed, "velocidadeMps": speed, "nota": "linha de portais; o caminho real contorna obstáculos e é mais longo; sem descansos/combates"}))
 }
 
 pub fn route_between(t: &mut TerrainStore, portals: &PortalIndex, from: &str, to: &str, dest: (f64, f64)) -> Option<Vec<(f64, f64)>> {
@@ -1883,7 +1884,7 @@ pub fn route_between(t: &mut TerrainStore, portals: &PortalIndex, from: &str, to
             break;
         }
         for (b, _) in portals.neighbors_with_portals(&a) {
-            if !t.is_allowed(&b) || !seen.insert(b.clone()) {
+            if !t.is_routable(&b) || !seen.insert(b.clone()) {
                 continue;
             }
             prev.insert(b.clone(), a.clone());

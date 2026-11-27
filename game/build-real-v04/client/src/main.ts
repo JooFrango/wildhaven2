@@ -86,7 +86,10 @@ async function main() {
   if (first.schema !== SNAPSHOT_SCHEMA) throw new Error("contrato inesperado: " + first.schema);
   const origin = latticeCenter(first.game.village[0], first.game.village[1]);
   const heights = new HeightIndex(origin, continent.tiles);
-  heights.available = await fetch("/visual/index.json").then(r => (r.ok ? r.json() : null)).then(j => (j ? new Set<string>(j.tiles) : null)).catch(() => null);
+  // V04: hexes presentes no cache local do servidor (distribuição modular: chegam durante o jogo)
+  const refreshHexes = () => fetch("/api/v1/hexes").then(r => (r.ok ? r.json() : null)).then(j => { if (j) heights.available = new Set<string>(j.tiles); }).catch(() => {});
+  await refreshHexes();
+  setInterval(() => { if (!document.hidden) void refreshHexes(); }, 10000);
   focusId = first.hunters[0]?.id ?? ""; send({ foco: focusId });
   const S: Shared = { snap: first, prev: first, recvAt: performance.now(), prevAt: performance.now(), prevH: new Map(), prevC: new Map(), follow: first.hunters[0]?.id ?? "", origin, continent };
   onSnap = s => {

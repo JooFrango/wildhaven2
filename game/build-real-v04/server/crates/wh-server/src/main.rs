@@ -9,6 +9,7 @@
 //! O cliente nunca move o Hunter: não existe rota de controle direto.
 
 mod config;
+mod pacotes;
 mod persist;
 
 use axum::extract::ws::{Message, WebSocket, WebSocketUpgrade};
@@ -69,6 +70,7 @@ struct Traffic {
 
 #[derive(Clone)]
 struct AppState {
+    pacotes: Arc<pacotes::Pacotes>,
     cmd: std::sync::mpsc::SyncSender<Cmd>,
     /// Velocidade da simulação (passos por intervalo de 200 ms): 1, 5, 10 ou 50. O relógio dia/noite é universal.
     scale: Arc<AtomicU32>,
@@ -103,6 +105,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     // Modo leve (--around): só entra no runtime o hex cujo pacote existe no disco.
     let before = allowed.len();
+    let certificados_todos = allowed.clone();
     allowed.retain(|t| cfg.physics_dir.join(format!("{t}-physics-v01")).join("index.json").is_file());
     eprintln!("[wh-server] {} tiles liberados ao runtime ({} certificados sem pacote local ignorados)", allowed.len(), before - allowed.len());
 
@@ -125,7 +128,21 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let data = GameData::from_slice(&std::fs::read(&cfg.gameplay)?)?;
     eprintln!("[wh-server] gameplay: {} (PROVISÓRIO)", cfg.gameplay.display());
 
+    // V04: distribuição modular — hexes certificados sem pacote local entram nas ROTAS e são baixados sob demanda
+    let presentes: HashSet<String> = allowed.clone();
+    let ausentes: HashSet<String> = certificados_todos.difference(&allowed).cloned().collect();
+    let url_pacotes = std::env::var("WH_PACOTES_URL").unwrap_or_else(|_| "https://github.com/JooFrango/wildhaven2/releases/download/build-real-v04-hexes/".into());
+    let pacotes = Arc::new(pacotes::Pacotes::iniciar(url_pacotes, cfg.physics_dir.clone(), cfg.visual_dir.clone(), presentes));
+    eprintln!("[wh-server] {} hexes presentes no cache local; {} certificados disponíveis para baixar sob demanda", allowed.len(), ausentes.len());
+    if std::env::var("WH_BAIXAR_TUDO").ok().as_deref() == Some("1") {
+        // pacote completo offline: baixa (e confere) todos os hexes certificados ausentes, em segundo plano
+        let mut v: Vec<&String> = ausentes.iter().collect();
+        v.sort();
+        for t in v { pacotes.pedir(t, false); }
+        eprintln!("[wh-server] WH_BAIXAR_TUDO=1: {} hexes na fila de download", ausentes.len());
+    }
     let mut terrain = TerrainStore::new(continent.clone(), cfg.physics_dir.clone(), allowed, cfg.cache_bytes);
+    terrain.set_routable_extra(ausentes);
     terrain.enable_prefetch(); // V03: E/S e descompressão dos chunks físicos fora do tick
     let mut game = GameState::new(&data, village, &village_tile, walk, seed, &mut terrain);
 
@@ -162,7 +179,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     {
         let (scale, traffic) = (scale.clone(), traffic.clone());
         let persist = db.is_some();
-        std::thread::Builder::new().name("wh-sim".into()).spawn(move || sim_thread(world, cmd_rx, pub_tx, scale, traffic, save_tx, persist, budget_pct))?;
+        let pac = pacotes.clone();
+        std::thread::Builder::new().name("wh-sim".into()).spawn(move || sim_thread(world, cmd_rx, pub_tx, scale, traffic, save_tx, persist, budget_pct, pac))?;
     }
     if let Some(db) = db.clone() {
         let world_id = cfg.world_id.clone();
@@ -177,7 +195,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
         });
     }
-    let state = AppState { cmd: cmd_tx, scale, latest: pub_rx, traffic, continent_json, cfg: cfg.clone() };
+    let state = AppState { pacotes: pacotes.clone(), cmd: cmd_tx, scale, latest: pub_rx, traffic, continent_json, cfg: cfg.clone() };
 
     let client = ServeDir::new(&cfg.client_dist).fallback(ServeFile::new(cfg.client_dist.join("index.html")));
     let app = Router::new()
@@ -188,6 +206,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .route("/api/v1/orders", post(order_handler))
         .route("/api/v1/tempo", post(tempo_handler).get(tempo_get))
         .route("/api/v1/rota", get(rota_handler))
+        .route("/api/v1/hexes", get(|State(s): State<AppState>| async move { Json(serde_json::json!({"tiles": s.pacotes.lista_presentes()})) }))
         .route("/api/v1/dev/clima", post(dev_clima_handler))
         .route_service("/api/v1/gameplay", ServeFile::new(&cfg.gameplay))
         .nest_service("/assets", ServeDir::new(cfg.repo_root.join("assets")))
@@ -320,7 +339,10 @@ const IMPORTANT: &[&str] = &["morte", "ferimento", "abate", "bestiario", "resgat
 /// de tempo) e publica um snapshot imutável. Mede o custo COMPLETO (janelas físicas, gameplay, visão,
 /// conversão para o fio) e a CPU/RAM do processo.
 #[allow(clippy::too_many_arguments)]
-fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sender<Arc<Published>>, scale: Arc<AtomicU32>, traffic: Arc<Traffic>, save_tx: tokio::sync::mpsc::UnboundedSender<(String, Vec<wh_core::hunter::Hunter>)>, persist: bool, budget_pct: f64) {
+fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sender<Arc<Published>>, scale: Arc<AtomicU32>, traffic: Arc<Traffic>, save_tx: tokio::sync::mpsc::UnboundedSender<(String, Vec<wh_core::hunter::Hunter>)>, persist: bool, budget_pct: f64, pacotes: Arc<pacotes::Pacotes>) {
+    // V04: viagens à espera de pacotes de hex (ordem, hexes que faltam)
+    let mut pendentes: Vec<(Order, Vec<String>)> = vec![];
+    let mut prefetch_at = std::time::Instant::now();
     use std::time::Instant;
     let mut next = Instant::now() + INTERVAL;
     let mut debt: u64 = 0;
@@ -346,6 +368,19 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
             }
             match rx.recv_timeout(next - now) {
                 Ok(Cmd::Order(o, reply)) => {
+                    // V04: viagem por hexes ainda não baixados — pede os pacotes (prioridade alta) e dá a ordem quando chegarem
+                    if let Order::Viajar { hunters, tile } = &o {
+                        let faltam: Vec<String> = hunters.first().and_then(|id| w.game.hunters.iter().find(|h| &h.id == id).cloned()).and_then(|h| wh_core::game::estimate_trip(&mut w.terrain, &w.portals, &h, tile).ok()).map(|v| v["hexesAusentes"].as_array().cloned().unwrap_or_default().iter().filter_map(|x| x.as_str().map(String::from)).collect()).unwrap_or_default();
+                        if !faltam.is_empty() {
+                            for t in &faltam { pacotes.pedir(t, true); }
+                            let mb = pacotes.tamanho(&faltam) as f64 / 1048576.0;
+                            let msg = format!("Baixando {} hex(es) da rota (~{mb:.0} MB); a viagem começa assim que chegarem", faltam.len());
+                            w.game.event(w.tick, w.sim_time_s, "viagem", msg.clone());
+                            pendentes.push((o, faltam));
+                            let _ = reply.send(Ok(msg));
+                            continue;
+                        }
+                    }
                     let r = w.order(o);
                     let _ = reply.send(r);
                 }
@@ -363,6 +398,34 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
                 }
                 Err(std::sync::mpsc::RecvTimeoutError::Timeout) => break,
                 Err(std::sync::mpsc::RecvTimeoutError::Disconnected) => return,
+            }
+        }
+        // V04: pacotes que chegaram passam a ser simulados; viagens pendentes partem quando a rota estiver completa
+        for t in pacotes.novos() {
+            w.terrain.make_present(&t);
+        }
+        let mut i = 0;
+        while i < pendentes.len() {
+            if pendentes[i].1.iter().all(|t| w.terrain.is_allowed(t)) {
+                let (o, _) = pendentes.remove(i);
+                // a própria ordem registra o acontecimento; aqui só a falha (rota mudou enquanto baixava)
+                if let Err(e) = w.order(o) {
+                    w.game.event(w.tick, w.sim_time_s, "viagem", format!("Viagem cancelada: {e}"));
+                }
+            } else {
+                i += 1;
+            }
+        }
+        // pré-carga: vizinhos (com portal) dos hexes onde há Hunters vivos
+        if prefetch_at.elapsed() >= Duration::from_secs(5) {
+            prefetch_at = Instant::now();
+            let tiles: std::collections::BTreeSet<String> = w.game.hunters.iter().filter(|h| h.alive).map(|h| h.mv.tile_id.clone()).collect();
+            for t in tiles {
+                for (n, _) in w.portals.neighbors_with_portals(&t) {
+                    if w.terrain.is_routable(&n) && !w.terrain.is_allowed(&n) {
+                        pacotes.pedir(&n, false);
+                    }
+                }
             }
         }
         let tb = Instant::now();
@@ -432,6 +495,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
                 "processo": proc_view,
                 "ws": {"clientes": traffic.clients.load(Ordering::Relaxed), "bytes_por_s": traffic_rate.0, "msgs_por_s": traffic_rate.1, "completos": traffic.fulls.load(Ordering::Relaxed), "ressincronizacoes": traffic.resyncs.load(Ordering::Relaxed)},
                 "terreno": w.terrain.stats,
+                "pacotes": pacotes.resumo(), "viagensAguardandoPacotes": pendentes.len(),
             }));
         }
         busy_ns += tb.elapsed().as_nanos();
