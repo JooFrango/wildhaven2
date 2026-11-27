@@ -85,6 +85,9 @@ pub struct Event {
     pub t: f64,
     pub kind: String,
     pub text: String,
+    /// V03: número sequencial (chave do protocolo incremental: só eventos novos trafegam).
+    #[serde(default)]
+    pub seq: u64,
 }
 
 #[derive(Debug, Default, Serialize, Deserialize)]
@@ -100,12 +103,20 @@ pub struct GameState {
     pub village_storage: Vec<String>,
     pub events: VecDeque<Event>,
     pub next_id: u64,
+    /// V03: contador de eventos (persistido; estados antigos começam em 0).
+    #[serde(default)]
+    pub event_seq: u64,
     pub rng: u32,
     pub traps: Vec<Trap>,
     #[serde(skip)]
     pub creatures: Vec<Creature>,
     #[serde(skip)]
     pub spawned: BTreeSet<String>,
+    #[serde(skip)]
+    pub spawn_queue: VecDeque<SpawnJob>,
+    /// V03: teto de tempo por tick para a fila de geração (só o servidor ao vivo define; testes: sem teto).
+    #[serde(skip)]
+    pub spawn_time_budget_ms: Option<f64>,
     #[serde(skip)]
     pub tracks: Tracks,
     #[serde(skip)]
@@ -141,6 +152,18 @@ pub enum Order {
     Equipar { hunter: String, arma: String },
 }
 
+/// V03: geração pendente de um hex (fila com orçamento por tick).
+#[derive(Debug, Clone, Default)]
+pub struct SpawnJob {
+    pub tile: String,
+    pub center: (f64, f64),
+    pub rng: u32,
+    pub species: Vec<String>,
+    pub sp: usize,
+    pub group: u32,
+    pub enqueued_tick: u64,
+}
+
 /// Clima local entregue ao apresentador (por Hunter) — mesma fonte que a IA usa.
 #[derive(Debug, Clone, Serialize)]
 pub struct WeatherView {
@@ -173,6 +196,10 @@ pub struct TickMetrics {
     pub astar_budget: u32,
     pub astar_deferred: u32,
     pub prey_kills: u64,
+    /// V03: fila de geração de criaturas (hexes pendentes), esperas por chunk e maior atraso (ticks).
+    pub spawn_queue: usize,
+    pub spawn_waits: u64,
+    pub spawn_ticks_max: u64,
 }
 
 #[derive(Debug, Serialize)]
@@ -253,7 +280,8 @@ impl GameState {
     }
 
     pub fn event(&mut self, tick: u64, t: f64, kind: &str, text: String) {
-        self.events.push_back(Event { tick, t, kind: kind.into(), text });
+        self.event_seq += 1;
+        self.events.push_back(Event { tick, t, kind: kind.into(), text, seq: self.event_seq });
         while self.events.len() > 300 {
             self.events.pop_front();
         }
@@ -434,7 +462,9 @@ impl GameState {
     pub fn step(&mut self, ctx: &mut Ctx) {
         self.night_flag = ctx.night;
         self.moon_phase = ctx.moon;
+        let _ts = std::time::Instant::now();
         self.spawn_near_actors(ctx);
+        let _spawn_ms = _ts.elapsed().as_secs_f64() * 1000.0;
         self.tracks.expire(ctx.now, ctx.data.rastros.vida_s);
         self.shouts.retain(|s| ctx.now - s.t < 90.0);
         let views: Vec<HunterView> = self
@@ -452,24 +482,26 @@ impl GameState {
         let key = |x: f64, z: f64| ((x / CELL).floor() as i32, (z / CELL).floor() as i32);
         let mut hgrid: HashMap<(i32, i32), Vec<usize>> = HashMap::new();
         for (i, h) in views.iter().enumerate() { hgrid.entry(key(h.x, h.z)).or_default().push(i); }
+        let sp_names: HashMap<&str, std::sync::Arc<str>> = ctx.data.especies.keys().map(|k| (k.as_str(), std::sync::Arc::from(k.as_str()))).collect();
         let cviews: Vec<CreatureView> = self.creatures.iter().map(|c| {
             let sp = &ctx.data.especies[&c.species];
-            CreatureView { id: c.id, species: c.species.clone(), group: c.group, x: c.mv.x, z: c.mv.z, alive: c.alive, carcass: !c.alive && c.carcass_since_s.is_some(), prey: sp.papel != "predador", mass: sp.massa_kg, home: c.home }
+            CreatureView { id: c.id, species: sp_names.get(c.species.as_str()).cloned().unwrap_or_else(|| std::sync::Arc::from(c.species.as_str())), group: c.group, x: c.mv.x, z: c.mv.z, alive: c.alive, carcass: !c.alive && c.carcass_since_s.is_some(), prey: sp.papel != "predador", mass: sp.massa_kg, home: c.home }
         }).collect();
         let mut cgrid: HashMap<(i32, i32), Vec<usize>> = HashMap::new();
         for (i, c) in cviews.iter().enumerate() { cgrid.entry(key(c.x, c.z)).or_default().push(i); }
-        let near_of = |grid: &HashMap<(i32, i32), Vec<usize>>, x: f64, z: f64, r: i32| -> Vec<usize> {
+        let near_of = |grid: &HashMap<(i32, i32), Vec<usize>>, x: f64, z: f64, r: i32, out: &mut Vec<usize>| {
             let (ci, cj) = key(x, z);
-            let mut out = vec![];
+            out.clear();
             for di in -r..=r { for dj in -r..=r { if let Some(v) = grid.get(&(ci + di, cj + dj)) { out.extend_from_slice(v); } } }
-            out
         };
+        // V03: buffers reaproveitados entre criaturas (antes: 3 vetores novos por criatura por tick)
+        let (mut idx_buf, mut hv, mut ov): (Vec<usize>, Vec<HunterView>, Vec<CreatureView>) = (vec![], vec![], vec![]);
         let rel = &ctx.data.relevancia;
         let mut attacks: Vec<AttackRequest> = vec![];
         let mut prey_attacks: Vec<PreyAttack> = vec![];
         let mut rng = XorShift32::new(self.rng);
         let mut budget = rel.orcamento_astar_por_tick;
-        let mut m = TickMetrics { astar_budget: budget, prey_kills: self.metrics.prey_kills, tick_ms_max: self.metrics.tick_ms_max, ..Default::default() };
+        let mut m = TickMetrics { astar_budget: budget, prey_kills: self.metrics.prey_kills, tick_ms_max: self.metrics.tick_ms_max, spawn_queue: self.metrics.spawn_queue, spawn_waits: self.metrics.spawn_waits, spawn_ticks_max: self.metrics.spawn_ticks_max, ..Default::default() };
         m.creatures_total = self.creatures.len();
         for ci in 0..self.creatures.len() {
             let (cx, cz) = (self.creatures[ci].mv.x, self.creatures[ci].mv.z);
@@ -478,8 +510,13 @@ impl GameState {
             let (level, every) = if dmin <= rel.perto_m { (0u8, 1u64) } else if dmin <= rel.medio_m { (1, rel.passo_medio.max(1)) } else if dmin <= rel.longe_m { (2, rel.passo_longe.max(1)) } else { m.frozen += 1; continue };
             match level { 0 => m.near += 1, 1 => m.mid += 1, _ => m.far += 1 }
             if (ctx.tick + self.creatures[ci].id) % every != 0 { continue; }
-            let hv: Vec<HunterView> = near_of(&hgrid, cx, cz, 1).into_iter().map(|i| views[i].clone()).collect();
-            let ov: Vec<CreatureView> = near_of(&cgrid, cx, cz, 2).into_iter().filter(|&i| cviews[i].id != self.creatures[ci].id).map(|i| cviews[i].clone()).collect();
+            near_of(&hgrid, cx, cz, 1, &mut idx_buf);
+            hv.clear();
+            hv.extend(idx_buf.iter().map(|&i| views[i].clone()));
+            near_of(&cgrid, cx, cz, 2, &mut idx_buf);
+            ov.clear();
+            let my_id = self.creatures[ci].id;
+            ov.extend(idx_buf.iter().filter(|&&i| cviews[i].id != my_id).map(|&i| cviews[i].clone()));
             let eff = self.climate.effects(cx, cz, ctx.night, &ccfg);
             let env = StepEnv { data: ctx.data, nec: &ctx.data.necessidades, dt: ctx.dt * every as f64, tick: ctx.tick, now: ctx.now, night: ctx.night, level };
             let before = budget;
@@ -519,6 +556,7 @@ impl GameState {
         // carcaças se decompõem
         let dur = ctx.data.necessidades.carcaca_duracao_s;
         self.creatures.retain(|c| c.alive || c.carcass_since_s.map(|t| ctx.now - t < dur).unwrap_or(true));
+        let _creat_ms = _ts.elapsed().as_secs_f64() * 1000.0 - _spawn_ms;
         self.metrics = m;
         for a in attacks {
             self.resolve_creature_attack(a, ctx);
@@ -536,8 +574,13 @@ impl GameState {
         self.check_rescue(ctx);
         self.check_deaths(ctx);
         self.step_expeditions(ctx);
+        let _tot = _ts.elapsed().as_secs_f64() * 1000.0;
+        if std::env::var("WH_PROF").is_ok() && _tot > 20.0 { eprintln!("[prof] tick {} total {_tot:.1} spawn {_spawn_ms:.1} criaturas {_creat_ms:.1} resto {:.1}", ctx.tick, _tot - _spawn_ms - _creat_ms); }
     }
 
+    /// V03: o hex entra na fila de geração no MESMO tick em que a V02 o geraria, com a mesma semente
+    /// (`fnv(tile) ^ rng` daquele tick). A geração em si é distribuída entre ticks com orçamento de tempo e
+    /// espera (sem bloquear) os chunks físicos lidos pela thread auxiliar — mesmas posições e espécies.
     fn spawn_near_actors(&mut self, ctx: &mut Ctx) {
         let mut want = BTreeSet::new();
         for (x, z) in self.actor_positions() {
@@ -555,40 +598,82 @@ impl GameState {
             self.spawned.insert(tile.clone());
             let Some(info) = ctx.t.continent.tile(&tile).cloned() else { continue };
             let center = crate::hex::center_of(crate::hex::axial_of(info.x, info.z).0, crate::hex::axial_of(info.x, info.z).1);
-            let mut r = XorShift32::new(fnv(&tile) ^ self.rng);
-            for (sid, sp) in ctx.data.especies.iter() {
-                if !sp.biomas.iter().any(|b| b == &info.biome) {
+            let species: Vec<String> = ctx.data.especies.iter().filter(|(_, sp)| sp.biomas.iter().any(|b| b == &info.biome)).map(|(k, _)| k.clone()).collect();
+            self.spawn_queue.push_back(SpawnJob { tile: tile.clone(), center, rng: XorShift32::new(fnv(&tile) ^ self.rng).state, species, sp: 0, group: 0, enqueued_tick: ctx.tick });
+        }
+        let t0 = std::time::Instant::now();
+        let mut groups_left = ctx.data.relevancia.orcamento_spawn_grupos.max(1);
+        let time_cap = self.spawn_time_budget_ms;
+        while let Some(job) = self.spawn_queue.front_mut() {
+            if groups_left == 0 || time_cap.map(|c| t0.elapsed().as_secs_f64() * 1000.0 > c).unwrap_or(false) {
+                break;
+            }
+            let Some(sid) = job.species.get(job.sp).cloned() else {
+                let j = self.spawn_queue.pop_front().unwrap();
+                self.metrics.spawn_ticks_max = self.metrics.spawn_ticks_max.max(ctx.tick - j.enqueued_tick);
+                continue;
+            };
+            let sp = &ctx.data.especies[&sid];
+            if job.group >= sp.grupos_por_hex {
+                job.sp += 1;
+                job.group = 0;
+                continue;
+            }
+            // mesmo consumo de números aleatórios da V02; se um chunk ainda não chegou, desfaz e tenta no próximo tick
+            let mut r = XorShift32::new(job.rng);
+            let mut home = None;
+            let mut pending = false;
+            for _ in 0..40 {
+                let a = r.next_f64() * std::f64::consts::TAU;
+                let d = r.next_f64().sqrt() * 2000.0;
+                let (x, z) = (job.center.0 + a.cos() * d, job.center.1 + a.sin() * d);
+                if ctx.t.tile_id_at(x, z).as_deref() != Some(job.tile.as_str()) {
                     continue;
                 }
-                for _ in 0..sp.grupos_por_hex {
-                    // centro do grupo em célula caminhável do próprio hex
-                    let mut home = None;
-                    for _ in 0..40 {
-                        let a = r.next_f64() * std::f64::consts::TAU;
-                        let d = r.next_f64().sqrt() * 2000.0;
-                        let (x, z) = (center.0 + a.cos() * d, center.1 + a.sin() * d);
-                        if ctx.t.tile_id_at(x, z).as_deref() == Some(tile.as_str()) && walkable_cell(ctx.t, x, z).is_some() {
-                            home = Some((x, z));
-                            break;
-                        }
-                    }
-                    let Some((hx, hz)) = home else { continue };
-                    self.next_id += 1;
-                    let group = self.next_id;
-                    let n = sp.grupo.0 + ((r.next_f64() * (sp.grupo.1 - sp.grupo.0 + 1) as f64) as u32).min(sp.grupo.1 - sp.grupo.0);
-                    for k in 0..n {
-                        let a = k as f64 * 2.4;
-                        let (x, z) = (hx + a.cos() * (1.5 + k as f64), hz + a.sin() * (1.5 + k as f64));
-                        let (x, z) = if walkable_cell(ctx.t, x, z).is_some() { (x, z) } else { (hx, hz) };
-                        self.next_id += 1;
-                        let mut c = Creature::spawn(self.next_id, sid, sp, group, x, z, &tile);
-                        c.home = (hx, hz);
-                        c.mv.snap_y(ctx.t);
-                        self.creatures.push(c);
-                    }
+                if !ctx.t.ready_at(x, z) {
+                    pending = true;
+                    break;
+                }
+                if walkable_cell(ctx.t, x, z).is_some() {
+                    home = Some((x, z));
+                    break;
                 }
             }
+            if pending {
+                self.metrics.spawn_waits += 1;
+                break;
+            }
+            let Some((hx, hz)) = home else {
+                job.rng = r.state;
+                job.group += 1;
+                continue;
+            };
+            let n = sp.grupo.0 + ((r.next_f64() * (sp.grupo.1 - sp.grupo.0 + 1) as f64) as u32).min(sp.grupo.1 - sp.grupo.0);
+            let pts: Vec<(f64, f64)> = (0..n).map(|k| { let a = k as f64 * 2.4; (hx + a.cos() * (1.5 + k as f64), hz + a.sin() * (1.5 + k as f64)) }).collect();
+            let mut ready = true;
+            for &(x, z) in &pts {
+                ready &= ctx.t.ready_at(x, z);
+            }
+            if !ready {
+                self.metrics.spawn_waits += 1;
+                break;
+            }
+            job.rng = r.state;
+            job.group += 1;
+            groups_left -= 1;
+            let tile = job.tile.clone();
+            self.next_id += 1;
+            let group = self.next_id;
+            for (x, z) in pts {
+                let (x, z) = if walkable_cell(ctx.t, x, z).is_some() { (x, z) } else { (hx, hz) };
+                self.next_id += 1;
+                let mut c = Creature::spawn(self.next_id, &sid, sp, group, x, z, &tile);
+                c.home = (hx, hz);
+                c.mv.snap_y(ctx.t);
+                self.creatures.push(c);
+            }
         }
+        self.metrics.spawn_queue = self.spawn_queue.len();
     }
 
     // -------------------------------------------------------------- percepção

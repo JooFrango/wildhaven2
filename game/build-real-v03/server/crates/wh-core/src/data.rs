@@ -251,9 +251,14 @@ pub struct Relevancia {
     pub passo_medio: u64,
     pub passo_longe: u64,
     pub orcamento_astar_por_tick: u32,
+    /// V03 (parâmetro de engenharia, PROVISÓRIO): grupos de criaturas gerados por tick para hexes novos
+    /// (determinístico; a geração da V02 acontecia inteira num único tick).
+    #[serde(default = "spawn_grupos")]
+    pub orcamento_spawn_grupos: u32,
 }
+fn spawn_grupos() -> u32 { 4 }
 impl Default for Relevancia {
-    fn default() -> Self { Self { perto_m: 450.0, medio_m: 1500.0, longe_m: 4500.0, passo_medio: 3, passo_longe: 15, orcamento_astar_por_tick: 14 } }
+    fn default() -> Self { Self { perto_m: 450.0, medio_m: 1500.0, longe_m: 4500.0, passo_medio: 3, passo_longe: 15, orcamento_astar_por_tick: 14, orcamento_spawn_grupos: spawn_grupos() } }
 }
 
 #[derive(Debug, Clone, Deserialize)]

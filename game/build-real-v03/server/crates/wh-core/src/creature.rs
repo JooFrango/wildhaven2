@@ -184,7 +184,8 @@ pub fn detects(t: &mut TerrainStore, c: &Creature, sp: &Species, h: &HunterView,
 #[derive(Debug, Clone)]
 pub struct CreatureView {
     pub id: u64,
-    pub species: String,
+    /// V03: `Arc<str>` (antes `String` clonada por criatura por tick).
+    pub species: std::sync::Arc<str>,
     pub group: u64,
     pub x: f64,
     pub z: f64,
@@ -294,7 +295,7 @@ pub fn step_creature(
     }
     // presas também fogem de predadores de outras espécies que estejam perto e à vista
     let predator_near = if !predator {
-        others.iter().filter(|o| o.alive && !o.prey && o.species != c.species && c.mv.dist(o.x, o.z) < sp.visao_movimento_m * eff.visao * 0.8).min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap()).cloned()
+        others.iter().filter(|o| o.alive && !o.prey && *o.species != *c.species && c.mv.dist(o.x, o.z) < sp.visao_movimento_m * eff.visao * 0.8).min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap()).cloned()
     } else { None };
     let low_hp = c.hp < c.hp_max * 0.25;
     let mut speed = sp.andar_mps;
@@ -470,7 +471,7 @@ fn decide_needs(c: &mut Creature, sp: &Species, predator: bool, env: &StepEnv, e
             }
             let vis = sp.visao_movimento_m * eff.visao * 1.6;
             let target = c.prey.and_then(|id| others.iter().find(|o| o.id == id && o.alive)).or_else(|| {
-                others.iter().filter(|o| o.alive && o.prey && o.species != c.species && o.mass <= sp.massa_kg * 1.5 && c.mv.dist(o.x, o.z) < vis).min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap())
+                others.iter().filter(|o| o.alive && o.prey && *o.species != *c.species && o.mass <= sp.massa_kg * 1.5 && c.mv.dist(o.x, o.z) < vis).min_by(|a, b| c.mv.dist(a.x, a.z).partial_cmp(&c.mv.dist(b.x, b.z)).unwrap())
             });
             if let Some(o) = target.cloned() {
                 c.prey = Some(o.id);
@@ -512,7 +513,7 @@ fn decide_needs(c: &mut Creature, sp: &Species, predator: bool, env: &StepEnv, e
     }
     // território: predador encara outro adulto da mesma espécie (outro grupo) perto de casa
     if predator {
-        if let Some(o) = others.iter().find(|o| o.alive && o.species == c.species && o.group != c.group && c.mv.dist(o.x, o.z) < 25.0) {
+        if let Some(o) = others.iter().find(|o| o.alive && *o.species == *c.species && o.group != c.group && c.mv.dist(o.x, o.z) < 25.0) {
             let mine = ((o.x - c.home.0).powi(2) + (o.z - c.home.1).powi(2)).sqrt() < ((o.x - o.home.0).powi(2) + (o.z - o.home.1).powi(2)).sqrt();
             if mine {
                 c.state = "territorial".into();

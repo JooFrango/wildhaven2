@@ -30,7 +30,11 @@ fn boot(root: &std::path::Path) -> Result<World, Box<dyn std::error::Error>> {
     let walk = speeds["clips"].as_array().unwrap().iter().find(|c| c["name"] == "Walking").unwrap()["speedMetersPerSecond"].as_f64().unwrap();
     let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v03/data/spawn-v02.json"))?)?;
     let s = &spawn["hunters"][0];
-    let data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v03/data/gameplay-provisorio-v02.json"))?)?;
+    let mut data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v03/data/gameplay-provisorio-v02.json"))?)?;
+    // V03: WH_SPAWN_GRUPOS=0 reproduz a geração da V02 (hex inteiro num único tick) para comparação exata
+    if let Some(g) = std::env::var("WH_SPAWN_GRUPOS").ok().and_then(|v| v.parse::<u32>().ok()) {
+        data.relevancia.orcamento_spawn_grupos = if g == 0 { u32::MAX } else { g };
+    }
     let mut terrain = TerrainStore::new(continent, physics_dir, allowed, 256 * 1024 * 1024);
     let game = GameState::new(&data, (s["x"].as_f64().unwrap(), s["z"].as_f64().unwrap()), s["tile"].as_str().unwrap(), walk, spawn["seed"].as_u64().unwrap() as u32, &mut terrain);
     Ok(World::new(WorldClock::new(0), terrain, portals, data, game))

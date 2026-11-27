@@ -17,3 +17,4 @@ pub mod sim;
 pub mod terrain;
 pub mod tracks;
 pub mod whp;
+pub mod wire;

@@ -30,7 +30,11 @@ fn boot(root: &std::path::Path) -> Result<World, Box<dyn std::error::Error>> {
     let walk = speeds["clips"].as_array().unwrap().iter().find(|c| c["name"] == "Walking").unwrap()["speedMetersPerSecond"].as_f64().unwrap();
     let spawn: serde_json::Value = serde_json::from_slice(&std::fs::read(root.join("game/build-real-v03/data/spawn-v02.json"))?)?;
     let s = &spawn["hunters"][0];
-    let data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v03/data/gameplay-provisorio-v02.json"))?)?;
+    let mut data = GameData::from_slice(&std::fs::read(root.join("game/build-real-v03/data/gameplay-provisorio-v02.json"))?)?;
+    // V03: WH_SPAWN_GRUPOS=0 reproduz a geração da V02 (hex inteiro num único tick) para comparação exata
+    if let Some(g) = std::env::var("WH_SPAWN_GRUPOS").ok().and_then(|v| v.parse::<u32>().ok()) {
+        data.relevancia.orcamento_spawn_grupos = if g == 0 { u32::MAX } else { g };
+    }
     let mut terrain = TerrainStore::new(continent, physics_dir, allowed, 256 * 1024 * 1024);
     let game = GameState::new(&data, (s["x"].as_f64().unwrap(), s["z"].as_f64().unwrap()), s["tile"].as_str().unwrap(), walk, spawn["seed"].as_u64().unwrap() as u32, &mut terrain);
     Ok(World::new(WorldClock::new(0), terrain, portals, data, game))
@@ -58,6 +62,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let t_boot = Instant::now();
     let mut w = boot(&root)?;
     let boot_ms = t_boot.elapsed().as_secs_f64() * 1000.0;
+    if mode == "v03" {
+        // mesmo arranjo do servidor V03: E/S de chunks em thread auxiliar e teto de tempo na fila de geração
+        w.terrain.enable_prefetch();
+        w.game.spawn_time_budget_ms = Some(3.0);
+    }
     let ids: Vec<String> = w.game.hunters.iter().filter(|h| h.role == "hunter").map(|h| h.id.clone()).collect();
     w.order(Order::Explorar { hunters: ids })?;
     let mut res = serde_json::Map::new();
@@ -106,17 +115,31 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 mod wh_server_bench {
     use std::time::Instant;
     use wh_core::sim::World;
-    pub struct Publisher;
+    pub struct Publisher {
+        base: Option<serde_json::Value>,
+    }
     impl Publisher {
-        pub fn new() -> Self { Publisher }
-        /// Modo v02: snapshot completo serializado a cada intervalo (exatamente como o servidor V02).
-        pub fn publish(&mut self, w: &World, now_ms: u64, _mode: &str) -> (f64, f64, usize) {
+        pub fn new() -> Self { Publisher { base: None } }
+        /// v02: snapshot completo serializado a cada intervalo (exatamente como o servidor V02).
+        /// v03: valor imutável publicado + diff contra o último estado enviado ao cliente (modo 3D, 5 Hz).
+        pub fn publish(&mut self, w: &World, now_ms: u64, mode: &str) -> (f64, f64, usize) {
             let tv = Instant::now();
-            let snap = w.snapshot(now_ms);
+            if mode == "v02" {
+                let snap = w.snapshot(now_ms);
+                let v = tv.elapsed().as_secs_f64() * 1000.0;
+                let ts = Instant::now();
+                let s = serde_json::to_string(&snap).unwrap_or_default();
+                return (v, ts.elapsed().as_secs_f64() * 1000.0, s.len());
+            }
+            let value = serde_json::to_value(w.snapshot(now_ms)).unwrap_or_default();
             let v = tv.elapsed().as_secs_f64() * 1000.0;
             let ts = Instant::now();
-            let s = serde_json::to_string(&snap).unwrap_or_default();
-            (v, ts.elapsed().as_secs_f64() * 1000.0, s.len())
+            let msg = match &self.base {
+                None => serde_json::to_string(&value).unwrap_or_default(),
+                Some(b) => serde_json::to_string(&serde_json::json!({"$t": "d", "p": wh_core::wire::diff(b, &value, "").unwrap_or_default()})).unwrap_or_default(),
+            };
+            self.base = Some(value);
+            (v, ts.elapsed().as_secs_f64() * 1000.0, msg.len())
         }
     }
 }
