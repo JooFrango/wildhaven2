@@ -1,0 +1,81 @@
+name: V04.2.1 critical stability
+on:
+  push:
+    branches: [fix/v04-2-1-critical-stability]
+    paths: ['game/build-real-v04-2/server/**','game/build-real-v04-2/client/**','.github/workflows/critical-v0421.yml','game/build-real-v04-2/tools/critical-ab.ps1']
+permissions:
+  contents: write
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 130
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 8
+          sparse-checkout: |
+            game/build-real-v04-2
+            build real/continental/src
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Typecheck and build
+        working-directory: game/build-real-v04-2/client
+        run: |
+          npm ci
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          npm run build
+      - name: Test and build release binaries
+        working-directory: game/build-real-v04-2/server
+        run: |
+          cargo test --locked --release --lib -p wh-core
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cargo test --locked --release --bin wh-server
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cargo build --locked --release --bins
+      - name: Validate base package and compare on Windows
+        shell: pwsh
+        run: |
+          $ErrorActionPreference='Stop'
+          $url='https://github.com/JooFrango/wildhaven2/releases/download/build-real-v04-2-portatil/Wildhaven-Windows-portatil-v04.2.zip'
+          curl.exe -fsSL $url -o original.zip
+          $hash=(Get-FileHash original.zip).Hash.ToLower()
+          if (!(Invoke-RestMethod "$url.sha256").Contains($hash)) { throw 'Base SHA-256' }
+          Expand-Archive original.zip runtime
+          $game='game/build-real-v04-2'
+          $env:WH_REPO_ROOT=(Resolve-Path runtime).Path
+          ./game/build-real-v04-2/tools/critical-ab.ps1 -Executable "$env:WH_REPO_ROOT/wh-server.exe" -OutputFile baseline.json
+          Copy-Item "$game/server/target/release/wh-server.exe" runtime/wh-server.exe -Force
+          Copy-Item "$game/client/dist/*" "runtime/$game/client/dist/" -Recurse -Force
+          ./game/build-real-v04-2/tools/critical-ab.ps1 -Executable "$env:WH_REPO_ROOT/wh-server.exe" -OutputFile experimental.json
+          & "$game/server/target/release/wh-sim-check.exe" exploracao-longa 60000 digest-fix.json
+          if ($LASTEXITCODE) {exit $LASTEXITCODE}
+          git restore --source ed4997d -- "$game/server"
+          Push-Location "$game/server"
+          cargo build --locked --release --bin wh-sim-check
+          if ($LASTEXITCODE) {exit $LASTEXITCODE}
+          Pop-Location
+          & "$game/server/target/release/wh-sim-check.exe" exploracao-longa 60000 digest-base.json
+          if ($LASTEXITCODE) {exit $LASTEXITCODE}
+          $a=Get-Content -Raw digest-base.json|ConvertFrom-Json
+          $b=Get-Content -Raw digest-fix.json|ConvertFrom-Json
+          if ($a.digestoFinal -ne $b.digestoFinal -or ($a.amostras.criaturas -join ',') -ne ($b.amostras.criaturas -join ',')){throw 'Paridade ecológica'}
+          $f='Wildhaven-Windows-portatil-v04.2.1.zip'
+          [IO.Compression.ZipFile]::CreateFromDirectory((Resolve-Path runtime).Path,(Join-Path $PWD $f))
+          Expand-Archive $f unpacked
+          $env:WH_REPO_ROOT=(Resolve-Path unpacked).Path
+          ./game/build-real-v04-2/tools/critical-ab.ps1 -Executable "$env:WH_REPO_ROOT/wh-server.exe" -OutputFile smoke.json -Seconds 6
+          "$( (Get-FileHash $f).Hash.ToLower() )  $f"|Set-Content -Encoding ascii "$f.sha256"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-stability
+          path: |
+            *.json
+            Wildhaven-Windows-portatil-v04.2.1.zip*
+          compression-level: 0
+      - name: Publish unique tested prerelease
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "v04.2.1-test-${GITHUB_SHA:0:9}" --target "$GITHUB_SHA" --prerelease --title "Wildhaven V04.2.1 experimental" --notes "Comparativo Windows e pacote de teste." Wildhaven-Windows-portatil-v04.2.1.zip* baseline.json experimental.json digest-*.json smoke.json

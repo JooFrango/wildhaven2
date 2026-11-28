@@ -37,7 +37,7 @@ export class Scene3D {
   private get localLights(): Iterable<THREE.PointLight>[] { return this.ll ??= [{ [Symbol.iterator]: () => this.village.lamps[Symbol.iterator]() }, this.actors.fires]; }
   private ll: Iterable<THREE.PointLight>[] | undefined;
   /** V04.1: gravador de quadros (F3 → Gravar quadros). */
-  readonly recorder = new FrameRecorder();
+
   readonly village: Village;
   readonly fx: WeatherFx;
   readonly grass: GrassField;
@@ -57,9 +57,10 @@ export class Scene3D {
   private readonly ORIGINAL: boolean;
   private readonly NOFOG: boolean;
   private readonly camfix: number[] | undefined;
-  private onResize = () => this.applySize();
+  private sizeDirty = true;
+  private onResize = () => { this.sizeDirty = true; };
 
-  constructor(private host: HTMLElement, readonly camera: THREE.PerspectiveCamera, private cam: StrategyCamera, private heights: HeightIndex, private S: Shared, private settings: GraphicsSettings, private perf: Perf, params: URLSearchParams) {
+  constructor(private host: HTMLElement, readonly camera: THREE.PerspectiveCamera, private cam: StrategyCamera, private heights: HeightIndex, private S: Shared, private settings: GraphicsSettings, private perf: Perf, params: URLSearchParams, readonly recorder: FrameRecorder) {
     const r = new THREE.WebGLRenderer({ antialias: settings.antialias, powerPreference: "high-performance", reversedDepthBuffer: true, stencil: false });
     r.outputColorSpace = THREE.SRGBColorSpace;
     r.toneMapping = THREE.ACESFilmicToneMapping;
@@ -94,13 +95,17 @@ export class Scene3D {
   }
 
   private applySize() {
-    this.renderer.setPixelRatio(Math.min(this.settings.maxPixelRatio, devicePixelRatio) * this.resScale);
-    this.renderer.setSize(innerWidth, innerHeight);
+    this.sizeDirty = false;
+    const ratio = Math.min(this.settings.maxPixelRatio, devicePixelRatio) * this.resScale;
+    this.renderer.setDrawingBufferSize(innerWidth, innerHeight, ratio);
+    const canvas = this.renderer.domElement;
+    canvas.style.width = innerWidth + "px"; canvas.style.height = innerHeight + "px";
+    this.recorder.event("resize", [canvas.width, canvas.height, ratio]);
     this.camera.aspect = innerWidth / innerHeight; this.camera.updateProjectionMatrix();
   }
   applySettings() {
     this.resScale = this.settings.resolutionScale;
-    this.atm.applyShadows(); this.renderer.shadowMap.enabled = this.settings.shadows !== "off"; this.renderer.shadowMap.needsUpdate = true; this.applySize();
+    this.atm.applyShadows(); this.renderer.shadowMap.enabled = this.settings.shadows !== "off"; this.renderer.shadowMap.needsUpdate = true; this.sizeDirty = true;
   }
 
   /** Etapas 2–4 do carregamento (terrenos, criaturas, Hunters), com progresso real. */
@@ -202,7 +207,8 @@ export class Scene3D {
 
   private lastDrawn = 0;
   private frame(ui: Ui) {
-    if (!this.running) return;
+    if (!this.running || this.renderer.getContext().isContextLost()) return;
+    if (this.sizeDirty) this.applySize();
     const S = this.S, tf = performance.now(), camera = this.camera, settings = this.settings;
     // V04.1: janela visível mas fora de foco (jogador usando outro programa) — limite opcional de quadros (Sistema)
     const cap = Number(settings.unfocusedFps) || 0;
@@ -267,7 +273,7 @@ export class Scene3D {
       this.dynT = tf;
       const ms = this.perf.gpuOrFrameMs();
       const next = ms > 19 ? Math.max(0.5, this.resScale - 0.1) : ms < 12 ? Math.min(settings.resolutionScale, this.resScale + 0.05) : this.resScale;
-      if (Math.abs(next - this.resScale) > 0.01) { this.resScale = next; this.applySize(); }
+      if (Math.abs(next - this.resScale) > 0.01) { this.resScale = next; this.sizeDirty = true; }
       this.perf.resScale = this.resScale;
     }
     void ui;

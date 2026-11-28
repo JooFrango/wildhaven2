@@ -12,6 +12,10 @@ export interface FrameCounters { prog: number; geo: number; tex: number; nodes: 
 interface Rec { t: number; iv: number | null; cpu: number; gpu: number | null; d: Partial<FrameCounters>; dc: number }
 
 export class FrameRecorder {
+  private graphics: { t: number; kind: string; values: number[] }[] = [];
+  event(kind: string, values: number[] = []) {
+    if (this.active && this.graphics.length < 512) this.graphics.push({ t: performance.now(), kind, values });
+  }
   private frames: Rec[] = [];
   private long: { t: number; d: number }[] = [];
   private obs: PerformanceObserver | null = null;
@@ -22,7 +26,7 @@ export class FrameRecorder {
   get active() { return this.until > 0; }
 
   start(seconds: number, done: (r: unknown) => void) {
-    this.frames = []; this.long = []; this.last = 0; this.prev = null; this.done = done;
+    this.graphics = []; this.frames = []; this.long = []; this.last = 0; this.prev = null; this.done = done;
     this.until = performance.now() + seconds * 1000;
     try { this.obs = new PerformanceObserver(l => { for (const e of l.getEntries()) this.long.push({ t: e.startTime, d: e.duration }); }); this.obs.observe({ type: "longtask" }); } catch { this.obs = null; }
   }
@@ -61,7 +65,7 @@ export class FrameRecorder {
     const tot = (k: keyof FrameCounters) => fr.reduce((s, f) => s + Math.max(0, f.d[k] ?? 0), 0);
     const cpu = fr.map(f => f.cpu).sort((a, b) => a - b), gpu = fr.map(f => f.gpu).filter((x): x is number => x !== null).sort((a, b) => a - b);
     const r = {
-      quadros: fr.length, segundos: fr.length ? +((fr.at(-1)!.t - fr[0].t) / 1000).toFixed(1) : 0,
+      graphics: this.graphics, quadros: fr.length, segundos: fr.length ? +((fr.at(-1)!.t - fr[0].t) / 1000).toFixed(1) : 0,
       fpsMedio: n ? +(1000 * n / iv.reduce((s, x) => s + x, 0)).toFixed(2) : null, low1: low(0.01), low01: n >= 1000 ? low(0.001) : null,
       intervaloMs: { p50: q(0.5), p95: q(0.95), p99: q(0.99), max: n ? iv[n - 1] : null },
       acima33ms: iv.filter(x => x > 33).length, acima50ms: iv.filter(x => x > 50).length, acima100ms: iv.filter(x => x > 100).length,

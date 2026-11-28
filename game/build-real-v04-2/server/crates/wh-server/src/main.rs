@@ -8,6 +8,7 @@
 //! (sem rajadas ilimitadas); passos descartados por excesso de atraso são contados e expostos, nunca ocultos.
 //! O cliente nunca move o Hunter: não existe rota de controle direto.
 
+mod spikes;
 mod config;
 mod pacotes;
 mod persist;
@@ -53,6 +54,7 @@ impl Published {
 }
 
 enum Cmd {
+    Diagnostics(oneshot::Sender<([spikes::Incident;5], [spikes::Incident;5])>),
     Rota { hunter: String, tile: String, reply: oneshot::Sender<Result<serde_json::Value, String>> },
     Order(Order, oneshot::Sender<Result<String, String>>),
     Clima { tipo: String, x: f64, z: f64, dur: f64, reply: oneshot::Sender<String> },
@@ -206,6 +208,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let client = ServeDir::new(&cfg.client_dist).fallback(ServeFile::new(cfg.client_dist.join("index.html")));
     let app = Router::new()
+        .route("/api/v1/diagnostico/picos", get(spike_report))
         .route("/api/v1/health", get(|| async { "ok" }))
         .route("/api/v1/snapshot", get(snapshot))
         .route("/api/v1/continent", get(continent_handler))
@@ -253,6 +256,15 @@ fn continent_summary(c: &Continent, report: &serde_json::Value) -> String {
 
 /// Ordens do jogador (explorar, caçar, recolher...). Não existe ordem de mover o Hunter.
 /// V03: a ordem vai para a fila limitada da thread de simulação e é aplicada entre passos (como na V02).
+async fn spike_report(State(s): State<AppState>) -> Response {
+    let (tx,rx)=oneshot::channel();
+    if s.cmd.try_send(Cmd::Diagnostics(tx)).is_err() { return StatusCode::SERVICE_UNAVAILABLE.into_response(); }
+    match rx.await {
+        Ok((ticks,batches))=>Json(serde_json::json!({"ticks":ticks,"intervalos":batches})).into_response(),
+        Err(_)=>StatusCode::SERVICE_UNAVAILABLE.into_response()
+    }
+}
+
 async fn order_handler(State(s): State<AppState>, Json(o): Json<Order>) -> Response {
     let (tx, rx) = oneshot::channel();
     if s.cmd.try_send(Cmd::Order(o, tx)).is_err() {
@@ -367,6 +379,9 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
     let mut traffic_last = (0u64, 0u64);
     let mut traffic_rate = (0.0f64, 0.0f64);
     let (mut push_last, mut push_ms_s, mut view_ms_acc, mut view_ms_s) = (0u64, 0.0f64, 0.0f64, 0.0f64);
+    let mut tick_log=spikes::Recorder::default();
+    let mut batch_log=spikes::Recorder::default();
+    let mut batch_number=0;
     let mut batch_hist: std::collections::VecDeque<f64> = std::collections::VecDeque::with_capacity(300);
     loop {
         // comandos até o próximo prazo (resposta imediata ao jogador)
@@ -376,6 +391,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
                 break;
             }
             match rx.recv_timeout(next - now) {
+                Ok(Cmd::Diagnostics(reply)) => { let _=reply.send((tick_log.incidents.clone(),batch_log.incidents.clone())); }
                 Ok(Cmd::Order(o, reply)) => {
                     // V04: viagem por hexes ainda não baixados — pede os pacotes (prioridade alta) e dá a ordem quando chegarem
                     if let Order::Viajar { hunters, tile } = &o {
@@ -410,6 +426,9 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
             }
         }
         // V04: pacotes que chegaram passam a ser simulados; viagens pendentes partem quando a rota estiver completa
+        let cycle=Instant::now();
+        let cycle_cpu=spikes::cpu_ms();
+        batch_number+=1;
         for t in pacotes.novos() {
             w.terrain.make_present(&t);
         }
@@ -457,7 +476,24 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
         let mut window_ms = 0.0;
         let mut game_ms = 0.0;
         while debt > 0 && n < max_steps && (n < 1 || tb.elapsed() < budget) {
+            let before=Instant::now();
+            let cpu=spikes::cpu_ms();
+            let reads=w.terrain.stats.sync_loads;
+            let hits=w.terrain.stats.hits;
+            let misses=w.terrain.stats.misses;
             w.step();
+            let m=&w.game.metrics;
+            let st=&w.terrain.stats;
+            tick_log.observe(spikes::Tick{
+                epoch_ms:now_ms(), tick:w.tick,elapsed_ms:before.elapsed().as_secs_f64()*1000.0,
+                thread_cpu_ms:cpu.zip(spikes::cpu_ms()).map(|(a,b)|b-a),
+                late_ms:late.as_secs_f64()*1000.0,steps:1,window_ms:m.window_ms,game_ms:m.tick_ms,
+                spawn_ms:m.phases_ms[0],grid_ms:m.phases_ms[1],creature_ms:m.phases_ms[2],
+                sync_reads:st.sync_loads-reads,hits:st.hits-hits,misses:st.misses-misses,
+                io_pending:st.inflight,resident_bytes:st.resident_bytes,creatures:m.creatures_total,
+                frozen:m.frozen,hunters:w.game.hunters.len(),spawn_queue:m.spawn_queue,
+                event_seq:w.game.events.front().map_or(0,|e|e.seq),..Default::default()
+            });
             window_ms += w.game.metrics.window_ms;
             game_ms += w.game.metrics.tick_ms;
             debt -= 1;
@@ -465,6 +501,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
         }
         let steps_ms = tb.elapsed().as_secs_f64() * 1000.0;
         // persistência (V04.2: antes da decisão de publicar, para não depender do ritmo da publicação): a cada 10 s, ou já após morte/ordem/página nova (serialização aqui, gravação assíncrona)
+        let saving=Instant::now();
         if persist && (w.game.pending_save || last_save.elapsed() >= Duration::from_secs(10)) && last_save.elapsed() >= Duration::from_secs(1) {
             w.game.pending_save = false;
             last_save = Instant::now();
@@ -473,6 +510,12 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
         // ---- V04.2: publicação no ritmo que os clientes consomem: 200 ms com algum cliente 3D, 400 ms só com
         // Econômico, 5 s só com clientes em segundo plano (ou já, se houver acontecimento importante novo), 1 s sem
         // clientes (as leituras REST continuam com no máximo 1 s de atraso). A simulação não muda.
+        let persist_ms=saving.elapsed().as_secs_f64()*1000.0;
+        let mut record_batch=|view_ms|batch_log.observe(spikes::Tick{
+            epoch_ms:now_ms(),tick:batch_number,elapsed_ms:cycle.elapsed().as_secs_f64()*1000.0,
+            thread_cpu_ms:cycle_cpu.zip(spikes::cpu_ms()).map(|(a,b)|b-a),view_ms,persist_ms,
+            late_ms:late.as_secs_f64()*1000.0,window_ms,game_ms,steps:n,..Default::default()
+        });
         let (n3, ne, nf) = (traffic.modo_tres.load(Ordering::Relaxed), traffic.modo_eco.load(Ordering::Relaxed), traffic.modo_fundo.load(Ordering::Relaxed));
         let gap = if n3 > 0 { Duration::ZERO } else if ne > 0 { Duration::from_millis(400) } else if nf > 0 { Duration::from_secs(5) } else { Duration::from_secs(1) };
         let novo_importante = w.game.events.iter().any(|e| e.seq > important_seq && IMPORTANT.contains(&e.kind.as_str()));
@@ -480,6 +523,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
             traffic.publicacoes_puladas.fetch_add(1, Ordering::Relaxed);
             busy_ns += tb.elapsed().as_nanos();
             steps_window.1 += n;
+            record_batch(0.0);
             continue;
         }
         last_pub = Instant::now();
@@ -536,6 +580,7 @@ fn sim_thread(mut w: World, rx: std::sync::mpsc::Receiver<Cmd>, tx: watch::Sende
         }
         busy_ns += tb.elapsed().as_nanos();
         let _ = tx.send(Arc::new(Published { seq, value, json: OnceLock::new(), important_seq }));
+        record_batch(view_ms);
     }
 }
 

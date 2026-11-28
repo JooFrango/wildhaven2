@@ -179,6 +179,7 @@ pub struct SpawnJob {
     pub sp: usize,
     pub group: u32,
     pub enqueued_tick: u64,
+    prefetched: Option<(usize, u32)>,
 }
 
 /// Clima local entregue ao apresentador (por Hunter) — mesma fonte que a IA usa.
@@ -200,6 +201,7 @@ pub struct WeatherView {
 /// Métricas do passo (relevância, A*, criaturas) para o menu do desenvolvedor.
 #[derive(Debug, Clone, Default, Serialize)]
 pub struct TickMetrics {
+    #[serde(skip)] pub phases_ms: [f64; 3],
     pub tick_ms: f64,
     /// V03: custo das janelas físicas (streaming de chunks) antes do gameplay.
     pub window_ms: f64,
@@ -654,6 +656,7 @@ impl GameState {
         let dur = ctx.data.necessidades.carcaca_duracao_s;
         self.creatures.retain(|c| c.alive || c.carcass_since_s.map(|t| ctx.now - t < dur).unwrap_or(true));
         let _creat_ms = _ts.elapsed().as_secs_f64() * 1000.0 - _spawn_ms;
+        m.phases_ms = [_spawn_ms, _t_views, _t_loop];
         self.metrics = m;
         for a in attacks {
             self.resolve_creature_attack(a, ctx);
@@ -699,7 +702,7 @@ impl GameState {
             let Some(info) = ctx.t.continent.tile(&tile).cloned() else { continue };
             let center = crate::hex::center_of(crate::hex::axial_of(info.x, info.z).0, crate::hex::axial_of(info.x, info.z).1);
             let species: Vec<String> = ctx.data.especies.iter().filter(|(_, sp)| sp.biomas.iter().any(|b| b == &info.biome)).map(|(k, _)| k.clone()).collect();
-            self.spawn_queue.push_back(SpawnJob { tile: tile.clone(), center, rng: XorShift32::new(fnv(&tile) ^ self.rng).state, species, sp: 0, group: 0, enqueued_tick: ctx.tick });
+            self.spawn_queue.push_back(SpawnJob { tile: tile.clone(), center, rng: XorShift32::new(fnv(&tile) ^ self.rng).state, species, sp: 0, group: 0, enqueued_tick: ctx.tick, prefetched: None });
         }
         let t0 = std::time::Instant::now();
         let mut groups_left = ctx.data.relevancia.orcamento_spawn_grupos.max(1);
@@ -732,6 +735,28 @@ impl GameState {
                     continue;
                 }
                 if !ctx.t.ready_at(x, z) {
+                    // Use the existing wait for the first missing candidate to warm the
+                    // remaining candidates. Never gate a spawn on a speculative read.
+                    if job.prefetched != Some((job.sp, job.group)) {
+                        job.prefetched = Some((job.sp, job.group));
+                        let mut preview = XorShift32::new(job.rng);
+                        for _ in 0..40 {
+                            let angle = preview.next_f64() * std::f64::consts::TAU;
+                            let distance = preview.next_f64().sqrt() * 2000.0;
+                            let px = job.center.0 + angle.cos() * distance;
+                            let pz = job.center.1 + angle.sin() * distance;
+                            if ctx.t.tile_id_at(px, pz).as_deref() != Some(job.tile.as_str()) { continue; }
+                            ctx.t.warm_spawn_point(px, pz);
+                            if sp.papel != "predador" {
+                                for radius in [150.0, 300.0] {
+                                    for k in 0..8 {
+                                        let a = k as f64 * std::f64::consts::TAU / 8.0;
+                                        ctx.t.warm_spawn_point(px + a.cos() * radius, pz + a.sin() * radius);
+                                    }
+                                }
+                            }
+                        }
+                    }
                     pending = true;
                     break;
                 }
