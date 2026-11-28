@@ -96,3 +96,21 @@ Mesmo roteiro e mesmo script nas duas versões: todos os Hunters explorando, amo
 **Heap de ~300 MB na aba oculta (pendência da auditoria):**
 - Na V04.1, é lixo à espera de coleta: cai para 12 MB por volta de 60 min, quando o V8 faz a coleta maior, e fica assim até o fim.
 - Na V04 desce só para ~255 MB: é a cena retida pela depuração (MEM-01).
+
+## 4. Portátil Windows v04.1
+
+| Item | Valor |
+| --- | --- |
+| Arquivo | `Wildhaven-Windows-portatil-v04.1.zip` (212.066.079 bytes) |
+| Link | https://github.com/JooFrango/wildhaven2/releases/download/build-real-v04-1-portatil/Wildhaven-Windows-portatil-v04.1.zip |
+| SHA-256 | `16e945c1e298490d2b829c1e6b944491bb498aa82b57a628c639805327f86a1d` |
+| Commit | `c79e071` |
+| CI | https://github.com/JooFrango/wildhaven2/actions/runs/46088839164 (sucesso; validado no runner Windows sem Rust/Node, inclusive o download sob demanda de um hex) |
+
+**Conferência fora do CI:**
+- ZIP baixado da release;
+- SHA-256 igual ao arquivo `.sha256` publicado e ao digest da release;
+- integridade do ZIP verificada (2.386 entradas).
+
+FPS em GPU real não foi medido no CI.
+

@@ -53,7 +53,7 @@
 - [x] Benchmarks V04 × V04.1 intercalados (A/B/B/A), `bench/v04-1/ab/`.
 - [ ] Capturas comparativas (em andamento no laboratório da V04.2: mesma cena para V04, V04.1 e V04.2).
 - [x] Testes longos do cliente: 3D 30 min, Econômico 2 h, oculto 2 h (`BENCHMARK-V04-V04.1.md`).
-- [ ] ZIP v04.1 validado no CI e SHA-256 conferido após download.
+- [x] ZIP v04.1 validado no CI (run 16, `c79e071`) e SHA-256 conferido após download: `16e945c1…6a1d`.
 - [ ] Documentos:
   - RELATORIO-OTIMIZACAO-V04.1;
   - AUDITORIA-CODEX-INTEGRACAO;
