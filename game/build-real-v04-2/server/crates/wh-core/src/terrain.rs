@@ -196,6 +196,16 @@ impl TerrainStore {
         let _ = pf.tx.send(LoadReq { key: key.clone(), path, bytes, sha });
     }
 
+    fn spawn_prefetch_has_room(&self) -> bool {
+        let limit = (self.stats.cap_bytes / (128 * 128 * 10) / 4).min(192);
+        self.prefetch.as_ref().is_some_and(|p| p.inflight.len() < limit)
+    }
+
+    pub fn warm_spawn_point(&mut self, x: f64, z: f64) {
+        if !self.spawn_prefetch_has_room() { return; }
+        if let Some(k) = self.chunk_key_at(x, z) { self.request(&k); }
+    }
+
     /// O chunk que contém (x,z) está residente? Se não, pede (assíncrono). Ponto fora de tile liberado: true.
     pub fn ready_at(&mut self, x: f64, z: f64) -> bool {
         let Some(k) = self.chunk_key_at(x, z) else { return true };
