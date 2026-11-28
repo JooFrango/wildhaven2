@@ -201,6 +201,7 @@ pub struct WeatherView {
 /// Métricas do passo (relevância, A*, criaturas) para o menu do desenvolvedor.
 #[derive(Debug, Clone, Default, Serialize)]
 pub struct TickMetrics {
+    #[serde(skip)] pub phases_ms: [f64; 3],
     pub tick_ms: f64,
     /// V03: custo das janelas físicas (streaming de chunks) antes do gameplay.
     pub window_ms: f64,
@@ -655,6 +656,7 @@ impl GameState {
         let dur = ctx.data.necessidades.carcaca_duracao_s;
         self.creatures.retain(|c| c.alive || c.carcass_since_s.map(|t| ctx.now - t < dur).unwrap_or(true));
         let _creat_ms = _ts.elapsed().as_secs_f64() * 1000.0 - _spawn_ms;
+        m.phases_ms = [_spawn_ms, _t_views, _t_loop];
         self.metrics = m;
         for a in attacks {
             self.resolve_creature_attack(a, ctx);
