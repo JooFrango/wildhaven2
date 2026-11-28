@@ -431,8 +431,15 @@ fn exploracao_longa(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<
     w.game.prof_on = true;
     let mut linhas = vec![];
     let t0 = std::time::Instant::now();
+    // V04.2: pior passo (parede) e o que ele gastou por seção — investigação de picos de tick
+    let mut pior = (0.0f64, 0u64, [0.0f64; 8], 0usize, 0usize);
+    let mut piores: Vec<(f64, u64, usize, u64)> = vec![];
     for t in 1..=ticks {
+        let antes = w.game.prof; let ca = w.game.metrics.creatures_total; let sl0 = w.terrain.stats.sync_loads; let tp = std::time::Instant::now();
         w.step();
+        let ms = tp.elapsed().as_secs_f64() * 1e3;
+        if ms > 30.0 { piores.push((ms, t, w.game.metrics.creatures_total, w.terrain.stats.sync_loads - sl0)); }
+        if ms > pior.0 { let d = w.game.prof; let mut dd = [0.0; 8]; for i in 0..8 { dd[i] = d[i] - antes[i]; } pior = (ms, t, dd, ca, w.game.metrics.creatures_total); }
         if t % 3000 == 0 {
             let p = w.game.prof; let n = p[5].max(1.0); let m = &w.game.metrics;
             let l = serde_json::json!({"tick": t, "simH": t as f64 * 0.2 / 3600.0, "criaturas": m.creatures_total, "perto": m.near, "medio": m.mid, "longe": m.far, "congeladas": m.frozen,
@@ -444,5 +451,8 @@ fn exploracao_longa(w: &mut World, ticks: u64) -> Result<serde_json::Value, Box<
             if !livres.is_empty() { let _ = w.order(Order::Explorar { hunters: livres }); }
         }
     }
-    Ok(serde_json::json!({"modo": "exploracao-longa", "ticks": ticks, "amostras": linhas, "digestoFinal": digest(w), "rssFinalMB": rss_mb()}))
+    let pp = pior.2;
+    Ok(serde_json::json!({"modo": "exploracao-longa", "ticks": ticks, "amostras": linhas, "digestoFinal": digest(w), "rssFinalMB": rss_mb(),
+        "piorPasso": {"ms": pior.0, "tick": pior.1, "criaturasAntes": pior.3, "criaturasDepois": pior.4, "secoesMs": {"geracao": pp[0], "visoes": pp[1], "laco": pp[2], "pos": pp[3], "resto": pp[4], "climaEAreia": pp[6], "stepCreature": pp[7]}},
+        "passosAcima30ms": piores.iter().map(|(ms, t, c, sl)| serde_json::json!({"ms": ms, "tick": t, "criaturas": c, "chunksSincronos": sl})).collect::<Vec<_>>()}))
 }

@@ -724,7 +724,7 @@ impl GameState {
             let mut home = None;
             let mut fallback: Option<(f64, f64)> = None;
             let mut pending = false;
-            for _ in 0..40 {
+            'cand: for _ in 0..40 {
                 let a = r.next_f64() * std::f64::consts::TAU;
                 let d = r.next_f64().sqrt() * 2000.0;
                 let (x, z) = (job.center.0 + a.cos() * d, job.center.1 + a.sin() * d);
@@ -755,7 +755,15 @@ impl GameState {
                 'ring: for rr in [150.0f64, 300.0] {
                     for k in 0..8 {
                         let aa = k as f64 * std::f64::consts::TAU / 8.0;
-                        if ctx.t.sample(x + aa.cos() * rr, z + aa.sin() * rr).map(|c| c.water.is_some()).unwrap_or(false) {
+                        let (px, pz) = (x + aa.cos() * rr, z + aa.sin() * rr);
+                        // V04.2: o anel de água lia chunks do disco DENTRO do passo (160–250 leituras síncronas num
+                        // passo de geração = 105–160 ms). Agora espera o chunk como já esperava o do candidato:
+                        // mesma sequência aleatória, mesmas posições, sem E/S no passo.
+                        if !ctx.t.ready_at(px, pz) {
+                            pending = true;
+                            break 'cand;
+                        }
+                        if ctx.t.sample(px, pz).map(|c| c.water.is_some()).unwrap_or(false) {
                             agua = true;
                             break 'ring;
                         }
