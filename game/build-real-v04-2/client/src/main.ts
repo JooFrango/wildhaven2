@@ -138,6 +138,8 @@ async function main() {
 
   const perf = new Perf();
   const eco = new EconomicView(document.body, heights);
+  const { FrameRecorder } = await import("./recorder");
+  const recorder = new FrameRecorder();
   let scene3d: Scene3D | null = null;
   Object.defineProperty(window, "__wildhavenScene", { get: () => scene3d });
   let scene3dLoading: Promise<Scene3D> | null = null;
@@ -151,7 +153,17 @@ async function main() {
     if (scene3dLoading) return scene3dLoading;
     scene3dLoading = (async () => {
       const { Scene3D } = await import("./scene3d");
-      const s = new Scene3D(view, camera, cam, heights, S, settings, perf, params);
+      const s = new Scene3D(view, camera, cam, heights, S, settings, perf, params, recorder);
+      const canvas = s.renderer.domElement;
+      let needsRebuild = false;
+      const rebuild = () => {
+        if (!needsRebuild || scene3d !== s) return;
+        needsRebuild = false;
+        s.dispose(); scene3d = null; perf.attach(null);
+        if (!economic && !background()) void ensure3D(false).then(() => startLoop()).catch(e => loading.error(String(e)));
+      };
+      canvas.addEventListener("webglcontextlost", e => { e.preventDefault(); recorder.event("contextlost"); s.stopLoop(); });
+      canvas.addEventListener("webglcontextrestored", () => { recorder.event("contextrestored"); needsRebuild = true; rebuild(); });
       let slow = 0;
       if (!initial) slow = window.setTimeout(() => loading.show(sceneForBiome(currentBiome()), "Preparando o mundo 3D"), 400);
       await s.init((stage, frac, label) => loading.stage(stage, frac, label), initial);
@@ -159,6 +171,7 @@ async function main() {
       if (!initial) loading.hide();
       scene3d = s; scene3dLoading = null;
       ui.setPortrait(s.portraitUrl);
+      if (needsRebuild) queueMicrotask(rebuild);
       return s;
     })();
     return scene3dLoading;
