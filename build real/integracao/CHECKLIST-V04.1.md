@@ -48,11 +48,11 @@
 - [x] Vegetação: material próprio do LOD1 (sem troca de programa por desenho); matrizes estáticas.
 - [x] Relevo: oclusão não expira com a câmera parada; caixas sem alocação; descarte 1×/s.
 - [x] Janela fora de foco: limite opcional de quadros (padrão 30).
-- [ ] Sombras: só medição e decisão documentada.
+- [x] Sombras: medição e decisão documentadas (experimento na V04.2: cache estático/15 Hz rejeitados).
 - [ ] Econômico: varredura de repinturas na V04.1.
-- [ ] Benchmarks V04 × V04.1 intercalados (A/B/B/A).
-- [ ] Capturas comparativas.
-- [ ] Testes longos do cliente: 3D 30 min, Econômico 2 h, oculto 2 h.
+- [x] Benchmarks V04 × V04.1 intercalados (A/B/B/A), `bench/v04-1/ab/`.
+- [ ] Capturas comparativas (em andamento no laboratório da V04.2: mesma cena para V04, V04.1 e V04.2).
+- [x] Testes longos do cliente: 3D 30 min, Econômico 2 h, oculto 2 h (`BENCHMARK-V04-V04.1.md`).
 - [ ] ZIP v04.1 validado no CI e SHA-256 conferido após download.
 - [ ] Documentos:
   - RELATORIO-OTIMIZACAO-V04.1;
@@ -88,7 +88,8 @@ Colunas: ID · arquivo · grau · causa · evidência · solução · antes → 
 
 - **Servidor V04.1, 8 h:**
   - iniciado em 27/11 às 17:36 UTC, porta 8820, com cliente WebSocket Econômico;
-  - arquivo `bench/v04-1/soak-servidor-480min.json` (o JSON diz quanto realmente rodou).
+  - arquivo `bench/v04-1/soak-servidor-480min.json`;
+  - **executado: 420,06 min**, parado a pedido do diretor (`concluido: false`), 0 erros.
 - **Base V04:** `bench/v04-base/`:
   - Econômico 2 h: 26,9% de CPU média, por causa do bug ECO-LRU;
   - oculto 2 h: 0,15%;
