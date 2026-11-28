@@ -1,0 +1,229 @@
+{
+  "schema": "wildhaven.bench.cliente.v1",
+  "url": "http://127.0.0.1:9007/?perfil=baixo",
+  "modo": "economico",
+  "visibilityState": "visible",
+  "segundos": 60.009,
+  "carregamento_s": 1.754,
+  "renderer": "Chromium headless + SwiftShader (software) — CPU do 3D inclui rasterização por software; não representa GPU real",
+  "cpu_navegador_pct_nucleo": 11.648252762085686,
+  "cpu_servidor_pct_nucleo": 1.616424203036211,
+  "rss_navegador_mb": 1280.6484375,
+  "rss_servidor_mb": 289.98828125,
+  "heap_js_mb": 257.86189556121826,
+  "raf": {
+    "quadros": 3595,
+    "por_s": 59.90768051458948,
+    "p50_ms": 16.69999999999709,
+    "p95_ms": 16.79999999998836,
+    "p99_ms": 16.80000000000291,
+    "max_ms": 116.59999999999854,
+    "low1_fps": 50.88688572258656,
+    "travamentos_50ms": 1,
+    "travamentos_100ms": 1
+  },
+  "quadros_desenhados_jogo": 900,
+  "long_tasks": 1,
+  "long_tasks_ms": 130,
+  "ws": {
+    "bytes_por_s": 4899.098468563049,
+    "msgs_por_s": 2.4662967221583427
+  },
+  "perf_jogo": {
+    "mode": "pixel",
+    "fps": 15.041850992721809,
+    "low1": 14.756517462095317,
+    "frameMs": 66.48117977527252,
+    "p50Ms": 66.5,
+    "p95Ms": 67.5,
+    "p99Ms": 67.69999999925494,
+    "maxMs": 67.89999999850988,
+    "stalls50": 0,
+    "stalls100": 0,
+    "cpuMs": 0.301680671912031,
+    "gpuMs": null,
+    "gpuTimer": false,
+    "drawCalls": 0,
+    "triangles": 0,
+    "geometries": 0,
+    "textures": 0,
+    "heapMB": 258.16230392456055,
+    "vramEstMB": 0,
+    "loadSeconds": 1.69839999999851,
+    "resScale": 0.75,
+    "framesDrawn": 1260,
+    "culling": {
+      "world": {
+        "tiles": 7,
+        "leavesDrawn": 8,
+        "blocksDrawn": 1,
+        "tilesAsOne": 2,
+        "frustumCulled": 83,
+        "distanceCulled": 0,
+        "occlusionCulled": 0,
+        "horizonHidden": 7,
+        "loading": 0,
+        "bytes": 15961752,
+        "nodesTotal": 4350,
+        "nodesRam": 32,
+        "nodesVram": 25,
+        "nodesDrawn": 11,
+        "nodesHidden": 21,
+        "nodesUnloaded": 32,
+        "queue": 0,
+        "inflight": 0,
+        "canceled": 0,
+        "fallbacks": 0,
+        "loadedBytes": 0,
+        "updatesSkipped": 0,
+        "compilacoes": 7,
+        "cpuLiberados": 31
+      },
+      "veg": {
+        "candidates": 623,
+        "drawn": 303,
+        "perLod": [
+          0,
+          3,
+          51,
+          249
+        ],
+        "cellsFrustum": 114,
+        "cellsDistance": 1141,
+        "cellsOcclusion": 0,
+        "drawCallsMax": 19,
+        "updateMs": 1.7999999970197678
+      },
+      "actors": {
+        "mixersUpdated": 0,
+        "mixersSkipped": 0,
+        "actorsCulled": 0,
+        "creatureLods": [
+          0,
+          0,
+          0
+        ],
+        "simulated": 0,
+        "created": 0,
+        "notCreated": 0,
+        "released": 0,
+        "visible": 0
+      },
+      "grass": {
+        "tufts": 100,
+        "flowers": 19,
+        "cells": 15,
+        "ms": 29
+      }
+    },
+    "loops": {
+      "ativo": "pixel",
+      "tresD": "descartado",
+      "pixel": "rodando",
+      "interface": "4 Hz",
+      "visibilidade": "visible"
+    },
+    "rede": {
+      "conectado": true,
+      "reconexoes": 0,
+      "completos": 2,
+      "deltas": 219,
+      "ressincronizacoes": 0,
+      "bytesRecebidos": 500411,
+      "ultimaMensagemBytes": 1580
+    },
+    "economico": {
+      "frameMs": 0.30518221478141755,
+      "regions": 35,
+      "rendered": 35,
+      "genSwaps": 0,
+      "atlas": 9,
+      "heightsMB": 1.164459228515625
+    },
+    "streaming": null,
+    "alturasMB": 1.164459228515625,
+    "tarefas": {
+      "carregando": 0
+    }
+  },
+  "serie": [
+    {
+      "t": 5,
+      "cpuNavegadorPct": 14.797040591881622,
+      "cpuServidorPct": 1.5996800639872026,
+      "rssNavegadorMB": 1409.625
+    },
+    {
+      "t": 10,
+      "cpuNavegadorPct": 10.797840431913617,
+      "cpuServidorPct": 3.1993601279744053,
+      "rssNavegadorMB": 1409.37890625
+    },
+    {
+      "t": 15,
+      "cpuNavegadorPct": 11.399999999999999,
+      "cpuServidorPct": 1.7999999999999998,
+      "rssNavegadorMB": 1411.78515625
+    },
+    {
+      "t": 20,
+      "cpuNavegadorPct": 10.802160432086419,
+      "cpuServidorPct": 3.000600120024005,
+      "rssNavegadorMB": 1410.4453125
+    },
+    {
+      "t": 25,
+      "cpuNavegadorPct": 10.597880423915216,
+      "cpuServidorPct": 1.7996400719856027,
+      "rssNavegadorMB": 1412.53515625
+    },
+    {
+      "t": 30,
+      "cpuNavegadorPct": 10.597880423915216,
+      "cpuServidorPct": 2.9994001199760043,
+      "rssNavegadorMB": 1411.57421875
+    },
+    {
+      "t": 35,
+      "cpuNavegadorPct": 11.197760447910419,
+      "cpuServidorPct": 1.1997600479904018,
+      "rssNavegadorMB": 1403.4375
+    },
+    {
+      "t": 40,
+      "cpuNavegadorPct": 15.6,
+      "cpuServidorPct": 0.8,
+      "rssNavegadorMB": 1279.8671875
+    },
+    {
+      "t": 45,
+      "cpuNavegadorPct": 11.399999999999999,
+      "cpuServidorPct": 0.6,
+      "rssNavegadorMB": 1279.95703125
+    },
+    {
+      "t": 50,
+      "cpuNavegadorPct": 11.197760447910419,
+      "cpuServidorPct": 0.7998400319936013,
+      "rssNavegadorMB": 1278.859375
+    },
+    {
+      "t": 55,
+      "cpuNavegadorPct": 10.397920415916815,
+      "cpuServidorPct": 0.5998800239952009,
+      "rssNavegadorMB": 1280.6484375
+    },
+    {
+      "t": 60,
+      "cpuNavegadorPct": 11.000000000000002,
+      "cpuServidorPct": 1,
+      "rssNavegadorMB": 1279.515625
+    }
+  ],
+  "logs": [
+    "warning: [.WebGL-0x71401617c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: THREE.WebGLRenderer: KHR_parallel_shader_compile extension not supported.",
+    "warning: [.WebGL-0x71401617c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "warning: [.WebGL-0x71401617c00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+  ]
+}

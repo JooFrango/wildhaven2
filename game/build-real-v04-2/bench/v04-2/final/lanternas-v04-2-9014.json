@@ -1,0 +1,77 @@
+{
+ "url": "http://127.0.0.1:9014/",
+ "out": [
+  {
+   "zoom": 65,
+   "lamparinasVisiveis": 6,
+   "programasAntes": 81,
+   "programasDepois": 81,
+   "ms12Quadros": 3717,
+   "maiorQuadroMs": 387,
+   "portao": {
+    "compilacoes": 1,
+    "quadrosSegurados": 2,
+    "ultimaCompilacaoMs": 730
+   },
+   "ext": false
+  },
+  {
+   "zoom": 700,
+   "lamparinasVisiveis": 0,
+   "programasAntes": 81,
+   "programasDepois": 82,
+   "ms12Quadros": 3579,
+   "maiorQuadroMs": 457,
+   "portao": {
+    "compilacoes": 2,
+    "quadrosSegurados": 4,
+    "ultimaCompilacaoMs": 653
+   },
+   "ext": false
+  },
+  {
+   "zoom": 65,
+   "lamparinasVisiveis": 6,
+   "programasAntes": 82,
+   "programasDepois": 82,
+   "ms12Quadros": 3878,
+   "maiorQuadroMs": 361,
+   "portao": {
+    "compilacoes": 3,
+    "quadrosSegurados": 6,
+    "ultimaCompilacaoMs": 559
+   },
+   "ext": false
+  },
+  {
+   "zoom": 700,
+   "lamparinasVisiveis": 0,
+   "programasAntes": 82,
+   "programasDepois": 82,
+   "ms12Quadros": 3287,
+   "maiorQuadroMs": 373,
+   "portao": {
+    "compilacoes": 3,
+    "quadrosSegurados": 6,
+    "ultimaCompilacaoMs": 559
+   },
+   "ext": false
+  },
+  {
+   "zoom": 65,
+   "lamparinasVisiveis": 6,
+   "programasAntes": 82,
+   "programasDepois": 82,
+   "ms12Quadros": 4420,
+   "maiorQuadroMs": 408,
+   "portao": {
+    "compilacoes": 3,
+    "quadrosSegurados": 6,
+    "ultimaCompilacaoMs": 559
+   },
+   "ext": false
+  }
+ ],
+ "errs": [],
+ "nErros": 0
+}
