@@ -300,5 +300,19 @@ Mesmo roteiro e mesmo script nas três versões: todos os Hunters explorando, am
 
 ## 5. Portátil Windows v04.2
 
-(Preenchido após o CI e a conferência do SHA-256.)
+| Item | Valor |
+| --- | --- |
+| Arquivo | `Wildhaven-Windows-portatil-v04.2.zip` (212.300.034 bytes) |
+| Link | https://github.com/JooFrango/wildhaven2/releases/download/build-real-v04-2-portatil/Wildhaven-Windows-portatil-v04.2.zip |
+| SHA-256 | `f505640d80ef9da4ace0503de4595444fbf81a9e44d4585d8e38177952ddf2d8` |
+| Commit | `ed4997d` |
+| CI | https://github.com/JooFrango/wildhaven2/actions/runs/46092165095 (sucesso; validado no runner Windows sem Rust/Node, inclusive o download sob demanda de um hex) |
+
+**Conferência fora do CI:**
+- ZIP baixado da release;
+- SHA-256 igual ao `.sha256` publicado e ao digest da release;
+- integridade verificada (2.390 entradas);
+- inclui o laboratório WebGPU (`client/dist/lab/webgpu.html`).
+
+FPS em GPU real não foi medido no CI.
 

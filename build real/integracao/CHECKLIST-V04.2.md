@@ -44,7 +44,7 @@
 - [x] Capturas comparativas V04 × V04.1 × V04.2 (`bench/v04-2/final/capturas/`; 0,03–0,04% de pixels diferentes entre V04.1 e V04.2).
 - [x] Testes longos da V04.2: Econômico e oculto 2 h; 3D 30 min. 8 h e 24 h não executados (ver pendências).
 - [x] Picos de geração no servidor: causa medida; correção tentada e desfeita (atrasava a geração); pendente com desenho.
-- [ ] ZIP v04.2, SHA-256 conferido.
+- [x] ZIP v04.2 (run 9, `ed4997d`), SHA-256 conferido após download: `f505640d…f2d8`.
 - [x] Documentos:
   - RELATORIO-OTIMIZACAO-V04.2;
   - BENCHMARK-V04-V04.1-V04.2;
